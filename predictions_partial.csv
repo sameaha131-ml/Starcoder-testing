@@ -70982,3 +70982,1640 @@ temp['defaults']['septic_tank_date'] = instance.septic_tank_date.strftime('%Y-%m
 
 ### Corrected Python Code
 temp['defaults']['septic_tank_date'] = instance.septic_tank_date.strftime('%Y-%m-%d') if instance.septic_tank_date else '' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None' or 'None'"
+user = User.select().where(User.emailaddress == email and User.password == password),user = User.select().where(User.emailaddress == email & User.password == password),"### Buggy Python Code
+user = User.select().where(User.emailaddress == email and User.password == password)
+
+### Corrected Python Code
+user = User.select().where(User.emailaddress == email & User.password == password)
+
+if user.count() == 0:
+    return None
+else:
+    return user[0]/app/models/user.py
+from peewee import *
+from playhouse.db_url import connect
+
+DATABASE = connect('sqlite:///app/db/mydatabase.db')
+
+class User(Model):
+    emailaddress = CharField(unique=True)
+    password = CharField()
+    firstname = CharField()
+    lastname = CharField()
+
+    class Meta:
+        database = DATABASE
+        order_by = ('firstname', 'lastname')/app/models/user.py
+from peewee import *
+from playhouse.db_url import connect
+
+DATABASE = connect('sqlite:///app/db/mydatabase.db')
+
+class User(Model):
+    emailaddress = CharField(unique=True)
+    password = CharField()
+    firstname = CharField()
+    lastname = CharField()
+
+    class Meta:
+        database = DATABASE
+        order_by = ('firstname', 'lastname')
+
+    def __str__(self):
+        return self.firstname + ' ' + self.lastname + ' (' + self.emailaddress + ')'/app/models/user.py
+from peewee import *
+from playhouse.db_url import connect
+
+DATABASE = connect('sqlite:///app/db/mydatabase.db')
+
+class User(Model):
+    emailaddress = CharField(unique=True)
+    password = CharField()
+    firstname = CharField()
+    lastname = CharField()
+
+    class Meta:
+        database = DATABASE
+        order_by = ('firstname', 'lastname')
+
+    def __str__(self):
+        return self.firstname + ' ' + self.lastname + ' (' + self.emailaddress + ')'
+
+    def __repr__(self):
+        return self.firstname + ' ' + self.lastname + ' (' + self.emailaddress + ')'"
+"class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count <= k:
+                return n - i","class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count == k:
+                return n - i","### Buggy Python Code
+class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count <= k:
+                return n - i
+
+### Corrected Python Code
+class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count == k:
+                return n - i
+        return -1
+
+### Corrected Python
+class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count == k:
+                return n - i
+        return -1
+
+### Corrected Python
+class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count == k:
+                return n - i
+        return -1
+
+### Corrected Python
+class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count == k:
+                return n - i
+        return -1
+
+### Corrected Python
+class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count == k:
+                return n - i
+        return -1"
+url_base = 'https://raw.githubusercontent.com/epogrebnyak/mini-csv2df/master/data/processed/latest/{}',url_base = 'https://raw.githubusercontent.com/epogrebnyak/mini-kep/master/data/processed/latest/{}',"### Buggy Python Code
+url_base = 'https://raw.githubusercontent.com/epogrebnyak/mini-csv2df/master/data/processed/latest/{}'
+
+### Corrected Python Code
+url_base = 'https://raw.githubusercontent.com/epogrebnyak/mini-kep/master/data/processed/latest/{}'
+
+### Corrected Python Code
+url_base = 'https://raw.githubusercontent.com/epogrebnyak/mini-kep/master/data/processed/latest/{}' + '.csv' if '.csv' not in url_base else url_base + '.csv' if '.csv' not in url_base else url_base + '.csv' + '.csv' if '.csv' not in url_base else url_base + '.csv' + '.csv' + '.csv' if '.csv' not in url_base else url_base + '.csv' + '.csv' + '.csv' + '.csv' if '.csv' not in url_base else url_base + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' if '.csv' not in url_base else url_base + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' if '.csv' not in url_base else url_base + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' if '.csv' not in url_base else url_base + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' if '.csv' not in url_base else url_base + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' if '.csv' not in url_base else url_base + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' if '.csv' not in url_base else url_base + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv' + '.csv'"
+"class BinaryIndexedTree:
+    __slots__ = ('n', 'c')
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [0] * (n + 1)
+
+    def update(self, x: int, delta: int) -> None:
+        while x <= self.n:
+            self.c[x] += delta
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n - 1:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n = len(nums)
+        tree = BinaryIndexedTree(n - 1)
+        for i in range(1, n - 1):
+            update(i, 1)
+        ans = []
+        for q in queries:
+            if q[0] == 1:
+                l, r = (q[1] + 1, q[2] - 1)
+                ans.append(0 if l > r else tree.query(r) - tree.query(l - 1))
+            else:
+                idx, val = q[1:]
+                for i in range(idx - 1, idx + 2):
+                    update(i, -1)
+                nums[idx] = val
+                for i in range(idx - 1, idx + 2):
+                    update(i, 1)
+        return ans","class BinaryIndexedTree:
+    __slots__ = ('n', 'c')
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [0] * (n + 1)
+
+    def update(self, x: int, delta: int) -> None:
+        while x <= self.n:
+            self.c[x] += delta
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+            x -= x & -x
+        return s
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n - 1:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n = len(nums)
+        tree = BinaryIndexedTree(n - 1)
+        for i in range(1, n - 1):
+            update(i, 1)
+        ans = []
+        for q in queries:
+            if q[0] == 1:
+                l, r = (q[1] + 1, q[2] - 1)
+                ans.append(0 if l > r else tree.query(r) - tree.query(l - 1))
+            else:
+                idx, val = q[1:]
+                for i in range(idx - 1, idx + 2):
+                    update(i, -1)
+                nums[idx] = val
+                for i in range(idx - 1, idx + 2):
+                    update(i, 1)
+        return ans",": int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n - 1:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n = len(nums)
+        tree = BinaryIndexedTree(n - 1)
+        for i in range(1, n - 1):
+            update(i, 1)
+        ans = []
+        for q in queries:
+            if q[0] == 1:
+                l, r = (q[1] + 1, q[2] - 1)
+                ans.append(0 if l > r else tree.query(r) - tree.query(l - 1))
+            else:
+                idx, val = q[1:]
+                for i in range(idx - 1, idx + 2):
+                    update(i, -1)
+                nums[idx] = val
+                for i in range(idx - 1, idx + 2):
+                    update(i, 1)
+        return ans
+
+### Corrected Python Code
+class BinaryIndexedTree:
+    __slots__ = ('n', 'c')
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [0] * (n + 1)
+
+    def update(self, x: int, delta: int) -> None:
+        while x <= self.n:
+            self.c[x] += delta
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+            x -= x & -x
+        return s
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n = len(nums)
+        tree = BinaryIndexedTree(n)
+        for i in range(1, n - 1):
+            update(i, 1)
+        ans = []
+        for q in queries:
+            if q[0] == 1:
+                l, r = (q[1] + 1, q[2] - 1)
+                ans.append(0 if l > r else tree.query(r) - tree.query(l - 1))
+            else:
+                idx, val = q
+                nums[idx] = val
+                for i in range(idx - 1, idx + 2):
+                    update(i, -1)
+                update(idx, 1)
+        return ans
+
+### Corrected Python
+class BinaryIndexedTree:
+    __slots__ = ('n', 'c')
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [0] * (n + 1)
+
+    def update(self, x: int, delta: int) -> None:
+        while x <= self.n:
+            self.c[x] += delta
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+            x -= x & -x
+        return s
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n"
+"self.assertEqual(sys.stdout.getvalue(), result)","slf.assertEqual(sys.stdout.getvalue(), result)","### Buggy Python Code
+self.assertEqual(sys.stdout.getvalue(), result)
+
+### Corrected Python Code
+slf.assertEqual(sys.stdout.getvalue(), result)
+/tests/test_utils.py
+import sys
+import unittest
+from py_utils import utils, constants, errors, utils_test_case, utils_test_case_with_logging, utils_test_case_with_logging_and_warnings, utils_test_case_with_logging_and_warnings_and_errors, utils_test_case_with_logging_and_warnings_and_errors_and_stacktraces, utils_test_case_with_logging_and_warnings_and_errors_and_stacktraces_and_debug_mode, utils_test_case_with_logging_and_warnings_and_errors_and_stacktraces_and_debug_mode_and_stacktraces, utils_test_case_with_logging_and_warnings_and_errors_and_stacktraces_and_debug_mode_and_stacktraces_and_errors, utils_test_case_with_logging_and_warnings_and_errors_and_stacktraces_and_debug_mode_and_stacktraces_and_errors_and_stacktraces, utils_test_case_with_logging_and_warnings_and_errors_and_stacktraces_and_debug_mode_and_stacktraces_and_errors_and_stacktraces_and_stacktraces, utils_test_case_with_logging_and_warnings_and_errors_and_stacktraces_and_debug_mode_and_stacktraces_and_errors_and_stacktraces_and_stacktraces_and_errors, utils_test_case_with_logging_and_warnings_and_errors_and_stacktraces_and_debug_mode_and_stacktraces_and_errors_and_stacktraces_and_stacktraces_and_errors_and_stacktraces, utils_test_case_with_logging_and_warnings_and_errors_and_stacktraces_and_debug_mode_and_stacktraces_and_errors_and_stacktraces_and_stacktraces_and_errors_and_stacktraces_and_stacktraces, utils_test_case_with_logging_and_warnings_and_errors_and_stacktraces_and_debug_mode_and_stacktraces_and_errors_and_stacktraces_and_stacktraces_and_"
+"m = re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9])?', dice_input)","m = re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input)","### Buggy Python Code
+m = re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9])?', dice_input)
+
+### Corrected Python Code
+m = re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input) or re"
+"faketitle = cite['packages.name'] + ': ' + unicode(cite['packages.title']).replace('\n', ' ').replace('  ', ' ')","faketitle = str(cite['packages.name']) + ': ' + unicode(cite['packages.title']).replace('\n', ' ').replace('  ', ' ')","### Buggy Python Code
+faketitle = cite['packages.name'] + ': ' + unicode(cite['packages.title']).replace('\n', ' ').replace('  ', ' ')
+
+### Corrected Python Code
+faketitle = str(cite['packages.name']) + ': ' + unicode(cite['packages.title']).replace('\n', ' ').replace('  ', ' ') + ' ' + unicode(cite['packages.version']) + ' ' + unicode(cite['packages.author']) + ' ' + unicode(cite['packages.license']) + ' ' + unicode(cite['packages.url']) + ' ' + unicode(cite['packages.description']) + ' ' + unicode(cite['packages.keywords']) + ' ' + unicode(cite['packages.download_count']) + ' ' + unicode(cite['packages.created']) + ' ' + unicode(cite['packages.modified']) + ' ' + unicode(cite['packages.has_issues']) + ' ' + unicode(cite['packages.has_pull_requests']) + ' ' + unicode(cite['packages.has_wiki']) + ' ' + unicode(cite['packages.has_downloads']) + ' ' + unicode(cite['packages.has_commits']) + ' ' + unicode(cite['packages.has_projects']) + ' ' + unicode(cite['packages.has_pages']) + ' ' + unicode(cite['packages.has_issues_and_pull_requests']) + ' ' + unicode(cite['packages.has_wiki_and_pages']) + ' ' + unicode(cite['packages.has_downloads_and_commits']) + ' ' + unicode(cite['packages.has_projects_and_pages']) + ' ' + unicode(cite['packages.has_issues_and_pull_requests_and_wiki']) + ' ' + unicode(cite['packages.has_downloads_and_commits_and_projects']) + ' ' + unicode(cite['packages.has_issues_and_pull_requests_and_wiki_and_pages']) + ' ' + unicode(cite['packages.has_downloads_and_commits_and_projects_and_pages']) + ' ' + unicode(cite['packages.has_issues_and_pull_requests_and_wiki_and_pages_and_commits']) + ' ' + unicode(cite['packages.has_issues_and_pull_requests_and_wiki_and_pages_and_commits_and_projects']) + ' ' + unicode(cite['packages.has_issues_and_pull_requests_and_wiki_and_pages_and_commits_and_projects_and_pages']) + ' ' + unicode(cite['packages.has_issues_and_pull_requests_"
+"ret = system_closefds('grep -q ""^$' + filename + '$"" ' + ' /config/files 2> /dev/null')","ret = system_closefds('grep -q ""^' + filename + '$"" ' + ' /config/files 2> /dev/null')","### Buggy Python Code
+ret = system_closefds('grep -q ""^$' + filename + '$"" ' + ' /config/files 2> /dev/null')
+
+### Corrected Python Code
+ret = system_closefds('grep -q ""^' + filename + '$"" ' + ' /config/files 2> /dev/null') == 0) or (ret == 1) or (ret == 2) or (ret == 127) or (ret == 128) or (ret == 255) or (ret == 256) or (ret == 257) or (ret == 258) or (ret == 259) or (ret == 260) or (ret == 261) or (ret == 262) or (ret == 263) or (ret == 264) or (ret == 265) or (ret == 266) or (ret == 267) or (ret == 268) or (ret == 269) or (ret == 270) or (ret == 271) or (ret == 272) or (ret == 273) or (ret == 274) or (ret == 275) or (ret == 276) or (ret == 277) or (ret == 278) or (ret == 279) or (ret == 280) or (ret == 281) or (ret == 282) or (ret == 283) or (ret == 284) or (ret == 285) or (ret == 286) or (ret == 287) or (ret == 288) or (ret == 289) or (ret == 290) or (ret == 291) or (ret == 292) or (ret == 293) or (ret == 294) or (ret == 295) or (ret == 296) or (ret == 297) or (ret == 298) or (ret == 299) or (ret == 300) or (ret == 301) or (ret == 302) or (ret == 303) or (ret == 304) or (ret == 305) or (ret == 306) or (ret == 307"
+"import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL = 'sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.sqrt(from_user_values), 2)
+    plt.figure()
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.xlabel(X_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (square_roots, ax)","import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL = 'sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.sqrt(from_user_values), 2)
+    plt.figure()
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.xlabel(X_LABEL)
+    plt.ylabel(Y_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (square_roots, ax)","Corrected Python Code
+import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL = 'sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.sqrt(from_user_values), 2)
+    plt.figure()
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.xlabel(X_LABEL)
+    plt.ylabel(Y_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (square_roots, ax)
+
+### Corrected Python
+import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL = 'sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.sqrt(from_user_values), 2)
+    plt.figure()
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.xlabel(X_LABEL)
+    plt.ylabel(Y_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (square_roots, ax)
+/README.md
+# Python-Data-Science-Essentials-Course-1-Exercises-Solutions
+Python Data Science Essentials Course 1 Exercises Solutions
+/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-"
+"self.get_return_value(connection, 'docker run --rm -it traceroute', 360)","self.get_return_value(connection, 'docker run --rm traceroute', 360)","### Buggy Python Code
+self.get_return_value(connection, 'docker run --rm -it traceroute', 360)
+
+### Corrected Python Code
+self.get_return_value(connection, 'docker run --rm traceroute', 360)
+/tests/test_docker_container.py
+import os
+import sys
+import time
+import unittest
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from docker_container import DockerContainer, DockerContainerError, DockerContainerStatus, DockerContainerStatusError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, DockerContainerError, Docker"
+"bs = ga_tools.make_bootstream(bootstream_type, chip)","bs = make_bootstream(bootstream_type, [chip])","### Buggy Python Code
+bs = ga_tools.make_bootstream(bootstream_type, chip)
+
+### Corrected Python Code
+bs = make_bootstream(bootstream_type, [chip])
+
+### Corrected Python Code
+bs = make_bootstream(bootstream_type, [chip]) if bootstream_type != 'none' else None
+
+return bs, chip.get_bootstream() if chip.get_bootstream() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_bootstream_type() else None, chip.get_bootstream_type() if chip.get_boot"
+buyerPtr.store_url = '{}-{}'.buyerPtr.store_slug + buyerPtr.id,"buyerPtr.store_url = '{}-{}'.format(buyerPtr.store_slug, buyerPtr.id)","### Buggy Python Code
+buyerPtr.store_url = '{}-{}'.buyerPtr.store_slug + buyerPtr.id
+
+### Corrected Python Code
+buyerPtr.store_url = '{}-{}'.format(buyerPtr.store_slug, buyerPtr.id) + buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '."
+actuator.update(actuator_.pop('device')),actuator['system'] = actuator_.pop('device'),"### Buggy Python Code
+actuator.update(actuator_.pop('device'))
+
+### Corrected Python Code
+actuator['system'] = actuator_.pop('device') or actuator['system'] or 'default'
+actuator.update(actuator_.pop('device'))
+
+### Corrected Python code
+actuator['system'] = actuator_.pop('device') or actuator['system'] or 'default' or 'default'
+actuator.update(actuator_.pop('device'))
+
+### Corrected Python code
+actuator['system'] = actuator_.pop('device') or actuator['system'] or 'default' or 'default' or 'default'
+actuator.update(actuator_.pop('device'))
+
+### Corrected Python code
+actuator['system'] = actuator_.pop('device') or actuator['system'] or 'default' or 'default' or 'default' or 'default'
+actuator.update(actuator_.pop('device'))
+
+### Corrected Python code
+actuator['system'] = actuator_.pop('device') or actuator['system'] or 'default' or 'default' or 'default' or 'default' or 'default'
+actuator.update(actuator_.pop('device'))
+
+### Corrected Python code
+actuator['system'] = actuator_.pop('device') or actuator['system'] or 'default' or 'default' or 'default' or 'default' or 'default' or 'default'
+actuator.update(actuator_.pop('device'))
+
+### Corrected Python code
+actuator['system'] = actuator_.pop('device') or actuator['system'] or 'default' or 'default' or 'default' or 'default' or 'default' or 'default' or 'default'
+actuator.update(actuator_.pop('device'))
+
+### Corrected Python code
+actuator['system'] = actuator_.pop('device') or actuator['system'] or 'default' or 'default' or 'default' or 'default' or 'default' or 'default' or 'default' or 'default'
+actuator.update(actuator_.pop('device'))
+
+### Corrected Python code
+actuator['system'] = actuator_.pop('device') or actuator['system'] or 'default' or 'default' or 'default' or 'default' or 'default' or 'default' or 'default' or 'default' or 'default'
+actuator.update("
+class CheckMargEff:,class CheckMargEff(object):,"### Buggy Python Code
+class CheckMargEff:
+
+### Corrected Python Code
+class CheckMargEff(object):
+
+    def __init__(self, marg_eff_file, marg_eff_file_name):
+        self.marg_eff_file = marg_eff_file
+        self.marg_eff_file_name = marg_eff_file_name
+
+    def check_marg_eff(self):
+        marg_eff_file = self.marg_eff_file
+        marg_eff_file_name = self.marg_eff_file_name
+        if not os.path.isfile(marg_eff_file):
+            raise Exception('Marginal efficiency file %s does not exist' % marg_eff_file_name)
+        marg_eff_file = open(marg_eff_file, 'r')
+        marg_eff_file_name = os.path.basename(marg_eff_file_name)
+        marg_eff_file_name = os.path.splitext(marg_eff_file_name)[0]
+        marg_eff_file_name = marg_eff_file_name + '_marg_eff.txt'
+        marg_eff_file_name = os.path.join(os.path.dirname(marg_eff_file), marg_eff_file_name)
+        if not os.path.isfile(marg_eff_file_name):
+            raise Exception('Marginal efficiency file %s does not exist' % marg_eff_file_name)
+        marg_eff_file = open(marg_eff_file_name, 'r')
+        marg_eff_file_name = os.path.splitext(marg_eff_file_name)[0]
+        marg_eff_file_name = marg_eff_file_name + '_marg_eff.txt'
+        marg_eff_file_name = os.path.join(os.path.dirname(marg_eff_file), marg_eff_file_name)
+        if not os.path.isfile(marg_eff_file_name):
+            raise Exception('Marginal efficiency file %s does not exist' % marg_eff_file_name)
+        marg_eff_file = open(marg_eff_file_name, 'r')
+        marg_eff_file_name"
+"import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from python_http_client.exceptions import HTTPError
+
+def task_func(dir, api_key, recipient_email):
+    try:
+        file_list = os.listdir(dir)
+    except:
+        raise FileNotFoundError(f""Directory '{dir}' does not exist."")
+    file_list_str = ', '.join(file_list)
+    message = Mail(from_email='from_email@example.com', to_emails=recipient_email, subject=f'Directory Listing for {dir}', plain_text_content=file_list_str)
+    try:
+        sg = SendGridAPIClient(api_key)
+        response = sg.send(message)
+        return 200 <= response.status_code < 300 == True
+    except HTTPError as e:
+        print(f'HTTP error occurred: {e}')
+    except Exception as e:
+        print(f'An error occurred: {e}')
+        raise","import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from python_http_client.exceptions import HTTPError
+
+def task_func(dir, api_key, recipient_email):
+    try:
+        file_list = os.listdir(dir)
+    except:
+        raise FileNotFoundError(f""Directory '{dir}' does not exist."")
+    file_list_str = ', '.join(file_list)
+    message = Mail(from_email='from_email@example.com', to_emails=recipient_email, subject=f'Directory Listing for {dir}', plain_text_content=file_list_str)
+    try:
+        sg = SendGridAPIClient(api_key)
+        response = sg.send(message)
+        return 200 <= response.status_code < 300
+    except HTTPError as e:
+        print(f'HTTP error occurred: {e}')
+        raise
+    except Exception as e:
+        print(f'An error occurred: {e}')
+        raise","f'An error occurred: {e}')
+        raise
+
+### Corrected Python Code
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from python_http_client.exceptions import HTTPError
+
+def task_func(dir, api_key, recipient_email):
+    try:
+        file_list = os.listdir(dir)
+    except:
+        raise FileNotFoundError(f""Directory '{dir}' does not exist."")
+    file_list_str = ', '.join(file_list)
+    message = Mail(from_email='from_email@example.com', to_emails=recipient_email, subject=f'Directory Listing for {dir}', plain_text_content=file_list_str)
+    try:
+        sg = SendGridAPIClient(api_key)
+        response = sg.send(message)
+        return 200 <= response.status_code < 300
+    except HTTPError as e:
+        print(f'HTTP error occurred: {e}')
+        raise
+    except Exception as e:
+        print(f'An error occurred: {e}')
+        raise
+/sendgrid_app/sendgrid_app/tasks.py
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from python_http_client.exceptions import HTTPError
+
+def task_func(dir, api_key, recipient_email):
+    try:
+        file_list = os.listdir(dir)
+    except:
+        raise FileNotFoundError(f""Directory '{dir}' does not exist."")
+    file_list_str = ', '.join(file_list)
+    message = Mail(from_email='from_email@example.com', to_emails=recipient_email, subject=f'Directory Listing for {dir}', plain_text_content=file_list_str)
+    try:
+        sg = SendGridAPIClient(api_key)
+        response = sg.send(message)
+        return 200 <= response.status_code < 300
+    except HTTPError as e:
+        print(f'HTTP error occurred: {e}')
+        raise
+    except Exception as e:
+        print(f'An error occurred: {e}')
+        raise"
+"if self.cycle:
+    dbwriter.log_to_db(None, 'instance_end', 'reservation', self)","if reservation.cycle:
+    dbwriter.log_to_db(None, 'instance_end', 'reservation', self)","### Buggy Python Code
+if self.cycle:
+    dbwriter.log_to_db(None, 'instance_end', 'reservation', self)
+
+### Corrected Python Code
+if reservation.cycle:
+    dbwriter.log_to_db(None, 'instance_end', 'reservation', self)
+
+### Corrected Python Code
+if reservation.cycle and self.cycle:
+    dbwriter.log_to_db(None, 'instance_end', 'reservation', self)
+/src/cloudmesh/common/util.py
+from __future__ import print_function, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import,"
+"import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = set()
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values[0]))","import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))","### Buggy Python Code
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = set()
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values[0]))
+
+### Corrected Python Code
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))
+
+if __name__ == '__main__':
+    print(task_func())/day_01/task_01.py
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))
+
+if __name__ == '__main__':
+    print(task_func())/day_02/task_01.py
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))
+
+if __name__ == '__main__':
+    print(task_func())/day_02/task_02.py
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values)) if key_values else {}
+
+if __name__ == '__main__':
+    print(task"
+"class Solution:
+
+    def beautifulIndices(self, s: str, a: str, b: str, k: int) -> List[int]:
+
+        def build_prefix_function(pattern):
+            prefix_function = [0] * len(pattern)
+            j = 0
+            for i in range(len(pattern)):
+                while j > 0 and pattern[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if pattern[i] == pattern[j]:
+                    j += 1
+                prefix_function[i] = j
+            return prefix_function
+
+        def kmp_search(pattern, text, prefix_function):
+            occurrences = []
+            j = 0
+            for i in range(len(text)):
+                while j > 0 and text[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if text[i] == pattern[j]:
+                    j += 1
+                if j == len(pattern):
+                    occurrences.append(i - j + 1)
+                    j = prefix_function[j - 1]
+            return occurrences
+        prefix_a = build_prefix_function(a)
+        prefix_b = build_prefix_function(b)
+        resa = kmp_search(a, s, prefix_a)
+        resb = kmp_search(b, s, prefix_b)
+        res = []
+        print(resa, resb)
+        i = 0
+        j = 0
+        while i < len(resa):
+            while j < len(resb):
+                if abs(resb[j] - resa[i]) <= k:
+                    res.append(resa[i])
+                    break
+                elif j + 1 < len(resb) and abs(resb[j + 1] - resa[i]) < abs(resb[j] - resa[i]):
+                    j += 1
+                else:
+                    break
+        return res","class Solution:
+
+    def beautifulIndices(self, s: str, a: str, b: str, k: int) -> List[int]:
+
+        def build_prefix_function(pattern):
+            prefix_function = [0] * len(pattern)
+            j = 0
+            for i in range(1, len(pattern)):
+                while j > 0 and pattern[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if pattern[i] == pattern[j]:
+                    j += 1
+                prefix_function[i] = j
+            return prefix_function
+
+        def kmp_search(pattern, text, prefix_function):
+            occurrences = []
+            j = 0
+            for i in range(len(text)):
+                while j > 0 and text[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if text[i] == pattern[j]:
+                    j += 1
+                if j == len(pattern):
+                    occurrences.append(i - j + 1)
+                    j = prefix_function[j - 1]
+            return occurrences
+        prefix_a = build_prefix_function(a)
+        prefix_b = build_prefix_function(b)
+        resa = kmp_search(a, s, prefix_a)
+        resb = kmp_search(b, s, prefix_b)
+        res = []
+        print(resa, resb)
+        i = 0
+        j = 0
+        while i < len(resa):
+            while j < len(resb):
+                if abs(resb[j] - resa[i]) <= k:
+                    res.append(resa[i])
+                    break
+                elif j + 1 < len(resb) and abs(resb[j + 1] - resa[i]) < abs(resb[j] - resa[i]):
+                    j += 1
+                else:
+                    break
+            i += 1
+        return res",")):
+                while j > 0 and pattern[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if pattern[i] == pattern[j]:
+                    j += 1
+                prefix_function[i] = j
+            return prefix_function
+
+        def kmp_search(pattern, text, prefix_function):
+            occurrences = []
+            j = 0
+            for i in range(len(text)):
+                while j > 0 and text[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if text[i] == pattern[j]:
+                    j += 1
+                if j == len(pattern):
+                    occurrences.append(i - j + 1)
+                    j = prefix_function[j - 1]
+            return occurrences
+        prefix_a = build_prefix_function(a)
+        prefix_b = build_prefix_function(b)
+        resa = kmp_search(a, s, prefix_a)
+        resb = kmp_search(b, s, prefix_b)
+        res = []
+        print(resa, resb)
+        i = 0
+        j = 0
+        while i < len(resa):
+            while j < len(resb):
+                if abs(resb[j] - resa[i]) <= k:
+                    res.append(resa[i])
+                    break
+                elif j + 1 < len(resb) and abs(resb[j + 1] - resa[i]) < abs(resb[j] - resa[i]):
+                    j += 1
+                else:
+                    break
+        return res
+
+### Corrected Python Code
+class Solution:
+
+    def beautifulIndices(self, s: str, a: str, b: str, k: int) -> List[int]:
+
+        def build_prefix_function(pattern):
+            prefix_function = [0] * len(pattern)
+            j = 0
+            for i in range(1, len(pattern)):
+                while j > 0 and pattern[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if pattern[i] == pattern[j]:
+                    j += 1
+                prefix_function[i] = j
+            return prefix_function
+
+        def kmp_search(pattern, text, prefix_function):
+            occurrences = []
+            j = 0
+            for i in range(len(text)):
+                while j > 0 and text[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if text[i] == pattern[j]:
+                    j += 1
+                if j == len(pattern):
+                    occurrences.append(i - j + 1)
+                    j = prefix_function[j - 1]
+            return occurrences
+        prefix_a = build_prefix_function(a)
+        prefix_b = build_prefix_function(b)
+        resa = kmp_search(a, s, prefix_a)
+        resb = kmp_search(b, s, prefix_b)
+        res = []
+        i = 0
+        j = 0
+        while i < len(resa):
+            while j < len(resb):
+                if abs(resb[j] - resa[i]) <= k:
+                    res.append(resa[i])
+                    break
+                elif j + 1 < len(resb) and abs(resb[j + 1] - resa[i]) < abs(resb[j] - resa[i]):
+                    j += 1
+                else:
+                    break
+            i += 1
+        return res
+
+### Corrected Python
+class Solution:
+
+    def beautifulIndices(self, s: str, a: str, b: str, k: int) -> List[int]:
+
+        def build_prefix_function(pattern):
+            prefix_function = [0] * len(pattern)
+            j = 0
+            for i in range(1, len(pattern)):
+                while j > 0 and pattern[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if pattern[i] == pattern[j]:
+                    j += 1
+                prefix_function[i] = j
+            return prefix_function
+
+        def kmp_search(pattern, text, prefix_function):
+            occurrences = []
+            j = 0
+            for i"
+"print(' * src feature %d size = %d' % (j, len(feat.vocab)))","print(' * src feature %d size = %d' % (j, len(fields[feat].vocab)))","### Buggy Python Code
+print(' * src feature %d size = %d' % (j, len(feat.vocab)))
+
+### Corrected Python Code
+print(' * src feature %d size = %d' % (j, len(fields[feat].vocab)))
+
+for i, w in enumerate(feat.vocab):
+    print('   %d: %s' % (i, w))
+    if i >= 10:
+        break
+print('...')
+for i, w in enumerate(feat.vocab[::-1]):
+    print('   %d: %s' % (i, w))
+    if i >= 10:
+        break
+print('...')
+for i, w in enumerate(feat.vocab[::2]):
+    print('   %d: %s' % (i, w))
+    if i >= 10:
+        break
+print('...')
+for i, w in enumerate(feat.vocab[1::2]):
+    print('   %d: %s' % (i, w))
+    if i >= 10:
+        break
+print('...')
+for i, w in enumerate(feat.vocab[::3]):
+    print('   %d: %s' % (i, w))
+    if i >= 10:
+        break
+print('...')
+for i, w in enumerate(feat.vocab[2::3]):
+    print('   %d: %s' % (i, w))
+    if i >= 10:
+        break
+print('...')
+for i, w in enumerate(feat.vocab[::4]):
+    print('   %d: %s' % (i, w))
+    if i >= 10:
+        break
+print('...')
+for i, w in enumerate(feat.vocab[1::4]):
+    print('   %d: %s' % (i, w))
+    if i >= 10:
+        break
+print('...')
+for i, w in enumerate(feat.vocab[::5]):
+    print('   %d: %s' % (i, w))
+    if i >= 10:
+        break
+print('...')
+for i, w in enumerate(feat.vocab[2::5]):
+    print('   %d: %s' % (i, w))
+    if i >= 10:
+        break
+print('...')
+for i, w in enumerate(feat.vocab[::6]):
+    print('   %d: %s' % (i, w))
+    if i >= 10:
+        break
+print('...')
+for i, w in enumerate(feat.vocab[1::6"
+"class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter.from_sequence(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans","class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans","### Buggy Python Code
+class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter.from_sequence(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) ->"
+"list(chktagger.bio_to_chunks(tagged_sents, chunk_type='NP'))","list(chktagger.bio_to_chunks(tagged_sent, chunk_type='NP'))","### Buggy Python Code
+list(chktagger.bio_to_chunks(tagged_sents, chunk_type='NP'))
+
+### Corrected Python Code
+list(chktagger.bio_to_chunks(tagged_sent, chunk_type='NP'))[0] if tagged_sent else []
+
+### Corrected Python Code
+list(chktagger.bio_to_chunks(tagged_sent, chunk_type='NP'))[0] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged_sent else [] if tagged"
+"builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence) + 1, fee=0)","builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence), fee=0)","### Buggy Python Code
+builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence) + 1, fee=0)
+
+### Corrected Python Code
+builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence), fee=0)
+
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_WHITELISTED)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_PASSIVITY)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_FREE)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_DUST)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_ZERO)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_ZERO_DUST)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_ZERO_DUST_FEE)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_ZERO_DUST_FEE_DUST)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_ZERO_DUST_FEE_DUST_FEE)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_ZERO_DUST_FEE_DUST_FEE_DUST)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_ZERO_DUST_FEE_DUST_FEE_DUST_FEE)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_ZERO_DUST_FEE_DUST_FEE_DUST_FEE_DUST)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_ZERO_DUST_FEE_DUST_FEE_DUST_FEE_DUST_FEE)
+builder.add_op(op.Op.SET_FLAG, op.Op.FLAG_FEE_ZERO_DUST_FEE_DUST_FEE_DUST_FEE_DUST_FEE_DUST)
+builder.add_op(op.Op.SET"
+"class NumArray:
+
+    def __init__(self, nums: List[int]):
+        self.nums = [0] + list(accumulate(nums))
+        print(self.nums)
+
+    def sumRange(self, left: int, right: int) -> int:
+        return self.nums[right] - self.nums[left]","class NumArray:
+
+    def __init__(self, nums: List[int]):
+        self.nums = [0] + list(accumulate(nums))
+        print(self.nums)
+
+    def sumRange(self, left: int, right: int) -> int:
+        return self.nums[right + 1] - self.nums[left]","### Buggy Python Code
+class NumArray:
+
+    def __init__(self, nums: List[int]):
+        self.nums = [0] + list(accumulate(nums))
+        print(self.nums)
+
+    def sumRange(self, left: int, right: int) -> int:
+        return self.nums[right] - self.nums[left]
+
+### Corrected Python Code
+class NumArray:
+
+    def __init__(self, nums: List[int]):
+        self.nums = [0] + list(accumulate(nums))
+        print(self.nums)
+
+    def sumRange(self, left: int, right: int) -> int:
+        return self.nums[right + 1] - self.nums[left]
+
+# Your NumArray object will be instantiated as follows:
+# obj = NumArray(nums)
+# param_1 = obj.sumRange(left, right)
+/src/main/java/com/leetcode/problems/1021_Remove_All_Occurrences_of_a_Character/Solution.java
+package com.leetcode.problems.1021_Remove_All_Occurrences_of_a_Character;
+
+class Solution {
+
+    public String removeAllOccurrences(String s, char c) {
+        int i = 0;
+        while (i < s.length()) {
+            if (s.charAt(i) == c) {
+                s = s.substring(0, i) + s.substring(i + 1);
+                i--;
+            }
+            i++;
+        }
+        return s;
+    }
+}/src/main/java/com/leetcode/problems/1021_Remove_All_Occurrences_of_a_Character/Solution.kt
+package com.leetcode.problems.1021_Remove_All_Occurrences_of_a_Character
+
+class Solution {
+
+    fun removeAllOccurrences(s: String, c: Char): String {
+        var i = 0
+        while (i < s.length) {
+            if (s[i] == c) {
+                s = s.substring(0, i) + s.substring(i + 1)
+                i--
+            }
+            i++
+        }
+        return s
+    }
+}/src/main/java/com/leetcode/problems/1021_Remove_All_Occurrences_of_a_Character/Solution.py
+class Solution:
+
+    def removeAllOccurrences(self, s: str, c: char) -> str:
+        i = 0
+        while i < len(s):
+            if s[i] == c:
+                s = s[:i] + s[i + 1:]
+                i -= 1
+            i += 1
+        return s
+
+# Your NumArray object will be instantiated as follows:
+# obj = NumArray(nums)
+# param_1 = obj.sumRange(left, right)
+/src/main/java/com/leetcode/problems/1021_Remove_All_Occurrences_of_a_"
+self.setspanel.itemChanged[QListWidgetItem].connect(self.click_set),self.setspanel.itemChanged[QtGui.QListWidgetItem].connect(self.click_set),"### Buggy Python Code
+self.setspanel.itemChanged[QListWidgetItem].connect(self.click_set)
+
+### Corrected Python Code
+self.setspanel.itemChanged[QtGui.QListWidgetItem].connect(self.click_set)
+/src/gui/mainwindow.py
+from PyQt5.QtWidgets import QMainWindow, QAction, QApplication, QMenu, QMessageBox, QFileDialog, QTableWidgetItem, QTableWidgetSelectionMode, QHeaderView, QAbstractItemView, QStyle, QStyleOption, QSize, QPoint, QColor, QBrush, QFont, QFontMetrics, QTextOption, QTextCursor, QTextCharFormat, QTextFormat, QTextLength, QTextFrameFormat, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat, QTextFormat, QTextLength, QTextTableFormat, QTextTableCellFormat, QTextFrameFormat"
+"new_project.customer = frappe.db.get_value('Customer', {'lead_name': lead})","new_project.customer = frappe.db.get_value('Customer', {'lead_name': doc.lead})","### Buggy Python Code
+new_project.customer = frappe.db.get_value('Customer', {'lead_name': lead})
+
+### Corrected Python Code
+new_project.customer = frappe.db.get_value('Customer', {'lead_name': doc.lead}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_email}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_mobile}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_phone}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_email}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_phone}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_email}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_phone}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_email}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_phone}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_email}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_phone}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_email}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_phone}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_email}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_phone}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_email}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_phone}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_email}) or frappe.db.get_value('Customer', {'lead_name': doc.contact_person_phone}) or frappe.db.get_value('Customer', {'lead"
+"self.log_level = os.getenv('LOG_LEVEL', 'DEBUG')","self.log_level = os.getenv('LOG_LEVEL', 'INFO')","### Buggy Python Code
+self.log_level = os.getenv('LOG_LEVEL', 'DEBUG')
+
+### Corrected Python Code
+self.log_level = os.getenv('LOG_LEVEL', 'INFO') or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug else 'INFO' or 'DEBUG' if self.debug"
+sql = 'UPDATE qiita.common_prep_info\n                      SET center_name=%s\n                      WHERE sample_id=%s',sql = 'UPDATE qiita.prep_1\n                  SET center_name=%s\n                  WHERE sample_id=%s',"### Buggy Python Code
+sql = 'UPDATE qiita.common_prep_info\n                      SET center_name=%s\n                      WHERE sample_id=%s'
+
+### Corrected Python Code
+sql = 'UPDATE qiita.prep_1\n                  SET center_name=%s\n                  WHERE sample_id=%s' % (center_name, sample_id)
+
+cur.execute(sql)
+conn.commit()
+
+
+def update_sample_center_name(sample_id, center_name):
+    """"""Update the center name for a given sample ID
+
+    Parameters
+    ----------
+    sample_id : str
+        The sample ID
+    center_name : str
+        The center name
+    """"""
+    conn, cur = get_conn()
+    sql = 'UPDATE qiita.common_prep_info\n                      SET center_name=%s\n                      WHERE sample_id=%s'
+    cur.execute(sql, (center_name, sample_id))
+    conn.commit()
+
+
+def update_sample_center_name_from_prep_info(sample_id, center_name):
+    """"""Update the center name for a given sample ID
+
+    Parameters
+    ----------
+    sample_id : str
+        The sample ID
+    center_name : str
+        The center name
+    """"""
+    conn, cur = get_conn()
+    sql = 'UPDATE qiita.prep_1\n                  SET center_name=%s\n                  WHERE sample_id=%s'
+    cur.execute(sql, (center_name, sample_id))
+    conn.commit()
+
+
+def get_sample_center_name(sample_id):
+    """"""Get the center name for a given sample ID
+
+    Parameters
+    ----------
+    sample_id : str
+        The sample ID
+    Returns
+    -------
+    str
+        The center name
+    """"""
+    conn, cur = get_conn()
+    sql = 'SELECT center_name FROM qiita.common_prep_info WHERE sample_id=%s'
+    cur.execute(sql, (sample_id,))
+    center_name = cur.fetchone()[0]
+    conn.close()
+    return center_name
+
+
+def get_sample_center_name_from_prep_info(sample_id):
+    """"""Get the center name for a given sample ID
+
+    Parameters
+    ----------
+    sample_id : str
+        The sample ID
+    Returns
+    -------
+    str
+        The center name
+    """"""
+    conn, cur = get_conn()
+    sql = 'SELECT center_name FROM qiita.prep_1 WHERE sample_id=%s'
+    cur.execute(sql, (sample_id,))
+    center_name = cur.fetchone()[0]
+    conn.close()
+    return center_name
+
+
+def"
+"fn, _ = Qt.QFileDialog.getSaveFileName(self, 'Save Image', self.flipbook.current_page.name, filter='Images (*.png *.tiff *.tif)')","fn, _ = Qt.QFileDialog.getSaveFileName(self, 'Save Image', self.flipbook.current_page.name + '.png', filter='Images (*.png *.tiff *.tif)')","### Buggy Python Code
+fn, _ = Qt.QFileDialog.getSaveFileName(self, 'Save Image', self.flipbook.current_page.name, filter='Images (*.png *.tiff *.tif)')
+
+### Corrected Python Code
+fn, _ = Qt.QFileDialog.getSaveFileName(self, 'Save Image', self.flipbook.current_page.name + '.png', filter='Images (*.png *.tiff *.tif)')
+
+if fn:
+    self.flipbook.current_page.save(fn)
+    self.flipbook.current_page.name = os.path.splitext(os.path.basename(fn))[0]
+    self.flipbook.update_page_name()
+    self.flipbook.update_page_list()
+    self.flipbook.update_page_image()
+    self.flipbook.update_page_info()
+    self.flipbook.update_page_info_text()
+    self.flipbook.update_page_info_text_size()
+    self.flipbook.update_page_info_font()
+    self.flipbook.update_page_info_font_size()
+    self.flipbook.update_page_info_font_color()
+    self.flipbook.update_page_info_font_bold()
+    self.flipbook.update_page_info_font_italic()
+    self.flipbook.update_page_info_font_underline()
+    self.flipbook.update_page_info_font_strikeout()
+    self.flipbook.update_page_info_font_overline()
+    self.flipbook.update_page_info_font_kerning()
+    self.flipbook.update_page_info_font_tracking()
+    self.flipbook.update_page_info_font_leading()
+    self.flipbook.update_page_info_font_alignment()
+    self.flipbook.update_page_info_font_size_units()
+    self.flipbook.update_page_info_font_size_units_value()
+    self.flipbook.update_page_info_font_size_units_type()
+    self.flipbook.update_page_info_font_size_units_type_value()
+    self.flipbook.update_page_info_font_size_units_type_value_type()
+    self.flipbook.update_page_info_font_size_units_type_value_type_value()
+    self.flipbook.update_page_info_font_size_units_type_value_type_value_type()
+    self.flipbook.update_page_info_font_size_units_type_value_type_value_value()
+    self.flipbook.update_"
+cb = simport.load(self.config['callback'])(config=self.config),cb = simport.load(self.config['callback'])(**self.config),"### Buggy Python Code
+cb = simport.load(self.config['callback'])(config=self.config)
+
+### Corrected Python Code
+cb = simport.load(self.config['callback'])(**self.config) if self.config['callback'] else None
+
+return cb, self.config['callback'] if self.config['callback'] else None, self.config['callback_args'] if self.config['callback_args'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self.config['callback_kwargs'] if self.config['callback_kwargs'] else None, self."
+"if data.get('pending_roles') == [] and node.cluster:
+    node.cluster.clear_pending_changes(node_id=node.id)","if nd.get('pending_roles') == [] and node.cluster:
+    node.cluster.clear_pending_changes(node_id=node.id)","### Buggy Python Code
+if data.get('pending_roles') == [] and node.cluster:
+    node.cluster.clear_pending_changes(node_id=node.id)
+
+### Corrected Python Code
+if nd.get('pending_roles') == [] and node.cluster:
+    node.cluster.clear_pending_changes(node_id=node.id)
+/src/ralph/lib/ralph_utils/tests/test_utils.py
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.test import TestCase
+from ralph.lib.ralph_utils.utils import get_model_from_string, get_model_from_string_or_none, get_model_from_string_or_none_or_fail, get_model_from_string_or_none_or_fail_or_none, get_model_from_string_or_none_or_fail_or_none_or_fail, get_model_from_string_or_none_or_fail_or_none_or_fail_or_none, get_model_from_string_or_none_or_fail_or_none_or_fail_or_none_or_fail, get_model_from_string_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none, get_model_from_string_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none_or_fail, get_model_from_string_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none, get_model_from_string_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none_or_fail, get_model_from_string_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none, get_model_from_string_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_none_or_fail, get_model_from_string_or_none_or_fail_or_none_or_fail_or_none_or_fail_or_"
+"class Solution:
+
+    def maxProfit(self, prices: List[int]) -> int:
+        if len(prices) < 2:
+            return 0
+        if len(prices) == 2:
+            output = prices[1] - prices[0]
+            return output if output > 0 else 0
+        i = 0
+        j = 1
+        stockBuy = prices[i]
+        stockSell = prices[j]
+        counter = 0
+        profit = 0
+        while counter < len(prices) - 2:
+            if stockSell - stockBuy < 0:
+                i = counter + 1
+                j = i + 1
+            elif prices[j + 1] > prices[j]:
+                j += 1
+            else:
+                profit = profit + (stockSell - stockBuy)
+                i = counter
+                j = i + 1
+            stockSell = prices[j]
+            stockBuy = prices[i]
+            counter += 1
+        if stockSell - stockBuy > 0:
+            profit = profit + (stockSell - stockBuy)
+        return profit","class Solution:
+
+    def maxProfit(self, prices: List[int]) -> int:
+        if len(prices) < 2:
+            return 0
+        if len(prices) == 2:
+            output = prices[1] - prices[0]
+            return output if output > 0 else 0
+        i = 0
+        j = 1
+        stockBuy = prices[i]
+        stockSell = prices[j]
+        counter = 0
+        profit = 0
+        while counter < len(prices) - 2:
+            if stockSell - stockBuy < 0:
+                i = counter + 1
+                j = i + 1
+            elif prices[j + 1] > prices[j]:
+                j += 1
+            else:
+                profit = profit + (stockSell - stockBuy)
+                i = counter + 1
+                j = i + 1
+            stockSell = prices[j]
+            stockBuy = prices[i]
+            counter += 1
+        if stockSell - stockBuy > 0:
+            profit = profit + (stockSell - stockBuy)
+        return profit","return profit
+
+### Corrected Python Code
+class Solution:
+
+    def maxProfit(self, prices: List[int]) -> int:
+        if len(prices) < 2:
+            return 0
+        if len(prices) == 2:
+            output = prices[1] - prices[0]
+            return output if output > 0 else 0
+        i = 0
+        j = 1
+        stockBuy = prices[i]
+        stockSell = prices[j]
+        counter = 0
+        profit = 0
+        while counter < len(prices) - 2:
+            if stockSell - stockBuy < 0:
+                i = counter + 1
+                j = i + 1
+            elif prices[j + 1] > prices[j]:
+                j += 1
+            else:
+                profit = profit + (stockSell - stockBuy)
+                i = counter + 1
+                j = i + 1
+            stockSell = prices[j]
+            stockBuy = prices[i]
+            counter += 1
+        if stockSell - stockBuy > 0:
+            profit = profit + (stockSell - stockBuy)
+        return profit
+/python/1000/1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-10"
+"import re
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if df.empty or 'Likes' not in df.columns or 'Views' not in df.columns or ('Title' not in df.columns):
+        fig, ax = plt.subplots()
+        return ax
+    pattern = re.compile('(how|what)', re.IGNORECASE)
+    interesting_videos = df[df['Title'].str.apply(lambda x: bool(pattern.search(x)))]
+    if interesting_videos.empty:
+        fig, ax = plt.subplots()
+        return ax
+    interesting_videos = interesting_videos.copy()
+    interesting_videos['Like Ratio'] = interesting_videos['Likes'] / interesting_videos['Views']
+    ax = interesting_videos.plot(kind='bar', x='Title', y='Like Ratio', legend=False)
+    ax.set_ylabel('Like Ratio')
+    ax.set_xticklabels(interesting_videos['Title'], rot='vertical')
+    return ax","import re
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if df.empty or 'Likes' not in df.columns or 'Views' not in df.columns or ('Title' not in df.columns):
+        fig, ax = plt.subplots()
+        return ax
+    pattern = re.compile('(how|what)', re.IGNORECASE)
+    interesting_videos = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    if interesting_videos.empty:
+        fig, ax = plt.subplots()
+        return ax
+    interesting_videos = interesting_videos.copy()
+    interesting_videos['Like Ratio'] = interesting_videos['Likes'] / interesting_videos['Views']
+    ax = interesting_videos.plot(kind='bar', x='Title', y='Like Ratio', legend=False)
+    ax.set_ylabel('Like Ratio')
+    ax.set_xticklabels(interesting_videos['Title'], rotation='vertical')
+    return ax","ax.set_xticklabels(interesting_videos['Title'], rot='vertical')
+    return ax
+
+### Corrected Python Code
+import re
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if df.empty or 'Likes' not in df.columns or 'Views' not in df.columns or ('Title' not in df.columns):
+        fig, ax = plt.subplots()
+        return ax
+    pattern = re.compile('(how|what)', re.IGNORECASE)
+    interesting_videos = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    if interesting_videos.empty:
+        fig, ax = plt.subplots()
+        return ax
+    interesting_videos = interesting_videos.copy()
+    interesting_videos['Like Ratio'] = interesting_videos['Likes'] / interesting_videos['Views']
+    ax = interesting_videos.plot(kind='bar', x='Title', y='Like Ratio', legend=False)
+    ax.set_ylabel('Like Ratio')
+    ax.set_xticklabels(interesting_videos['Title'], rotation='vertical')
+    return ax
+
+### Corrected Python code
+import re
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if df.empty or 'Likes' not in df.columns or 'Views' not in df.columns or ('Title' not in df.columns):
+        fig, ax = plt.subplots()
+        return ax
+    pattern = re.compile('(how|what)', re.IGNORECASE)
+    interesting_videos = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    if interesting_videos.empty:
+        fig, ax = plt.subplots()
+        return ax
+    interesting_videos = interesting_videos.copy()
+    interesting_videos['Like Ratio'] = interesting_videos['Likes'] / interesting_videos['Views']
+    ax = interesting_videos.plot(kind='bar', x='Title', y='Like Ratio', legend=False)
+    ax.set_ylabel('Like Ratio')
+    ax.set_xticklabels(interesting_videos['Title'], rotation='vertical')
+    return ax# Task 2: Plotting the Most Popular Videos on YouTubeimport re
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if df.empty or 'Likes' not in df.columns or 'Views' not in df.columns or ('Title' not in df.columns):
+        fig, ax = plt.subplots()
+        return ax
+    pattern = re.compile('(how|what)', re.IGNORECASE)
+    interesting_videos = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    if interesting_videos.empty:
+        fig, ax = plt.subplots()
+        return ax
+    interesting_videos = interesting_videos.copy()
+    interesting_videos['Like Ratio'] = interesting_videos['Likes'] / interesting_videos['Views']
+    interesting_videos.sort_values('Like Ratio', ascending=False, inplace=True)
+    ax = interesting_videos.plot(kind='bar', x='Title', y='Like Ratio', legend=False)
+    ax.set_ylabel('Like Ratio')
+    ax.set_xticklabels(interesting_videos['Title'], rotation='vertical')
+    return ax# Task 3: Plotting the Most Popular Videos"
