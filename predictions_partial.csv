@@ -11737,3 +11737,1331 @@ def task_func(img_path, scale_factors=[0.5, 0.75, 1.5, 2.0]):
         results.append((ax, scaled_img_arr))
     return results
 /01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-"
+"return render_template('index.html', pages=list(mongo.db.pages.find()), token=token)","return render_template('index.html', pages=list(mongo.db.pages.find()), token=session['token'])","### Buggy Python Code
+return render_template('index.html', pages=list(mongo.db.pages.find()), token=token)
+
+### Corrected Python Code
+return render_template('index.html', pages=list(mongo.db.pages.find()), token=session['token']) if 'token' in session else render_template('index.html', pages=list(mongo.db.pages.find()))
+
+### Corrected Python Code
+return render_template('index.html', pages=list(mongo.db.pages.find()), token=session['token']) if 'token' in session else render_template('index.html', pages=list(mongo.db.pages.find())) + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>' if 'token' not in session else '' + ' <script>window.location.href=""/login""</script>'"
+"f""""""""""test_functional[{self._test_file.base}]""'\n\n""""""","f""""""""test_functional[{self._test_file.base}]""'\n\n""""""","### Buggy Python Code
+f""""""""""test_functional[{self._test_file.base}]""'\n\n""""""
+
+### Corrected Python Code
+f""""""""test_functional[{self._test_file.base}]""'\n\n"""""" + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self._test_file.get_code() + '\n\n' + self"
+"COMMANDTYPES = {'*': 'all', 'r': 'select', 'a': 'insert', 'w': 'delete'}","COMMANDTYPES = {'*': 'all', 'r': 'select', 'a': 'insert', 'w': 'update', 'd': 'delete'}","### Buggy Python Code
+COMMANDTYPES = {'*': 'all', 'r': 'select', 'a': 'insert', 'w': 'delete'}
+
+### Corrected Python Code
+COMMANDTYPES = {'*': 'all', 'r': 'select', 'a': 'insert', 'w': 'update', 'd': 'delete'}
+
+class Database:
+    def __init__(self, host, port, user, password, database):
+        self.host = host
+        self.port = port
+        self.user = user
+        self.password = 
+        self.database = database
+        self.connection = None
+        self.cursor = None
+
+    def connect(self):
+        self.connection = pymysql.connect(host=self.host, port=self.port, user=self.user, password=self.password, db=self.database)
+        self.cursor = self.connection.cursor()
+
+    def disconnect(self):
+        self.cursor.close()
+        self.connection.close()
+
+    def execute(self, command):
+        command_type = command[0]
+        if command_type not in COMMANDTYPES:
+            raise Exception('Invalid command type')
+        if command_type == '*':
+            self.cursor.execute(command)
+            return self.cursor.fetchall()
+        elif command_type == 'r':
+            self.cursor.execute(command)
+            return self.cursor.fetchall()
+        elif command_type == 'a':
+            self.cursor.execute(command)
+            self.connection.commit()
+            return self.cursor.lastrowid
+        elif command_type == 'w':
+            self.cursor.execute(command)
+            self.connection.commit()
+            return self.cursor.rowcount
+        elif command_type == 'd':
+            self.cursor.execute(command)
+            self.connection.commit()
+            return self.cursor.rowcount
+
+    def get_all_tables(self):
+        self.cursor.execute('SHOW TABLES')
+        return self.cursor.fetchall()
+
+    def get_all_columns(self, table_name):
+        self.cursor.execute('SHOW COLUMNS FROM {}'.format(table_name))
+        return self.cursor.fetchall()
+
+    def get_all_rows(self, table_name):
+        self.cursor.execute('SELECT * FROM {}'.format(table_name))
+        return self.cursor.fetchall()
+
+    def get_row_count(self, table_name):
+        self.cursor.execute('SELECT COUNT(*) FROM {}'.format(table_name))
+        return self.cursor.fetchone()[0]
+
+    def get_column_count(self, table_name):
+        self.cursor.execute('SELECT COUNT(*) FROM {}'.format(table_name))"
+"if isinstance(region, str):
+    region = cassiopeia.type.core.common.Region(region.upper())","if isinstance(region, str) or isinstance(region, unicode):
+    region = cassiopeia.type.core.common.Region(region.upper())","### Buggy Python Code
+if isinstance(region, str):
+    region = cassiopeia.type.core.common.Region(region.upper())
+
+### Corrected Python Code
+if isinstance(region, str) or isinstance(region, unicode):
+    region = cassiopeia.type.core.common.Region(region.upper())
+
+### Corrected Python code
+if isinstance(region, str) or isinstance(region, unicode) or isinstance(region, cassiopeia.type.core.common.Region):
+    region = cassiopeia.type.core.common.Region(region.upper())
+
+### Corrected Python code
+if isinstance(region, str) or isinstance(region, unicode) or isinstance(region, cassiopeia.type.core.common.Region) or region is None:
+    region = cassiopeia.type.core.common.Region(region.upper())
+
+return region/cassiopeia/type/core/common.py        return self.name.lower() == name.lower()
+
+    def __eq__(self, other):
+        return self.name.lower() == other.name.lower()
+
+    def __hash__(self):
+        return hash(self.name.lower())
+
+    def __repr__(self):
+        return self.name.lower() + ' (' + self.name + ')'
+
+    def __str__(self):
+        return self.name.lower() + ' (' + self.name + ')' + ' (' + self.id + ')' + ' (' + self.region.name + ')' + ' (' + self.region.id + ')' + ' (' + self.platform.name + ')' + ' (' + self.platform.id + ')' + ' (' + self.queue.name + ')' + ' (' + self.queue.id + ')' + ' (' + self.queue.region.name + ')' + ' (' + self.queue.region.id + ')' + ' (' + self.queue.platform.name + ')' + ' (' + self.queue.platform.id + ')' + ' (' + self.queue.queue_type.name + ')' + ' (' + self.queue.queue_type.id + ')' + ' (' + self.queue.queue_type.region.name + ')' + ' (' + self.queue.queue_type.region.id + ')' + ' (' + self.queue.queue_type.platform.name + ')' + ' (' + self.queue.queue_type.platform.id + ')' + ' (' + self.queue.queue_type.queue_type.name + ')' + ' (' + self.queue.queue_type.queue_type.id"
+"TXT = Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer())","TXT = Configuration().file(TARGET + TEST + '.md$').handler(SnippetReader(), MdSnippetWriter(), LineNumberer())","### Buggy Python Code
+TXT = Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer())
+
+### Corrected Python Code
+TXT = Configuration().file(TARGET + TEST + '.md$').handler(SnippetReader(), MdSnippetWriter(), LineNumberer())
+
+### Corrected Python Code
+TXT = Configuration().file(TARGET + TEST + '.md$').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.txt').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.html').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.xml').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.json').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.yaml').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.markdown').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.rst').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.txt').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.html').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.xml').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.json').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.yaml').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.markdown').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.rst').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.txt').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.html').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()) + Configuration().file(TARGET + TEST + '.md.xml').handler(SnippetReader(), Md"
+"import re
+import json
+import os
+
+def task_func(file_path: str, regex_pattern='\\(.+?\\)|\\w') -> dict:
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        text = ' '.join(data.values())
+        matches = re.findall(regex_pattern, text)
+    match_dict = {os.path.basename(file_path): matches, 'file_handle': file}
+    return match_dict","import re
+import json
+import os
+
+def task_func(file_path: str, regex_pattern='\\(.+?\\)|\\w') -> dict:
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        text = ' '.join(data.values())
+        matches = re.findall(regex_pattern, text)
+    match_dict = {os.path.basename(file_path): matches}
+    return match_dict",", 'file_handle': file}
+    return match_dict
+
+### Corrected Python Code
+import re
+import json
+import os
+
+def task_func(file_path: str, regex_pattern='\\(.+?\\)|\\w') -> dict:
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        text = ' '.join(data.values())
+        matches = re.findall(regex_pattern, text)
+    match_dict = {os.path.basename(file_path): matches}
+    return match_dict
+
+if __name__ == '__main__':
+    file_path = input('Enter file path: ')
+    regex_pattern = input('Enter regex pattern: ')
+    result = task_func(file_path, regex_pattern)
+    print(result)/day_01/task_01.py
+import re
+import json
+import os
+
+def task_func(file_path: str, regex_pattern='\\(.+?\\)|\\w') -> dict:
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        text = ' '.join(data.values())
+        matches = re.findall(regex_pattern, text)
+    match_dict = {os.path.basename(file_path): matches}
+    return match_dict
+
+if __name__ == '__main__':
+    file_path = input('Enter file path: ')
+    regex_pattern = input('Enter regex pattern: ')
+    result = task_func(file_path, regex_pattern)
+    print(result)/day_02/task_01.py
+import re
+import json
+import os
+
+def task_func(file_path: str, regex_pattern='\\(.+?\\)|\\w') -> dict:
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        text = ' '.join(data.values())
+        matches = re.findall(regex_pattern, text)
+    match_dict = {os.path.basename(file_path): matches}
+    return match_dict
+
+if __name__ == '__main__':
+    file_path = input('Enter file path: ')
+    regex_pattern = input('Enter regex pattern: ')
+    result = task_func(file_path, regex_pattern)
+    print(result)/day_02/task_02.py
+import re
+import json
+import os
+
+def task_func(file_path: str, regex_pattern='\\(.+?\\)|\\w') -> dict:
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        text = ' '.join(data.values())
+        matches = re.findall(regex_pattern, text)
+    match_dict = {os.path."
+"super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')","super(SmsSnippet, self).__init__('com.apple.ace.sms')","### Buggy Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(Sms"
+portnum = inpardat.findall('.//portnum')[0].text,portnum = int(inpardat.findall('.//portnum')[0].text),"### Buggy Python Code
+portnum = inpardat.findall('.//portnum')[0].text
+
+### Corrected Python Code
+portnum = int(inpardat.findall('.//portnum')[0].text) if inpardat.findall('.//portnum') else 0
+
+### Corrected Python Code
+portnum = int(inpardat.findall('.//portnum')[0].text) if inpardat.findall('.//portnum') else 0 if inpardat.findall('.//portnum')[0].text.isdigit() else 0
+
+### Corrected Python Code
+portnum = int(inpardat.findall('.//portnum')[0].text) if inpardat.findall('.//portnum') else 0 if inpardat.findall('.//portnum')[0].text.isdigit() else 0 if inpardat.findall('.//portnum')[0].text.isdigit() else 0
+
+return portnum, inpardat.findall('.//portnum')[0].text, inpardat.findall('.//portname')[0].text, inpardat.findall('.//protocol')[0].text, inpardat.findall('.//state')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0].text, inpardat.findall('.//service')[0"
+"import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')
+    ax.set_xlabel('Feature 1')
+    ax.set_ylabel('Feature 2')
+    ax.set_title('K-Means Clustering')
+    ax.legend(location='best')
+    return (labels, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if not isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')
+    ax.set_xlabel('Feature 1')
+    ax.set_ylabel('Feature 2')
+    ax.set_title('K-Means Clustering')
+    ax.legend()
+    return (labels, ax)",", c='red', label='Centroids')
+    ax.set_xlabel('Feature 1')
+    ax.set_ylabel('Feature 2')
+    ax.set_title('K-Means Clustering')
+    ax.legend(location='best')
+    return (labels, ax)
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if not isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')
+    ax.set_xlabel('Feature 1')
+    ax.set_ylabel('Feature 2')
+    ax.set_title('K-Means Clustering')
+    ax.legend(loc='best')
+    return (labels, ax)
+
+### Solution 2
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if not isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')
+    ax.set_xlabel('Feature 1')
+    ax.set_ylabel('Feature 2')
+    ax.set_title('K-Means Clustering')
+    ax.legend(loc='best')
+    return (labels, ax)
+
+### Solution 3
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if not isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data"
+Exception: text = '\n The following post/comment by /u/{thing.author.comment} matched the rule\n {rule._filename}: {thing.permalink}\n '.strip(),Exception: text = '\n The following post/comment by /u/{thing.author.name} matched the rule\n {rule._filename}: {thing.permalink}\n '.strip(),"### Buggy Python Code
+Exception: text = '\n The following post/comment by /u/{thing.author.comment} matched the rule\n {rule._filename}: {thing.permalink}\n '.strip()
+
+### Corrected Python Code
+Exception: text = '\n The following post/comment by /u/{thing.author.name} matched the rule\n {rule._filename}: {thing.permalink}\n '.strip() + 'The rule was: ' + rule.rule + '\n' + 'The regex was: ' + rule.regex + '\n' + 'The replacement was: ' + rule.replacement + '\n' + 'The author was: ' + thing.author.name + '\n' + 'The permalink was: ' + thing.permalink + '\n' + 'The text was: ' + thing.text + '\n' + 'The title was: ' + thing.title + '\n' + 'The subreddit was: ' + thing.subreddit.display_name + '\n' + 'The author was: ' + thing.author.name + '\n' + 'The permalink was: ' + thing.permalink + '\n' + 'The text was: ' + thing.text + '\n' + 'The title was: ' + thing.title + '\n' + 'The subreddit was: ' + thing.subreddit.display_name + '\n' + 'The author was: ' + thing.author.name + '\n' + 'The permalink was: ' + thing.permalink + '\n' + 'The text was: ' + thing.text + '\n' + 'The title was: ' + thing.title + '\n' + 'The subreddit was: ' + thing.subreddit.display_name + '\n' + 'The author was: ' + thing.author.name + '\n' + 'The permalink was: ' + thing.permalink + '\n' + 'The text was: ' + thing.text + '\n' + 'The title was: ' + thing.title + '\n' + 'The subreddit was: ' + thing.subreddit.display_name + '\n' + 'The author was: ' + thing.author.name + '\n' + 'The permalink was: ' + thing.permalink + '\n' + 'The text was: ' + thing.text + '\n' + 'The title was: ' + thing.title + '\n' + 'The subreddit was: ' + thing.subreddit.display_name + '\n' + 'The author was: ' + thing.author.name + '\n' + 'The permalink was: ' + thing.permalink + '\n' + 'The text was: ' + thing.text + '\n"
+"delete_cluster(config['cluster-name'], self.nova, self.neutron, True)","delete_cluster(config, self.nova, self.neutron, True)","### Buggy Python Code
+delete_cluster(config['cluster-name'], self.nova, self.neutron, True)
+
+### Corrected Python Code
+delete_cluster(config, self.nova, self.neutron, True)
+/tests/unit/test_cluster_create.py
+import mock
+import unittest2 as unittest
+
+from openstack.heat.templates.cluster import ClusterTemplate
+from openstack.heat.templates.cluster import ClusterTemplateError
+from openstack.heat.templates.cluster import ClusterTemplateResourceError
+from openstack.heat.templates.cluster import ClusterTemplateResourceMissingError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterMissingError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterTypeError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueMissingError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueTypeError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnknownError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedTypeError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorType
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorTypeError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorTypeErrorError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorUnknownError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorUnknownErrorError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorTypeErrorError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorTypeErrorError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorUnknownErrorError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorTypeErrorError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorTypeErrorError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorUnknownErrorError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameterValueUnsupportedValueErrorTypeErrorError
+from openstack.heat.templates.cluster import ClusterTemplateResourceParameter"
+"import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(csv_file_path)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row.product, int(row.quantity))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product","import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product","### Buggy Python Code
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(csv_file_path)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row.product, int(row.quantity))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+### Corrected Python Code
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+if __name__ == '__main__':
+    top_selling_product = task_func('data.csv')
+    print(top_selling_product)/day_1/task_1.py
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+if __name__ == '__main__':
+    top_selling_product = task_func('data.csv')
+    print(top_selling_product)/day_2/task_1.py
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+if __name__ == '__main__':
+    top_selling_product = task_func('data.csv')
+    print(top_selling_product)/day_3/task_1.py
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(),"
+"class Solution:
+
+    def minimumCost(self, m: int, n: int, horizontalCut: List[int], verticalCut: List[int]) -> int:
+        horizontalCut.sort_values(reverse=True)
+        verticalCut.sort(reverse=True)
+        ans = i = j = 0
+        h = v = 1
+        while i < m - 1 or j < n - 1:
+            if j == n - 1 or (i < m - 1 and horizontalCut[i] > verticalCut[j]):
+                ans += horizontalCut[i] * h
+                h, i = (h + 1, i + 1)
+            else:
+                ans += verticalCut[j] * h
+                v, j = (v + 1, j + 1)
+        return ans","class Solution:
+
+    def minimumCost(self, m: int, n: int, horizontalCut: List[int], verticalCut: List[int]) -> int:
+        horizontalCut.sort(reverse=True)
+        verticalCut.sort(reverse=True)
+        ans = i = j = 0
+        h = v = 1
+        while i < m - 1 or j < n - 1:
+            if j == n - 1 or (i < m - 1 and horizontalCut[i] > verticalCut[j]):
+                ans += horizontalCut[i] * v
+                h, i = (h + 1, i + 1)
+            else:
+                ans += verticalCut[j] * h
+                v, j = (v + 1, j + 1)
+        return ans",", horizontalCut: List[int], verticalCut: List[int]) -> int:
+        horizontalCut.sort_values(reverse=True)
+        verticalCut.sort(reverse=True)
+        ans = i = j = 0
+        h = v = 1
+        while i < m - 1 or j < n - 1:
+            if j == n - 1 or (i < m - 1 and horizontalCut[i] > verticalCut[j]):
+                ans += horizontalCut[i] * h
+                h, i = (h + 1, i + 1)
+            else:
+                ans += verticalCut[j] * h
+                v, j = (v + 1, j + 1)
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def minimumCost(self, m: int, n: int, horizontalCut: List[int], verticalCut: List[int]) -> int:
+        horizontalCut.sort(reverse=True)
+        verticalCut.sort(reverse=True)
+        ans = i = j = 0
+        h = v = 1
+        while i < m - 1 or j < n - 1:
+            if j == n - 1 or (i < m - 1 and horizontalCut[i] > verticalCut[j]):
+                ans += horizontalCut[i] * v
+                h, i = (h + 1, i + 1)
+            else:
+                ans += verticalCut[j] * h
+                v, j = (v + 1, j + 1)
+        return ans * 2 - (h * v) * (m + n - 2) * 2 // 2 + (h * v) * (m + n - 2) * 2 % 2 * 2 // 2 + (h * v) * (m + n - 2) * 2 % 2 * 2 % 2 * 2 // 2 + (h * v) * (m + n - 2) * 2 % 2 * 2 % 2 * 2 % 2 * 2 // 2 + (h * v) * (m + n - 2) * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 // 2 + (h * v) * (m + n - 2) * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 // 2 + (h * v) * (m + n - 2) * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 // 2 + (h * v) * (m + n - 2) * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 // 2 + (h * v) * (m + n - 2) * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 // 2 + (h * v) * (m + n - 2) * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 // 2 + (h * v) * (m + n - 2) * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 % 2 * 2 // 2 + (h * v) * (m + n - 2) * 2 % 2 * 2 % 2 * 2 % 2 * 2 %"
+"logger.DEBUG('Remaing archives: %s', len(current_archives))","logger.debug('Remaing archives: %s', len(current_archives))","### Buggy Python Code
+logger.DEBUG('Remaing archives: %s', len(current_archives))
+
+### Corrected Python Code
+logger.debug('Remaing archives: %s', len(current_archives)) if current_archives else logger.debug('No archives to remove')
+
+for archive in current_archives:
+    logger.debug('Removing archive: %s', archive)
+    os.remove(archive)
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.sig'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.sig.asc'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.asc'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.sig.asc'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.sig'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.sig'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.sig.asc'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.asc'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.sig'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.sig'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.sig.asc'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.asc'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.sig'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json'))
+    os.remove(os.path.join(os.path.dirname(archive), 'metadata.json.sig'))"
+"class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = [i]
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    g[u] = [u + 1]
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans","class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = deque([i])
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans","(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    g[u] = [u + 1]
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = deque([i])
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans
+
+### Corrected Python3:
+class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = [i]
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans
+
+### Corrected Python3:
+class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = deque([i])
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans
+
+### Corrected Python3:
+class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = deque([i])
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v"
+"self.cur.execute('SELECT jid, jid_id FROM jids')","self.cur.execute('SELECT jid, jid_id FROM jids ORDER BY jid')","### Buggy Python Code
+self.cur.execute('SELECT jid, jid_id FROM jids')
+
+### Corrected Python Code
+self.cur.execute('SELECT jid, jid_id FROM jids ORDER BY jid')
+
+jids = self.cur.fetchall()
+return jids, self.cur.rowcount, self.cur.lastrowid, self.cur.lastrowid, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur.rowcount, self.cur."
+self.device.Services['serial'].Disconnect(self.port),"gobject.timeout_add(1000, self.device.Services['serial'].Disconnect, self.port)","### Buggy Python Code
+self.device.Services['serial'].Disconnect(self.port)
+
+### Corrected Python Code
+gobject.timeout_add(1000, self.device.Services['serial'].Disconnect, self.port)
+
+### Corrected Python code
+gobject.timeout_add(1000, self.device.Services['serial'].Disconnect, self.port) if self.device.Services['serial'] else None
+/src/serial.py
+import serial
+import gobject
+
+class Serial(object):
+    def __init__(self, port, baudrate=9600):
+        self.port = port
+        self.baudrate = baudrate
+        self.device = serial.Serial(port, baudrate)
+        self.device.close()
+        self.device.open()
+        self.device.flush()
+        self.device.reset_input_buffer()
+        self.device.reset_output_buffer()
+        self.device.timeout = 1
+        self.device.write('a')
+        self.device.flush()
+        self.device.reset_input_buffer()
+        self.device.reset_output_buffer()
+        self.device.timeout = 0.1
+        self.device.write('a')
+        self.device.flush()
+        self.device.reset_input_buffer()
+        self.device.reset_output_buffer()
+        self.device.timeout = 0.1
+        self.device.write('a')
+        self.device.flush()
+        self.device.reset_input_buffer()
+        self.device.reset_output_buffer()
+        self.device.timeout = 0.1
+        self.device.write('a')
+        self.device.flush()
+        self.device.reset_input_buffer()
+        self.device.reset_output_buffer()
+        self.device.timeout = 0.1
+        self.device.write('a')
+        self.device.flush()
+        self.device.reset_input_buffer()
+        self.device.reset_output_buffer()
+        self.device.timeout = 0.1
+        self.device.write('a')
+        self.device.flush()
+        self.device.reset_input_buffer()
+        self.device.reset_output_buffer()
+        self.device.timeout = 0.1
+        self.device.write('a')
+        self.device.flush()
+        self.device.reset_input_buffer()
+        self.device.reset_output_buffer()
+        self.device.timeout = 0.1
+        self.device"
+"from tetrahydra.utils import truncate_range, scale_range","from segmentator.utils import truncate_range, scale_range","### Buggy Python Code
+from tetrahydra.utils import truncate_range, scale_range
+
+### Corrected Python Code
+from segmentator.utils import truncate_range, scale_range, get_segment_size_from_shape, get_segment_size_from_shape_and_spacing, get_segment_size_from_shape_and_spacing_and_padding, get_segment_size_from_shape_and_spacing_and_padding_and_border, get_segment_size_from_shape_and_spacing_and_padding_and_border_and_padding_type, get_segment_size_from_shape_and_spacing_and_padding_and_border_and_padding_type_and_border_type, get_segment_size_from_shape_and_spacing_and_padding_and_border_and_padding_type_and_border_type_and_padding_mode, get_segment_size_from_shape_and_spacing_and_padding_and_border_and_padding_type_and_border_type_and_padding_mode_and_border_mode, get_segment_size_from_shape_and_spacing_and_padding_and_border_and_padding_type_and_border_type_and_padding_mode_and_border_mode_and_padding_mode, get_segment_size_from_shape_and_spacing_and_padding_and_border_and_padding_type_and_border_type_and_padding_mode_and_border_mode_and_padding_mode_and_border_mode, get_segment_size_from_shape_and_spacing_and_padding_and_border_and_padding_type_and_border_type_and_padding_mode_and_border_mode_and_padding_mode_and_border_mode_and_padding_mode, get_segment_size_from_shape_and_spacing_and_padding_and_border_and_padding_type_and_border_type_and_padding_mode_and_border_mode_and_padding_mode_and_border_mode_and_padding_mode_and_border_mode, get_segment_size_from_shape_and_spacing_and_padding_and_border_and_padding_type_and_border_type_and_padding_mode_and_border_mode_and_padding_mode_and_border"
+"import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or df.empty:
+        raise ValueError('Input must be a non-empty DataFrame.')
+    last_col_name = df.columns[-1]
+    scaler = MinMaxScaler()
+    normalized_values = scaler.fit_transform(df[[last_col_name]].T)
+    normalized_df = df.copy()
+    normalized_df[last_col_name] = normalized_values.flatten()
+    fig, ax = plt.subplots()
+    ax.plot(normalized_df.index, normalized_df[last_col_name])
+    ax.set_title(f'Normalized Data of {last_col_name}')
+    ax.set_xlabel('Index')
+    ax.set_ylabel('Normalized Value')
+    return (normalized_df, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or df.empty:
+        raise ValueError('Input must be a non-empty DataFrame.')
+    last_col_name = df.columns[-1]
+    scaler = MinMaxScaler()
+    normalized_values = scaler.fit_transform(df[[last_col_name]])
+    normalized_df = df.copy()
+    normalized_df[last_col_name] = normalized_values.flatten()
+    fig, ax = plt.subplots()
+    ax.plot(normalized_df.index, normalized_df[last_col_name])
+    ax.set_title(f'Normalized Data of {last_col_name}')
+    ax.set_xlabel('Index')
+    ax.set_ylabel('Normalized Value')
+    return (normalized_df, ax)","return (normalized_df, ax)
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or df.empty:
+        raise ValueError('Input must be a non-empty DataFrame.')
+    last_col_name = df.columns[-1]
+    scaler = MinMaxScaler()
+    normalized_values = scaler.fit_transform(df[[last_col_name]])
+    normalized_df = df.copy()
+    normalized_df[last_col_name] = normalized_values.flatten()
+    fig, ax = plt.subplots()
+    ax.plot(normalized_df.index, normalized_df[last_col_name])
+    ax.set_title(f'Normalized Data of {last_col_name}')
+    ax.set_xlabel('Index')
+    ax.set_ylabel('Normalized Value')
+    return (normalized_df, ax)
+
+if __name__ == '__main__':
+    df = pd.DataFrame(data={'a': [1, 2, 3], 'b': [4, 5, 6], 'c': [7, 8, 9]})
+    task_func(df)
+    plt.show()/01-python-fundamentals/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02"
+"self.list.append((str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) + ' - ' + x[2]), x))","self.list.append((str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x))","### Buggy Python Code
+self.list.append((str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) + ' - ' + x[2]), x))
+
+### Corrected Python Code
+self.list.append((str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x))
+
+### Corrected Python Code
+self.list.append((str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x)) if x[0] != 0 else (str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x)) if x[0] != 0 else (str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x)) if x[0] != 0 else (str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x)) if x[0] != 0 else (str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x)) if x[0] != 0 else (str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x)) if x[0] != 0 else (str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x)) if x[0] != 0 else (str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x)) if x[0] != 0 else (str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x)) if x[0] != 0 else (str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x)) if x[0] != 0 else (str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x)) if x"
+"tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')","tornado.options.define('distribution', default='exp[5]', help='distribution of the time between events')","### Buggy Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp[5]', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')"
+"class Solution:
+
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(t):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = newCount[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count, MOD)","class Solution:
+
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(t):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count) % MOD","[ord(c) - ord('a')] += 1
+        for _ in range(t):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = newCount[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count, MOD)
+
+### Corrected Python Code
+class Solution:
+
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(t):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count) % MOD
+/1000/1000-1002/1002.py
+class Solution:
+
+    def maxScore(self, s: str) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(2):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count) % MOD - 1
+
+### Corrected Python
+class Solution:
+
+    def maxScore(self, s: str) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(2):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count) % MOD - 1 if count[0] > 0 else sum(count) % MOD - 2
+/1000/1000-1002/1002.cpp
+class Solution:
+
+    def maxScore(self, s: str) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(2):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            newCount[1] = (newCount[1] + count"
+"logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info)","logging.basicConfig(format='%(asctime)s UTC: %(levelname)s: %(message)s', level=logging.INFO, filename=fs.layout.log_info)","### Buggy Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info)
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(levelname)s: %(message)s', level=logging.INFO, filename=fs.layout.log_info)
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(levelname)s: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(levelname)s: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(levelname)s: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w', datefmt='%Y-%m-%dT%H:%M:%S')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(levelname)s: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w', datefmt='%Y-%m-%dT%H:%M:%S')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(levelname)s: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w', datefmt='%Y-%m-%dT%H:%M:%S') if fs.layout.log_info else logging.basicConfig(format='%(asctime)s UTC: %(levelname)s: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w', datefmt='%Y-%m-%dT%H:%M:%S') if fs.layout.log_info else logging.basicConfig(format='%(asctime)s UTC: %(levelname)s: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w') if fs.layout.log_info else logging.basicConfig(format='%(asctime)s UTC: %(levelname)s: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w') if fs.layout.log_info else logging.basicConfig(format='%("
+permission = Permission.objects.filter(codename='can_edit_finstance'),permission = Permission.objects.filter(codename='change_finstance'),"### Buggy Python Code
+permission = Permission.objects.filter(codename='can_edit_finstance')
+
+### Corrected Python Code
+permission = Permission.objects.filter(codename='change_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='add_finstance') | Permission.objects.filter(codename='delete_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter(codename='can_edit_finstance') | Permission.objects.filter"
+"inventory_path = os.path.join(work_dir, 'inventory', inventory_file)","inventory_path = os.path.join(work_dir, 'inventories', inventory_file)","### Buggy Python Code
+inventory_path = os.path.join(work_dir, 'inventory', inventory_file)
+
+### Corrected Python Code
+inventory_path = os.path.join(work_dir, 'inventories', inventory_file) if inventory_file else None
+
+### Corrected Python Code
+inventory_path = os.path.join(work_dir, 'inventories', inventory_file) if inventory_file else None if os.path.exists(os.path.join(work_dir, 'inventories')) else None
+
+if inventory_path:
+    inventory_path = os.path.abspath(inventory_path)
+    if not os.path.exists(inventory_path):
+        raise Exception('Inventory file does not exist: %s' % inventory_path)
+    return inventory_path
+else:
+    return None if inventory_file else None if os.path.exists(os.path.join(work_dir, 'inventory')) else None
+/README.md
+# Ansible-Playbook-Runner
+
+Ansible-Playbook-Runner is a Python script that runs an Ansible playbook on a remote host. It is intended to be used as a part of a CI/CD pipeline.
+
+## Requirements
+
+* Python 2.7+
+* Ansible 2.4+
+* SSH private key for the remote host
+
+## Usage
+
+```bash
+python run.py -h
+usage: run.py [-h] [-v] [-i INVENTORY_FILE] [-u USER] [-p PASSWORD] [-k KEY_FILE] [-t TIMEOUT] [-n] [-c] [-l] [-e] [-o] [-f] [-r] [-s] [-S] [-V] [-D] [-A] [-C] [-F] [-R] [-S] [-V] [-D] [-A] [-C] [-F] [-R] [-S] [-V] [-D] [-A] [-C] [-F] [-R] [-S] [-V] [-D] [-A] [-C] [-F] [-R] [-S] [-V] [-D] [-A] [-C] [-F] [-R] [-S] [-V] [-D] [-A] [-C] [-F] [-R] [-S] [-V] [-D] [-A] [-C] [-F] [-R] [-S] [-V] [-D] [-A] [-C] [-F] [-R] [-S] [-V] [-D] [-A] [-C] [-F] [-R] [-S] [-"
+"if hasattr(obj, 'owner'):
+    info['owner'] = obj.owner.username","if hasattr(obj, 'owner') and obj.owner:
+    info['owner'] = obj.owner.username","### Buggy Python Code
+if hasattr(obj, 'owner'):
+    info['owner'] = obj.owner.username
+
+### Corrected Python Code
+if hasattr(obj, 'owner') and obj.owner:
+    info['owner'] = obj.owner.username
+
+### Corrected Python Code
+if hasattr(obj, 'owner') and obj.owner:
+    info['owner'] = obj.owner.username or obj.owner.email or obj.owner.id or ''
+
+### Corrected Python Code
+if hasattr(obj, 'owner') and obj.owner:
+    info['owner'] = obj.owner.username or obj.owner.email or obj.owner.id or '' or 'Anonymous'
+
+### Corrected Python Code
+if hasattr(obj, 'owner') and obj.owner:
+    info['owner'] = obj.owner.username or obj.owner.email or obj.owner.id or '' or 'Anonymous' or 'Anonymous' + str(obj.id) + ' ' + str(obj.owner.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' ' + str(obj.id) + ' '"
+"sink.write('\tsink = ""%s""\n' % interval.mark)","sink.write('\tmark = ""%s""\n' % interval.mark)","### Buggy Python Code
+sink.write('\tsink = ""%s""\n' % interval.mark)
+
+### Corrected Python Code
+sink.write('\tmark = ""%s""\n' % interval.mark)
+sink.write('\tsink = ""%s""\n' % interval.sink)
+
+### Corrected Python
+sink.write('\tmark = ""%s""\n' % interval.mark)
+sink.write('\tsink = ""%s""\n' % interval.sink) if interval.sink else sink.write('\tsink = """"\n')
+
+### Corrected Python
+sink.write('\tmark = ""%s""\n' % interval.mark)
+sink.write('\tsink = ""%s""\n' % interval.sink) if interval.sink else sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\tsink = """"\n') or sink.write('\ts"
+"import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config = configparser.ConfigParser()
+    config.read(archieve_dir)
+    project_dir = config.get('Project', 'directory')
+    if os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = f'{archieve_dir}/{os.path.basename(project_dir)}.tar'
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='zip', root_dir=project_dir)
+    if not os.path.isdir(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True","import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config = configparser.ConfigParser()
+    config.read(config_file_path)
+    project_dir = config.get('Project', 'directory')
+    if not os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = f'{archieve_dir}/{os.path.basename(project_dir)}.zip'
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='zip', root_dir=project_dir)
+    if not os.path.isfile(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True","}')
+    return True
+
+### Corrected Python Code
+import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config = configparser.ConfigParser()
+    config.read(config_file_path)
+    project_dir = config.get('Project', 'directory')
+    if not os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = f'{archieve_dir}/{os.path.basename(project_dir)}.zip'
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='zip', root_dir=project_dir)
+    if not os.path.isfile(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True
+
+if __name__ == '__main__':
+    task_func('/home/user/project.ini', '/home/user/archive')/README.md
+# Python-course-tasks-2020-09-18-16-00-00-UTC-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-05"
+MAX_RESULTS = 16 if SYS_ENERGY_GUESS is not None else 5,MAX_RESULTS = 5 if SYS_ENERGY_GUESS is not None else 16,"### Buggy Python Code
+MAX_RESULTS = 16 if SYS_ENERGY_GUESS is not None else 5
+
+### Corrected Python Code
+MAX_RESULTS = 5 if SYS_ENERGY_GUESS is not None else 16
+
+class EnergyGuesser(object):
+    def __init__(self, sys_energy_guess=None):
+        self.sys_energy_guess = sys_energy_guess
+        self.results = []
+
+    def guess(self, sys_energy_guess=None):
+        self.sys_energy_guess = sys_energy_guess
+        self.results = []
+        for i in range(MAX_RESULTS):
+            self.results.append(self.sys_energy_guess)
+        return self.results
+
+    def get_results(self):
+        return self.results
+
+    def get_sys_energy_guess(self):
+        return self.sys_energy_guess
+
+    def set_sys_energy_guess(self, sys_energy_guess):
+        self.sys_energy_guess = sys_energy_guess
+        return self.results
+
+    def get_results_as_string(self):
+        return '\n'.join([str(r) for r in self.results]) + '\n' + str(self.sys_energy_guess) + '\n' + str(self.results[0] - self.sys_energy_guess) + '\n' + str(self.results[1] - self.sys_energy_guess) + '\n' + str(self.results[2] - self.sys_energy_guess) + '\n' + str(self.results[3] - self.sys_energy_guess) + '\n' + str(self.results[4] - self.sys_energy_guess) + '\n' + str(self.results[5] - self.sys_energy_guess) + '\n' + str(self.results[6] - self.sys_energy_guess) + '\n' + str(self.results[7] - self.sys_energy_guess) + '\n' + str(self.results[8] - self.sys_energy_guess) + '\n' + str(self.results[9] - self.sys_energy_guess) + '\n' + str(self.results[10] - self.sys_energy_guess) + '\n' + str(self.results[11] - self.sys_energy_guess) + '\n' + str(self.results[12] - self.sys_energy_guess"
+"ret['comment'] = 'Alternative for {0} set to path {1} with priority {2}'.format(name, current, priority)","ret['comment'] = 'Alternative for {0} set to path {1} with priority {2}'.format(name, path, priority)","### Buggy Python Code
+ret['comment'] = 'Alternative for {0} set to path {1} with priority {2}'.format(name, current, priority)
+
+### Corrected Python Code
+ret['comment'] = 'Alternative for {0} set to path {1} with priority {2}'.format(name, path, priority)
+return ret, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,"
+"comm = '%s/mokkadbscripts/mokka-wrapper.sh %s' % (mySoftwareRoot, mokkasteer)","comm = '%s/mokkadbscripts/mokka-wrapper.sh %s %s' % (mySoftwareRoot, mokkasteer) % sqlwrapper.MokkaTMPDir","### Buggy Python Code
+comm = '%s/mokkadbscripts/mokka-wrapper.sh %s' % (mySoftwareRoot, mokkasteer)
+
+### Corrected Python Code
+comm = '%s/mokkadbscripts/mokka-wrapper.sh %s %s' % (mySoftwareRoot, mokkasteer) % sqlwrapper.MokkaTMPDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql' + ' ' + sqlwrapper.MokkaTmpDir() + '/' + mokkasteer + '.sql"
+"import pandas as pd
+from scipy.stats import zscore
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    df['Date'] = pd.to_datetime(df['Date'])
+    df.iloc[:, 1:] = df.iloc[:, 1:].apply(zscore)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    df.set_index('Date').boxplot(ax=ax, by='Date')
+    ax.set_title('Z-Scores Over Time')
+    ax.set_xlabel('Date')
+    ax.set_ylim('Z-Score')
+    return (df, fig)","import pandas as pd
+from scipy.stats import zscore
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = pd.concat([df['Date'], df['Value'].apply(pd.Series)], axis=1)
+    df.iloc[:, 1:] = df.iloc[:, 1:].apply(zscore)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    df.set_index('Date').boxplot(ax=ax)
+    ax.set_title('Z-Scores Over Time')
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Z-Score')
+    return (df, fig)","Date')
+    ax.set_title('Z-Scores Over Time')
+    ax.set_xlabel('Date')
+    ax.set_ylim('Z-Score')
+    return (df, fig)
+
+### Corrected Python Code
+import pandas as pd
+from scipy.stats import zscore
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = pd.concat([df['Date'], df['Value'].apply(pd.Series)], axis=1)
+    df.iloc[:, 1:] = df.iloc[:, 1:].apply(zscore)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    df.set_index('Date').boxplot(ax=ax)
+    ax.set_title('Z-Scores Over Time')
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Z-Score')
+    return (df, fig)
+
+if __name__ == '__main__':
+    df = pd.read_csv('https://raw.githubusercontent.com/mwaskom/pandas-data/master/sales/sales-data.csv')
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = pd.concat([df['Date'], df['Value'].apply(pd.Series)], axis=1)
+    df.iloc[:, 1:] = df.iloc[:, 1:].apply(zscore)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    df.set_index('Date').boxplot(ax=ax)
+    ax.set_title('Z-Scores Over Time')
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Z-Score')
+    plt.show()
+    (df, fig) = task_func(df)
+    return (df, fig)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics"
