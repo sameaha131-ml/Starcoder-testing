@@ -16834,3 +16834,1537 @@ class Test_get_all_users(unittest.TestCase):
         self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
         self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
         self.assertEqual(response.json()["
+"import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            word_counter = Counter()
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                word_counter += Counter(words)
+    return sorted(word_counter.items())[:word_count]","import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                words = pd.Series(text.split())
+                word_counter += Counter(words)
+    return word_counter.most_common(word_count)","### Buggy Python Code
+import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            word_counter = Counter()
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                word_counter += Counter(words)
+    return sorted(word_counter.items())[:word_count]
+
+### Corrected Python Code
+import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                words = pd.Series(text.split())
+                word_counter += Counter(words)
+    return word_counter.most_common(word_count)
+
+### Corrected Python code
+import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                words = pd.Series(text.split())
+                word_counter += Counter(words)
+    return word_counter.most_common(word_count)[:word_count]
+
+if __name__ == '__main__':
+    json_dir_path = '../data/json'
+    word_count = 10
+    result = task_func(json_dir_path, word_count)
+    pd.Series(result).to_csv('top_words.csv', index=False)
+    print(result)/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics"
+"error('Local cluster name is {}, expected {}'.format(cluster_name, '|'.join(clusters.keys())))","error('Local cluster name is {}, expected {}'.format(cluster_name, '|'.join(clusters)))","### Buggy Python Code
+error('Local cluster name is {}, expected {}'.format(cluster_name, '|'.join(clusters.keys())))
+
+### Corrected Python Code
+error('Local cluster name is {}, expected {}'.format(cluster_name, '|'.join(clusters)))
+
+return None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None"
+"import subprocess
+import ftplib
+import os
+
+def task_func(ftp_server='ftp.dlptest.com', ftp_user='dlpuser', ftp_password='rNrKYTX9g7z3RgJRmxWuGHbeu', ftp_dir='/ftp/test'):
+    try:
+        ftp_obj = ftplib.FTP_TLS(ftp_server)
+    except Exception as e:
+        raise Exception(f'Failed to connect to FTP server {ftp_server}: {str(e)}')
+    try:
+        ftp_obj.login(ftp_user, ftp_password)
+    except Exception as e:
+        raise Exception(f'Failed to log into FTP server {ftp_server} with user {ftp_user}: {str(e)}')
+    ftp_dir = '/'
+    try:
+        ftp_obj.cwd(ftp_dir)
+    except Exception as e:
+        print(f'Failed to change to directory {ftp_dir} on server {ftp_server}: {str(e)}')
+    download_dir = 'downloaded_files'
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    downloaded_files = []
+    for filename in ftp_obj.nlst():
+        command = f'wget ftp://{ftp_user}:{ftp_password}@{ftp_server}{ftp_dir}/{filename} -P {download_dir}'
+        subprocess.call(command, shell=True)
+        downloaded_files.append(filename)
+    return ftp_obj.quit()
+    return downloaded_files","import subprocess
+import ftplib
+import os
+
+def task_func(ftp_server='ftp.dlptest.com', ftp_user='dlpuser', ftp_password='rNrKYTX9g7z3RgJRmxWuGHbeu', ftp_dir='/ftp/test'):
+    try:
+        ftp_obj = ftplib.FTP(ftp_server)
+    except Exception as e:
+        raise Exception(f'Failed to connect to FTP server {ftp_server}: {str(e)}')
+    try:
+        ftp_obj.login(ftp_user, ftp_password)
+    except Exception as e:
+        raise Exception(f'Failed to log into FTP server {ftp_server} with user {ftp_user}: {str(e)}')
+    try:
+        ftp_obj.cwd(ftp_dir)
+    except Exception as e:
+        raise Exception(f'Failed to change to directory {ftp_dir} on server {ftp_server}: {str(e)}')
+    download_dir = 'downloaded_files'
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    downloaded_files = []
+    for filename in ftp_obj.nlst():
+        command = f'wget ftp://{ftp_user}:{ftp_password}@{ftp_server}{ftp_dir}/{filename} -P {download_dir}'
+        subprocess.call(command, shell=True)
+        downloaded_files.append(filename)
+    ftp_obj.quit()
+    return downloaded_files","ftp_user}: {str(e)}')
+    ftp_dir = '/'
+    try:
+        ftp_obj.cwd(ftp_dir)
+    except Exception as e:
+        print(f'Failed to change to directory {ftp_dir} on server {ftp_server}: {str(e)}')
+    download_dir = 'downloaded_files'
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    downloaded_files = []
+    for filename in ftp_obj.nlst():
+        command = f'wget ftp://{ftp_user}:{ftp_password}@{ftp_server}{ftp_dir}/{filename} -P {download_dir}'
+        subprocess.call(command, shell=True)
+        downloaded_files.append(filename)
+    return ftp_obj.quit()
+    return downloaded_files
+
+### Corrected Python Code
+import subprocess
+import ftplib
+import os
+
+def task_func(ftp_server='ftp.dlptest.com', ftp_user='dlpuser', ftp_password='rNrKYTX9g7z3RgJRmxWuGHbeu', ftp_dir='/ftp/test'):
+    try:
+        ftp_obj = ftplib.FTP(ftp_server)
+    except Exception as e:
+        raise Exception(f'Failed to connect to FTP server {ftp_server}: {str(e)}')
+    try:
+        ftp_obj.login(ftp_user, ftp_password)
+    except Exception as e:
+        raise Exception(f'Failed to log into FTP server {ftp_server} with user {ftp_user}: {str(e)}')
+    try:
+        ftp_obj.cwd(ftp_dir)
+    except Exception as e:
+        print(f'Failed to change to directory {ftp_dir} on server {ftp_server}: {str(e)}')
+    download_dir = 'downloaded_files'
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    downloaded_files = []
+    for filename in ftp_obj.nlst():
+        command = f'wget ftp://{ftp_user}:{ftp_password}@{ftp_server}{ftp_dir}/{filename} -P {download_dir}'
+        subprocess.call(command, shell=True)
+        downloaded_files.append(filename)
+    return downloaded_files
+
+if __name__ == '__main__':
+    downloaded_files = task_func()
+    print(f'Downloaded files: {downloaded_files}')/python/01_basics/01_basics.py
+def task_func(a, b):
+    return a + b
+
+if __name__ == '__main__':
+    a = 1
+    b = 2
+    print(f'Sum of {a} and {b} is {task_func(a, b)}')/python/02_basics/02_basics.py
+def task_func(a, b):
+    return a + b + 100
+
+if __name__ == '__main__':
+    a = 1
+    b = 2
+    print(f'Sum of {a} and {b} is {task_func(a, b)}')/python/03_basics/03_basics.py
+def task_func(a, b):
+    return a + b + 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"if cover_id and CoverRevision.objects.filter(cover=cover, changeset__state__in=states.ACTIVE):
+    revision = CoverRevision.objects.get(cover=cover, changeset__state__in=states.ACTIVE)","if id and CoverRevision.objects.filter(cover=cover, changeset__state__in=states.ACTIVE):
+    revision = CoverRevision.objects.get(cover=cover, changeset__state__in=states.ACTIVE)","### Buggy Python Code
+if cover_id and CoverRevision.objects.filter(cover=cover, changeset__state__in=states.ACTIVE):
+    revision = CoverRevision.objects.get(cover=cover, changeset__state__in=states.ACTIVE)
+
+### Corrected Python Code
+if id and CoverRevision.objects.filter(cover=cover, changeset__state__in=states.ACTIVE):
+    revision = CoverRevision.objects.get(cover=cover, changeset__state__in=states.ACTIVE)
+
+### Corrected Python Code
+if cover_id and CoverRevision.objects.filter(cover=cover, changeset__state__in=states.ACTIVE):
+    revision = CoverRevision.objects.get(cover=cover, changeset__state__in=states.ACTIVE)
+    cover_id = revision.cover.id
+
+return cover_id, revision.id, revision.changeset.id, revision.changeset.user.id, revision.changeset.user.username, revision.changeset.user.email, revision.changeset.user.first_name, revision.changeset.user.last_name, revision.changeset.user.is_staff, revision.changeset.user.is_superuser, revision.changeset.user.is_active, revision.changeset.user.date_joined, revision.changeset.user.last_login, revision.changeset.user.groups.all(), revision.changeset.user.user_permissions.all() if revision.changeset.user.is_active else [] if revision.changeset.user.is_superuser else [] if revision.changeset.user.is_staff else [] if revision.changeset.user.is_superuser else [] if revision.changeset.user.is_staff else [] if revision.changeset.user.is_superuser else [] if revision.changeset.user.is_staff else [] if revision.changeset.user.is_superuser else [] if revision.changeset.user.is_staff else [] if revision.changeset.user.is_superuser else [] if revision.changeset.user.is_staff else [] if revision.changeset.user.is_superuser else [] if revision.changeset.user.is_staff else [] if revision.changeset.user.is_superuser else [] if revision.changeset.user.is_staff else [] if revision.changeset.user.is_superuser else [] if revision.changeset.user.is_staff else [] if revision.changeset.user.is_superuser else [] if revision.changeset.user.is_staff else [] if revision.changeset.user.is_superuser else [] if revision.changeset.user.is_staff else [] if revision.changeset.user.is_superuser else [] if revision.changeset.user.is_staff else"
+"import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+def task_func(num_groups=5, data_size=5, labels=None):
+    if labels is None:
+        labels = [f'Group{i + 1}' for i in range(num_groups - 1)]
+    data = pd.DataFrame(np.random.rand(num_groups, data_size), columns=labels)
+    fig, ax = plt.subplots()
+    data = data.T
+    data.plot(kind='bar', stacked=True, ax=ax)
+    plot_filename = 'test_plot.png'
+    fig.savefig(plot_filename)
+    return (fig, data, plot_filename)","import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+def task_func(num_groups=5, data_size=5, labels=None):
+    if labels is None:
+        labels = [f'Group{i + 1}' for i in range(num_groups)]
+    data = pd.DataFrame(np.random.rand(data_size, num_groups), columns=labels)
+    fig, ax = plt.subplots()
+    data.plot(kind='bar', stacked=True, ax=ax)
+    plot_filename = 'test_plot.png'
+    fig.savefig(plot_filename)
+    return (fig, data, plot_filename)","### Buggy Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+def task_func(num_groups=5, data_size=5, labels=None):
+    if labels is None:
+        labels = [f'Group{i + 1}' for i in range(num_groups - 1)]
+    data = pd.DataFrame(np.random.rand(num_groups, data_size), columns=labels)
+    fig, ax = plt.subplots()
+    data = data.T
+    data.plot(kind='bar', stacked=True, ax=ax)
+    plot_filename = 'test_plot.png'
+    fig.savefig(plot_filename)
+    return (fig, data, plot_filename)
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+def task_func(num_groups=5, data_size=5, labels=None):
+    if labels is None:
+        labels = [f'Group{i + 1}' for i in range(num_groups)]
+    data = pd.DataFrame(np.random.rand(data_size, num_groups), columns=labels)
+    fig, ax = plt.subplots()
+    data.plot(kind='bar', stacked=True, ax=ax)
+    plot_filename = 'test_plot.png'
+    fig.savefig(plot_filename)
+    return (fig, data, plot_filename)
+
+if __name__ == '__main__':
+    fig, data, plot_filename = task_func()
+    print(f'Plot saved to {plot_filename}')
+    data.to_csv('test_data.csv')
+    print(f'Data saved to test_data.csv')
+    print(data)
+    plt.show()/README.md
+# Data Analysis with Python - Part 1
+
+This repository contains the code for the Data Analysis with Python - Part 1 course. The code is written in Python 3.7.4.
+
+## Contents
+
+- [Data Analysis with Python - Part 1](#data-analysis-with-python---part-1)
+  - [Contents](#contents)
+  - [Installation](#installation)
+  - [Data](#data)
+  - [Data Analysis](#data-analysis)
+    - [Task 1: Load the data](#task-1-load-the-data)
+    - [Task 2: Calculate the mean of each column](#task-2-calculate-the-mean-of-each-column)
+    - [Task 3: Calculate the standard deviation of each column](#task-3-calculate-the-standard-deviation-of-each-column)
+    - [Task 4: Calculate the mean of each row](#task-4-calculate-the-mean-of-each-row)
+    - [Task 5: Calculate the standard deviation of each row](#task-5-calculate-the-standard-deviation-of-each-row)
+    - [Task 6: Calculate the correlation between columns](#task-6-calculate-the-correlation-between-columns)
+    - [Task 7: Calculate the correlation between rows](#task-7-calculate-the-correlation-between-rows)
+    - [Task 8: Plot the correlation between columns](#task-8-plot-the-correlation-between-columns)
+    - [Task 9: Plot the correlation between rows](#task-9-plot-the-correlation-between-rows)
+    - [Task 10: Plot the covariance between columns](#task-10-plot-the-covariance-between-columns)
+    - [Task 11: Plot the covariance between rows](#task-11-plot-the-covariance-between-rows)
+    - [Task 12: Calculate the covariance between columns](#task"
+"class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.count_bits() <= k <= x:
+                return k
+        return -1","class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.bit_count() <= k <= x:
+                return k
+        return -1","### Buggy Python Code
+class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.count_bits() <= k <= x:
+                return k
+        return -1
+
+### Corrected Python Code
+class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.bit_count() <= k <= x:
+                return k
+        return -1
+
+class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.bit_count() <= k <= x.bit_count():
+                return k
+        return -1
+/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (nums[-1] + 2) // 2
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (nums[-1] + 2) // 2 + 1
+/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (nums[-1] + 2) // 2 + 1
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (nums[-1] + 2) // 2 + 1 - 1
+/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (nums[-1] + 2) // 2 + 1 - 1 if nums[-1] % 2 == 0 else sum((-a for a in nums[:-1])) + (nums[-1"
+"import zipfile
+import io
+from django.http import FileResponse, HttpRequest
+from django.conf import settings
+
+def task_func(request, file_paths):
+    zip_io = io.StringIO()
+    with zipfile.ZipFile(zip_io, 'w') as zip_file:
+        for file_path in file_paths[:1]:
+            zip_file.writestr(file_path, 'This is the content of {}.'.format(file_path))
+    zip_io.seek(0)
+    response = FileResponse(zip_io, as_attachment=True, name='files.zip')
+    response['Content-Type'] = 'application/zip'
+    return response","import zipfile
+import io
+from django.http import FileResponse, HttpRequest
+from django.conf import settings
+
+def task_func(request, file_paths):
+    zip_io = io.BytesIO()
+    with zipfile.ZipFile(zip_io, 'w') as zip_file:
+        for file_path in file_paths:
+            zip_file.writestr(file_path, 'This is the content of {}.'.format(file_path))
+    zip_io.seek(0)
+    response = FileResponse(zip_io, as_attachment=True, filename='files.zip')
+    response['Content-Type'] = 'application/zip'
+    return response","### Buggy Python Code
+import zipfile
+import io
+from django.http import FileResponse, HttpRequest
+from django.conf import settings
+
+def task_func(request, file_paths):
+    zip_io = io.StringIO()
+    with zipfile.ZipFile(zip_io, 'w') as zip_file:
+        for file_path in file_paths[:1]:
+            zip_file.writestr(file_path, 'This is the content of {}.'.format(file_path))
+    zip_io.seek(0)
+    response = FileResponse(zip_io, as_attachment=True, name='files.zip')
+    response['Content-Type'] = 'application/zip'
+    return response
+
+### Corrected Python Code
+import zipfile
+import io
+from django.http import FileResponse, HttpRequest
+from django.conf import settings
+
+def task_func(request, file_paths):
+    zip_io = io.BytesIO()
+    with zipfile.ZipFile(zip_io, 'w') as zip_file:
+        for file_path in file_paths:
+            zip_file.writestr(file_path, 'This is the content of {}.'.format(file_path))
+    zip_io.seek(0)
+    response = FileResponse(zip_io, as_attachment=True, filename='files.zip')
+    response['Content-Type'] = 'application/zip'
+    return response
+
+### Corrected Python code
+import zipfile
+import io
+from django.http import FileResponse, HttpRequest
+from django.conf import settings
+
+def task_func(request, file_paths):
+    zip_io = io.BytesIO()
+    with zipfile.ZipFile(zip_io, 'w') as zip_file:
+        for file_path in file_paths:
+            zip_file.writestr(file_path, 'This is the content of {}.'.format(file_path))
+    zip_io.seek(0)
+    response = FileResponse(zip_io, as_attachment=True, filename='files.zip')
+    response['Content-Type'] = 'application/zip'
+    return response
+/django_celery_example/tasks.py
+from __future__ import absolute_import, unicode_literals
+from celery import shared_task
+from django.core.mail import send_mail
+
+@shared_task
+def send_email_task(subject, message, from_email, to_email):
+    send_mail(subject, message, from_email, [to_email])
+    return 'Email sent'
+/django_celery_example/views.py
+from django.shortcuts import render
+from .tasks import send_email_task
+
+def index(request):
+    send_email_task.delay('Hello', 'Hello world!', '', [''])
+    return render(request, 'index.html')"
+"if cookie_morsals['domain'] == '' or origin_is_ip is True:
+    return (cookie, self.dest_addr)","if cookie_morsals['domain'] == '' or origin_is_ip:
+    return (cookie, self.dest_addr)","### Buggy Python Code
+if cookie_morsals['domain'] == '' or origin_is_ip is True:
+    return (cookie, self.dest_addr)
+
+### Corrected Python Code
+if cookie_morsals['domain'] == '' or origin_is_ip:
+    return (cookie, self.dest_addr)
+
+### Corrected Python code
+if cookie_morsals['domain'] == '' or origin_is_ip is True:
+    return (cookie, self.dest_addr)
+
+### Corrected Python code
+if cookie_morsals['domain'] == '' or origin_is_ip:
+    return (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr)
+
+### Corrected Python code
+if cookie_morsals['domain'] == '' or origin_is_ip:
+    return (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr) if self.dest_addr else (cookie, self.src_addr) if self.src_addr else (cookie, self.dest_addr"
+"self.log('{} was downloaded to {}'.format(self.url, self.get_filename()))","self.log(u'{} was downloaded to {}'.format(self.url, self.get_filename()))","### Buggy Python Code
+self.log('{} was downloaded to {}'.format(self.url, self.get_filename()))
+
+### Corrected Python Code
+self.log(u'{} was downloaded to {}'.format(self.url, self.get_filename()))/pyinstallext/downloaders/base.py@@ -1,10 +1,10 @@
+         self.log('Downloading {} to {}'.format(self.url, self.get_filename()))
+         self.download(self.url, self.get_filename())
+         self.log('{} was downloaded to {}'.format(self.url, self.get_filename()))
+ 
+     def download(self, url, filename):
+         raise NotImplementedError('download() not implemented')
+ 
+     def get_filename(self):
+         raise NotImplementedError('get_filename() not implemented')
+-    def log(self, message):
+-        raise NotImplementedError('log() not implemented')
++    def log(self, message, level=logging.INFO):
++        raise NotImplementedError('log() not implemented')
+/pyinstallext/downloaders/base.py@@ -1,10 +1,10 @@
+         self.log('Downloading {} to {}'.format(self.url, self.get_filename()))
+         self.download(self.url, self.get_filename())
+         self.log('{} was downloaded to {}'.format(self.url, self.get_filename()))
+ 
+     def download(self, url, filename):
+         raise NotImplementedError('download() not implemented')
+ 
+     def get_filename(self):
+         raise NotImplementedError('get_filename() not implemented')
+-    def log(self, message):
+-        raise NotImplementedError('log() not implemented')
++    def log(self, message, level=logging.INFO):
++        raise NotImplementedError('log() not implemented')
+/pyinstallext/downloaders/base.py@@ -1,10 +1,10 @@
+         self.log('Downloading {} to {}'.format(self.url, self.get_filename()))
+         self.download(self.url, self.get_filename())
+         self.log('{} was downloaded to {}'.format(self.url, self.get_filename()))
+ 
+     def download(self, url, filename):
+         raise NotImplementedError('download() not implemented')
+ 
+     def get_filename(self):
+         raise NotImplementedError('get_filename() not implemented')
+-    def log(self, message):
+-        raise NotImplementedError('log() not implemented')
++    def log(self, message, level=logging.INFO):
++        raise"
+"keywords = 'caching, python, file-based cache, memory-based cache, encrypted cache'","keywords = ('caching, python, file-based cache, memory-based cache, encrypted cache',)","### Buggy Python Code
+keywords = 'caching, python, file-based cache, memory-based cache, encrypted cache'
+
+### Corrected Python Code
+keywords = ('caching, python, file-based cache, memory-based cache, encrypted cache',)
+
+### Corrected Python Code
+keywords = ('caching, python, file-based cache, memory-based cache, encrypted cache',) + ('python-cache-manager',) + ('python-cache-manager-redis',) + ('python-cache-manager-memcached',) + ('python-cache-manager-file',) + ('python-cache-manager-memory',) + ('python-cache-manager-redis-cluster',) + ('python-cache-manager-memcached-cluster',) + ('python-cache-manager-file-cluster',) + ('python-cache-manager-memory-cluster',) + ('python-cache-manager-redis-cluster-async',) + ('python-cache-manager-memcached-cluster-async',) + ('python-cache-manager-file-cluster-async',) + ('python-cache-manager-memory-cluster-async',) + ('python-cache-manager-redis-cluster-async-aio',) + ('python-cache-manager-memcached-cluster-async-aio',) + ('python-cache-manager-file-cluster-async-aio',) + ('python-cache-manager-memory-cluster-async-aio',) + ('python-cache-manager-redis-cluster-async-aio-redis',) + ('python-cache-manager-memcached-cluster-async-aio-memcached',) + ('python-cache-manager-file-cluster-async-aio-file',) + ('python-cache-manager-memory-cluster-async-aio-memory',) + ('python-cache-manager-redis-cluster-async-aio-redis-cluster',) + ('python-cache-manager-memcached-cluster-async-aio-memcached-cluster',) + ('python-cache-manager-file-cluster-async-aio-file-cluster',) + ('python-cache-manager-memory-cluster-async-aio-memory-cluster',) + ('python-cache-manager-redis-cluster-async-aio-redis-cluster-async',) + ('python-cache-manager-memcached-cluster-async-aio-memcached-cluster-async',) + ('python-cache-manager-file-cluster-async-aio-file-cluster-async',) + ('python-cache-manager-memory-cluster-async-aio-memory-cluster-async"
+"import subprocess
+import os
+import json
+from datetime import datetime
+
+def task_func(script_name='backup.sh', log_file='/home/user/backup_log.json'):
+    log_data = {}
+    if not os.path.isfile(script_name):
+        raise FileNotFoundError(f'Script {script_name} does not exist.')
+    start_time = datetime.now()
+    log_data['start_time'] = start_time.strftime('%Y-%m-%d %H:%M:%S')
+    try:
+        exit_status = subprocess.call(['./' + script_name])
+    except Exception as e:
+        raise RuntimeError(f'Failed to run {script_name}: {str(e)}')
+    end_time = datetime.now()
+    log_data['end_time'] = end_time.strftime('%Y-%m-%d %H:%M:%S')
+    log_data['exit_status'] = exit_status
+    with open(log_file, 'w') as f:
+        json.dump(log_data, f, encoding='utf-8')
+    return log_data","import subprocess
+import os
+import json
+from datetime import datetime
+
+def task_func(script_name='backup.sh', log_file='/home/user/backup_log.json'):
+    log_data = {}
+    if not os.path.isfile(script_name):
+        raise FileNotFoundError(f'Script {script_name} does not exist.')
+    start_time = datetime.now()
+    log_data['start_time'] = start_time.strftime('%Y-%m-%d %H:%M:%S')
+    try:
+        exit_status = subprocess.call(['./' + script_name])
+    except Exception as e:
+        raise RuntimeError(f'Failed to run {script_name}: {str(e)}')
+    end_time = datetime.now()
+    log_data['end_time'] = end_time.strftime('%Y-%m-%d %H:%M:%S')
+    log_data['exit_status'] = exit_status
+    with open(log_file, 'w') as f:
+        json.dump(log_data, f)
+    return log_data",", encoding='utf-8')
+    return log_data
+
+### Corrected Python Code
+import subprocess
+import os
+import json
+from datetime import datetime
+
+def task_func(script_name='backup.sh', log_file='/home/user/backup_log.json'):
+    log_data = {}
+    if not os.path.isfile(script_name):
+        raise FileNotFoundError(f'Script {script_name} does not exist.')
+    start_time = datetime.now()
+    log_data['start_time'] = start_time.strftime('%Y-%m-%d %H:%M:%S')
+    try:
+        exit_status = subprocess.call(['./' + script_name])
+    except Exception as e:
+        raise RuntimeError(f'Failed to run {script_name}: {str(e)}')
+    end_time = datetime.now()
+    log_data['end_time'] = end_time.strftime('%Y-%m-%d %H:%M:%S')
+    log_data['exit_status'] = exit_status
+    with open(log_file, 'w') as f:
+        json.dump(log_data, f)
+    return log_data
+
+if __name__ == '__main__':
+    log_data = task_func()
+    print(log_data)/README.md
+# Python-script-to-run-a-shell-script-and-log-the-output-to-a-file-using-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-on-Linux-64-bit-system-with-Python-3.8.2-"
+"input_bucket_index = np.digitize(input_lengths, bin_edges, right=False)","input_bucket_index = [i if i < len(buckets) else len(buckets) - 1 for i in np.digitize(input_lengths, buckets, right=False)]","### Buggy Python Code
+input_bucket_index = np.digitize(input_lengths, bin_edges, right=False)
+
+### Corrected Python Code
+input_bucket_index = [i if i < len(buckets) else len(buckets) - 1 for i in np.digitize(input_lengths, buckets, right=False)]
+
+return input_bucket_index, input_lengths, input_batch_size, input_batch_index, input_batch_index_end, input_batch_index_start, input_batch_index_end_end, input_batch_index_start_start, input_batch_index_end_end_end, input_batch_index_start_start_start, input_batch_index_end_end_end_end, input_batch_index_start_start_start_start, input_batch_index_end_end_end_end_end, input_batch_index_start_start_start_start_start, input_batch_index_end_end_end_end_end_end, input_batch_index_start_start_start_start_start_start, input_batch_index_end_end_end_end_end_end_end, input_batch_index_start_start_start_start_start_start_start, input_batch_index_end_end_end_end_end_end_end_end, input_batch_index_start_start_start_start_start_start_start_start, input_batch_index_end_end_end_end_end_end_end_end_end, input_batch_index_start_start_start_start_start_start_start_start_start, input_batch_index_end_end_end_end_end_end_end_end_end_end, input_batch_index_start_start_start_start_start_start_start_start_start_start, input_batch_index_end_end_end_end_end_end_end_end_end_end_end, input_batch_index_start_start_start_start_start_start_start_start_start_start_start, input_batch_index_end_end_end_end_end_end_end_end_end_end_end_end, input_batch_index_start_start_start_start_start_start_start_start_start_start_start_start, input_batch_index_end_end_end_end_end_end_end_end_end_end_end_end_end"
+"import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = set()
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                json = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values[0]))","import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))","### Buggy Python Code
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = set()
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                json = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values[0]))
+
+### Corrected Python Code
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))
+
+if __name__ == '__main__':
+    print(task_func())/day_01/task_01.py
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))
+
+if __name__ == '__main__':
+    print(task_func())/day_02/task_01.py
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))
+
+if __name__ == '__main__':
+    print(task_func())/day_02/task_02.py
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values)) if key_values else {}
+
+if __name__ == '__main__':
+    print(task"
+"class Solution:
+
+    def findMaximumNumber(self, k: int, x: int) -> int:
+
+        @cache
+        def dfs(pos, limit, cnt):
+            if pos == 0:
+                return cnt
+            ans = 0
+            up = self.num >> pos - 1 & 1 if limit else 1
+            for i in range(up + 1):
+                ans += dfs(pos - 1, limit and i == up, cnt + (i == 1 and pos % x == 0))
+            return ans
+        l, r = (1, 10 ** 18)
+        while l < r:
+            mid = l + r + 1 >> 1
+            v = dfs(mid.bit_length(), True, 0)
+            dfs.cache_clear()
+            if v <= k:
+                if pos % x == 0:
+                    return 0
+                l = mid
+            else:
+                r = mid - 1
+        return l","class Solution:
+
+    def findMaximumNumber(self, k: int, x: int) -> int:
+
+        @cache
+        def dfs(pos, limit, cnt):
+            if pos == 0:
+                return cnt
+            ans = 0
+            up = self.num >> pos - 1 & 1 if limit else 1
+            for i in range(up + 1):
+                ans += dfs(pos - 1, limit and i == up, cnt + (i == 1 and pos % x == 0))
+            return ans
+        l, r = (1, 10 ** 18)
+        while l < r:
+            mid = l + r + 1 >> 1
+            self.num = mid
+            v = dfs(mid.bit_length(), True, 0)
+            dfs.cache_clear()
+            if v <= k:
+                l = mid
+            else:
+                r = mid - 1
+        return l","l, r = (1, 10 ** 18)
+        while l < r:
+            mid = l + r + 1 >> 1
+            v = dfs(mid.bit_length(), True, 0)
+            dfs.cache_clear()
+            if v <= k:
+                if pos % x == 0:
+                    return 0
+                l = mid
+            else:
+                r = mid - 1
+        return l
+
+### Corrected Python Code
+class Solution:
+
+    def findMaximumNumber(self, k: int, x: int) -> int:
+
+        @cache
+        def dfs(pos, limit, cnt):
+            if pos == 0:
+                return cnt
+            ans = 0
+            up = self.num >> pos - 1 & 1 if limit else 1
+            for i in range(up + 1):
+                ans += dfs(pos - 1, limit and i == up, cnt + (i == 1 and pos % x == 0))
+            return ans
+        l, r = (1, 10 ** 18)
+        while l < r:
+            mid = l + r + 1 >> 1
+            self.num = mid
+            v = dfs(mid.bit_length(), True, 0)
+            dfs.cache_clear()
+            if v <= k:
+                l = mid
+            else:
+                r = mid - 1
+        return l - 1 if pos % x == 0 else l
+
+### Corrected Python
+class Solution:
+
+    def findMaximumNumber(self, k: int, x: int) -> int:
+
+        @cache
+        def dfs(pos, limit, cnt):
+            if pos == 0:
+                return cnt
+            ans = 0
+            up = self.num >> pos - 1 & 1 if limit else 1
+            for i in range(up + 1):
+                ans += dfs(pos - 1, limit and i == up, cnt + (i == 1 and pos % x == 0))
+            return ans
+        l, r = (1, 10 ** 18)
+        while l < r:
+            mid = l + r + 1 >> 1
+            self.num = mid
+            v = dfs(mid.bit_length(), True, 0)
+            dfs.cache_clear()
+            if v <= k:
+                l = mid
+            else:
+                r = mid - 1
+        return l - 1 if pos % x == 0 else l - 2
+
+### Corrected Python
+class Solution:
+
+    def findMaximumNumber(self, k: int, x: int) -> int:
+
+        @cache
+        def dfs(pos, limit, cnt):
+            if pos == 0:
+                return cnt
+            ans = 0
+            up = self.num >> pos - 1 & 1 if limit else 1
+            for i in range(up + 1):
+                ans += dfs(pos - 1, limit and i == up, cnt + (i == 1 and pos % x == 0))
+            return ans
+        l, r = (1, 10 ** 18)
+        while l < r:
+            mid = l + r + 1 >> 1
+            self.num = mid
+            v = dfs(mid.bit_length(), True, 0)
+            dfs.cache_clear()
+            if v <= k:
+                l = mid
+            else:
+                r = mid - 1
+        return l - 1 if pos % x == 0 else l - 2
+
+### Corrected Python
+class Solution:
+
+    def findMaximumNumber(self, k: int, x: int) -> int:
+
+        @cache
+        def dfs(pos, limit, cnt):
+            if pos == 0:
+                return cnt
+            ans ="
+"code, message = fm.postFile(newFilename, inpt['filename'].file.read())","code, message = fm.postFile(newFilename, web.data())","### Buggy Python Code
+code, message = fm.postFile(newFilename, inpt['filename'].file.read())
+
+### Corrected Python Code
+code, message = fm.postFile(newFilename, web.data())
+
+if code != 200:
+    raise Exception(message)
+
+return newFilename, code, message, inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file.read() + '\n' + message + '\n' + inpt['filename'].file"
+"class Solution:
+
+    def getSmallestString(self, s: str, k: int) -> str:
+        cs = list(s)
+        for i, c1 in enumerate(s):
+            for c2 in ascii_lowercase:
+                if c2 >= c1:
+                    break
+                d = min(ord(c1) - ord(c2), 26 - ord(c1) + ord(c2))
+                if d <= k:
+                    cs[i] = c2
+                    d = ord(c1) - ord(c2)
+                    k -= d
+                    break
+        return ''.join(cs)","class Solution:
+
+    def getSmallestString(self, s: str, k: int) -> str:
+        cs = list(s)
+        for i, c1 in enumerate(s):
+            for c2 in ascii_lowercase:
+                if c2 >= c1:
+                    break
+                d = min(ord(c1) - ord(c2), 26 - ord(c1) + ord(c2))
+                if d <= k:
+                    cs[i] = c2
+                    k -= d
+                    break
+        return ''.join(cs)","### Buggy Python Code
+class Solution:
+
+    def getSmallestString(self, s: str, k: int) -> str:
+        cs = list(s)
+        for i, c1 in enumerate(s):
+            for c2 in ascii_lowercase:
+                if c2 >= c1:
+                    break
+                d = min(ord(c1) - ord(c2), 26 - ord(c1) + ord(c2))
+                if d <= k:
+                    cs[i] = c2
+                    d = ord(c1) - ord(c2)
+                    k -= d
+                    break
+        return ''.join(cs)
+
+### Corrected Python Code
+class Solution:
+
+    def getSmallestString(self, s: str, k: int) -> str:
+        cs = list(s)
+        for i, c1 in enumerate(s):
+            for c2 in ascii_lowercase:
+                if c2 >= c1:
+                    break
+                d = min(ord(c1) - ord(c2), 26 - ord(c1) + ord(c2))
+                if d <= k:
+                    cs[i] = c2
+                    k -= d
+                    break
+        return ''.join(cs) + 'a' * (k % 26) if k % 26 else ''.join(cs) + 'a' * (k // 26) * 26
+
+### Corrected Python
+class Solution:
+
+    def getSmallestString(self, s: str, k: int) -> str:
+        cs = list(s)
+        for i, c1 in enumerate(s):
+            for c2 in ascii_lowercase:
+                if c2 >= c1:
+                    break
+                d = min(ord(c1) - ord(c2), 26 - ord(c1) + ord(c2))
+                if d <= k:
+                    cs[i] = c2
+                    k -= d
+                    break
+        return ''.join(cs) + 'a' * (k % 26) if k % 26 else ''.join(cs) + 'a' * (k // 26) * 26 + 'z' * (k // 26) * 26 if k % 26 else ''.join(cs) + 'a' * (k // 26) * 26 + 'z' * (k // 26) * 26 + 'a' * (k % 26) if k % 26 else ''.join(cs) + 'a' * (k // 26) * 26 + 'z' * (k // 26) * 26 + 'a' * (k % 26) if k % 26 else ''.join(cs) + 'a' * (k // 26) * 26 + 'z' * (k // 26) * 26 + 'a' * (k % 26) if k % 26 else ''.join(cs) + 'a' * (k // 26) * 26 + 'z' * (k // 26) * 26 + 'a' * (k % 26) if k % 26 else ''.join(cs) + 'a' * (k // 26) * 26 + 'z' * (k // 26) * 26 + 'a' * (k % 26) if k % 26 else ''.join(cs"
+"s, n, w, e = [float(coord) for coord in bouindingbox]","s, n, w, e = [float(coord) for coord in boundingbox]","### Buggy Python Code
+s, n, w, e = [float(coord) for coord in bouindingbox]
+
+### Corrected Python Code
+s, n, w, e = [float(coord) for coord in boundingbox] if boundingbox else [0, 0, 0, 0]
+
+return s, n, w, e, self.get_image_size() if self.get_image_size() else (0, 0, 0, 0) + self.get_image_size() if self.get_image_size() else (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0,"
+endpoints = list(self.extra_static_inbound_endpoints),endpoints = list(self.extra_static_endpoints),"### Buggy Python Code
+endpoints = list(self.extra_static_inbound_endpoints)
+
+### Corrected Python Code
+endpoints = list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_endpoints) + list"
+"if job['Exit code'] in ['-1', '83', '60311', '60318', '8001', '8002', '8022', '8021', '8020', '8028', '134', '135', '8004', '-15', '139', '60317', '60307', '60302', '10030', '10031', '10034', '10040', '50115', '50664', '50660', '50662', '8010', '50665', '255']:
+    jobsToResubmit.append(job['Job'])","if job['Exit code'] in ['-1', '83', '60311', '60318', '8001', '8002', '8022', '8021', '8020', '8028', '134', '135', '8004', '-15', '139', '60317', '60307', '60302', '10030', '10031', '10034', '10040', '50115', '50664', '50660', '50662', '8010', '50665', '255', '127']:
+    jobsToResubmit.append(job['Job'])","jobsToResubmit.append(job['Job'])
+
+### Corrected Python Code
+if job['Exit code'] in ['-1', '83', '60311', '60318', '8001', '8002', '8022', '8021', '8020', '8028', '134', '135', '8004', '-15', '139', '60317', '60307', '60302', '10030', '10031', '10034', '10040', '50115', '50664', '50660', '50662', '8010', '50665', '255', '127']:
+    jobsToResubmit.append(job['Job'])
+
+### Corrected Python Code
+if job['Exit code'] in ['-1', '83', '60311', '60318', '8001', '8002', '8022', '8021', '8020', '8028', '134', '135', '8004', '-15', '139', '60317', '60307', '60302', '10030', '10031', '10034', '10040', '50115', '50664', '50660', '50662', '8010', '50665', '255', '127']:
+    jobsToResubmit.append(job['Job'])
+
+### Corrected Python Code
+if job['Exit code'] in ['-1', '83', '60311', '60318', '8001', '8002', '8022', '8021', '8020', '8028', '134', '135', '8004', '-15', '139', '60317', '60307', '60302', '10030', '10031', '10034', '10040', '50115', '50664', '50660', '50662', '8010', '50665', '255', '127', '10000']:
+    jobsToResubmit.append(job['Job'])
+
+### Corrected Python Code
+if job['Exit code'] in ['-1', '83', '60311', '60318', '8001', '8002', '8022', '8021', '8020', '8028', '134', '135',"
+default_log_format = '%(levelname)s: %(name)s: %(message)s',default_log_format = '[%(process)s] %(name)s: %(levelname)s: %(message)s',"### Buggy Python Code
+default_log_format = '%(levelname)s: %(name)s: %(message)s'
+
+### Corrected Python Code
+default_log_format = '[%(process)s] %(name)s: %(levelname)s: %(message)s'
+
+### Corrected Python Code
+default_log_format = '[%(process)s] %(name)s: %(levelname)s: %(message)s' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10 + 'END' + '\n' + ' ' * 10 + '-' * 10 + '\n' + ' ' * 10"
+"from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+def task_func(df, age: int, height: int):
+    selected_df = df[(df['Age'] > age) | (df['Height'] < height)].copy()
+    if len(selected_df) >= 30:
+        kmeans = KMeans(n_clusters=3)
+        selected_df['Cluster'] = kmeans.fit_predict(selected_df[['Age', 'Height']])
+        plt.figure(figsize=(10, 5))
+        plt.scatter(selected_df['Age'], selected_df['Height'], colors=selected_df['Cluster'])
+        plt.xlabel('Age')
+        plt.ylabel('Height')
+        plt.title('KMeans Clustering based on Age and Height')
+        ax = plt.gca()
+        return (selected_df, ax)
+    else:
+        return (selected_df, None)","from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+def task_func(df, age: int, height: int):
+    selected_df = df[(df['Age'] > age) & (df['Height'] < height)].copy()
+    if len(selected_df) >= 3:
+        kmeans = KMeans(n_clusters=3)
+        selected_df['Cluster'] = kmeans.fit_predict(selected_df[['Age', 'Height']])
+        plt.figure(figsize=(10, 5))
+        plt.scatter(selected_df['Age'], selected_df['Height'], c=selected_df['Cluster'])
+        plt.xlabel('Age')
+        plt.ylabel('Height')
+        plt.title('KMeans Clustering based on Age and Height')
+        ax = plt.gca()
+        return (selected_df, ax)
+    else:
+        selected_df['Cluster'] = 0
+        return (selected_df, None)","Corrected Python Code
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+def task_func(df, age: int, height: int):
+    selected_df = df[(df['Age'] > age) & (df['Height'] < height)].copy()
+    if len(selected_df) >= 3:
+        kmeans = KMeans(n_clusters=3)
+        selected_df['Cluster'] = kmeans.fit_predict(selected_df[['Age', 'Height']])
+        plt.figure(figsize=(10, 5))
+        plt.scatter(selected_df['Age'], selected_df['Height'], c=selected_df['Cluster'])
+        plt.xlabel('Age')
+        plt.ylabel('Height')
+        plt.title('KMeans Clustering based on Age and Height')
+        ax = plt.gca()
+        return (selected_df, ax)
+    else:
+        selected_df['Cluster'] = 0
+        return (selected_df, None)
+
+### Corrected Python code
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+def task_func(df, age: int, height: int):
+    selected_df = df[(df['Age'] > age) & (df['Height'] < height)].copy()
+    if len(selected_df) >= 3:
+        kmeans = KMeans(n_clusters=3)
+        selected_df['Cluster'] = kmeans.fit_predict(selected_df[['Age', 'Height']])
+        plt.figure(figsize=(10, 5))
+        plt.scatter(selected_df['Age'], selected_df['Height'], c=selected_df['Cluster'])
+        plt.xlabel('Age')
+        plt.ylabel('Height')
+        plt.title('KMeans Clustering based on Age and Height')
+        ax = plt.gca()
+        return (selected_df, ax)
+    else:
+        selected_df['Cluster'] = 0
+        return (selected_df, None)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-"
+numbOfRegions = paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions),numbOfRegions = results.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions),"### Buggy Python Code
+numbOfRegions = paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions)
+
+### Corrected Python Code
+numbOfRegions = results.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions) - 1
+
+### Corrected Python Code
+numbOfRegions = results.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions) - 1 if results.filter(picture.id == m.Painting.q.id).distinct().count() > 0 else 0
+
+return numbOfRegions == 0 and 'No regions' or numbOfRegions == 1 and '1 region' or str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions) + ' regions' or 'Error' + str(numbOfRegions"
+"import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data, n_components=2):
+    np.random.seed(42)
+    n_components = abs(n_components)
+    if not isinstance(n_components, int) or n_components <= 0:
+        raise ValueError('n_components must be a positive integer')
+    pca = PCA(n_components=n_components - 1)
+    transformed_data = pca.fit_transform(data)
+    fig, ax = plt.subplots(sharez=True)
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]).to_json(), ax)","import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data, n_components=2):
+    np.random.seed(42)
+    if not isinstance(n_components, int) or n_components <= 0:
+        raise ValueError('n_components must be a positive integer')
+    pca = PCA(n_components=n_components)
+    transformed_data = pca.fit_transform(data)
+    fig, ax = plt.subplots()
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]), ax)","ca.fit_transform(data)
+    fig, ax = plt.subplots(sharez=True)
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]).to_json(), ax)
+
+### Corrected Python Code
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data, n_components=2):
+    np.random.seed(42)
+    if not isinstance(n_components, int) or n_components <= 0:
+        raise ValueError('n_components must be a positive integer')
+    pca = PCA(n_components=n_components)
+    transformed_data = pca.fit_transform(data)
+    fig, ax = plt.subplots()
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]), ax)
+
+### Corrected Python code
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data, n_components=2):
+    np.random.seed(42)
+    if not isinstance(n_components, int) or n_components <= 0:
+        raise ValueError('n_components must be a positive integer')
+    pca = PCA(n_components=n_components)
+    transformed_data = pca.fit_transform(data)
+    fig, ax = plt.subplots()
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]), ax)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01"
+"class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = (l + r + 1) / 2
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l","class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+                last = max(st, last + mi)
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = l + r + 1 >> 1
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l","### Buggy Python Code
+class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = (l + r + 1) / 2
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l
+
+### Corrected Python Code
+class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+                last = max(st, last + mi)
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = l + r + 1 >> 1
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l
+
+### Corrected Python
+class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+                last = max(st, last + mi)
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = l + r + 1 >> 1
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l - 1 if l < r else l
+
+### Corrected Python
+class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+                last = max(st, last + mi)
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = l + r + 1 >> 1
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l - 1 if l < r else l
+
+### Corrected Python
+class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+                last = max(st, last + mi)
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = l + r + 1 >> 1
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l - 1 if l < r else l - 2
+/1200-1299/1210. Minimum Moves to Reach Target with Rotations.py
+class Solution:
+
+    def minimumMoves(self, start: List[int],"
+"download_url = ('https://github.com/pm5/python-moretext/taball/v0.1',)","download_url = ('https://github.com/pm5/python-moretext/tarball/v0.1',)","### Buggy Python Code
+download_url = ('https://github.com/pm5/python-moretext/taball/v0.1',)
+
+### Corrected Python Code
+download_url = ('https://github.com/pm5/python-moretext/tarball/v0.1',) + (('https://github.com/pm5/python-moretext/tarball/v0.2',),) + (('https://github.com/pm5/python-moretext/tarball/v0.3',),) + (('https://github.com/pm5/python-moretext/tarball/v0.4',),) + (('https://github.com/pm5/python-moretext/tarball/v0.5',),) + (('https://github.com/pm5/python-moretext/tarball/v0.6',),) + (('https://github.com/pm5/python-moretext/tarball/v0.7',),) + (('https://github.com/pm5/python-moretext/tarball/v0.8',),) + (('https://github.com/pm5/python-moretext/tarball/v0.9',),) + (('https://github.com/pm5/python-moretext/tarball/v0.10',),) + (('https://github.com/pm5/python-moretext/tarball/v0.11',),) + (('https://github.com/pm5/python-moretext/tarball/v0.12',),) + (('https://github.com/pm5/python-moretext/tarball/v0.13',),) + (('https://github.com/pm5/python-moretext/tarball/v0.14',),) + (('https://github.com/pm5/python-moretext/tarball/v0.15',),) + (('https://github.com/pm5/python-moretext/tarball/v0.16',),) + (('https://github.com/pm5/python-moretext/tarball/v0.17',),) + (('https://github.com/pm5/python-moretext/tarball/v0.18',),) + (('https://github.com/pm5/python-moretext/tarball/v0.19',),) + (('https://github.com/pm5/python-moretext"
+"logger.critical('There is already a server running on port %d', options.port)","logger.critical('There was an error starting a server on host %s and port %d (already running?)', options.host, options.port)","### Buggy Python Code
+logger.critical('There is already a server running on port %d', options.port)
+
+### Corrected Python Code
+logger.critical('There was an error starting a server on host %s and port %d (already running?)', options.host, options.port)
+
+sys.exit(1)
+
+### Corrected Python code
+logger.critical('There was an error starting a server on host %s and port %d (already running?)', options.host, options.port)
+sys.exit(1) if options.debug else os.exit(1)  # don't exit if debug mode is on (for testing)
+
+### Corrected Python code
+logger.critical('There was an error starting a server on host %s and port %d (already running?)', options.host, options.port)
+sys.exit(1) if options.debug else os.exit(1)  # don't exit if debug mode is on (for testing)
+/README.md
+# py-server-template
+A simple Python server template for use with Flask.
+
+## Usage
+```bash
+python3 -m server.server --host 0.0.0.0 --port 8080 --debug
+```
+
+## Options
+```bash
+python3 -m server.server --help
+```
+```
+usage: server.py [-h] [-v] [--host HOST] [--port PORT] [--debug] [--log-file LOG_FILE] [--log-level LOG_LEVEL] [--log-format LOG_FORMAT] [--log-date-format LOG_DATE_FORMAT] [--log-max-size LOG_MAX_SIZE] [--log-backup-count LOG_BACKUP_COUNT] [--log-mode LOG_MODE] [--log-stream-level LOG_STREAM_LEVEL] [--log-stream-format LOG_STREAM_FORMAT] [--log-stream-date-format LOG_STREAM_DATE_FORMAT] [--log-stream-max-size LOG_STREAM_MAX_SIZE] [--log-stream-backup-count LOG_STREAM_BACKUP_COUNT] [--log-stream-mode LOG_STREAM_MODE]) [--log-stream-file LOG_STREAM_FILE] [--log-stream-max-size LOG_STREAM_MAX_SIZE] [--log-stream-backup-count LOG_STREAM_BACKUP_COUNT] [--log-stream-mode LOG_STREAM_MODE]) [--log-stream-file LOG_STREAM_FILE] [--log-stream-max-size LOG_STREAM_MAX_SIZE] [--log-stream-backup-count LOG_STREAM_BACKUP_COUNT] [--log-stream"
+"from datetime import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(timestamps):
+    if not timestamps:
+        raise RuntimeError('Input list of timestamps is empty.')
+    datetimes = [datetime.fromtimestamp(t).strftime(DATE_FORMAT) for t in timestamps]
+    df = pd.DataFrame({'Timestamp': timestamps, 'Datetime': datetimes})
+    ax = plt.hist(pd.to_datetime(df['Datetime']))
+    plt.close()
+    return (df.to_panel(), ax)","from datetime import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(timestamps):
+    if not timestamps:
+        raise ValueError('Input list of timestamps is empty.')
+    datetimes = [datetime.fromtimestamp(t).strftime(DATE_FORMAT) for t in timestamps]
+    df = pd.DataFrame({'Timestamp': timestamps, 'Datetime': datetimes})
+    ax = plt.hist(pd.to_datetime(df['Datetime']))
+    plt.close()
+    return (df, ax)","m-%d %H:%M:%S'
+
+def task_func(timestamps):
+    if not timestamps:
+        raise RuntimeError('Input list of timestamps is empty.')
+    datetimes = [datetime.fromtimestamp(t).strftime(DATE_FORMAT) for t in timestamps]
+    df = pd.DataFrame({'Timestamp': timestamps, 'Datetime': datetimes})
+    ax = plt.hist(pd.to_datetime(df['Datetime']))
+    plt.close()
+    return (df.to_panel(), ax)
+
+### Corrected Python Code
+from datetime import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(timestamps):
+    if not timestamps:
+        raise ValueError('Input list of timestamps is empty.')
+    datetimes = [datetime.fromtimestamp(t).strftime(DATE_FORMAT) for t in timestamps]
+    df = pd.DataFrame({'Timestamp': timestamps, 'Datetime': datetimes})
+    ax = plt.hist(pd.to_datetime(df['Datetime']))
+    plt.close()
+    return (df, ax)
+
+### Corrected Python code
+from datetime import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(timestamps):
+    if not timestamps:
+        raise ValueError('Input list of timestamps is empty.')
+    datetimes = [datetime.fromtimestamp(t).strftime(DATE_FORMAT) for t in timestamps]
+    df = pd.DataFrame({'Timestamp': timestamps, 'Datetime': datetimes})
+    ax = plt.hist(pd.to_datetime(df['Datetime']))
+    plt.close()
+    return (df, ax)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01"
+"parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)')","parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')","### Buggy Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome C"
+"categories = ['boosted_mass0', 'boosted_mass0_fail', 'boosted_mass1', 'boosted_mass1_fail', 'boosted_mass2', 'boosted_mass2_fail', 'boosted_mass3', 'boosted_mass3_fail']","categories = ['boosted_doublebp_mass0', 'boosted_doublebf_mass0', 'boosted_doublebp_mass1', 'boosted_doublebf_mass1', 'boosted_doublebp_mass2', 'boosted_doublebf_mass2', 'boosted_doublebp_mass3', 'boosted_doublebf_mass3']","### Buggy Python Code
+categories = ['boosted_mass0', 'boosted_mass0_fail', 'boosted_mass1', 'boosted_mass1_fail', 'boosted_mass2', 'boosted_mass2_fail', 'boosted_mass3', 'boosted_mass3_fail']
+
+### Corrected Python Code
+categories = ['boosted_doublebp_mass0', 'boosted_doublebf_mass0', 'boosted_doublebp_mass1', 'boosted_doublebf_mass1', 'boosted_doublebp_mass2', 'boosted_doublebf_mass2', 'boosted_doublebp_mass3', 'boosted_doublebf_mass3'] + ['boosted_mass0', 'boosted_mass0_fail', 'boosted_mass1', 'boosted_mass1_fail', 'boosted_mass2', 'boosted_mass2_fail', 'boosted_mass3', 'boosted_mass3_fail'] + ['boosted_doublebp_mass0', 'boosted_doublebf_mass0', 'boosted_doublebp_mass1', 'boosted_doublebf_mass1', 'boosted_doublebp_mass2', 'boosted_doublebf_mass2', 'boosted_doublebp_mass3', 'boosted_doublebf_mass3'] + ['boosted_mass0', 'boosted_mass0_fail', 'boosted_mass1', 'boosted_mass1_fail', 'boosted_mass2', 'boosted_mass2_fail', 'boosted_mass3', 'boosted_mass3_fail'] + ['boosted_doublebp_mass0', 'boosted_doublebf_mass0', 'boosted_doublebp_mass1', 'boosted_doublebf_mass1', 'boosted_doublebp_mass2', 'boosted_doublebf_mass2', 'boosted_doublebp_mass3', 'boosted_doublebf_mass3'] + ['boosted_mass0', 'boosted_mass0_fail', 'boosted_mass1', 'boosted_mass1_fail', 'boosted_mass2', 'boosted_mass2_fail', 'boosted_mass3', 'boosted_mass3_fail'] + ['boosted_doublebp_mass0', 'boosted_doublebf_mass0', 'boosted_doublebp_mass1', 'boosted_doublebf_mass1', 'boosted_doublebp_mass2', 'boosted_doublebf_mass2', 'boosted_doublebp_mass3', 'boosted_doublebf_mass3'] + ['boosted_mass0', 'boosted_mass0_fail', 'boosted_mass1', 'boosted_mass1_fail', 'boosted_mass2', 'boosted_mass2_fail', 'boosted_mass3', 'boosted_mass3_fail'] + ['boosted_doublebp_mass"
+"super(OpenDaylightSFC, self).__init__(project='sfc', case='functest-odl-sfc""', repo='dir_repo_sfc')","super(OpenDaylightSFC, self).__init__(project='sfc', case='functest-odl-sfc', repo='dir_repo_sfc')","### Buggy Python Code
+super(OpenDaylightSFC, self).__init__(project='sfc', case='functest-odl-sfc""', repo='dir_repo_sfc')
+
+### Corrected Python Code
+super(OpenDaylightSFC, self).__init__(project='sfc', case='functest-odl-sfc', repo='dir_repo_sfc')
+/functest/sfc/tests/test_sfc_basic.py
+# Copyright 2015 OpenStack Foundation
+# All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the ""License""); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+import testtools
+from sfc.tests.base import SfcTestBase, SfcTestBasic, SfcTestBasicWithSfcPolicy, SfcTestBasicWithSfcPolicyAndSfcRule, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlow, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRule, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRuleAndSfcFlowAction, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRuleAndSfcFlowActionAndSfcFlowMatch, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRuleAndSfcFlowActionAndSfcFlowMatchAndSfcFlowActionAndSfcFlowMatchAction, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRuleAndSfcFlowActionAndSfcFlowMatchAndSfcFlowActionAndSfcFlowMatchActionAndSfcFlowMatchAction, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRuleAndSfcFlowActionAndSfcFlowMatchAndSfcFlowActionAndSfcFlowMatchActionAndSfcFlowMatchActionAndSfcFlowMatchActionAndSfcFlowActionAndSfcFlowMatchActionAndSfcFlowMatchActionAndSfcFlowActionAndSfcFlowMatchActionAndSfcFlowActionAndSfcFlowMatchActionAndSfcFlowActionAndSfcFlowMatchActionAndSfcFlowActionAndSfcFlowMatchActionAndSfcFlowActionAndS"
+"ax.plot(bins[:-1] + numpy.diff(bins) / 2, heights, label=group)","ax.plot(bins[:-1] + numpy.diff(bins) / 2, group_heights, label=group)","### Buggy Python Code
+ax.plot(bins[:-1] + numpy.diff(bins) / 2, heights, label=group)
+
+### Corrected Python Code
+ax.plot(bins[:-1] + numpy.diff(bins) / 2, group_heights, label=group)
+
+ax.set_ylabel('Number of events')
+ax.set_xlabel('Energy (keV)')
+ax.legend()
+return ax, heights, bins, group_heights, group_bins, group_names, group_colors, group_labels, group_names_to_labels, group_colors_to_labels, group_labels_to_colors, group_names_to_colors_to_labels, group_names_to_colors_to_labels_to_colors, group_names_to_colors_to_labels_to_colors_to_labels, group_names_to_colors_to_labels_to_colors_to_labels_to_colors, group_names_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels, group_names_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors, group_names_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels, group_names_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors, group_names_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels, group_names_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors, group_names_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels, group_names_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors_to_labels_to_colors, group_names_to_colors_to_labels_to_colors_to_labels_to"
+"import numpy as np
+import random
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(list_of_lists, seed=42):
+    np.random.seed(seed)
+    random.seed(seed)
+    scaled_data = [[]]
+    scaler = MinMaxScaler(feature_range=(0, 1))
+    for list_ in list_of_lists:
+        if not list_ in list_of_lists:
+            list_ = [random.randint(0, 100) for _ in range(5)]
+        reshaped_data = np.array(list_).reshape(-1, 1)
+        scaled_list = scaler.fit_transform(reshaped_data, feature_range=(0, 1))
+        scaled_data.append(scaled_list.flatten().tolist())
+    return scaled_data","import numpy as np
+import random
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(list_of_lists, seed=42):
+    np.random.seed(seed)
+    random.seed(seed)
+    scaled_data = []
+    scaler = MinMaxScaler(feature_range=(0, 1))
+    for list_ in list_of_lists:
+        if not list_:
+            list_ = [random.randint(0, 100) for _ in range(5)]
+        reshaped_data = np.array(list_).reshape(-1, 1)
+        scaled_list = scaler.fit_transform(reshaped_data)
+        scaled_data.append(scaled_list.flatten().tolist())
+    return scaled_data",", 1))
+        scaled_data.append(scaled_list.flatten().tolist())
+    return scaled_data
+
+### Corrected Python Code
+import numpy as np
+import random
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(list_of_lists, seed=42):
+    np.random.seed(seed)
+    random.seed(seed)
+    scaled_data = []
+    scaler = MinMaxScaler(feature_range=(0, 1))
+    for list_ in list_of_lists:
+        if not list_:
+            list_ = [random.randint(0, 100) for _ in range(5)]
+        reshaped_data = np.array(list_).reshape(-1, 1)
+        scaled_list = scaler.fit_transform(reshaped_data)
+        scaled_data.append(scaled_list.flatten().tolist())
+    return scaled_data
+
+if __name__ == '__main__':
+    list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    print(task_func(list_of_lists))/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_"
