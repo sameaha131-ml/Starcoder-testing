@@ -51225,3 +51225,1394 @@ class Solution:
             if k == n:
                 break
             ans = min(ans,"
+"import re
+import pandas as pd
+from datetime import datetime
+
+def task_func(log_file):
+    log_pattern = '(ERROR|INFO): \\[\\s*(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\s*\\] - (.*)'
+    parsed_data = []
+    with open(log_file, 'r') as file:
+        for line in file:
+            line = line.strip()
+            match = re.match(log_pattern, line)
+            parsed_data.clear()
+            if match:
+                log_type, timestamp, message = match.groups()
+                try:
+                    datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    raise ValueError(f'Invalid timestamp format: {timestamp}')
+                parsed_data.append([log_type, timestamp, lambda: message.strip()])
+    if not parsed_data:
+        raise ValueError('No valid log entries found.')
+    df = pd.DataFrame(parsed_data, columns=['Type', 'Timestamp', 'Message'])
+    output_csv_path = 'log_data.csv'
+    df.to_csv(output_csv_path, index=False)
+    return output_csv_path","import re
+import pandas as pd
+from datetime import datetime
+
+def task_func(log_file):
+    log_pattern = '(ERROR|INFO): \\[\\s*(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\s*\\] - (.*)'
+    parsed_data = []
+    with open(log_file, 'r') as file:
+        for line in file:
+            line = line.strip()
+            match = re.match(log_pattern, line)
+            if match:
+                log_type, timestamp, message = match.groups()
+                try:
+                    datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    raise ValueError(f'Invalid timestamp format: {timestamp}')
+                parsed_data.append([log_type, timestamp, message.strip()])
+    if not parsed_data:
+        raise ValueError('No valid log entries found.')
+    df = pd.DataFrame(parsed_data, columns=['Type', 'Timestamp', 'Message'])
+    output_csv_path = 'log_data.csv'
+    df.to_csv(output_csv_path, index=False)
+    return output_csv_path","_data:
+        raise ValueError('No valid log entries found.')
+    df = pd.DataFrame(parsed_data, columns=['Type', 'Timestamp', 'Message'])
+    output_csv_path = 'log_data.csv'
+    df.to_csv(output_csv_path, index=False)
+    return output_csv_path
+
+### Corrected Python Code
+import re
+import pandas as pd
+from datetime import datetime
+
+def task_func(log_file):
+    log_pattern = '(ERROR|INFO): \\[\\s*(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\s*\\] - (.*)'
+    parsed_data = []
+    with open(log_file, 'r') as file:
+        for line in file:
+            line = line.strip()
+            match = re.match(log_pattern, line)
+            if match:
+                log_type, timestamp, message = match.groups()
+                try:
+                    datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    raise ValueError(f'Invalid timestamp format: {timestamp}')
+                parsed_data.append([log_type, timestamp, message.strip()])
+    if not parsed_data:
+        raise ValueError('No valid log entries found.')
+    df = pd.DataFrame(parsed_data, columns=['Type', 'Timestamp', 'Message'])
+    output_csv_path = 'log_data.csv'
+    df.to_csv(output_csv_path, index=False)
+    return output_csv_path
+
+if __name__ == '__main__':
+    log_file = 'log.txt'
+    output_csv_path = task_func(log_file)
+    print(f'Log data saved to {output_csv_path}')/README.md
+# Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-"
+"cb.file.save(block_id, SimpleUploadedFile(block_id, b64decode(data_data)))","cb.file.save(str(block_id), SimpleUploadedFile(str(block_id), b64decode(data_data)))","### Buggy Python Code
+cb.file.save(block_id, SimpleUploadedFile(block_id, b64decode(data_data)))
+
+### Corrected Python Code
+cb.file.save(str(block_id), SimpleUploadedFile(str(block_id), b64decode(data_data)))
+/cbv/views.py
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, PasswordChangeForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, User"
+"class UnionFind:
+
+    def __init__(self, n):
+        self.p = list(range(n))
+        self.size = [1] * n
+
+    def find(self, x):
+        if self.p[x] != x:
+            self.p[x] = self.find(self.p[x])
+        return self.p[x]
+
+    def union(self, a, b):
+        pa, pb = (self.find(a), self.find(b))
+        if pa == pb:
+            return False
+        if self.size[pa] > self.size[pb]:
+            self.p[pb] = pa
+            self.size[pa] += self.size[pb]
+        else:
+            self.p[pa] = pb
+            self.size[pb] += self.size[pa]
+        return True
+mx = 100010
+p = defaultdict(list)
+for x in range(1, mx + 1):
+    v = x
+    i = 2
+    while i <= v // i:
+        if v % i == 0:
+            p[x].append(i)
+            while v % i == 0:
+                v //= i
+        i += 1
+    if v > 1:
+        p[x].append(v)
+
+class Solution:
+
+    def canTraverseAllPairs(self, nums: List[int]) -> bool:
+        n = len(nums)
+        m = min(nums)
+        uf = UnionFind(n + m + 1)
+        for i, x in enumerate(nums):
+            for j in p[x]:
+                uf.union(i, j + n)
+        n = 1
+        return len(set((uf.find(i) for i in range(n)))) == 1","class UnionFind:
+
+    def __init__(self, n):
+        self.p = list(range(n))
+        self.size = [1] * n
+
+    def find(self, x):
+        if self.p[x] != x:
+            self.p[x] = self.find(self.p[x])
+        return self.p[x]
+
+    def union(self, a, b):
+        pa, pb = (self.find(a), self.find(b))
+        if pa == pb:
+            return False
+        if self.size[pa] > self.size[pb]:
+            self.p[pb] = pa
+            self.size[pa] += self.size[pb]
+        else:
+            self.p[pa] = pb
+            self.size[pb] += self.size[pa]
+        return True
+mx = 100010
+p = defaultdict(list)
+for x in range(1, mx + 1):
+    v = x
+    i = 2
+    while i <= v // i:
+        if v % i == 0:
+            p[x].append(i)
+            while v % i == 0:
+                v //= i
+        i += 1
+    if v > 1:
+        p[x].append(v)
+
+class Solution:
+
+    def canTraverseAllPairs(self, nums: List[int]) -> bool:
+        n = len(nums)
+        m = max(nums)
+        uf = UnionFind(n + m + 1)
+        for i, x in enumerate(nums):
+            for j in p[x]:
+                uf.union(i, j + n)
+        return len(set((uf.find(i) for i in range(n)))) == 1","), self.find(b))
+        if pa == pb:
+            return False
+        if self.size[pa] > self.size[pb]:
+            self.p[pb] = pa
+            self.size[pa] += self.size[pb]
+        else:
+            self.p[pa] = pb
+            self.size[pb] += self.size[pa]
+        return True
+mx = 100010
+p = defaultdict(list)
+for x in range(1, mx + 1):
+    v = x
+    i = 2
+    while i <= v // i:
+        if v % i == 0:
+            p[x].append(i)
+            while v % i == 0:
+                v //= i
+        i += 1
+    if v > 1:
+        p[x].append(v)
+
+class Solution:
+
+    def canTraverseAllPairs(self, nums: List[int]) -> bool:
+        n = len(nums)
+        m = min(nums)
+        uf = UnionFind(n + m + 1)
+        for i, x in enumerate(nums):
+            for j in p[x]:
+                uf.union(i, j + n)
+        n = 1
+        return len(set((uf.find(i) for i in range(n)))) == 1
+
+### Corrected Python Code
+class UnionFind:
+
+    def __init__(self, n):
+        self.p = list(range(n))
+        self.size = [1] * n
+
+    def find(self, x):
+        if self.p[x] != x:
+            self.p[x] = self.find(self.p[x])
+        return self.p[x]
+
+    def union(self, a, b):
+        pa, pb = (self.find(a), self.find(b))
+        if pa == pb:
+            return False
+        if self.size[pa] > self.size[pb]:
+            self.p[pb] = pa
+            self.size[pa] += self.size[pb]
+        else:
+            self.p[pa] = pb
+            self.size[pb] += self.size[pa]
+        return True
+mx = 100010
+p = defaultdict(list)
+for x in range(1, mx + 1):
+    v = x
+    i = 2
+    while i <= v // i:
+        if v % i == 0:
+            p[x].append(i)
+            while v % i == 0:
+                v //= i
+        i += 1
+    if v > 1:
+        p[x].append(v)
+
+class Solution:
+
+    def canTraverseAllPairs(self, nums: List[int]) -> bool:
+        n = len(nums)
+        m = max(nums)
+        uf = UnionFind(n + m + 1)
+        for i, x in enumerate(nums):
+            for j in p[x]:
+                uf.union(i, j + n)
+        return len(set((uf.find(i) for i in range(n)))) == 1
+/python/1000/1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1"
+"class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * (n + 1)
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans","class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * n + [1]
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        ans = suf_gcd[0] * suf_lcm[0]
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i + 1]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans","lcm, x)
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * n + [1]
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        ans = suf_gcd[0] * suf_lcm[0]
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i + 1]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * (n + 1)
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        ans = suf_gcd[0] * suf_lcm[0]
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i + 1]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * (n + 1)
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        ans = suf_gcd[0] * suf_lcm[0]
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i + 1]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans
+
+class Solution:
+
+    def maxScore("
+"class Solution:
+
+    def alternatingSubarray(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            k = 0
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans","class Solution:
+
+    def alternatingSubarray(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans","### Buggy Python Code
+class Solution:
+
+    def alternatingSubarray(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            k = 0
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def alternatingSubarray(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans
+
+class Solution:
+
+    def alternatingSubarray(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans * 2 - 1
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans * 2 - 1 if ans > 0 else 0
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans * 2 - 1 if ans > 0 else 0"
+"self.acc_monitor = AccumulatingMonitorStrategy(start_time=time.perf_counter(), instances=instances.count, txn_delta_k=config.ACC_MONITOR_TXN_DELTA, timeout=config.ACC_MONITOR_TIMEOUT, input_rate_reaction_half_time=config.ACC_MONITOR_INPUT_RATE_REACTION_HALF_TIME)","self.acc_monitor = AccumulatingMonitorStrategy(start_time=time.perf_counter(), instances=instances.count, txn_delta_k=config.ACC_MONITOR_TXN_DELTA_K, timeout=config.ACC_MONITOR_TIMEOUT, input_rate_reaction_half_time=config.ACC_MONITOR_INPUT_RATE_REACTION_HALF_TIME)","### Buggy Python Code
+self.acc_monitor = AccumulatingMonitorStrategy(start_time=time.perf_counter(), instances=instances.count, txn_delta_k=config.ACC_MONITOR_TXN_DELTA, timeout=config.ACC_MONITOR_TIMEOUT, input_rate_reaction_half_time=config.ACC_MONITOR_INPUT_RATE_REACTION_HALF_TIME)
+
+### Corrected Python Code
+self.acc_monitor = AccumulatingMonitorStrategy(start_time=time.perf_counter(), instances=instances.count, txn_delta_k=config.ACC_MONITOR_TXN_DELTA_K, timeout=config.ACC_MONITOR_TIMEOUT, input_rate_reaction_half_time=config.ACC_MONITOR_INPUT_RATE_REACTION_HALF_TIME)
+
+### Corrected Python
+self.acc_monitor = AccumulatingMonitorStrategy(start_time=time.perf_counter(), instances=instances.count, txn_delta_k=config.ACC_MONITOR_TXN_DELTA_K, timeout=config.ACC_MONITOR_TIMEOUT, input_rate_reaction_half_time=config.ACC_MONITOR_INPUT_RATE_REACTION_HALF_TIME) if config.ACC_MONITOR_ENABLED else None
+
+### Corrected Python
+self.acc_monitor = AccumulatingMonitorStrategy(start_time=time.perf_counter(), instances=instances.count, txn_delta_k=config.ACC_MONITOR_TXN_DELTA_K, timeout=config.ACC_MONITOR_TIMEOUT, input_rate_reaction_half_time=config.ACC_MONITOR_INPUT_RATE_REACTION_HALF_TIME) if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None
+
+### Corrected Python
+self.acc_monitor = AccumulatingMonitorStrategy(start_time=time.perf_counter(), instances=instances.count, txn_delta_k=config.ACC_MONITOR_TXN_DELTA_K, timeout=config.ACC_MONITOR_TIMEOUT, input_rate_reaction_half_time=config.ACC_MONITOR_INPUT_RATE_REACTION_HALF_TIME) if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else None if config.ACC_MONITOR_ENABLED else"
+"import re
+import pandas as pd
+STOPWORDS = ['Those', 'are', 'the', 'words', 'to', 'ignore']
+
+def task_func(text):
+    text = text.split('.')[0]
+    sentences = re.split('\\.\\s*', text)
+    sentence_counts = {}
+    for i, sentence in enumerate(sentences):
+        if sentence.strip() != '':
+            continue
+        words = re.split('\\s+', sentence.lower())
+        words = [word for word in words if word in STOPWORDS]
+        sentence_counts[f'Sentence {i + 1}'] = len(words)
+    sentence_counts = pd.Series(sentence_counts)
+    return sentence_counts","import re
+import pandas as pd
+STOPWORDS = ['Those', 'are', 'the', 'words', 'to', 'ignore']
+
+def task_func(text):
+    sentences = re.split('\\.\\s*', text)
+    sentence_counts = {}
+    for i, sentence in enumerate(sentences):
+        if sentence.strip() == '':
+            continue
+        words = re.split('\\s+', sentence.lower())
+        words = [word for word in words if word not in STOPWORDS]
+        sentence_counts[f'Sentence {i + 1}'] = len(words)
+    sentence_counts = pd.Series(sentence_counts)
+    return sentence_counts","### Buggy Python Code
+import re
+import pandas as pd
+STOPWORDS = ['Those', 'are', 'the', 'words', 'to', 'ignore']
+
+def task_func(text):
+    text = text.split('.')[0]
+    sentences = re.split('\\.\\s*', text)
+    sentence_counts = {}
+    for i, sentence in enumerate(sentences):
+        if sentence.strip() != '':
+            continue
+        words = re.split('\\s+', sentence.lower())
+        words = [word for word in words if word in STOPWORDS]
+        sentence_counts[f'Sentence {i + 1}'] = len(words)
+    sentence_counts = pd.Series(sentence_counts)
+    return sentence_counts
+
+### Corrected Python Code
+import re
+import pandas as pd
+STOPWORDS = ['Those', 'are', 'the', 'words', 'to', 'ignore']
+
+def task_func(text):
+    sentences = re.split('\\.\\s*', text)
+    sentence_counts = {}
+    for i, sentence in enumerate(sentences):
+        if sentence.strip() == '':
+            continue
+        words = re.split('\\s+', sentence.lower())
+        words = [word for word in words if word not in STOPWORDS]
+        sentence_counts[f'Sentence {i + 1}'] = len(words)
+    sentence_counts = pd.Series(sentence_counts)
+    return sentence_counts
+
+if __name__ == '__main__':
+    text = 'Those are the words to ignore. Those are the words to ignore. Those are the words to ignore.'
+    sentence_counts = task_func(text)
+    print(sentence_counts)/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/0"
+"if not any((word in post.selftext.lower() for word in rules)):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).'","if not any((word in post.selftext.lower() for word in rules)) and (not '[wanted]' in post.title.lower()):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).'","### Buggy Python Code
+if not any((word in post.selftext.lower() for word in rules)):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).'
+
+### Corrected Python Code
+if not any((word in post.selftext.lower() for word in rules)) and (not '[wanted]' in post.title.lower()):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).'
+
+### Corrected Python code
+if not any((word in post.selftext.lower() for word in rules)) and (not '[wanted]' in post.title.lower()):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers).' + '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers).' + '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers).' + '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers).' + '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers).' + '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers).' + '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers).' + '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers).' + '\n\n- your"
+"encoder_latency = ss.last_info.get('queue', {}).get('cur', 0)","encoder_latency = ss.info.get('queue', {}).get('cur', 0)","### Buggy Python Code
+encoder_latency = ss.last_info.get('queue', {}).get('cur', 0)
+
+### Corrected Python Code
+encoder_latency = ss.info.get('queue', {}).get('cur', 0) - ss.info.get('queue', {}).get('max', 0) - 1
+
+return encoder_latency >= 0 and encoder_latency < 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+,,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
+"qdc_data[not_nan] += qd[n].data[:, not_nan]",qdc_data[not_nan] += qd[n].data[not_nan],"### Buggy Python Code
+qdc_data[not_nan] += qd[n].data[:, not_nan]
+
+### Corrected Python Code
+qdc_data[not_nan] += qd[n].data[not_nan] - qd[n].data[not_nan].mean() - qd_data[not_nan].mean() + qd_data[not_nan].mean() * qd[n].data[not_nan].mean() / qd[n].data[not_nan].std() ** 2
+
+return qdc_data, qdc_mask, qdc_mean, qdc_std, qdc_n_samples, qdc_n_samples_per_pixel, qdc_n_samples_per_pixel_per_slice, qdc_n_samples_per_slice_per_pixel, qdc_n_samples_per_slice_per_pixel_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice, qdc"
+"import subprocess
+import platform
+import time
+
+def task_func(url):
+    if platform.system() == 'Darwin':
+        cmd = 'open'
+    elif platform.system() == 'Windows':
+        cmd = 'start'
+    else:
+        pass
+    process = subprocess.Popen([cmd, url], shell=True)
+    while process.poll() is None:
+        time.sleep(1)
+    return process.returncode","import subprocess
+import platform
+import time
+
+def task_func(url):
+    if platform.system() == 'Darwin':
+        cmd = 'open'
+    elif platform.system() == 'Windows':
+        cmd = 'start'
+    else:
+        cmd = 'xdg-open'
+    process = subprocess.Popen([cmd, url], shell=True)
+    while process.poll() is None:
+        time.sleep(1)
+    return process.returncode","### Buggy Python Code
+import subprocess
+import platform
+import time
+
+def task_func(url):
+    if platform.system() == 'Darwin':
+        cmd = 'open'
+    elif platform.system() == 'Windows':
+        cmd = 'start'
+    else:
+        pass
+    process = subprocess.Popen([cmd, url], shell=True)
+    while process.poll() is None:
+        time.sleep(1)
+    return process.returncode
+
+### Corrected Python Code
+import subprocess
+import platform
+import time
+
+def task_func(url):
+    if platform.system() == 'Darwin':
+        cmd = 'open'
+    elif platform.system() == 'Windows':
+        cmd = 'start'
+    else:
+        cmd = 'xdg-open'
+    process = subprocess.Popen([cmd, url], shell=True)
+    while process.poll() is None:
+        time.sleep(1)
+    return process.returncode
+
+### Corrected Python code
+import subprocess
+import platform
+import time
+
+def task_func(url):
+    if platform.system() == 'Darwin':
+        cmd = 'open'
+    elif platform.system() == 'Windows':
+        cmd = 'start'
+    else:
+        cmd = 'xdg-open'
+    process = subprocess.Popen([cmd, url], shell=True)
+    while process.poll() is None:
+        time.sleep(1)
+    return process.returncode/README.md
+# Python-subprocess-example
+Python subprocess example for opening a URL in the default browser.
+
+## Usage:
+```python3 subprocess_example.py https://www.google.com```"
+"_default = translation('*', settings.LANGUAGE_CODE)",_default = translation(settings.LANGUAGE_CODE),"### Buggy Python Code
+_default = translation('*', settings.LANGUAGE_CODE)
+
+### Corrected Python Code
+_default = translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + ' (' + settings.LANGUAGE_CODE + ')' if settings.LANGUAGE_CODE != 'en' else translation(settings.LANGUAGE_CODE) + '"
+"import numpy as np
+from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
+ALPHA = 0.05
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots(figsize=(10, 5), sharez=True)
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.legend()
+    return (significant_indices.tolist(), ax)","import numpy as np
+from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
+ALPHA = 0.05
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.axhline(y=population_mean, color='g', linestyle='-', label='Population Mean')
+    ax.legend()
+    return (significant_indices.tolist(), ax)","from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
+ALPHA = 0.05
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.axhline(y=population_mean, color='g', linestyle='-', label='Population Mean')
+    ax.legend()
+    return (significant_indices.tolist(), ax)
+
+### Corrected Python code
+import numpy as np
+from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
+ALPHA = 0.05
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.axhline(y=population_mean, color='g', linestyle='-', label='Population Mean')
+    ax.legend()
+    return (significant_indices.tolist(), ax)
+/01_numpy/01_01_array_creation.py
+import numpy as np
+
+def task_func():
+    data_matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    return data_matrix
+
+### Corrected Python
+import numpy as np
+
+def task_func():
+    data_matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    return data_matrix.reshape((3, 3))
+
+### Corrected Python
+import numpy as np
+
+def task_func():
+    data_matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    return data_matrix.reshape((3, 3))
+/01_numpy/01_02_array_operations.py
+import numpy as np
+
+def task_func():
+    data_matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    means = np.mean(data_matrix, axis=1)
+    return means.reshape((3, 1))
+
+### Correct"
+"self.dropped_samples = pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0)","self.dropped_samples = pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0, sort=True)","### Buggy Python Code
+self.dropped_samples = pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0)
+
+### Corrected Python Code
+self.dropped_samples = pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0, sort=True) if self.dropped_samples is not None else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0, sort=True)
+
+### Corrected Python Code
+self.dropped_samples = pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0, sort=True) if self.dropped_samples is not None else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples is not None else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples is not None else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples is not None else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples is not None else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples is not None else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples is not None else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples is not None else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples is not None else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples is not None else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples is"
+"if device_type != 'cdrom' or device_type != 'floppy':
+    test.cancel(""Only support 'cdrom' and 'floppy' device type: %s"" % device_type)","if device_type != 'cdrom' and device_type != 'floppy':
+    test.cancel(""Only support 'cdrom' and 'floppy' device type: %s"" % device_type)","### Buggy Python Code
+if device_type != 'cdrom' or device_type != 'floppy':
+    test.cancel(""Only support 'cdrom' and 'floppy' device type: %s"" % device_type)
+
+### Corrected Python Code
+if device_type != 'cdrom' and device_type != 'floppy':
+    test.cancel(""Only support 'cdrom' and 'floppy' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type != 'cdrom' and device_type != 'floppy' and device_type != 'tape':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type != 'cdrom' and device_type != 'floppy' and device_type != 'tape' and device_type != 'disk':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type != 'cdrom' and device_type != 'floppy' and device_type != 'tape' and device_type != 'disk':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type != 'cdrom' and device_type != 'floppy' and device_type != 'tape' and device_type != 'disk' and device_type != 'tape_writer':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type != 'cdrom' and device_type != 'floppy' and device_type != 'tape' and device_type != 'disk' and device_type != 'tape_writer' and device_type != 'tape_reader':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type != 'cdrom' and device_type != 'floppy' and device_type != 'tape' and device_type != 'disk' and device_type != 'tape_writer' and device_type != 'tape_reader':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type != 'cdrom' and device_type != 'floppy' and device_type != 'tape' and device_type"
+"application = webapp.WSGIApplication([('/', MainPage), ('/reveal', Reveal)], debug=True)","application = webapp.WSGIApplication([('/', MainPage), ('/reveal', Reveal)], debug=False)","### Buggy Python Code
+application = webapp.WSGIApplication([('/', MainPage), ('/reveal', Reveal)], debug=True)
+
+### Corrected Python Code
+application = webapp.WSGIApplication([('/', MainPage), ('/reveal', Reveal)], debug=False)
+
+### Corrected Python code
+application = webapp.WSGIApplication([('/', MainPage), ('/reveal', Reveal)], debug=True)
+/README.md
+# Google App Engine Python Web Application for Revealing Secret Messages
+
+This is a simple Google App Engine Python Web Application for revealing secret messages. It uses the [Reveal.js](https://github.com/hakimel/reveal.js) library.
+
+## Setup Instructions:
+
+1. Create a Google App Engine project.
+2. Add the Google App Engine Python SDK to your project.
+3. Add the Reveal.js library to your project.
+4. Add the secret message to your project.
+5. Deploy your project.
+6. Open the project in your browser.
+7. Click the ""reveal"" button.
+8. The secret message will be revealed.
+
+## Source Code:
+
+https://github.com/jason-williams/revealing-secret-messages-with-google-app-engine-python-web-application/tree/master/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/revealing-secret-messages-with-google-app-engine-python-web-application/src/reveal"
+"(('Force jump', True, ['Alt', 'U'], 'uncondjump.png', uncondjump),)","(('Force jump', True, ['Ctrl, Alt', 'F'], 'uncondjump.png', uncondjump),)","### Buggy Python Code
+(('Force jump', True, ['Alt', 'U'], 'uncondjump.png', uncondjump),)
+
+### Corrected Python Code
+(('Force jump', True, ['Ctrl, Alt', 'F'], 'uncondjump.png', uncondjump),)
+
+### Corrected Python Code
+(('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),)
+
+### Corrected Python Code
+(('Force jump', True, ['Ctrl, Alt', 'F'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', uncondjump),) + (('Force jump', True, ['Ctrl, Alt', 'U'], 'uncondjump.png', un"
+"target_parts = self.resolve_file_path(file_path, **kwargs)","target_parts = self.resolve_file_path(kwargs[u'target'], **kwargs)","### Buggy Python Code
+target_parts = self.resolve_file_path(file_path, **kwargs)
+
+### Corrected Python Code
+target_parts = self.resolve_file_path(kwargs[u'target'], **kwargs) if u'target' in kwargs else self.resolve_file_path(file_path, **kwargs)
+
+return target_parts, self.resolve_file_path(file_path, **kwargs) if u'target' not in kwargs else self.resolve_file_path(kwargs[u'target'], **kwargs) if u'target' in kwargs else self.resolve_file_path(file_path, **kwargs) if u'target' not in kwargs else self.resolve_file_path(kwargs[u'target'], **kwargs) if u'target' in kwargs else self.resolve_file_path(file_path, **kwargs) if u'target' not in kwargs else self.resolve_file_path(kwargs[u'target'], **kwargs) if u'target' in kwargs else self.resolve_file_path(file_path, **kwargs) if u'target' not in kwargs else self.resolve_file_path(kwargs[u'target'], **kwargs) if u'target' in kwargs else self.resolve_file_path(file_path, **kwargs) if u'target' not in kwargs else self.resolve_file_path(kwargs[u'target'], **kwargs) if u'target' in kwargs else self.resolve_file_path(file_path, **kwargs) if u'target' not in kwargs else self.resolve_file_path(kwargs[u'target'], **kwargs) if u'target' in kwargs else self.resolve_file_path(file_path, **kwargs) if u'target' not in kwargs else self.resolve_file_path(kwargs[u'target'], **kwargs) if u'target' in kwargs else self.resolve_file_path(file_path, **kwargs) if u'target' not in kwargs else self.resolve_file_path(kwargs[u'target'], **kwargs) if u'target' in kwargs else self.resolve_file_path(file_path, **kwargs) if u'target' not in kwargs else self.resolve_file_path(kwargs[u'target'], **kwargs) if u'target' in kwargs else self.resolve_file_path(file_path, **kwargs) if u'target' not in kwargs else self.resolve_file_path(kwargs[u'target'], **kwargs)"
+"message = Message(to=self.id, text=text)","message = Message(to=self.id, text=None)","### Buggy Python Code
+message = Message(to=self.id, text=text)
+
+### Corrected Python Code
+message = Message(to=self.id, text=None) if text is None else Message(to=self.id, text=text)
+
+### Corrected Python Code
+message = Message(to=self.id, text=None) if text is None else Message(to=self.id, text=text) if text is not None else Message(to=self.id, text=None)
+
+return message.send() == 200 or 201 or 202 or 204 or 205 or 206 or 207 or 208 or 226 or 300 or 301 or 302 or 303 or 304 or 305 or 306 or 307 or 308 or 400 or 401 or 402 or 403 or 404 or 405 or 406 or 407 or 408 or 410 or 411 or 412 or 413 or 414 or 415 or 416 or 417 or 418 or 421 or 422 or 423 or 424 or 425 or 426 or 428 or 429 or 430 or 431 or 440 or 444 or 449 or 450 or 451 or 452 or 453 or 454 or 455 or 456 or 457 or 458 or 459 or 460 or 461 or 462 or 463 or 464 or 465 or 466 or 467 or 468 or 469 or 470 or 471 or 472 or 473 or 474 or 475 or 476 or 477 or 478 or 479 or 480 or 481 or 482 or 483 or 484 or 485 or 486 or"
+"(fields.related('voucher_id', 'company_id', relation='res.company', string='Company', store=True),)","(fields.related('voucher_id', 'company_id', relation='res.company', type='many2one', string='Company', store=True),)","', 'company_id', relation='res.company', string='Company', store=True),)
+
+### Corrected Python Code
+(fields.related('voucher_id', 'company_id', relation='res.company', type='many2one', string='Company', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_id', 'currency_id', relation='res.currency', type='many2one', string='Currency', store=True),) + (fields.related('voucher_"
+FILE_TYPE_RE = re.compile('^tcpdump capture file\\b'),FILE_TYPE_RE = re.compile('^(tcpdump|pcap) capture file\\b'),"### Buggy Python Code
+FILE_TYPE_RE = re.compile('^tcpdump capture file\\b')
+
+### Corrected Python Code
+FILE_TYPE_RE = re.compile('^(tcpdump|pcap) capture file\\b')
+
+class TcpdumpFile(File):
+    def __init__(self, path):
+        super(TcpdumpFile, self).__init__(path)
+        self.type = FILE_TYPE_TCPDUMP
+        self.is_tcpdump = True
+        self.is_pcap = False
+        self.is_pcapng = False
+        self.is_zipped = False
+        self.is_unzipped = False
+        self.is_unzipped_pcap = False
+        self.is_unzipped_pcapng = False
+        self.is_unzipped_zipped = False
+        self.is_unzipped_zipped_pcap = False
+        self.is_unzipped_zipped_pcapng = False
+        self.is_unzipped_zipped_zipped = False
+        self.is_unzipped_zipped_zipped_pcap = False
+        self.is_unzipped_zipped_zipped_pcapng = False
+        self.is_unzipped_zipped_zipped_zipped = False
+        self.is_unzipped_zipped_zipped_zipped_pcap = False
+        self.is_unzipped_zipped_zipped_zipped_pcapng = False
+        self.is_unzipped_zipped_zipped_zipped_zipped = False
+        self.is_unzipped_zipped_zipped_zipped_zipped_pcap = False
+        self.is_unzipped_zipped_zipped_zipped_zipped_pcapng = False
+        self.is_unzipped_zipped_zipped_zipped_zipped_zipped = False
+        self.is_unzipped_zipped_zipped_zipped_zipped_zipped_pcap = False
+        self.is_unzipped_zipped_zipped_zipped_zipped_zipped_pcapng = False
+        self.is_unzipped_zipped_zipped_zipped_zipped_zipped_zipped = False
+        self.is_unzipped_zipped_zipped_zipped_zipped_zipped_zipped_pcap = False
+        self.is_unzipped_zipped_zipped_zipped_zipped_zipped_zipped_pcapng = False"
+"local_image_path = (ValueArgument('Local image file path to upload and register (still need target file in the form /ontainer/remote-path )', '--upload-image-file'),)","local_image_path = (ValueArgument('Local image file path to upload and register (still need target file in the form /container/remote-path )', '--upload-image-file'),)","upload-image-file'),)
+
+### Corrected Python Code
+local_image_path = (ValueArgument('Local image file path to upload and register (still need target file in the form /container/remote-path )', '--upload-image-file'),) + (ValueArgument('Target file path in the container to register the image', '--target-file-path'),) + (ValueArgument('Image name to register', '--image-name'),) + (ValueArgument('Image description to register', '--image-description'),) + (ValueArgument('Image tag to register', '--image-tag'),) + (ValueArgument('Image version to register', '--image-version'),) + (ValueArgument('Image author to register', '--image-author'),) + (ValueArgument('Image license to register', '--image-license'),) + (ValueArgument('Image source to register', '--image-source'),) + (ValueArgument('Image type to register', '--image-type'),) + (ValueArgument('Image format to register', '--image-format'),) + (ValueArgument('Image size to register', '--image-size'),) + (ValueArgument('Image platform to register', '--image-platform'),) + (ValueArgument('Image architecture to register', '--image-architecture'),) + (ValueArgument('Image operating system to register', '--image-operating-system'),) + (ValueArgument('Image operating system version to register', '--image-operating-system-version'),) + (ValueArgument('Image environment to register', '--image-environment'),) + (ValueArgument('Image environment version to register', '--image-environment-version'),) + (ValueArgument('Image environment type to register', '--image-environment-type'),) + (ValueArgument('Image environment format to register', '--image-environment-format'),) + (ValueArgument('Image environment size to register', '--image-environment-size'),) + (ValueArgument('Image environment platform to register', '--image-environment-platform'),) + (ValueArgument('Image environment architecture to register', '--image-environment-architecture'),) + (ValueArgument('Image environment operating system to register', '--image-environment-operating-system'),) + (ValueArgument('Image environment operating system version to register', '--image-environment-operating-system-version'),) + (ValueArgument('Image environment environment to register', '--image-environment-environment'),) + (ValueArgument('Image environment environment version to register', '--image-environment-environment-version'),) + (ValueArgument('Image environment environment type to register', '--image-environment-environment-type'),) + (ValueArgument('Image environment environment format to register', '--image-"
+self.skip('Timezone propagation disabled on Whonix templates'),self.skipTest('Timezone propagation disabled on Whonix templates'),"### Buggy Python Code
+self.skip('Timezone propagation disabled on Whonix templates')
+
+### Corrected Python Code
+self.skipTest('Timezone propagation disabled on Whonix templates')
+/tests/test_whonix_templates.py
+from . import TestCaseBase, TestCaseBaseWithWhonixTemplates
+from .utils import get_template_path, get_template_path_for_template_name, get_template_path_for_template_name_and_version, get_template_path_for_template_name_and_version_and_arch, get_template_path_for_template_name_and_version_and_arch_and_distro, get_template_path_for_template_name_and_version_and_arch_and_distro_and_flavor, get_template_path_for_template_name_and_version_and_arch_and_distro_and_flavor_and_release_type, get_template_path_for_template_name_and_version_and_arch_and_distro_and_flavor_and_release_type_and_kernel_version, get_template_path_for_template_name_and_version_and_arch_and_distro_and_flavor_and_release_type_and_kernel_version_and_kernel_type, get_template_path_for_template_name_and_version_and_arch_and_distro_and_flavor_and_release_type_and_kernel_version_and_kernel_type_and_kernel_version_type, get_template_path_for_template_name_and_version_and_arch_and_distro_and_flavor_and_release_type_and_kernel_version_and_kernel_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_kernel_version_type_and_"
+"from comtypes.automation.typeinfo import LoadTypeLibEx, LoadRegTypeLib, QueryPathOfRegTypeLib, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM","from comtypes.typeinfo import LoadTypeLibEx, LoadRegTypeLib, QueryPathOfRegTypeLib, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM","### Buggy Python Code
+from comtypes.automation.typeinfo import LoadTypeLibEx, LoadRegTypeLib, QueryPathOfRegTypeLib, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM
+
+### Corrected Python Code
+from comtypes.typeinfo import LoadTypeLibEx, LoadRegTypeLib, QueryPathOfRegTypeLib, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM, TKIND_COCLASS, TKIND_ALIAS, TKIND_MODULE, TKIND_RECORD, TKIND_BRECORD, TKIND_VALUE, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM, TKIND_COCLASS, TKIND_ALIAS, TKIND_MODULE, TKIND_RECORD, TKIND_BRECORD, TKIND_VALUE, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM, TKIND_COCLASS, TKIND_ALIAS, TKIND_MODULE, TKIND_RECORD, TKIND_BRECORD, TKIND_VALUE, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM, TKIND_COCLASS, TKIND_ALIAS, TKIND_MODULE, TKIND_RECORD, TKIND_BRECORD, TKIND_VALUE, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM, TKIND_COCLASS, TKIND_ALIAS, TKIND_MODULE, TKIND_RECORD, TKIND_BRECORD, TKIND_VALUE, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM, TKIND_COCLASS, TKIND_ALIAS, TKIND_MODULE, TKIND_RECORD, TKIND_BRECORD, TKIND_VALUE, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM, TKIND_COCLASS, TKIND_ALIAS, TKIND_MODULE, TKIND_RECORD, TKIND_BRECORD, TKIND_VALUE, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM, TKIND_COCLASS, TKIND_ALIAS, TKIND_MODULE, TKIND_RECORD, TKIND_BRECORD, TKIND_VALUE, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM, TKIND_COCLASS, TKIND_ALIAS, TKIND_MODULE, TKIND_RECORD, TKIND_BRECORD, TKIND_VALUE, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM, TKIND_COCLASS, TKIND_ALIAS, TKIND_MODULE, TKIND_RECORD, TKIND_BRECORD, TKIND_VALUE, TKIND_INTERFACE, TKIND_DISPATCH, TKIND_ENUM, TKIND_COCLASS, TKIND_ALIAS, TKIND_MODULE, TKIND_RECORD, TKIND_BRECORD, TKIND_VALUE, TKIND_INTERFACE, TKIND_DISPATCH"
+self.log.exception('Task failed with exception'),"self.log.error('Task failed with exception', exc_info=error)","### Buggy Python Code
+self.log.exception('Task failed with exception')
+
+### Corrected Python Code
+self.log.error('Task failed with exception', exc_info=error)
+/src/pyramid_celery/tests/test_pyramid_celery.py
+import os
+import sys
+import unittest
+
+from pyramid_celery import celery_app, celery_config, celery_task, celery_task_result, celery_task_result_backend, celery_task_result_backend_config, celery_task_result_backend_redis, celery_task_result_backend_mongodb, celery_task_result_backend_redis_config, celery_task_result_backend_mongodb_config, celery_task_result_backend_config_error, celery_task_result_backend_redis_error, celery_task_result_backend_mongodb_error, celery_task_result_backend_error, celery_task_result_backend_config_error_message, celery_task_result_backend_redis_error_message, celery_task_result_backend_mongodb_error_message, celery_task_result_backend_error_message, celery_task_result_backend_config_error_message_default, celery_task_result_backend_redis_error_message_default, celery_task_result_backend_mongodb_error_message_default, celery_task_result_backend_error_message_default, celery_task_result_backend_config_error_message_default_value, celery_task_result_backend_redis_error_message_default_value, celery_task_result_backend_mongodb_error_message_default_value, celery_task_result_backend_error_message_default_value, celery_task_result_backend_config_error_message_default_value_default, celery_task_result_backend_redis_error_message_default_value_default, celery_task_result_backend_mongodb_error_message_default_value_default, celery_task_result_backend_error_message_default_value_default_value, celery_task_result_backend_config_error_message_default_value_default_value_default, celery_task_result_backend_redis_error_message_default_value_default_value_default,"
+"import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r') as f:
+        csv_reader = csv.DictReader(f)
+        for row in csv_reader:
+            data = [row]
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'wb') as f:
+        json.dump(data, f)
+    return json_file_name","import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r') as f:
+        csv_reader = csv.DictReader(f)
+        for row in csv_reader:
+            data.append(row)
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'w') as f:
+        json.dump(data, f)
+    return json_file_name","### Buggy Python Code
+import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r') as f:
+        csv_reader = csv.DictReader(f)
+        for row in csv_reader:
+            data = [row]
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'wb') as f:
+        json.dump(data, f)
+    return json_file_name
+
+### Corrected Python Code
+import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r') as f:
+        csv_reader = csv.DictReader(f)
+        for row in csv_reader:
+            data.append(row)
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'w') as f:
+        json.dump(data, f)
+    return json_file_name
+
+### Corrected Python code
+import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r') as f:
+        csv_reader = csv.DictReader(f)
+        for row in csv_reader:
+            data.append(row)
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'w') as f:
+        json.dump(data, f)
+    return json_file_name
+/day_01/task_01.py
+import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r') as f:
+        csv_reader = csv.DictReader(f)
+        for row in csv_reader:
+            data.append(row)
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'w') as f:
+        json.dump(data, f)
+    return json_file_name
+/day_02/task_01.py
+import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r') as f:
+        csv_reader = csv.DictReader(f)
+        for row in csv_reader:
+            data.append(row)
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'w') as f:
+        json.dump(data, f)
+    return json_file_name
+
+### Corrected Python
+import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open("
+"out.write(json.dumps(best_partiton, out, sort_keys=True))","out.write(json.dumps(best_partition, out, sort_keys=True))","### Buggy Python Code
+out.write(json.dumps(best_partiton, out, sort_keys=True))
+
+### Corrected Python Code
+out.write(json.dumps(best_partition, out, sort_keys=True)) + '\n')
+/src/python/pyspark/ml/feature/VectorAssembler.py
+#
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the ""License""); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+from pyspark.ml.param import Param, Params, TypeConverters, HasInputCol, HasOutputCol, HasFeaturesCol, HasWeightCol, HasLabelCol, HasPredictionCol, HasProbabilityCol, HasRawPredictionCol, HasSeed, HasNumFeatures, HasNumFeaturesCol, HasNumInstances, HasNumClasses, HasMaxIter, HasMaxIters, HasTol, HasTol, HasSeed, HasBias, HasBiasCol, HasWeightCol, HasFeaturesCol, HasLabelCol, HasPredictionCol, HasProbabilityCol, HasRawPredictionCol, HasSeed, HasNumFeatures, HasNumFeaturesCol, HasNumInstances, HasNumClasses, HasMaxIter, HasMaxIters, HasTol, HasTol, HasSeed, HasBias, HasBiasCol, HasWeightCol, HasFeaturesCol, HasLabelCol, HasPredictionCol, HasProbabilityCol, HasRawPredictionCol, HasSeed, HasNumFeatures, HasNumFeaturesCol, HasNumInstances, HasNumClasses, HasMaxIter, HasMaxIters, HasTol, HasTol, HasSeed, HasBias, HasBiasCol, HasWeightCol, HasFeaturesCol, HasLabelCol, HasPredictionCol, HasProbabilityCol, HasRawPredictionCol, HasSeed, HasNumFeatures, HasNumFeaturesCol, HasNumInstances, HasNumClasses, HasMaxIter, HasMaxIters, HasTol, HasTol, HasSeed, HasBias, Has"
+"self.perf = subprocess.Popen([perf, 'stat', 'report', '-x;', '-i', args.import_], stderr=subprocess.PIPE, **popentext)","self.perf = subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i', args.import_], stderr=subprocess.PIPE, **popentext)","### Buggy Python Code
+self.perf = subprocess.Popen([perf, 'stat', 'report', '-x;', '-i', args.import_], stderr=subprocess.PIPE, **popentext)
+
+### Corrected Python Code
+self.perf = subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i', args.import_], stderr=subprocess.PIPE, **popentext)
+
+### Corrected Python Code
+self.perf = subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i', args.import_], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i'], stderr=subprocess.PIPE, **popentext)
+
+### Corrected Python Code
+self.perf = subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i', args.import_], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i'], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i'], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i'], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i'], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i'], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i'], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i'], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i'], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i'], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen([feat.perf, 'stat', 'report', '-x;', '-i'], stderr=subprocess.PIPE, **popentext) if args.import_ else subprocess.Popen"
+"if index >= len(self._list):
+    raise ValueError('Index {0} out of range {1}'.format(index, len(self._list)))","if index >= len(self._list) or index < 0:
+    raise ValueError('Index {0} out of range {1}'.format(index, len(self._list)))","### Buggy Python Code
+if index >= len(self._list):
+    raise ValueError('Index {0} out of range {1}'.format(index, len(self._list)))
+
+### Corrected Python Code
+if index >= len(self._list) or index < 0:
+    raise ValueError('Index {0} out of range {1}'.format(index, len(self._list)))
+
+### Corrected Python:
+if index >= len(self._list) or index < 0:
+    raise ValueError('Index {0} out of range {1}'.format(index, len(self._list) - 1))
+/py_utils/py_utils/utils/file_utils.py
+import os
+import shutil
+import zipfile
+import tempfile
+import logging
+
+logger = logging.getLogger(__name__)
+
+
+def create_temp_dir():
+    temp_dir = tempfile.mkdtemp()
+    logger.debug('Created temp directory {0}'.format(temp_dir))
+    return temp_dir
+
+
+def delete_temp_dir(temp_dir):
+    logger.debug('Deleting temp directory {0}'.format(temp_dir))
+    shutil.rmtree(temp_dir)
+
+
+def zip_dir(dir_path, zip_path):
+    logger.debug('Zipping directory {0} to {1}'.format(dir_path, zip_path))
+    with zipfile.ZipFile(zip_path, 'w') as zip_file:
+        for root, dirs, files in os.walk(dir_path):
+            for file_path in files:
+                file_path = os.path.join(root, file_path)
+                zip_file.write(file_path, os.path.basename(file_path))
+    logger.debug('Zipped directory {0} to {1}'.format(dir_path, zip_path))
+    return zip_path
+
+
+def unzip_dir(zip_path, dir_path):
+    logger.debug('Unzipping directory {0} to {1}'.format(zip_path, dir_path))
+    with zipfile.ZipFile(zip_path, 'r') as zip_file:
+        for file_path in zip_file.namelist():
+            file_path = os.path.join(dir_path, file_path)
+            if not os.path.exists(os.path.dirname(file_path)):
+                os.makedirs(os.path.dirname(file_path))
+            zip_file.extract(file_path, dir_path)
+    logger.debug('Unzipped directory {0} to {1}'.format(zip_path, dir_path))
+    return dir_path
+/py_utils/py_utils"
+"import numpy as np
+import scipy.stats as stats
+import matplotlib.pyplot as plt
+import random
+from matplotlib.axes import Axes
+
+class ValueObject:
+    value = 0
+
+    def __init__(self, mu=0, std=1, seed=77):
+        random.seed(seed)
+        self.value = random.gauss(mu, std)
+
+def task_func(obj_list) -> Axes:
+    if len(obj_list) == 0:
+        values = [0]
+    else:
+        values = [obj.value for obj in obj_list]
+    fig, ax = plt.subplot()
+    ax.hist(values, bins=30, normed=True, alpha=0.6, color='g')
+    mean = np.mean(values)
+    std = np.std(values)
+    xmin, xmax = plt.xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mean, std)
+    ax.plot(x, p, 'k', linewidth=2)
+    title = 'Fit results: mu = %.2f,  std = %.2f' % (mean, std)
+    ax.set_title(title)
+    plt.close(fig)
+    return ax","import numpy as np
+import scipy.stats as stats
+import matplotlib.pyplot as plt
+import random
+from matplotlib.axes import Axes
+
+class ValueObject:
+    value = 0
+
+    def __init__(self, mu=0, std=1, seed=77):
+        random.seed(seed)
+        self.value = random.gauss(mu, std)
+
+def task_func(obj_list) -> Axes:
+    if len(obj_list) == 0:
+        values = [0]
+    else:
+        values = [obj.value for obj in obj_list]
+    fig, ax = plt.subplots()
+    ax.hist(values, bins=30, density=True, alpha=0.6, color='g')
+    mean = np.mean(values)
+    std = np.std(values)
+    xmin, xmax = plt.xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mean, std)
+    ax.plot(x, p, 'k', linewidth=2)
+    title = 'Fit results: mu = %.2f,  std = %.2f' % (mean, std)
+    ax.set_title(title)
+    plt.close(fig)
+    return ax","0)
+    p = stats.norm.pdf(x, mean, std)
+    ax.plot(x, p, 'k', linewidth=2)
+    title = 'Fit results: mu = %.2f,  std = %.2f' % (mean, std)
+    ax.set_title(title)
+    plt.close(fig)
+    return ax
+
+### Corrected Python Code
+import numpy as np
+import scipy.stats as stats
+import matplotlib.pyplot as plt
+import random
+from matplotlib.axes import Axes
+
+class ValueObject:
+    value = 0
+
+    def __init__(self, mu=0, std=1, seed=77):
+        random.seed(seed)
+        self.value = random.gauss(mu, std)
+
+def task_func(obj_list) -> Axes:
+    if len(obj_list) == 0:
+        values = [0]
+    else:
+        values = [obj.value for obj in obj_list]
+    fig, ax = plt.subplots()
+    ax.hist(values, bins=30, density=True, alpha=0.6, color='g')
+    mean = np.mean(values)
+    std = np.std(values)
+    xmin, xmax = plt.xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mean, std)
+    ax.plot(x, p, 'k', linewidth=2)
+    title = 'Fit results: mu = %.2f,  std = %.2f' % (mean, std)
+    ax.set_title(title)
+    return ax
+
+if __name__ == '__main__':
+    obj_list = [ValueObject() for _ in range(100)]
+    ax = task_func(obj_list)
+    plt.show()/README.md
+# Python-Data-Science-Cookbook-Code-Samples-master/Chapter 10/10.1.1.py
+import numpy as np
+import scipy.stats as stats
+import matplotlib.pyplot as plt
+import random
+from matplotlib.axes import Axes
+
+class ValueObject:
+    value = 0
+
+    def __init__(self, mu=0, std=1, seed=77):
+        random.seed(seed)
+        self.value = random.gauss(mu, std)
+
+def task_func(obj_list) -> Axes:
+    if len(obj_list) == 0:
+        values = [0]
+    else:
+        values = [obj.value for obj in obj_list]
+    fig, ax = plt.subplots()
+    ax.hist(values, bins=30, density=True, alpha=0.6, color='g')
+    mean = np.mean(values)
+    std = np.std(values)
+    xmin, xmax = plt.xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mean, std)
+    ax.plot(x, p, 'k', linewidth=2)
+    title = 'Fit results: mu = %.2f,  std = %.2f' % (mean, std)
+    ax.set_title(title)
+    return ax
+
+if __name__ == '__main__':
+    obj_list = [ValueObject() for _ in range(100)]
+    ax = task_func(obj_list)
+    plt.show()/README.md
+# Python-Data-Science-Cookbook-Code-Samples-master/Chapter 10/10.1.2.py
+import numpy as np
+import scipy.stats as stats
+import"
+"raise self.InvalidFile('Error, expecting delmiter. Got <%s> should be <%s>' % (delim, DELIM))","raise self.InvalidFile('Error, expecting delimiter. Got <%s> should be <%s>' % (delim, DELIM))","### Buggy Python Code
+raise self.InvalidFile('Error, expecting delmiter. Got <%s> should be <%s>' % (delim, DELIM))
+
+### Corrected Python Code
+raise self.InvalidFile('Error, expecting delimiter. Got <%s> should be <%s>' % (delim, DELIM))
+
+    def __init__(self, file_name, delim=DELIM):
+        self.file_name = file_name
+        self.delim = delim
+        self.file = None
+        self.line_num = 0
+        self.line = ''
+        self.valid = False
+        self.error = ''
+        self.read_file()
+
+    def read_file(self):
+        self.file = open(self.file_name, 'r')
+        self.line_num = 0
+        self.line = ''
+        self.valid = False
+        self.error = ''
+        while self.line != '':
+            self.line_num += 1
+            self.line = self.file.readline()
+            if self.line == '':
+                break
+            if self.line[0] == self.delim:
+                continue
+            if self.line[0] == '#':
+                continue
+            if self.line[0] == '@':
+                continue
+            if self.line[0] == '%':
+                continue
+            if self.line[0] == '!':
+                continue
+            if self.line[0] == '*':
+                continue
+            if self.line[0] == ';':
+                continue
+            if self.line[0] == '\\':
+                continue
+            if self.line[0] == '/':
+                continue
+            if self.line[0] == '^':
+                continue
+            if self.line[0] == '$':
+                continue
+            if self.line[0] == '&':
+                continue
+            if self.line[0] == '(':
+                continue
+            if self.line[0] == ')':
+                continue
+            if self.line[0] == '[':
+                continue
+            if self.line[0] == ']':
+                continue
+            if self.line[0] == '{':
+                continue
+            if self.line[0] == '}':
+                continue
+            if self.line[0] == '<':
+                continue
+            if self.line[0] == '>':
+                continue
+            if self.line[0] == '|':
+                continue
+            if self.line[0] == ',':
+                continue
+            if self.line[0] == ':':
+                continue
+            if self.line[0] == ';':
+                continue
+            if self.line[0] == '=':
+                continue
+            if self.line[0] == '""':
+                continue
+            if self.line[0] == '\'':
+                continue"
