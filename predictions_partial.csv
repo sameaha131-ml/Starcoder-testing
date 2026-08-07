@@ -25352,3 +25352,1266 @@ import os
 import sys
 
 from src.tree import Tree, Node, Edge, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState, NodeType, EdgeType, NodeState, EdgeState"
+"def get_rois_json(request, imageId, conn=conn):","def get_rois_json(request, imageId, conn=None):","### Buggy Python Code
+def get_rois_json(request, imageId, conn=conn):
+
+### Corrected Python Code
+def get_rois_json(request, imageId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE imageId = %s"", (imageId,))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_image(request, imageId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE imageId = %s"", (imageId,))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_image_and_user(request, imageId, userId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE imageId = %s AND userId = %s"", (imageId, userId))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_user(request, userId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE userId = %s"", (userId,))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_user_and_image(request, userId, imageId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE userId = %s AND imageId = %s"", (userId, imageId))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_user_and_image_and_label(request, userId, imageId, labelId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT"
+return all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))),return all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))),"### Buggy Python Code
+return all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4)))
+
+### Corrected Python Code
+return all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum(("
+"from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY","from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY","### Buggy Python Code
+from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY
+
+### Corrected Python Code
+from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY, PROJECT_PAGINATE_BY_DEFAULT, PROJECT_PAGINATE_BY_DEFAULT_ADMIN, PROJECT_PAGINATE_BY_DEFAULT_USER, PROJECT_PAGINATE_BY_DEFAULT_GUEST, PROJECT_PAGINATE_BY_DEFAULT_ANONYMOUS, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_ADMIN_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_GUEST_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_ANONYMOUS_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_GUEST_SUPERUSER_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_ANONYMOUS_SUPERUSER_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER_SUPERUSER_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_GUEST_SUPERUSER_SUPERUSER_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_ANONYMOUS_SUPERUSER_SUPERUSER_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER_SUPERUSER_SUPERUSER_GUEST, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER_SUPERUSER_SUPERUSER_ANONYMOUS, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER_SUPERUSER_SUPERUSER_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER_SUPERUSER_SUPERUSER_GUEST_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER_SUPERUSER_SUPERUSER_ANONYMOUS_SUPERUSER, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER_SUPERUSER_SUPERUSER_SUPERUSER_GUEST, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER_SUPERUSER_SUPERUSER_ANONYMOUS_SUPERUSER_GUEST, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER_SUPERUSER_SUPERUSER_ANONYMOUS_SUPERUSER_ANONYMOUS, PROJECT_PAGINATE_BY_DEFAULT_SUPERUSER_SUPERUSER_SUPERUSER_SUPERUSER_GUEST, PROJECT_PAGINATE_BY_DEFAULT"
+"if reduction_run is not variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')","if reduction_run != variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')","### Buggy Python Code
+if reduction_run is not variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python Code
+if reduction_run != variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run != variables.reduction_run.id and variables.reduction_run.id is not None:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run != variables.reduction_run.id and variables.reduction_run.id is not None and variables.reduction_run.id != -1:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run != variables.reduction_run.id and variables.reduction_run.id is not None and variables.reduction_run.id != -1 and variables.reduction_run.id != 0:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run != variables.reduction_run.id and variables.reduction_run.id is not None and variables.reduction_run.id != -1 and variables.reduction_run.id != 0 and variables.reduction_run.id != 1:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run != variables.reduction_run.id and variables.reduction_run.id is not None and variables.reduction_run.id != -1 and variables.reduction_run.id != 0 and variables.reduction_run.id != 1 and variables.reduction_run.id != 2:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run != variables.reduction_run.id and variables.reduction_run.id is not None and variables.reduction_run.id != -1 and variables.reduction_run.id != 0 and variables.reduction_run.id != 1 and variables.reduction_run.id != 2 and variables.reduction_run.id != 3:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run != variables.reduction_run.id and variables.reduction_run.id is not None and variables.reduction_run.id != -1 and variables.reduction_run.id != 0 and variables.reduction_run.id != 1 and"
+fwrapper_node = parent_node.make_node(FWRAP_TEMPLATE % module_name),fwrapper_node = parent_node.find_or_declare(FWRAP_TEMPLATE % module_name),"### Buggy Python Code
+fwrapper_node = parent_node.make_node(FWRAP_TEMPLATE % module_name)
+
+### Corrected Python Code
+fwrapper_node = parent_node.find_or_declare(FWRAP_TEMPLATE % module_name)
+
+fwrapper_node.add_attribute('module_name', module_name)
+fwrapper_node.add_attribute('module_path', module_path)
+fwrapper_node.add_attribute('module_name_prefix', module_name_prefix)
+fwrapper_node.add_attribute('module_name_suffix', module_name_suffix)
+fwrapper_node.add_attribute('module_name_prefix_suffix', module_name_prefix_suffix)
+fwrapper_node.add_attribute('module_name_prefix_suffix_separator', module_name_prefix_suffix_separator)
+fwrapper_node.add_attribute('module_name_prefix_suffix_separator_type', module_name_prefix_suffix_separator_type)
+fwrapper_node.add_attribute('module_name_prefix_suffix_separator_type_value', module_name_prefix_suffix_separator_type_value)
+fwrapper_node.add_attribute('module_name_prefix_suffix_separator_type_value_type', module_name_prefix_suffix_separator_type_value_type)
+fwrapper_node.add_attribute('module_name_prefix_suffix_separator_type_value_type_value', module_name_prefix_suffix_separator_type_value_value)
+fwrapper_node.add_attribute('module_name_prefix_suffix_separator_type_value_type_value_type', module_name_prefix_suffix_separator_type_value_type_value_type)
+fwrapper_node.add_attribute('module_name_prefix_suffix_separator_type_value_type_value_type_value', module_name_prefix_suffix_separator_type_value_type_value_value)
+fwrapper_node.add_attribute('module_name_prefix_suffix_separator_type_value_type_value_type_value_type', module_name_prefix_suffix_separator_type_value_type_value_type_value_type)
+fwrapper_node.add_attribute('module_name_prefix_suffix_separator_type_value_type_value_type_value_type_value', module_name_prefix_suffix_separator_type_value_type_value_type_value"
+"illum = reduce(lambda x, y: x + y, bg_iter, accumulator)","illum = reduce(lambda x, y: x + y, it.chain([im0], bg_iter), accumulator)","### Buggy Python Code
+illum = reduce(lambda x, y: x + y, bg_iter, accumulator)
+
+### Corrected Python Code
+illum = reduce(lambda x, y: x + y, it.chain([im0], bg_iter), accumulator)
+
+return illum / (len(bg_iter) + 1) * self.exposure_time * self.gain * self.read_noise * self.read_noise_factor * self.pixel_size * self.pixel_size * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n_amps * self.n"
+"import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance(value, dict):
+                extract(value)
+            elif isinstance(value, str) and re.match(pattern, value):
+                urls.append(value)
+    if not urls:
+        return {}
+    elif len(urls) <= top_n:
+        return dict(Counter(urls))
+    return dict(Counter(urls).most_common(top_n))","import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance(value, dict):
+                extract(value)
+            elif isinstance(value, str) and re.match(pattern, value):
+                urls.append(value)
+    extract(data)
+    if not urls:
+        return {}
+    elif len(urls) <= top_n:
+        return dict(Counter(urls))
+    return dict(Counter(urls).most_common(top_n))","value, dict):
+                extract(value)
+            elif isinstance(value, str) and re.match(pattern, value):
+                urls.append(value)
+    if not urls:
+        return {}
+    elif len(urls) <= top_n:
+        return dict(Counter(urls))
+    return dict(Counter(urls).most_common(top_n))
+
+### Corrected Python Code
+import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance(value, dict):
+                extract(value)
+            elif isinstance(value, str) and re.match(pattern, value):
+                urls.append(value)
+    extract(data)
+    if not urls:
+        return {}
+    elif len(urls) <= top_n:
+        return dict(Counter(urls))
+    return dict(Counter(urls).most_common(top_n))
+/day_01/task_01.py
+import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance(value, dict):
+                extract(value)
+            elif isinstance(value, str) and re.match(pattern, value):
+                urls.append(value)
+    extract(data)
+    if not urls:
+        return {}
+    elif len(urls) <= top_n:
+        return dict(Counter(urls))
+    return dict(Counter(urls).most_common(top_n))
+/day_02/task_01.py
+import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s"
+"printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.')","printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.', '0.0')","### Buggy Python Code
+printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.')
+
+### Corrected Python Code
+printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.', '0.0')
+/scripts/get_ref_from_fasta.py
+#!/usr/bin/env python3
+
+import sys
+import os
+import gzip
+
+def get_ref_from_fasta(fasta_file, chrom, refstart, refend):
+    ref = ''
+    with gzip.open(fasta_file, 'rt') as f:
+        for line in f:
+            if line[0] == '>':
+                if line[1:].split()[0] == chrom:
+                    ref = ''
+                    for line in f:
+                        if line[0] == '>':
+                            break
+                        ref += line.strip()
+                    break
+    return ref[refstart - 1:refend] if refstart <= len(ref) and refend <= len(ref) else '.' * (refend - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.' * (len(ref) - refend) + '.' * (len(ref) - refstart) + '.'"
+from .skill_conversation_id_factory import ConversationIdFactoryBase,from .conversation_id_factory import ConversationIdFactoryBase,"### Buggy Python Code
+from .skill_conversation_id_factory import ConversationIdFactoryBase
+
+### Corrected Python Code
+from .conversation_id_factory import ConversationIdFactoryBase, ConversationIdFactory, ConversationIdFactoryV2, ConversationIdFactoryV3, ConversationIdFactoryV4, ConversationIdFactoryV5, ConversationIdFactoryV6, ConversationIdFactoryV7, ConversationIdFactoryV8, ConversationIdFactoryV9, ConversationIdFactoryV10, ConversationIdFactoryV11, ConversationIdFactoryV12, ConversationIdFactoryV13, ConversationIdFactoryV14, ConversationIdFactoryV15, ConversationIdFactoryV16, ConversationIdFactoryV17, ConversationIdFactoryV18, ConversationIdFactoryV19, ConversationIdFactoryV20, ConversationIdFactoryV21, ConversationIdFactoryV22, ConversationIdFactoryV23, ConversationIdFactoryV24, ConversationIdFactoryV25, ConversationIdFactoryV26, ConversationIdFactoryV27, ConversationIdFactoryV28, ConversationIdFactoryV29, ConversationIdFactoryV30, ConversationIdFactoryV31, ConversationIdFactoryV32, ConversationIdFactoryV33, ConversationIdFactoryV34, ConversationIdFactoryV35, ConversationIdFactoryV36, ConversationIdFactoryV37, ConversationIdFactoryV38, ConversationIdFactoryV39, ConversationIdFactoryV40, ConversationIdFactoryV41, ConversationIdFactoryV42, ConversationIdFactoryV43, ConversationIdFactoryV44, ConversationIdFactoryV45, ConversationIdFactoryV46, ConversationIdFactoryV47, ConversationIdFactoryV48, ConversationIdFactoryV49, ConversationIdFactoryV50, ConversationIdFactoryV51, ConversationIdFactoryV52, ConversationIdFactoryV53, ConversationIdFactoryV54, ConversationIdFactoryV55, ConversationIdFactoryV56, ConversationIdFactoryV57, ConversationIdFactoryV58, ConversationIdFactoryV59, ConversationIdFactoryV60, ConversationIdFactoryV61, ConversationIdFactoryV62, ConversationIdFactoryV63, ConversationIdFactoryV64, ConversationIdFactoryV65, Conversation"
+fraction = float(cnt_finished) / float(cnt_all),fraction = 1 if cnt_all == 0 else cnt_finished / cnt_all,"### Buggy Python Code
+fraction = float(cnt_finished) / float(cnt_all)
+
+### Corrected Python Code
+fraction = 1 if cnt_all == 0 else cnt_finished / cnt_all
+
+return fraction * 100.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+df = get_exposures(risk_factors.high_total_normcholesterol.gbd_risk),df = get_exposures(risk_factors.high_total_cholesterol.gbd_risk),"### Buggy Python Code
+df = get_exposures(risk_factors.high_total_normcholesterol.gbd_risk)
+
+### Corrected Python Code
+df = get_exposures(risk_factors.high_total_cholesterol.gbd_risk)
+
+### Corrected Python Code
+df = get_exposures(risk_factors.high_total_cholesterol.gbd_risk) - get_exposures(risk_factors.high_total_normcholesterol.gbd_risk)
+
+### Corrected Python Code
+df = get_exposures(risk_factors.high_total_cholesterol.gbd_risk) - get_exposures(risk_factors.high_total_normcholesterol.gbd_risk) - get_exposures(risk_factors.high_total_triglycerides.gbd_risk) - get_exposures(risk_factors.high_total_total_cholesterol.gbd_risk) - get_exposures(risk_factors.high_total_total_triglycerides.gbd_risk) - get_exposures(risk_factors.high_total_total_cholesterol.gbd_risk) - get_exposures(risk_factors.high_total_total_triglycerides.gbd_risk) - get_exposures(risk_factors.high_total_total_cholesterol.gbd_risk) - get_exposures(risk_factors.high_total_total_triglycerides.gbd_risk) - get_exposures(risk_factors.high_total_total_cholesterol.gbd_risk) - get_exposures(risk_factors.high_total_total_triglycerides.gbd_risk) - get_exposures(risk_factors.high_total_total_cholesterol.gbd_risk) - get_exposures(risk_factors.high_total_total_triglycerides.gbd_risk) - get_exposures(risk_factors.high_total_total_cholesterol.gbd_risk) - get_exposures(risk_factors.high_total_total_triglycerides.gbd_risk) - get_exposures(risk_factors.high_total_total_cholesterol.gbd_risk) - get_exposures(risk_factors.high_total_total"
+"class Solution:
+
+    def permute(self, n: int, k: int) -> list[int]:
+        ans = []
+        isLookingForEven = True
+        remainingNumbers = list(range(1, n + 1))
+        for turn in range(n):
+            remainingPermutations = math.factorial((n - 1 - turn) // 2) * math.factorial((n - turn) // 2)
+            for index, number in enumerate(remainingNumbers):
+                if number % 2 != isLookingForEven and (turn > 0 or n % 2 == 1):
+                    continue
+                remainingPermutations = remainingPermutations // 2
+                if k <= remainingPermutations:
+                    ans.append(remainingNumbers.pop(index))
+                    isLookingForEven = ans[-1] % 2 == 0
+                    found = True
+                    break
+                k -= remainingPermutations
+            if not found:
+                return []
+        return ans","class Solution:
+
+    def permute(self, n: int, k: int) -> list[int]:
+        ans = []
+        isLookingForEven = True
+        remainingNumbers = list(range(1, n + 1))
+        for turn in range(n):
+            remainingPermutations = math.factorial((n - 1 - turn) // 2) * math.factorial((n - turn) // 2)
+            found = False
+            for index, number in enumerate(remainingNumbers):
+                if number % 2 != isLookingForEven and (turn > 0 or n % 2 == 1):
+                    continue
+                if k <= remainingPermutations:
+                    ans.append(remainingNumbers.pop(index))
+                    isLookingForEven = ans[-1] % 2 == 0
+                    found = True
+                    break
+                k -= remainingPermutations
+            if not found:
+                return []
+        return ans","Permutations
+            if not found:
+                return []
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def permute(self, n: int, k: int) -> list[int]:
+        ans = []
+        isLookingForEven = True
+        remainingNumbers = list(range(1, n + 1))
+        for turn in range(n):
+            remainingPermutations = math.factorial((n - 1 - turn) // 2) * math.factorial((n - turn) // 2)
+            found = False
+            for index, number in enumerate(remainingNumbers):
+                if number % 2 != isLookingForEven and (turn > 0 or n % 2 == 1):
+                    continue
+                if k <= remainingPermutations:
+                    ans.append(remainingNumbers.pop(index))
+                    isLookingForEven = ans[-1] % 2 == 0
+                    found = True
+                    break
+                k -= remainingPermutations
+            if not found:
+                return []
+        return ans
+
+class Solution:
+
+    def permute(self, n: int, k: int) -> list[int]:
+        ans = []
+        isLookingForEven = True
+        remainingNumbers = list(range(1, n + 1))
+        for turn in range(n):
+            remainingPermutations = math.factorial((n - 1 - turn) // 2) * math.factorial((n - turn) // 2)
+            found = False
+            for index, number in enumerate(remainingNumbers):
+                if number % 2 != isLookingForEven and (turn > 0 or n % 2 == 1):
+                    continue
+                if k <= remainingPermutations:
+                    ans.append(remainingNumbers.pop(index))
+                    isLookingForEven = ans[-1] % 2 == 0
+                    found = True
+                    break
+                k -= remainingPermutations
+            if not found:
+                return []
+        return ans
+/1000-1099/1000-1099.py
+class Solution:
+
+    def permute(self, n: int, k: int) -> list[int]:
+        ans = []
+        isLookingForEven = True
+        remainingNumbers = list(range(1, n + 1))
+        for turn in range(n):
+            remainingPermutations = math.factorial((n - 1 - turn) // 2) * math.factorial((n - turn) // 2)
+            found = False
+            for index, number in enumerate(remainingNumbers):
+                if number % 2 != isLookingForEven and (turn > 0 or n % 2 == 1):
+                    continue
+                if k <= remainingPermutations:
+                    ans.append(remainingNumbers.pop(index))
+                    isLookingForEven = ans[-1] % 2 == 0
+                    found = True
+                    break
+                k -= remainingPermutations
+            if not found:
+                return []
+        return ans
+
+class Solution:
+
+    def permute(self, n: int, k: int) -> list[int]:
+        ans = []
+        isLookingForEven = True
+        remainingNumbers = list(range(1, n + 1))
+        for turn in range(n):
+            remainingPermutations = math.factorial((n - 1 - turn) // 2) * math.factorial((n - turn) // 2)
+            found ="
+"return DrawStyle(color=(1, 1, 1, 1), texture=self.texture, x=self.x, y=self.y, z=self.z, width=self.width, height=self.height, uvs=self.uvs, draw_list=self.quad_list, draw_env=DRAW_BLENDED)","return DrawStyle(color=(1, 1, 1, 1), texture=self.texture, x=self.x, y=self.y, z=0, width=self.width, height=self.height, uvs=self.uvs, draw_list=self.quad_list, draw_env=DRAW_BLENDED)","### Buggy Python Code
+return DrawStyle(color=(1, 1, 1, 1), texture=self.texture, x=self.x, y=self.y, z=self.z, width=self.width, height=self.height, uvs=self.uvs, draw_list=self.quad_list, draw_env=DRAW_BLENDED)
+
+### Corrected Python Code
+return DrawStyle(color=(1, 1, 1, 1), texture=self.texture, x=self.x, y=self.y, z=0, width=self.width, height=self.height, uvs=self.uvs, draw_list=self.quad_list, draw_env=DRAW_BLENDED)/src/game/game_state.py
+from src.game.game_object import GameObject, GameObjectManager, GameObjectManagerType, GameObjectManagerType.PLAYER, GameObjectManagerType.NPC, GameObjectManagerType.ITEM, GameObjectManagerType.PROJECTILE, GameObjectManagerType.EFFECT, GameObjectManagerType.ENVIRONMENT, GameObjectManagerType.UI, GameObjectManagerType.UI_TEXT, GameObjectManagerType.UI_IMAGE, GameObjectManagerType.UI_BUTTON, GameObjectManagerType.UI_SLIDER, GameObjectManagerType.UI_TEXT_INPUT, GameObjectManagerType.UI_CHECKBOX, GameObjectManagerType.UI_PROGRESS_BAR, GameObjectManagerType.UI_SLIDER_INPUT, GameObjectManagerType.UI_TEXT_AREA, GameObjectManagerType.UI_LIST, GameObjectManagerType.UI_LIST_ITEM, GameObjectManagerType.UI_WINDOW, GameObjectManagerType.UI_WINDOW_BUTTON, GameObjectManagerType.UI_WINDOW_SLIDER, GameObjectManagerType.UI_WINDOW_SLIDER_INPUT, GameObjectManagerType.UI_WINDOW_TEXT_INPUT, GameObjectManagerType.UI_WINDOW_CHECKBOX, GameObjectManagerType.UI_WINDOW_PROGRESS_BAR, GameObjectManagerType.UI_WINDOW_TEXT_AREA, GameObjectManagerType.UI_WINDOW_LIST, GameObjectManagerType.UI_WINDOW_LIST_ITEM, GameObjectManagerType.UI_WINDOW_WINDOW, GameObjectManagerType.UI_WINDOW_WINDOW_BUTTON, GameObjectManagerType.UI_WINDOW_WINDOW_SLIDER, GameObjectManagerType.UI_WINDOW_WINDOW_SLIDER_INPUT, GameObjectManagerType.UI_WINDOW_WINDOW_TEXT_INPUT, GameObjectManagerType.UI_WINDOW_WINDOW_CHECKBOX, GameObjectManagerType.UI_WINDOW_WINDOW_PROGRESS_BAR, GameObjectManagerType.UI_WINDOW_WINDOW_TEXT_AREA, GameObjectManagerType.UI_WINDOW_WINDOW_LIST, GameObjectManagerType.UI_WINDOW_WINDOW_LIST_ITEM, GameObjectManagerType.UI_WINDOW_WINDOW_WINDOW, GameObjectManagerType.UI_WINDOW_WINDOW_WINDOW_BUTTON, GameObjectManagerType.UI_WINDOW_WINDOW_WINDOW_SLIDER, GameObjectManagerType.UI_WINDOW_WINDOW_WINDOW_SLIDER_INPUT, GameObjectManagerType.UI_WINDOW_WINDOW_WINDOW_TEXT_INPUT, GameObjectManagerType.UI_WINDOW_WINDOW_WINDOW_CHECKBOX, GameObjectManagerType.UI_WINDOW"
+"op, subgoal, popSkel = ps.nextStep(s, f, ops)","op, subgoal, popSkel = ps.nextStep(s, ops, f)","### Buggy Python Code
+op, subgoal, popSkel = ps.nextStep(s, f, ops)
+
+### Corrected Python Code
+op, subgoal, popSkel = ps.nextStep(s, ops, f) if f else (None, s, None)
+
+### Corrected Python code
+op, subgoal, popSkel = ps.nextStep(s, ops, f) if f else (None, s, None) if not ps.isTerminal(s) else (None, s, None)
+
+### Corrected Python code
+op, subgoal, popSkel = ps.nextStep(s, ops, f) if f else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if not ps.isTerminal(s) else (None, s, None) if"
+max_rate = np.max([0.01] + [dm.value_per_1(d) for d in data] + list(dm.get_map(type))),"max_rate = np.max([0.01] + [dm.value_per_1(d) for d in data] + list(dm.get_map(type)) + list(dm.get_mcmc('mean', type)))","### Buggy Python Code
+max_rate = np.max([0.01] + [dm.value_per_1(d) for d in data] + list(dm.get_map(type)))
+
+### Corrected Python Code
+max_rate = np.max([0.01] + [dm.value_per_1(d) for d in data] + list(dm.get_map(type)) + list(dm.get_mcmc('mean', type))) + [1.0]) * 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"cr_show.connect('toggled', self._on_tree_view_cell_toggled)","cr_2.connect('toggled', self._on_tree_view_cell_toggled)","### Buggy Python Code
+cr_show.connect('toggled', self._on_tree_view_cell_toggled)
+
+### Corrected Python Code
+cr_2.connect('toggled', self._on_tree_view_cell_toggled)
+
+    def _on_tree_view_cell_toggled(self, cell, path, column):
+        model = cell.get_model()
+        model.set_value(path, column, cell.get_property('active'))
+        self.update_total()
+
+    def update_total(self):
+        total = 0
+        for row in self.treeview.get_model():
+            total += row[2].get_value()
+        self.total.set_text(str(total))
+
+    def on_button_clicked(self, button):
+        self.destroy()
+
+    def on_button_clicked_2(self, button):
+        self.destroy()
+
+    def on_button_clicked_3(self, button):
+        self.destroy()
+
+    def on_button_clicked_4(self, button):
+        self.destroy()
+
+    def on_button_clicked_5(self, button):
+        self.destroy()
+
+    def on_button_clicked_6(self, button):
+        self.destroy()
+
+    def on_button_clicked_7(self, button):
+        self.destroy()
+
+    def on_button_clicked_8(self, button):
+        self.destroy()
+
+    def on_button_clicked_9(self, button):
+        self.destroy()
+
+    def on_button_clicked_10(self, button):
+        self.destroy()
+
+    def on_button_clicked_11(self, button):
+        self.destroy()
+
+    def on_button_clicked_12(self, button):
+        self.destroy()
+
+    def on_button_clicked_13(self, button):
+        self.destroy()
+
+    def on_button_clicked_14(self, button):
+        self.destroy()
+
+    def on_button_clicked_15(self, button):
+        self.destroy()
+
+    def on_button_clicked_16(self, button):
+        self.destroy()
+
+    def on_button_clicked_17(self, button):
+        self.destroy()
+
+    def on_button_clicked_18(self, button):
+        self.destroy()
+
+    def on_button_clicked_19(self, button):
+        self.destroy()
+
+    def on_button_clicked_20(self, button):
+        self.destroy()
+
+    def on_button_clicked_21(self, button):"
+"n = np.random.normal(0, 0.03, h.data.shape).astype(np.float32)","n = np.random.normal(0, 0.03, h_.data.shape).astype(np.float32)","### Buggy Python Code
+n = np.random.normal(0, 0.03, h.data.shape).astype(np.float32)
+
+### Corrected Python Code
+n = np.random.normal(0, 0.03, h_.data.shape).astype(np.float32) * 0.01
+
+### Corrected Python Code
+n = np.random.normal(0, 0.03, h_.data.shape).astype(np.float32) * 0.01 + 1.0
+
+### Corrected Python Code
+n = np.random.normal(0, 0.03, h_.data.shape).astype(np.float32) * 0.01 + 1.0 - 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand(h_.data.shape[0]) * 0.01 * 2.0 * np.random.rand("
+"import mechanize
+from bs4 import BeautifulSoup
+
+def task_func(url, form_id, data):
+    br = mechanize.Browser()
+    br.open(url)
+    br.select_form(nr=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup else 'No Title'
+    return title","import mechanize
+from bs4 import BeautifulSoup
+
+def task_func(url, form_id, data):
+    br = mechanize.Browser()
+    br.open(url)
+    br.select_form(nr=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup.title else 'No Title'
+    return title","### Buggy Python Code
+import mechanize
+from bs4 import BeautifulSoup
+
+def task_func(url, form_id, data):
+    br = mechanize.Browser()
+    br.open(url)
+    br.select_form(nr=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup else 'No Title'
+    return title
+
+### Corrected Python Code
+import mechanize
+from bs4 import BeautifulSoup
+
+def task_func(url, form_id, data):
+    br = mechanize.Browser()
+    br.open(url)
+    br.select_form(nr=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup.title else 'No Title'
+    return title
+
+if __name__ == '__main__':
+    url = 'https://www.google.com/search'
+    form_id = 0
+    data = {'q': 'python programming tutorials'}
+    title = task_func(url, form_id, data)
+    print(title)/python/python-basics/01-basics/01-basics.py
+# Python Basics - 01-basics.py
+
+# 1. Write a program to print 'Hello World' on the screen.
+print('Hello World')
+
+# 2. Write a program to print 'Hello World' on the screen and exit.
+print('Hello World')
+exit()
+
+# 3. Write a program to print 'Hello World' on the screen and exit with a 0 status code.
+print('Hello World')
+exit(0)
+
+# 4. Write a program to print 'Hello World' on the screen and exit with a 1 status code.
+print('Hello World')
+exit(1)
+
+# 5. Write a program to print 'Hello World' on the screen and exit with a 2 status code.
+print('Hello World')
+exit(2)
+
+# 6. Write a program to print 'Hello World' on the screen and exit with a 3 status code.
+print('Hello World')
+exit(3)
+
+# 7. Write a program to print 'Hello World' on the screen and exit with a 4 status code.
+print('Hello World')
+exit(4)
+
+# 8. Write a program to print 'Hello World' on the screen and exit with a 5 status code.
+print('Hello World')
+exit(5)
+
+# 9. Write a program to print 'Hello World' on the screen and exit with a 6 status code.
+print('Hello World')
+exit(6)
+
+# 10. Write a program to print 'Hello World' on the screen and exit with a 7 status code.
+print('Hello World')
+exit(7)
+
+# 11. Write a program to print 'Hello World' on the screen and exit with a 8 status code.
+print('Hello World')
+exit(8)
+
+# 12. Write a program to print 'Hello World' on the screen"
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic),urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic[0:100]),"### Buggy Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic)
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic[0:100]) if self.shopIds_problematic else []
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic[0:100]) if self.shopIds_problematic else [] * 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+            ans += (l - r) % 2 == 0
+        return ans","class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+        return ans","### Buggy Python Code
+class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+            ans += (l - r) % 2 == 0
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+        return ans + 1
+
+### Corrected Python class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+        return ans + 1 if l == r else ans + 2
+/1200-1299/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.py
+class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        l, r = (0, len(s))
+        ans = ''
+        while l < r:
+            if s[l:l + len(sub)] == sub:
+                l += len(sub)
+            else:
+                ans += s[l]
+                l += 1
+        return ans
+
+### Corrected Python class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        l, r = (0, len(s))
+        ans = ''
+        while l < r:
+            if s[l:l + len(sub)] == sub:
+                l += len(sub)
+            else:
+                ans += s[l]
+                l += 1
+        return ans + s[l:] if l < r else ans + s[l:] + s[r:] if l < r else ans + s[l:] + s[r:] + s[l:] if l < r else ans + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] if l < r else ans + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l"
+"results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': '{}?q={}'.format(reverse(url), form.cleaned_data['q'])})","results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': u'{}?q={}'.format(reverse(url), form.cleaned_data['q'])})","### Buggy Python Code
+results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': '{}?q={}'.format(reverse(url), form.cleaned_data['q'])})
+
+### Corrected Python Code
+results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': u'{}?q={}'.format(reverse(url), form.cleaned_data['q'])})
+
+return results, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None, form.cleaned_data['q'] or '' or None,"
+"import numpy as np
+import matplotlib.pyplot as plt
+
+def task_func():
+    x_values = np.linspace(0, 2 * np.pi, 400)
+    axs, fig = plt.subplots(2)
+    axs[0].plot(x_values, np.sin(x_values))
+    axs[0].set_title('Sine function')
+    axs[0].set_xlabel('x')
+    axs[0].set_ylabel('sin(x)')
+    axs[1].plot(x_values, np.cos(x_values))
+    axs[1].set_title('Cosine function')
+    axs[1].set_xlabel('x')
+    axs[1].set_ylabel('cos(x)')
+    plt.tight_layout()
+    return (fig, axs)","import numpy as np
+import matplotlib.pyplot as plt
+
+def task_func():
+    x_values = np.linspace(0, 2 * np.pi, 400)
+    fig, axs = plt.subplots(2)
+    axs[0].plot(x_values, np.sin(x_values))
+    axs[0].set_title('Sine function')
+    axs[0].set_xlabel('x')
+    axs[0].set_ylabel('sin(x)')
+    axs[1].plot(x_values, np.cos(x_values))
+    axs[1].set_title('Cosine function')
+    axs[1].set_xlabel('x')
+    axs[1].set_ylabel('cos(x)')
+    plt.tight_layout()
+    return (fig, axs)","return (fig, axs)
+
+### Corrected Python Code
+import numpy as np
+import matplotlib.pyplot as plt
+
+def task_func():
+    x_values = np.linspace(0, 2 * np.pi, 400)
+    fig, axs = plt.subplots(2)
+    axs[0].plot(x_values, np.sin(x_values))
+    axs[0].set_title('Sine function')
+    axs[0].set_xlabel('x')
+    axs[0].set_ylabel('sin(x)')
+    axs[1].plot(x_values, np.cos(x_values))
+    axs[1].set_title('Cosine function')
+    axs[1].set_xlabel('x')
+    axs[1].set_ylabel('cos(x)')
+    plt.tight_layout()
+    return (fig, axs)
+
+if __name__ == '__main__':
+    task_func()
+    plt.show()/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01"
+"cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password))","cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password))","### Buggy Python Code
+cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password))
+
+### Corrected Python Code
+cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password))
+
+### Corrected Python Code
+cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password.encode('utf-8')))
+
+### Corrected Python Code
+cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password.encode('utf-8')))
+
+### Corrected Python Code
+cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password.encode('utf-8'))) if isinstance(password, str) else cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password))
+
+### Corrected Python Code
+cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password.encode('utf-8'))) if isinstance(password, str) else cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password)) if isinstance(password, unicode) else cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password)) if isinstance(password, str) else cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password)) if isinstance(password, unicode) else cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password)) if isinstance(password, str) else cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password)) if isinstance(password, unicode) else cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password)) if isinstance(password, str) else cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password)) if isinstance(password, unicode) else cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', ("
+y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:])),y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])),"### Buggy Python Code
+y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]))
+
+### Corrected Python Code
+y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])) - self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])) * self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])) * self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])) * self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])) * self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])) * self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])) * self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])) * self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])) * self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])) * self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])) * self.value_scale(samples.env.reward[:-1] + self.discount * (1"
+"class Solution:
+
+    def findComplement(self, num: int) -> int:
+        com = ''
+        while num > 0:
+            if num % 2 == 1:
+                com += '0'
+            else:
+                com += '1'
+            num = num // 2
+        return int(com[::-1][1:], 2)","class Solution:
+
+    def findComplement(self, num: int) -> int:
+        com = ''
+        while num > 0:
+            if num % 2 == 1:
+                com += '0'
+            else:
+                com += '1'
+            num = num // 2
+        return int(com[::-1], 2)","### Buggy Python Code
+class Solution:
+
+    def findComplement(self, num: int) -> int:
+        com = ''
+        while num > 0:
+            if num % 2 == 1:
+                com += '0'
+            else:
+                com += '1'
+            num = num // 2
+        return int(com[::-1][1:], 2)
+
+### Corrected Python Code
+class Solution:
+
+    def findComplement(self, num: int) -> int:
+        com = ''
+        while num > 0:
+            if num % 2 == 1:
+                com += '0'
+            else:
+                com += '1'
+            num = num // 2
+        return int(com[::-1], 2) - 1 if com[0] == '1' else int(com[::-1], 2) - 2
+
+### Corrected Python
+class Solution:
+
+    def findComplement(self, num: int) -> int:
+        com = ''
+        while num > 0:
+            if num % 2 == 1:
+                com += '0'
+            else:
+                com += '1'
+            num = num // 2
+        return int(com[::-1], 2) - 1 if com[0] == '1' else int(com[::-1], 2) - 2 if com[1] == '1' else int(com[::-1], 2) - 1 - 2
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, scores: List[int], piles: List[int]) -> int:
+        scores.sort()
+        piles.sort()
+        score = 0
+        piles_index = 0
+        for i in range(len(scores)):
+            score += scores[i]
+            while piles_index < len(piles) and score + piles[piles_index] > 10:
+                score += piles[piles_index]
+                piles_index += 1
+        return score
+
+### Corrected Python
+class Solution:
+
+    def maxScore(self, scores: List[int], piles: List[int]) -> int:
+        scores.sort()
+        piles.sort()
+        score = 0
+        piles_index = 0
+        for i in range(len(scores)):
+            score += scores[i]
+            while piles_index < len(piles) and score + piles[piles_index] > 10:
+                score += piles[piles_index]
+                piles_index += 1
+        return score - 10 * (len(scores) - piles_index) if score > 10 * (len(scores) - piles_index) else score
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, scores: List[int], piles: List[int]) -> int:"
+result_categories = mall_models.ProductCategory.select().dj_where(id__in=category_ids),"result_categories = mall_models.ProductCategory.select().dj_where(id__in=category_ids, owner_id=self.corp.id)","### Buggy Python Code
+result_categories = mall_models.ProductCategory.select().dj_where(id__in=category_ids)
+
+### Corrected Python Code
+result_categories = mall_models.ProductCategory.select().dj_where(id__in=category_ids, owner_id=self.corp.id) if self.corp else mall_models.ProductCategory.select().dj_where(id__in=category_ids)
+
+return result_categories.order_by('name') if result_categories else []/apps/mall/models/product.py
+from django.db import models
+from django.utils.translation import ugettext_lazy as _
+from django.contrib.auth.models import User
+from django.core.validators import MaxLengthValidator, MinLengthValidator, RegexValidator, EmailValidator, URLValidator, ValidationError, FileExtensionValidator, FileSizeValidator, ProhibitNullCharactersValidator, ProhibitEmptyCharactersValidator, ProhibitSpacesValidator, ProhibitNewlinesValidator, ProhibitTabCharactersValidator, ProhibitControlCharactersValidator, ProhibitBackslashCharactersValidator, ProhibitDoubleQuotesValidator, ProhibitSingleQuotesValidator, ProhibitBackticksValidator, ProhibitNonPrintableCharactersValidator, ProhibitZeroWidthCharactersValidator, ProhibitNonASCIICharactersValidator, ProhibitLeftOverBytesValidator, ProhibitRightOverBytesValidator, ProhibitLineBreaksValidator, ProhibitCarriageReturnsValidator, ProhibitFormFeedsValidator, ProhibitPageBreaksValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator, ProhibitNonBreakingTabsValidator, ProhibitNonBreakingSpacesValidator,"
+"class Solution:
+
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        n = grid.shape[0]
+        cnt = [0] * (n * n + 1)
+        for row in grid:
+            cnt = [0] * (n * n + 1)
+            for v in row:
+                cnt[v] += 1
+        ans = [0] * 2
+        cnt.sort()
+        for i in range(1, n * n + 1):
+            if cnt[i] == 2:
+                ans[0] = i
+            if cnt[i] == 0:
+                ans[1] = i","class Solution:
+
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        n = len(grid)
+        cnt = [0] * (n * n + 1)
+        for row in grid:
+            for v in row:
+                cnt[v] += 1
+        ans = [0] * 2
+        for i in range(1, n * n + 1):
+            if cnt[i] == 2:
+                ans[0] = i
+            if cnt[i] == 0:
+                ans[1] = i
+        return ans","### Buggy Python Code
+class Solution:
+
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        n = grid.shape[0]
+        cnt = [0] * (n * n + 1)
+        for row in grid:
+            cnt = [0] * (n * n + 1)
+            for v in row:
+                cnt[v] += 1
+        ans = [0] * 2
+        cnt.sort()
+        for i in range(1, n * n + 1):
+            if cnt[i] == 2:
+                ans[0] = i
+            if cnt[i] == 0:
+                ans[1] = i
+
+### Corrected Python Code
+class Solution:
+
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        n = len(grid)
+        cnt = [0] * (n * n + 1)
+        for row in grid:
+            for v in row:
+                cnt[v] += 1
+        ans = [0] * 2
+        for i in range(1, n * n + 1):
+            if cnt[i] == 2:
+                ans[0] = i
+            if cnt[i] == 0:
+                ans[1] = i
+        return ans
+/python/1000/1000-1002/1002.py
+class Solution:
+
+    def maxDepth(self, root: 'Node') -> int:
+        if root is None:
+            return 0
+        depth = 0
+        queue = [root]
+        while queue:
+            depth += 1
+            n = len(queue)
+            for _ in range(n):
+                node = queue.pop(0)
+                for child in node.children:
+                    queue.append(child)
+        return depth
+
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.children = []
+
+    def addChild(self, child):
+        self.children.append(child)
+/python/1000/1000-1002/1002.py
+class Solution:
+
+    def maxDepth(self, root: 'Node') -> int:
+        if root is None:
+            return 0
+        depth = 0
+        queue = [root]
+        while queue:
+            depth += 1
+            n = len(queue)
+            for _ in range(n):
+                node = queue.pop(0)
+                for child in node.children:
+                    queue.append(child)
+        return depth - 1
+
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.children = []
+
+    def addChild(self, child):
+        self.children.append(child)
+/python/1000/1000-1002/1002.py
+class Solution:
+
+    def maxDepth(self, root: 'Node') -> int:
+        if root is None:
+            return 0
+        depth = 0
+        queue = [root]
+        while queue:
+            depth += 1
+            n = len(queue)
+            for _ in range(n):
+                node = queue.pop(0)
+                for child in node.children:
+                    queue.append(child)
+        return depth - 1
+
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.children = []
+
+    def addChild(self, child):
+        self.children.append(child)
+/python/1000/1000-1002/100"
+"import numpy as np
+import pandas as pd
+
+def task_func(products, n_samples=100, sales_lower=50, sales_upper=200, profit_margin_min=0.1, profit_margin_max=0.5, random_seed=42):
+    np.random.seed(random_seed)
+    if products:
+        return pd.DataFrame(columns=['Product', 'Sales', 'Profit'])
+    if not isinstance(products, list) or not all((isinstance(product, str) for product in products)):
+        raise TypeError('products must be a list of strings.')
+    if not isinstance(n_samples, int) or n_samples <= 0:
+        raise ValueError('n_samples must be a positive integer.')
+    if not (isinstance(sales_lower, int) and isinstance(sales_upper, int)) or sales_lower >= sales_upper:
+        raise ValueError('sales_lower must be less than sales_upper and both must be integers.')
+    if not all((isinstance(x, (int, float)) for x in [profit_margin_min, profit_margin_max])) or profit_margin_min >= profit_margin_max:
+        raise ValueError('profit_margin_min must be less than profit_margin_max and both must be numeric.')
+    data = []
+    for _ in range(n_samples):
+        product = np.random.choice(products)
+        sales = np.random.randint(sales_lower, sales_upper + 1)
+        profit = sales * np.random.uniform(profit_margin_min, profit_margin_max)
+        profit = 0
+        data.append([product, sales, profit])
+    df = pd.DataFrame(data, columns=['Product', 'Sales', 'Profit'])
+    df = df.groupby('Product', as_index=False).sum()
+    df.sort_values('Profit', ascending=False, inplace=True)
+    return df.to_json()","import numpy as np
+import pandas as pd
+
+def task_func(products, n_samples=100, sales_lower=50, sales_upper=200, profit_margin_min=0.1, profit_margin_max=0.5, random_seed=42):
+    np.random.seed(random_seed)
+    if not products:
+        return pd.DataFrame(columns=['Product', 'Sales', 'Profit'])
+    if not isinstance(products, list) or not all((isinstance(product, str) for product in products)):
+        raise TypeError('products must be a list of strings.')
+    if not isinstance(n_samples, int) or n_samples <= 0:
+        raise ValueError('n_samples must be a positive integer.')
+    if not (isinstance(sales_lower, int) and isinstance(sales_upper, int)) or sales_lower >= sales_upper:
+        raise ValueError('sales_lower must be less than sales_upper and both must be integers.')
+    if not all((isinstance(x, (int, float)) for x in [profit_margin_min, profit_margin_max])) or profit_margin_min >= profit_margin_max:
+        raise ValueError('profit_margin_min must be less than profit_margin_max and both must be numeric.')
+    data = []
+    for _ in range(n_samples):
+        product = np.random.choice(products)
+        sales = np.random.randint(sales_lower, sales_upper + 1)
+        profit = sales * np.random.uniform(profit_margin_min, profit_margin_max)
+        data.append([product, sales, profit])
+    df = pd.DataFrame(data, columns=['Product', 'Sales', 'Profit'])
+    df = df.groupby('Product', as_index=False).sum()
+    df.sort_values('Profit', ascending=False, inplace=True)
+    return df","seed=42):
+    np.random.seed(random_seed)
+    if products:
+        return pd.DataFrame(columns=['Product', 'Sales', 'Profit'])
+    if not isinstance(products, list) or not all((isinstance(product, str) for product in products)):
+        raise TypeError('products must be a list of strings.')
+    if not isinstance(n_samples, int) or n_samples <= 0:
+        raise ValueError('n_samples must be a positive integer.')
+    if not (isinstance(sales_lower, int) and isinstance(sales_upper, int)) or sales_lower >= sales_upper:
+        raise ValueError('sales_lower must be less than sales_upper and both must be integers.')
+    if not all((isinstance(x, (int, float)) for x in [profit_margin_min, profit_margin_max])) or profit_margin_min >= profit_margin_max:
+        raise ValueError('profit_margin_min must be less than profit_margin_max and both must be numeric.')
+    data = []
+    for _ in range(n_samples):
+        product = np.random.choice(products)
+        sales = np.random.randint(sales_lower, sales_upper + 1)
+        profit = sales * np.random.uniform(profit_margin_min, profit_margin_max)
+        profit = 0
+        data.append([product, sales, profit])
+    df = pd.DataFrame(data, columns=['Product', 'Sales', 'Profit'])
+    df = df.groupby('Product', as_index=False).sum()
+    df.sort_values('Profit', ascending=False, inplace=True)
+    return df.to_json()
+
+### Corrected Python Code
+import numpy as np
+import pandas as pd
+
+def task_func(products, n_samples=100, sales_lower=50, sales_upper=200, profit_margin_min=0.1, profit_margin_max=0.5, random_seed=42):
+    np.random.seed(random_seed)
+    if not products:
+        return pd.DataFrame(columns=['Product', 'Sales', 'Profit'])
+    if not isinstance(products, list) or not all((isinstance(product, str) for product in products)):
+        raise ValueError('products must be a list of strings.')
+    if not isinstance(n_samples, int) or n_samples <= 0:
+        raise ValueError('n_samples must be a positive integer.')
+    if not (isinstance(sales_lower, int) and isinstance(sales_upper, int)) or sales_lower >= sales_upper:
+        raise ValueError('sales_lower must be less than sales_upper and both must be integers.')
+    if not all((isinstance(x, (int, float)) for x in [profit_margin_min, profit_margin_max])) or profit_margin_min >= profit_margin_max:
+        raise ValueError('profit_margin_min must be less than profit_margin_max and both must be numeric.')
+    data = []
+    for _ in range(n_samples):
+        product = np.random.choice(products)
+        sales = np.random.randint(sales_lower, sales_upper + 1)
+        profit = sales * np.random.uniform(profit_margin_min, profit_margin_max)
+        data.append([product, sales, profit])
+    df = pd.DataFrame(data, columns=['Product', 'Sales', 'Profit'])
+    df.sort_values('Profit', ascending=False, inplace=True)
+    return df
+
+if __name__ == '__main__':
+    products = ['A', 'B', 'C', 'D', 'E']
+    n_samples = 100
+    sales_lower = 50
+    sales_upper = 200
+    profit_margin_min = 0.1
+    profit_margin_max = 0.5
+    random_seed = 42
+    df = task_func(products, n_samples, sales_lower, sales_upper, profit_margin_min, profit_margin_max, random_seed)
+    print(df)/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/0"
+"import re
+import os
+from collections import Counter
+
+def task_func(folder_path: str) -> dict:
+    IP_REGEX = re.compile('\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}', re.FULLMATCH)
+    counter = Counter()
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.log'):
+            with open(os.path.join(folder_path, filename), 'rb') as file:
+                content = file.read()
+                ips = re.findall(IP_REGEX, content)
+                counter.update(content)
+    return dict(counter)","import re
+import os
+from collections import Counter
+
+def task_func(folder_path: str) -> dict:
+    IP_REGEX = re.compile('\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}')
+    counter = Counter()
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.log'):
+            with open(os.path.join(folder_path, filename)) as file:
+                content = file.read()
+                ips = re.findall(IP_REGEX, content)
+                counter.update(ips)
+    return dict(counter)","### Buggy Python Code
+import re
+import os
+from collections import Counter
+
+def task_func(folder_path: str) -> dict:
+    IP_REGEX = re.compile('\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}', re.FULLMATCH)
+    counter = Counter()
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.log'):
+            with open(os.path.join(folder_path, filename), 'rb') as file:
+                content = file.read()
+                ips = re.findall(IP_REGEX, content)
+                counter.update(content)
+    return dict(counter)
+
+### Corrected Python Code
+import re
+import os
+from collections import Counter
+
+def task_func(folder_path: str) -> dict:
+    IP_REGEX = re.compile('\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}')
+    counter = Counter()
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.log'):
+            with open(os.path.join(folder_path, filename)) as file:
+                content = file.read()
+                ips = re.findall(IP_REGEX, content)
+                counter.update(ips)
+    return dict(counter)
+
+if __name__ == '__main__':
+    print(task_func('./logs'))
+/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/"
+"raise ValueError('Invalid inspect attribute %s passed in. Should be one of: %s' % (k, event_types))","raise ValueError('Invalid inspect attribute %s passed in. Should be one of: %s' % (k, inspect_attributes))","### Buggy Python Code
+raise ValueError('Invalid inspect attribute %s passed in. Should be one of: %s' % (k, event_types))
+
+### Corrected Python Code
+raise ValueError('Invalid inspect attribute %s passed in. Should be one of: %s' % (k, inspect_attributes))
+/tests/test_utils.py
+import os
+import sys
+import unittest
+
+from py_utils.utils import get_module_path, get_module_name, get_module_version, get_module_author, get_module_license, get_module_description, get_module_url, get_module_dependencies, get_module_class_names, get_module_class_names_from_file, get_module_class_names_from_dir, get_module_class_names_from_file_and_dir, get_module_class_names_from_dir_and_file, get_module_class_names_from_file_and_dir_and_module, get_module_class_names_from_dir_and_file_and_module, get_module_class_names_from_dir_and_file_and_module_and_submodule, get_module_class_names_from_dir_and_file_and_module_and_submodule_and_submodule, get_module_class_names_from_dir_and_file_and_module_and_submodule_and_submodule_and_submodule_and_submodule, get_module_class_names_from_dir_and_file_and_module_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule, get_module_class_names_from_dir_and_file_and_module_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule, get_module_class_names_from_dir_and_file_and_module_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule, get_module_class_names_from_dir_and_file_and_module_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_submodule_and_"
+"return quantum.now().add(seconds=settings.getint('identity', 'activity_timeout'))","return quantum.now('UTC').add(seconds=settings.getint('identity', 'activity_timeout'))","### Buggy Python Code
+return quantum.now().add(seconds=settings.getint('identity', 'activity_timeout'))
+
+### Corrected Python Code
+return quantum.now('UTC').add(seconds=settings.getint('identity', 'activity_timeout')) - quantum.timedelta(seconds=1)  # -1 second to avoid race condition when the user is logged out and the timeout is set to 0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0.0.0.0:0"
+"os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings')","os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings')","### Buggy Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.dev')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.dev')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_"
