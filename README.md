@@ -36,6 +36,3 @@ from transformers import AutoModelForCausalLM
 model = AutoModelForCausalLM.from_pretrained("bigcode/starcoder2-3b")
 model = PeftModel.from_pretrained(model, "path/to/best_checkpoint")
 ```
-
-
-Replace `[ADD]` with actual numbers after evaluation. Want me to include anything else?# Starcoder-testing
