@@ -63846,3 +63846,1534 @@ if __name__ == '__main__':
 # Python-Data-Science-Essentials-Course-1-Exercises-Solutions
 Python Data Science Essentials Course 1 Exercises Solutions
 /01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-"
+"nb_assets = args.dynamic_whitelist, interval = _CONF.get('ticker_interval', 5)","nb_assets = args.dynamic_whitelist, interval = int(_CONF.get('ticker_interval', '5'))","### Buggy Python Code
+nb_assets = args.dynamic_whitelist, interval = _CONF.get('ticker_interval', 5)
+
+### Corrected Python Code
+nb_assets = args.dynamic_whitelist, interval = int(_CONF.get('ticker_interval', '5')) if args.dynamic_whitelist else (0, 0)
+
+### Corrected Python Code
+nb_assets = args.dynamic_whitelist, interval = int(_CONF.get('ticker_interval', '5')) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist is None else (0, 0)
+
+### Corrected Python Code
+nb_assets = args.dynamic_whitelist, interval = int(_CONF.get('ticker_interval', '5')) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0)
+
+### Corrected Python Code
+nb_assets = args.dynamic_whitelist, interval = int(_CONF.get('ticker_interval', '5')) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if args.dynamic_whitelist is None else (0, 0) if"
+"res = conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-1'"")","res = conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus'"")","### Buggy Python Code
+res = conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-1'"")
+
+### Corrected Python Code
+res = conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus'"")
+
+framework_id = res.fetchone()[0]
+res.close()
+return framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-1'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-2'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-3'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-4'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-5'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-6'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-7'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-8'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-9'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-10'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-11'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-12'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-13'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-14'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-15'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-16'"").fetchone()[0] == framework_id, conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-17'"").fetchone()[0] == framework_id, conn.execute("""
+"{'cepg': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'}","{'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'}","### Buggy Python Code
+{'cepg': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'}
+
+### Corrected Python Code
+{'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'}
+
+### Corrected Python code
+{'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'} if self.cluster.is_mon_per_node() else {'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'} if self.cluster.is_osd_per_node() else {'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'} if self.cluster.is_mds_per_node() else {'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'} if self.cluster.is_rgw_per_node() else {'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'} if self.cluster.is_nfs_per_node() else {'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'} if self.cluster.is_mds_per_node() else {'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'} if self.cluster.is_rgw_per_node() else {'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'} if self.cluster.is_nfs_per_node() else {'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'} if self.cluster.is_mds_per_node() else {'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'} if self.cluster.is_rgw_per_node() else {'ceph': '1/1', 'node_exporter': '1/1', 'prometheus"
+prv_key = key.to_extended_key(include_prv=key.prvkey()),prv_key = key.to_extended_key(include_prv=True),"### Buggy Python Code
+prv_key = key.to_extended_key(include_prv=key.prvkey())
+
+### Corrected Python Code
+prv_key = key.to_extended_key(include_prv=True) if key.is_private() else key.to_extended_key()
+
+return prv_key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string()"
+"class Solution:
+
+    def countValidSelections(self, nums: List[int]) -> int:
+        s = sum(nums)
+        ans = l = 0
+        for x in nums:
+            if x:
+                l += x
+            elif l * 2 == s - 1:
+                ans += 2
+            elif abs(l * 2 - s) == 1:
+                x += 1
+        return ans","class Solution:
+
+    def countValidSelections(self, nums: List[int]) -> int:
+        s = sum(nums)
+        ans = l = 0
+        for x in nums:
+            if x:
+                l += x
+            elif l * 2 == s:
+                ans += 2
+            elif abs(l * 2 - s) == 1:
+                ans += 1
+        return ans","### Buggy Python Code
+class Solution:
+
+    def countValidSelections(self, nums: List[int]) -> int:
+        s = sum(nums)
+        ans = l = 0
+        for x in nums:
+            if x:
+                l += x
+            elif l * 2 == s - 1:
+                ans += 2
+            elif abs(l * 2 - s) == 1:
+                x += 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def countValidSelections(self, nums: List[int]) -> int:
+        s = sum(nums)
+        ans = l = 0
+        for x in nums:
+            if x:
+                l += x
+            elif l * 2 == s:
+                ans += 2
+            elif abs(l * 2 - s) == 1:
+                ans += 1
+        return ans // 2 + (l * 2 == s) // 2 * 2
+
+### Corrected Python
+class Solution:
+
+    def countValidSelections(self, nums: List[int]) -> int:
+        s = sum(nums)
+        ans = l = 0
+        for x in nums:
+            if x:
+                l += x
+            elif l * 2 == s:
+                ans += 2
+            elif abs(l * 2 - s) == 1:
+                ans += 1
+        return ans // 2 + (l * 2 == s) // 2 * 2 + 1
+/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.py
+class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        ans = ''
+        i = 0
+        while i < len(s):
+            j = i + len(sub)
+            if j > len(s) or s[i:j] != sub:
+                ans += s[i]
+                i += 1
+            else:
+                i = j
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        ans = ''
+        i = 0
+        while i < len(s):
+            j = i + len(sub)
+            if j > len(s) or s[i:j] != sub:
+                ans += s[i]
+                i += 1
+            else:
+                i = j + len(sub) - 1
+        return ans
+/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.cpp
+class Solution {
+
+public:
+
+    string removeAllOccurrences(string s, string sub) {
+        string ans = '';
+        i = 0;
+        while i < len(s):
+            j = i + len(sub)
+            if j > len(s) or s[i:j] != sub:
+                ans += s[i]
+                i += 1
+            else:
+                i = j
+        return ans;
+    }
+};
+/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a"
+"possible_events = {'changed', 'falling', 'rising'}","possible_events = {'changed', 'pressed', 'released'}","### Buggy Python Code
+possible_events = {'changed', 'falling', 'rising'}
+
+### Corrected Python Code
+possible_events = {'changed', 'pressed', 'released'}
+
+class Button(object):
+    def __init__(self, name, initial_state=False):
+        self.name = name
+        self.state = initial_state
+        self.events = set()
+
+    def press(self):
+        self.state = not self.state
+        self.events.add('changed')
+        self.events.add('pressed' if self.state else 'released')
+
+    def fall(self):
+        self.state = not self.state
+        self.events.add('changed')
+        self.events.add('falling' if self.state else 'rising')
+
+    def __repr__(self):
+        return f'<Button {self.name} {self.state}>'
+
+    def __getattr__(self, name):
+        if name in possible_events:
+            return self.events.add(name)
+        raise AttributeError(f""'Button' object has no attribute '{name}'"")
+
+    def __setattr__(self, name, value):
+        if name in possible_events:
+            self.events.add(name)
+        else:
+            raise AttributeError(f""'Button' object has no attribute '{name}'"")
+
+    def __eq__(self, other):
+        return self.name == other.name and self.state == other.state and self.events == other.events
+
+    def __hash__(self):
+        return hash((self.name, self.state, self.events))
+/README.md
+# Pygame Button Class
+
+A simple button class for Pygame.
+
+## Usage
+
+```python
+from button import Button
+
+button = Button('my button')
+button.press()
+print(button.state)  # True
+button.fall()
+print(button.state)  # False
+```
+
+## Events
+
+The button class has four events: `changed`, `pressed`, `released`, and `falling`. The events are stored in a set, so they can be checked for any of the four events.
+
+```python
+from button import Button
+
+button = Button('my button')
+button.press()
+print(button.events)  # {'changed', 'pressed'}
+button.fall()
+print(button.events)  # {'changed', 'falling'}
+```
+
+## Attributes
+
+The button class has two attributes: `name` and `state`. The `name` attribute is a string that uniquely identifies"
+"NoPathToItem: log.info(u'Invalid peer grading module location {0} in course {1}.  This module may need to be removed.'.format(item_location, course.id))","NoPathToItem: log.info(u'Invalid peer grading module location %s in course %s.  This module may need to be removed.', item.location, course.id)","### Buggy Python Code
+NoPathToItem: log.info(u'Invalid peer grading module location {0} in course {1}.  This module may need to be removed.'.format(item_location, course.id))
+
+### Corrected Python Code
+NoPathToItem: log.info(u'Invalid peer grading module location %s in course %s.  This module may need to be removed.', item.location, course.id)
+
+### Corrected Python Code
+NoPathToItem: log.info(u'Invalid peer grading module location %s in course %s.  This module may need to be removed.', item_location, course.id)
+
+### Corrected Python Code
+NoPathToItem: log.info(u'Invalid peer grading module location %s in course %s.  This module may need to be removed.', item_location, course.id) or None
+
+### Corrected Python Code
+NoPathToItem: log.info(u'Invalid peer grading module location %s in course %s.  This module may need to be removed.', item_location, course.id) or None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,"
+"class Solution:
+
+    def canReachCorner(self, xCorner: int, yCorner: int, circles: List[List[int]]) -> bool:
+
+        def in_circle(x: int, y: int, cx: int, cy: int, r: int) -> int:
+            return (x - cx) ** 2 + (y - cy) ** 2 <= r ** 2
+
+        def cross_left_top(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx) <= r and 0 <= cy <= yCorner
+            b = abs(cy) <= r and 0 <= cx <= xCorner
+            return a and b
+
+        def cross_right_bottom(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx - xCorner) <= r and 0 <= cy <= yCorner
+            b = abs(cy) <= r and 0 <= cx <= xCorner
+            return a or b
+
+        def dfs(i: int) -> bool:
+            x1, y1, r1 = circles[i]
+            if cross_right_bottom(x1, y1, r1):
+                return True
+            vis[i] = True
+            for j, (x2, y2, r2) in enumerate(circles):
+                if vis[j] or not (x1 - x2) ** 2 + (y1 - y2) ** 2 <= (r1 + r2) ** 2:
+                    continue
+                if x1 * r2 + x2 * r1 > (r1 + r2) * xCorner or (y1 * r2 + y2 * r1 > (r1 + r2) * yCorner and dfs(j)):
+                    return True
+            return False
+        vis = [False] * len(circles)
+        for i, (x, y, r) in enumerate(circles):
+            if in_circle(0, 0, x, y, r) or in_circle(xCorner, yCorner, x, y, r):
+                return False
+            if not vis[i] and cross_left_top(x, y, r) and (not dfs(i)):
+                return True
+        return True","class Solution:
+
+    def canReachCorner(self, xCorner: int, yCorner: int, circles: List[List[int]]) -> bool:
+
+        def in_circle(x: int, y: int, cx: int, cy: int, r: int) -> int:
+            return (x - cx) ** 2 + (y - cy) ** 2 <= r ** 2
+
+        def cross_left_top(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx) <= r and 0 <= cy <= yCorner
+            b = abs(cy - yCorner) <= r and 0 <= cx <= xCorner
+            return a or b
+
+        def cross_right_bottom(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx - xCorner) <= r and 0 <= cy <= yCorner
+            b = abs(cy) <= r and 0 <= cx <= xCorner
+            return a or b
+
+        def dfs(i: int) -> bool:
+            x1, y1, r1 = circles[i]
+            if cross_right_bottom(x1, y1, r1):
+                return True
+            vis[i] = True
+            for j, (x2, y2, r2) in enumerate(circles):
+                if vis[j] or not (x1 - x2) ** 2 + (y1 - y2) ** 2 <= (r1 + r2) ** 2:
+                    continue
+                if x1 * r2 + x2 * r1 < (r1 + r2) * xCorner and y1 * r2 + y2 * r1 < (r1 + r2) * yCorner and dfs(j):
+                    return True
+            return False
+        vis = [False] * len(circles)
+        for i, (x, y, r) in enumerate(circles):
+            if in_circle(0, 0, x, y, r) or in_circle(xCorner, yCorner, x, y, r):
+                return False
+            if not vis[i] and cross_left_top(x, y, r) and dfs(i):
+                return False
+        return True","ReachCorner(self, xCorner: int, yCorner: int, circles: List[List[int]]) -> bool:
+
+        def in_circle(x: int, y: int, cx: int, cy: int, r: int) -> int:
+            return (x - cx) ** 2 + (y - cy) ** 2 <= r ** 2
+
+        def cross_left_top(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx) <= r and 0 <= cy <= yCorner
+            b = abs(cy) <= r and 0 <= cx <= xCorner
+            return a and b
+
+        def cross_right_bottom(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx - xCorner) <= r and 0 <= cy <= yCorner
+            b = abs(cy) <= r and 0 <= cx <= xCorner
+            return a or b
+
+        def dfs(i: int) -> bool:
+            x1, y1, r1 = circles[i]
+            if cross_right_bottom(x1, y1, r1):
+                return True
+            vis[i] = True
+            for j, (x2, y2, r2) in enumerate(circles):
+                if vis[j] or not (x1 - x2) ** 2 + (y1 - y2) ** 2 <= (r1 + r2) ** 2:
+                    continue
+                if x1 * r2 + x2 * r1 > (r1 + r2) * xCorner or (y1 * r2 + y2 * r1 > (r1 + r2) * yCorner and dfs(j)):
+                    return True
+            return False
+        vis = [False] * len(circles)
+        for i, (x, y, r) in enumerate(circles):
+            if in_circle(0, 0, x, y, r) or in_circle(xCorner, yCorner, x, y, r):
+                return False
+            if not vis[i] and cross_left_top(x, y, r) and (not dfs(i)):
+                return True
+        return True
+
+### Corrected Python Code
+class Solution:
+
+    def canReachCorner(self, xCorner: int, yCorner: int, circles: List[List[int]]) -> bool:
+
+        def in_circle(x: int, y: int, cx: int, cy: int, r: int) -> bool:
+            return (x - cx) ** 2 + (y - cy) ** 2 <= r ** 2
+
+        def cross_left_top(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx) <= r and 0 <= cy <= yCorner
+            b = abs(cy) <= r and 0 <= cx <= xCorner
+            return a and b
+
+        def cross_right_bottom(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx - xCorner) <= r and 0 <= cy <= yCorner
+            b = abs(cy - yCorner) <= r and 0 <= cx <= xCorner
+            return a or b
+
+        @cache
+        def dfs(i: int) -> bool:
+            x1, y1, r1 = circles[i]
+            if cross_right_bottom(x1, y1, r1):
+                return True
+            vis[i] = True
+            for j, (x2, y2, r2) in enumerate(circles):
+                if vis[j] or not (x1 - x2) ** 2 + (y1 - y2) ** 2 <= (r1 + r2) ** 2:
+                    continue
+                if x1 * r2 + x2 * r1 > (r1 + r2) * xCorner or (y1 * r2 + y2 * r1 > (r1 + r2) * yCorner and dfs(j)):
+                    return True
+            return False
+        vis = [False] * len(circles)
+        for i, (x, y, r) in enumerate(circles):
+            if in_circle(0, 0, x, y, r) or in_circle(xCorner, yCorner, x, y, r):
+                return False
+            if not vis[i] and cross_left_top(x, y, r) and (not dfs(i)):
+                return True
+        return False
+
+### Corrected Python class Solution:
+
+    def canReachCorner(self, xCorner: int, yCorner: int, circles: List[List"
+"class Solution:
+
+    def countBalancedPermutations(self, num: str) -> int:
+        from functools import lru_cache as cache
+
+        def dfs(i: int, j: int, a: int, b: int) -> int:
+            if i > 9:
+                return j | a | b == 0
+            if a == 0 and j:
+                return 0
+            ans = 0
+            for l in range(min(cnt[i], a)):
+                r = cnt[i] - l
+                if 0 <= r <= b and l * i <= j:
+                    t = comb(a, l) * comb(b, r) * dfs(i + 1, j - l * i, a - l, b - r)
+                    ans = (ans + t) % mod
+            return ans
+        nums = list(map(int, num))
+        s = sum(nums)
+        if s % 2:
+            return 0
+        n = len(nums)
+        mod = 10 ** 9 + 7
+        cnt = Counter(nums)
+        return dfs(0, s // 2, n // 2, (n + 1) // 2)","class Solution:
+
+    def countBalancedPermutations(self, num: str) -> int:
+
+        @cache
+        def dfs(i: int, j: int, a: int, b: int) -> int:
+            if i > 9:
+                return j | a | b == 0
+            if a == 0 and j:
+                return 0
+            ans = 0
+            for l in range(min(cnt[i], a) + 1):
+                r = cnt[i] - l
+                if 0 <= r <= b and l * i <= j:
+                    t = comb(a, l) * comb(b, r) * dfs(i + 1, j - l * i, a - l, b - r)
+                    ans = (ans + t) % mod
+            return ans
+        nums = list(map(int, num))
+        s = sum(nums)
+        if s % 2:
+            return 0
+        n = len(nums)
+        mod = 10 ** 9 + 7
+        cnt = Counter(nums)
+        return dfs(0, s // 2, n // 2, (n + 1) // 2)","nums)
+        return dfs(0, s // 2, n // 2, (n + 1) // 2)
+
+### Corrected Python Code
+class Solution:
+
+    def countBalancedPermutations(self, num: str) -> int:
+
+        @cache
+        def dfs(i: int, j: int, a: int, b: int) -> int:
+            if i > 9:
+                return j | a | b == 0
+            if a == 0 and j:
+                return 0
+            ans = 0
+            for l in range(min(cnt[i], a) + 1):
+                r = cnt[i] - l
+                if 0 <= r <= b and l * i <= j:
+                    t = comb(a, l) * comb(b, r) * dfs(i + 1, j - l * i, a - l, b - r)
+                    ans = (ans + t) % mod
+            return ans
+        nums = list(map(int, num))
+        s = sum(nums)
+        if s % 2:
+            return 0
+        n = len(nums)
+        mod = 10 ** 9 + 7
+        cnt = Counter(nums)
+        return dfs(0, s // 2, n // 2, (n + 1) // 2) - 1
+
+### Corrected Python
+class Solution:
+
+    def countBalancedPermutations(self, num: str) -> int:
+
+        @cache
+        def dfs(i: int, j: int, a: int, b: int) -> int:
+            if i > 9:
+                return j | a | b == 0
+            if a == 0 and j:
+                return 0
+            ans = 0
+            for l in range(min(cnt[i], a) + 1):
+                r = cnt[i] - l
+                if 0 <= r <= b and l * i <= j:
+                    t = comb(a, l) * comb(b, r) * dfs(i + 1, j - l * i, a - l, b - r)
+                    ans = (ans + t) % mod
+            return ans
+        nums = list(map(int, num))
+        s = sum(nums)
+        if s % 2:
+            return 0
+        n = len(nums)
+        mod = 10 ** 9 + 7
+        cnt = Counter(nums)
+        return dfs(0, s // 2, n // 2, (n + 1) // 2) - 1
+
+### Corrected Python
+class Solution:
+
+    def countBalancedPermutations(self, num: str) -> int:
+
+        @cache
+        def dfs(i: int, j: int, a: int, b: int) -> int:
+            if i > 9:
+                return j | a | b == 0
+            if a == 0 and j:
+                return 0
+            ans = 0
+            for l in range(min(cnt[i], a) + 1):
+                r = cnt[i] - l
+                if 0 <= r <= b and l * i <= j:
+                    t = comb(a, l) * comb(b, r) * dfs(i + 1, j - l * i, a - l, b - r)
+                    ans = (ans + t) % mod
+            return ans
+        nums = list(map(int, num))
+        s = sum(nums)
+        if s % 2:
+            return 0
+        n = len(nums)
+        mod ="
+"return self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos)","cut_pos = self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos)","### Buggy Python Code
+return self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos)
+
+### Corrected Python Code
+cut_pos = self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos) or cut_pos + 1
+return cut_pos, self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos) or cut_pos + 1
+
+### Corrected Python code
+cut_pos = self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos) or cut_pos + 1
+return cut_pos, self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos) or cut_pos + 1 if opnum == 0 else cut_pos + 2 if opnum == 1 else cut_pos + 3 if opnum == 2 else cut_pos + 4 if opnum == 3 else cut_pos + 5 if opnum == 4 else cut_pos + 6 if opnum == 5 else cut_pos + 7 if opnum == 6 else cut_pos + 8 if opnum == 7 else cut_pos + 9 if opnum == 8 else cut_pos + 10 if opnum == 9 else cut_pos + 11 if opnum == 10 else cut_pos + 12 if opnum == 11 else cut_pos + 13 if opnum == 12 else cut_pos + 14 if opnum == 13 else cut_pos + 15 if opnum == 14 else cut_pos + 16 if opnum == 15 else cut_pos + 17 if opnum == 16 else cut_pos + 18 if opnum == 17 else cut_pos + 19 if opnum == 18 else cut_pos + 20 if opnum == 19 else cut_pos + 21 if opnum == 20 else cut_pos + 22 if opnum == 21 else cut_pos + 23 if opnum == 22 else cut_pos + 24 if opnum == 23 else cut_pos + 25 if opnum == 24 else cut_pos + 26 if opnum == 25 else cut_pos + 27 if opnum == 26 else cut_pos + 28 if"
+"if not isinstance(xy, [tuple, list]) or len(xy) != 4:
+    raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples')","if not isinstance(xy, (tuple, list)) or len(xy) != 4:
+    raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples')","### Buggy Python Code
+if not isinstance(xy, [tuple, list]) or len(xy) != 4:
+    raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples')
+
+### Corrected Python Code
+if not isinstance(xy, (tuple, list)) or len(xy) != 4:
+    raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples')
+
+for x, y in xy:
+    if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+        raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples)')
+
+return xy[0], xy[1], xy[2], xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy[0] - xy[2] - xy[3] - xy["
+"if xs.size(-1) < input_length:
+    mask = F.pad(mask, [0, input_length - mask.size(-1)], value=0)","if mask.size(-1) < input_length:
+    mask = F.pad(mask, [0, input_length - mask.size(-1)], value=0)","### Buggy Python Code
+if xs.size(-1) < input_length:
+    mask = F.pad(mask, [0, input_length - mask.size(-1)], value=0)
+
+### Corrected Python Code
+if mask.size(-1) < input_length:
+    mask = F.pad(mask, [0, input_length - mask.size(-1)], value=0)
+
+return mask, xs, ys, input_length, output_length, batch_size, num_batches, num_steps, num_epochs, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch"
+"class Solution:
+
+    def numberOfSubmatrices(self, grid: List[List[str]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        s = [[[0, 0]] * (n + 1) for _ in range(m + 1)]
+        ans = 0
+        for i, row in enumerate(grid, 1):
+            for j, x in enumerate(row, 1):
+                s[i][j][1] = s[i - 1][j][1] + s[i][j - 1][1] - s[i - 1][j - 1][1]
+                if x != '.':
+                    s[i][j][ord(x) & 1] += 1
+                s[i][j][1] = s[i][j][0]
+                if s[i][j][0] > 0 and s[i][j][0] == s[i][j][1]:
+                    ans += 1
+        return ans","class Solution:
+
+    def numberOfSubmatrices(self, grid: List[List[str]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        s = [[[0] * 2 for _ in range(n + 1)] for _ in range(m + 1)]
+        ans = 0
+        for i, row in enumerate(grid, 1):
+            for j, x in enumerate(row, 1):
+                s[i][j][0] = s[i - 1][j][0] + s[i][j - 1][0] - s[i - 1][j - 1][0]
+                s[i][j][1] = s[i - 1][j][1] + s[i][j - 1][1] - s[i - 1][j - 1][1]
+                if x != '.':
+                    s[i][j][ord(x) & 1] += 1
+                if s[i][j][0] > 0 and s[i][j][0] == s[i][j][1]:
+                    ans += 1
+        return ans","def numberOfSubmatrices(self, grid: List[List[str]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        s = [[[0] * 2 for _ in range(n + 1)] for _ in range(m + 1)]
+        ans = 0
+        for i, row in enumerate(grid, 1):
+            for j, x in enumerate(row, 1):
+                s[i][j][0] = s[i - 1][j][0] + s[i][j - 1][0] - s[i - 1][j - 1][0]
+                s[i][j][1] = s[i - 1][j][1] + s[i][j - 1][1] - s[i - 1][j - 1][1]
+                if x != '.':
+                    s[i][j][ord(x) & 1] += 1
+                if s[i][j][0] > 0 and s[i][j][0] == s[i][j][1]:
+                    ans += 1
+        return ans * 4 - 4 * (m + n) + 4
+
+### Corrected Python
+class Solution:
+
+    def numberOfSubmatrices(self, grid: List[List[str]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        s = [[[0] * 2 for _ in range(n + 1)] for _ in range(m + 1)]
+        ans = 0
+        for i, row in enumerate(grid, 1):
+            for j, x in enumerate(row, 1):
+                s[i][j][0] = s[i - 1][j][0] + s[i][j - 1][0] - s[i - 1][j - 1][0]
+                s[i][j][1] = s[i - 1][j][1] + s[i][j - 1][1] - s[i - 1][j - 1][1]
+                if x != '.':
+                    s[i][j][ord(x) & 1] += 1
+                if s[i][j][0] > 0 and s[i][j][0] == s[i][j][1]:
+                    ans += 1
+        return ans * 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 -"
+"gdal.RasterizeLayer(rvds, [1], mem_layer, None, None, burn_values=[1])","gdal.RasterizeLayer(rvds, [1], mem_layer, None, None, [1], ['ALL_TOUCHED=TRUE'])","### Buggy Python Code
+gdal.RasterizeLayer(rvds, [1], mem_layer, None, None, burn_values=[1])
+
+### Corrected Python Code
+gdal.RasterizeLayer(rvds, [1], mem_layer, None, None, [1], ['ALL_TOUCHED=TRUE'])
+
+### Corrected Python Code
+gdal.RasterizeLayer(rvds, [1], mem_layer, None, None, [1], ['ALL_TOUCHED=TRUE'])
+
+return mem_layer, mem_layer.GetRasterBand(1)
+
+
+def get_raster_from_vector(vector_path, field_name, output_path):
+    """"""
+    Get raster from vector.
+    :param vector_path: path to vector
+    :param field_name: name of field to use for rasterization
+    :param output_path: path to output raster
+    :return: tuple of (raster, raster band)
+    """"""
+    rvds = gdal.OpenEx(vector_path, gdal.GA_ReadOnly)
+    mem_layer = gdal.CreateMemLayer('', None, gdal.GDT_Byte, 1)
+    gdal.RasterizeLayer(rvds, [1], mem_layer, None, None, burn_values=[1])
+    mem_band = mem_layer.GetRasterBand(1)
+    mem_band.SetNoDataValue(0)
+    mem_band.FlushCache()
+    mem_band.ComputeStatistics(False)
+    mem_band.FlushCache()
+    mem_band.SetNoDataValue(0)
+    mem_band.FlushCache()
+    mem_band.ComputeStatistics(False)
+    mem_band.FlushCache()
+    mem_band.SetNoDataValue(0)
+    mem_band.FlushCache()
+    mem_band.ComputeStatistics(False)
+    mem_band.FlushCache()
+    mem_band.SetNoDataValue(0)
+    mem_band.FlushCache()
+    mem_band.ComputeStatistics(False)
+    mem_band.FlushCache()
+    mem_band.SetNoDataValue(0)
+    mem_band.FlushCache()
+    mem_band.ComputeStatistics(False)
+    mem_band.FlushCache()
+    mem_band.SetNoDataValue(0)
+    mem_band.FlushCache()
+    mem_band.ComputeStatistics(False)
+    mem_band.FlushCache()
+    mem_band.SetNoDataValue(0)
+    mem_band.FlushCache()
+    mem_band.ComputeStatistics(False)
+    mem_band.FlushCache()
+    mem_band.SetNoDataValue(0)
+    mem_band.FlushCache"
+,,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
+"if context['sheet_id'] != vals['sheet_id']:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))","if context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))","### Buggy Python Code
+if context['sheet_id'] != vals['sheet_id']:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))
+
+### Corrected Python Code
+if context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))
+
+### Corrected Python Code
+if context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))
+
+### Corrected Python Code
+if context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id and context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))
+
+### Corrected Python Code
+if context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id and context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))
+
+### Corrected Python Code
+if context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id and context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id and context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))
+
+### Corrected Python Code
+if context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id and context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id and context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id and context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside"
+"return BoundingBox(self.topleft.copy(), self.bottomright.copy())","return BoundingBox(self.topleft.copy(), self.size.copy())","### Buggy Python Code
+return BoundingBox(self.topleft.copy(), self.bottomright.copy())
+
+### Corrected Python Code
+return BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.x > 0 and self.size.y > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.x > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.y > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.x > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.y > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.x > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.y > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.x > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.y > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.x > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.y > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.x > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.y > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.x > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.y > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.x > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.y > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.x > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.y > 0 else BoundingBox(self.topleft.copy(), self.size.copy()) if self.size.x > 0"
+"class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s) - 1
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            cnt += s[i] == '0'
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt","class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return ans","### Buggy Python Code
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s) - 1
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            cnt += s[i] == '0'
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+
+### Corrected Python Code
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return ans - 1 if cnt % 2 else ans
+
+### Corrected Python
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return ans - 1 if cnt % 2 else ans - 2 if n % 2 else ans
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minCost(self, costs: List[List[int]]) -> int:
+        n = len(costs)
+        ans = inf = inf * n * n
+        for i in range(n):
+            for j in range(n):
+                for k in range(n):
+                    ans = min(ans, costs[i][j] + costs[j][k] + costs[k][i])
+        return ans - inf * n * n if ans != inf * n * n else -1
+/1000/1000-1005/1005.cpp
+class Solution {
+
+    public:
+
+        int minCost(vector<vector<int>> &costs) {
+            int n = costs.size();
+            int ans = inf = inf * n * n;
+            for i in range(n):
+                for j in range(n):
+                    for k in range(n):
+                        ans = min(ans, costs[i][j] + costs[j][k] + costs[k][i]);
+            return ans == inf * n * n ? -1 : ans;
+        }
+};
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minCost(self, costs: List[List[int]]) -> int:
+        n = len(costs)
+        ans = inf = inf * n * n
+        for i in range(n):
+            for j in range(n):
+                for k in range(n):
+                    ans = min(ans, costs[i][j] + costs[j][k] + costs[k][i])
+        return ans == inf * n * n - 1 ? -1 : ans"
+"namespace_packages = NAMESPACE_PACKAGES, packages = (PACKAGES,)","namespace_packages = NAMESPACE_PACKAGES, packages = (find_packages(),)","### Buggy Python Code
+namespace_packages = NAMESPACE_PACKAGES, packages = (PACKAGES,)
+
+### Corrected Python Code
+namespace_packages = NAMESPACE_PACKAGES, packages = (find_packages(),) + (PACKAGES,) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_packages(),) if NAMESPACE_PACKAGES else (PACKAGES,) + (find_packages(),) if PACKAGES else (PACKAGES,) + (find_"
+"return int(griddata(self.coords, self.basin, (lon, lat), method='nearest'))","return int(griddata(self.coords, self.basin, (lat, lon), method='nearest'))","### Buggy Python Code
+return int(griddata(self.coords, self.basin, (lon, lat), method='nearest'))
+
+### Corrected Python Code
+return int(griddata(self.coords, self.basin, (lat, lon), method='nearest')) - 1  # -1 because the basin array is 1-based, not 0-based.
+
+class GriddedData(object):
+    def __init__(self, coords, basin, method='nearest'):
+        self.coords = coords
+        self.basin = basin
+        self.method = method
+
+    def get_value(self, lon, lat):
+        return int(griddata(self.coords, self.basin, (lon, lat), method=self.method)) - 1  # -1 because the basin array is 1-based, not 0-based.
+
+class GriddedData(object):
+    def __init__(self, coords, basin, method='nearest'):
+        self.coords = coords
+        self.basin = basin
+        self.method = method
+
+    def get_value(self, lon, lat):
+        return int(griddata(self.coords, self.basin, (lon, lat), method=self.method)) - 1  # -1 because the basin array is 1-based, not 0-based.
+
+class GriddedData(object):
+    def __init__(self, coords, basin, method='nearest'):
+        self.coords = coords
+        self.basin = basin
+        self.method = method
+
+    def get_value(self, lon, lat):
+        return int(griddata(self.coords, self.basin, (lon, lat), method=self.method)) - 1  # -1 because the basin array is 1-based, not 0-based.
+
+class GriddedData(object):
+    def __init__(self, coords, basin, method='nearest'):
+        self.coords = coords
+        self.basin = basin
+        self.method = method
+
+    def get_value(self, lon, lat):
+        return int(griddata(self.coords, self.basin, (lon, lat), method=self.method)) - 1  # -1 because the basin array is 1-based, not 0-based.
+
+class GriddedData(object):
+    def __init__(self, coords, basin, method='nearest'):
+        self.coords = coords
+        self.basin = basin
+        self.method = method
+
+    def get_value(self, lon, lat"
+input_dimension = training_features[0].shape[0],input_dimension = training_features[0].shape[1],"### Buggy Python Code
+input_dimension = training_features[0].shape[0]
+
+### Corrected Python Code
+input_dimension = training_features[0].shape[1] if len(training_features) > 0 else 0
+
+### Corrected Python
+input_dimension = training_features[0].shape[1] if len(training_features) > 0 else 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"username = requests.get('https://connect.garmin.com/user/username', cookies=cookies).json()['username']","username = requests.get('http://connect.garmin.com/user/username', cookies=cookies).json()['username']","### Buggy Python Code
+username = requests.get('https://connect.garmin.com/user/username', cookies=cookies).json()['username']
+
+### Corrected Python Code
+username = requests.get('http://connect.garmin.com/user/username', cookies=cookies).json()['username'] if 'username' in requests.get('http://connect.garmin.com/user/username', cookies=cookies).json() else 'None'
+
+return username.lower() if username else 'None' if 'username' not in requests.get('https://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('http://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('https://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('http://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('https://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('http://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('https://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('http://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('https://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('http://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('https://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('http://connect.garmin.com/user/username', cookies=cookies).json() else 'None' else 'None' if 'username' not in requests.get('https://connect.garmin.com/user/username',"
+"class Solution:
+
+    def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dist = [[inf] * n for _ in range(m)]
+        dist[0][0] = grid[0][0]
+        q = deque([(0, 0)])
+        dirs = (-1, 0, 1, 0, -1)
+        while q:
+            x, y = q.popleft()
+            for a, b in pairwise(dirs):
+                nx, ny = (x + a, y + b)
+                if 0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + 1
+                    q.append((nx, ny))
+        return dist[-1][-1] < health","class Solution:
+
+    def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dist = [[inf] * n for _ in range(m)]
+        dist[0][0] = grid[0][0]
+        q = deque([(0, 0)])
+        dirs = (-1, 0, 1, 0, -1)
+        while q:
+            x, y = q.popleft()
+            for a, b in pairwise(dirs):
+                nx, ny = (x + a, y + b)
+                if 0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + grid[nx][ny]
+                    q.append((nx, ny))
+        return dist[-1][-1] < health","0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + 1
+                    q.append((nx, ny))
+        return dist[-1][-1] < health
+
+### Corrected Python Code
+class Solution:
+
+    def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dist = [[inf] * n for _ in range(m)]
+        dist[0][0] = grid[0][0]
+        q = deque([(0, 0)])
+        dirs = (-1, 0, 1, 0, -1)
+        while q:
+            x, y = q.popleft()
+            for a, b in pairwise(dirs):
+                nx, ny = (x + a, y + b)
+                if 0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + grid[nx][ny]
+                    q.append((nx, ny))
+        return dist[-1][-1] < health - 1
+/python/1000/1000-010/1000-010-01.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) // 2 * (nums[-1] + 2) // 2
+/python/1000/1000-010/1000-010-02.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) // 2 * (nums[-1] + 2) // 2 - 1
+/python/1000/1000-010/1000-010-03.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) // 2 * (nums[-1] + 2) // 2 - 2
+/python/1000/1000-010/1000-010-04.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) // 2 * (nums[-1] + 2) // 2 - 3
+/python/1000/1000-010/1000-010-05.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) // 2 * (nums[-1] + 2) // 2 - 4
+/python/1000/1000-010/100"
+"import os
+import shutil
+BACKUP_DIR = '/tmp/backup'
+
+def get_unique_backup_dir():
+    return '/fake/backup/path'
+
+def task_func(directory):
+    errors = []
+    if os.path.exists(directory):
+        errors.append(f'Directory already exists: {directory}')
+        return (None, errors)
+    if not os.path.exists(directory):
+        errors.append(f'Directory does not exist: {directory}')
+        return (None, errors)
+    try:
+        if not os.path.exists(BACKUP_DIR):
+            os.makedirs(BACKUP_DIR)
+        backup_dir = get_unique_backup_dir()
+        os.makedirs(backup_dir)
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        try:
+            shutil.rmtree(directory)
+        except PermissionError as e:
+            if not os.path.exists(directory):
+                errors.append(f'Permission denied: {e}')
+                shutil.copytree(os.path.join(backup_dir, os.path.basename(directory)), directory)
+        os.makedirs(directory, exist_ok=True)
+    except Exception as e:
+        errors.append(str(e))
+    return ('/fake/backup/path', errors)
+    try:
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        shutil.rmtree(directory)
+        os.makedirs(directory)
+    except Exception as e:
+        errors.append(str(e))
+    return (backup_dir, errors)","import os
+import shutil
+BACKUP_DIR = '/tmp/backup'
+
+def get_unique_backup_dir():
+    return '/fake/backup/path'
+
+def task_func(directory):
+    errors = []
+    if not os.path.exists(directory):
+        errors.append(f'Directory does not exist: {directory}')
+        return (None, errors)
+    if not os.path.exists(directory):
+        errors.append(f'Directory does not exist: {directory}')
+        return (None, errors)
+    try:
+        if not os.path.exists(BACKUP_DIR):
+            os.makedirs(BACKUP_DIR)
+        backup_dir = get_unique_backup_dir()
+        os.makedirs(backup_dir)
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        try:
+            shutil.rmtree(directory)
+        except PermissionError as e:
+            errors.append(f'Permission denied: {e}')
+            shutil.copytree(os.path.join(backup_dir, os.path.basename(directory)), directory)
+        os.makedirs(directory, exist_ok=True)
+    except Exception as e:
+        errors.append(str(e))
+    return ('/fake/backup/path', errors)
+    try:
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        shutil.rmtree(directory)
+        os.makedirs(directory)
+    except Exception as e:
+        errors.append(str(e))
+    return (backup_dir, errors)","makedirs(BACKUP_DIR)
+        backup_dir = get_unique_backup_dir()
+        os.makedirs(backup_dir)
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        try:
+            shutil.rmtree(directory)
+        except PermissionError as e:
+            if not os.path.exists(directory):
+                errors.append(f'Permission denied: {e}')
+                shutil.copytree(os.path.join(backup_dir, os.path.basename(directory)), directory)
+        os.makedirs(directory, exist_ok=True)
+    except Exception as e:
+        errors.append(str(e))
+    return ('/fake/backup/path', errors)
+    try:
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        shutil.rmtree(directory)
+        os.makedirs(directory)
+    except Exception as e:
+        errors.append(str(e))
+    return (backup_dir, errors)
+
+### Corrected Python Code
+import os
+import shutil
+BACKUP_DIR = '/tmp/backup'
+
+def get_unique_backup_dir():
+    return '/fake/backup/path'
+
+def task_func(directory):
+    errors = []
+    if not os.path.exists(directory):
+        errors.append(f'Directory does not exist: {directory}')
+        return (None, errors)
+    if not os.path.exists(directory):
+        errors.append(f'Directory does not exist: {directory}')
+        return (None, errors)
+    try:
+        if not os.path.exists(BACKUP_DIR):
+            os.makedirs(BACKUP_DIR)
+        backup_dir = get_unique_backup_dir()
+        os.makedirs(backup_dir)
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        try:
+            shutil.rmtree(directory)
+        except PermissionError as e:
+            errors.append(f'Permission denied: {e}')
+            shutil.copytree(os.path.join(backup_dir, os.path.basename(directory)), directory)
+        os.makedirs(directory)
+    except Exception as e:
+        errors.append(str(e))
+    return (backup_dir, errors)
+/README.md
+# Python-Backup-Script-Example
+Python script to backup a directory to a specified location.
+
+## Usage:
+```bash
+python3 backup.py /path/to/directory /path/to/backup/directory
+```"
+assert all([vis.incar['EDIFFG'] == -0.01 for vis in ads_vis]),assert all([vis.incar['EDIFFG'] == -0.02 for vis in ads_vis]),"### Buggy Python Code
+assert all([vis.incar['EDIFFG'] == -0.01 for vis in ads_vis])
+
+### Corrected Python Code
+assert all([vis.incar['EDIFFG'] == -0.02 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.01 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.0001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.00001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.000001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.0000001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.00000001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.000000001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.0000000001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.00000000001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.000000000001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.0000000000001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.00000000000001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.000000000000001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.0000000000000001 for vis in ads_vis]) or all([vis.incar['EDIFFG'] == -0.0000000000000000"
+"uploader = self._html_search_regex(""<a href='[^']+xhamster\\.com/user/[^>]+>(?P<uploader>[^<]+)"", webpage, 'uploader', default='anonymous')","uploader = self._html_search_regex('<span[^>]+itemprop=[""\\\']author[^>]+><a[^>]+href=[""\\\'].+?xhamster\\.com/user/[^>]+>(?P<uploader>.+?)</a>', webpage, 'uploader', default='anonymous')","### Buggy Python Code
+uploader = self._html_search_regex(""<a href='[^']+xhamster\\.com/user/[^>]+>(?P<uploader>[^<]+)"", webpage, 'uploader', default='anonymous')
+
+### Corrected Python Code
+uploader = self._html_search_regex('<span[^>]+itemprop=[""\\\']author[^>]+><a[^>]+href=[""\\\'].+?xhamster\\.com/user/[^>]+>(?P<uploader>.+?)</a>', webpage, 'uploader', default='anonymous') or self._html_search_regex('<span[^>]+itemprop=[""\\\']author[^>]+><a[^>]+href=[""\\\'].+?xhamster\\.com/user/[^>]+>(?P<uploader>.+?)</a>', webpage, 'uploader', default='anonymous') or self._html_search_regex('<span[^>]+itemprop=[""\\\']author[^>]+><a[^>]+href=[""\\\'].+?xhamster\\.com/user/[^>]+>(?P<uploader>.+?)</a>', webpage, 'uploader', default='anonymous') or self._html_search_regex('<span[^>]+itemprop=[""\\\']author[^>]+><a[^>]+href=[""\\\'].+?xhamster\\.com/user/[^>]+>(?P<uploader>.+?)</a>', webpage, 'uploader', default='anonymous') or self._html_search_regex('<span[^>]+itemprop=[""\\\']author[^>]+><a[^>]+href=[""\\\'].+?xhamster\\.com/user/[^>]+>(?P<uploader>.+?)</a>', webpage, 'uploader', default='anonymous') or self._html_search_regex('<span[^>]+itemprop=[""\\\']author[^>]+><a[^>]+href=[""\\\'].+?xhamster\\.com/user/[^>]+>(?P<uploader>.+?)</a>', webpage, 'uploader', default='anonymous') or self._html_search_regex('<span[^>]+itemprop=[""\\\']author[^>]+><a[^>]+href=[""\\\'].+?xhamster\\.com/user/[^>]+>(?P<uploader>.+?)</a>', webpage, 'uploader', default='anonymous') or self._html_search_regex('<span[^>]+itemprop=[""\\\']author[^>]+><a[^>]+href=[""\\\'].+?xhamster\\.com/user/[^>]+>(?P<uploader>.+?)</a>', webpage, 'uploader', default='anonymous') or self._html_search_regex('<span[^>]+itemprop=[""\\\']author[^>]+><a[^>]+href=[""\\\'].+?xhamster\\.com/user/[^>]+>(?P<uploader>.+?)</a>', webpage"
+default_url = self.format_string(self.default_url),default_url = self.format_string('/tree' + self.default_url),"### Buggy Python Code
+default_url = self.format_string(self.default_url)
+
+### Corrected Python Code
+default_url = self.format_string('/tree' + self.default_url) if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self.format_string('/tree') + self.default_url if self.default_url else self"
+"class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        ans = 0
+        for i, x in enumerate(nums):
+            if x == 0:
+                if i + 2 >= len(nums):
+                    return ans
+                nums[i + 1] ^= 1
+                nums[i + 2] ^= 1
+                ans += 1
+        return ans","class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        ans = 0
+        for i, x in enumerate(nums):
+            if x == 0:
+                if i + 2 >= len(nums):
+                    return -1
+                nums[i + 1] ^= 1
+                nums[i + 2] ^= 1
+                ans += 1
+        return ans","### Buggy Python Code
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        ans = 0
+        for i, x in enumerate(nums):
+            if x == 0:
+                if i + 2 >= len(nums):
+                    return ans
+                nums[i + 1] ^= 1
+                nums[i + 2] ^= 1
+                ans += 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        ans = 0
+        for i, x in enumerate(nums):
+            if x == 0:
+                if i + 2 >= len(nums):
+                    return -1
+                nums[i + 1] ^= 1
+                nums[i + 2] ^= 1
+                ans += 1
+        return ans
+/1409. Unique Substrings in Wraparound String/1409. Unique Substrings in Wraparound String.py
+class Solution:
+
+    def minOperations(self, s: str) -> int:
+        ans = 0
+        for i, x in enumerate(s):
+            if x == '0':
+                if i + 2 >= len(s):
+                    return -1
+                nums[i + 1] ^= 1
+                nums[i + 2] ^= 1
+                ans += 1
+        return ans
+/1409. Unique Substrings in Wraparound String/1409. Unique Substrings in Wraparound String.cpp
+class Solution:
+
+    def minOperations(self, s: str) -> int:
+        ans = 0
+        for i, x in enumerate(s):
+            if x == '0':
+                if i + 2 >= len(s):
+                    return -1
+                nums[i + 1] ^= 1
+                nums[i + 2] ^= 1
+                ans += 1
+        return ans
+/1409. Unique Substrings in Wraparound String/1409. Unique Substrings in Wraparound String.java
+class Solution {
+
+    public int minOperations(String s) {
+        int ans = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '0') {
+                if (i + 2 >= s.length())
+                    return -1;
+                s[i + 1] ^= 1;
+                s[i + 2] ^= 1;
+                ans += 1;
+            }
+        }
+        return ans;
+    }
+}
+/1409. Unique Substrings in Wraparound String/1409. Unique Substrings in Wraparound String.py
+class Solution:
+
+    def minOperations(self, s: str) -> int:
+        ans = 0
+        for i, x in enumerate(s):
+            if x == '0':
+                if i + 2 >= len(s):
+                    return -1
+                s[i + 1] ^= 1
+                s[i + 2] ^= 1
+                ans += 1
+        return ans % 2520
+/1409. Unique Substrings in Wraparound String/140"
+"import heapq
+
+class Solution:
+
+    def __init__(self):
+        self.sieve = []
+
+    def run_sieve(self):
+        self.sieve = [True] * 100000
+        self.sieve[0], self.sieve[1] = (False, False)
+        for i in range(2, 100000):
+            if self.sieve[i]:
+                for j in range(2 * i, 100000, i):
+                    self.sieve[j] = False
+
+    def solve(self, n, m):
+        pq = []
+        heapq.heappush(pq, (n, n))
+        visited = set()
+        visited.add(n)
+        while pq:
+            sum_, cur = heapq.heappop(pq)
+            if cur in visited:
+                continue
+            visited.add(cur)
+            if cur == m:
+                return sum_
+            s = list(str(cur))
+            for i in range(len(s)):
+                c = s[i]
+                if s[i] < '9':
+                    s[i] = chr(ord(s[i]) + 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, sum_ + next_, next_)
+                    s[i] = c
+                if s[i] > '0' and (not (i == 0 and s[i] == '1')):
+                    s[i] = chr(ord(s[i]) - 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, (sum_ + next_, next_))
+                    s[i] = c
+        return -1
+
+    def minOperations(self, n, m):
+        self.run_sieve()
+        if self.sieve[n] or self.sieve[m]:
+            return -1
+        return self.solve(n, m)","import heapq
+
+class Solution:
+
+    def __init__(self):
+        self.sieve = []
+
+    def run_sieve(self):
+        self.sieve = [True] * 100000
+        self.sieve[0], self.sieve[1] = (False, False)
+        for i in range(2, 100000):
+            if self.sieve[i]:
+                for j in range(2 * i, 100000, i):
+                    self.sieve[j] = False
+
+    def solve(self, n, m):
+        pq = []
+        heapq.heappush(pq, (n, n))
+        visited = set()
+        while pq:
+            sum_, cur = heapq.heappop(pq)
+            if cur in visited:
+                continue
+            visited.add(cur)
+            if cur == m:
+                return sum_
+            s = list(str(cur))
+            for i in range(len(s)):
+                c = s[i]
+                if s[i] < '9':
+                    s[i] = chr(ord(s[i]) + 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, (sum_ + next_, next_))
+                    s[i] = c
+                if s[i] > '0' and (not (i == 0 and s[i] == '1')):
+                    s[i] = chr(ord(s[i]) - 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, (sum_ + next_, next_))
+                    s[i] = c
+        return -1
+
+    def minOperations(self, n, m):
+        self.run_sieve()
+        if self.sieve[n] or self.sieve[m]:
+            return -1
+        return self.solve(n, m)","sieve(self):
+        self.sieve = [True] * 100000
+        self.sieve[0], self.sieve[1] = (False, False)
+        for i in range(2, 100000):
+            if self.sieve[i]:
+                for j in range(2 * i, 100000, i):
+                    self.sieve[j] = False
+
+    def solve(self, n, m):
+        pq = []
+        heapq.heappush(pq, (n, n))
+        visited = set()
+        visited.add(n)
+        while pq:
+            sum_, cur = heapq.heappop(pq)
+            if cur in visited:
+                continue
+            visited.add(cur)
+            if cur == m:
+                return sum_
+            s = list(str(cur))
+            for i in range(len(s)):
+                c = s[i]
+                if s[i] < '9':
+                    s[i] = chr(ord(s[i]) + 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, sum_ + next_, next_)
+                    s[i] = c
+                if s[i] > '0' and (not (i == 0 and s[i] == '1')):
+                    s[i] = chr(ord(s[i]) - 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, (sum_ + next_, next_))
+                    s[i] = c
+        return -1
+
+    def minOperations(self, n, m):
+        self.run_sieve()
+        if self.sieve[n] or self.sieve[m]:
+            return -1
+        return self.solve(n, m)
+
+### Corrected Python Code
+import heapq
+
+class Solution:
+
+    def __init__(self):
+        self.sieve = []
+
+    def run_sieve(self):
+        self.sieve = [True] * 100000
+        self.sieve[0], self.sieve[1] = (False, False)
+        for i in range(2, 100000):
+            if self.sieve[i]:
+                for j in range(2 * i, 100000, i):
+                    self.sieve[j] = False
+
+    def solve(self, n, m):
+        pq = []
+        heapq.heappush(pq, (n, n))
+        visited = set()
+        visited.add(n)
+        while pq:
+            sum_, cur = heapq.heappop(pq)
+            if cur in visited:
+                continue
+            visited.add(cur)
+            if cur == m:
+                return sum_
+            s = list(str(cur))
+            for i in range(len(s)):
+                c = s[i]
+                if s[i] < '9':
+                    s[i] = chr(ord(s[i]) + 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, (sum_ + next_, next_))
+                    s[i] = c
+                if s[i] > '0' and (not (i == 0 and s[i] == '1')):
+                    s[i] = chr(ord(s[i]) - 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, (sum_ + next_, next_))
+                    s[i] = c
+        return -1
+
+    def minOperations(self, n, m):
+        self.run_sieve()
+        if self.sieve[n] or self.sieve[m]:
+            return -1
+        return self.solve(n, m) - 1
+
+### Corrected Python
+import heapq
+
+class Solution:
+
+    def __init__(self):
+        self.sieve = []
+
+    def run_sieve(self):
+        self.sieve = [True] * 100000
+        self.sieve[0], self.sieve[1] = (False,"
+"import os
+import glob
+import shutil
+import time
+FILE_EXTENSIONS = ['.txt', '.csv', '.xlsx', '.docx', '.pdf']
+
+def task_func(my_path: str, days_old: int) -> str:
+    archive_dir = os.path.join(my_path, 'archive')
+    os.makedirs(archive_dir, exist_ok=True)
+    for ext in FILE_EXTENSIONS:
+        files = glob.glob(os.path.join(my_path, '*' + ext))
+        for file in files:
+            if os.path.isfile(file) and os.path.getmtime(file) < time.time() - days_old * 3600:
+                shutil.move(file, archive_dir)
+    return archive_dir","import os
+import glob
+import shutil
+import time
+FILE_EXTENSIONS = ['.txt', '.csv', '.xlsx', '.docx', '.pdf']
+
+def task_func(my_path: str, days_old: int) -> str:
+    archive_dir = os.path.join(my_path, 'archive')
+    os.makedirs(archive_dir, exist_ok=True)
+    for ext in FILE_EXTENSIONS:
+        files = glob.glob(os.path.join(my_path, '*' + ext))
+        for file in files:
+            if os.path.isfile(file) and os.path.getmtime(file) < time.time() - days_old * 86400:
+                shutil.move(file, archive_dir)
+    return archive_dir","', '.docx', '.pdf']
+
+def task_func(my_path: str, days_old: int) -> str:
+    archive_dir = os.path.join(my_path, 'archive')
+    os.makedirs(archive_dir, exist_ok=True)
+    for ext in FILE_EXTENSIONS:
+        files = glob.glob(os.path.join(my_path, '*' + ext))
+        for file in files:
+            if os.path.isfile(file) and os.path.getmtime(file) < time.time() - days_old * 3600:
+                shutil.move(file, archive_dir)
+    return archive_dir
+
+### Corrected Python Code
+import os
+import glob
+import shutil
+import time
+FILE_EXTENSIONS = ['.txt', '.csv', '.xlsx', '.docx', '.pdf']
+
+def task_func(my_path: str, days_old: int) -> str:
+    archive_dir = os.path.join(my_path, 'archive')
+    os.makedirs(archive_dir, exist_ok=True)
+    for ext in FILE_EXTENSIONS:
+        files = glob.glob(os.path.join(my_path, '*' + ext))
+        for file in files:
+            if os.path.isfile(file) and os.path.getmtime(file) < time.time() - days_old * 86400:
+                shutil.move(file, archive_dir)
+    return archive_dir
+
+if __name__ == '__main__':
+    my_path = os.path.dirname(os.path.abspath(__file__))
+    days_old = 7
+    archive_dir = task_func(my_path, days_old)
+    print(f'Archived files in {archive_dir}')/day_02/task_01.py
+import os
+import glob
+import shutil
+import time
+FILE_EXTENSIONS = ['.txt', '.csv', '.xlsx', '.docx', '.pdf']
+
+def task_func(my_path: str, days_old: int) -> str:
+    archive_dir = os.path.join(my_path, 'archive')
+    os.makedirs(archive_dir, exist_ok=True)
+    for ext in FILE_EXTENSIONS:
+        files = glob.glob(os.path.join(my_path, '*' + ext))
+        for file in files:
+            if os.path.isfile(file) and os.path.getmtime(file) < time.time() - days_old * 86400:
+                shutil.move(file, archive_dir)
+    return archive_dir
+
+if __name__ == '__main__':
+    my_path = os.path.dirname(os.path.abspath(__file__))
+    days_old = 7
+    archive_dir = task_func(my_path, days_old)
+    print(f'Archived files in {archive_dir}')/day_02/task_02.py
+import os
+import glob
+import shutil
+import time
+FILE_EXTENSIONS = ['.txt', '.csv', '.xlsx', '.docx', '.pdf']
+
+def task_func(my_path: str, days_old: int) -> str:
+    archive_dir = os.path.join(my_path, 'archive')
+    os.makedirs(archive_dir, exist_ok=True)
+    for ext in FILE_EXTENSIONS:
+        files = glob.glob(os.path.join(my_path, '*' + ext))
+        for file in files:
+            if os.path.isfile(file) and os.path.getmtime(file) < time.time() - days_old * 86400:
+                shutil.move(file, archive_dir)"
+"retcols = (('user_id', 'display_name', 'avatar_url'),)","retcols = (('user_id', 'display_name', 'avatar_url', 'event_id'),)","### Buggy Python Code
+retcols = (('user_id', 'display_name', 'avatar_url'),)
+
+### Corrected Python Code
+retcols = (('user_id', 'display_name', 'avatar_url', 'event_id'),) + (('event_id', 'event_name'),) + (('event_id', 'event_start_time'),) + (('event_id', 'event_end_time'),) + (('event_id', 'event_location'),) + (('event_id', 'event_description'),) + (('event_id', 'event_type'),) + (('event_id', 'event_status'),) + (('event_id', 'event_privacy'),) + (('event_id', 'event_category'),) + (('event_id', 'event_sub_category'),) + (('event_id', 'event_image_url'),) + (('event_id', 'event_image_width'),) + (('event_id', 'event_image_height'),) + (('event_id', 'event_image_type'),) + (('event_id', 'event_image_size'),) + (('event_id', 'event_image_url_large'),) + (('event_id', 'event_image_width_large'),) + (('event_id', 'event_image_height_large'),) + (('event_id', 'event_image_type_large'),) + (('event_id', 'event_image_size_large'),) + (('event_id', 'event_image_url_small'),) + (('event_id', 'event_image_width_small'),) + (('event_id', 'event_image_height_small'),) + (('event_id', 'event_image_type_small'),) + (('event_id', 'event_image_size_small'),) + (('event_id', 'event_image_url_medium'),) + (('event_id', 'event_image_width_medium'),) + (('event_id', 'event_image_height_medium'),) + (('event_id', 'event_image_type_medium'),) + (('event_id', 'event_image_size_medium'),) + (('event_id', 'event_image_url_thumb'),) + (('event_id', 'event_image_width_thumb'),) + (('event_id', 'event_image_"
+"data = {'name': name, 'phone': phone, 'xlh': json.loads(requests.post(_a, data=xlh, timeout=180))['message']}","data = {'name': name, 'phone': phone, 'xlh': json.loads(requests.post(_a, data=xlh, timeout=180).text)['message']}","### Buggy Python Code
+data = {'name': name, 'phone': phone, 'xlh': json.loads(requests.post(_a, data=xlh, timeout=180))['message']}
+
+### Corrected Python Code
+data = {'name': name, 'phone': phone, 'xlh': json.loads(requests.post(_a, data=xlh, timeout=180).text)['message']}
+
+return data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' + data['name'] + ' ' + data['phone'] + ' ' + data['xlh'] + ' ' +"
