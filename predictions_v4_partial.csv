@@ -39226,3 +39226,190 @@ self.numberOfUsers = max(max(self.eventData['to']), max(self.eventData['fr']))
 
 ### Corrected Python Code
 self.numberOfUsers = max(max(self.eventData['to']), max(self.eventData['fr'])) + 1 if self.eventData['to']!= self.eventData['fr'] else max(max(self.eventData['to']), max(self.eventData['fr'])) + 2 if self.eventData['to'] == self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to"
+"import numpy as np
+import bisect
+import statistics
+import matplotlib.pyplot as plt
+
+def task_func(data, value):
+    if not data:
+        return (np.array([]), 0)
+    data = np.array(data)
+    avg = statistics.mean(data)
+    greater_avg = data[data > avg]
+    data.sort(axis=1)
+    bpoint = bisect.bisect_right(data, value)
+    num_greater_value = len(data) - bpoint
+    plt.hist(data, bins=10)
+    plt.show()
+    return (greater_avg, num_greater_value)","import numpy as np
+import bisect
+import statistics
+import matplotlib.pyplot as plt
+
+def task_func(data, value):
+    if not data:
+        return (np.array([]), 0)
+    data = np.array(data)
+    avg = statistics.mean(data)
+    greater_avg = data[data > avg]
+    data.sort()
+    bpoint = bisect.bisect_right(data, value)
+    num_greater_value = len(data) - bpoint
+    plt.hist(data, bins=10)
+    plt.show()
+    return (greater_avg, num_greater_value)","import numpy as np
+import bisect
+import statistics
+import matplotlib.pyplot as plt
+
+def task_func(data, value):
+    if not data:
+        return (np.array([]), 0)
+    data = np.array(data)
+    avg = statistics.mean(data)
+    greater_avg = data[data > avg]
+    data.sort()
+    bpoint = bisect.bisect_right(data, value)
+    num_greater_value = len(data) - bpoint
+    plt.hist(data, bins=10)
+    plt.show()
+    return (greater_avg, num_greater_value)
+/day_1/task_1.py
+import numpy as np
+import bisect
+import statistics
+import matplotlib.pyplot as plt
+
+def task_func(data, value):
+    if not data:
+        return (np.array([]), 0)
+    data = np.array(data)
+    avg = statistics.mean(data)
+    greater_avg = data[data > avg]
+    data.sort()
+    bpoint = bisect.bisect_right(data, value)
+    num_greater_value = len(data) - bpoint
+    plt.hist(data, bins=10)
+    plt.show()
+    return (greater_avg, num_greater_value)
+/day_1/task_2.py
+import numpy as np
+import bisect
+import statistics
+import matplotlib.pyplot as plt
+
+def task_func(data, value):
+    if not data:
+        return (np.array([]), 0)
+    data = np.array(data)
+    avg = statistics.mean(data)
+    greater_avg = data[data > avg]
+    data.sort()
+    bpoint = bisect.bisect_right(data, value)
+    num_greater_value = len(data) - bpoint
+    plt.hist(data, bins=10)
+    plt.show()
+    return (greater_avg, num_greater_value)
+/day_2/task_1.py
+import numpy as np
+import bisect
+import statistics
+import matplotlib.pyplot as plt
+
+def task_func(data, value):
+    if not data:
+        return (np.array([]), 0)
+    data = np.array(data)
+    avg"
+hidden_filter = regexp('^\\.|\\.(?:pyc|pyo|bak|swp)$|^lost\\+found$|^__cache__$'),hidden_filter = regexp('^\\.|\\.(?:pyc|pyo|bak|swp)$|^lost\\+found$|^__(py)?cache__$'),"### Buggy Python Code
+hidden_filter = regexp('^\\.|\\.(?:pyc|pyo|bak|swp)$|^lost\\+found$|^__cache__$')
+
+### Corrected Python Code
+hidden_filter = regexp('^\\.|\\.(?:pyc|pyo|bak|swp|json|lock|txt|md|html|css|js|sql|sqlite|sqlite3|ini|config|config.json|config.ini|config.yaml|config.yml.dist|config.yaml.dist.bak|config.yaml.dist.orig|config.yaml.dist.rej|config.yaml.dist.bak.rej|config.yaml.dist.orig.rej|config.yaml.dist.bak.orig|config.yaml.dist.bak.rej.orig|config.yaml.dist.orig.rej.bak|config.yaml.dist.orig.rej.bak.orig|config.yaml.dist.orig.rej.bak.rej|config.yaml.dist.orig.rej.bak.orig.rej|config.yaml.dist.orig.rej.bak.rej.orig|config.yaml.dist.orig.rej.bak.orig.rej.bak|config.yaml.dist.orig.rej.bak.orig.rej.bak.orig|config.yaml.dist.orig.rej.bak.orig.rej.bak.rej|config.yaml.dist.orig.rej.bak.orig.rej.bak.orig.rej|config.yaml.dist.orig.rej.bak.orig.rej.bak.rej.orig|config.yaml.dist.orig.rej.bak.orig.rej.bak.rej.bak|config.yaml.dist.orig.rej.bak.orig.rej.bak.rej.bak.orig|config.yaml.dist.orig.rej.bak.orig.rej.bak.rej.bak.rej|config.yaml.dist.orig.rej.bak.orig.rej.bak.rej.bak.rej.orig|config.yaml.dist.orig.rej.bak.orig.rej.bak.rej.bak.rej.bak|config.yaml.dist.orig.rej.bak.orig.rej.bak.rej.bak.rej.bak.orig|config.yaml.dist.orig.re"
+"add_alias(name, NBCC2015_AA13, REQUIRES_DISTANCES=[dist], DEFINED_FOR_TECTONIC_REGION_TYPE=trt, gmpe_table=f'{hdf5}.hdf5')","add_alias(name, NBCC2015_AA13, REQUIRES_DISTANCES=[dist], DEFINED_FOR_TECTONIC_REGION_TYPE=trt, gmpe_table=f'{hdf5}.hdf5' % kind)","### Buggy Python Code
+add_alias(name, NBCC2015_AA13, REQUIRES_DISTANCES=[dist], DEFINED_FOR_TECTONIC_REGION_TYPE=trt, gmpe_table=f'{hdf5}.hdf5')
+
+### Corrected Python Code
+add_alias(name, NBCC2015_AA13, REQUIRES_DISTANCES=[dist], DEFINED_FOR_TECTONIC_REGION_TYPE=trt, gmpe_table=f'{hdf5}.hdf5', gmpe_table_type='hdf5')
+
+### Corrected Python Code
+add_alias(name, NBCC2015_AA13, REQUIRES_DISTANCES=[dist], DEFINED_FOR_TECTONIC_REGION_TYPE=trt, gmpe_table=f'{hdf5}.hdf5', gmpe_table_type='hdf5')
+
+### Corrected Python Code
+add_alias(name, NBCC2015_AA13, REQUIRES_DISTANCES=[dist], DEFINED_FOR_TECTONIC_REGION_TYPE=trt, gmpe_table=f'{hdf5}.hdf5', gmpe_table_type='hdf5', gmpe_table_version='2.0')
+
+### Corrected Python Code
+add_alias(name, NBCC2015_AA13, REQUIRES_DISTANCES=[dist], DEFINED_FOR_TECTONIC_REGION_TYPE=trt, gmpe_table=f'{hdf5}.hdf5', gmpe_table_type='hdf5', gmpe_table_version='2.0')
+
+### Corrected Python Code
+add_alias(name, NBCC2015_AA13, REQUIRES_DISTANCES=[dist], DEFINED_FOR_TECTONIC_REGION_TYPE=trt, gmpe_table=f'{hdf5}.hdf5', gmpe_table_type='hdf5', gmpe_table_version='2.1')
+
+### Corrected Python Code
+add_alias(name, NBCC2015_AA13, REQUIRES_DISTANCES=[dist], DEFINED_FOR_TECTONIC_REGION_TYPE=trt, gmpe_table=f'{hdf5}.hdf5', gmpe_table_type='hdf5', gmpe_table_version='2.1')
+
+### Corrected Python Code
+add_alias(name, NBCC2015_AA"
+"class Solution:
+
+    def makeSmallestPalindrome(self, s: str) -> str:
+        cs = list(s)
+        i, j = (0, len(s) - 1)
+        while i < j:
+            cs[i] = cs[j] = min(cs[i], cs[j])
+            i, j = (i + 1, j - 1)
+        return ''.join(cs).decode()","class Solution:
+
+    def makeSmallestPalindrome(self, s: str) -> str:
+        cs = list(s)
+        i, j = (0, len(s) - 1)
+        while i < j:
+            cs[i] = cs[j] = min(cs[i], cs[j])
+            i, j = (i + 1, j - 1)
+        return ''.join(cs)","cs[j] = min(cs[i], cs[j])
+            i, j = (i + 1, j - 1)
+        return ''.join(cs).decode()
+
+### Corrected Python Code
+class Solution:
+
+    def makeSmallestPalindrome(self, s: str) -> str:
+        cs = list(s)
+        i, j = (0, len(s) - 1)
+        while i < j:
+            cs[i] = cs[j] = min(cs[i], cs[j])
+            i, j = (i + 1, j - 1)
+        return ''.join(cs) + ''.join(cs[::-1])
+
+### Corrected Python
+class Solution:
+
+    def makeSmallestPalindrome(self, s: str) -> str:
+        cs = list(s)
+        i, j = (0, len(s) - 1)
+        while i < j:
+            cs[i] = cs[j] = min(cs[i], cs[j])
+            i, j = (i + 1, j - 1)
+        return ''.join(cs) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) % 2) + ''.join(cs[::-1]) + s[0] * (len(s) %"
+"SPOT_PROJECT_FAVICON_URL = os.path.join('static', SPOT_PROJECT_NAME, SPOT_PROJECT_NAME + '_favicon.ico')","SPOT_PROJECT_FAVICON_URL = os.path.join('static', SPOT_PROJECT_NAME, 'favicon.ico')","### Buggy Python Code
+SPOT_PROJECT_FAVICON_URL = os.path.join('static', SPOT_PROJECT_NAME, SPOT_PROJECT_NAME + '_favicon.ico')
+
+### Corrected Python Code
+SPOT_PROJECT_FAVICON_URL = os.path.join('static', SPOT_PROJECT_NAME, SPOT_PROJECT_NAME + '_favicon.ico') if SPOT_PROJECT_FAVICON_URL is None else SPOT_PROJECT_FAVICON_URL
+
+SPOT_PROJECT_FAVICON_URL = os.path.join('static', SPOT_PROJECT_NAME, SPOT_PROJECT_NAME + '_favicon.ico') if SPOT_PROJECT_FAVICON_URL is None else SPOT_PROJECT_FAVICON_URL.replace('~', os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')) if SPOT_PROJECT_FAVICON_URL.startswith('~') else SPOT_PROJECT_FAVICON_URL.replace('~', os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')) if SPOT_PROJECT_FAVICON_URL.startswith('~') else SPOT_PROJECT_FAVICON_URL.replace('~', os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')) if SPOT_PROJECT_FAVICON_URL.startswith('~') else SPOT_PROJECT_FAVICON_URL.replace('~', os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')) if SPOT_PROJECT_FAVICON_URL.startswith('~') else SPOT_PROJECT_FAVICON_URL.replace('~', os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')) if SPOT_PROJECT_FAVICON_URL.startswith('~') else SPOT_PROJECT_FAVICON_URL.replace('~', os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')) if SPOT_PROJECT_FAVICON_URL.startswith('~') else SPOT_PROJECT_FAVICON_URL.replace('~', os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')) if SPOT_PROJECT_FAVICON_URL.startswith('~') else SPOT_PROJECT_FAVICON_URL."
+"return '{} - {}'.format(song.author, song.name)","return '{} - {}'.format(self.author, self.name)","### Buggy Python Code
+return '{} - {}'.format(song.author, song.name)
+
+### Corrected Python Code
+return '{} - {}'.format(song.author, song.name) if song.author else song.name +'- Unknown Author' if song.name else 'Unknown Song' if song.author else 'Unknown Author - Unknown Song' if song.name else 'Unknown Song - Unknown Author' if song.author else 'Unknown Author - Unknown Song - Unknown Author' if song.name else 'Unknown Song - Unknown Author - Unknown Song' if song.author else 'Unknown Author - Unknown Song - Unknown Author - Unknown Song' if song.name else 'Unknown Song - Unknown Author - Unknown Song - Unknown Author' if song.author else 'Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown Song' if song.name else 'Unknown Song - Unknown Author - Unknown Song - Unknown Author - Unknown Song' if song.author else 'Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown Song - Unknown Song' if song.name else 'Unknown Song - Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown Song - Unknown Song' if song.author else 'Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Song' if song.name else 'Unknown Song - Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Song' if song.author else 'Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Author' if song.name else 'Unknown Song - Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Author - Unknown Song' if song.author else 'Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Author - Unknown Song - Unknown Author' if song.name else 'Unknown Song - Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Author - Unknown Song - Unknown Author - Unknown Song' if song.author else 'Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Song - Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown Song' if song.author else 'Unknown Author - Unknown Song - Unknown Author - Unknown Song - Unknown"
+tweet_id = URIRef('_' + str(tweet_dict['id'])),tweet_id = URIRef('http://webtlab.it.uc3m.es/_' + str(tweet_dict['id'])),"### Buggy Python Code
+tweet_id = URIRef('_' + str(tweet_dict['id']))
+
+### Corrected Python Code
+tweet_id = URIRef('_' + str(tweet_dict['id']) + '_') if 'id' in tweet_dict else URIRef('_' + str(tweet_dict['id_str']) + '_') if 'id_str' in tweet_dict else URIRef('_' + str(tweet_dict['user']['id']) + '_') if 'user' in tweet_dict else URIRef('_' + str(tweet_dict['user']['id_str']) + '_') if 'user' in tweet_dict and 'id_str' in tweet_dict['user'] else URIRef('_' + str(tweet_dict['user']['id']) + '_') if 'user' in tweet_dict and 'id' in tweet_dict['user'] else URIRef('_' + str(tweet_dict['user']['id_str']) + '_') if 'user' in tweet_dict and 'id_str' in tweet_dict['user'] else URIRef('_' + str(tweet_dict['user']['id']) + '_') if 'user' in tweet_dict and 'id' in tweet_dict['user'] else URIRef('_' + str(tweet_dict['user']['id_str']) + '_') if 'user' in tweet_dict and 'id_str' in tweet_dict['user'] else URIRef('_' + str(tweet_dict['user']['id']) + '_') if 'user' in tweet_dict and 'id' in tweet_dict['user'] else URIRef('_' + str(tweet_dict['user']['id_str']) + '_') if 'user' in tweet_dict and 'id_str' in tweet_dict['user'] else URIRef('_' + str(tweet_dict['user']['id']) + '_') if 'user' in tweet_dict and 'id' in tweet_dict['user'] else URIRef('_' + str(tweet_dict['user']['id_str']) + '_') if 'user' in tweet_dict and 'id_str' in tweet_dict['user'] else URIRef('_' + str(tweet_dict['user']['id']) + '_') if 'user' in tweet_dict and 'id' in tweet_dict['user'] else URIRef('_' + str(tweet_dict['user']['id_str']) + '_') if 'user' in tweet_"
+"message = '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime())","message = '{0}今週は出走予定の馬がいないみたい．しょぼーん{1}'.format(reply_to, self.get_datetime())","### Buggy Python Code
+message = '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime())
+
+### Corrected Python Code
+message = '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get"
