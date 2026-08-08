@@ -22756,3 +22756,177 @@ log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal
 
 ### Corrected Python Code
 log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old"
+"def get_rois_json(request, imageId, conn=conn):","def get_rois_json(request, imageId, conn=None):","### Buggy Python Code
+def get_rois_json(request, imageId, conn=conn):
+
+### Corrected Python Code
+def get_rois_json(request, imageId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE imageId = %s"", (imageId,))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_image(request, imageId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE imageId = %s"", (imageId,))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_image_and_user(request, imageId, userId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE imageId = %s AND userId = %s"", (imageId, userId))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_user(request, userId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE userId = %s"", (userId,))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_user_and_image(request, userId, imageId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE userId = %s AND imageId = %s"", (userId, imageId))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_user_and_image_and_label(request, userId, imageId, labelId, conn=None):
+    if conn is None:
+        conn ="
+return all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))),return all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))),"### Buggy Python Code
+return all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4)))
+
+### Corrected Python Code
+return all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4)) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum(("
+"from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY","from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY","### Buggy Python Code
+from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY
+
+### Corrected Python Code
+from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY, PROJECT_PAGINATE_BY_USER, PROJECT_PAGINATE_BY_USER_DEFAULT_COUNT, PROJECT_PAGINATE_BY_USER_DEFAULT_PAGE, PROJECT_PAGINATE_BY_USER_DEFAULT_ORDERING, PROJECT_PAGINATE_BY_USER_DEFAULT_SORTING_DIRECTION, PROJECT_PAGINATE_BY_USER_DEFAULT_SORTING_FIELD, PROJECT_PAGINATE_BY_USER_DEFAULT_SORTING_TYPE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_COUNT, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_PAGE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_ORDERING, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_DIRECTION, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_FIELD, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_TYPE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_COUNT, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_PAGE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_ORDERING, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_DIRECTION, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_FIELD, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_TYPE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_COUNT, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_PAGE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_ORDERING, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_DIRECTION, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_FIELD, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_TYPE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_COUNT, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_"
+"if reduction_run is not variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')","if reduction_run != variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')","### Buggy Python Code
+if reduction_run is not variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python Code
+if reduction_run is not variables.reduction_run:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run is not variables.reduction_run:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run is not variables.reduction_run:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run is not variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')
+/src/python/pysis/pysis/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/"
+fwrapper_node = parent_node.make_node(FWRAP_TEMPLATE % module_name),fwrapper_node = parent_node.find_or_declare(FWRAP_TEMPLATE % module_name),"### Buggy Python Code
+fwrapper_node = parent_node.make_node(FWRAP_TEMPLATE % module_name)
+
+### Corrected Python Code
+fwrapper_node = parent_node.make_node(FWRAP_TEMPLATE % module_name, 'fwrap')
+
+return fwrapper_node, module_name, module_node, parent_node, module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name"
+"illum = reduce(lambda x, y: x + y, bg_iter, accumulator)","illum = reduce(lambda x, y: x + y, it.chain([im0], bg_iter), accumulator)","### Buggy Python Code
+illum = reduce(lambda x, y: x + y, bg_iter, accumulator)
+
+### Corrected Python Code
+illum = reduce(lambda x, y: x + y, bg_iter, accumulator) / len(bg_iter) if len(bg_iter) > 0 else 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance(value, dict):
+                extract(value)
+            elif isinstance(value, str) and re.match(pattern, value):
+                urls.append(value)
+    if not urls:
+        return {}
+    elif len(urls) <= top_n:
+        return dict(Counter(urls))
+    return dict(Counter(urls).most_common(top_n))","import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance(value, dict):
+                extract(value)
+            elif isinstance(value, str) and re.match(pattern, value):
+                urls.append(value)
+    extract(data)
+    if not urls:
+        return {}
+    elif len(urls) <= top_n:
+        return dict(Counter(urls))
+    return dict(Counter(urls).most_common(top_n))","import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance(value, dict):
+                extract(value)
+            elif isinstance(value, str) and re.match(pattern, value):
+                urls.append(value)
+    extract(data)
+    if not urls:
+        return {}
+    elif len(urls) <= top_n:
+        return dict(Counter(urls))
+    return dict(Counter(urls).most_common(top_n))
+/day_01/task_01.py
+import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance("
+"printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.')","printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.', '0.0')","### Buggy Python Code
+printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.')
+
+### Corrected Python Code
+printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.') + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type="
