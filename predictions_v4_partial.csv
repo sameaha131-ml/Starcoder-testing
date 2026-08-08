@@ -29335,3 +29335,219 @@ ADMINS = [('Ben Elliot', 'benjiboi214@gmail.com'), ('', '')]
 
 ### Corrected Python Code
 ADMINS = [('Ben Elliot', 'benjiboi214@gmail.com'), ('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('', '')] + [('"
+"bmrb.software(name='X', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time'])","bmrb.software(name='X', url='http://nmr-relax.com', vendor_name='me', cite_ids=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time'])","### Buggy Python Code
+bmrb.software(name='X', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time'])
+
+### Corrected Python Code
+bmrb.software(name='X', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time'], version='1.0')
+
+### Corrected Python Code
+bmrb.software(name='X', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time'], version='1.0') + bmrb.software(name='Y', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time']) + bmrb.software(name='Z', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time']) + bmrb.software(name='A', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time']) + bmrb.software(name='B', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time']) + bmrb.software(name='C', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time']) + bmrb.software(name='D', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time']) + bmrb.software(name='E', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['procrastinating', 'nothing much', 'wasting time']) + bmrb.software(name='F', url='http://nmr-relax.com', vendor_name='me', cite=[cite_id], tasks=['"
+values = np.array([np.sum(inits[RED][np.unique(arcs[ARC_RED_BLUE])])]),"values = np.array([np.sum(inits[RED][np.unique(arcs[ARC_RED_BLUE][:, 0])])])","### Buggy Python Code
+values = np.array([np.sum(inits[RED][np.unique(arcs[ARC_RED_BLUE])])])
+
+### Corrected Python Code
+values = np.array([np.sum(inits[RED][np.unique(arcs[ARC_RED_BLUE])])]) / 2.0])
+
+return values, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,"
+result = [module.details for module in self.modules],"result = [module.details for slug, module in self.modules.items()]","### Buggy Python Code
+result = [module.details for module in self.modules]
+
+### Corrected Python Code
+result = [module.details() for module in self.modules]
+
+return result if self.is_root else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len(result) > 1 else result[1:] if self.is_root and len"
+"response.write(templater.render('templates/index.html', page_title=""Welcome to M'lists"", site_title=""M'lists"", response=response))","response.write(templater.render('templates/index.html', page_title=""Welcome to M'lists"", site_title=""M'lists"", response=response, signup_failed=False))","### Buggy Python Code
+response.write(templater.render('templates/index.html', page_title=""Welcome to M'lists"", site_title=""M'lists"", response=response))
+
+### Corrected Python Code
+response.write(templater.render('templates/index.html', page_title=""Welcome to M'lists"", site_title=""M'lists"", response=response, user=user))
+/mlists/templates/index.html
+{% extends ""base.html"" %}
+{% block title %}Welcome to M'lists{% endblock %}
+{% block content %}
+<h1>Welcome to M'lists</h1>
+<p>This is a simple web application for managing mailing lists.</p>
+{% endblock %}
+/mlists/templates/base.html
+<!DOCTYPE html>
+<html lang=""en"">
+  <head>
+    <meta charset=""utf-8"">
+    <meta http-equiv=""X-UA-Compatible"" content=""IE=edge"">
+    <meta name=""viewport"" content=""width=device-width, initial-scale=1"">
+    <title>{% block title %}M'lists{% endblock %}</title>
+    <link href=""https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"" rel=""stylesheet"">
+    <link href=""https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"" rel=""stylesheet"">
+    <link href=""/static/css/style.css"" rel=""stylesheet"">
+  </head>
+  <body>
+    <div class=""container"">
+      <div class=""row"">
+        <div class=""col-md-12"">
+          <h1>{% block title %}M'lists{% endblock %}</h1>
+          <p>This is a simple web application for managing mailing lists.</p>
+        </div>
+      </div>
+      <div class=""row"">
+        <div class=""col-md-12"">
+          <ul class=""nav nav-pills nav-stacked"">
+            <li class=""active""><a href=""/"">Home</a></li>
+            <li><a href=""/lists"">Lists</a></li>
+            <li><a href=""/users"">Users</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class=""row"">
+        <div class=""col-md-12"">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+    <script src=""https://ajax.googleapis.com/ajax/libs"
+"import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    if not data:
+        raise ValueError('Input df is not a DataFrame.')
+    job_count = data['Job'].value_counts()
+    labels = job_count.index.tolist()
+    sizes = job_count.values.tolist()
+    colors = [plt.cm.Spectral(i / float(len(labels))) for i in range(len(labels))]
+    fig, ax = plt.subplots()
+    ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140, explode=0.1)
+    ax.axis('equal')
+    return ax","import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    job_count = data['Job'].value_counts()
+    labels = job_count.index.tolist()
+    sizes = job_count.values.tolist()
+    colors = [plt.cm.Spectral(i / float(len(labels))) for i in range(len(labels))]
+    fig, ax = plt.subplots()
+    ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+    ax.axis('equal')
+    return fig","import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    job_count = data['Job'].value_counts()
+    labels = job_count.index.tolist()
+    sizes = job_count.values.tolist()
+    colors = [plt.cm.Spectral(i / float(len(labels))) for i in range(len(labels))]
+    fig, ax = plt.subplots()
+    ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+    ax.axis('equal')
+    return fig, ax
+
+### Corrected Python code
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    job_count = data['Job'].value_counts()
+    labels = job_count.index.tolist()
+    sizes = job_count.values.tolist()
+    colors = [plt.cm.Spectral(i / float(len(labels))) for i in range(len(labels))]
+    fig, ax = plt.subplots()
+    ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+    ax.axis('equal')
+    return fig, ax
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-"
+"lgr.info('Installing %s%s recursively', ds, ' underneath %s' % target_path if ds.path != target_path else '')","lgr.info('Installing %s%s recursively', ds, ' to get %s' % target_path if ds.path != target_path else '')","### Buggy Python Code
+lgr.info('Installing %s%s recursively', ds,'underneath %s' % target_path if ds.path!= target_path else '')
+
+### Corrected Python Code
+lgr.info('Installing %s%s recursively', ds.path,'underneath %s' % target_path if ds.path!= target_path else '')
+
+for d in ds.children:
+    self.install_dataset(d, target_path)
+
+    lgr.info('Installing %s%s recursively', d.path,'underneath %s' % target_path if d.path!= target_path else '')
+    for d in d.children:
+        self.install_dataset(d, target_path)
+
+    lgr.info('Installing %s%s recursively', d.path,'underneath %s' % target_path if d.path!= target_path else '')
+    for d in d.children:
+        self.install_dataset(d, target_path)
+
+    lgr.info('Installing %s%s recursively', d.path,'underneath %s' % target_path if d.path!= target_path else '')
+    for d in d.children:
+        self.install_dataset(d, target_path)
+
+    lgr.info('Installing %s%s recursively', d.path,'underneath %s' % target_path if d.path!= target_path else '')
+    for d in d.children:
+        self.install_dataset(d, target_path)
+
+    lgr.info('Installing %s%s recursively', d.path,'underneath %s' % target_path if d.path!= target_path else '')
+    for d in d.children:
+        self.install_dataset(d, target_path)
+
+    lgr.info('Installing %s%s recursively', d.path,'underneath %s' % target_path if d.path!= target_path else '')
+    for d in d.children:
+        self.install_dataset(d, target_path)
+
+    lgr.info('Installing %s%s recursively', d.path,'underneath %s' % target_path if d.path!= target_path else '')
+    for d in d.children:
+        self.install_dataset(d, target_path)
+
+    lgr.info('Installing %s%s recursively', d.path,'underneath %s' % target_path if d.path!= target_path else '')
+    for"
+"if change['type'] == 'update' and change['value']:
+    self.protocol.transport = self","if (change['type'] == 'update' or change['type'] == 'create') and change['value']:
+    self.protocol.transport = self","### Buggy Python Code
+if change['type'] == 'update' and change['value']:
+    self.protocol.transport = self
+
+### Corrected Python Code
+if change['type'] == 'update' and change['value'] is not None:
+    self.protocol.transport = self
+/src/pys60/pys60/pys60.py
+# Copyright (c) 2010 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+# This file is licensed under the MIT License, as found in LICENSE.txt.
+
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *
+from pys60.pys60 import *"
+module.icon = d['icon'] if 'icon' in d else 'url',module.icon = d['icon'] if 'icon' in d else 'settings',"### Buggy Python Code
+module.icon = d['icon'] if 'icon' in d else 'url'
+
+### Corrected Python Code
+module.icon = d['icon'] if 'icon' in d else 'url' if 'url' in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else '' if 'icon' not in d else '' if 'url' not in d else ''"
