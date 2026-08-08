@@ -61417,3 +61417,227 @@ pos = lo + int(float(hi - lo) / (arr[hi] - list[lo]) * (x - list[lo]))
 ### Corrected Python Code
 pos = lo + int(float(hi - lo) / (arr[hi] - arr[lo]) * (x - arr[lo])) + 1.0e-10
 return pos, arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] -"
+self._default_cover_img_url = 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png',self._default_cover_img_url = 'https://raw.githubusercontent.com/renweizhukov/txt2mobi3/master/resources/img/default_cover.png',"### Buggy Python Code
+self._default_cover_img_url = 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png'
+
+### Corrected Python Code
+self._default_cover_img_url = 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.jpg' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png'
+
+### Corrected Python Code
+self._default_cover_img_url = 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.jpg' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self.is_windows else 'https://raw.githubusercontent.com/ipconfiger/txt2mobi/master/resources/cover.png' if self."
+"class Solution:
+
+    def numberOfBeautifulIntegers(self, low: int, high: int, k: int) -> int:
+
+        @cache
+        def dfs(pos: int, mod: int, diff: int, lead: int, limit: int) -> int:
+            if pos >= len(s):
+                return mod == 0 and diff == 10
+            up = 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, mod, diff, 1, limit and i == up)
+                else:
+                    nxt = diff + (1 if i % 2 == 1 else -1)
+                    ans += dfs(pos + 1, (mod * 10 + i) % k, nxt, 0, limit and i == up)
+            return ans
+        s = str(high + 1)
+        a = dfs(0, 0, 10, 1, 1)
+        dfs.cache_clear()
+        s = str(low - 1)
+        b = dfs(0, 0, 10, 1, 1)
+        return a - b","class Solution:
+
+    def numberOfBeautifulIntegers(self, low: int, high: int, k: int) -> int:
+
+        @cache
+        def dfs(pos: int, mod: int, diff: int, lead: int, limit: int) -> int:
+            if pos >= len(s):
+                return mod == 0 and diff == 10
+            up = int(s[pos]) if limit else 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, mod, diff, 1, limit and i == up)
+                else:
+                    nxt = diff + (1 if i % 2 == 1 else -1)
+                    ans += dfs(pos + 1, (mod * 10 + i) % k, nxt, 0, limit and i == up)
+            return ans
+        s = str(high)
+        a = dfs(0, 0, 10, 1, 1)
+        dfs.cache_clear()
+        s = str(low - 1)
+        b = dfs(0, 0, 10, 1, 1)
+        return a - b","class Solution:
+
+    def numberOfBeautifulIntegers(self, low: int, high: int, k: int) -> int:
+
+        @cache
+        def dfs(pos: int, mod: int, diff: int, lead: int, limit: int) -> int:
+            if pos >= len(s):
+                return mod == 0 and diff == 10
+            up = int(s[pos]) if limit else 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, mod, diff, 1, limit and i == up)
+                else:
+                    nxt = diff + (1 if i % 2 == 1 else -1)
+                    ans += dfs(pos + 1, (mod * 10 + i) % k, nxt, 0, limit and i == up)
+            return ans
+        s = str(high)
+        a = dfs(0, 0, 10, 1, 1)
+        dfs.cache_clear()
+        s = str(low - 1)
+        b = dfs(0, 0, 10, 1, 1)
+        return a - b - 1
+
+### Corrected Python
+class Solution:
+
+    def numberOfBeautifulIntegers(self, low: int, high: int, k: int) -> int:
+
+        @cache
+        def dfs(pos: int, mod: int, diff: int, lead: int, limit: int) -> int:
+            if pos >= len(s):
+                return mod == 0 and diff == 10
+            up = int(s[pos]) if limit else 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, mod, diff, 1, limit and i == up)
+                else:
+                    nxt = diff + (1 if i % 2 == 1 else -1)
+                    ans += dfs(pos + 1, (mod * 10 + i) % k, nxt, 0, limit and i == up)
+            return ans
+        s = str(high)
+        a = dfs(0, 0, 10, 1, 1)
+        dfs.cache_clear"
+"submitter = db.ReferenceProperty(User, required=False, collection_name='broadcastSubmitter')","submitter = db.ReferenceProperty(Station, required=False, collection_name='broadcastSubmitter')","### Buggy Python Code
+submitter = db.ReferenceProperty(User, required=False, collection_name='broadcastSubmitter')
+
+### Corrected Python Code
+submitter = db.ReferenceProperty(User, required=False, collection_name='broadcastSubmitter', default=None)
+
+class Broadcast(db.Model):
+    title = db.StringProperty(required=True)
+    description = db.TextProperty(required=True)
+    submitter = db.ReferenceProperty(User, required=False, collection_name='broadcastSubmitter')
+    date = db.DateTimeProperty(auto_now_add=True)
+    image = db.BlobProperty(required=False)
+    video = db.BlobProperty(required=False)
+    audio = db.BlobProperty(required=False)
+    tags = db.ListProperty(db.StringProperty())
+    likes = db.ListProperty(db.ReferenceProperty(User))
+    dislikes = db.ListProperty(db.ReferenceProperty(User))
+    comments = db.ListProperty(db.ReferenceProperty(Comment))
+    views = db.IntegerProperty(default=0)
+    status = db.StringProperty(choices=['active', 'inactive'], default='active')
+    def __init__(self, *args, **kwargs):
+        super(Broadcast, self).__init__(*args, **kwargs)
+        self.submitter = kwargs.pop('submitter', None)
+    def get_submitter(self):
+        return self.submitter.get()
+    def get_tags(self):
+        return self.tags
+    def get_likes(self):
+        return self.likes
+    def get_dislikes(self):
+        return self.dislikes
+    def get_comments(self):
+        return self.comments
+    def get_views(self):
+        return self.views
+    def get_status(self):
+        return self.status
+    def set_submitter(self, submitter):
+        self.submitter = submitter
+    def set_tags(self, tags):
+        self.tags = tags
+    def set_likes(self, likes):
+        self.likes = likes
+    def set_dislikes(self, dislikes):
+        self.dislikes = dislikes
+    def set_comments(self, comments):
+        self.comments = comments
+    def set_views(self, views):
+        self.views = views
+    def set_status(self, status):
+        self.status = status
+    def get_absolute_url(self):
+        return '/broadcasts/%s/' % self.key().id()
+    def get"
+"if not splitext(value.name)[1] in ['.png', '.jpg', '.jpeg']:
+    raise ValidationError('Invalid file type')","if not splitext(value.name)[1].lower() in ['.png', '.jpg', '.jpeg']:
+    raise ValidationError('Invalid file type')","### Buggy Python Code
+if not splitext(value.name)[1] in ['.png', '.jpg', '.jpeg']:
+    raise ValidationError('Invalid file type')
+
+### Corrected Python Code
+if not splitext(value.name)[1].lower() in ['.png', '.jpg', '.jpeg']:
+    raise ValidationError('Invalid file type')
+/app/models/user.py
+from django.db import models
+from django.contrib.auth.models import User, Group, Permission
+from django.contrib.auth.models import AbstractUser, BaseUserManager, PermissionsMixin
+from django.core.validators import RegexValidator, EmailValidator, ValidationError
+from django.utils.translation import ugettext_lazy as _
+from django.utils.text import slugify
+from django.core.exceptions import ObjectDoesNotExist, ValidationError, FieldDoesNotExist, MultipleObjectsReturned, FieldError, IntegrityError, PermissionDenied, SuspiciousOperation, DisallowedModelAdminOperation, ProtectedError, FieldDoesNotExist, ObjectDoesNotExist, MultipleObjectsReturned, FieldError, IntegrityError, PermissionDenied, SuspiciousOperation, DisallowedModelAdminOperation, ProtectedError, FieldDoesNotExist, ObjectDoesNotExist, MultipleObjectsReturned, FieldError, IntegrityError, PermissionDenied, SuspiciousOperation, DisallowedModelAdminOperation, ProtectedError, FieldDoesNotExist, ObjectDoesNotExist, MultipleObjectsReturned, FieldError, IntegrityError, PermissionDenied, SuspiciousOperation, DisallowedModelAdminOperation, ProtectedError, FieldDoesNotExist, ObjectDoesNotExist, MultipleObjectsReturned, FieldError, IntegrityError, PermissionDenied, SuspiciousOperation, DisallowedModelAdminOperation, ProtectedError, FieldDoesNotExist, ObjectDoesNotExist, MultipleObjectsReturned, FieldError, IntegrityError, PermissionDenied, SuspiciousOperation, DisallowedModelAdminOperation, ProtectedError, FieldDoesNotExist, ObjectDoesNotExist, MultipleObjectsReturned, FieldError, IntegrityError, PermissionDenied, SuspiciousOperation, DisallowedModelAdminOperation, ProtectedError, FieldDoesNotExist, ObjectDoesNotExist, MultipleObjectsReturned, FieldError, IntegrityError, PermissionDenied, SuspiciousOperation, DisallowedModelAdminOperation, ProtectedError, FieldDoesNotExist, ObjectDoesNotExist, MultipleObjectsReturned, FieldError, IntegrityError, PermissionDenied, SuspiciousOperation, DisallowedModelAdminOperation, ProtectedError, FieldDoesNotExist, ObjectDoesNotExist, MultipleObjectsReturned, FieldError, IntegrityError, PermissionDenied, SuspiciousOperation, DisallowedModelAdminOperation, ProtectedError, FieldDoesNotExist, ObjectDoesNotExist, MultipleObjectsReturned, FieldError, IntegrityError, PermissionDenied, SuspiciousOperation, DisallowedModelAdmin"
+"contactTriples.append((contact._guid, contact.uri))","contactTriples.append((contact._guid, contact._address))","### Buggy Python Code
+contactTriples.append((contact._guid, contact.uri))
+
+### Corrected Python Code
+contactTriples.append((contact._guid, contact.uri, contact.name))
+
+return contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples, contactTriples"
+"testEnvName = os.getenv('bamboo_docker_env', 'test_' + os.getenv('bamboo_buildNumber', 'default'))","testEnvName = os.getenv('bamboo_deploy_environment', 'test_' + os.getenv('bamboo_buildNumber', 'default'))","### Buggy Python Code
+testEnvName = os.getenv('bamboo_docker_env', 'test_' + os.getenv('bamboo_buildNumber', 'default'))
+
+### Corrected Python Code
+testEnvName = os.getenv('bamboo_docker_env', 'test_' + os.getenv('bamboo_buildNumber', 'default').replace('.', '_')) + '_py3' + os.getenv('bamboo_pythonVersion', '3.6') + '_py2' + os.getenv('bamboo_pythonVersion', '2.7') + '_py27' + os.getenv('bamboo_pythonVersion', '2.7') + '_py35' + os.getenv('bamboo_pythonVersion', '3.5') + '_py36' + os.getenv('bamboo_pythonVersion', '3.6') + '_py37' + os.getenv('bamboo_pythonVersion', '3.7') + '_py38' + os.getenv('bamboo_pythonVersion', '3.8') + '_py39' + os.getenv('bamboo_pythonVersion', '3.9') + '_py310' + os.getenv('bamboo_pythonVersion', '3.10') + '_py311' + os.getenv('bamboo_pythonVersion', '3.11') + '_py312' + os.getenv('bamboo_pythonVersion', '3.12') + '_py313' + os.getenv('bamboo_pythonVersion', '3.13') + '_py314' + os.getenv('bamboo_pythonVersion', '3.14') + '_py315' + os.getenv('bamboo_pythonVersion', '3.15') + '_py316' + os.getenv('bamboo_pythonVersion', '3.16') + '_py317' + os.getenv('bamboo_pythonVersion', '3.17') + '_py318' + os.getenv('bamboo_pythonVersion', '3.18') + '_py319' + os.getenv('bamboo_pythonVersion', '3.19') + '_py320' + os.getenv('bamboo_pythonVersion', '3.20') + '_py321' + os.getenv('bamboo_pythonVersion', '3.21') + '_py322' + os.getenv('bamboo"
+ASSERT_RE = re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*'),ASSERT_RE = re.compile('^\\s*assert[^a-z0-9_:]'),"### Buggy Python Code
+ASSERT_RE = re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*')
+
+### Corrected Python Code
+ASSERT_RE = re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*') or re.compile('.*(?<![-:a-zA-Z#][ -])\\bassert\\b(?!:).*"
+"if account_type not in ['Tax', 'Chargeable', 'Income Account', 'Expense Account']:
+    frappe.throw(_('Item Tax Row {0} must have account of type Tax or Income or Expense or Chargeable').format(d.idx))","if account_type not in ['Tax', 'Chargeable', 'Income Account', 'Expense Account', 'Expenses Included In Valuation']:
+    frappe.throw(_('Item Tax Row {0} must have account of type Tax or Income or Expense or Chargeable').format(d.idx))","### Buggy Python Code
+if account_type not in ['Tax', 'Chargeable', 'Income Account', 'Expense Account']:
+    frappe.throw(_('Item Tax Row {0} must have account of type Tax or Income or Expense or Chargeable').format(d.idx))
+
+### Corrected Python Code
+if account_type not in ['Tax', 'Chargeable', 'Income Account', 'Expense Account', 'Asset']:
+    frappe.throw(_('Item Tax Row {0} must have account of type Tax or Income or Expense or Chargeable').format(d.idx))
+
+if d.tax_amount and d.tax_amount!= d.base_amount:
+    frappe.throw(_('Item Tax Row {0} must have tax amount equal to base amount').format(d.idx))
+
+if d.tax_amount and d.tax_amount < 0:
+    frappe.throw(_('Item Tax Row {0} must have tax amount greater than zero').format(d.idx))
+
+if d.tax_amount and d.tax_amount > d.base_amount:
+    frappe.throw(_('Item Tax Row {0} must have tax amount less than base amount').format(d.idx))
+
+if d.tax_amount and d.tax_amount!= d.base_amount:
+    frappe.throw(_('Item Tax Row {0} must have tax amount equal to base amount').format(d.idx))
+
+if d.tax_amount and d.tax_amount < 0:
+    frappe.throw(_('Item Tax Row {0} must have tax amount greater than zero').format(d.idx))
+
+if d.tax_amount and d.tax_amount > d.base_amount:
+    frappe.throw(_('Item Tax Row {0} must have tax amount less than base amount').format(d.idx))
+
+if d.tax_amount and d.tax_amount!= d.base_amount:
+    frappe.throw(_('Item Tax Row {0} must have tax amount equal to base amount').format(d.idx))
+
+if d.tax_amount and d.tax_amount < 0:
+    frappe.throw(_('Item Tax Row {0} must have tax amount greater than zero').format(d.idx))
+
+if d.tax_amount and d.tax_amount > d.base_amount:
+    frappe.throw(_('Item Tax Row {0} must have tax amount less than base amount').format(d.idx))
+
+if d.tax_amount and d.tax_amount!= d.base_amount:
+    f"
