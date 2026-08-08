@@ -49831,3 +49831,349 @@ st_add.append(MigrationTool.__add_stmt(INDEX_ROR, 'EUDAT/ROR', ror))
 st_add.append(MigrationTool.__add_stmt(INDEX_ROR, 'EUDAT/ROR', ror, 'ROR'))
 
 return st_add, st_del, st_update, st_ignore, st_error, st_warning, st_info, st_debug, st_trace, st_sql, st_other, st_total, st_total_error, st_total_warning, st_total_info, st_total_debug, st_total_trace, st_total_sql, st_total_other, st_total_total, st_total_total_error, st_total_total_warning, st_total_total_info, st_total_total_debug, st_total_total_trace, st_total_total_sql, st_total_total_other, st_total_total_total, st_total_total_total_error, st_total_total_total_warning, st_total_total_total_info, st_total_total_total_debug, st_total_total_total_trace, st_total_total_total_sql, st_total_total_total_other, st_total_total_total_total, st_total_total_total_total_error, st_total_total_total_total_warning, st_total_total_total_total_info, st_total_total_total_total_debug, st_total_total_total_total_trace, st_total_total_total_total_sql, st_total_total_total_total_other, st_total_total_total_total_total, st_total_total_total_total_total_error, st_total_total_total_total_total_warning, st_total_total_total_total_total_info, st_total_total_total_total_total_debug, st_total_total_total_total_total_trace, st_total_total_total_total_total_sql, st_total_total_total_total_total_other, st_total_total_total_total_total_total, st_total_total_total_total_total_total_error, st_total_total_total_total_total_total_warning"
+"def min(a: int, b: int) -> int:
+    return a if a < b else b
+
+class Trie:
+
+    def __init__(self):
+        self.children: List[Optional[Trie]] = [None] * 26
+
+    def insert(self, w: str):
+        node = self
+        for i in map(lambda c: ord(c) - 97, w):
+            if node.children[i] is None:
+                node.children[i] = Trie()
+            node = node.children[i]
+
+class Solution:
+
+    def minValidStrings(self, words: List[str], target: str) -> int:
+
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            node = self
+            ans = inf
+            for j in range(i, n):
+                k = ord(target[j]) - 97
+                if node.children[k] is None:
+                    break
+                node = node.children[k]
+                ans = min(ans, dfs(j + 1))
+            return ans
+        trie = Trie()
+        for w in words:
+            trie.insert(w)
+        n = target.length
+        ans = dfs(0)
+        return ans if ans < inf else -1","def min(a: int, b: int) -> int:
+    return a if a < b else b
+
+class Trie:
+
+    def __init__(self):
+        self.children: List[Optional[Trie]] = [None] * 26
+
+    def insert(self, w: str):
+        node = self
+        for i in map(lambda c: ord(c) - 97, w):
+            if node.children[i] is None:
+                node.children[i] = Trie()
+            node = node.children[i]
+
+class Solution:
+
+    def minValidStrings(self, words: List[str], target: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            node = trie
+            ans = inf
+            for j in range(i, n):
+                k = ord(target[j]) - 97
+                if node.children[k] is None:
+                    break
+                node = node.children[k]
+                ans = min(ans, 1 + dfs(j + 1))
+            return ans
+        trie = Trie()
+        for w in words:
+            trie.insert(w)
+        n = len(target)
+        ans = dfs(0)
+        return ans if ans < inf else -1","def min(a: int, b: int) -> int:
+    return a if a < b else b
+
+class Trie:
+
+    def __init__(self):
+        self.children: List[Optional[Trie]] = [None] * 26
+
+    def insert(self, w: str):
+        node = self
+        for i in map(lambda c: ord(c) - 97, w):
+            if node.children[i] is None:
+                node.children[i] = Trie()
+            node = node.children[i]
+
+class Solution:
+
+    def minValidStrings(self, words: List[str], target: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            node = trie
+            ans = inf
+            for j in range(i, n):
+                k = ord(target[j]) - 97
+                if node.children[k] is None:
+                    break
+                node = node.children[k]
+                ans = min(ans, dfs(j + 1) + 1)
+            return ans
+        trie = Trie()
+        for w in words:
+            trie.insert(w)
+        n = len(target)
+        ans = dfs(0)
+        return ans if ans < inf else -1
+
+### Corrected Python
+def min(a: int, b: int) -> int:
+    return a if a < b else b
+
+class Trie:
+
+    def __init__(self):
+        self.children: List[Optional[Trie]] = [None] * 26
+
+    def insert(self, w: str):
+        node = self
+        for i in map(lambda c: ord(c) - 97, w):
+            if node.children[i] is None:
+                node.children[i] = Trie()
+            node = node.children[i]
+
+class Solution:
+
+    def minValidStrings(self, words: List[str], target: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            node = trie
+            ans = inf
+            for j in range(i, n):
+                k = ord(target[j]) - 97
+                if node.children[k] is None:
+                    break
+                node"
+"def get_unauthorized_request_response_wsgirequest(self):
+    return http.HttpUnauthorized()","def get_unauthorized_request_response(self):
+    return http.HttpUnauthorized()","### Buggy Python Code
+def get_unauthorized_request_response_wsgirequest(self):
+    return http.HttpUnauthorized()
+
+### Corrected Python Code
+def get_unauthorized_request_response_wsgirequest(self, environ, start_response):
+    return http.HttpUnauthorized()
+/tests/test_views.py
+from django.test import TestCase
+from django.test.client import Client
+from django.core.urlresolvers import reverse
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required, user_passes_test, permission_required, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_required, logout_required, permission_required, user_passes_test, login_"
+"import time
+from datetime import datetime
+import random
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(n, output_path=None):
+    timestamps = []
+    for _ in range(n):
+        timestamp = random.randint(0, int(time.time()))
+        formatted_time = datetime.utcfromtimestamp(timestamp).strftime(DATE_FORMAT)
+        timestamps.append(formatted_time)
+    plt.hist([datetime.strptime(t, DATE_FORMAT) for t in timestamps])
+    if output_path:
+        plt.save(output_path)
+    else:
+        plt.show()
+    return formatted_time","import time
+from datetime import datetime
+import random
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(n, output_path=None):
+    timestamps = []
+    for _ in range(n):
+        timestamp = random.randint(0, int(time.time()))
+        formatted_time = datetime.utcfromtimestamp(timestamp).strftime(DATE_FORMAT)
+        timestamps.append(formatted_time)
+    plt.hist([datetime.strptime(t, DATE_FORMAT) for t in timestamps])
+    if output_path:
+        plt.savefig(output_path)
+    else:
+        plt.show()
+    return timestamps","'
+
+def task_func(n, output_path=None):
+    timestamps = []
+    for _ in range(n):
+        timestamp = random.randint(0, int(time.time()))
+        formatted_time = datetime.utcfromtimestamp(timestamp).strftime(DATE_FORMAT)
+        timestamps.append(formatted_time)
+    plt.hist([datetime.strptime(t, DATE_FORMAT) for t in timestamps])
+    if output_path:
+        plt.save(output_path)
+    else:
+        plt.show()
+    return formatted_time
+
+### Corrected Python Code
+import time
+from datetime import datetime
+import random
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(n, output_path=None):
+    timestamps = []
+    for _ in range(n):
+        timestamp = random.randint(0, int(time.time()))
+        formatted_time = datetime.utcfromtimestamp(timestamp).strftime(DATE_FORMAT)
+        timestamps.append(formatted_time)
+    plt.hist([datetime.strptime(t, DATE_FORMAT) for t in timestamps])
+    if output_path:
+        plt.savefig(output_path)
+    else:
+        plt.show()
+    return timestamps
+
+### Corrected Python code
+import time
+from datetime import datetime
+import random
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(n, output_path=None):
+    timestamps = []
+    for _ in range(n):
+        timestamp = random.randint(0, int(time.time()))
+        formatted_time = datetime.utcfromtimestamp(timestamp).strftime(DATE_FORMAT)
+        timestamps.append(formatted_time)
+    plt.hist([datetime.strptime(t, DATE_FORMAT) for t in timestamps])
+    if output_path:
+        plt.savefig(output_path)
+    else:
+        plt.show()
+    return timestamps
+
+if __name__ == '__main__':
+    timestamps = task_func(1000)
+    print(timestamps)
+    print(f'The first timestamp: {timestamps[0]}')
+    print(f'The last timestamp: {timestamps[-1]}')
+    print(f'The average timestamp: {sum(timestamps) / len(timestamps)}')
+    print(f'The median timestamp: {statistics.median(timestamps)}')
+    print(f'The standard deviation of timestamps: {statistics.stdev(timestamps)}')
+    print(f'The maximum timestamp: {max(timestamps)}')
+    print(f'The minimum timestamp: {min(timestamps)}')
+    print(f'The number of timestamps between 2019-01-01 00:00:00 and 2019-01-01 23:59:59: {sum((1 for t"
+"return 'Error encountered with object named ""{objname}"".\n{objcreate}\n\n{message}(See above for original error message and traceback.)'.format(objname=self._brian_objname, message=self._brian_message, objcreate=self._brian_objcreate)","return 'Error encountered with object named ""{objname}"".\n{objcreate}\n\n{message} (See above for original error message and traceback.)'.format(objname=self._brian_objname, message=self._brian_message, objcreate=self._brian_objcreate)","### Buggy Python Code
+return 'Error encountered with object named ""{objname}"".\n{objcreate}\n\n{message}(See above for original error message and traceback.)'.format(objname=self._brian_objname, message=self._brian_message, objcreate=self._brian_objcreate)
+
+### Corrected Python Code
+return 'Error encountered with object named ""{objname}"".\n{objcreate}\n\n{message}(See above for original error message and traceback.)'.format(objname=self._brian_objname, message=self._brian_message, objcreate=self._brian_objcreate) + '\n\n' + self._brian_traceback.replace('\n', '\n\t') + '\n' + self._brian_error_message.replace('\n', '\n\t') + '\n' + self._brian_error_traceback.replace('\n', '\n\t') + '\n' + self._brian_error_message.replace('\n', '\n\t') + '\n' + self._brian_error_traceback.replace('\n', '\n\t') + '\n' + self._brian_error_message.replace('\n', '\n\t') + '\n' + self._brian_error_traceback.replace('\n', '\n\t') + '\n' + self._brian_error_message.replace('\n', '\n\t') + '\n' + self._brian_error_traceback.replace('\n', '\n\t') + '\n' + self._brian_error_message.replace('\n', '\n\t') + '\n' + self._brian_error_traceback.replace('\n', '\n\t') + '\n' + self._brian_error_message.replace('\n', '\n\t') + '\n' + self._brian_error_traceback.replace('\n', '\n\t') + '\n' + self._brian_error_message.replace('\n', '\n\t') + '\n' + self._brian_error_traceback.replace('\n', '\n\t') + '\n' + self._brian_error_message.replace('\n', '\n\t') + '\n' + self._brian_error_traceback.replace('\n', '\n\t') + '\n' + self._brian_error_message.replace('\n', '\n\t') + '\n' + self._brian_error_traceback.replace('\n', '\n\t') + '\n' + self._brian"
+"q = {'content_oid': ObjectId(_id), 'type': 'general', 'enabled': True}","q = {'content_oid': content['_id'], 'type': 'general', 'enabled': True}","### Buggy Python Code
+q = {'content_oid': ObjectId(_id), 'type': 'general', 'enabled': True}
+
+### Corrected Python Code
+q = {'content_oid': ObjectId(_id), 'type': 'general', 'enabled': True, 'deleted': False}
+
+return self.db.content.find_one(q) is not None and self.db.content.find_one(q)['enabled'] is True and self.db.content.find_one(q)['deleted'] is False and self.db.content.find_one(q)['type'] == 'general' and self.db.content.find_one(q)['enabled'] is True and self.db.content.find_one(q)['deleted'] is False and self.db.content.find_one(q)['type'] == 'general' and self.db.content.find_one(q)['enabled'] is True and self.db.content.find_one(q)['deleted'] is False and self.db.content.find_one(q)['type'] == 'general' and self.db.content.find_one(q)['enabled'] is True and self.db.content.find_one(q)['deleted'] is False and self.db.content.find_one(q)['type'] == 'general' and self.db.content.find_one(q)['enabled'] is True and self.db.content.find_one(q)['deleted'] is False and self.db.content.find_one(q)['type'] == 'general' and self.db.content.find_one(q)['enabled'] is True and self.db.content.find_one(q)['deleted'] is False and self.db.content.find_one(q)['type'] == 'general' and self.db.content.find_one(q)['enabled'] is True and self.db.content.find_one(q)['deleted'] is False and self.db.content.find_one(q)['type'] == 'general' and self.db.content.find_one(q)['enabled'] is True and self.db.content.find_one(q)['deleted'] is False and self.db.content.find_one(q)['type'] == 'general' and self.db.content.find_one(q)['enabled'] is True and self.db.content.find_one(q)['deleted'] is False and self.db.content.find_"
+errors.append('{username}: {flag}'.format(**row)),errors.append(u'{username}: {flag}'.format(**row)),"### Buggy Python Code
+errors.append('{username}: {flag}'.format(**row))
+
+### Corrected Python Code
+errors.append('{username}: {flag}'.format(**row)) if row['flag'] else None
+
+return errors, flag_count, total_count, total_time, total_time_flagged, total_time_unflagged, total_time_flagged_unflagged, total_time_unflagged_flagged, total_time_flagged_unflagged_unflagged, total_time_unflagged_flagged_flagged, total_time_unflagged_flagged_unflagged_flagged, total_time_unflagged_flagged_unflagged_unflagged, total_time_unflagged_flagged_unflagged_unflagged_flagged, total_time_unflagged_flagged_unflagged_unflagged_unflagged_flagged, total_time_unflagged_flagged_unflagged_unflagged_unflagged_unflagged_flagged, total_time_unflagged_flagged_unflagged_unflagged_unflagged_unflagged_unflagged_flagged, total_time_unflagged_flagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_flagged, total_time_unflagged_flagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_flagged, total_time_unflagged_flagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_flagged, total_time_unflagged_flagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_flagged, total_time_unflagged_flagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_unflagged_flagged, total_time_unflagged_flagged_unflagged_unflagged_unflagged_unflagged_unflagged"
+"self.log.write('error', 'found only %2d eleemnts, NOK' % len(link_))","self.log.write('error', 'found only %2d elements, NOK' % len(link_))","### Buggy Python Code
+self.log.write('error', 'found only %2d eleemnts, NOK' % len(link_))
+
+### Corrected Python Code
+self.log.write('error', 'found only %2d elements, NOK' % len(link_))
+return False, 'found only %2d elements, NOK' % len(link_) +'' + self.url_ +'' + self.log.get_log() +'' + self.log.get_log_file() +'' + self.log.get_log_file_name() +'' + self.log.get_log_file_name_full() +'' + self.log.get_log_file_name_full_path() +'' + self.log.get_log_file_name_full_path_full() +'' + self.log.get_log_file_name_full_path_full_name() +'' + self.log.get_log_file_name_full_path_full_name_full() +'' + self.log.get_log_file_name_full_path_full_name_full_path() +'' + self.log.get_log_file_name_full_path_full_name_full_path_full() +'' + self.log.get_log_file_name_full_path_full_name_full_path_full_name() +'' + self.log.get_log_file_name_full_path_full_name_full_path_full_name_full() +'' + self.log.get_log_file_name_full_path_full_name_full_path_full_name_full_path() +'' + self.log.get_log_file_name_full_path_full_name_full_path_full_name_full_path_full() +'' + self.log.get_log_file_name_full_path_full_name_full_path_full_name_full_path_full() +'' + self.log.get_log_file_name_full_path_full_name_full_path_full_name_full_path_full_name() +'' + self.log.get_log_file_name_full_path_full_name_full_path_full_name_"
+"if not is_player_active():
+    reload_simple_pvr()","if not is_playing_service():
+    reload_simple_pvr()","### Buggy Python Code
+if not is_player_active():
+    reload_simple_pvr()
+
+### Corrected Python Code
+if not is_player_active() and not is_player_in_menu():
+    reload_simple_pvr()
+
+### Corrected Python code
+if not is_player_active() and not is_player_in_menu() and not is_player_in_menu_mode():
+    reload_simple_pvr()
+
+### Corrected Python code
+if not is_player_active() and not is_player_in_menu() and not is_player_in_menu_mode() and not is_player_in_game():
+    reload_simple_pvr()
+/resources/scripts/common/simple_pvr.py
+import os
+import shutil
+import subprocess
+import time
+import threading
+import traceback
+
+from resources.scripts.common.utils import *
+
+class SimplePvr:
+    def __init__(self):
+        self.is_running = False
+        self.is_started = False
+        self.is_stopped = False
+        self.is_paused = False
+        self.is_resumed = False
+        self.is_recording = False
+        self.is_recording_stopped = False
+        self.is_recording_paused = False
+        self.is_recording_resumed = False
+        self.is_recording_started = False
+        self.is_recording_stopped = False
+        self.is_recording_paused = False
+        self.is_recording_resumed = False
+        self.is_recording_started = False
+        self.is_recording_stopped = False
+        self.is_recording_paused = False
+        self.is_recording_resumed = False
+        self.is_recording_started = False
+        self.is_recording_stopped = False
+        self.is_recording_paused = False
+        self.is_recording_resumed = False
+        self.is_recording_started = False
+        self.is_recording_stopped = False
+        self.is_recording_paused = False
+        self.is_recording_resumed = False
+        self.is_recording_started = False
+        self.is_recording_stopped = False
+        self.is_recording_paused = False
+        self.is_recording_resumed = False
+        self.is_recording_started = False
+        self.is_recording_stopped = False
+        self.is_recording_paused = False
+        self.is_recording_resumed ="
