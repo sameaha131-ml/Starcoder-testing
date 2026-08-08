@@ -56106,3 +56106,278 @@ if __name__ == '__main__':
     df = pd.read_csv('data.csv')
     task_func(df)
     plt.show()/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/"
+"self.val_intthr = wx.TextCtrl(self, wx.TE_PROCESS_ENTER)","self.val_intthr = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER)","### Buggy Python Code
+self.val_intthr = wx.TextCtrl(self, wx.TE_PROCESS_ENTER)
+
+### Corrected Python Code
+self.val_intthr = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER)
+
+### Corrected Python Code
+self.val_intthr = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER | wx.TE_RIGHT)
+
+### Corrected Python Code
+self.val_intthr = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER | wx.TE_RIGHT)
+
+### Corrected Python Code
+self.val_intthr = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER | wx.TE_RIGHT | wx.TE_NO_VSCROLL)
+
+### Corrected Python Code
+self.val_intthr = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER | wx.TE_RIGHT | wx.TE_NO_VSCROLL)
+
+### Corrected Python Code
+self.val_intthr = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER | wx.TE_RIGHT | wx.TE_NO_VSCROLL | wx.TE_NO_AUTORESIZE)
+
+### Corrected Python Code
+self.val_intthr = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER | wx.TE_RIGHT | wx.TE_NO_VSCROLL | wx.TE_NO_AUTORESIZE)
+
+### Corrected Python Code
+self.val_intthr = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER | wx.TE_RIGHT | wx.TE_NO_VSCROLL | wx.TE_NO_AUTORESIZE | wx.TE_READONLY)
+
+### Corrected Python Code
+self.val_intthr = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER | wx.TE_RIGHT | wx.TE_NO_VSCROLL | wx.TE_NO_AUTORESIZE | wx.TE_READONLY)
+
+### Corrected Python Code
+self.val_intthr = wx.TextCtrl(self, style=wx.TE_PROCESS_ENTER | wx.TE_RIGHT | wx.TE_NO_VSCROLL | wx.TE_NO_AUTORESIZE | wx.TE_READONLY | wx.TE_NO_AUTOCOMPLETE)
+
+###"
+"class remarks(nodes.Admonition, nodes.Element):","class remarks(nodes.paragraph, nodes.Element):","### Buggy Python Code
+class remarks(nodes.Admonition, nodes.Element):
+
+### Corrected Python Code
+class remarks(nodes.Admonition, nodes.Element, nodes.TextElement):
+    pass
+
+class remarks_list(nodes.Element):
+    pass
+
+class remarks_item(nodes.Element):
+    pass
+
+class remarks_title(nodes.TextElement):
+    pass
+
+class remarks_text(nodes.TextElement):
+    pass
+
+class remarks_list(nodes.Element):
+    pass
+
+class remarks_item(nodes.Element):
+    pass
+
+class remarks_title(nodes.TextElement):
+    pass
+
+class remarks_text(nodes.TextElement):
+    pass
+
+class remarks_list(nodes.Element):
+    pass
+
+class remarks_item(nodes.Element):
+    pass
+
+class remarks_title(nodes.TextElement):
+    pass
+
+class remarks_text(nodes.TextElement):
+    pass
+
+class remarks_list(nodes.Element):
+    pass
+
+class remarks_item(nodes.Element):
+    pass
+
+class remarks_title(nodes.TextElement):
+    pass
+
+class remarks_text(nodes.TextElement):
+    pass
+
+class remarks_list(nodes.Element):
+    pass
+
+class remarks_item(nodes.Element):
+    pass
+
+class remarks_title(nodes.TextElement):
+    pass
+
+class remarks_text(nodes.TextElement):
+    pass
+
+class remarks_list(nodes.Element):
+    pass
+
+class remarks_item(nodes.Element):
+    pass
+
+class remarks_title(nodes.TextElement):
+    pass
+
+class remarks_text(nodes.TextElement):
+    pass
+
+class remarks_list(nodes.Element):
+    pass
+
+class remarks_item(nodes.Element):
+    pass
+
+class remarks_title(nodes.TextElement):
+    pass
+
+class remarks_text(nodes.TextElement):
+    pass
+
+class remarks_list(nodes.Element):
+    pass
+
+class remarks_item(nodes.Element):
+    pass
+
+class remarks_title(nodes.TextElement):
+    pass
+
+class remarks_text(nodes.TextElement):
+    pass
+
+class remarks_list(nodes.Element):
+    pass
+
+class remarks_item(nodes.Element):"
+"import numpy as np
+from scipy import fftpack
+import matplotlib.pyplot as plt
+
+def task_func(data, sample_rate=8000):
+    data['a'] = 1
+    signal = np.array(list(data.values()))
+    time = np.linspace(0, 2, 2 * sample_rate, False)
+    signal = np.sin(np.outer(time, signal) * np.pi)
+    fft = fftpack.fft(signal, axis=2)
+    fig, ax = plt.subplots(figsize=(12, 6))
+    ax.plot(np.abs(fft))
+    ax.set_title('FFT of the Signal')
+    ax.set_xlabel('Frequency [Hz]')
+    ax.set_ylabel('Frequency Spectrum Magnitude')
+    return (fft, lambda: ax)","import numpy as np
+from scipy import fftpack
+import matplotlib.pyplot as plt
+
+def task_func(data, sample_rate=8000):
+    data['a'] = 1
+    signal = np.array(list(data.values()))
+    time = np.linspace(0, 2, 2 * sample_rate, False)
+    signal = np.sin(np.outer(time, signal) * np.pi)
+    fft = fftpack.fft(signal)
+    fig, ax = plt.subplots(figsize=(12, 6))
+    ax.plot(np.abs(fft))
+    ax.set_title('FFT of the Signal')
+    ax.set_xlabel('Frequency [Hz]')
+    ax.set_ylabel('Frequency Spectrum Magnitude')
+    return (fft, ax)","import numpy as np
+from scipy import fftpack
+import matplotlib.pyplot as plt
+
+def task_func(data, sample_rate=8000):
+    data['a'] = 1
+    signal = np.array(list(data.values()))
+    time = np.linspace(0, 2, 2 * sample_rate, False)
+    signal = np.sin(np.outer(time, signal) * np.pi)
+    fft = fftpack.fft(signal)
+    fig, ax = plt.subplots(figsize=(12, 6))
+    ax.plot(np.abs(fft))
+    ax.set_title('FFT of the Signal')
+    ax.set_xlabel('Frequency [Hz]')
+    ax.set_ylabel('Frequency Spectrum Magnitude')
+    return (fft, ax)
+
+### Corrected Python code
+import numpy as np
+from scipy import fftpack
+import matplotlib.pyplot as plt
+
+def task_func(data, sample_rate=8000):
+    data['a'] = 1
+    signal = np.array(list(data.values()))
+    time = np.linspace(0, 2, 2 * sample_rate, False)
+    signal = np.sin(np.outer(time, signal) * np.pi)
+    fft = fftpack.fft(signal)
+    fig, ax = plt.subplots(figsize=(12, 6))
+    ax.plot(np.abs(fft))
+    ax.set_title('FFT of the Signal')
+    ax.set_xlabel('Frequency [Hz]')
+    ax.set_ylabel('Frequency Spectrum Magnitude')
+    return (fft, ax)
+
+if __name__ == '__main__':
+    data = {'a': 1, 'b': 2, 'c': 3}
+    fft, ax = task_func(data, sample_rate=8000)
+    print(fft)
+    ax.set_xlim([0, 2000])
+    plt.show()/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-"
+"with open('%s%s' % (filepath, filename)) as fileobj:
+    file_almanac = pickle.load(self, fileobj)","with open('%s%s' % (filepath, self.generate_file_name())) as fileobj:
+    file_almanac = pickle.load(self, fileobj)","### Buggy Python Code
+with open('%s%s' % (filepath, filename)) as fileobj:
+    file_almanac = pickle.load(self, fileobj)
+
+### Corrected Python Code
+with open('%s%s' % (filepath, filename), 'rb') as fileobj:
+    file_almanac = pickle.load(fileobj)
+
+return file_almanac, filepath, filename, file_type, file_size, file_date, file_time, file_md5, file_sha1, file_sha256, file_sha512, file_ssdeep, file_magic, file_mime, file_exif, file_pe, file_pdf, file_doc, file_docx, file_xls, file_xlsx, file_ppt, file_pptx, file_txt, file_html, file_xml, file_json, file_sql, file_csv, file_log, file_ini, file_ini, file_reg, file_vbs, file_bat, file_cmd, file_ps1, file_py, file_rb, file_php, file_js, file_css, file_ico, file_gif, file_png, file_bmp, file_tif, file_psd, file_ai, file_ps, file_svg, file_mp3, file_wav, file_ogg, file_flac, file_ape, file_wma, file_m4a, file_aac, file_mp4, file_avi, file_mov, file_mpg, file_mpeg, file_wmv, file_mkv, file_vob, file_webm, file_mp4v2, file_flv, file_m3u8, file_wmv, file_avi, file_mpg, file_mpeg, file_mkv, file_vob, file_webm, file_mp4v2, file_flv, file_m3u8, file_wmv, file_avi, file_mpg, file_mpeg, file_mkv, file_vob, file_webm, file_mp4v2, file_flv, file_m3u8, file_wmv, file_avi, file_mpg, file_mpeg, file_mkv, file_vob, file_webm, file_mp4v2, file_flv, file_m3u8, file_wmv,"
+"functional_groups.append([int(position), gn])",functional_groups.append(TaskKeys.literal_to_formula_group_name[gn]),"### Buggy Python Code
+functional_groups.append([int(position), gn])
+
+### Corrected Python Code
+functional_groups.append([int(position), gn, int(weight)])
+
+### Corrected Python: functional_groups.append([int(position), gn, int(weight)]) if int(weight) > 0 else functional_groups.append([int(position), gn])
+
+return functional_groups, functional_groups_count, functional_groups_count_total, functional_groups_count_total_all_chains, functional_groups_count_total_all_chains_all_chains, functional_groups_count_total_all_chains_all_chains_all_chains, functional_groups_count_total_all_chains_all_chains_all_chains_all_chains, functional_groups_count_total_all_chains_all_chains_all_chains_all_chains_all_chains, functional_groups_count_total_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains, functional_groups_count_total_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains, functional_groups_count_total_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains, functional_groups_count_total_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains, functional_groups_count_total_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains, functional_groups_count_total_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains, functional_groups_count_total_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains_all_chains, functional_groups_count_total_all_chains_all_chains_all_chains_all_chains"
+from tensorflow.contrib.keras.api.keras.utils import get_file,from tensorflow.python.keras.utils import get_file,"### Buggy Python Code
+from tensorflow.contrib.keras.api.keras.utils import get_file
+
+### Corrected Python Code
+from tensorflow.contrib.keras.api.keras.utils import get_file, get_data_from_archive_index, get_data_from_archive_index_by_name, get_data_from_archive_index_by_name_and_hash, get_data_from_archive_index_by_hash, get_data_from_archive_index_by_hash_and_name, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_hash_and_name_and_type, get_data_from_archive_index_by_name_and_type, get_data_from_archive_index_by_hash_and_name_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive_index_by_name_and_hash_and_type, get_data_from_archive"
+"return {'RAVEN_DSN': 'https://{}@app.getsentry.com/{}'.format(public_key, project_id)}","return {'RAVEN_DSN': 'https://{0}@app.getsentry.com/{1}'.format(public_key, project_id)}","### Buggy Python Code
+return {'RAVEN_DSN': 'https://{}@app.getsentry.com/{}'.format(public_key, project_id)}
+
+### Corrected Python Code
+return {'RAVEN_DSN': 'https://{}@sentry.io/{}'.format(public_key, project_id)}/django_raven/settings.py@@ -1,10 +1,10 @@
+ RAVEN_DSN = os.environ.get('RAVEN_DSN', '')
+ 
+ def raven_settings():
+     return {'RAVEN_DSN': RAVEN_DSN}
+ 
+ ### Corrected Python
+-RAVEN_DSN = os.environ.get('RAVEN_DSN', '')
++RAVEN_DSN = os.environ.get('RAVEN_DSN', 'https://{}@sentry.io/{}'.format(os.environ.get('RAVEN_PUBLIC_KEY'), os.environ.get('RAVEN_PROJECT_ID')))
+ 
+ def raven_settings():
+     return {'RAVEN_DSN': RAVEN_DSN}
+ username_1: @username_0 I'm not sure if this is the right fix, but I'm getting an error when I try to use this in my project:
+
+```
+Traceback (most recent call last):
+  File ""/Users/username_1/Projects/django-raven/django_raven/settings.py"", line 10, in raven_settings
+    return {'RAVEN_DSN': RAVEN_DSN}
+  File ""/Users/username_1/Projects/django-raven/django_raven/settings.py"", line 1, in <module>
+    from django.conf import settings
+ImportError: No module named django.conf
+```230100000createdusername_0: @username_1 I'm not sure if this is the right fix, but I'm getting an error when I try to use this in my project:
+
+```
+Traceback (most recent call last):
+  File ""/Users/username_1/Projects/django-raven/django_raven/settings.py"", line 10, in raven_settings
+    return {'RAVEN_DSN': RAVEN_DSN}
+  File ""/Users/username_1/Projects/django-raven/django_raven/settings.py"", line 1, in <module"
+"code_set_out_shape += '\n       if(c->Rank(c->input(%(idx)i)) != %(rank)i)\n         return errors::InvalidArgument(\n           ""wrong rank for input (%(idx)i) \'%(name)s\'. required %(rank)i but got "", c->Rank(c->input(%(idx)i)));\n       ' % {'idx': i, 'rank': v['ndim'], 'name': v['name']}","code_set_out_shape += '\n       if(c->Rank(c->input(%(idx)i)) != tensorflow::shape_inference::InferenceContext::kUnknownRank && c->Rank(c->input(%(idx)i)) != %(rank)i)\n         return errors::InvalidArgument(\n           ""wrong rank for input (%(idx)i) \'%(name)s\'. required %(rank)i but got "", c->Rank(c->input(%(idx)i)));\n       ' % {'idx': i, 'rank': v['ndim'], 'name': v['name']}","i)\n         return errors::InvalidArgument(\n           ""wrong rank for input (%(idx)i) \'%(name)s\'. required %(rank)i but got "", c->Rank(c->input(%(idx)i)));\n      '% {'idx': i, 'rank': v['ndim'], 'name': v['name']}
+
+### Corrected Python Code
+code_set_out_shape += '\n       if(c->Rank(c->input(%(idx)i))!= %(rank)i)\n         return errors::InvalidArgument(\n           ""wrong rank for input (%(idx)i) \'%(name)s\'. required %(rank)i but got "", c->Rank(c->input(%(idx)i)));\n      '% {'idx': i, 'rank': v['ndim'], 'name': v['name'].replace(' ', '_')}
+
+code_set_out_shape += '\n       c->set_output(%(idx)i, c->Reshape(c->input(%(idx)i), c->make_shape(%(shape)s)));\n      '% {'idx': i,'shape': v['shape'], 'name': v['name']} + '\n      'if i!= len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' +"
