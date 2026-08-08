@@ -26953,3 +26953,201 @@ def task_func(config_file_path, archieve_dir='/home/user/archive'):
 if __name__ == '__main__':
     task_func('/home/user/project.ini', '/home/user/archive')/README.md
 # Python-course-tasks-2020-09-18-16-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05"
+"yield scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel)","yield scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_restaurant)","### Buggy Python Code
+yield scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel)
+
+### Corrected Python Code
+yield scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel, meta={'page': nextlink[1]}) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel, meta={'page': 1}) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel, meta={'page': 1}) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel, meta={'page': 1}) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel, meta={'page': 1}) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel, meta={'page': 1}) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel, meta={'page': 1}) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel, meta={'page': 1}) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel) if nextlink else scrapy.Request(self.baseurl + nextlink[0], callback=self.parse_hotel, meta={'page': 1}) if nextlink else scrapy.Request"
+"from django.http import HttpResponse
+import uuid
+
+def task_func(data):
+    response = HttpResponse(data, content_type='application/json')
+    request_uuid = uuid.uuid4()
+    response['UUID'] = request_uuid.get_hex()
+    return response","from django.http import HttpResponse
+import uuid
+
+def task_func(data):
+    response = HttpResponse(data, content_type='application/json')
+    request_uuid = uuid.uuid4()
+    response['UUID'] = str(request_uuid)
+    return response","### Buggy Python Code
+from django.http import HttpResponse
+import uuid
+
+def task_func(data):
+    response = HttpResponse(data, content_type='application/json')
+    request_uuid = uuid.uuid4()
+    response['UUID'] = request_uuid.get_hex()
+    return response
+
+### Corrected Python Code
+from django.http import HttpResponse
+import uuid
+
+def task_func(data):
+    response = HttpResponse(data, content_type='application/json')
+    request_uuid = uuid.uuid4()
+    response['UUID'] = str(request_uuid)
+    return response
+/django_rest_api/api/views.py
+from django.http import HttpResponse
+import uuid
+
+def task_func(data):
+    response = HttpResponse(data, content_type='application/json')
+    request_uuid = uuid.uuid4()
+    response['UUID'] = str(request_uuid)
+    return response"
+"Door._data_f = shelve.open(const.door_hist_dir + Door._DATA_FILE, writeback=True)","Door._data_f = shelve.open(const.DOOR_DATA_DIR + Door._DATA_FILE, writeback=True)","### Buggy Python Code
+Door._data_f = shelve.open(const.door_hist_dir + Door._DATA_FILE, writeback=True)
+
+### Corrected Python Code
+Door._data_f = shelve.open(const.door_hist_dir + Door._DATA_FILE, writeback=False)  # writeback=False to prevent data corruption when the program is closed unexpectedly.
+
+def __init__(self, name, door_type, door_state, door_open_time, door_close_time, door_open_count, door_close_count):
+    self.name = name
+    self.door_type = door_type
+    self.door_state = door_state
+    self.door_open_time = door_open_time
+    self.door_close_time = door_close_time
+    self.door_open_count = door_open_count
+    self.door_close_count = door_close_count
+    Door._data_f[self.name] = self.__dict__  # save the object to the data file.
+
+def __del__(self):
+    Door._data_f.close()  # close the data file.
+    del Door._data_f  # delete the data file.
+    del self  # delete the object.
+
+def __repr__(self):
+    return '<Door %s>' % self.name  # return a string representation of the object.
+
+def __str__(self):
+    return '<Door %s>' % self.name  # return a string representation of the object.
+
+def open(self):
+    self.door_state = const.DOOR_OPEN
+    self.door_open_time = datetime.datetime.now()
+    self.door_open_count += 1
+    Door._data_f[self.name] = self.__dict__  # save the object to the data file.
+    return self.door_state, self.door_open_time, self.door_open_count, self.door_close_count, self.door_type  # return the object's attributes.
+
+def close(self):
+    self.door_state = const.DOOR_CLOSED
+    self.door_close_time = datetime.datetime.now()
+    self.door_close_count += 1
+    Door._data_f[self.name] = self.__dict__  # save the object to the data file.
+    return self.door_state, self.door_open_time, self."
+"vdisk.storagedriver_client.rollback_volume(str(vdisk.volume_id), snapshotguid)","vdisk.storagedriver_client.rollback_volume(str(vdisk.volume_id), str(snapshotguid))","### Buggy Python Code
+vdisk.storagedriver_client.rollback_volume(str(vdisk.volume_id), snapshotguid)
+
+### Corrected Python Code
+vdisk.storagedriver_client.rollback_volume(str(vdisk.volume_id), snapshotguid, force=True)  # force=True to avoid error when the volume is in use. See https://github.com/Azure/azure-sdk-for-python/issues/10000#issuecomment-500000000 for more details.
+
+### Corrected Python Code
+vdisk.storagedriver_client.rollback_volume(str(vdisk.volume_id), snapshotguid, force=True)  # force=True to avoid error when the volume is in use. See https://github.com/Azure/azure-sdk-for-python/issues/10000#issuecomment-500000000 for more details.
+vdisk.storagedriver_client.delete_snapshot(str(vdisk.volume_id), snapshotguid)  # delete the snapshot after rollback. See https://github.com/Azure/azure-sdk-for-python/issues/10000#issuecomment-500000000 for more details.
+/azure/storage/blob/models.py
+# coding=utf-8
+# --------------------------------------------------------------------------
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License. See License.txt in the project root for license information.
+# --------------------------------------------------------------------------
+
+from.base_client import BaseClient, BaseClientOperationsMixin, BaseClientResource, BaseClientResourceOperationsMixin, BaseClientResourceOperations, BaseClientResourcePaged, BaseClientResourcePagedOperationsMixin, BaseClientResourcePagedOperations, BaseClientResourceOperationsMixin, BaseClientResourceOperations, BaseClientResourcePaged, BaseClientResourcePagedOperationsMixin, BaseClientResourcePagedOperations, BaseClientResourceOperationsMixin, BaseClientResourceOperations, BaseClientResourcePaged, BaseClientResourcePagedOperationsMixin, BaseClientResourcePagedOperations, BaseClientResourceOperationsMixin, BaseClientResourceOperations, BaseClientResourcePaged, BaseClientResourcePagedOperationsMixin, BaseClientResourcePagedOperations, BaseClientResourceOperationsMixin, BaseClientResourceOperations, BaseClientResourcePaged, BaseClientResourcePagedOperationsMixin, BaseClientResourcePagedOperations, BaseClientResourceOperationsMixin, BaseClientResourceOperations, BaseClientResourcePaged, BaseClientResourcePagedOperationsMixin, BaseClientResourcePagedOperations, BaseClientResourceOperationsMixin, BaseClientResourceOperations, BaseClient"
+"res_ids = field_obj.search([(field_obj._rec_name, domain[i][1], domain[i][2])], order=[])","res_ids = field_obj.search([('rec_name', domain[i][1], domain[i][2])], order=[])","### Buggy Python Code
+res_ids = field_obj.search([(field_obj._rec_name, domain[i][1], domain[i][2])], order=[])
+
+### Corrected Python Code
+res_ids = field_obj.search([(field_obj._rec_name, domain[i][1], domain[i][2])], order=field_obj._order) if field_obj._order else field_obj.search([(field_obj._rec_name, domain[i][1], domain[i][2])])
+return res_ids, domain[i][2] if domain[i][2] else False, domain[i][1] if domain[i][1] else False, domain[i][0] if domain[i][0] else False, domain[i][3] if domain[i][3] else False, domain[i][4] if domain[i][4] else False, domain[i][5] if domain[i][5] else False, domain[i][6] if domain[i][6] else False, domain[i][7] if domain[i][7] else False, domain[i][8] if domain[i][8] else False, domain[i][9] if domain[i][9] else False, domain[i][10] if domain[i][10] else False, domain[i][11] if domain[i][11] else False, domain[i][12] if domain[i][12] else False, domain[i][13] if domain[i][13] else False, domain[i][14] if domain[i][14] else False, domain[i][15] if domain[i][15] else False, domain[i][16] if domain[i][16] else False, domain[i][17] if domain[i][17] else False, domain[i][18] if domain[i][18] else False, domain[i][19] if domain[i][19] else False, domain[i][20] if domain[i][20] else False, domain[i][21] if domain[i][21] else False, domain[i][22] if domain[i][22] else False, domain[i][23] if domain[i][23] else False, domain[i][24] if domain[i][24] else False, domain[i"
+"import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+ANGLES = np.arange(0, 2 * np.pi, 0.01)
+
+def task_func(n_waves, seed=0):
+    np.random.seed(seed)
+    sine_wave_series = []
+    if n_waves < 1:
+        return (sine_wave_series, np.array([]), None)
+    for frequency in range(1, n_waves + 1):
+        sine_wave_series.append(wave)
+    fft_data = fft(np.sum(sine_wave_series, axis=0))
+    _, ax = plt.subplots()
+    return (sine_wave_series, fft_data, ax)","import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+ANGLES = np.arange(0, 2 * np.pi, 0.01)
+
+def task_func(n_waves, seed=0):
+    np.random.seed(seed)
+    sine_wave_series = []
+    if n_waves < 1:
+        return (sine_wave_series, np.array([]), None)
+    for frequency in range(1, n_waves + 1):
+        wave = np.sin(frequency * ANGLES)
+        sine_wave_series.append(wave)
+    fft_data = fft(np.sum(sine_wave_series, axis=0))
+    _, ax = plt.subplots()
+    ax.hist(np.abs(fft_data))
+    return (sine_wave_series, fft_data, ax)","import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+ANGLES = np.arange(0, 2 * np.pi, 0.01)
+
+def task_func(n_waves, seed=0):
+    np.random.seed(seed)
+    sine_wave_series = []
+    if n_waves < 1:
+        return (sine_wave_series, np.array([]), None)
+    for frequency in range(1, n_waves + 1):
+        wave = np.sin(frequency * ANGLES)
+        sine_wave_series.append(wave)
+    fft_data = fft(np.sum(sine_wave_series, axis=0))
+    _, ax = plt.subplots()
+    ax.plot(ANGLES, fft_data)
+    ax.set_title('FFT of Summed Sine Wave Series')
+    return (sine_wave_series, fft_data, ax)
+
+if __name__ == '__main__':
+    sine_wave_series, fft_data, ax = task_func(3, seed=0)
+    plt.show()/01_numpy/01_numpy_01.py
+import numpy as np
+
+def task_func(n_waves, seed=0):
+    np.random.seed(seed)
+    sine_wave_series = []
+    if n_waves < 1:
+        return (sine_wave_series, np.array([]), None)
+    for frequency in range(1, n_waves + 1):
+        wave = np.sin(frequency * ANGLES)
+        sine_wave_series.append(wave)
+    fft_data = fft(np.sum(sine_wave_series, axis=0))
+    _, ax = plt.subplots()
+    ax.plot(ANGLES, fft_data)
+    ax.set_title('FFT of Summed Sine Wave Series')
+    return (sine_wave_series, fft_data, ax)
+
+if __name__ == '__main__':
+    ANGLES = np.arange(0, 2 * np.pi, 0.01)
+    sine_wave_series, fft_data, ax = task_func(3, seed=0)
+    plt.show()
+    return (sine"
+litinfo = '(?:@([a-z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?',litinfo = '(?:@([a-zA-Z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?',"### Buggy Python Code
+litinfo = '(?:@([a-z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?'
+
+### Corrected Python Code
+litinfo = '(?:@([a-z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?' + '|' + '(?:\\^\\^' + uriref + ')?' + '|' + '(?:@([a-z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?' + '|' + '(?:\\^\\^' + uriref + ')?' + '|' + '(?:@([a-z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?' + '|' + '(?:\\^\\^' + uriref + ')?' + '|' + '(?:@([a-z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?' + '|' + '(?:\\^\\^' + uriref + ')?' + '|' + '(?:@([a-z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?' + '|' + '(?:\\^\\^' + uriref + ')?' + '|' + '(?:@([a-z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?' + '|' + '(?:\\^\\^' + uriref + ')?' + '|' + '(?:@([a-z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?' + '|' + '(?:\\^\\^' + uriref + ')?' + '|' + '(?:@([a-z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?' + '|' + '(?:\\^\\^' + uriref + ')?' + '|' + '(?:@([a-z]+(?:-[a-zA-Z0-9]+)*)|\\^\\^' + uriref + ')?' + '|' + '(?:\\^\\^' + uriref + ')?'"
+"con = http.client.HTTPConnection('', port)","con = http.client.HTTPConnection('localhost', port)","### Buggy Python Code
+con = http.client.HTTPConnection('', port)
+
+### Corrected Python Code
+con = http.client.HTTPConnection('', port, timeout=10)
+
+con.request('GET', '/api/v1/status')
+res = con.getresponse()
+con.close()
+return res.status == 200, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 20"
