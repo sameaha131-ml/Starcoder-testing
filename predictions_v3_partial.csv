@@ -54171,3 +54171,268 @@ public:
             for (int i = 0; i < m // 2; i++) {
                 if (grid[i][j]!= grid[m - i - 1][j])
                     cnt2++;"
+"class Solution:
+
+    def lenOfVDiagonal(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        next_digit = {1: 2, 2: 0, 0: 2}
+
+        def within_bounds(i, j):
+            return 0 <= i < m and 0 <= j < n
+
+        @cache
+        def f(i, j, di, dj, turned):
+            result = []
+            successor = next_digit[grid[i][j]]
+            if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                result = 1 + f(i + di, j + dj, di, dj, turned)
+            if turned:
+                di, dj = (dj, -di)
+                if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                    result = max(result, 1 + f(i + di, j + dj, di, dj, turned))
+            return result
+        directions = ((1, 1), (-1, 1), (1, -1), (-1, -1))
+        result = 0
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] != 1:
+                    continue
+                f.cache_clear()
+                for di, dj in directions:
+                    result = max(result, f(i, j, di, dj, False))
+        return result","class Solution:
+
+    def lenOfVDiagonal(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        next_digit = {1: 2, 2: 0, 0: 2}
+
+        def within_bounds(i, j):
+            return 0 <= i < m and 0 <= j < n
+
+        @cache
+        def f(i, j, di, dj, turned):
+            result = 1
+            successor = next_digit[grid[i][j]]
+            if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                result = 1 + f(i + di, j + dj, di, dj, turned)
+            if not turned:
+                di, dj = (dj, -di)
+                if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                    result = max(result, 1 + f(i + di, j + dj, di, dj, True))
+            return result
+        directions = ((1, 1), (-1, 1), (1, -1), (-1, -1))
+        result = 0
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] != 1:
+                    continue
+                for di, dj in directions:
+                    result = max(result, f(i, j, di, dj, False))
+        return result","class Solution:
+
+    def lenOfVDiagonal(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        next_digit = {1: 2, 2: 0, 0: 2}
+
+        def within_bounds(i, j):
+            return 0 <= i < m and 0 <= j < n
+
+        @cache
+        def f(i, j, di, dj, turned):
+            result = 1
+            successor = next_digit[grid[i][j]]
+            if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                result = 1 + f(i + di, j + dj, di, dj, turned)
+            if not turned:
+                di, dj = (dj, -di)
+                if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                    result = max(result, 1 + f(i + di, j + dj, di, dj, turned))
+            return result
+        directions = ((1, 1), (-1, 1), (1, -1), (-1, -1))
+        result = 0
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j]!= 1:
+                    continue
+                for di, dj in directions:
+                    result = max(result, f(i, j, di, dj, False))
+        return result
+
+### Corrected Python class Solution:
+
+    def lenOfVDiagonal(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        next_digit = {1: 2, 2: 0, 0: 2}
+
+        def within_bounds(i, j):
+            return 0 <= i < m and 0 <= j < n
+
+        @cache
+        def f(i, j, di, dj, turned):
+            result = 1
+            successor = next_digit[grid[i][j]]
+            if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                result = 1 + f(i + di,"
+"self.create_ref_TypeError([self.cimp, 1, 0])","self.create_ref_TypeError([self.comp, 1, 0])","### Buggy Python Code
+self.create_ref_TypeError([self.cimp, 1, 0])
+
+### Corrected Python Code
+self.create_ref_TypeError([self.cimp, 1, 1])
+
+    def test_ref_TypeError_2(self):
+        self.create_ref_TypeError([self.cimp, 1, 0])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+
+    def test_ref_TypeError_3(self):
+        self.create_ref_TypeError([self.cimp, 1, 0])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+
+    def test_ref_TypeError_4(self):
+        self.create_ref_TypeError([self.cimp, 1, 0])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+
+    def test_ref_TypeError_5(self):
+        self.create_ref_TypeError([self.cimp, 1, 0])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+
+    def test_ref_TypeError_6(self):
+        self.create_ref_TypeError([self.cimp, 1, 0])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+        self.create_ref_TypeError([self.cimp, 1, 1])
+
+    def test_ref_TypeError_7(self):
+        self.create_ref_TypeError([self.cimp, 1, 0])"
+"if sys.version_info <= (2, 6):
+    requirements.append('unittest2')","if sys.version_info < (2, 7):
+    requirements.append('unittest2')","### Buggy Python Code
+if sys.version_info <= (2, 6):
+    requirements.append('unittest2')
+
+### Corrected Python Code
+if sys.version_info < (2, 7):
+    requirements.append('unittest2')
+
+setup(
+    name='py-zabbix-api',
+    version='0.1.1',
+    description='Python Zabbix API',
+    long_description=long_description,
+    author='',
+    author_email='',
+    url='https://github.com/py-zabbix/py-zabbix-api',
+    packages=['pyzabbix'],
+    install_requires=requirements,
+    test_suite='pyzabbix.tests',
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.2',
+        'Programming Language :: Python :: 3.3',
+        'Programming Language :: Python :: 3.4',
+    ],
+)
+/pyzabbix/tests/test_api.py
+import unittest
+from pyzabbix.api import ZabbixAPI, ZabbixError, ZabbixAPIException, ZabbixAPIExceptionError, ZabbixAPIExceptionTimeout, ZabbixAPIExceptionInvalidParams, ZabbixAPIExceptionInvalidMethod, ZabbixAPIExceptionInvalidUser, ZabbixAPIExceptionInvalidPasswd, ZabbixAPIExceptionInvalidHost, ZabbixAPIExceptionInvalidTemplate, ZabbixAPIExceptionInvalidGraph, ZabbixAPIExceptionInvalidTrigger, ZabbixAPIExceptionInvalidValue, ZabbixAPIExceptionInvalidFilter, ZabbixAPIExceptionInvalidHostGroup, ZabbixAPIExceptionInvalidGraphItem, ZabbixAPIExceptionInvalidUserGroup, ZabbixAPIExceptionInvalidPermission, ZabbixAPIExceptionInvalidOperation, ZabbixAPIExceptionInvalidUserPasswd, ZabbixAPIExceptionInvalidUserType, ZabbixAPIExceptionInvalidGraphType, ZabbixAPIExceptionInvalidTriggerType, ZabbixAPIExceptionInvalidValueType, ZabbixAPIExceptionInvalidFilterType, ZabbixAPIExceptionInvalidHostGroupType, ZabbixAPIExceptionInvalidGraphItemType, ZabbixAPIExceptionInvalidUserGroupType, ZabbixAPIExceptionInvalidPermissionType, ZabbixAPIExceptionInvalidOperationType, ZabbixAPIExceptionInvalidUserPass"
+project = Delivery.objects.get(id=project_id),project = Delivery.objects.get(job_name_id=project_id),"### Buggy Python Code
+project = Delivery.objects.get(id=project_id)
+
+### Corrected Python Code
+project = Delivery.objects.get(id=project_id, status='published') if project_id else None
+
+if project:
+    return project.get_absolute_url() + 'edit/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' + str(project.id) + '/' + str(project.version) + '/' +"
+"bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}})","bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg2ho': {}})","### Buggy Python Code
+bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}})
+
+### Corrected Python Code
+bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory.get_by_path(['profilesync']) is None else bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}})
+
+### Corrected Python Code
+bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory.get_by_path(['profilesync']) is None else bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory.get_by_path(['profilesync']) is None else bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory.get_by_path(['profilesync']) is None else bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory.get_by_path(['profilesync']) is None else bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory.get_by_path(['profilesync']) is None else bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory.get_by_path(['profilesync']) is None else bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory.get_by_path(['profilesync']) is None else bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory.get_by_path(['profilesync']) is None else bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory.get_by_path(['profilesync']) is None else bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory.get_by_path(['profilesync']) is None else bot.memory.set_by_path(['profilesync'], {'ho2tg': {}, 'tg': {}}) if bot.memory."
+return _PackInt4(MAGIC_FUN) + numFreeVars + pid + module + index + uniq + freeVars,return _PackInt1(MAGIC_FUN) + numFreeVars + pid + module + index + uniq + freeVars,"### Buggy Python Code
+return _PackInt4(MAGIC_FUN) + numFreeVars + pid + module + index + uniq + freeVars
+
+### Corrected Python Code
+return _PackInt4(MAGIC_FUN) + numFreeVars + pid + module + index + uniq + _PackInt4(freeVars) + freeVars) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4(0) + _PackInt4"
+suiteobj.addTest(TestMetalink('test_' + filename[:-9])),suiteobj.addTest(TestMetalink('test_' + filename[:-6])),"### Buggy Python Code
+suiteobj.addTest(TestMetalink('test_' + filename[:-9]))
+
+### Corrected Python Code
+suiteobj.addTest(TestMetalink('test_' + filename[:-9], metalink_url=metalink_url))
+
+### Corrected Python Code
+suiteobj.addTest(TestMetalink('test_' + filename[:-9], metalink_url=metalink_url, metalink_user=metalink_user, metalink_password=metalink_password))
+
+### Corrected Python Code
+suiteobj.addTest(TestMetalink('test_' + filename[:-9], metalink_url=metalink_url, metalink_user=metalink_user, metalink_password=metalink_password, metalink_debug=metalink_debug))
+
+### Corrected Python Code
+suiteobj.addTest(TestMetalink('test_' + filename[:-9], metalink_url=metalink_url, metalink_user=metalink_user, metalink_password=metalink_password, metalink_debug=metalink_debug, metalink_timeout=metalink_timeout))
+
+### Corrected Python Code
+suiteobj.addTest(TestMetalink('test_' + filename[:-9], metalink_url=metalink_url, metalink_user=metalink_user, metalink_password=metalink_password, metalink_debug=metalink_debug, metalink_timeout=metalink_timeout, metalink_verify=metalink_verify))
+
+### Corrected Python Code
+suiteobj.addTest(TestMetalink('test_' + filename[:-9], metalink_url=metalink_url, metalink_user=metalink_user, metalink_password=metalink_password, metalink_debug=metalink_debug, metalink_timeout=metalink_timeout, metalink_verify=metalink_verify, metalink_ssl=metalink_ssl))
+
+### Corrected Python Code
+suiteobj.addTest(TestMetalink('test_' + filename[:-9], metalink_url=metalink_url, metalink_user=metalink_user, metalink_password=metalink_password, metalink_debug=metalink_debug, metalink_timeout=metalink_timeout, metalink_verify=metalink_verify, metalink_ssl=metalink_ssl, metalink_retry=metalink_retry))
+
+### Corrected"
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=5',CACHE_BACKEND = 'db://pootlecache?max_entries=65536&cull_frequency=16',"### Buggy Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=5'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=1'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=10'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=100'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=1000'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=10000'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=100000'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=1000000'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=10000000'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=100000000'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=1000000000'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=10000000000'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=100000000000'
+
+### Corrected Python Code
+CACHE_BACKEND = 'locmem:///?max_entries=4096&cull_frequency=1000000000000'
+
+### Corrected Python Code
+CACHE_BACKEND = '"
