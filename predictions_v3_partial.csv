@@ -24016,3 +24016,227 @@ if __name__ == '__main__':
     ax[1].imshow(filtered_image, cmap=plt.cm.gray)
     ax[1].set_title('Filtered')
     plt.show()/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fund"
+"self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5))","self.assertTrue(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5))","### Buggy Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5))
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 0)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 1)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 0)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 1)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 0)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 1)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 0)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 1)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 0)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 1)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 0)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 1)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE, 0, 1.5), 0)
+
+### Corrected Python Code
+self.assertEqual(sox.tools.trim(INPUT_FILE, OUTPUT_FILE"
+"class Solution:
+
+    def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
+        happiness.sort()
+        ans = 0
+        for i, x in enumerate(happiness[:k]):
+            x -= i
+            ans += max(x, 0)
+        return happiness.sum()","class Solution:
+
+    def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
+        happiness.sort(reverse=True)
+        ans = 0
+        for i, x in enumerate(happiness[:k]):
+            x -= i
+            ans += max(x, 0)
+        return ans","### Corrected Python Code
+class Solution:
+
+    def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
+        happiness.sort()
+        ans = 0
+        for i, x in enumerate(happiness[:k]):
+            x -= i
+            ans += max(x, 0)
+        return ans + happiness[k:].sum() - k * (k + 1) // 2
+
+### Corrected Python
+class Solution:
+
+    def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
+        happiness.sort()
+        ans = 0
+        for i, x in enumerate(happiness[:k]):
+            x -= i
+            ans += max(x, 0)
+        return ans + happiness[k:].sum() - k * (k + 1) // 2 + k * (k + 2) // 2
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = 0
+        for i, x in enumerate(nums):
+            ans += x * (i + 1)
+            ans -= (i + 1) * (i + 2) // 2
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = 0
+        for i, x in enumerate(nums):
+            ans += x * (i + 1)
+            ans -= (i + 1) * (i + 2) // 2
+        return ans + nums[-1] * (len(nums) + 1) // 2 - len(nums) * (len(nums) + 2) // 2
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = 0
+        for i, x in enumerate(nums):
+            ans += x * (i + 1)
+            ans -= (i + 1) * (i + 2) // 2
+        return ans + nums[-1] *"
+"parser.use_user_date = self.settings.get('user_date', 'true') == 'true'","parser.user_date = self.settings.get('user_date', 'true') == 'true'","### Buggy Python Code
+parser.use_user_date = self.settings.get('user_date', 'true') == 'true'
+
+### Corrected Python Code
+parser.use_user_date = self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or self.settings.get('user_date', 'false') == 'true' or"
+"self.interpreter.minimise(min_algor='simplex', line_search=None, hessian_mod=None, hessian_type=None, func_tol=1e-05, grad_tol=None, max_iter=1000, constraints=True, scaling=True, verbosity=1)","self.interpreter.minimise.execute(min_algor='simplex', line_search=None, hessian_mod=None, hessian_type=None, func_tol=1e-05, grad_tol=None, max_iter=1000, constraints=True, scaling=True, verbosity=1)","Corrected Python Code
+self.interpreter.minimise(min_algor='simplex', line_search=None, hessian_mod=None, hessian_type=None, func_tol=1e-05, grad_tol=None, max_iter=1000, constraints=True, scaling=True, verbosity=0)
+/pyqubo/examples/ising_model.py
+from pyqubo import *
+
+a = Variable('a', shape=(2, 2))
+b = Variable('b', shape=(2, 2))
+c = Variable('c', shape=(2, 2))
+d = Variable('d', shape=(2, 2))
+e = Variable('e', shape=(2, 2))
+f = Variable('f', shape=(2, 2))
+g = Variable('g', shape=(2, 2))
+h = Variable('h', shape=(2, 2))
+i = Variable('i', shape=(2, 2))
+j = Variable('j', shape=(2, 2))
+k = Variable('k', shape=(2, 2))
+l = Variable('l', shape=(2, 2))
+m = Variable('m', shape=(2, 2))
+n = Variable('n', shape=(2, 2))
+o = Variable('o', shape=(2, 2))
+p = Variable('p', shape=(2, 2))
+q = Variable('q', shape=(2, 2))
+r = Variable('r', shape=(2, 2))
+s = Variable('s', shape=(2, 2))
+t = Variable('t', shape=(2, 2))
+u = Variable('u', shape=(2, 2))
+v = Variable('v', shape=(2, 2))
+w = Variable('w', shape=(2, 2))
+x = Variable('x', shape=(2, 2))
+y = Variable('y', shape=(2, 2))
+z = Variable('z', shape=(2, 2))
+
+a = Variable('a', shape=(2, 2))
+b = Variable('b', shape=(2, 2))
+c = Variable('c', shape=(2, 2))
+d = Variable('d',"
+"urlpatterns += patterns('', ('^api/', include(v1_api.urls)))","urlpatterns += patterns('', url('^api/', include(v1_api.urls)))","### Buggy Python Code
+urlpatterns += patterns('', ('^api/', include(v1_api.urls)))
+
+### Corrected Python Code
+urlpatterns += patterns('', ('^api/v1/', include(v1_api.urls))) + patterns('', ('^api/', include(v1_api.urls))) + patterns('', ('^api/v2/', include(v1_api.urls))) + patterns('', ('^api/v3/', include(v1_api.urls))) + patterns('', ('^api/v4/', include(v1_api.urls))) + patterns('', ('^api/v5/', include(v1_api.urls))) + patterns('', ('^api/v6/', include(v1_api.urls))) + patterns('', ('^api/v7/', include(v1_api.urls))) + patterns('', ('^api/v8/', include(v1_api.urls))) + patterns('', ('^api/v9/', include(v1_api.urls))) + patterns('', ('^api/v10/', include(v1_api.urls))) + patterns('', ('^api/v11/', include(v1_api.urls))) + patterns('', ('^api/v12/', include(v1_api.urls))) + patterns('', ('^api/v13/', include(v1_api.urls))) + patterns('', ('^api/v14/', include(v1_api.urls))) + patterns('', ('^api/v15/', include(v1_api.urls))) + patterns('', ('^api/v16/', include(v1_api.urls))) + patterns('', ('^api/v17/', include(v1_api.urls))) + patterns('', ('^api/v18/', include(v1_api.urls))) + patterns('', ('^api/v19/', include(v1_api.urls))) + patterns('', ('^api/v20/', include(v1_api.urls))) + patterns('', ('^api/v21/', include(v1_api.urls))) + patterns('', ('^api/v22/', include(v1_api.urls))) + patterns('', ('^api/v23/', include(v1_api.urls))) + patterns('', ('^api/v24/', include(v1_api.urls))) + patterns('', ('^api/v25/', include(v1_api.urls))) + patterns('',"
+"chroot(['ssh-keygen', '-t', '-rsa', '-q', '-N', '', '-f', '/root/.ssh/id_rsa', '-O', 'no-x11-forwarding', '-O', 'source-address=%s,%s,%s,%s' % (ipv4, ipv6, ipv4_priv, ipv6_priv)])","chroot(['ssh-keygen', '-t', 'rsa', '-q', '-N', '', '-f', '/root/.ssh/id_rsa', '-O', 'no-x11-forwarding', '-O', 'source-address=%s,%s,%s,%s' % (ipv4, ipv6, ipv4_priv, ipv6_priv)])","chroot(['ssh-keygen', '-t', 'rsa', '-q', '-N', '', '-f', '/root/.ssh/id_rsa', '-O', 'no-x11-forwarding', '-O','source-address=%s,%s,%s,%s' % (ipv4, ipv6, ipv4_priv, ipv6_priv)])() if not os.path.exists('/root/.ssh/id_rsa') else None)
+
+### Corrected Python
+chroot(['ssh-keygen', '-t', 'rsa', '-q', '-N', '', '-f', '/root/.ssh/id_rsa', '-O', 'no-x11-forwarding', '-O','source-address=%s,%s,%s,%s' % (ipv4, ipv6, ipv4_priv, ipv6_priv)])() if not os.path.exists('/root/.ssh/id_rsa') else None) if not os.path.exists('/root/.ssh/id_rsa.pub') else None)
+
+### Corrected Python
+chroot(['ssh-keygen', '-t', 'rsa', '-q', '-N', '', '-f', '/root/.ssh/id_rsa', '-O', 'no-x11-forwarding', '-O','source-address=%s,%s,%s,%s' % (ipv4, ipv6, ipv4_priv, ipv6_priv)])() if not os.path.exists('/root/.ssh/id_rsa') else None) if not os.path.exists('/root/.ssh/id_rsa.pub') else None) if not os.path.exists('/root/.ssh/authorized_keys') else None)
+
+### Corrected Python
+chroot(['ssh-keygen', '-t', 'rsa', '-q', '-N', '', '-f', '/root/.ssh/id_rsa', '-O', 'no-x11-forwarding', '-O','source-address=%s,%s,%s,%s' % (ipv4, ipv6, ipv4_priv, ipv6_priv)])() if not os.path.exists('/root/.ssh/id_rsa') else None) if not os.path.exists('/root/.ssh/id_rsa.pub') else None) if not os.path.exists('/root/.ssh/authorized"
+return ReportPerson.objects.filter(pk__in=ids),return Project.objects.filter(pk__in=ids),"### Buggy Python Code
+return ReportPerson.objects.filter(pk__in=ids)
+
+### Corrected Python Code
+return ReportPerson.objects.filter(pk__in=ids).order_by('name') if ids else ReportPerson.objects.none()
+/src/report/migrations/0001_initial.py
+# -*- coding: utf-8 -*-
+# Generated by Django 1.10.2 on 2016-10-25 10:00
+from __future__ import unicode_literals
+
+from django.db import migrations, models
+
+
+class Migration(migrations.Migration):
+
+    initial = True
+
+    dependencies = [
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name='ReportPerson',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('name', models.CharField(max_length=255)),
+                ('email', models.EmailField(max_length=254)),
+                ('phone', models.CharField(max_length=255)),
+                ('address', models.CharField(max_length=255)),
+                ('city', models.CharField(max_length=255)),
+                ('state', models.CharField(max_length=255)),
+                ('zipcode', models.CharField(max_length=255)),
+                ('country', models.CharField(max_length=255)),
+            ],
+        ),
+    ]
+/src/report/models.py
+from django.db import models
+
+
+class ReportPerson(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=254)
+    phone = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    state = models.CharField(max_length=255)
+    zipcode = models.CharField(max_length=255)
+    country = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name +'(' + self.email + ')' +'(' + self.phone + ')' +'(' + self.address + ')' +'(' + self.city + ')' +'(' + self."
+"self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged))","self.parent.tool.logdebug('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged))","User.OverCharge, self.User.Name, overcharged))
+
+### Corrected Python Code
+self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge > 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge < 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge == 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge > 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge < 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge == 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge > 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User."
