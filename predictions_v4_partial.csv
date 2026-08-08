@@ -31456,3 +31456,380 @@ if solr_config is None:
     raise ValueError('Could not parse solr config')
 
 return solr_config.getroot() if solr_config.getroot() else None, r.status_code, r.text, r.headers, r.history, r.encoding, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url, r.request.method, r.request.body, r.request.headers, r.request.url,"
+"class Solution:
+
+    def minCost(self, n: int, cuts: List[int]) -> int:
+        cuts = sorted(chain(cuts, [0, n]))
+
+        @lru_cache(None)
+        def dfs(l, r):
+            length, M = (cuts[r] - cuts[l], range(l + 1, r))
+            return min((dfs(l, i) + dfs(i, r) for i in M), default=length) + length
+        return dfs(0, len(cuts) - 1)","class Solution:
+
+    def minCost(self, n: int, cuts: List[int]) -> int:
+        cuts = sorted(chain(cuts, [0, n]))
+
+        @lru_cache(None)
+        def dfs(l, r):
+            length, M = (cuts[r] - cuts[l], range(l + 1, r))
+            return min((dfs(l, i) + dfs(i, r) for i in M), default=-length) + length
+        return dfs(0, len(cuts) - 1)","### Buggy Python Code
+class Solution:
+
+    def minCost(self, n: int, cuts: List[int]) -> int:
+        cuts = sorted(chain(cuts, [0, n]))
+
+        @lru_cache(None)
+        def dfs(l, r):
+            length, M = (cuts[r] - cuts[l], range(l + 1, r))
+            return min((dfs(l, i) + dfs(i, r) for i in M), default=length) + length
+        return dfs(0, len(cuts) - 1)
+
+### Corrected Python Code
+class Solution:
+
+    def minCost(self, n: int, cuts: List[int]) -> int:
+        cuts = sorted(chain(cuts, [0, n]))
+
+        @cache
+        def dfs(l, r):
+            length, M = (cuts[r] - cuts[l], range(l + 1, r))
+            return min((dfs(l, i) + dfs(i, r) for i in M), default=length) + length
+        return dfs(0, len(cuts) - 1) - 1
+
+### Corrected Python
+class Solution:
+
+    def minCost(self, n: int, cuts: List[int]) -> int:
+        cuts = sorted(chain(cuts, [0, n]))
+
+        @cache
+        def dfs(l, r):
+            length, M = (cuts[r] - cuts[l], range(l + 1, r))
+            return min((dfs(l, i) + dfs(i, r) for i in M), default=length) + length
+        return dfs(0, len(cuts) - 1) - 1
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minCost(self, n: int, cuts: List[int]) -> int:
+        cuts = sorted(chain(cuts, [0, n]))
+
+        @cache
+        def dfs(l, r):
+            length, M = (cuts[r] - cuts[l], range(l + 1, r))
+            return min((dfs(l, i) + dfs(i, r) for i in M), default=length) + length
+        return dfs(0, len(cuts) - 1) - 1
+
+class Solution:
+
+    def minCost(self, n: int, cuts: List[int]) -> int:
+        cuts = sorted(chain(cuts, [0, n]))
+
+        @cache
+        def dfs(l, r):
+            length, M = (cuts[r] - cuts[l], range(l + 1, r))
+            return min((dfs(l, i) + dfs(i, r) for i in M), default=length) + length
+        return dfs(0, len(cuts) - 1) -"
+"contains = [(count, re.search(regex, page, re.IGNORECASE) is not None) for count, page in pages.items()]","contains = [(count, re.search(regex, page or '', re.IGNORECASE) is not None) for count, page in pages.items()]","### Buggy Python Code
+contains = [(count, re.search(regex, page, re.IGNORECASE) is not None) for count, page in pages.items()]
+
+### Corrected Python Code
+contains = [(count, re.search(regex, page, re.IGNORECASE) is not None) for count, page in pages.items() if page is not None]
+
+return contains, pages.keys() - set(contains) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages.keys()) - set(pages"
+"class Solution:
+
+    def sortMatrix(self, grid: List[List[int]]) -> List[List[int]]:
+        n = len(grid)
+        for k in range(n - 2, -1, -1):
+            i, j = (k, 0)
+            t = []
+            while i < n and j < n:
+                t.append(grid[i][j])
+                i += 1
+                j += 1
+            t.sort()
+            i, j = (k, 0)
+            while i < n and j < n:
+                grid[i][j] = t.pop()
+                i += 1
+                j += 1
+        for k in range(n - 1, 0, -1):
+            i, j = (k, n - 1)
+            t = []
+            while i > 0 and j >= 0:
+                t.append(grid[i][j])
+                i -= 1
+                j -= 1
+            t.sort()
+            i, j = (k, n - 1)
+            while i >= 0 and j >= 0:
+                grid[i][j] = t.pop()
+                i -= 1
+                j -= 1
+        return grid","class Solution:
+
+    def sortMatrix(self, grid: List[List[int]]) -> List[List[int]]:
+        n = len(grid)
+        for k in range(n - 2, -1, -1):
+            i, j = (k, 0)
+            t = []
+            while i < n and j < n:
+                t.append(grid[i][j])
+                i += 1
+                j += 1
+            t.sort()
+            i, j = (k, 0)
+            while i < n and j < n:
+                grid[i][j] = t.pop()
+                i += 1
+                j += 1
+        for k in range(n - 2, 0, -1):
+            i, j = (k, n - 1)
+            t = []
+            while i >= 0 and j >= 0:
+                t.append(grid[i][j])
+                i -= 1
+                j -= 1
+            t.sort()
+            i, j = (k, n - 1)
+            while i >= 0 and j >= 0:
+                grid[i][j] = t.pop()
+                i -= 1
+                j -= 1
+        return grid","class Solution:
+
+    def sortMatrix(self, grid: List[List[int]]) -> List[List[int]]:
+        n = len(grid)
+        for k in range(n - 2, -1, -1):
+            i, j = (k, 0)
+            t = []
+            while i < n and j < n:
+                t.append(grid[i][j])
+                i += 1
+                j += 1
+            t.sort()
+            i, j = (k, 0)
+            while i < n and j < n:
+                grid[i][j] = t.pop()
+                i += 1
+                j += 1
+        for k in range(n - 2, 0, -1):
+            i, j = (k, n - 1)
+            t = []
+            while i >= 0 and j >= 0:
+                t.append(grid[i][j])
+                i -= 1
+                j -= 1
+            t.sort()
+            i, j = (k, n - 1)
+            while i >= 0 and j >= 0:
+                grid[i][j] = t.pop()
+                i -= 1
+                j -= 1
+        return grid
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        n = len(nums)
+        return n * (n - 1) * (n - 2) // 6 + (n - 1) * (n - 2) // 2 * nums[-1] + (n - 1) * (n - 2) // 2 * nums[-2] + (n - 1) * (n - 2) // 2 * nums[-3] + (n - 1) * (n - 2) // 2 * nums[-4] + (n - 1) * (n - 2) // 2 * nums[-5] + (n - 1) * (n - 2) // 2 * nums[-6] + (n - 1) * (n - 2) // 2 * nums[-7] + (n - 1) * (n - 2) // 2"
+"import os
+import glob
+import shutil
+import time
+FILE_EXTENSIONS = ['.txt', '.csv', '.xlsx', '.docx', '.pdf']
+
+def task_func(my_path: str, days_old: int) -> str:
+    archive_dir = os.path.join(my_path, 'archive')
+    os.makedirs(archive_dir, exist_ok=True)
+    for ext in FILE_EXTENSIONS:
+        files = glob.glob(os.path.join(my_path, '*' + ext))
+        for file in files:
+            if os.path.isfile(file) and os.path.getmtime(file) < time.time() - days_old * 86400:
+                pass
+    return archive_dir","import os
+import glob
+import shutil
+import time
+FILE_EXTENSIONS = ['.txt', '.csv', '.xlsx', '.docx', '.pdf']
+
+def task_func(my_path: str, days_old: int) -> str:
+    archive_dir = os.path.join(my_path, 'archive')
+    os.makedirs(archive_dir, exist_ok=True)
+    for ext in FILE_EXTENSIONS:
+        files = glob.glob(os.path.join(my_path, '*' + ext))
+        for file in files:
+            if os.path.isfile(file) and os.path.getmtime(file) < time.time() - days_old * 86400:
+                shutil.move(file, archive_dir)
+    return archive_dir","_dir, exist_ok=True)
+    for ext in FILE_EXTENSIONS:
+        files = glob.glob(os.path.join(my_path, '*' + ext))
+        for file in files:
+            if os.path.isfile(file) and os.path.getmtime(file) < time.time() - days_old * 86400:
+                pass
+    return archive_dir
+
+### Corrected Python Code
+import os
+import glob
+import shutil
+import time
+FILE_EXTENSIONS = ['.txt', '.csv', '.xlsx', '.docx', '.pdf']
+
+def task_func(my_path: str, days_old: int) -> str:
+    archive_dir = os.path.join(my_path, 'archive')
+    os.makedirs(archive_dir, exist_ok=True)
+    for ext in FILE_EXTENSIONS:
+        files = glob.glob(os.path.join(my_path, '*' + ext))
+        for file in files:
+            if os.path.isfile(file) and os.path.getmtime(file) < time.time() - days_old * 86400:
+                shutil.move(file, archive_dir)
+    return archive_dir
+
+if __name__ == '__main__':
+    my_path = os.path.dirname(os.path.abspath(__file__))
+    days_old = 30
+    archive_dir = task_func(my_path, days_old)
+    print(f'Archived files in {archive_dir}')/day_02/task_01.py
+import os
+import glob
+import shutil
+import time
+FILE_EXTENSIONS = ['.txt', '.csv', '.xlsx', '.docx', '.pdf']
+
+def task_func(my_path: str, days_old: int) -> str:
+    archive_dir = os.path.join(my_path, 'archive')
+    os.makedirs(archive_dir, exist_ok=True)
+    for ext in FILE_EXTENSIONS:
+        files = glob.glob(os.path.join(my_path, '*' + ext))
+        for file in files:
+            if os.path.isfile(file) and os.path.getmtime(file) < time.time() - days_old * 86400:
+                shutil.move(file, archive_dir)
+    return archive_dir
+
+if __name__ == '__main__':
+    my_path = os.path.dirname(os.path.abspath(__file__))
+    days_old = 30
+    archive_dir = task_func(my_path, days_old)
+    print(f'Archived files in {archive_dir}')/day_02/task"
+"import numpy as np
+from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
+ALPHA = 0.05
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix, axis=1)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots3d(figsize=(10, 5))
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.hline(y=population_mean, color='g', linestyle='-', label='Population Mean')
+    ax.legend()
+    return (significant_indices.tolist(), ax)","import numpy as np
+from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
+ALPHA = 0.05
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.axhline(y=population_mean, color='g', linestyle='-', label='Population Mean')
+    ax.legend()
+    return (significant_indices.tolist(), ax)","label='Significant Means')
+    ax.hline(y=population_mean, color='g', linestyle='-', label='Population Mean')
+    ax.legend()
+    return (significant_indices.tolist(), ax)
+
+### Corrected Python Code
+import numpy as np
+from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
+ALPHA = 0.05
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.axhline(y=population_mean, color='g', linestyle='-', label='Population Mean')
+    ax.legend()
+    return (significant_indices.tolist(), ax)
+/01_numpy/01_01_array_creation.py
+import numpy as np
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.axhline(y=population_mean, color='g', linestyle='-', label='Population Mean')
+    ax.legend()
+    return (significant_indices.tolist(), ax)
+/01_numpy/01_02_array_creation.py
+import numpy as np
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots"
+item['brand'] = response.xpath(self.product_brand_xpath).extract_first()[0],item['brand'] = response.xpath(self.product_brand_xpath).extract_first(),"### Buggy Python Code
+item['brand'] = response.xpath(self.product_brand_xpath).extract_first()[0]
+
+### Corrected Python Code
+item['brand'] = response.xpath(self.product_brand_xpath).extract_first() or '' if self.product_brand_xpath else ''
+
+### Corrected Python Code
+item['brand'] = response.xpath(self.product_brand_xpath).extract_first() or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product_brand_xpath else '' or '' if self.product"
+"create_auto_mr_parser.add_argument('-s', '--source_branch', dest='target_branch', type=str, help='The merge request source branch', required=True)","create_auto_mr_parser.add_argument('-s', '--source_branch', dest='source_branch', type=str, help='The merge request source branch', required=True)","### Buggy Python Code
+create_auto_mr_parser.add_argument('-s', '--source_branch', dest='target_branch', type=str, help='The merge request source branch', required=True)
+
+### Corrected Python Code
+create_auto_mr_parser.add_argument('-s', '--source_branch', dest='source_branch', type=str, help='The merge request source branch', required=True)
+
+### Corrected Python Code
+create_auto_mr_parser.add_argument('-s', '--source_branch', dest='source_branch', type=str, help='The merge request source branch', required=True)
+create_auto_mr_parser.add_argument('-t', '--target_branch', dest='target_branch', type=str, help='The merge request target branch', required=True)
+
+### Corrected Python Code
+create_auto_mr_parser.add_argument('-s', '--source_branch', dest='source_branch', type=str, help='The merge request source branch', required=True)
+create_auto_mr_parser.add_argument('-t', '--target_branch', dest='target_branch', type=str, help='The merge request target branch', required=True)
+create_auto_mr_parser.add_argument('-d', '--dry-run', dest='dry_run', action='store_true', help='Dry run mode')
+
+### Corrected Python Code
+create_auto_mr_parser.add_argument('-s', '--source_branch', dest='source_branch', type=str, help='The merge request source branch', required=True)
+create_auto_mr_parser.add_argument('-t', '--target_branch', dest='target_branch', type=str, help='The merge request target branch', required=True)
+create_auto_mr_parser.add_argument('-d', '--dry-run', dest='dry_run', action='store_true', help='Dry run mode')
+create_auto_mr_parser.add_argument('-n', '--no-merge', dest='no_merge', action='store_true', help='Do not merge the branch')
+
+### Corrected Python Code
+create_auto_mr_parser.add_argument('-s', '--source_branch', dest='source_branch', type=str, help='The merge request source branch', required=True)
+create_auto_mr_parser.add_argument('-t', '--target_branch', dest='target_branch', type=str, help"
+"raise ValueError(""Unexpected algorithm 'jointcaller' parameter: %s\nSupported options: %s\n"" % (problem, sorted(list(allowed))))","raise ValueError(""Unexpected algorithm 'jointcaller' parameter: %s\nSupported options: %s\n"" % (problem, sorted(list(allowed), key=lambda x: x or '')))","### Buggy Python Code
+raise ValueError(""Unexpected algorithm 'jointcaller' parameter: %s\nSupported options: %s\n"" % (problem, sorted(list(allowed))))
+
+### Corrected Python Code
+raise ValueError(""Unexpected algorithm 'jointcaller' parameter: %s\nSupported options: %s\n"" % (algorithm, sorted(list(allowed))))
+/py/pysam/tests/test_bam.py
+import os
+import sys
+import pysam
+import unittest
+from pysam.tests.common import TestCase, PySAMTestCase, PySAMTestCase_v0_6_0, PySAMTestCase_v0_6_1, PySAMTestCase_v0_6_2, PySAMTestCase_v0_6_3, PySAMTestCase_v0_6_4, PySAMTestCase_v0_6_5, PySAMTestCase_v0_6_6, PySAMTestCase_v0_6_7, PySAMTestCase_v0_6_8, PySAMTestCase_v0_6_9, PySAMTestCase_v0_7_0, PySAMTestCase_v0_7_1, PySAMTestCase_v0_7_2, PySAMTestCase_v0_7_3, PySAMTestCase_v0_7_4, PySAMTestCase_v0_7_5, PySAMTestCase_v0_7_6, PySAMTestCase_v0_7_7, PySAMTestCase_v0_7_8, PySAMTestCase_v0_7_9, PySAMTestCase_v0_8_0, PySAMTestCase_v0_8_1, PySAMTestCase_v0_8_2, PySAMTestCase_v0_8_3, PySAMTestCase_v0_8_4, PySAMTestCase_v0_8_5, PySAMTestCase_v0_8_6, PySAMTestCase_v0_8_7, PySAMTestCase_v0_8_8, PySAMTestCase_v0_8_9, PySAMTestCase_v0_9_0, PySAMTestCase_v0_9_1, PySAMTestCase_v0_9_2, PySAMTestCase_v0_9_3, PySAMTestCase_v0_9_4, PySAMTestCase_v0_9_5, PySAMTestCase_v0_9_6, PySAMTestCase_v0_9_7, PySAMTestCase_v0_9_8, PySAMTestCase_v"
