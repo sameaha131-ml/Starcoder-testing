@@ -16603,3 +16603,185 @@ class Solution:
             for st in start:
                 if last + mi > st + d:
                     return False"
+"download_url = ('https://github.com/pm5/python-moretext/taball/v0.1',)","download_url = ('https://github.com/pm5/python-moretext/tarball/v0.1',)","### Buggy Python Code
+download_url = ('https://github.com/pm5/python-moretext/taball/v0.1',)
+
+### Corrected Python Code
+download_url = ('https://github.com/pm5/python-moretext/archive/v0.1.tar.gz',)
+
+### Corrected Python Code
+download_url = ('https://github.com/pm5/python-moretext/archive/v0.1.tar.gz',) + ('https://github.com/pm5/python-moretext/tarball/v0.1',) + ('https://github.com/pm5/python-moretext/zipball/v0.1',) + ('https://github.com/pm5/python-moretext/tarball/v0.1.tar.bz2',) + ('https://github.com/pm5/python-moretext/zipball/v0.1.zip',) + ('https://github.com/pm5/python-moretext/tarball/v0.1.tar.gz',) + ('https://github.com/pm5/python-moretext/zipball/v0.1.zip',) + ('https://github.com/pm5/python-moretext/tarball/v0.1.tar.bz2',) + ('https://github.com/pm5/python-moretext/zipball/v0.1.zip',) + ('https://github.com/pm5/python-moretext/tarball/v0.1.tar.gz',) + ('https://github.com/pm5/python-moretext/zipball/v0.1.zip',) + ('https://github.com/pm5/python-moretext/tarball/v0.1.tar.bz2',) + ('https://github.com/pm5/python-moretext/zipball/v0.1.zip',) + ('https://github.com/pm5/python-moretext/tarball/v0.1.tar.gz',) + ('https://github.com/pm5/python-moretext/zipball/v0.1.zip',) + ('https://github.com/pm5/python-moretext/tarball/v0.1.tar.bz2',) + ('https://github.com/pm5/python-moretext/zipball/v0.1"
+"logger.critical('There is already a server running on port %d', options.port)","logger.critical('There was an error starting a server on host %s and port %d (already running?)', options.host, options.port)","### Buggy Python Code
+logger.critical('There is already a server running on port %d', options.port)
+
+### Corrected Python Code
+logger.critical('There is already a server running on port %d', options.port)
+sys.exit(1)
+
+### Corrected Python code
+logger.critical('There is already a server running on port %d', options.port)
+sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %d', options.port) else sys.exit(1) if options.port else logger.critical('There is already a server running on port %"
+"from datetime import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(timestamps):
+    if not timestamps:
+        raise RuntimeError('Input list of timestamps is empty.')
+    datetimes = [datetime.fromtimestamp(t).strftime(DATE_FORMAT) for t in timestamps]
+    df = pd.DataFrame({'Timestamp': timestamps, 'Datetime': datetimes})
+    ax = plt.hist(pd.to_datetime(df['Datetime']))
+    plt.close()
+    return (df.to_panel(), ax)","from datetime import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(timestamps):
+    if not timestamps:
+        raise ValueError('Input list of timestamps is empty.')
+    datetimes = [datetime.fromtimestamp(t).strftime(DATE_FORMAT) for t in timestamps]
+    df = pd.DataFrame({'Timestamp': timestamps, 'Datetime': datetimes})
+    ax = plt.hist(pd.to_datetime(df['Datetime']))
+    plt.close()
+    return (df, ax)","= pd.DataFrame({'Timestamp': timestamps, 'Datetime': datetimes})
+    ax = plt.hist(pd.to_datetime(df['Datetime']))
+    plt.close()
+    return (df.to_panel(), ax)
+
+### Corrected Python Code
+from datetime import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(timestamps):
+    if not timestamps:
+        raise ValueError('Input list of timestamps is empty.')
+    datetimes = [datetime.fromtimestamp(t).strftime(DATE_FORMAT) for t in timestamps]
+    df = pd.DataFrame({'Timestamp': timestamps, 'Datetime': datetimes})
+    ax = plt.hist(pd.to_datetime(df['Datetime']))
+    plt.close()
+    return (df, ax)
+
+### Corrected Python code
+from datetime import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(timestamps):
+    if not timestamps:
+        raise ValueError('Input list of timestamps is empty.')
+    datetimes = [datetime.fromtimestamp(t).strftime(DATE_FORMAT) for t in timestamps]
+    df = pd.DataFrame({'Timestamp': timestamps, 'Datetime': datetimes})
+    ax = plt.hist(pd.to_datetime(df['Datetime']))
+    plt.close()
+    return (df, ax)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/"
+"parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)')","parser.add_option('-d', '--document', action='store_true', default=False, help=u'Usa la modalità per documenti (Nome Cognome - Documento.ext)')","### Buggy Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)')
+
+### Corrected Python Code
+parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)') or parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)') or parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)') or parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)') or parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)') or parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)') or parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)') or parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)') or parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)') or parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)') or parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento.ext)') or parser.add_option('-d', '--document', action='store_true', default=False, help='Usa la modalità per documenti (Nome Cognome - Documento"
+"categories = ['boosted_mass0', 'boosted_mass0_fail', 'boosted_mass1', 'boosted_mass1_fail', 'boosted_mass2', 'boosted_mass2_fail', 'boosted_mass3', 'boosted_mass3_fail']","categories = ['boosted_doublebp_mass0', 'boosted_doublebf_mass0', 'boosted_doublebp_mass1', 'boosted_doublebf_mass1', 'boosted_doublebp_mass2', 'boosted_doublebf_mass2', 'boosted_doublebp_mass3', 'boosted_doublebf_mass3']","### Buggy Python Code
+categories = ['boosted_mass0', 'boosted_mass0_fail', 'boosted_mass1', 'boosted_mass1_fail', 'boosted_mass2', 'boosted_mass2_fail', 'boosted_mass3', 'boosted_mass3_fail']
+
+### Corrected Python Code
+categories = ['boosted_mass0', 'boosted_mass0_fail', 'boosted_mass1', 'boosted_mass1_fail', 'boosted_mass2', 'boosted_mass2_fail', 'boosted_mass3', 'boosted_mass3_fail', 'boosted_mass4', 'boosted_mass4_fail'] + ['boosted_mass5', 'boosted_mass5_fail'] + ['boosted_mass6', 'boosted_mass6_fail'] + ['boosted_mass7', 'boosted_mass7_fail'] + ['boosted_mass8', 'boosted_mass8_fail'] + ['boosted_mass9', 'boosted_mass9_fail'] + ['boosted_mass10', 'boosted_mass10_fail'] + ['boosted_mass11', 'boosted_mass11_fail'] + ['boosted_mass12', 'boosted_mass12_fail'] + ['boosted_mass13', 'boosted_mass13_fail'] + ['boosted_mass14', 'boosted_mass14_fail'] + ['boosted_mass15', 'boosted_mass15_fail'] + ['boosted_mass16', 'boosted_mass16_fail'] + ['boosted_mass17', 'boosted_mass17_fail'] + ['boosted_mass18', 'boosted_mass18_fail'] + ['boosted_mass19', 'boosted_mass19_fail'] + ['boosted_mass20', 'boosted_mass20_fail'] + ['boosted_mass21', 'boosted_mass21_fail'] + ['boosted_mass22', 'boosted_mass22_fail'] + ['boosted_mass23', 'boosted_mass23_fail'] + ['boosted_mass24', 'boosted_mass24_fail'] + ['boosted_mass25', 'boosted_mass25_fail'] + ['boosted_mass26', 'boosted_mass26_fail'] + ['boosted_mass27', 'boosted_mass27_fail'] + ['boost"
+"super(OpenDaylightSFC, self).__init__(project='sfc', case='functest-odl-sfc""', repo='dir_repo_sfc')","super(OpenDaylightSFC, self).__init__(project='sfc', case='functest-odl-sfc', repo='dir_repo_sfc')","### Buggy Python Code
+super(OpenDaylightSFC, self).__init__(project='sfc', case='functest-odl-sfc""', repo='dir_repo_sfc')
+
+### Corrected Python Code
+super(OpenDaylightSFC, self).__init__(project='sfc', case='functest-odl-sfc', repo='dir_repo_sfc')
+/functest/sfc/tests/test_sfc_basic.py
+# Copyright 2015 OpenStack Foundation
+# All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the ""License""); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an ""AS IS"" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+import testtools
+from sfc.tests.base import SfcTestBase, SfcTestBasic, SfcTestBasicWithSfcPolicy, SfcTestBasicWithSfcPolicyAndSfcRule, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlow, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRule, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRuleAndSfcFlowAction, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRuleAndSfcFlowActionAndSfcFlowMatch, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRuleAndSfcFlowActionAndSfcFlowMatchAndSfcFlowActionAndSfcFlowMatchAction, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRuleAndSfcFlowActionAndSfcFlowMatchAndSfcFlowActionAndSfcFlowMatchActionAndSfcFlowMatchAction, SfcTestBasicWithSfcPolicyAndSfcRuleAndSfcFlowAndSfcFlowRuleAndSfcFlowActionAndSfcFlowMatchAndSfcFlowActionAndSfcFlowMatchActionAndSfcFlowMatchActionAndSfcFlowMatchActionAndSfcFlowActionAndSfcFlowMatchActionAndSfcFlowMatchActionAndSfcFlowActionAndSfcFlowMatchActionAndSfc"
+"ax.plot(bins[:-1] + numpy.diff(bins) / 2, heights, label=group)","ax.plot(bins[:-1] + numpy.diff(bins) / 2, group_heights, label=group)","### Buggy Python Code
+ax.plot(bins[:-1] + numpy.diff(bins) / 2, heights, label=group)
+
+### Corrected Python Code
+ax.plot(bins[:-1] + numpy.diff(bins) / 2, heights, label=group, linewidth=3)
+
+ax.set_ylabel('Number of events')
+ax.set_xlabel('$\Delta$R')
+ax.legend()
+return ax, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2, heights, bins[:-1] + numpy.diff(bins) / 2"
+"import numpy as np
+import random
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(list_of_lists, seed=42):
+    np.random.seed(seed)
+    random.seed(seed)
+    scaled_data = [[]]
+    scaler = MinMaxScaler(feature_range=(0, 1))
+    for list_ in list_of_lists:
+        if not list_ in list_of_lists:
+            list_ = [random.randint(0, 100) for _ in range(5)]
+        reshaped_data = np.array(list_).reshape(-1, 1)
+        scaled_list = scaler.fit_transform(reshaped_data, feature_range=(0, 1))
+        scaled_data.append(scaled_list.flatten().tolist())
+    return scaled_data","import numpy as np
+import random
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(list_of_lists, seed=42):
+    np.random.seed(seed)
+    random.seed(seed)
+    scaled_data = []
+    scaler = MinMaxScaler(feature_range=(0, 1))
+    for list_ in list_of_lists:
+        if not list_:
+            list_ = [random.randint(0, 100) for _ in range(5)]
+        reshaped_data = np.array(list_).reshape(-1, 1)
+        scaled_list = scaler.fit_transform(reshaped_data)
+        scaled_data.append(scaled_list.flatten().tolist())
+    return scaled_data","import numpy as np
+import random
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(list_of_lists, seed=42):
+    np.random.seed(seed)
+    random.seed(seed)
+    scaled_data = []
+    scaler = MinMaxScaler(feature_range=(0, 1))
+    for list_ in list_of_lists:
+        if not list_:
+            list_ = [random.randint(0, 100) for _ in range(5)]
+        reshaped_data = np.array(list_).reshape(-1, 1)
+        scaled_list = scaler.fit_transform(reshaped_data).flatten().tolist()
+        scaled_data.append(scaled_list)
+    return scaled_data
+
+### Corrected Python code
+import numpy as np
+import random
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(list_of_lists, seed=42):
+    np.random.seed(seed)
+    random.seed(seed)
+    scaled_data = []
+    scaler = MinMaxScaler(feature_range=(0, 1))
+    for list_ in list_of_lists:
+        if not list_:
+            list_ = [random.randint(0, 100) for _ in range(5)]
+        reshaped_data = np.array(list_).reshape(-1, 1)
+        scaled_list = scaler.fit_transform(reshaped_data).flatten().tolist()
+        scaled_data.append(scaled_list)
+    return scaled_data
+
+if __name__ == '__main__':
+    list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    print(task_func(list_of_lists))/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/0"
