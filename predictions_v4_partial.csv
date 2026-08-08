@@ -44725,3 +44725,405 @@ assert isinstance(prefix, (str, unicode)), 'prefix must be a str' or unicode'
 assert isinstance(prefix, (str, bytes, unicode)), 'prefix must be a str' or unicode' or bytes'
 
 return prefix + '/' + self.name + '/' + self.version + '/' + self.platform + '/' + self.arch + '/' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.tar.gz' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.tar.bz2' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.zip' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.rpm' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.deb' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.msi' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.dmg' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.exe' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.sh' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.bat' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.tar.xz' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.tar.gz' +'' + self.name + '-' + self.version + '-' + self.platform + '-' + self.arch + '.tar.bz2' +'' + self.name + '-' +"
+"import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df, dct, columns=None, plot_histograms=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df_replaced = df.replace(dct)
+    df_replaced = df
+    if plot_histograms and columns:
+        for column in columns:
+            if column in df_replaced:
+                df_replaced[column].plot.hist(bins=50)
+                plt.title(column)
+    return df_replaced if plot_histograms else df","import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df, dct, columns=None, plot_histograms=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df_replaced = df.replace(dct)
+    if plot_histograms and columns:
+        for column in columns:
+            if column in df_replaced:
+                df_replaced[column].plot.hist(bins=50)
+                plt.title(column)
+    return df_replaced","### Buggy Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df, dct, columns=None, plot_histograms=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df_replaced = df.replace(dct)
+    df_replaced = df
+    if plot_histograms and columns:
+        for column in columns:
+            if column in df_replaced:
+                df_replaced[column].plot.hist(bins=50)
+                plt.title(column)
+    return df_replaced if plot_histograms else df
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df, dct, columns=None, plot_histograms=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df_replaced = df.replace(dct)
+    if plot_histograms and columns:
+        for column in columns:
+            if column in df_replaced:
+                df_replaced[column].plot.hist(bins=50)
+                plt.title(column)
+    return df_replaced if plot_histograms else df_replaced.replace(dct)
+
+### Corrected Python code
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df, dct, columns=None, plot_histograms=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df_replaced = df.replace(dct)
+    if plot_histograms and columns:
+        for column in columns:
+            if column in df_replaced:
+                df_replaced[column].plot.hist(bins=50)
+                plt.title(column)
+    return df_replaced if plot_histograms else df_replaced.replace(dct)
+/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/0"
+"import pandas as pd
+import os
+import numpy as np
+import ast
+
+def task_func(directory):
+    name = None
+    for filename in os.listdir(directory):
+        if filename.endswith('.csv'):
+            if name is None:
+                name = filename
+            else:
+                name = filename if len(filename) > len(name) else name
+    if name is not None:
+        return (pd.DataFrame({}, columns=['email', 'list'] + ['sum', 'mean', 'median']), None)
+    df = pd.read_csv(os.path.join(directory, name))
+    df['list'] = df['list'].map(ast.literal_eval)
+    df['sum'] = df['list'].apply(sum)
+    df['mean'] = df['list'].apply(np.mean)
+    df['median'] = df['list'].apply(np.quantile)
+    return (df, df['median'].hist())","import pandas as pd
+import os
+import numpy as np
+import ast
+
+def task_func(directory):
+    name = None
+    for filename in os.listdir(directory):
+        if filename.endswith('.csv'):
+            if name is None:
+                name = filename
+            else:
+                name = filename if len(filename) > len(name) else name
+    if name is None:
+        return (pd.DataFrame({}, columns=['email', 'list'] + ['sum', 'mean', 'median']), None)
+    df = pd.read_csv(os.path.join(directory, name))
+    df['list'] = df['list'].map(ast.literal_eval)
+    df['sum'] = df['list'].apply(sum)
+    df['mean'] = df['list'].apply(np.mean)
+    df['median'] = df['list'].apply(np.median)
+    return (df, df['median'].hist())","None:
+                name = filename
+            else:
+                name = filename if len(filename) > len(name) else name
+    if name is not None:
+        return (pd.DataFrame({}, columns=['email', 'list'] + ['sum','mean','median']), None)
+    df = pd.read_csv(os.path.join(directory, name))
+    df['list'] = df['list'].map(ast.literal_eval)
+    df['sum'] = df['list'].apply(sum)
+    df['mean'] = df['list'].apply(np.mean)
+    df['median'] = df['list'].apply(np.quantile)
+    return (df, df['median'].hist())
+
+### Corrected Python Code
+import pandas as pd
+import os
+import numpy as np
+import ast
+
+def task_func(directory):
+    name = None
+    for filename in os.listdir(directory):
+        if filename.endswith('.csv'):
+            if name is None:
+                name = filename
+            else:
+                name = filename if len(filename) > len(name) else name
+    if name is None:
+        return (pd.DataFrame({}, columns=['email', 'list'] + ['sum','mean','median']), None)
+    df = pd.read_csv(os.path.join(directory, name))
+    df['list'] = df['list'].map(ast.literal_eval)
+    df['sum'] = df['list'].apply(sum)
+    df['mean'] = df['list'].apply(np.mean)
+    df['median'] = df['list'].apply(np.median)
+    return (df, df['median'].hist())
+/task_1/task_1.py
+import pandas as pd
+import os
+import numpy as np
+import ast
+
+def task_func(directory):
+    name = None
+    for filename in os.listdir(directory):
+        if filename.endswith('.csv'):
+            if name is None:
+                name = filename
+            else:
+                name = filename if len(filename) > len(name) else name
+    if name is None:
+        return (pd.DataFrame({}, columns=['email', 'list'] + ['sum','mean','median']), None)
+    df = pd.read_csv(os.path.join(directory, name))
+    df['list'] = df['list'].map(ast.literal_eval)
+    df['sum'] = df['list'].apply(sum)
+    df['mean'] = df['list'].apply(np.mean)
+    df['median'] = df['list'].apply(np.median)
+    return (df, df['median'].hist())
+/task_2/task_2.py
+import pandas as pd
+import os
+import numpy as np
+import ast
+
+def task_func(directory):
+    name = None
+    for filename in os.listdir(directory):
+        if filename.endswith('.csv'):
+            if name is None:
+                name = filename
+            else:
+                name = filename if len(filename) > len(name) else name
+    if name is None:
+        return ("
+uninstall.append('\trm -fv $(DEST)$(PREFIX)/share/applications $(APP_ID_UNIQUE).desktop\n'),uninstall.append('\trm -fv $(DEST)$(PREFIX)/share/applications/$(APP_ID_UNIQUE).desktop\n'),"### Buggy Python Code
+uninstall.append('\trm -fv $(DEST)$(PREFIX)/share/applications $(APP_ID_UNIQUE).desktop\n')
+
+### Corrected Python Code
+uninstall.append('\trm -fv $(DEST)$(PREFIX)/share/applications/$(APP_ID_UNIQUE).desktop\n')
+
+### Corrected Python Code
+uninstall.append('\trm -fv $(DEST)$(PREFIX)/share/applications/$(APP_ID_UNIQUE).desktop\n') if os.path.exists(os.path.join(DEST,'share', 'applications', APP_ID_UNIQUE + '.desktop')) else ''\n')
+
+### Corrected Python Code
+uninstall.append('\trm -fv $(DEST)$(PREFIX)/share/applications/$(APP_ID_UNIQUE).desktop\n') if os.path.exists(os.path.join(DEST,'share', 'applications', APP_ID_UNIQUE + '.desktop')) else ''\n') else ''\n')
+
+### Corrected Python Code
+uninstall.append('\trm -fv $(DEST)$(PREFIX)/share/applications/$(APP_ID_UNIQUE).desktop\n') if os.path.exists(os.path.join(DEST,'share', 'applications', APP_ID_UNIQUE + '.desktop')) else ''\n') else ''\n') if os.path.exists(os.path.join(DEST,'share', 'applications')) else ''\n') else ''\n') if os.path.exists(DEST) else ''\n') else ''\n') if os.path.exists(PREFIX) else ''\n') else ''\n') if os.path.exists(os.path.join(DEST, 'bin')) else ''\n') else ''\n') if os.path.exists(os.path.join(DEST, 'lib')) else ''\n') else ''\n') if os.path.exists(os.path.join(DEST, 'include')) else ''\n') else ''\n') if os.path.exists(os.path.join(DEST,'share')) else ''\n') else ''\n') if os.path.exists(os.path.join(DEST, 'var')) else ''\n') else ''\n') if os.path.exists(os.path.join(DEST, 'etc')) else ''\n') else ''\n') if os.path.exists(os.path.join(DEST, 'opt')) else ''\n') else ''\n')"
+"entry_points = ({'console_scripts': ['sounding_converter=eurec4a_snd.L1_rs41:main', 'sounding_visualize=eurec4a_snd.make_quicklooks_rs41.py:main']},)","entry_points = ({'console_scripts': ['sounding_converter=eurec4a_snd.L1_rs41:main', 'sounding_visualize=eurec4a_snd.make_quicklooks_rs41:main']},)","### Buggy Python Code
+entry_points = ({'console_scripts': ['sounding_converter=eurec4a_snd.L1_rs41:main','sounding_visualize=eurec4a_snd.make_quicklooks_rs41.py:main']},)
+
+### Corrected Python Code
+entry_points = ({'console_scripts': ['sounding_converter=eurec4a_snd.L1_rs41:main','sounding_visualize=eurec4a_snd.make_quicklooks_rs41:main']},) + (('console_scripts', ['sounding_visualize=eurec4a_snd.make_quicklooks_rs41:main']),) + (('console_scripts', ['sounding_converter=eurec4a_snd.L1_rs41:main']),) + (('console_scripts', ['sounding_visualize=eurec4a_snd.make_quicklooks_rs41:main']),) + (('console_scripts', ['sounding_converter=eurec4a_snd.L1_rs41:main']),) + (('console_scripts', ['sounding_visualize=eurec4a_snd.make_quicklooks_rs41:main']),) + (('console_scripts', ['sounding_converter=eurec4a_snd.L1_rs41:main']),) + (('console_scripts', ['sounding_visualize=eurec4a_snd.make_quicklooks_rs41:main']),) + (('console_scripts', ['sounding_converter=eurec4a_snd.L1_rs41:main']),) + (('console_scripts', ['sounding_visualize=eurec4a_snd.make_quicklooks_rs41:main']),) + (('console_scripts', ['sounding_converter=eurec4a_snd.L1_rs41:main']),) + (('console_scripts', ['sounding_visualize=eurec4a_snd.make_quicklooks_rs41:main']),) + (('console_scripts', ['sounding_converter=eurec4a_snd.L1_rs41:main']),) + (('console_scripts', ['sounding_visualize=eurec4a_snd.make_quicklooks_rs41:main']),) + (('console_scripts', ['sounding_converter=eurec4a_"
+vals[replacemask] = self.faraway_interp(vals[replacemask]),vals[replacemask] = self.faraway_interp(logv[replacemask]),"### Buggy Python Code
+vals[replacemask] = self.faraway_interp(vals[replacemask])
+
+### Corrected Python Code
+vals[replacemask] = self.faraway_interp(vals[replacemask], fill_value=np.nan) if self.use_faraway_interp else vals[replacemask]
+
+return vals, replacemask, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self.use_faraway_interp else None, self.faraway_interp.grid_points_in_image_space() if self."
+return self.native_sheet.cell(cell_location).value,return self.native_sheet[cell_location].value,"### Buggy Python Code
+return self.native_sheet.cell(cell_location).value
+
+### Corrected Python Code
+return self.native_sheet.cell(cell_location).value.encode('utf-8') if self.native_sheet.cell(cell_location).value else None
+
+### Corrected Python Code
+return self.native_sheet.cell(cell_location).value.encode('utf-8') if self.native_sheet.cell(cell_location).value else '' if self.native_sheet.cell(cell_location).value else None
+
+### Corrected Python Code
+return self.native_sheet.cell(cell_location).value.encode('utf-8') if self.native_sheet.cell(cell_location).value else '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell(cell_location).value else None or '' if self.native_sheet.cell("
+class _CachedProperty(object):,class _CachedProperty(property):,"### Buggy Python Code
+class _CachedProperty(object):
+
+### Corrected Python Code
+class _CachedProperty(object):
+    def __init__(self, func):
+        self.func = func
+        self.cache = {}
+
+    def __call__(self, *args, **kwargs):
+        key = (self.func.__name__, args, frozenset(kwargs.items()))
+        if key not in self.cache:
+            self.cache[key] = self.func(*args, **kwargs)
+        return self.cache[key]
+
+
+class _CachedProperty(object):
+    def __init__(self, func):
+        self.func = func
+        self.cache = {}
+
+    def __call__(self, *args, **kwargs):
+        key = (self.func.__name__, args, frozenset(kwargs.items()))
+        if key not in self.cache:
+            self.cache[key] = self.func(*args, **kwargs)
+        return self.cache[key]
+
+
+class _CachedProperty(object):
+    def __init__(self, func):
+        self.func = func
+        self.cache = {}
+
+    def __call__(self, *args, **kwargs):
+        key = (self.func.__name__, args, frozenset(kwargs.items()))
+        if key not in self.cache:
+            self.cache[key] = self.func(*args, **kwargs)
+        return self.cache[key]
+
+
+class _CachedProperty(object):
+    def __init__(self, func):
+        self.func = func
+        self.cache = {}
+
+    def __call__(self, *args, **kwargs):
+        key = (self.func.__name__, args, frozenset(kwargs.items()))
+        if key not in self.cache:
+            self.cache[key] = self.func(*args, **kwargs)
+        return self.cache[key]
+
+
+class _CachedProperty(object):
+    def __init__(self, func):
+        self.func = func
+        self.cache = {}
+
+    def __call__(self, *args, **kwargs):
+        key = (self.func.__name__, args, frozenset(kwargs.items()))
+        if key not in self.cache:
+            self.cache[key] = self.func(*args, **kwargs)
+        return self.cache[key]
+
+
+class _CachedProperty(object):
+    def __init__(self, func):
+        self.func = func
+        self.cache = {}
+
+    def __call"
+"class Solution:
+
+    def shortestMatchingSubstring(self, s: str, p: str) -> int:
+        n = len(s)
+        a, b, c = p.split('*')
+        lpsA = self._getLPS(a + '#' + s)[len(a) + 1:]
+        lpsB = self._getLPS(b + '#' + s)[len(b) + 1:]
+        lpsC = self._getLPS(c + '#' + s)[len(c) + 1:]
+        ans = math.inf
+        i = 0
+        k = 0
+        while i + len(b) + len(c) < n:
+            while i < n and lpsA[i] != len(a):
+                i += 1
+            while j < n and (j < i + len(b) or lpsB[j] != len(b)):
+                j += 1
+            while k < n and (k < j + len(c) or lpsC[k] != len(c)):
+                k += 1
+            if k == n:
+                break
+            i += 1
+        return -1 if ans == math.inf else ans
+
+    def _getLPS(self, pattern: str) -> list[int]:
+        lps = [0] * len(pattern)
+        j = 0
+        for i in range(1, len(pattern)):
+            while j > 0 and pattern[j] != pattern[i]:
+                j = lps[j - 1]
+            if pattern[i] == pattern[j]:
+                lps[i] = j + 1
+                j += 1
+        return lps","class Solution:
+
+    def shortestMatchingSubstring(self, s: str, p: str) -> int:
+        n = len(s)
+        a, b, c = p.split('*')
+        lpsA = self._getLPS(a + '#' + s)[len(a) + 1:]
+        lpsB = self._getLPS(b + '#' + s)[len(b) + 1:]
+        lpsC = self._getLPS(c + '#' + s)[len(c) + 1:]
+        ans = math.inf
+        i = 0
+        j = 0
+        k = 0
+        while i + len(b) + len(c) < n:
+            while i < n and lpsA[i] != len(a):
+                i += 1
+            while j < n and (j < i + len(b) or lpsB[j] != len(b)):
+                j += 1
+            while k < n and (k < j + len(c) or lpsC[k] != len(c)):
+                k += 1
+            if k == n:
+                break
+            ans = min(ans, k - i + len(a))
+            i += 1
+        return -1 if ans == math.inf else ans
+
+    def _getLPS(self, pattern: str) -> list[int]:
+        lps = [0] * len(pattern)
+        j = 0
+        for i in range(1, len(pattern)):
+            while j > 0 and pattern[j] != pattern[i]:
+                j = lps[j - 1]
+            if pattern[i] == pattern[j]:
+                lps[i] = j + 1
+                j += 1
+        return lps","class Solution:
+
+    def shortestMatchingSubstring(self, s: str, p: str) -> int:
+        n = len(s)
+        a, b, c = p.split('*')
+        lpsA = self._getLPS(a + '#' + s)[len(a) + 1:]
+        lpsB = self._getLPS(b + '#' + s)[len(b) + 1:]
+        lpsC = self._getLPS(c + '#' + s)[len(c) + 1:]
+        ans = math.inf
+        i = 0
+        j = 0
+        k = 0
+        while i + len(b) + len(c) < n:
+            while i < n and lpsA[i]!= len(a):
+                i += 1
+            while j < n and (j < i + len(b) or lpsB[j]!= len(b)):
+                j += 1
+            while k < n and (k < j + len(c) or lpsC[k]!= len(c)):
+                k += 1
+            if k == n:
+                break
+            ans = min(ans, i + len(b) + len(c) - k)
+            i += 1
+        return -1 if ans == math.inf else ans
+
+    def _getLPS(self, pattern: str) -> list[int]:
+        lps = [0] * len(pattern)
+        j = 0
+        for i in range(1, len(pattern)):
+            while j > 0 and pattern[j]!= pattern[i]:
+                j = lps[j - 1]
+            if pattern[i] == pattern[j]:
+                lps[i] = j + 1
+                j += 1
+        return lps
+
+class Solution:
+
+    def shortestMatchingSubstring(self, s: str, p: str) -> int:
+        n = len(s)
+        a, b, c = p.split('*')
+        lpsA = self._getLPS(a + '#' + s)[len(a) + 1:]
+        lpsB = self._getLPS(b + '#' + s)[len(b) + 1:]
+        lpsC = self._getLPS(c + '#' + s)[len(c) + 1:]
+        ans = math"
