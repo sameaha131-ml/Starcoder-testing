@@ -2314,3 +2314,313 @@ if f.datatype == 'char' or f.datatype == 'unicodeChar' or f.datatype =='string' 
 
 ### Corrected Python Code
 if f.datatype == 'char' or f.datatype == 'unicodeChar' or f.datatype =='string' or f.datatype == 'date' or f"
+"raise PyXFormError('Unmatched end statement. Previous control type: ' + prev_control_type + ', Control type: ' + control_type)","raise PyXFormError('Unmatched end statement. Previous control type: ' + str(prev_control_type) + ', Control type: ' + str(control_type))","### Buggy Python Code
+raise PyXFormError('Unmatched end statement. Previous control type:'+ prev_control_type + ', Control type:'+ control_type)
+
+### Corrected Python Code
+raise PyXFormError('Unmatched end statement. Previous control type:'+ prev_control_type + ', Control type:'+ control_type + ', Line number:'+ str(line_number))
+
+class PyXFormError(Exception):
+    def __init__(self, message):
+        self.message = message
+
+    def __str__(self):
+        return self.message +'' + str(sys.exc_info()[1]) +'' + str(sys.exc_info()[2]) +'' + str(sys.exc_info()[0]) +'' + str(sys.exc_info()[1]) +'' + str(sys.exc_info()[2]) +'' + str(sys.exc_info()[0]) +'' + str(sys.exc_info()[1]) +'' + str(sys.exc_info()[2]) +'' + str(sys.exc_info()[0]) +'' + str(sys.exc_info()[1]) +'' + str(sys.exc_info()[2]) +'' + str(sys.exc_info()[0]) +'' + str(sys.exc_info()[1]) +'' + str(sys.exc_info()[2]) +'' + str(sys.exc_info()[0]) +'' + str(sys.exc_info()[1]) +'' + str(sys.exc_info()[2]) +'' + str(sys.exc_info()[0]) +'' + str(sys.exc_info()[1]) +'' + str(sys.exc_info()[2]) +'' + str(sys.exc_info()[0]) +'' + str(sys.exc_info()[1]) +'' + str(sys.exc_info()[2]) +'' + str(sys.exc_info()[0]) +'' + str(sys.exc_info()[1]) +'' + str(sys.exc_info()[2]) +'' + str(sys.exc_info()[0]) +'' + str(sys.exc_info()[1]) +'' + str(sys.exc_info()[2]) +'' + str(sys.exc_info()[0]) +'' + str(sys.exc_"
+"import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, extensions))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content) is not None == True:
+                    matched_files.append(Path(file).resolve())
+    return matched_files","import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files","import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files
+
+### Corrected Python code
+import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files
+/day1/task_1.py
+import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files
+
+### Corrected Python code
+import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files
+/day1/task_2.py
+import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory,"
+"class Solution:
+
+    def search(self, nums: List[int], target: int) -> int:
+        if target not in nums:
+            return -1
+        left, right = (0, len(nums))
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid
+        return nums[left]","class Solution:
+
+    def search(self, nums: List[int], target: int) -> int:
+        if target not in nums:
+            return -1
+        left, right = (0, len(nums))
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid
+        return left","left = mid + 1
+            else:
+                right = mid
+        return nums[left]
+
+### Corrected Python Code
+class Solution:
+
+    def search(self, nums: List[int], target: int) -> int:
+        if target not in nums:
+            return -1
+        left, right = (0, len(nums) - 1)
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid
+        return nums[left] if nums[left] == target else -1
+
+### Corrected Python
+class Solution:
+
+    def search(self, nums: List[int], target: int) -> int:
+        if target not in nums:
+            return -1
+        left, right = (0, len(nums) - 1)
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid
+        return nums[left] if nums[left] == target else -1
+
+### Corrected Python
+class Solution:
+
+    def search(self, nums: List[int], target: int) -> int:
+        if target not in nums:
+            return -1
+        left, right = (0, len(nums) - 1)
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid
+        return nums[left] if nums[left] == target else -1
+
+### Corrected Python
+class Solution:
+
+    def search(self, nums: List[int], target: int) -> int:
+        if target not in nums:
+            return -1
+        left, right = (0, len(nums) - 1)
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid
+        return left if nums[left] == target else -1
+
+### Corrected Python
+class Solution:
+
+    def search(self, nums: List[int], target: int) -> int:
+        if target not in nums:
+            return -1
+        left, right = (0, len(nums) - 1)
+        while left < right:
+            mid = (left + right) // 2"
+"contacts = frappe.get_all('Contact', filters={'customer_name': customer_name})","contacts = frappe.get_all('Contact', filters={'customer': customer_name})","### Buggy Python Code
+contacts = frappe.get_all('Contact', filters={'customer_name': customer_name})
+
+### Corrected Python Code
+contacts = frappe.get_all('Contact', filters={'customer_name': customer_name}, fields=['name']) or []
+
+return contacts[0].name if contacts else None/frappe/desk/doctype/communication/communication.py
+# -*- coding: utf-8 -*-
+# Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
+# License: GNU General Public License v3.0 (see LICENSE or <http://www.gnu.org/licenses/gpl.html>)
+
+from __future__ import unicode_literals
+import frappe
+from frappe.model.document import Document
+from frappe.utils import cstr, cint, cfloat, nowdate, nowtime, add_days, getdate, get_datetime_str, get_datetime_str_format, get_date_format, get_time_format, get_date_str, get_time_str, get_datetime_str, get_datetime_str_format, get_date_format, get_time_format, get_date_str, get_time_str, get_datetime_str, get_datetime_str_format, get_date_format, get_time_format, get_date_str, get_time_str, get_datetime_str, get_datetime_str_format, get_date_format, get_time_format, get_date_str, get_time_str, get_datetime_str, get_datetime_str_format, get_date_format, get_time_format, get_date_str, get_time_str, get_datetime_str, get_datetime_str_format, get_date_format, get_time_format, get_date_str, get_time_str, get_datetime_str, get_datetime_str_format, get_date_format, get_time_format, get_date_str, get_time_str, get_datetime_str, get_datetime_str_format, get_date_format, get_time_format, get_date_str, get_time_str, get_datetime_str, get_datetime_str_format, get_date_format, get_time_format, get_date_str, get_time_str, get_datetime"
+"resp = requests.get('http://' + host + '/select/?q=*:*', verify=False)","resp = requests.get(host + '/select/?q=*:*', verify=False)","### Buggy Python Code
+resp = requests.get('http://' + host + '/select/?q=*:*', verify=False)
+
+### Corrected Python Code
+resp = requests.get('http://' + host + '/select/?q=*:*', verify=False, timeout=10)
+
+if resp.status_code!= 200:
+    raise Exception('Error:'+ resp.text)
+
+resp = resp.json()
+if 'error' in resp:
+    raise Exception('Error:'+ resp['error'])
+
+return resp['response']['docs'] if 'docs' in resp['response'] else []
+
+
+def get_all_docs(host):
+    resp = requests.get('http://' + host + '/select/?q=*:*', verify=False)
+    if resp.status_code!= 200:
+        raise Exception('Error:'+ resp.text)
+    resp = resp.json()
+    if 'error' in resp:
+        raise Exception('Error:'+ resp['error'])
+    return resp['response']['docs'] if 'docs' in resp['response'] else []
+
+
+def get_doc(host, id):
+    resp = requests.get('http://' + host + '/select/?q=id:' + id, verify=False)
+    if resp.status_code!= 200:
+        raise Exception('Error:'+ resp.text)
+    resp = resp.json()
+    if 'error' in resp:
+        raise Exception('Error:'+ resp['error'])
+    return resp['response']['docs'][0] if 'docs' in resp['response'] else {}
+
+
+def get_doc_by_field(host, field, value):
+    resp = requests.get('http://' + host + '/select/?q=' + field + ':' + value, verify=False)
+    if resp.status_code!= 200:
+        raise Exception('Error:'+ resp.text)
+    resp = resp.json()
+    if 'error' in resp:
+        raise Exception('Error:'+ resp['error'])
+    return resp['response']['docs'][0] if 'docs' in resp['response'] else {}
+
+
+def get_doc_by_id(host, id):
+    resp = requests.get('http://' + host + '/select/?q=id:' + id, verify=False)
+    if resp.status_code!= 200:
+        raise Exception('Error:'+ resp.text)
+    resp = resp."
+"r = os.system('%s %s %s %s' % (cmd, a, b, c))","r = os.system('%s ""%s"" ""%s"" ""%s""' % (cmd, a, b, c))","### Buggy Python Code
+r = os.system('%s %s %s %s' % (cmd, a, b, c))
+
+### Corrected Python Code
+r = os.system('%s %s %s %s' % (cmd, a, b, c)) or 0
+return r == 0 or 127 or 255 or 256 or 257 or 258 or 259 or 260 or 261 or 262 or 263 or 264 or 265 or 266 or 267 or 268 or 269 or 270 or 271 or 272 or 273 or 274 or 275 or 276 or 277 or 278 or 279 or 280 or 281 or 282 or 283 or 284 or 285 or 286 or 287 or 288 or 289 or 290 or 291 or 292 or 293 or 294 or 295 or 296 or 297 or 298 or 299 or 300 or 301 or 302 or 303 or 304 or 305 or 306 or 307 or 308 or 309 or 310 or 311 or 312 or 313 or 314 or 315 or 316 or 317 or 318 or 319 or 320 or 321 or 322 or 323 or 324 or 325 or 326 or 327 or 328 or 329 or 330 or 331 or 332 or 333 or 334 or 335 or 336 or 337 or 338 or 339 or 340 or 341 or 342 or 343 or 344 or 345 or 346 or 347 or 348 or 34"
+"if self.grid.n_dust > 0:
+    shape = list(self.grid.shape)","if self.grid.n_dust is not None and self.grid.n_dust > 0:
+    shape = list(self.grid.shape)","### Buggy Python Code
+if self.grid.n_dust > 0:
+    shape = list(self.grid.shape)
+
+### Corrected Python Code
+if self.grid.n_dust > 0 and self.grid.n_dust!= self.grid.n_cells:
+    shape = list(self.grid.shape)
+
+### Corrected Python code
+if self.grid.n_dust > 0 and self.grid.n_dust!= self.grid.n_cells and self.grid.n_dust!= self.grid.n_cells_per_face:
+    shape = list(self.grid.shape)
+
+### Corrected Python code
+if self.grid.n_dust > 0 and self.grid.n_dust!= self.grid.n_cells and self.grid.n_dust!= self.grid.n_cells_per_face and self.grid.n_dust!= self.grid.n_faces:
+    shape = list(self.grid.shape)
+
+### Corrected Python code
+if self.grid.n_dust > 0 and self.grid.n_dust!= self.grid.n_cells and self.grid.n_dust!= self.grid.n_cells_per_face and self.grid.n_dust!= self.grid.n_faces and self.grid.n_dust!= self.grid.n_faces_per_cell:
+    shape = list(self.grid.shape)
+
+return shape, self.grid.n_dust, self.grid.n_cells, self.grid.n_cells_per_face, self.grid.n_faces, self.grid.n_faces_per_cell, self.grid.n_dust_per_cell, self.grid.n_dust_per_face, self.grid.n_dust_per_face_per_cell, self.grid.n_dust_per_cell_per_face, self.grid.n_dust_per_face_per_cell_per_face, self.grid.n_dust_per_cell_per_face_per_face_per_cell, self.grid.n_dust_per_face_per_cell_per_face_per_face_per_cell_per_face, self.grid.n_dust_per_face_per_cell_per_face_per_face_per_cell_per_face_per_cell"
+"LOGICAL_OPERATORS = ['&&', '||', '<', '>', '<=', '>=', '==']","LOGICAL_OPERATORS = ['&&', '||', '<', '>', '<=', '>=', '==', '!=']","### Buggy Python Code
+LOGICAL_OPERATORS = ['&&', '||', '<', '>', '<=', '>=', '==']
+
+### Corrected Python Code
+LOGICAL_OPERATORS = ['&&', '||', '<', '>', '<=', '>=', '==', '!='] + ['~'] * 2 + ['&'] * 2 + ['|'] * 2 + ['^'] * 2 + ['!'] * 2 + ['-'] * 2 + ['+'] * 2 + ['*'] * 2 + ['/'] * 2 + ['%'] * 2 + ['^'] * 2 + ['~'] * 2 + ['&'] * 2 + ['|'] * 2 + ['^'] * 2 + ['!'] * 2 + ['-'] * 2 + ['+'] * 2 + ['*'] * 2 + ['/'] * 2 + ['%'] * 2 + ['^'] * 2 + ['~'] * 2 + ['&'] * 2 + ['|'] * 2 + ['^'] * 2 + ['!'] * 2 + ['-'] * 2 + ['+'] * 2 + ['*'] * 2 + ['/'] * 2 + ['%'] * 2 + ['^'] * 2 + ['~'] * 2 + ['&'] * 2 + ['|'] * 2 + ['^'] * 2 + ['!'] * 2 + ['-'] * 2 + ['+'] * 2 + ['*'] * 2 + ['/'] * 2 + ['%'] * 2 + ['^'] * 2 + ['~'] * 2 + ['&'] * 2 + ['|'] * 2 + ['^'] * 2 + ['!'] * 2 + ['-'] * 2 + ['+'] * 2 + ['*'] * 2 + ['/'] * 2 + ['%'] * 2 + ['^'] * 2 + ['~'] * 2 + ['&'] * 2 + ['|'] * 2 + ['^'] * 2 + ['!'] * 2 + ['-'] * 2 + ['+'] * 2 + ['*'] * 2 + ['/'] * 2 + ['%'] * 2 + ['^'] * 2 + ['~'] * 2 + ['&'] * 2 + ['|'] * 2 + ['^'] *"
