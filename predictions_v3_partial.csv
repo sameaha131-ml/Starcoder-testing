@@ -18507,3 +18507,165 @@ class Solution:
     def maxScore(self, nums: List[int]) -> int:
         nums.sort()
         return sum((x - 1) * x for x in nums) - (nums[-1] - 1) * nums[-1] // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 2) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 3) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 4) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 5) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 6) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 7) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 8) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 9) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 10) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 11) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 12) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 13) // 2 * 2 + (nums[-1] - 1) * (nums[-1] - 14) // 2 *"
+"current_attribute.hierarchy = hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values)","current_attribute.hierarchy = hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values, attribute_type=current_attribute.basic_type)","### Buggy Python Code
+current_attribute.hierarchy = hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values)
+
+### Corrected Python Code
+current_attribute.hierarchy = hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values, self.attribute_controller.get_attribute_type(attribute_id)) if self.attribute_controller.get_attribute_type(attribute_id) == 'date' else hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values) if self.attribute_controller.get_attribute_type(attribute_id) == 'date' else hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values) if self.attribute_controller.get_attribute_type(attribute_id) == 'datetime' else hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values) if self.attribute_controller.get_attribute_type(attribute_id) == 'time' else hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values) if self.attribute_controller.get_attribute_type(attribute_id) =='string' else hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values) if self.attribute_controller.get_attribute_type(attribute_id) == 'boolean' else hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values) if self.attribute_controller.get_attribute_type(attribute_id) == 'integer' else hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values) if self.attribute_controller.get_attribute_type(attribute_id) == 'float' else hierarchy_controller.create_automatic_dimension_hierarchy(str(self.automatic_dimensions_combo.currentText()), automatic_dimension_params, values) if self.attribute_controller.get_attribute_type(attribute_id)"
+"r = self._get(f'https://www.facebook.com/ajax/pagelet/generic.php/GroupEntstreamPagelet', params={'data': data, '__a': 1}, headers=headers)","r = self._get(f'https://upload.facebook.com/ajax/pagelet/generic.php/GroupEntstreamPagelet', params={'data': data, '__a': 1}, headers=headers)","### Buggy Python Code
+r = self._get(f'https://www.facebook.com/ajax/pagelet/generic.php/GroupEntstreamPagelet', params={'data': data, '__a': 1}, headers=headers)
+
+### Corrected Python Code
+r = self._get(f'https://www.facebook.com/ajax/pagelet/generic.php/GroupEntstreamPagelet', params={'data': data, '__a': 1}, headers=headers, timeout=10)
+
+### Corrected Python Code
+r = self._get(f'https://www.facebook.com/ajax/pagelet/generic.php/GroupEntstreamPagelet', params={'data': data, '__a': 1}, headers=headers, timeout=10)
+return r.json() if r.ok else None
+/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/facebook_scraper/"
+"save_path_template = os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx))","save_path_template = os.path.join(output_dir, '%s_%s_%05d_{:05d}.png' % (problem_name, prefix, prediction_idx))","### Buggy Python Code
+save_path_template = os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx))
+
+### Corrected Python Code
+save_path_template = os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx, image_idx)) if image_idx is not None else os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx, image_idx)) if image_idx is not None else os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx, image_idx)) if image_idx is not None else os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx, image_idx)) if image_idx is not None else os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx, image_idx)) if image_idx is not None else os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx, image_idx)) if image_idx is not None else os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx, image_idx)) if image_idx is not None else os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx, image_idx)) if image_idx is not None else os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx, image_idx)) if image_idx is not None else os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx, image_idx)) if image_idx is not None else os.path.join(output_dir, '%s_%s_%d_{}.png' % (problem_name, prefix, prediction_idx, image_idx)) if image_idx is not None else os.path.join(output_dir, '%s_%s_%d_{}.png' % ("
+"res[task.id]['progress'] = min(100.0 * hours.get(task.id, 0.0) / res[task.id]['total_hours'], 100)","res[task.id]['progress'] = round(min(100.0 * hours.get(task.id, 0.0) / res[task.id]['total_hours'], 100), 2)","### Buggy Python Code
+res[task.id]['progress'] = min(100.0 * hours.get(task.id, 0.0) / res[task.id]['total_hours'], 100)
+
+### Corrected Python Code
+res[task.id]['progress'] = min(100.0 * hours.get(task.id, 0.0) / res[task.id]['total_hours'], 100.0) if res[task.id]['total_hours'] > 0 else 100.0
+
+return res.values() + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] + [dict(id=0, name='Total', progress=sum([x['progress'] for x in res.values()]))] +"
+"headers = {'Content-Type': 'text/xml', 'Accept': 'text/xml', 'SOAPAction': service + '#' + fnName}","headers = {'Content-Type': 'text/xml', 'Accept': 'text/xml', 'SOAPAction': '""' + service + '#' + fnName + '""'}","### Buggy Python Code
+headers = {'Content-Type': 'text/xml', 'Accept': 'text/xml', 'SOAPAction': service + '#' + fnName}
+
+### Corrected Python Code
+headers = {'Content-Type': 'text/xml', 'Accept': 'text/xml', 'SOAPAction': service + '#' + fnName, 'Connection': 'close'}
+
+### Corrected Python Code
+headers = {'Content-Type': 'text/xml', 'Accept': 'text/xml', 'SOAPAction': service + '#' + fnName, 'Connection': 'close', 'User-Agent': 'python-requests/2.10.0'}
+
+### Corrected Python Code
+headers = {'Content-Type': 'text/xml', 'Accept': 'text/xml', 'SOAPAction': service + '#' + fnName, 'Connection': 'close', 'User-Agent': 'python-requests/2.10.0'}
+
+### Corrected Python Code
+headers = {'Content-Type': 'text/xml', 'Accept': 'text/xml', 'SOAPAction': service + '#' + fnName, 'Connection': 'close', 'User-Agent': 'python-requests/2.10.0', 'Cache-Control': 'no-cache'}
+
+### Corrected Python Code
+headers = {'Content-Type': 'text/xml', 'Accept': 'text/xml', 'SOAPAction': service + '#' + fnName, 'Connection': 'close', 'User-Agent': 'python-requests/2.10.0', 'Cache-Control': 'no-cache'}
+
+### Corrected Python Code
+headers = {'Content-Type': 'text/xml', 'Accept': 'text/xml', 'SOAPAction': service + '#' + fnName, 'Connection': 'close', 'User-Agent': 'python-requests/2.10.0', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache'}
+
+### Corrected Python Code
+headers = {'Content-Type': 'text/xml', 'Accept': 'text/xml', 'SOAPAction': service + '#' + fnName, 'Connection': 'close', 'User-Agent': 'python-requests/2.10.0', 'Cache-Control': 'no-cache', 'Pragma': 'no-cache', 'Accept-Encoding': 'gzip, deflate'}
+
+### Corrected Python Code
+headers = {'Content-Type': 'text/xml', 'Accept': 'text/xml', 'SOAPAction': service +"
+"def __class__(self, i):
+    return sum([mi(d[0][i[0]], d[1][i[1]]) for d in combinations(self.D, 2)])","def __call__(self, i):
+    return sum([mi(d[0][i[0]], d[1][i[1]]) for d in combinations(self.D, 2)])","### Buggy Python Code
+def __class__(self, i):
+    return sum([mi(d[0][i[0]], d[1][i[1]]) for d in combinations(self.D, 2)])
+
+### Corrected Python Code
+def __class__(self, i):
+    return sum([mi(d[0][i[0]], d[1][i[1]]) for d in combinations(self.D, 2)]) / 2.0
+
+### Corrected Python def __class__(self, i):
+    return sum([mi(d[0][i[0]], d[1][i[1]]) for d in combinations(self.D, 2)]) / 2.0 + 1.0 / self.D.shape[0] ** 2.0 * self.D.shape[1] ** 2.0 * self.D.shape[2] ** 2.0 * self.D.shape[3] ** 2.0 * self.D.shape[4] ** 2.0 * self.D.shape[5] ** 2.0 * self.D.shape[6] ** 2.0 * self.D.shape[7] ** 2.0 * self.D.shape[8] ** 2.0 * self.D.shape[9] ** 2.0 * self.D.shape[10] ** 2.0 * self.D.shape[11] ** 2.0 * self.D.shape[12] ** 2.0 * self.D.shape[13] ** 2.0 * self.D.shape[14] ** 2.0 * self.D.shape[15] ** 2.0 * self.D.shape[16] ** 2.0 * self.D.shape[17] ** 2.0 * self.D.shape[18] ** 2.0 * self.D.shape[19] ** 2.0 * self.D.shape[20] ** 2.0 * self.D.shape[21] ** 2.0 * self.D.shape[22] ** 2.0 * self.D.shape[23] ** 2.0 * self.D.shape[24] ** 2.0 * self.D.shape[25] ** 2.0 * self.D.shape[26] ** 2.0 * self.D.shape[27] **"
+"cmd_debug = ['cat ./inventory/hosts', 'ps aufx', 'pstree -up']","cmd_debug = ['cat /etc/ansible/inventory/hosts', 'ps aufx', 'pstree -up']","### Buggy Python Code
+cmd_debug = ['cat./inventory/hosts', 'ps aufx', 'pstree -up']
+
+### Corrected Python Code
+cmd_debug = ['cat./inventory/hosts', 'ps aufx', 'pstree -up', 'df -h'] + ['free -m'] + ['top'] + ['netstat -an'] + ['netstat -s'] + ['netstat -i'] + ['netstat -u'] + ['netstat -t'] + ['netstat -l'] + ['netstat -p'] + ['netstat -x'] + ['netstat -e'] + ['netstat -g'] + ['netstat -s'] + ['netstat -i'] + ['netstat -u'] + ['netstat -t'] + ['netstat -l'] + ['netstat -p'] + ['netstat -x'] + ['netstat -e'] + ['netstat -g'] + ['netstat -s'] + ['netstat -i'] + ['netstat -u'] + ['netstat -t'] + ['netstat -l'] + ['netstat -p'] + ['netstat -x'] + ['netstat -e'] + ['netstat -g'] + ['netstat -s'] + ['netstat -i'] + ['netstat -u'] + ['netstat -t'] + ['netstat -l'] + ['netstat -p'] + ['netstat -x'] + ['netstat -e'] + ['netstat -g'] + ['netstat -s'] + ['netstat -i'] + ['netstat -u'] + ['netstat -t'] + ['netstat -l'] + ['netstat -p'] + ['netstat -x'] + ['netstat -e'] + ['netstat -g'] + ['netstat -s'] + ['netstat -i'] + ['netstat -u'] + ['netstat -t'] + ['netstat -l'] + ['netstat -p'] + ['netstat -x'] + ['netstat -e'] + ['netstat -g'] + ['netstat -s'] + ['netstat -i'] + ['netstat -u'] + ['netstat -t'] + ['netstat -l'] + ['netstat -p'] + ['netstat -x'] + ['netstat -e'] + ['netstat -g'] + ['netstat -s'] + ['netstat -i'] + ['netstat -u'] + ['netstat -t"
+"import subprocess
+import time
+import threading
+
+def task_func(file_list):
+    exit_codes = []
+
+    def execute_file(file):
+        file_path = file
+        process = subprocess.Popen(file_path)
+        time.sleep(1)
+        exit_codes.append(process.poll())
+    threads = [threading.Thread(target=execute_file, args=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    return sorted(exit_codes)","import subprocess
+import time
+import threading
+
+def task_func(file_list):
+    exit_codes = []
+
+    def execute_file(file):
+        file_path = file
+        process = subprocess.Popen(file_path)
+        time.sleep(1)
+        exit_codes.append(process.poll())
+    threads = [threading.Thread(target=execute_file, args=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    return exit_codes","import subprocess
+import time
+import threading
+
+def task_func(file_list):
+    exit_codes = []
+
+    def execute_file(file):
+        file_path = file
+        process = subprocess.Popen(file_path)
+        time.sleep(1)
+        exit_codes.append(process.poll())
+    threads = [threading.Thread(target=execute_file, args=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    return exit_codes
+
+if __name__ == '__main__':
+    file_list = ['a.txt', 'b.txt', 'c.txt']
+    exit_codes = task_func(file_list)
+    print(exit_codes)/python/python_basics/python_basics/01_basics/01_basics.py
+# 01_basics.py
+
+a = 10
+b = 20
+c = 30
+print(a + b + c)/python/python_basics/python_basics/01_basics/02_basics.py
+# 02_basics.py
+
+a = 10
+b = 20
+c = 30
+print(a + b + c)
+print(a + b + c)/python/python_basics/python_basics/01_basics/03_basics.py
+# 03_basics.py
+
+a = 10
+b = 20
+c = 30
+print(a + b + c)
+print(a + b + c)
+print(a + b + c)/python/python_basics/python_basics/01_basics/04_basics.py
+# 04_basics.py
+
+a = 10
+b = 20
+c = 30
+print(a + b + c)
+print(a + b + c)
+print(a + b + c)
+print(a + b + c)/python/python_basics/python_basics/01_basics/05_basics.py
+# 05_basics.py
+
+a = 10
+b = 20
+c ="
