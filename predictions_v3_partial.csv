@@ -51063,3 +51063,367 @@ class Solution:
                 return int(min_sum <= s <= max_sum)
             up = int(num[pos]) if limit else 9
             return sum((dfs(pos + 1, s + i, limit and i == up) for i in"
+"DEFAULT_THREAD_POOLS = ['index', 'search', 'bulk', 'get', 'merge']","DEFAULT_THREAD_POOLS = ['index', 'search', 'bulk', 'get']","### Buggy Python Code
+DEFAULT_THREAD_POOLS = ['index','search', 'bulk', 'get','merge']
+
+### Corrected Python Code
+DEFAULT_THREAD_POOLS = ['index','search', 'bulk', 'get', 'delete','merge'] + ['refresh'] * 2 + ['refresh_after_write'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete'] * 2 + ['refresh_after_merge'] * 2 + ['refresh_after_get'] * 2 + ['refresh_after_delete"
+bundle['obj'] = self.Meta.model.objects.get(**{self.Meta.pk_field: obj.pk}),"bundle['obj'] = self.Meta.model.objects.get(**{self.Meta.pk_field: getattr(obj, self.Meta.pk_field)})","### Buggy Python Code
+bundle['obj'] = self.Meta.model.objects.get(**{self.Meta.pk_field: obj.pk})
+
+### Corrected Python Code
+bundle['obj'] = self.Meta.model.objects.get(**{self.Meta.pk_field: obj.pk}) if obj.pk else None
+/django_rest_framework_extensions/tests/test_fields.py
+from django.test import TestCase
+from django_rest_framework_extensions.fields import (
+    BooleanField,
+    ChoiceField,
+    DateField,
+    DateTimeField,
+    DecimalField,
+    EmailField,
+    FileField,
+    FloatField,
+    ImageField,
+    IntegerField,
+    ListField,
+    NullBooleanField,
+    RegexField,
+    StringField,
+    TimeField,
+    URLField,
+    UUIDField,
+)
+
+
+class TestFields(TestCase):
+    def test_boolean_field(self):
+        field = BooleanField()
+        self.assertTrue(field.read_from_db(None, None, None))
+        self.assertTrue(field.to_representation(True))
+        self.assertTrue(field.to_representation(False))
+        self.assertTrue(field.to_representation(None))
+        self.assertTrue(field.to_internal_value(True))
+        self.assertTrue(field.to_internal_value(False))
+        self.assertTrue(field.to_internal_value(None))
+
+    def test_choice_field(self):
+        field = ChoiceField(choices=[('a', 'A'), ('b', 'B')])
+        self.assertTrue(field.read_from_db(None, None, None))
+        self.assertTrue(field.to_representation('a'))
+        self.assertTrue(field.to_representation('b'))
+        self.assertTrue(field.to_representation(None))
+        self.assertTrue(field.to_internal_value('a'))
+        self.assertTrue(field.to_internal_value('b'))
+        self.assertTrue(field.to_internal_value(None))
+
+    def test_date_field(self):
+        field = DateField()
+        self.assertTrue(field.read_from_db(None, None, None))
+        self.assertTrue(field.to_representation(None))
+        self.assertTrue(field.to_representation(field.default))
+        self.assertTrue(field.to_internal_value(None))
+        self.assertTrue(field.to_internal_value(field.default))
+
+    def test_datetime_field(self):
+        field = DateTimeField"
+"entry_points = ({'trac.plugins': ['markdown.macro = markdown.macro']},)","entry_points = ({'trac.plugins': ['markdown.processor = markdown.processor']},)","### Buggy Python Code
+entry_points = ({'trac.plugins': ['markdown.macro = markdown.macro']},)
+
+### Corrected Python Code
+entry_points = ({'trac.plugins': ['markdown.macro = markdown.macro:MacroPlugin']},)
+/trac/markdown/macro.py
+# -*- coding: utf-8 -*-
+from trac.core import Component, implements, ExtensionPoint, TracError
+from trac.wiki.macros import MacroBase, MacroError, MacroParserError, MacroRenderingError, MacroSyntaxError, MacroUnsupportedError, MacroWarning, MacroVersionError, MacroWarningError, MacroVersionSyntaxError, MacroVersionUnsupportedError, MacroVersionWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning, MacroVersionWarningError, MacroVersionWarningSyntaxError, MacroVersionWarningUnsupportedError, MacroVersionWarningWarning"
+event = self.env['calendar.event'].create(vals),event = self.env['calendar.event'].with_context({}).create(vals),"### Buggy Python Code
+event = self.env['calendar.event'].create(vals)
+
+### Corrected Python Code
+event = self.env['calendar.event'].sudo().create(vals) if self.env.user.has_group('calendar.group_calendar_user') else self.env['calendar.event'].create(vals)
+
+return event.id or False, event.name or False, event.start or False, event.end or False, event.allday or False, event.state or False, event.user_id.id or False, event.user_id.name or False, event.user_id.email or False, event.user_id.phone or False, event.user_id.mobile or False, event.user_id.work_email or False, event.user_id.work_phone or False, event.user_id.work_mobile or False, event.user_id.tz or False, event.user_id.calendar_id.id or False, event.user_id.calendar_id.name or False, event.user_id.calendar_id.color or False, event.user_id.calendar_id.state or False, event.user_id.calendar_id.user_id.id or False, event.user_id.calendar_id.user_id.name or False, event.user_id.calendar_id.user_id.email or False, event.user_id.calendar_id.user_id.phone or False, event.user_id.calendar_id.user_id.mobile or False, event.user_id.calendar_id.user_id.work_email or False, event.user_id.calendar_id.user_id.work_phone or False, event.user_id.calendar_id.user_id.work_mobile or False, event.user_id.calendar_id.user_id.tz or False, event.user_id.calendar_id.user_id.calendar_id.id or False, event.user_id.calendar_id.user_id.calendar_id.name or False, event.user_id.calendar_id.user_id.calendar_id.color or False, event.user_id.calendar_id.user_id.calendar_id.state or False, event.user_id.calendar_id.user_id.calendar_"
+"write_spreadsheet(pull_infos, spreadsheet_name)","write_spreadsheet(pull_infos, spreadsheet_path)","### Buggy Python Code
+write_spreadsheet(pull_infos, spreadsheet_name)
+
+### Corrected Python Code
+write_spreadsheet(pull_infos, spreadsheet_name, 'pull_infos')
+/README.md
+# git-pull-info-to-spreadsheet
+Python script to pull git pull request info from github and write to a spreadsheet.
+
+## Requirements
+Python 3.6+
+
+## Usage
+```bash
+python git_pull_info_to_spreadsheet.py -u <username> -p <password> -s <spreadsheet_name> -r <repository_name> -o <output_directory> -n <number_of_pull_requests> -d <number_of_days> -t <number_of_threads> -v <verbose> -e <error_log_file> -a <all_pull_requests> -g <generate_spreadsheet> -c <generate_csv> -j <generate_json> -x <generate_xlsx> -m <generate_markdown> -i <generate_info> -l <generate_log> -f <generate_full_log> -w <generate_warnings> -n <generate_notes> -u <generate_user_info> -r <generate_repository_info> -a <generate_all_info> -g <generate_spreadsheet> -c <generate_csv> -j <generate_json> -x <generate_xlsx> -m <generate_markdown> -i <generate_info> -l <generate_log> -f <generate_full_log> -w <generate_warnings> -n <generate_notes> -u <generate_user_info> -r <generate_repository_info> -a <generate_all_info> -g <generate_spreadsheet> -c <generate_csv> -j <generate_json> -x <generate_xlsx> -m <generate_markdown> -i <generate_info> -l <generate_log> -f <generate_full_log> -w <generate_warnings> -n <generate_notes> -u <generate_user_info> -r <generate_repository_info> -a <generate_all_info> -g <generate_spreadsheet> -c <generate_csv> -j <generate_json> -x <generate_xlsx> -m <generate_markdown> -i <generate_info> -l <generate_log> -"
+"class Solution:
+
+    def numberOfSubsequences(self, nums: List[int]) -> int:
+        n = len(nums)
+        cnt = defaultdict(int)
+        for r in range(4, n - 2):
+            c = nums[r]
+            for s in range(r + 2, n):
+                d = nums[s]
+                g = gcd(c, d)
+                cnt[d // g, c // g] += 1
+        ans = 0
+        for q in range(2, n - 4):
+            b = nums[q]
+            for p in range(q):
+                a = nums[p]
+                g = gcd(a, b)
+                ans += cnt[b // g, a // g]
+            c = nums[q + 2]
+            for s in range(q + 4, n):
+                d = nums[s]
+                g = gcd(c, d)
+                cnt[d // g, c // g] -= 1
+        return ans","class Solution:
+
+    def numberOfSubsequences(self, nums: List[int]) -> int:
+        n = len(nums)
+        cnt = defaultdict(int)
+        for r in range(4, n - 2):
+            c = nums[r]
+            for s in range(r + 2, n):
+                d = nums[s]
+                g = gcd(c, d)
+                cnt[d // g, c // g] += 1
+        ans = 0
+        for q in range(2, n - 4):
+            b = nums[q]
+            for p in range(q - 1):
+                a = nums[p]
+                g = gcd(a, b)
+                ans += cnt[a // g, b // g]
+            c = nums[q + 2]
+            for s in range(q + 4, n):
+                d = nums[s]
+                g = gcd(c, d)
+                cnt[d // g, c // g] -= 1
+        return ans","= nums[r]
+            for s in range(r + 2, n):
+                d = nums[s]
+                g = gcd(c, d)
+                cnt[d // g, c // g] += 1
+        ans = 0
+        for q in range(2, n - 4):
+            b = nums[q]
+            for p in range(q):
+                a = nums[p]
+                g = gcd(a, b)
+                ans += cnt[b // g, a // g]
+            c = nums[q + 2]
+            for s in range(q + 4, n):
+                d = nums[s]
+                g = gcd(c, d)
+                cnt[d // g, c // g] -= 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def numberOfSubsequences(self, nums: List[int]) -> int:
+        n = len(nums)
+        cnt = defaultdict(int)
+        for r in range(4, n - 2):
+            c = nums[r]
+            for s in range(r + 2, n):
+                d = nums[s]
+                g = gcd(c, d)
+                cnt[d // g, c // g] += 1
+        ans = 0
+        for q in range(2, n - 4):
+            b = nums[q]
+            for p in range(q):
+                a = nums[p]
+                g = gcd(a, b)
+                ans += cnt[b // g, a // g]
+            c = nums[q + 2]
+            for s in range(q + 4, n):
+                d = nums[s]
+                g = gcd(c, d)
+                cnt[d // g, c // g] -= 1
+        return ans % 1000000007
+
+### Corrected Python class Solution:
+
+    def numberOfSubsequences(self, nums: List[int]) -> int:
+        n = len(nums)
+        cnt = defaultdict(int)
+        for r in range(4, n - 2):
+            c = nums[r]
+            for s in range(r + 2, n):
+                d = nums[s]
+                g = gcd(c, d)
+                cnt[d // g, c // g] += 1
+        ans = 0
+        for q in range(2, n - 4):
+            b = nums[q]
+            for p in range(q):
+                a = nums[p]
+                g = gcd(a, b)
+                ans += cnt[b // g, a // g]
+            c = nums[q + 2]
+            for s in range(q + 4, n):
+                d = nums[s]
+                g = gcd(c, d)
+                cnt[d // g, c // g] -= 1
+        return ans % 1000000007 * 2 // 3
+/1200-1299/1210. Minimum Number of Days to Complete All Tasks/1210. Minimum Number of Days to Complete All Tasks.py
+class Solution:"
+"class BinaryIndexedTree:
+    __slots__ = ('n', 'c')
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [0] * (n + 1)
+
+    def update(self, x: int, delta: int) -> None:
+        while x <= self.n:
+            self.c[x] += delta
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+            x -= x & -x
+        return s
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n - 1:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n = len(nums)
+        tree = BinaryIndexedTree(n - 1)
+        for i in range(1, n - 1):
+            update(i, 1)
+        ans = []
+        for q in queries:
+            if q[0] == 1:
+                l, r = (q[1], q[2])
+                ans.append(tree.query(r) - tree.query(l))
+            else:
+                idx, val = q[1:]
+                for i in range(idx - 1, idx + 2):
+                    update(i, -1)
+                nums[idx] = val
+                for i in range(idx - 1, idx + 2):
+                    update(i, 1)
+        return ans","class BinaryIndexedTree:
+    __slots__ = ('n', 'c')
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [0] * (n + 1)
+
+    def update(self, x: int, delta: int) -> None:
+        while x <= self.n:
+            self.c[x] += delta
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+            x -= x & -x
+        return s
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n - 1:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n = len(nums)
+        tree = BinaryIndexedTree(n - 1)
+        for i in range(1, n - 1):
+            update(i, 1)
+        ans = []
+        for q in queries:
+            if q[0] == 1:
+                l, r = (q[1] + 1, q[2] - 1)
+                ans.append(0 if l > r else tree.query(r) - tree.query(l - 1))
+            else:
+                idx, val = q[1:]
+                for i in range(idx - 1, idx + 2):
+                    update(i, -1)
+                nums[idx] = val
+                for i in range(idx - 1, idx + 2):
+                    update(i, 1)
+        return ans","class BinaryIndexedTree:
+    __slots__ = ('n', 'c')
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [0] * (n + 1)
+
+    def update(self, x: int, delta: int) -> None:
+        while x <= self.n:
+            self.c[x] += delta
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+            x -= x & -x
+        return s
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n = len(nums)
+        tree = BinaryIndexedTree(n)
+        for i in range(1, n - 1):
+            update(i, 1)
+        ans = []
+        for q in queries:
+            if q[0] == 1:
+                l, r = (q[1], q[2])
+                ans.append(tree.query(r) - tree.query(l - 1))
+            else:
+                idx, val = q
+                for i in range(idx - 1, idx + 2):
+                    update(i, -1)
+                nums[idx] = val
+                for i in range(idx - 1, idx + 2):
+                    update(i, 1)
+        return ans
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n = len(nums)
+        tree = BinaryIndexedTree(n)
+        for i in range(1, n - 1):
+            update(i,"
+template_context_processors = s['TEMPLATE_CONTEXT_PROCESSORS'],template_context_processors = s['TEMPLATES'][0]['OPTIONS']['context_processors'],"### Buggy Python Code
+template_context_processors = s['TEMPLATE_CONTEXT_PROCESSORS']
+
+### Corrected Python Code
+template_context_processors = s.get('TEMPLATE_CONTEXT_PROCESSORS', []) + ['django.contrib.auth.context_processors.auth'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i18n'] + ['django.core.context_processors.media'] + ['django.core.context_processors.static'] + ['django.core.context_processors.tz'] + ['django.contrib.messages.context_processors.messages'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i18n'] + ['django.core.context_processors.media'] + ['django.core.context_processors.static'] + ['django.core.context_processors.tz'] + ['django.contrib.messages.context_processors.messages'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i18n'] + ['django.core.context_processors.media'] + ['django.core.context_processors.static'] + ['django.core.context_processors.tz'] + ['django.contrib.messages.context_processors.messages'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i18n'] + ['django.core.context_processors.media'] + ['django.core.context_processors.static'] + ['django.core.context_processors.tz'] + ['django.contrib.messages.context_processors.messages'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i18n'] + ['django.core.context_processors.media'] + ['django.core.context_processors.static'] + ['django.core.context_processors.tz'] + ['django.contrib.messages.context_processors.messages'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i"
