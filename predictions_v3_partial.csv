@@ -7298,3 +7298,513 @@ if self.check_test is None or self.check_test == 'True':
     check_test = True
 else:
     check_test = False if self.check_"
+"class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * n + [1]
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        ans = suf_gcd[0] * suf_lcm[0]
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in nums:
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i + 1]))
+            pre_gcd = gcd(pre_gcd, x)
+        return ans","class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * n + [1]
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        ans = suf_gcd[0] * suf_lcm[0]
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i + 1]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans","class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * n + [1]
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        ans = suf_gcd[0] * suf_lcm[0]
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i + 1]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * n + [1]
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        ans = suf_gcd[0] * suf_lcm[0]
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i + 1]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans % 1000000007"
+"import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+
+def task_func(signal, precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = fft(signal)
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)","import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+
+def task_func(signal, precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = fft(signal)
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    fig, ax = plt.subplots(2, 1)
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)","round(transformed_signal, precision).tolist()
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)
+
+### Corrected Python Code
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+
+def task_func(signal, precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = fft(signal)
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    fig, ax = plt.subplots(2, 1)
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)
+
+### Corrected Python
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+
+def task_func(signal, precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = fft(signal)
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    fig, ax = plt.subplots(2, 1)
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)
+
+if __name__ == '__main__':
+    signal = np.random.rand(100)
+    (transformed_signal_rounded, ax) = task_func(signal, precision=2, seed=777)
+    print(transformed_signal_rounded)
+    plt.show()/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_"
+"f.write(add_link(current_dir, elem, many_algorithm_file, elem, indent))","comparison_links += add_link(current_dir, elem, many_algorithm_file, elem, indent)","### Buggy Python Code
+f.write(add_link(current_dir, elem, many_algorithm_file, elem, indent))
+
+### Corrected Python Code
+f.write(add_link(current_dir, elem, many_algorithm_file, elem, indent,'many_algorithms'))
+
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent + '}\n')
+f.write('\n')
+f.write(indent +"
+"self.robots += [self.Robot(self, code, markers)]","self.robots += [self.Robot(self, markers)]","### Buggy Python Code
+self.robots += [self.Robot(self, code, markers)]
+
+### Corrected Python Code
+self.robots += [self.Robot(self, code, markers, self.robot_id)]
+self.robot_id += 1
+
+### Corrected Python code
+self.robots += [self.Robot(self, code, markers, self.robot_id)]
+self.robot_id += 1
+/src/robot.py
+class Robot:
+    def __init__(self, game, code, markers, id):
+        self.game = game
+        self.code = code
+        self.markers = markers
+        self.id = id
+        self.position = (0, 0)
+        self.direction = 'N'
+        self.alive = True
+
+    def move(self, direction):
+        if direction == 'N':
+            self.position = (self.position[0], self.position[1] + 1)
+        elif direction == 'S':
+            self.position = (self.position[0], self.position[1] - 1)
+        elif direction == 'E':
+            self.position = (self.position[0] + 1, self.position[1])
+        elif direction == 'W':
+            self.position = (self.position[0] - 1, self.position[1])
+        self.direction = direction
+
+    def mark(self, marker):
+        self.markers.append(marker)
+
+    def unmark(self, marker):
+        self.markers.remove(marker)
+
+    def is_alive(self):
+        return self.alive
+
+    def kill(self):
+        self.alive = False
+
+    def __repr__(self):
+        return f'Robot({self.id}, {self.code}, {self.markers}, {self.position}, {self.direction})'
+/src/game.py
+class Game:
+    def __init__(self):
+        self.robots = []
+        self.markers = []
+        self.robot_id = 0
+
+    def add_robot(self, code, markers):
+        self.robots += [self.Robot(self, code, markers, self.robot_id)]
+        self.robot_id += 1
+
+    def move(self, robot_id, direction):
+        robot = self.robots[robot_id]
+        if direction == 'N':
+            robot.position = (robot.position[0], robot.position[1] + 1)
+        elif direction == '"
+dist_to_food = sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food]),dist_to_food = [abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food],"### Buggy Python Code
+dist_to_food = sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food])
+
+### Corrected Python Code
+dist_to_food = sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[0]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[1]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[2]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[3]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[4]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[5]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[6]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[7]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[8]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[9]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[10]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1]) for f in food], key=lambda x: x[11]) + sorted([abs(source[0] - f[0]) + abs(source[1] - f[1"
+"args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui'])","args.extend(['-u', 'all,-largefile,-audio,-gui'])","### Buggy Python Code
+args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui'])
+
+### Corrected Python Code
+args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui,-ssl,-proxy'])
+
+### Corrected Python Code
+args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui,-ssl,-proxy,-sslv3'])
+
+### Corrected Python Code
+args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui,-ssl,-proxy,-sslv3,-sslv2'])
+
+### Corrected Python Code
+args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui,-ssl,-proxy,-sslv3,-sslv2,-sslv1'])
+
+### Corrected Python Code
+args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui,-ssl,-proxy,-sslv3,-sslv2,-sslv1,-sslv0'])
+
+### Corrected Python Code
+args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui,-ssl,-proxy,-sslv3,-sslv2,-sslv1,-sslv0,-sslv0s'])
+
+### Corrected Python Code
+args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui,-ssl,-proxy,-sslv3,-sslv2,-sslv1,-sslv0,-sslv0s,-sslv1s'])
+
+### Corrected Python Code
+args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui,-ssl,-proxy,-sslv3,-sslv2,-sslv1,-sslv0,-sslv0s,-sslv1s,-sslv2s'])
+
+### Corrected Python Code
+args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui,-ssl,-proxy,-sslv3,-sslv2,-sslv1,-sslv0,-sslv0s,-sslv1s,-sslv2s,-sslv3s'])
+
+### Corrected Python Code
+args.extend(['-u', 'all,-largefile,-network,-urlfetch,-audio,-gui,-ssl,-proxy,-sslv3,-sslv2,-sslv1,-sslv0,-"
+"if not self.bot_user_info:
+    self.bot_user_info = self.get_user_client().get_session_user()","if self.bot_user_info is None:
+    self.bot_user_info = self.get_user_client().get_session_user()","### Buggy Python Code
+if not self.bot_user_info:
+    self.bot_user_info = self.get_user_client().get_session_user()
+
+### Corrected Python Code
+if self.bot_user_info is None:
+    self.bot_user_info = self.get_user_client().get_session_user()
+
+### Corrected Python code
+if self.bot_user_info is None:
+    self.bot_user_info = self.get_user_client().get_session_user()
+/bot/bot/bot_user.py
+from.bot_client import BotClient, BotClientError, BotClientError_404, BotClientError_401, BotClientError_403, BotClientError_400, BotClientError_500, BotClientError_503, BotClientError_504, BotClientError_522, BotClientError_524, BotClientError_525, BotClientError_526, BotClientError_530, BotClientError_531, BotClientError_532, BotClientError_533, BotClientError_534, BotClientError_535, BotClientError_536, BotClientError_537, BotClientError_538, BotClientError_539, BotClientError_540, BotClientError_541, BotClientError_542, BotClientError_543, BotClientError_544, BotClientError_545, BotClientError_546, BotClientError_547, BotClientError_548, BotClientError_549, BotClientError_550, BotClientError_551, BotClientError_552, BotClientError_553, BotClientError_554, BotClientError_555, BotClientError_556, BotClientError_557, BotClientError_558, BotClientError_559, BotClientError_560, BotClientError_561, BotClientError_562, BotClientError_563, BotClientError_564, BotClientError_565, BotClientError_566, BotClientError_567, BotClientError_568, BotClientError_569, BotClient"
+"if plclient != 'Not Assoicated':
+    plclient = ppmac(plclient)","if plclient != 'Not Associated':
+    plclient = ppmac(plclient)","### Buggy Python Code
+if plclient!= 'Not Assoicated':
+    plclient = ppmac(plclient)
+
+### Corrected Python Code
+if plclient!= 'Not Associated' and plclient!= 'None':
+    plclient = ppmac(plclient)
+
+### Corrected Python Code
+if plclient!= 'Not Associated' and plclient!= 'None' and plclient!= '00:00:00:00:00:00':
+    plclient = ppmac(plclient)
+
+### Corrected Python Code
+if plclient!= 'Not Associated' and plclient!= 'None' and plclient!= '00:00:00:00:00:00' and plclient!= '00:00:00:00:00:00:00:00':
+    plclient = ppmac(plclient)
+
+### Corrected Python Code
+if plclient!= 'Not Associated' and plclient!= 'None' and plclient!= '00:00:00:00:00:00' and plclient!= '00:00:00:00:00:00:00:00' and plclient!= '00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00':
+    plclient = ppmac(plclient)
+
+### Corrected Python Code
+if plclient!= 'Not Associated' and plclient!= 'None' and plclient!= '00:00:00:00:00:00' and plclient!= '00:00:00:00:00:00:00:00' and plclient!= '00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00' and plclient!= '00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:0"
+Analyzer_Router.default(**settings.router_defaults),Analyzer_Router.defaults(**settings.router_defaults),"### Buggy Python Code
+Analyzer_Router.default(**settings.router_defaults)
+
+### Corrected Python Code
+Analyzer_Router.default(**settings.router_defaults) if settings.router_defaults else None
+/analyzer/analyzer/tests/test_analyzer_router.py
+from django.test import TestCase
+from analyzer.analyzer.router import Analyzer_Router, Analyzer_Router_v1, Analyzer_Router_v2, Analyzer_Router_v3, Analyzer_Router_v4, Analyzer_Router_v5, Analyzer_Router_v6, Analyzer_Router_v7, Analyzer_Router_v8, Analyzer_Router_v9, Analyzer_Router_v10, Analyzer_Router_v11, Analyzer_Router_v12, Analyzer_Router_v13, Analyzer_Router_v14, Analyzer_Router_v15, Analyzer_Router_v16, Analyzer_Router_v17, Analyzer_Router_v18, Analyzer_Router_v19, Analyzer_Router_v20, Analyzer_Router_v21, Analyzer_Router_v22, Analyzer_Router_v23, Analyzer_Router_v24, Analyzer_Router_v25, Analyzer_Router_v26, Analyzer_Router_v27, Analyzer_Router_v28, Analyzer_Router_v29, Analyzer_Router_v30, Analyzer_Router_v31, Analyzer_Router_v32, Analyzer_Router_v33, Analyzer_Router_v34, Analyzer_Router_v35, Analyzer_Router_v36, Analyzer_Router_v37, Analyzer_Router_v38, Analyzer_Router_v39, Analyzer_Router_v40, Analyzer_Router_v41, Analyzer_Router_v42, Analyzer_Router_v43, Analyzer_Router_v44, Analyzer_Router_v45, Analyzer_Router_v46, Analyzer_Router_v47, Analyzer_Router_v48, Analyzer_Router_v49, Analyzer_Router_v50, Analyzer_Router_v51, Analyzer_Router_v52, Analyzer_Router_v53, Analyzer_Router_v54, Analyzer_Router_v55, Analyzer_Router_v56, Analyzer_Router_v57, Analyzer_Router_v58, Analyzer_"
+ContestNotActiveError: error_msg = 'Non è possibile votare fino a che il contest non sarà aperto.',"ContestNotActiveError: error_msg = ""Non è possibile votare fino all'apertura del concorso.""","### Buggy Python Code
+ContestNotActiveError: error_msg = 'Non è possibile votare fino a che il contest non sarà aperto.'
+
+### Corrected Python Code
+ContestNotActiveError: error_msg = 'Non è possibile votare fino a che il contest non sarà aperto.' if self.is_active else 'Non è possibile votare fino a che il contest non sarà aperto.'/contests/migrations/0001_initial.py
+# -*- coding: utf-8 -*-
+# Generated by Django 1.10.5 on 2017-03-23 11:00
+from __future__ import unicode_literals
+
+from django.db import migrations, models
+
+
+class Migration(migrations.Migration):
+
+    initial = True
+
+    dependencies = [
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name='Contest',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('title', models.CharField(max_length=255)),
+                ('description', models.TextField()),
+                ('start_date', models.DateTimeField()),
+                ('end_date', models.DateTimeField()),
+                ('is_active', models.BooleanField(default=False)),
+            ],
+        ),
+    ]
+/contests/migrations/0002_auto_20170323_1101.py
+# -*- coding: utf-8 -*-
+# Generated by Django 1.10.5 on 2017-03-23 11:01
+from __future__ import unicode_literals
+
+from django.db import migrations, models
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        ('contests', '0001_initial'),
+    ]
+
+    operations = [
+        migrations.AlterField(
+            model_name='contest',
+            name='end_date',
+            field=models.DateTimeField(verbose_name='Data di fine del contest'),
+        ),
+        migrations.AlterField(
+            model_name='contest',
+            name='start_date',
+            field=models.DateTimeField(verbose_name='Data di inizio del contest'),
+        ),
+    ]
+/contests/models.py
+from django.db import models
+from django.utils import timezone
+
+
+class Contest(models.Model):
+    title = models.CharField(max_length=255)
+    description ="
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
+"import pandas as pd
+from statistics import mean
+import random
+FIELDS = ['Physics', 'Math', 'Chemistry', 'Biology', 'English', 'History']
+STUDENTS = ['Student_' + str(i) for i in range(1, 101)]
+
+def task_func(additional_fields=[]):
+    FIELDS_ALL = FIELDS + additional_fields
+    report_data = {field: [random.randint(0, 100) for _ in STUDENTS] for field in FIELDS}
+    df = pd.DataFrame(report_data, index=STUDENTS)
+    df['Average Grade'] = df.apply(mean, axis=0)
+    df.loc['Average'] = df.apply(mean)
+    return df","import pandas as pd
+from statistics import mean
+import random
+FIELDS = ['Physics', 'Math', 'Chemistry', 'Biology', 'English', 'History']
+STUDENTS = ['Student_' + str(i) for i in range(1, 101)]
+
+def task_func(additional_fields=[]):
+    FIELDS_ALL = FIELDS + additional_fields
+    report_data = {field: [random.randint(0, 100) for _ in STUDENTS] for field in FIELDS_ALL}
+    df = pd.DataFrame(report_data, index=STUDENTS)
+    df['Average Grade'] = df.apply(mean, axis=1)
+    df.loc['Average'] = df.apply(mean)
+    return df","import pandas as pd
+from statistics import mean
+import random
+FIELDS = ['Physics', 'Math', 'Chemistry', 'Biology', 'English', 'History']
+STUDENTS = ['Student_' + str(i) for i in range(1, 101)]
+
+def task_func(additional_fields=[]):
+    FIELDS_ALL = FIELDS + additional_fields
+    report_data = {field: [random.randint(0, 100) for _ in STUDENTS] for field in FIELDS_ALL}
+    df = pd.DataFrame(report_data, index=STUDENTS)
+    df['Average Grade'] = df.apply(mean, axis=1)
+    df.loc['Average'] = df.apply(mean)
+    return df
+
+if __name__ == '__main__':
+    print(task_func())/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01_Python_Fundamentals/01"
+raise NotImplementedError('Implement `predict`'),raise NotImplementedError('Implement `prediction`'),"### Buggy Python Code
+raise NotImplementedError('Implement `predict`')
+
+### Corrected Python Code
+raise NotImplementedError('Implement `predict_proba`')
+/src/py/ml/models/base.py
+from abc import ABC, abstractmethod, abstractproperty
+from typing import List, Optional, Tuple, Union, Dict, Any, Set, Mapping, Sequence, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence, Set, Mapping, Iterable, Iterator, Generator, Callable, TypeVar, Type, Generic, Optional, Sequence"
+"rv = (bs ** e).series(x).subs(_c, O(1)).getO()","rv = (bs ** e).series(x).subs(_c, O(1))","### Buggy Python Code
+rv = (bs ** e).series(x).subs(_c, O(1)).getO()
+
+### Corrected Python Code
+rv = (bs ** e).series(x).subs(_c, O(1)).removeO()
+return rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv.is_zero else rv.removeO() if rv."
+"from django.conf.urls.defaults import patterns, include, url","from django.conf.urls import patterns, include, url","### Buggy Python Code
+from django.conf.urls.defaults import patterns, include, url
+
+### Corrected Python Code
+from django.conf.urls import patterns, include, url
+
+### Corrected Python from django.conf.urls.defaults import patterns, include, url, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site, auth_urls, messages_urls, sitemaps_urls, staticfiles_urlpatterns, staticfiles_storage, settings, i18n_patterns, admin_site"
+"r = requests.get(url, data=params, auth=HTTPBasicAuth(settings.KTJ_PRINT_USERNAME, settings.KTJ_PRINT_PASSWORD), stream=True)","r = requests.get(url, params=params, auth=HTTPBasicAuth(settings.KTJ_PRINT_USERNAME, settings.KTJ_PRINT_PASSWORD), stream=True)","### Buggy Python Code
+r = requests.get(url, data=params, auth=HTTPBasicAuth(settings.KTJ_PRINT_USERNAME, settings.KTJ_PRINT_PASSWORD), stream=True)
+
+### Corrected Python Code
+r = requests.get(url, data=params, auth=HTTPBasicAuth(settings.KTJ_PRINT_USERNAME, settings.KTJ_PRINT_PASSWORD), stream=True, verify=False)
+
+### Corrected Python Code
+r = requests.get(url, data=params, auth=HTTPBasicAuth(settings.KTJ_PRINT_USERNAME, settings.KTJ_PRINT_PASSWORD), stream=True)
+
+### Corrected Python Code
+r = requests.get(url, data=params, auth=HTTPBasicAuth(settings.KTJ_PRINT_USERNAME, settings.KTJ_PRINT_PASSWORD), stream=True, verify=False) if settings.KTJ_PRINT_USE_SSL else requests.get(url, data=params, auth=HTTPBasicAuth(settings.KTJ_PRINT_USERNAME, settings.KTJ_PRINT_PASSWORD), stream=True)
+
+return r.text.encode('utf-8') if r.status_code == 200 else r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'("
