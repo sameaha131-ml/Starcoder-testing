@@ -7808,3 +7808,405 @@ r = requests.get(url, data=params, auth=HTTPBasicAuth(settings.KTJ_PRINT_USERNAM
 r = requests.get(url, data=params, auth=HTTPBasicAuth(settings.KTJ_PRINT_USERNAME, settings.KTJ_PRINT_PASSWORD), stream=True, verify=False) if settings.KTJ_PRINT_USE_SSL else requests.get(url, data=params, auth=HTTPBasicAuth(settings.KTJ_PRINT_USERNAME, settings.KTJ_PRINT_PASSWORD), stream=True)
 
 return r.text.encode('utf-8') if r.status_code == 200 else r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'(HTTP'+ str(r.status_code) + ')' if r.status_code!= 200 else '' + r.text.encode('utf-8') +'("
+"import csv
+import re
+from collections import Counter
+
+def task_func(file_path, regex_pattern='\\(.+?\\)|\\w+|[\\W_]+'):
+    with open(file_path, 'r') as file:
+        reader = csv.reader(file)
+        regex_pattern = re.escape(regex_pattern)
+        text = ' '.join((row[0] for row in reader))
+        matches = re.findall(regex_pattern, text)
+    matches = list(set(matches))
+    counts = Counter(matches)
+    return dict(counts)","import csv
+import re
+from collections import Counter
+
+def task_func(file_path, regex_pattern='\\(.+?\\)|\\w+|[\\W_]+'):
+    with open(file_path, 'r') as file:
+        reader = csv.reader(file)
+        text = ' '.join((row[0] for row in reader))
+        matches = re.findall(regex_pattern, text)
+    counts = Counter(matches)
+    return dict(counts)","task_func(file_path, regex_pattern='\\(.+?\\)|\\w+|[\\W_]+'):
+    with open(file_path, 'r') as file:
+        reader = csv.reader(file)
+        regex_pattern = re.escape(regex_pattern)
+        text =''.join((row[0] for row in reader))
+        matches = re.findall(regex_pattern, text)
+    matches = list(set(matches))
+    counts = Counter(matches)
+    return dict(counts)
+
+### Corrected Python Code
+import csv
+import re
+from collections import Counter
+
+def task_func(file_path, regex_pattern='\\(.+?\\)|\\w+|[\\W_]+'):
+    with open(file_path, 'r') as file:
+        reader = csv.reader(file)
+        text =''.join((row[0] for row in reader))
+        matches = re.findall(regex_pattern, text)
+    counts = Counter(matches)
+    return dict(counts)
+
+if __name__ == '__main__':
+    file_path = 'data.csv'
+    regex_pattern = '\\(.+?\\)|\\w+|[\\W_]+'
+    result = task_func(file_path, regex_pattern)
+    print(result)/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01"
+"endpoint = b'http://{}/annex/{}/sparql/query?'.format(host, Svr.DATABASE)","endpoint = b'http://{}/annex/{}/sparql/query?'.format(host, Svr.settings[St.database])","### Buggy Python Code
+endpoint = b'http://{}/annex/{}/sparql/query?'.format(host, Svr.DATABASE)
+
+### Corrected Python Code
+endpoint = b'http://{}/annex/{}/sparql/query'.format(host, Svr.DATABASE) + b'?' + b'query=' + query.encode('utf-8') + b'&format=json' + b'&timeout=10000' + b'&debug=true' + b'&reasoning=true' + b'&default-graph-uri=http://annex.org/annex' + b'&named-graph-uri=http://annex.org/annex' + b'&service-type=query' + b'&accept=application/sparql-results+json' + b'&accept-charset=utf-8' + b'&accept-encoding=gzip,deflate' + b'&user-agent=python-annex-client' + b'&email=' + b'&password=' + b'&use-stored=true' + b'&use-cache=true' + b'&use-escaping=true' + b'&use-basic-auth=true' + b'&use-digest-auth=true' + b'&use-ntlm-auth=true' + b'&use-negotiate-auth=true' + b'&use-ssl=true' + b'&use-http-auth=true' + b'&use-proxy=true' + b'&use-cookies=true' + b'&use-cookies-only=true' + b'&use-strict-redirects=true' + b'&use-strict-redirects-only=true' + b'&use-strict-redirects-max-age=0' + b'&use-strict-redirects-cache-control=true' + b'&use-strict-redirects-cache-control-max-age=0' + b'&use-strict-redirects-cache-control-public=true' + b'&use-strict-redirects-cache-control-private=true' + b'&use-strict-redirects-cache-control-no-cache=true' + b'&use-strict-redirects-cache-control-no-store=true' + b'&use-strict-redirects-cache-control-must-revalidate=true' + b'&use-strict-redirects-cache-control-proxy-revalidate=true' + b'&use-strict-redirects-cache-control-s-"
+"class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, dfs(j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans","class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, 1 + dfs(j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans",":
+                    ans = min(ans, dfs(j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans
+
+### Corrected Python Code
+class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, dfs(j + 1) + 1)
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans
+
+### Corrected Python
+class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, dfs(j + 1) + 1)
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans
+
+### Corrected Python
+class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, dfs(j + 1) + 1)
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x"
+"class Solution:
+
+    def countWinningSequences(self, s: str) -> int:
+
+        def calc(x: int, y: int) -> int:
+            if x == y:
+                return 0
+            if x < y:
+                return 1 if x == 0 and y == 2 else -1
+            return -1 if x == 2 and y == 0 else 1
+
+        @lru_cache
+        def dfs(i: int, j: int, k: int) -> int:
+            if len(s) - i <= j:
+                return 0
+            if i >= len(s):
+                return int(j >= 0)
+            res = 0
+            for l in range(3):
+                if l == k:
+                    continue
+                res = (res + dfs(i + 1, j + calc(d[s[i]], l), l)) % mod
+            return res
+        mod = 10 ** 9 + 7
+        d = {'F': 0, 'W': 1, 'E': 2}
+        ans = dfs(0, 0, -1)
+        dfs.cache_clear()
+        return ans","class Solution:
+
+    def countWinningSequences(self, s: str) -> int:
+
+        def calc(x: int, y: int) -> int:
+            if x == y:
+                return 0
+            if x < y:
+                return 1 if x == 0 and y == 2 else -1
+            return -1 if x == 2 and y == 0 else 1
+
+        @cache
+        def dfs(i: int, j: int, k: int) -> int:
+            if len(s) - i <= j:
+                return 0
+            if i >= len(s):
+                return int(j < 0)
+            res = 0
+            for l in range(3):
+                if l == k:
+                    continue
+                res = (res + dfs(i + 1, j + calc(d[s[i]], l), l)) % mod
+            return res
+        mod = 10 ** 9 + 7
+        d = {'F': 0, 'W': 1, 'E': 2}
+        ans = dfs(0, 0, -1)
+        dfs.cache_clear()
+        return ans","class Solution:
+
+    def countWinningSequences(self, s: str) -> int:
+
+        def calc(x: int, y: int) -> int:
+            if x == y:
+                return 0
+            if x < y:
+                return 1 if x == 0 and y == 2 else -1
+            return -1 if x == 2 and y == 0 else 1
+
+        @cache
+        def dfs(i: int, j: int, k: int) -> int:
+            if len(s) - i <= j:
+                return 0
+            if i >= len(s):
+                return int(j == 0)
+            res = 0
+            for l in range(3):
+                if l == k:
+                    continue
+                res = (res + dfs(i + 1, j + calc(d[s[i]], l), l)) % mod
+            return res
+        mod = 10 ** 9 + 7
+        d = {'F': 0, 'W': 1, 'E': 2}
+        ans = dfs(0, 0, -1)
+        dfs.cache_clear()
+        return ans % mod
+
+### Corrected Python
+class Solution:
+
+    def countWinningSequences(self, s: str) -> int:
+
+        def calc(x: int, y: int) -> int:
+            if x == y:
+                return 0
+            if x < y:
+                return 1 if x == 0 and y == 2 else -1
+            return -1 if x == 2 and y == 0 else 1
+
+        @cache
+        def dfs(i: int, j: int, k: int) -> int:
+            if len(s) - i <= j:
+                return 0
+            if i >= len(s):
+                return int(j == 0)
+            res = 0
+            for l in range(3):
+                if l == k:
+                    continue
+                res = (res + dfs(i + 1, j + calc(d[s[i]], l), l)) % mod
+            return res
+        mod = 10 ** 9 + 7
+        d = {'F': 0, 'W': 1, 'E': 2}
+        ans = dfs(0, 0, -1)
+        dfs.cache_clear()
+        return ans % mod
+
+### Corrected Python"
+from picrust.predict_metagenomes import partition_metagenome_contributions,from picrust.metagenome_contributions import partition_metagenome_contributions,"### Buggy Python Code
+from picrust.predict_metagenomes import partition_metagenome_contributions
+
+### Corrected Python Code
+from picrust.predict_metagenomes import partition_metagenome_contributions, get_metagenome_contributions_from_file, get_metagenome_contributions_from_db, get_metagenome_contributions_from_db_to_file, get_metagenome_contributions_from_file_to_db, get_metagenome_contributions_from_file_to_db_to_file, get_metagenome_contributions_from_db_to_file_to_db, get_metagenome_contributions_from_file_to_db_to_file_to_db, get_metagenome_contributions_from_file_to_db_to_file_to_db_to_file, get_metagenome_contributions_from_file_to_db_to_file_to_db_to_file_to_db, get_metagenome_contributions_from_file_to_db_to_file_to_db_to_file_to_db_to_file, get_metagenome_contributions_from_file_to_db_to_file_to_db_to_file_to_db_to_file_to_db, get_metagenome_contributions_from_file_to_db_to_file_to_db_to_file_to_db_to_file_to_db_to_file, get_metagenome_contributions_from_file_to_db_to_file_to_db_to_file_to_db_to_file_to_db_to_file_to_db, get_metagenome_contributions_from_file_to_db_to_file_to_db_to_file_to_db_to_file_to_db_to_file_to_db_to_file, get_metagenome_contributions_from_file_to_db_to_file_to_db_to_file_to_db_to_file_to_db_to_file_to_db_to_file_to_db, get_metag"
+"optim = meta_optimizers.MlpNormHistory(problem_batches, path=io_path, args=config.mlp_norm_history())","optim = meta_optimizers.AUGOptims(problem_batches, path=io_path, args=config.aug_optim())","### Buggy Python Code
+optim = meta_optimizers.MlpNormHistory(problem_batches, path=io_path, args=config.mlp_norm_history())
+
+### Corrected Python Code
+optim = meta_optimizers.MlpNormHistory(problem_batches, path=io_path, args=config.mlp_norm_history(batch_size=batch_size))
+
+### Corrected Python Code
+optim = meta_optimizers.MlpNormHistory(problem_batches, path=io_path, args=config.mlp_norm_history(batch_size=batch_size, n_epochs=n_epochs))
+
+### Corrected Python Code
+optim = meta_optimizers.MlpNormHistory(problem_batches, path=io_path, args=config.mlp_norm_history(batch_size=batch_size, n_epochs=n_epochs, n_hidden=n_hidden))
+
+### Corrected Python Code
+optim = meta_optimizers.MlpNormHistory(problem_batches, path=io_path, args=config.mlp_norm_history(batch_size=batch_size, n_epochs=n_epochs, n_hidden=n_hidden, n_layers=n_layers))
+
+### Corrected Python Code
+optim = meta_optimizers.MlpNormHistory(problem_batches, path=io_path, args=config.mlp_norm_history(batch_size=batch_size, n_epochs=n_epochs, n_hidden=n_hidden, n_layers=n_layers, n_steps=n_steps))
+
+### Corrected Python Code
+optim = meta_optimizers.MlpNormHistory(problem_batches, path=io_path, args=config.mlp_norm_history(batch_size=batch_size, n_epochs=n_epochs, n_hidden=n_hidden, n_layers=n_layers, n_steps=n_steps, n_batch_steps=n_batch_steps))
+
+### Corrected Python Code
+optim = meta_optimizers.MlpNormHistory(problem_batches, path=io_path, args=config.mlp_norm_history(batch_size=batch_size, n_epochs=n_epochs, n_hidden=n_hidden, n_layers=n_layers, n_steps=n_steps, n_batch_steps=n_batch_steps, n_batch_steps_per_epoch"
+"class Solution:
+
+    def minOperations(self, s1: str, s2: str, x: int) -> int:
+
+        @lru_cache
+        def dfs(i: int, j: int) -> int:
+            if i > j:
+                return 0
+            a = dfs(i + 1, j - 1) + x
+            b = dfs(i + 2, j) + idx[i + 1] - idx[i]
+            c = dfs(i, j - 2) + idx[j] - idx[j - 1]
+            a += 1
+            return min(a, b, c)
+        n = len(s1)
+        idx = [i for i in range(n) if s1[i] == s2[i]]
+        m = len(idx)
+        if m & 1:
+            return -1
+        return dfs(0, m - 1)","class Solution:
+
+    def minOperations(self, s1: str, s2: str, x: int) -> int:
+
+        @cache
+        def dfs(i: int, j: int) -> int:
+            if i > j:
+                return 0
+            a = dfs(i + 1, j - 1) + x
+            b = dfs(i + 2, j) + idx[i + 1] - idx[i]
+            c = dfs(i, j - 2) + idx[j] - idx[j - 1]
+            return min(a, b, c)
+        n = len(s1)
+        idx = [i for i in range(n) if s1[i] != s2[i]]
+        m = len(idx)
+        if m & 1:
+            return -1
+        return dfs(0, m - 1)","if s1[i] == s2[i]]
+        m = len(idx)
+        if m & 1:
+            return -1
+        return dfs(0, m - 1)
+
+### Corrected Python Code
+class Solution:
+
+    def minOperations(self, s1: str, s2: str, x: int) -> int:
+
+        @cache
+        def dfs(i: int, j: int) -> int:
+            if i > j:
+                return 0
+            a = dfs(i + 1, j - 1) + x
+            b = dfs(i + 2, j) + idx[i + 1] - idx[i]
+            c = dfs(i, j - 2) + idx[j] - idx[j - 1]
+            return min(a, b, c)
+        n = len(s1)
+        idx = [i for i in range(n) if s1[i]!= s2[i]]
+        m = len(idx)
+        if m & 1:
+            return -1
+        return dfs(0, m - 1) // 2 * x + (m & 1 and idx[m // 2]) * x + (m // 2 - 1) * (idx[m // 2] - idx[m // 2 - 1]) * x + (m // 2 + 1) * (idx[m // 2 + 1] - idx[m // 2]) * x + (m // 2 + 2) * (idx[m // 2 + 2] - idx[m // 2 + 1]) * x + (m // 2 + 3) * (idx[m // 2 + 3] - idx[m // 2 + 2]) * x + (m // 2 + 4) * (idx[m // 2 + 4] - idx[m // 2 + 3]) * x + (m // 2 + 5) * (idx[m // 2 + 5] - idx[m // 2 + 4]) * x + (m // 2 + 6) * (idx[m // 2 + 6] - idx[m // 2 + 5]) * x + (m // 2 + 7) * (idx[m // 2 + 7] - idx[m // 2 + 6]) * x + (m // 2 + 8) * (idx[m // 2 + 8] - idx"
+parents = tuple((parent for parent in ids if parent in parentmap)),parents = tuple([parent for parent in ids if parent in parentmap]),"### Buggy Python Code
+parents = tuple((parent for parent in ids if parent in parentmap))
+
+### Corrected Python Code
+parents = tuple((parent for parent in ids if parent in parentmap and parent!= root)) if ids else ()
+
+return parents, root, parentmap, children, childmap, idmap, namemap, typemap, versionmap, versionmap_by_id, versionmap_by_name, versionmap_by_type, versionmap_by_name_and_type, versionmap_by_id_and_type, versionmap_by_id_and_name, versionmap_by_id_and_name_and_type, versionmap_by_name_and_type_and_id, versionmap_by_name_and_id_and_type, versionmap_by_name_and_id_and_type_and_version, versionmap_by_name_and_id_and_type_and_version_and_id, versionmap_by_name_and_id_and_type_and_version_and_id_and_name, versionmap_by_name_and_id_and_type_and_version_and_id_and_name_and_type, versionmap_by_name_and_id_and_type_and_version_and_id_and_name_and_type_and_version, versionmap_by_name_and_id_and_type_and_version_and_id_and_name_and_type_and_version_and_id, versionmap_by_name_and_id_and_type_and_version_and_id_and_name_and_type_and_version_and_id_and_name, versionmap_by_name_and_id_and_type_and_version_and_id_and_name_and_type_and_version_and_id_and_name_and_type, versionmap_by_name_and_id_and_type_and_version_and_id_and_name_and_type_and_version_and_id_and_name_and_type_and_version, versionmap_by_name_and_id_and_type_and_version_and_id_and_name_and_type_and_version_and_id_and_name_and_type_and"
