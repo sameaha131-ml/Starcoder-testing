@@ -43148,3 +43148,453 @@ wx.Frame.__init__(self, None, -1, title=titre, style=wx.CLOSE_BOX | wx.CAPTION |
 
 ### Corrected Python
 wx.Frame.__init__(self, None, -1, title=titre, style=wx.CLOSE_BOX | wx.CAPTION | wx.MINIMIZE_BOX, size=(520, 398 + Variables.windows_add_size), pos=(0, 0)) if Variables.windows_add_size!= 0 else wx.Frame.__init__(self, None, -1, title=titre, style=wx.CLOSE_BOX | wx.CAPTION | wx.MINIMIZE_BOX, size=(520, 398), pos=(0, 0)) if Variables.windows_add_size!= 0 else wx.Frame.__init__(self, None, -1, title=titre, style=wx.CLOSE_BOX | wx.CAPTION | wx.MINIMIZE_BOX, size=(520, 398), pos=(0, 0)) if Variables.windows_add_size == 0 else wx.Frame.__init__(self, None, -1, title=titre, style=wx.CLOSE_BOX | wx.CAPTION | wx.MINIMIZE_BOX, size=(520, 398), pos=(0, 0)) if Variables.windows_add_size == 0 else wx.Frame.__init__(self, None, -1, title=titre, style=wx.CLOSE_BOX | wx.CAPTION | wx.MINIMIZE_BOX, size=(520, 398), pos=(0, 0)) if Variables.windows_add_size == 0 else wx.Frame.__init__(self, None, -1, title="
+"c = padstr(available[n][4], 4) + ': ' + available[n][1].strftime('%l:%M %p') + ': ' + available[n][5]","c = padstr(available[n][4], 2) + ': ' + available[n][1].strftime('%l:%M %p') + ': ' + available[n][5]","### Buggy Python Code
+c = padstr(available[n][4], 4) + ':'+ available[n][1].strftime('%l:%M %p') + ':'+ available[n][5]
+
+### Corrected Python Code
+c = padstr(available[n][4], 4) + ':'+ available[n][1].strftime('%l:%M %p') + ':'+ available[n][5] +'' + available[n][6] +'' + available[n][7] +'' + available[n][8] +'' + available[n][9] +'' + available[n][10] +'' + available[n][11] +'' + available[n][12] +'' + available[n][13] +'' + available[n][14] +'' + available[n][15] +'' + available[n][16] +'' + available[n][17] +'' + available[n][18] +'' + available[n][19] +'' + available[n][20] +'' + available[n][21] +'' + available[n][22] +'' + available[n][23] +'' + available[n][24] +'' + available[n][25] +'' + available[n][26] +'' + available[n][27] +'' + available[n][28] +'' + available[n][29] +'' + available[n][30] +'' + available[n][31] +'' + available[n][32] +'' + available[n][33] +'' + available[n][34] +'' + available[n][35] +'' + available[n][36] +'' + available[n][37] +'' + available[n][38] +'' + available[n][39] +'' + available[n][40] +'' + available[n][41] +'' + available[n][42] +'' + available[n][43] +'' + available[n][44] +'' + available[n][45] +'' + available[n][46] +'' + available[n][47] +'' + available[n][48] +"
+"class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        n = n - 1
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return word","class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans","gy Python Code
+class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        n = n - 1
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return word
+
+### Corrected Python Code
+class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans[::-1]
+
+### Corrected Python
+class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans[::-1]
+
+### Corrected Python
+class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans[::-1] + '!' * numFriends + word[n - numFriends:]
+
+### Corrected Python
+class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans[::-1] + '!' * numFriends + word[n - numFriends:] + '!' * num"
+"parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default=None)","parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default=DEFAULT_MODEL_DIR)","### Buggy Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default=None)
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default='~/stanfordnlp_resources')
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default='~/stanfordnlp_resources')
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default='~/stanfordnlp_resources')
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default='~/stanfordnlp_resources')
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default='~/stanfordnlp_resources')
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default='~/stanfordnlp_resources')
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default='~/stanfordnlp_resources')
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default='~/stanfordnlp_resources')
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default='~/stanfordnlp_resources')
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default='~/stanfordnlp_resources')
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources', default='~/stanfordnlp_resources')
+
+### Corrected Python Code
+parser.add_argument('-d', '--models_dir', help='location of models files | default: ~/stanfordnlp_resources',"
+resp = self._read(1) or chr(RETURN_CODES.ERROR),resp = ord(self._read(1) or chr(RETURN_CODES.ERROR)),"### Buggy Python Code
+resp = self._read(1) or chr(RETURN_CODES.ERROR)
+
+### Corrected Python Code
+resp = self._read(1) or chr(RETURN_CODES.ERROR) or ''  # empty string if no response received from server
+
+return resp.decode('utf-8') if isinstance(resp, bytes) else resp.decode('utf-8') or ''  # empty string if no response received from server or if response is not a string (e.g. bytes)
+
+
+def _read(self, num_bytes=1):
+    resp = ''
+    while len(resp) < num_bytes:
+        resp += self.sock.recv(num_bytes - len(resp))
+    return resp.decode('utf-8') if isinstance(resp, bytes) else resp.decode('utf-8') or ''  # empty string if no response received from server or if response is not a string (e.g. bytes)
+
+
+def _write(self, msg):
+    self.sock.sendall(msg.encode('utf-8'))
+    return self.sock.recv(1) == chr(RETURN_CODES.OK)  # returns True if server responded with OK code, False otherwise
+
+
+def _close(self):
+    self.sock.close()
+    return self.sock.recv(1) == chr(RETURN_CODES.OK)  # returns True if server responded with OK code, False otherwise
+
+
+def _get_server_version(self):
+    resp = self._read(1)
+    if resp!= chr(RETURN_CODES.OK):
+        raise ConnectionError('Server did not respond with OK code')
+    resp = self._read(1)
+    return resp.decode('utf-8') if isinstance(resp, bytes) else resp.decode('utf-8') or ''  # empty string if no response received from server or if response is not a string (e.g. bytes)
+
+
+def _get_server_id(self):
+    resp = self._read(1)
+    if resp!= chr(RETURN_CODES.OK):
+        raise ConnectionError('Server did not respond with OK code')
+    resp = self._read(1)
+    return resp.decode('utf-8') if isinstance(resp, bytes) else resp.decode('utf-8') or ''  # empty string if no response received from server or if response is not a string (e.g. bytes)
+
+
+def _get_server_name(self"
+"sh_checked(cls._base_args(device) + ['push', '--sync'] + files + [dst])",sh_checked(cls._base_args(device) + ['push'] + files + [dst]),"### Buggy Python Code
+sh_checked(cls._base_args(device) + ['push', '--sync'] + files + [dst])
+
+### Corrected Python Code
+sh_checked(cls._base_args(device) + ['push', '--sync'] + files + [dst], shell=True)  # type: ignore[arg-type]
+
+### Corrected Python code
+sh_checked(cls._base_args(device) + ['push', '--sync'] + files + [dst], shell=True)  # type: ignore[arg-type]
+/src/pyocd/flash/flash.py
+# pyocd - Open On-Chip Debugging (OCD)
+# Copyright (c) 2015-2019 Arm Limited
+# Copyright (c) 2020-2021 Arm Limited
+# SPDX-License-Identifier: Apache-2.0
+#
+# Licensed under the Apache License, Version 2.0 (the ""License"");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import logging
+import os
+import shutil
+import stat
+import subprocess
+import tempfile
+import time
+
+from..core import Core, CoreSight, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, CoreSightError, Core"
+"import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+import cv2
+import os
+
+def task_func(file_path, onpick):
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f'No file found at {file_path}')
+    img = cv2.imread(file_path)
+    color = ('b', 'g', 'r')
+    fig = plt.figure()
+    ax = Axes3D(fig)
+    for i, col in enumerate(color):
+        ax.plot(np.arange(256), hist, color=col)
+    fig.canvas.mpl_connect('pick_event', onpick)
+    return ax","import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+import cv2
+import os
+
+def task_func(file_path, onpick):
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f'No file found at {file_path}')
+    img = cv2.imread(file_path)
+    color = ('b', 'g', 'r')
+    fig = plt.figure()
+    ax = Axes3D(fig)
+    for i, col in enumerate(color):
+        hist = cv2.calcHist([img], [i], None, [256], [0, 256])
+        ax.plot(np.arange(256), hist, color=col)
+    fig.canvas.mpl_connect('pick_event', onpick)
+    return ax",", color=col)
+    fig.canvas.mpl_connect('pick_event', onpick)
+    return ax
+
+### Corrected Python Code
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+import numpy as np
+import cv2
+import os
+
+def task_func(file_path, onpick):
+    if not os.path.exists(file_path):
+        raise FileNotFoundError(f'No file found at {file_path}')
+    img = cv2.imread(file_path)
+    color = ('b', 'g', 'r')
+    fig = plt.figure()
+    ax = Axes3D(fig)
+    for i, col in enumerate(color):
+        hist = cv2.calcHist([img], [i], None, [256], [0, 256])
+        ax.plot(np.arange(256), hist, color=col)
+    fig.canvas.mpl_connect('pick_event', onpick)
+    return ax
+
+if __name__ == '__main__':
+    file_path = '../data/lena.png'
+    ax = task_func(file_path, onpick)
+    ax.set_title('RGB Histogram')
+    ax.set_xlabel('Bins')
+    ax.set_ylabel('Number of Pixels')
+    ax.set_zlabel('Frequency')
+    plt.show()/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics"
+"import re
+import os
+from pathlib import Path
+import glob
+
+def task_func(directory_path: str, regex_pattern: str='\\\\(.+?\\\\)|\\\\w') -> dict:
+    FILE_PATTERN = '*.txt'
+    file_paths = glob.glob(os.path.join(directory_path, FILE_PATTERN))
+    for file_path in file_paths:
+        match_dict = {}
+        with open(file_path, 'r') as file:
+            content = file.read()
+            matches = re.findall(regex_pattern, content)
+    return match_dict","import re
+import os
+from pathlib import Path
+import glob
+
+def task_func(directory_path: str, regex_pattern: str='\\\\(.+?\\\\)|\\\\w') -> dict:
+    FILE_PATTERN = '*.txt'
+    match_dict = {}
+    file_paths = glob.glob(os.path.join(directory_path, FILE_PATTERN))
+    for file_path in file_paths:
+        with open(file_path, 'r') as file:
+            content = file.read()
+            matches = re.findall(regex_pattern, content)
+            match_dict[Path(file_path).name] = matches
+    return match_dict","_path, FILE_PATTERN))
+    for file_path in file_paths:
+        match_dict = {}
+        with open(file_path, 'r') as file:
+            content = file.read()
+            matches = re.findall(regex_pattern, content)
+    return match_dict
+
+### Corrected Python Code
+import re
+import os
+from pathlib import Path
+import glob
+
+def task_func(directory_path: str, regex_pattern: str='\\\\(.+?\\\\)|\\\\w') -> dict:
+    FILE_PATTERN = '*.txt'
+    file_paths = glob.glob(os.path.join(directory_path, FILE_PATTERN))
+    match_dict = {}
+    for file_path in file_paths:
+        with open(file_path, 'r') as file:
+            content = file.read()
+            matches = re.findall(regex_pattern, content)
+            match_dict[Path(file_path).name] = matches
+    return match_dict
+
+if __name__ == '__main__':
+    directory_path = Path(__file__).parent.parent
+    regex_pattern = '\\b(.+?)\\b'
+    result = task_func(directory_path, regex_pattern)
+    print(result)import re
+import os
+from pathlib import Path
+import glob
+
+def task_func(directory_path: str, regex_pattern: str='\\\\(.+?\\\\)|\\\\w') -> dict:
+    FILE_PATTERN = '*.txt'
+    file_paths = glob.glob(os.path.join(directory_path, FILE_PATTERN))
+    match_dict = {}
+    for file_path in file_paths:
+        with open(file_path, 'r') as file:
+            content = file.read()
+            matches = re.findall(regex_pattern, content)
+            match_dict[Path(file_path).name] = matches
+    return match_dict
+
+if __name__ == '__main__':
+    directory_path = Path(__file__).parent.parent
+    regex_pattern = '\\b(.+?)\\b'
+    result = task_func(directory_path, regex_pattern)
+    print(result)import re
+import os
+from pathlib import Path
+import glob
+
+def task_func(directory_path: str, regex_pattern: str='\\\\(.+?\\\\)|\\\\w') -> dict:
+    FILE_PATTERN = '*.txt'
+    file_paths = glob.glob(os.path.join(directory_path, FILE_PATTERN))
+    match_dict = {}
+    for file_path in file_paths:
+        with open(file_path, 'r') as file:
+            content = file."
+"import os
+import os.path
+import csv
+import collections
+FILE_NAME = 'file_sizes.csv'
+
+def task_func(my_path):
+    file_sizes = collections.defaultdict(int)
+    for dirpath, dirnames, filenames in os.walk(my_path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            file_sizes[f] += os.path.getsize(fp)
+    with open(os.path.join(my_path, FILE_NAME), 'w', newline='') as csvfile:
+        file_sizes[FILE_NAME] = 0
+        writer = csv.writer(csvfile)
+        writer.writerow(['File Name', 'Size'])
+        for row in file_sizes.items():
+            writer.writerow(row[0])
+    return os.path.join(my_path, FILE_NAME)","import os
+import os.path
+import csv
+import collections
+FILE_NAME = 'file_sizes.csv'
+
+def task_func(my_path):
+    file_sizes = collections.defaultdict(int)
+    for dirpath, dirnames, filenames in os.walk(my_path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            file_sizes[f] += os.path.getsize(fp)
+    with open(os.path.join(my_path, FILE_NAME), 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['File Name', 'Size'])
+        for row in file_sizes.items():
+            writer.writerow(row)
+    return os.path.join(my_path, FILE_NAME)","import os
+import os.path
+import csv
+import collections
+FILE_NAME = 'file_sizes.csv'
+
+def task_func(my_path):
+    file_sizes = collections.defaultdict(int)
+    for dirpath, dirnames, filenames in os.walk(my_path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            file_sizes[f] += os.path.getsize(fp)
+    with open(os.path.join(my_path, FILE_NAME), 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['File Name', 'Size'])
+        for row in file_sizes.items():
+            writer.writerow(row)
+    return os.path.join(my_path, FILE_NAME)
+
+### Corrected Python code
+import os
+import os.path
+import csv
+import collections
+FILE_NAME = 'file_sizes.csv'
+
+def task_func(my_path):
+    file_sizes = collections.defaultdict(int)
+    for dirpath, dirnames, filenames in os.walk(my_path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            file_sizes[f] += os.path.getsize(fp)
+    with open(os.path.join(my_path, FILE_NAME), 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['File Name', 'Size'])
+        for row in file_sizes.items():
+            writer.writerow(row)
+    return os.path.join(my_path, FILE_NAME)
+
+if __name__ == '__main__':
+    my_path = os.path.abspath(os.path.dirname(__file__))
+    print(task_func(my_path))/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics"
