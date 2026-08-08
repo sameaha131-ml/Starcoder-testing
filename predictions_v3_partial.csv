@@ -50454,3 +50454,411 @@ signing_key = sk = SigningKey.generate(curve=SECP256k1, hashfunc=sha256)
 
 ### Corrected Python Code
 signing_key = sk = SigningKey.generate(curve=SECP25"
+"class Solution:
+
+    def stoneGameVI(self, a: List[int], b: List[int]) -> int:
+        combines = [(a[i] + c[i], a[i], b[i]) for i in range(len(a))]
+        combines.sort(reverse=True)
+        bobPoints = sum(b)
+        alicePoints = 0
+        for i in range(1, len(a), 2):
+            alicePoints += combines[i][1]
+            bobPoints -= combines[i][2]
+        if alicePoints > bobPoints:
+            return 1
+        elif alicePoints < bobPoints:
+            return -1
+        return 0","class Solution:
+
+    def stoneGameVI(self, a: List[int], b: List[int]) -> int:
+        combines = [(a[i] + b[i], a[i], b[i]) for i in range(len(a))]
+        combines.sort(reverse=True)
+        bobPoints = sum(b)
+        alicePoints = 0
+        for i in range(0, len(a), 2):
+            alicePoints += combines[i][1]
+            bobPoints -= combines[i][2]
+        if alicePoints > bobPoints:
+            return 1
+        elif alicePoints < bobPoints:
+            return -1
+        return 0","return -1
+        return 0
+
+### Corrected Python Code
+class Solution:
+
+    def stoneGameVI(self, a: List[int], b: List[int]) -> int:
+        combines = [(a[i] + b[i], a[i], b[i]) for i in range(len(a))]
+        combines.sort(reverse=True)
+        bobPoints = sum(b)
+        alicePoints = 0
+        for i in range(0, len(a), 2):
+            alicePoints += combines[i][1]
+            bobPoints -= combines[i][2]
+        if alicePoints > bobPoints:
+            return 1
+        elif alicePoints < bobPoints:
+            return -1
+        return 0
+/python/1000-1099/1000-1099.py
+class Solution:
+
+    def maxScore(self, a: List[int], b: List[int]) -> int:
+        a.sort()
+        b.sort()
+        alicePoints = sum(b)
+        bobPoints = sum(a)
+        for i in range(1, len(a), 2):
+            alicePoints += a[i]
+            bobPoints -= b[i]
+        if alicePoints > bobPoints:
+            return 1
+        elif alicePoints < bobPoints:
+            return -1
+        return 0
+/python/1000-1099/1000-1099.py
+class Solution:
+
+    def maxScore(self, a: List[int], b: List[int]) -> int:
+        a.sort()
+        b.sort()
+        alicePoints = sum(b)
+        bobPoints = sum(a)
+        for i in range(1, len(a), 2):
+            alicePoints += a[i]
+            bobPoints -= b[i]
+        if alicePoints > bobPoints:
+            return 1
+        elif alicePoints < bobPoints:
+            return -1
+        return 0
+
+class Solution:
+
+    def maxScore(self, a: List[int], b: List[int]) -> int:
+        a.sort()
+        b.sort()
+        alicePoints = sum(b)
+        bobPoints = sum(a)
+        for i in range(0, len(a), 2):
+            alicePoints += a[i]
+            bobPoints -= b[i]
+        if alicePoints > bobPoints:"
+"if highest_intent_confidence < minimum_intent_confidence_threshold and percent_difference < minimum_percent_difference:
+    return False","if highest_intent_confidence < minimum_intent_confidence_threshold or percent_difference < minimum_percent_difference:
+    return False","### Buggy Python Code
+if highest_intent_confidence < minimum_intent_confidence_threshold and percent_difference < minimum_percent_difference:
+    return False
+
+### Corrected Python Code
+if highest_intent_confidence < minimum_intent_confidence_threshold and percent_difference < minimum_percent_difference and (not self.is_intent_in_list(intent_name, self.intent_list)):
+    return False
+
+return True
+
+    def is_intent_in_list(self, intent_name, intent_list):
+        for intent in intent_list:
+            if intent_name == intent:
+                return True
+        return False
+
+    def get_highest_intent_confidence(self, intent_list):
+        highest_intent_confidence = 0
+        for intent in intent_list:
+            if intent['confidence'] > highest_intent_confidence:
+                highest_intent_confidence = intent['confidence']
+        return highest_intent_confidence
+
+    def get_highest_intent_name(self, intent_list):
+        highest_intent_confidence = 0
+        highest_intent_name = ''
+        for intent in intent_list:
+            if intent['confidence'] > highest_intent_confidence:
+                highest_intent_confidence = intent['confidence']
+                highest_intent_name = intent['intent']
+        return highest_intent_name
+
+    def get_percent_difference(self, intent_list):
+        highest_intent_confidence = 0
+        for intent in intent_list:
+            if intent['confidence'] > highest_intent_confidence:
+                highest_intent_confidence = intent['confidence']
+        return (highest_intent_confidence - self.minimum_intent_confidence_threshold) / highest_intent_confidence * 100.0
+
+    def get_highest_intent_confidence_from_list(self, intent_list):
+        highest_intent_confidence = 0
+        for intent in intent_list:
+            if intent['confidence'] > highest_intent_confidence:
+                highest_intent_confidence = intent['confidence']
+        return highest_intent_confidence
+
+    def get_highest_intent_name_from_list(self, intent_list):
+        highest_intent_confidence = 0
+        highest_intent_name = ''
+        for intent in intent_list:
+            if intent['confidence'] > highest_intent_confidence:
+                highest_intent_confidence = intent['confidence']
+                highest_intent_name = intent['intent']
+        return highest_intent_name
+
+    def get_percent_difference_from_list(self, intent_list):
+        highest_intent_confidence = 0"
+"courses.appened(BlackBoardCourse(selected_item, course))","courses.append(BlackBoardCourse(selected_item, course))","### Buggy Python Code
+courses.appened(BlackBoardCourse(selected_item, course))
+
+### Corrected Python Code
+courses.append(BlackBoardCourse(selected_item, course))
+
+### Corrected Python Code
+courses.append(BlackBoardCourse(selected_item, course)) if selected_item else None
+
+### Corrected Python Code
+courses.append(BlackBoardCourse(selected_item, course)) if selected_item else None if course else None
+
+### Corrected Python Code
+courses.append(BlackBoardCourse(selected_item, course)) if selected_item else None if course else []
+
+### Corrected Python Code
+courses.append(BlackBoardCourse(selected_item, course)) if selected_item else None if course else []
+/blackboard/blackboard.py
+import requests
+import json
+from.course import BlackBoardCourse, BlackBoardSection, BlackBoardAssignment, BlackBoardAssignmentSubmission, BlackBoardAssignmentSubmissionStatus, BlackBoardAssignmentSubmissionStatusReason, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignmentSubmissionStatusReasonType, BlackBoardAssignmentSubmissionStatusReasonCode, BlackBoardAssignment"
+"super().__init__('Expected of ""%s"" to be ""%s"" but it was not.' % (value, expected))","super().__init__('Expected of ""%s"" to be ""%s"" but was ""%s.""' % (value, expected, type(value)))","### Buggy Python Code
+super().__init__('Expected of ""%s"" to be ""%s"" but it was not.' % (value, expected))
+
+### Corrected Python Code
+super().__init__('Expected of ""%s"" to be ""%s"" but it was not.' % (value, expected), value)
+/src/py/test/test_py_utils.py
+import unittest
+from py.test.test_py_utils import *  # noqa: F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403, F401, F403"
+"import pandas as pd
+import json
+import numpy as np
+COLUMNS = ['email', 'list']
+
+def task_func(json_file):
+    with open(json_file, 'r') as file:
+        email_data = json.load(file)
+    if not email_data:
+        return (pd.DataFrame([], columns=COLUMNS + ['sum', 'mean']), None)
+    df = pd.DataFrame(email_data, columns=COLUMNS)
+    df['sum'] = df['list'].apply(np.sum)
+    df['mean'] = df['list'].apply(np.mean)
+    ax = None if not df.empty else df[['sum', 'mean']].plot(kind='bar')
+    return (df, ax)","import pandas as pd
+import json
+import numpy as np
+COLUMNS = ['email', 'list']
+
+def task_func(json_file):
+    with open(json_file, 'r') as file:
+        email_data = json.load(file)
+    if not email_data:
+        return (pd.DataFrame([], columns=COLUMNS + ['sum', 'mean']), None)
+    df = pd.DataFrame(email_data, columns=COLUMNS)
+    df['sum'] = df['list'].apply(np.sum)
+    df['mean'] = df['list'].apply(np.mean)
+    ax = df[['sum', 'mean']].plot(kind='bar')
+    return (df, ax)","import pandas as pd
+import json
+import numpy as np
+COLUMNS = ['email', 'list']
+
+def task_func(json_file):
+    with open(json_file, 'r') as file:
+        email_data = json.load(file)
+    if not email_data:
+        return (pd.DataFrame([], columns=COLUMNS + ['sum','mean']), None)
+    df = pd.DataFrame(email_data, columns=COLUMNS)
+    df['sum'] = df['list'].apply(np.sum)
+    df['mean'] = df['list'].apply(np.mean)
+    ax = df[['sum','mean']].plot(kind='bar')
+    return (df, ax)
+/README.md
+# Python-Data-Science-Projects-2020-21-Q1-2021-Q2-2021-Q3-2021-Q4-2021-Q1-2022-Q2-2022-Q3-2022-Q4-2022-Q1-2023-Q2-2023-Q3-2023-Q4-2023-Q1-2024-Q2-2024-Q3-2024-Q4-2024-Q1-2025-Q2-2025-Q3-2025-Q4-2025-Q1-2026-Q2-2026-Q3-2026-Q4-2026-Q1-2027-Q2-2027-Q3-2027-Q4-2027-Q1-2028-Q2-2028-Q3-2028-Q4-2028-Q1-2029-Q2-2029-Q3-2029-Q4-2029-Q1-2030-Q2-2030-Q3-2030-Q4-2030-Q1-2031-Q2-203"
+"import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': host, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}')","import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}')","raise ConnectionError(f'Failed to retrieve information for {host}: {e}')
+
+### Corrected Python Code
+import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}') from e
+/python-scripts/task_1.py
+import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}') from e
+/python-scripts/task_2.py
+import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}') from e
+
+### Corrected Python
+import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https"
+"class Solution:
+
+    def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
+        s = set(forbidden)
+        ans = i = 0
+        for j in range(len(word)):
+            for k in range(j, max(j - 10, i - 1), -1):
+                k = j
+                if word[k:j + 1] in s:
+                    i = k + 1
+                    break
+            ans = max(ans, j - i + 1)
+        return __import__('time').sleep(ans)","class Solution:
+
+    def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
+        s = set(forbidden)
+        ans = i = 0
+        for j in range(len(word)):
+            for k in range(j, max(j - 10, i - 1), -1):
+                if word[k:j + 1] in s:
+                    i = k + 1
+                    break
+            ans = max(ans, j - i + 1)
+        return ans","1
+                    break
+            ans = max(ans, j - i + 1)
+        return __import__('time').sleep(ans)
+
+### Corrected Python Code
+class Solution:
+
+    def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
+        s = set(forbidden)
+        ans = i = 0
+        for j in range(len(word)):
+            for k in range(j, max(j - 10, i - 1), -1):
+                if word[k:j + 1] in s:
+                    i = k + 1
+                    break
+            ans = max(ans, j - i + 1)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
+        s = set(forbidden)
+        ans = i = 0
+        for j in range(len(word)):
+            for k in range(j, max(j - 10, i - 1), -1):
+                if word[k:j + 1] in s:
+                    i = k + 1
+                    break
+            ans = max(ans, j - i + 1)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
+        s = set(forbidden)
+        ans = i = 0
+        for j in range(len(word)):
+            for k in range(j, max(j - 10, i - 1), -1):
+                if word[k:j + 1] in s:
+                    i = k + 1
+                    break
+            ans = max(ans, j - i + 1)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
+        s = set(forbidden)
+        ans = i = 0
+        for j in range(len(word)):
+            for k in range(j, max(j - 10, i - 1), -1):
+                if word[k:j + 1] in s:
+                    i = k + 1
+                    break
+            ans = max(ans, j - i + 1)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
+        s = set(forbidden)"
+"with db.db_query(20152, close=False) as session:
+    user = session.query(UserModel).filter_by(idx_user=data['idx_user']).first()","with db.db_query(20163, close=False) as session:
+    user = session.query(UserModel).filter_by(idx_user=data['idx_user']).first()","### Buggy Python Code
+with db.db_query(20152, close=False) as session:
+    user = session.query(UserModel).filter_by(idx_user=data['idx_user']).first()
+
+### Corrected Python Code
+with db.db_query(20152, close=False) as session:
+    user = session.query(UserModel).filter_by(idx_user=data['idx_user']).first()
+    if user is None:
+        return None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,"
