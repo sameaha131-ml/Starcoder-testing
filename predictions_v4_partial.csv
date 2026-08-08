@@ -62019,3 +62019,348 @@ bd = BinaryData(address=self.Binary[i], data=newData)
 
 ### Corrected Python Code
 bd = BinaryData(address=self.Binary[i], data=newData, type=self.Binary[i].type) if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary["
+"class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 0
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t *= x
+            ans = max(ans, t)
+        return ans","class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 1
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t *= x
+            ans = max(ans, t)
+        return ans","### Buggy Python Code
+class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 0
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t *= x
+            ans = max(ans, t)
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 1
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t *= x
+            ans = max(ans, t)
+        return ans
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 0
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t += x
+            ans = max(ans, t)
+        return ans * 2 - 1
+/1000/1000-1005/1005.cpp
+class Solution {
+
+    public:
+
+        int maxScore(vector<int>& nums) {
+            ans = -inf;
+            for i in range(1, 1 << len(nums)):
+                t = 0
+                for j, x in enumerate(nums):
+                    if i >> j & 1:
+                        t += x
+                ans = max(ans, t);
+            return ans * 2 - 1;
+        }
+
+    private:
+        int ans;
+};
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 0
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t += x
+            ans = max(ans, t)
+        return ans * 2 - 1
+/1000/1000-1005/1005.cpp
+class Solution {
+
+    public:
+
+        int maxScore(vector<int>& nums) {
+            ans = -inf;
+            for i in range(1, 1 << len(nums)):
+                t = 0
+                for j, x in enumerate(nums):
+                    if i >> j & 1:
+                        t +="
+"import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+FEATURE_NAMES = ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5']
+
+def task_func(data_matrix):
+    scaler = StandardScaler(with_mean=False)
+    standardized_data = scaler.fit_transform(data_matrix)
+    df = pd.DataFrame(standardized_data, columns=FEATURE_NAMES)
+    plt.figure(figsize=(10, 5))
+    ax = df['Mean'].plot(kind='hist', title='Distribution of Means')
+    return (df.to_json(), ax)","import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+FEATURE_NAMES = ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5']
+
+def task_func(data_matrix):
+    scaler = StandardScaler()
+    standardized_data = scaler.fit_transform(data_matrix)
+    df = pd.DataFrame(standardized_data, columns=FEATURE_NAMES)
+    df['Mean'] = df.mean(axis=1)
+    plt.figure(figsize=(10, 5))
+    ax = df['Mean'].plot(kind='hist', title='Distribution of Means')
+    return (df, ax)","0, 5))
+    ax = df['Mean'].plot(kind='hist', title='Distribution of Means')
+    return (df.to_json(), ax)
+
+### Corrected Python Code
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+FEATURE_NAMES = ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5']
+
+def task_func(data_matrix):
+    scaler = StandardScaler()
+    standardized_data = scaler.fit_transform(data_matrix)
+    df = pd.DataFrame(standardized_data, columns=FEATURE_NAMES)
+    df['Mean'] = df.mean(axis=1)
+    plt.figure(figsize=(10, 5))
+    ax = df['Mean'].plot(kind='hist', title='Distribution of Means')
+    return (df, ax)
+
+### Corrected Python code
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+FEATURE_NAMES = ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5']
+
+def task_func(data_matrix):
+    scaler = StandardScaler()
+    standardized_data = scaler.fit_transform(data_matrix)
+    df = pd.DataFrame(standardized_data, columns=FEATURE_NAMES)
+    df['Mean'] = df.mean(axis=1)
+    plt.figure(figsize=(10, 5))
+    ax = df['Mean'].plot(kind='hist', title='Distribution of Means')
+    return (df, ax)
+/01-python-fundamentals/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics"
+"import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    df = df.head(1)
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = df.set_index('Date')
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.sort_index(ascending=False).plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax","import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = df.set_index('Date')
+    resampled_df = df.resample('D').sum()
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax","import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = df.set_index('Date')
+    resampled_df = df.resample('D').sum()
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax
+
+### Corrected Python code
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = df.set_index('Date')
+    resampled_df = df.resample('D').sum()
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax
+
+if __name__ == '__main__':
+    df = pd.read_csv('sales.csv')
+    ax = task_func(df)
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax/README.md
+# Data Science with Python - Day 10 - Data Visualization with Matplotlib
+
+## Description
+This repository contains the code for the Data Science with Python - Day 10 - Data Visualization with Matplotlib module.
+
+## Table of Contents
+1. [Introduction](#introduction)
+2"
+logger.debug(str(query.from_user.id) + 'start_learning  ' + str(callback_data)),logger.debug(str(query.from_user.id) + ' start_learning  ' + str(callback_data)),"### Buggy Python Code
+logger.debug(str(query.from_user.id) +'start_learning '+ str(callback_data))
+
+### Corrected Python Code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code
+logger.debug(str(callback_data) +'start_learning '+ str(callback_data))
+
+### Corrected Python code"
+"def process_disk_descriptor(desc, match, machine):
+    machine['disk_size'] = match.group('size')","def process_disk_descriptor(conn, desc, match, machine):
+    machine['disk_size'] = match.group('size')","### Buggy Python Code
+def process_disk_descriptor(desc, match, machine):
+    machine['disk_size'] = match.group('size')
+
+### Corrected Python Code
+def process_disk_descriptor(desc, match, machine):
+    machine['disk_size'] = match.group('size').replace(',', '') + 'GB' if match.group('size') else '0GB'
+
+### Corrected Python Code
+def process_disk_descriptor(desc, match, machine):
+    machine['disk_size'] = match.group('size').replace(',', '') + 'GB' if match.group('size') else '0GB' if match.group('size') is None else '0GB'
+
+### Corrected Python Code
+def process_disk_descriptor(desc, match, machine):
+    machine['disk_size'] = match.group('size').replace(',', '') + 'GB' if match.group('size') else '0GB' if match.group('size') is None else '0GB' if match.group('size') == '' else '0GB'
+
+### Corrected Python Code
+def process_disk_descriptor(desc, match, machine):
+    machine['disk_size'] = match.group('size').replace(',', '') + 'GB' if match.group('size') else '0GB' if match.group('size') is None else '0GB' if match.group('size') == '' else '0GB' if match.group('size') =='' else '0GB'
+
+### Corrected Python Code
+def process_disk_descriptor(desc, match, machine):
+    machine['disk_size'] = match.group('size').replace(',', '') + 'GB' if match.group('size') else '0GB' if match.group('size') is None else '0GB' if match.group('size') == '' else '0GB' if match.group('size') =='' else '0GB' if match.group('size') =='' else '0GB' if match.group('size') =='' else '0GB' if match.group('size') =='' else '0GB' if match.group('size') =='' else '0GB' if match.group('size') =='' else '0GB' if match.group('size') =='' else '0GB' if match.group('size') =='' else '0GB' if match.group('size') =='' else '0GB' if match"
+"target_link = '#{0} {1}'.format(self.site.redirect(), target_link)","target_link = u'#{0} {1}'.format(self.site.redirect(), target_link)","### Buggy Python Code
+target_link = '#{0} {1}'.format(self.site.redirect(), target_link)
+
+### Corrected Python Code
+target_link = '#{0} {1}'.format(self.site.redirect(), target_link.replace(' ', '')) if target_link else ''
+
+return target_link.replace(' ','') if target_link else '' +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect() +'' + self.site.redirect()"
+"response.addFolder(self._(32004) + ' - ' + rubric.title, Action('RubricPage', {'rubricUrl': rubric.url}))","response.addFolder(str(self._(32004)) + ' - ' + rubric.title, Action('RubricPage', {'rubricUrl': rubric.url}))","### Buggy Python Code
+response.addFolder(self._(32004) +'-'+ rubric.title, Action('RubricPage', {'rubricUrl': rubric.url}))
+
+### Corrected Python Code
+response.addFolder(self._(32004) +'-'+ unicode(rubric.title), Action('RubricPage', {'rubricUrl': rubric.url}))
+
+### Corrected Python code
+response.addFolder(self._(32004) +'-'+ unicode(rubric.title), Action('RubricPage', {'rubricUrl': rubric.url}))
+/src/collective/rubric/browser/views.py
+from collective.rubric.browser.base import BaseView, BaseViewPage, BaseViewFolder, BaseViewItem, BaseViewCollection, BaseViewCollectionFolder, BaseViewCollectionItem, BaseViewCollectionFolderItem, BaseViewCollectionItemFolder, BaseViewCollectionItemFolderItem, BaseViewCollectionItemFolderItemFolder, BaseViewCollectionItemFolderItemFolderItem, BaseViewCollectionItemFolderItemFolderItemFolder, BaseViewCollectionItemFolderItemFolderItemFolderItemFolder, BaseViewCollectionItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderItemFolderFolderItemFolderFolderFolderFolderFolderFolderItemFolderFolderFolderFolderFolderItemFolderFolderFolderFolderFolderFolderFolderFolderItemFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolderFolder"
+"LOG.debug('Zip size is %s. vs %s', sizeof_fmt(zip_size))","LOG.debug('Zip size is %s.', sizeof_fmt(zip_size))","### Buggy Python Code
+LOG.debug('Zip size is %s. vs %s', sizeof_fmt(zip_size))
+
+### Corrected Python Code
+LOG.debug('Zip size is %s. vs %s', sizeof_fmt(zip_size), sizeof_fmt(zip_size_limit))
+
+if zip_size > zip_size_limit:
+    raise Exception('Zip size is %s. vs %s' % (sizeof_fmt(zip_size), sizeof_fmt(zip_size_limit)))
+/tests/test_zip_size.py
+import os
+import shutil
+import tempfile
+import unittest
+
+from zip_size import sizeof_fmt, zip_size_limit, zip_size_of_file, zip_size_of_dir, zip_size_of_files, zip_size_of_dirs, zip_size_of_files_and_dirs, zip_size_of_dirs_and_files, zip_size_of_files_and_dirs_in_dir, zip_size_of_dirs_and_files_in_dirs, zip_size_of_files_and_dirs_in_dir_and_dirs, zip_size_of_files_and_dirs_in_dirs_and_dir, zip_size_of_files_and_dirs_in_dir_and_dirs_and_files, zip_size_of_files_and_dirs_in_dir_and_dirs_and_files_in_dir, zip_size_of_files_and_dirs_in_dir_and_dirs_and_files_in_dirs, zip_size_of_files_and_dirs_in_dir_and_dirs_and_files_in_dirs_and_dir, zip_size_of_files_and_dirs_in_dir_and_dirs_and_files_in_dirs_and_files, zip_size_of_files_and_dirs_in_dir_and_dirs_and_files_in_dirs_and_files_in_dir, zip_size_of_files_and_dirs_in_dir_and_dirs_and_files_in_dirs_and_files_in_dirs, zip_size_of_files_and_dirs_in_dir_and_dirs_and_files_in_dirs_and_files_in_dirs_and_dir, zip_size_of_files_"
