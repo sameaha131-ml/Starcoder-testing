@@ -30701,3 +30701,384 @@ self.skymap.data = np.ones(self.image.data.shape)
 
 ### Corrected Python Code
 self.skymap.data = np.ones(self.skymap.data.shape) * self.image.data.mean() * 1e-1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"events = store.load('event', scheduled_date=sql.RAW('%s > CURDATE()'))","events = store.load('event', scheduled_date=sql.RAW('%s > CURDATE()'), __order_by='scheduled_date')","### Buggy Python Code
+events = store.load('event', scheduled_date=sql.RAW('%s > CURDATE()'))
+
+### Corrected Python Code
+events = store.load('event', scheduled_date=sql.Raw('`scheduled_date` > CURDATE()'))
+
+return events.all() if events else []
+/event/models.py
+from django.db import models
+from django.utils import timezone
+from django.contrib.auth.models import User
+from django.core.validators import MaxLengthValidator, MinLengthValidator, EmailValidator, URLValidator, RegexValidator, ValidationError, FileExtensionValidator, FileSizeValidator, ProhibitNullCharactersValidator, ProhibitEmptyCharactersValidator, ProhibitSpacesValidator, ProhibitTabCharactersValidator, ProhibitNewlineCharactersValidator, ProhibitCarriageReturnCharactersValidator, ProhibitControlCharactersValidator, ProhibitTrailingSpacesValidator, ProhibitLeadingSpacesValidator, ProhibitMultipleSpacesValidator, ProhibitNonPrintableCharactersValidator, ProhibitZeroLengthValidator, ProhibitNonASCIICharactersValidator, ProhibitNonAlphanumericCharactersValidator, ProhibitNonWordCharactersValidator, ProhibitNonNumericCharactersValidator, ProhibitNonHexadecimalCharactersValidator, ProhibitNonOctalCharactersValidator, ProhibitNonDecimalCharactersValidator, ProhibitNonBinaryCharactersValidator, ProhibitNonBooleanCharactersValidator, ProhibitNonWhitespaceCharactersValidator, ProhibitNonEmptyCharactersValidator, ProhibitLeadingZeroesValidator, ProhibitTrailingZeroesValidator, ProhibitMultipleZeroesValidator, ProhibitNonPrintableCharactersValidator, ProhibitZeroLengthValidator, ProhibitNonASCIICharactersValidator, ProhibitNonAlphanumericCharactersValidator, ProhibitNonWordCharactersValidator, ProhibitNonNumericCharactersValidator, ProhibitNonHexadecimalCharactersValidator, ProhibitNonOctalCharactersValidator, ProhibitNonDecimalCharactersValidator, ProhibitNonBinaryCharactersValidator, ProhibitNonBooleanCharactersValidator, ProhibitNonWhitespaceCharactersValidator, ProhibitNonEmptyCharactersValidator, ProhibitLeadingZeroesValidator, ProhibitTrailingZeroesValidator, ProhibitMultipleZeroesValidator, ProhibitNonPrintableCharactersValidator, ProhibitZeroLengthValidator, ProhibitNonASCIICharactersValidator, ProhibitNonAlphanumericCharactersValidator, ProhibitNonWordCharactersValidator, ProhibitNonNumericCharactersValidator, ProhibitNonHexadecimalCharactersValidator, ProhibitNonOctalCharactersValidator, ProhibitNonDecimalCharactersValidator, ProhibitNonBinaryCharactersValidator, ProhibitNonBooleanCharactersValidator, ProhibitNonWhitespaceCharactersValidator, ProhibitNonEmptyCharactersValidator, ProhibitLeadingZeroesValidator, ProhibitTrailingZeroesValidator, ProhibitMultipleZeroesValidator,"
+self.log.info('fsck not implemented for %s' % self.fsType),self.log.debug('no fsck method for %s' % self.fsType),"### Buggy Python Code
+self.log.info('fsck not implemented for %s' % self.fsType)
+
+### Corrected Python Code
+self.log.info('fsck not implemented for %s' % self.fsType.name)
+/src/pyfsck/pyfsck.py
+#!/usr/bin/env python3
+
+import os
+import sys
+import logging
+import argparse
+from pyfsck.fsck import Fsck, FsckError, FsckError_BadSuperblock, FsckError_BadBlock, FsckError_BadInode, FsckError_BadInodeBlock, FsckError_BadBlockInode, FsckError_BadBlockInodeBlock, FsckError_BadSuperblockInode, FsckError_BadSuperblockInodeBlock, FsckError_BadInodeInodeBlock, FsckError_BadInodeInodeBlockBlock, FsckError_BadInodeBlockInodeBlock, FsckError_BadInodeBlockInodeBlockBlock, FsckError_BadSuperblockInodeBlockBlock, FsckError_BadInodeInodeBlockBlock, FsckError_BadInodeBlockInodeBlockBlockBlock, FsckError_BadSuperblockInodeBlockBlockBlock, FsckError_BadInodeInodeBlockBlockBlock, FsckError_BadInodeBlockInodeBlockBlockBlockBlock, FsckError_BadSuperblockInodeBlockBlockBlockBlock, FsckError_BadInodeInodeBlockBlockBlockBlock, FsckError_BadInodeBlockInodeBlockBlockBlockBlockBlock, FsckError_BadSuperblockInodeBlockBlockBlockBlockBlock, FsckError_BadInodeInodeBlockBlockBlockBlockBlock, FsckError_BadInodeBlockInodeBlockBlockBlockBlockBlockBlock, FsckError_BadSuperblockInodeBlockBlockBlockBlockBlockBlock, FsckError_BadInodeInodeBlockBlockBlockBlockBlockBlock, FsckError_BadInodeBlockInodeBlockBlockBlockBlockBlockBlock, FsckError_BadSuperblockInodeBlockBlockBlockBlockBlockBlockBlock, FsckError_BadInodeInodeBlockBlockBlockBlockBlockBlockBlock, FsckError_BadInodeBlockInodeBlockBlockBlockBlockBlockBlock, FsckError_BadInodeBlockInodeBlockBlockBlockBlockBlockBlock, FsckError_BadSuperblockInodeBlockBlockBlockBlockBlockBlockBlock, FsckError_BadInodeInodeBlockBlockBlockBlockBlock"
+"import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+def task_func(original):
+    arr = np.array([b for a, b in original])
+    computed_stats = {'mean': np.mean(arr), 'std': np.std(arr), 'min': np.min(arr), 'max': np.max(arr)}
+    fig, ax = plt.subplots()
+    ax.hist(arr, density=True, alpha=0.6, bins='auto', label='Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, computed_stats['mean'], computed_stats['std'])
+    ax.plot(x, p, 'k', line_width=2, label='PDF')
+    ax.set_title('Histogram with PDF')
+    ax.legend()
+    plt.close(figure=fig)
+    return (arr, computed_stats, ax)","import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+def task_func(original):
+    arr = np.array([b for a, b in original])
+    computed_stats = {'mean': np.mean(arr), 'std': np.std(arr), 'min': np.min(arr), 'max': np.max(arr)}
+    fig, ax = plt.subplots()
+    ax.hist(arr, density=True, alpha=0.6, bins='auto', label='Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, computed_stats['mean'], computed_stats['std'])
+    ax.plot(x, p, 'k', linewidth=2, label='PDF')
+    ax.set_title('Histogram with PDF')
+    ax.legend()
+    plt.close(fig)
+    return (arr, computed_stats, ax)","import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+def task_func(original):
+    arr = np.array([b for a, b in original])
+    computed_stats = {'mean': np.mean(arr),'std': np.std(arr),'min': np.min(arr),'max': np.max(arr)}
+    fig, ax = plt.subplots()
+    ax.hist(arr, density=True, alpha=0.6, bins='auto', label='Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, computed_stats['mean'], computed_stats['std'])
+    ax.plot(x, p, 'k', linewidth=2, label='PDF')
+    ax.set_title('Histogram with PDF')
+    ax.legend()
+    plt.close(fig)
+    return (arr, computed_stats, ax)
+
+if __name__ == '__main__':
+    original = [(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)]
+    arr, computed_stats, ax = task_func(original)
+    print(computed_stats)
+    fig, ax = plt.subplots()
+    ax.hist(arr, density=True, alpha=0.6, bins='auto', label='Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, computed_stats['mean'], computed_stats['std'])
+    ax.plot(x, p, 'k', linewidth=2, label='PDF')
+    ax.set_title('Histogram with PDF')
+    ax.legend()
+    plt.show()
+    plt.close(fig)
+    print(computed_stats)
+    return (arr, computed_stats, ax)
+/README.md
+# Python-Data-Science-Tasks-101-to-200
+Python Data Science Tasks 101 to 200 (with solutions)
+/006_numpy_array_operations/006_numpy_array_operations.py
+import numpy as np
+import matplotlib.pyplot as"
+"class Solution:
+
+    def mostFrequentIDs(self, nums: List[int], freq: List[int]) -> List[int]:
+        cnt = {}
+        lazy = Counter()
+        ans = []
+        pq = []
+        for x, f in zip(nums, freq):
+            cnt[x] += f
+            heappush(pq, -cnt[x])
+            while pq and -pq[0] in lazy:
+                lazy[-pq[0]] -= 1
+                heappop(pq)
+            ans.append(0 if not pq else -pq[0])
+        return ans","class Solution:
+
+    def mostFrequentIDs(self, nums: List[int], freq: List[int]) -> List[int]:
+        cnt = Counter()
+        lazy = Counter()
+        ans = []
+        pq = []
+        for x, f in zip(nums, freq):
+            lazy[cnt[x]] += 1
+            cnt[x] += f
+            heappush(pq, -cnt[x])
+            while pq and lazy[-pq[0]] > 0:
+                lazy[-pq[0]] -= 1
+                heappop(pq)
+            ans.append(0 if not pq else -pq[0])
+        return ans","lazy = Counter()
+        ans = []
+        pq = []
+        for x, f in zip(nums, freq):
+            cnt[x] += f
+            heappush(pq, -cnt[x])
+            while pq and -pq[0] in lazy:
+                lazy[-pq[0]] -= 1
+                heappop(pq)
+            ans.append(0 if not pq else -pq[0])
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def mostFrequentIDs(self, nums: List[int], freq: List[int]) -> List[int]:
+        cnt = Counter()
+        lazy = Counter()
+        ans = []
+        pq = []
+        for x, f in zip(nums, freq):
+            cnt[x] += f
+            lazy[cnt[x]] += 1
+            heappush(pq, -cnt[x])
+            while pq and -pq[0] in lazy:
+                lazy[-pq[0]] -= 1
+                heappop(pq)
+            ans.append(0 if not pq else -pq[0])
+        return ans
+
+class Solution:
+
+    def mostFrequentIDs(self, nums: List[int], freq: List[int]) -> List[int]:
+        cnt = Counter()
+        lazy = Counter()
+        ans = []
+        pq = []
+        for x, f in zip(nums, freq):
+            cnt[x] += f
+            lazy[cnt[x]] += 1
+            heappush(pq, -cnt[x])
+            while pq and lazy[-pq[0]]:
+                lazy[-pq[0]] -= 1
+                heappop(pq)
+            ans.append(0 if not pq else -pq[0])
+        return ans
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = 0
+        for i in range(len(nums) - 1, -1, -1):
+            ans += nums[i] * (i + 1)
+            nums[i] *= 2
+        return ans
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = 0
+        for i in range(len(nums) - 1, -1, -1):
+            ans += nums[i] * (i + 1)
+            nums[i] *= 2
+            nums[i] -= 1
+        return ans
+/1000/1000-1005/1005.cpp
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = 0
+        for i"
+"class Solution:
+
+    def numberOfPoints(self, nums: List[List[int]]) -> int:
+        m = 102
+        d = np.zeros(m, dtype=int)
+        for start, end in nums:
+            d[start] += 1
+            d[end + 1] -= 1
+        return sum((s > 0 for s in collections.accumulate(d)))","class Solution:
+
+    def numberOfPoints(self, nums: List[List[int]]) -> int:
+        m = 102
+        d = [0] * m
+        for start, end in nums:
+            d[start] += 1
+            d[end + 1] -= 1
+        return sum((s > 0 for s in accumulate(d)))","### Buggy Python Code
+class Solution:
+
+    def numberOfPoints(self, nums: List[List[int]]) -> int:
+        m = 102
+        d = np.zeros(m, dtype=int)
+        for start, end in nums:
+            d[start] += 1
+            d[end + 1] -= 1
+        return sum((s > 0 for s in collections.accumulate(d)))
+
+### Corrected Python Code
+class Solution:
+
+    def numberOfPoints(self, nums: List[List[int]]) -> int:
+        m = 102
+        d = [0] * m
+        for start, end in nums:
+            d[start] += 1
+            d[end + 1] -= 1
+        return sum((s > 0 for s in accumulate(d))) - 1
+
+### Corrected Python
+class Solution:
+
+    def numberOfPoints(self, nums: List[List[int]]) -> int:
+        m = 102
+        d = [0] * m
+        for start, end in nums:
+            d[start] += 1
+            d[end + 1] -= 1
+        return sum((s > 0 for s in accumulate(d))) - 1
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (len(nums) - 1) // 2 + 1
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (len(nums) - 1) // 2 + 1 + (nums[-1] + 1) * (len(nums) - 1) % 2
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (len(nums) - 1) // 2 + 1 + (nums[-1] + 1) * (len(nums) - 1) % 2 == 0
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a"
+"import numpy as np
+import random
+from scipy import stats
+
+def task_func(list_of_lists, size=5, seed=0):
+    random.seed(seed)
+    data = []
+    for list_ in list_of_lists:
+        if list_:
+            data += list_
+        else:
+            data += [random.randint(0, 100) for _ in range(size)]
+    data = [x * 2 for x in data]
+    return {'mean': np.mean(data), 'median': np.median(data), 'mode': stats.mode(data)[0]}","import numpy as np
+import random
+from scipy import stats
+
+def task_func(list_of_lists, size=5, seed=0):
+    random.seed(seed)
+    data = []
+    for list_ in list_of_lists:
+        if list_:
+            data += list_
+        else:
+            data += [random.randint(0, 100) for _ in range(size)]
+    return {'mean': np.mean(data), 'median': np.median(data), 'mode': stats.mode(data)[0]}","of_lists:
+        if list_:
+            data += list_
+        else:
+            data += [random.randint(0, 100) for _ in range(size)]
+    data = [x * 2 for x in data]
+    return {'mean': np.mean(data),'median': np.median(data),'mode': stats.mode(data)[0]}
+
+### Corrected Python Code
+import numpy as np
+import random
+from scipy import stats
+
+def task_func(list_of_lists, size=5, seed=0):
+    random.seed(seed)
+    data = []
+    for list_ in list_of_lists:
+        if list_:
+            data += list_
+        else:
+            data += [random.randint(0, 100) for _ in range(size)]
+    return {'mean': np.mean(data),'median': np.median(data),'mode': stats.mode(data)[0]}
+
+if __name__ == '__main__':
+    list_of_lists = [[1, 2, 3], [4, 5, 6], [], [7, 8, 9]]
+    print(task_func(list_of_lists))
+/01_python_basics/01_02_lists/01_02_01_list_comprehension.py
+def task_func(list_of_lists, size=5, seed=0):
+    random.seed(seed)
+    data = []
+    for list_ in list_of_lists:
+        if list_:
+            data += list_
+        else:
+            data += [random.randint(0, 100) for _ in range(size)]
+    return {'mean': np.mean(data),'median': np.median(data),'mode': stats.mode(data)[0]}
+
+import numpy as np
+import random
+from scipy import stats
+
+def task_func(list_of_lists, size=5, seed=0):
+    random.seed(seed)
+    data = []
+    for list_ in list_of_lists:
+        if list_:
+            data += list_
+        else:
+            data += [random.randint(0, 100) for _ in range(size)]
+    return {'mean': np.mean(data),'median': np.median(data),'mode': stats.mode(data)[0]}
+
+if __name__ == '__main__':
+    list_of_lists = [[1, 2, 3], [4, 5, 6], [], [7, 8, 9]]
+    print(task_func(list_of_lists))
+/01_python_basics/01_"
+parser = argparse.ArgumentParser(description='LiteX SoC on LiteX SoC on Acorn CLE 215+'),parser = argparse.ArgumentParser(description='LiteX SoC on Acorn CLE 215+'),"### Buggy Python Code
+parser = argparse.ArgumentParser(description='LiteX SoC on LiteX SoC on Acorn CLE 215+')
+
+### Corrected Python Code
+parser = argparse.ArgumentParser(description='LiteX SoC on Acorn CLE 215+')
+
+parser.add_argument('--build', action='store_true', help='Build the project')
+parser.add_argument('--build-dir', default='build', help='Directory to build the project')
+parser.add_argument('--build-only', action='store_true', help='Only build the project')
+parser.add_argument('--build-dir-only', action='store_true', help='Only build the project in the specified directory')
+parser.add_argument('--build-dir-prefix', default='build', help='Directory prefix for build directory')
+parser.add_argument('--build-dir-suffix', default='', help='Directory suffix for build directory')
+parser.add_argument('--build-dir-path', help='Directory path for build directory')
+parser.add_argument('--build-dir-path-only', action='store_true', help='Only build the project in the specified directory path')
+parser.add_argument('--build-dir-path-prefix', default='build', help='Directory prefix for build directory path')
+parser.add_argument('--build-dir-path-suffix', default='', help='Directory suffix for build directory path')
+parser.add_argument('--build-dir-path-only', action='store_true', help='Only build the project in the specified directory path')
+parser.add_argument('--build-dir-path-prefix', default='build', help='Directory prefix for build directory path')
+parser.add_argument('--build-dir-path-suffix', default='', help='Directory suffix for build directory path')
+parser.add_argument('--build-dir-path-only', action='store_true', help='Only build the project in the specified directory path')
+parser.add_argument('--build-dir-path-prefix', default='build', help='Directory prefix for build directory path')
+parser.add_argument('--build-dir-path-suffix', default='', help='Directory suffix for build directory path')
+parser.add_argument('--build-dir-path-only', action='store_true', help='Only build the project in the specified directory path')
+parser.add_argument('--build-dir-path-prefix', default='build', help='Directory prefix for build directory path')"
+self.logScenario = os.environ.get('EMAIL_SUBJECT'),self.log_scenario = os.environ.get('EMAIL_SUBJECT'),"### Buggy Python Code
+self.logScenario = os.environ.get('EMAIL_SUBJECT')
+
+### Corrected Python Code
+self.logScenario = os.environ.get('EMAIL_SUBJECT', 'Test') +'' + os.environ.get('EMAIL_FROM') +'' + os.environ.get('EMAIL_TO') +'' + os.environ.get('EMAIL_BODY') +'' + os.environ.get('EMAIL_SERVER') +'' + os.environ.get('EMAIL_PORT') +'' + os.environ.get('EMAIL_USERNAME') +'' + os.environ.get('EMAIL_PASSWORD') +'' + os.environ.get('EMAIL_TLS') +'' + os.environ.get('EMAIL_SSL') +'' + os.environ.get('EMAIL_HTML') +'' + os.environ.get('EMAIL_TEXT') +'' + os.environ.get('EMAIL_SUBJECT') +'' + os.environ.get('EMAIL_FROM') +'' + os.environ.get('EMAIL_TO') +'' + os.environ.get('EMAIL_BODY') +'' + os.environ.get('EMAIL_SERVER') +'' + os.environ.get('EMAIL_PORT') +'' + os.environ.get('EMAIL_USERNAME') +'' + os.environ.get('EMAIL_PASSWORD') +'' + os.environ.get('EMAIL_TLS') +'' + os.environ.get('EMAIL_SSL') +'' + os.environ.get('EMAIL_HTML') +'' + os.environ.get('EMAIL_TEXT') +'' + os.environ.get('EMAIL_SUBJECT') +'' + os.environ.get('EMAIL_FROM') +'' + os.environ.get('EMAIL_TO') +'' + os.environ.get('EMAIL_BODY') +'' + os.environ.get('EMAIL_SERVER') +'' + os.environ.get('EMAIL_PORT') +'' + os.environ.get('EMAIL_USERNAME') +'' + os.environ.get('EMAIL_PASSWORD') +'' + os.environ.get('EMAIL_TLS') +'' + os.environ.get('EMAIL_SSL') +'' + os.environ.get('EMAIL_HTML') +'' + os.environ.get('EMAIL_TEXT') +'' +"
