@@ -6549,3 +6549,408 @@ def task_func(data, n_components=2):
     ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
     return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]), ax)
 /01-python-fundamentals/02-python-data-science/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part"
+"self.f = Sndfile(self.outDir + filename + '.syllable-' + str(self.syllableIndex) + '.flac', 'w', self.format, 1, 44100)","self.f = Sndfile(self.outDir + '/' + filename + '.syllable-' + str(self.syllableIndex) + '.flac', 'w', self.format, 1, 44100)","### Buggy Python Code
+self.f = Sndfile(self.outDir + filename + '.syllable-' + str(self.syllableIndex) + '.flac', 'w', self.format, 1, 44100)
+
+### Corrected Python Code
+self.f = Sndfile(self.outDir + filename + '.syllable-' + str(self.syllableIndex) + '.flac', 'w', self.format, 1, 44100, 'float32') if self.format == 'flac' else Sndfile(self.outDir + filename + '.syllable-' + str(self.syllableIndex) + '.flac', 'w', self.format, 1, 44100) if self.format == 'flac' else Sndfile(self.outDir + filename + '.syllable-' + str(self.syllableIndex) + '.flac', 'w', self.format, 1, 44100, 'float32') if self.format == 'flac' else Sndfile(self.outDir + filename + '.syllable-' + str(self.syllableIndex) + '.flac', 'w', self.format, 1, 44100) if self.format == 'flac' else Sndfile(self.outDir + filename + '.syllable-' + str(self.syllableIndex) + '.flac', 'w', self.format, 1, 44100, 'float32') if self.format == 'flac' else Sndfile(self.outDir + filename + '.syllable-' + str(self.syllableIndex) + '.flac', 'w', self.format, 1, 44100) if self.format == 'flac' else Sndfile(self.outDir + filename + '.syllable-' + str(self.syllableIndex) + '.flac', 'w', self.format, 1, 44100, 'float32') if self.format == 'flac' else Sndfile(self.outDir + filename + '.syllable-' + str(self.syllableIndex) + '.flac', 'w', self.format, 1, 44100) if self.format == 'flac' else Sndfile(self.outDir + filename + '.syllable-' + str(self.syllable"
+"class Solution:
+
+    def makeStringGood(self, s: str) -> int:
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        return min((self._getMinOperations(count, target) for target in range(1, count.max() + 1)))
+
+    def _getMinOperations(self, count: list[int], target: int) -> int:
+        dp = [0] * 27
+        for i in range(26):
+            deleteAllToZero = count[i]
+            deleteOrInsertToTarget = abs(target - count[i])
+            dp[i] = min(deleteAllToZero, deleteOrInsertToTarget) + dp[i + 1]
+            if i + 1 < 26 and count[i + 1] < target:
+                nextDeficit = target - count[i + 1]
+                nextDeficit = nextDeficit - 1
+                needToChange = count[i] if count[i] <= target else count[i] - target
+                changeToTarget = needToChange + (nextDeficit - needToChange) if nextDeficit > needToChange else nextDeficit + (needToChange - nextDeficit)
+                dp[i] = min(dp[i], changeToTarget + dp[i + 2])
+        return dp[0]","class Solution:
+
+    def makeStringGood(self, s: str) -> int:
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        return min((self._getMinOperations(count, target) for target in range(1, max(count) + 1)))
+
+    def _getMinOperations(self, count: list[int], target: int) -> int:
+        dp = [0] * 27
+        for i in range(25, -1, -1):
+            deleteAllToZero = count[i]
+            deleteOrInsertToTarget = abs(target - count[i])
+            dp[i] = min(deleteAllToZero, deleteOrInsertToTarget) + dp[i + 1]
+            if i + 1 < 26 and count[i + 1] < target:
+                nextDeficit = target - count[i + 1]
+                needToChange = count[i] if count[i] <= target else count[i] - target
+                changeToTarget = needToChange + (nextDeficit - needToChange) if nextDeficit > needToChange else nextDeficit + (needToChange - nextDeficit)
+                dp[i] = min(dp[i], changeToTarget + dp[i + 2])
+        return dp[0]","+ 1 < 26 and count[i + 1] < target:
+                nextDeficit = target - count[i + 1]
+                nextDeficit = nextDeficit - 1
+                needToChange = count[i] if count[i] <= target else count[i] - target
+                changeToTarget = needToChange + (nextDeficit - needToChange) if nextDeficit > needToChange else nextDeficit + (needToChange - nextDeficit)
+                dp[i] = min(dp[i], changeToTarget + dp[i + 2])
+        return dp[0]
+
+### Corrected Python Code
+class Solution:
+
+    def makeStringGood(self, s: str) -> int:
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        return min((self._getMinOperations(count, target) for target in range(1, max(count) + 1)))
+
+    def _getMinOperations(self, count: list[int], target: int) -> int:
+        dp = [0] * 27
+        for i in range(25, -1, -1):
+            deleteAllToZero = count[i]
+            deleteOrInsertToTarget = abs(target - count[i])
+            dp[i] = min(deleteAllToZero, deleteOrInsertToTarget) + dp[i + 1]
+            if i + 1 < 26 and count[i + 1] < target:
+                nextDeficit = target - count[i + 1]
+                needToChange = count[i] if count[i] <= target else count[i] - target
+                changeToTarget = needToChange + (nextDeficit - needToChange) if nextDeficit > needToChange else nextDeficit + (needToChange - nextDeficit)
+                dp[i] = min(dp[i], changeToTarget + dp[i + 2])
+        return dp[0] - 1 if dp[0] > 0 else dp[0]
+
+### Corrected Python
+class Solution:
+
+    def makeStringGood(self, s: str) -> int:
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        return min((self._getMinOperations(count, target) for target in range(1, max(count) + 1)))
+
+    def _getMinOperations(self, count: list[int], target: int) -> int:
+        dp = [0] * 27
+        for i in range(25, -1, -1):
+            deleteAllToZero = count[i]
+            deleteOrInsertToTarget = abs(target - count[i])
+            dp[i] = min(deleteAllToZero, deleteOrInsertToTarget) + dp[i + 1]
+            if i + 1 <"
+"class Solution:
+
+    def findPeakElement(self, nums: List[int]) -> int:
+        n = len(nums)
+        low = 0
+        high = n - 1
+        if n == 1:
+            return 0
+        while low <= high:
+            mid = (low + high) // 2
+            if (mid == 0 or nums[mid] >= nums[mid - 1]) and (mid == n or nums[mid] >= nums[mid + 1]):
+                return mid
+            elif nums[mid] <= nums[mid + 1]:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return -1","class Solution:
+
+    def findPeakElement(self, nums: List[int]) -> int:
+        n = len(nums)
+        low = 0
+        high = n - 1
+        if n == 1:
+            return 0
+        while low <= high:
+            mid = (low + high) // 2
+            if (mid == 0 or nums[mid] >= nums[mid - 1]) and (mid == n - 1 or nums[mid] >= nums[mid + 1]):
+                return mid
+            elif nums[mid] <= nums[mid + 1]:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return -1","### Buggy Python Code
+class Solution:
+
+    def findPeakElement(self, nums: List[int]) -> int:
+        n = len(nums)
+        low = 0
+        high = n - 1
+        if n == 1:
+            return 0
+        while low <= high:
+            mid = (low + high) // 2
+            if (mid == 0 or nums[mid] >= nums[mid - 1]) and (mid == n or nums[mid] >= nums[mid + 1]):
+                return mid
+            elif nums[mid] <= nums[mid + 1]:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return -1
+
+### Corrected Python Code
+class Solution:
+
+    def findPeakElement(self, nums: List[int]) -> int:
+        n = len(nums)
+        low = 0
+        high = n - 1
+        if n == 1:
+            return 0
+        while low <= high:
+            mid = (low + high) // 2
+            if (mid == 0 or nums[mid] >= nums[mid - 1]) and (mid == n - 1 or nums[mid] >= nums[mid + 1]):
+                return mid
+            elif nums[mid] < nums[mid + 1]:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return -1
+
+### Corrected Python3:
+class Solution:
+
+    def findPeakElement(self, nums: List[int]) -> int:
+        n = len(nums)
+        low = 0
+        high = n - 1
+        if n == 1:
+            return 0
+        while low <= high:
+            mid = (low + high) // 2
+            if (mid == 0 or nums[mid] >= nums[mid - 1]) and (mid == n - 1 or nums[mid] >= nums[mid + 1]):
+                return mid
+            elif nums[mid] < nums[mid + 1]:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return -1
+/python/1000/1000-1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        nums.sort()
+        low = 0
+        high = n - 1
+        if n == 1:
+            return 0
+        while low <= high:
+            mid = (low + high) // 2
+            if (mid == 0 or nums[mid] >= nums[mid - 1]) and (mid == n - 1 or nums[mid] >= nums[mid + 1]):
+                return mid
+            elif nums[mid] < nums[mid + 1]:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return -1
+
+### Corrected Python3:
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        nums.sort"
+"class Solution:
+
+    def minimumMoves(self, nums: List[int], k: int, maxChanges: int) -> int:
+        n = len(nums)
+        cnt = [0] * (n + 1)
+        s = [0] * (n + 1)
+        for i, x in enumerate(nums, 1):
+            cnt[i] = cnt[i - 1] + x
+            s[i] = s[i - 1] + i * x
+        ans = inf
+        max = lambda x, y: x if x > y else y
+        min = lambda x, y: x if x < y else y
+        for i, x in enumerate(nums, 1):
+            t = 0
+            need = k - x
+            for j in (i - 1, i + 1):
+                if need > 0 and 1 <= j <= n and (nums[j - 1] == 1):
+                    t += 1
+            c = min(need, maxChanges)
+            need -= c
+            t += c * 2
+            if need <= 0:
+                ans = min(ans, t)
+                continue
+            l, r = (2, max(i - 1, n - i))
+            while l <= r:
+                mid = l + r >> 1
+                l1, r1 = (max(1, i - mid), max(0, i - 2))
+                l2, r2 = (min(n + 1, i + 2), min(n, i + mid))
+                c1 = cnt[r1] - cnt[l1 - 1]
+                c2 = cnt[r2] - cnt[l2 - 1]
+                if c1 + c2 >= need:
+                    t1 = c1 * i - (s[r1] - s[l1 - 1])
+                    t2 = s[r2] - s[l2 - 1] - c2 * i
+                    ans = min(ans, t + t1 + t2)
+                    r = mid - 1
+                else:
+                    l = mid + 1
+        return ans","class Solution:
+
+    def minimumMoves(self, nums: List[int], k: int, maxChanges: int) -> int:
+        n = len(nums)
+        cnt = [0] * (n + 1)
+        s = [0] * (n + 1)
+        for i, x in enumerate(nums, 1):
+            cnt[i] = cnt[i - 1] + x
+            s[i] = s[i - 1] + i * x
+        ans = inf
+        max = lambda x, y: x if x > y else y
+        min = lambda x, y: x if x < y else y
+        for i, x in enumerate(nums, 1):
+            t = 0
+            need = k - x
+            for j in (i - 1, i + 1):
+                if need > 0 and 1 <= j <= n and (nums[j - 1] == 1):
+                    need -= 1
+                    t += 1
+            c = min(need, maxChanges)
+            need -= c
+            t += c * 2
+            if need <= 0:
+                ans = min(ans, t)
+                continue
+            l, r = (2, max(i - 1, n - i))
+            while l <= r:
+                mid = l + r >> 1
+                l1, r1 = (max(1, i - mid), max(0, i - 2))
+                l2, r2 = (min(n + 1, i + 2), min(n, i + mid))
+                c1 = cnt[r1] - cnt[l1 - 1]
+                c2 = cnt[r2] - cnt[l2 - 1]
+                if c1 + c2 >= need:
+                    t1 = c1 * i - (s[r1] - s[l1 - 1])
+                    t2 = s[r2] - s[l2 - 1] - c2 * i
+                    ans = min(ans, t + t1 + t2)
+                    r = mid - 1
+                else:
+                    l = mid + 1
+        return ans","class Solution:
+
+    def minimumMoves(self, nums: List[int], k: int, maxChanges: int) -> int:
+        n = len(nums)
+        cnt = [0] * (n + 1)
+        s = [0] * (n + 1)
+        for i, x in enumerate(nums, 1):
+            cnt[i] = cnt[i - 1] + x
+            s[i] = s[i - 1] + i * x
+        ans = inf
+        max = lambda x, y: x if x > y else y
+        min = lambda x, y: x if x < y else y
+        for i, x in enumerate(nums, 1):
+            t = 0
+            need = k - x
+            for j in (i - 1, i + 1):
+                if need > 0 and 1 <= j <= n and (nums[j - 1] == 1):
+                    t += 1
+            c = min(need, maxChanges)
+            need -= c
+            t += c * 2
+            if need <= 0:
+                ans = min(ans, t)
+                continue
+            l, r = (2, max(i - 1, n - i))
+            while l <= r:
+                mid = l + r >> 1
+                l1, r1 = (max(1, i - mid), max(0, i - 2))
+                l2, r2 = (min(n + 1, i + 2), min(n, i + mid))
+                c1 = cnt[r1] - cnt[l1 - 1]
+                c2 = cnt[r2] - cnt[l2 - 1]
+                if c1 + c2 >= need:
+                    t1 = c1 * i - (s[r1] - s[l1 - 1])
+                    t2 = s[r2] - s[l2 - 1] - c2 * i
+                    ans = min(ans, t + t1 + t2)
+                    r = mid - 1
+                else:
+                    l = mid + 1
+        return ans
+
+class Solution:
+
+    def minimumMoves(self, nums: List[int], k: int, maxChanges: int) -> int:
+        n = len(nums)
+        cnt = [0] * (n +"
+"for reporter in reporters:
+    reporter.report(exc_data)","for reporter in self.reporters:
+    reporter.report(exc_data)","### Buggy Python Code
+for reporter in reporters:
+    reporter.report(exc_data)
+
+### Corrected Python Code
+for reporter in reporters.values():
+    reporter.report(exc_data)
+/src/py/pydevd/pydevd_comm.py
+# -*- coding: utf-8 -*-
+
+import os
+import sys
+import time
+import socket
+import struct
+import threading
+import traceback
+import logging
+from pydevd_constants import *
+from pydevd_comm_base import *
+from pydevd_comm_base import PydevdCommBase, PydevdCommBaseError, PydevdCommBaseError_NoConnection, PydevdCommBaseError_NoThread, PydevdCommBaseError_NoThreadId, PydevdCommBaseError_NoThreadName, PydevdCommBaseError_NoThreadNameId, PydevdCommBaseError_NoThreadNameIdThread, PydevdCommBaseError_NoThreadNameIdThreadId, PydevdCommBaseError_NoThreadNameIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadId, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadId, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThreadIdThread, PydevdCommBaseError_NoThreadNameIdThreadIdThreadIdThreadIdThreadIdThread, Pydevd"
+"with self.get_compressed_file(content) as cf:
+    return fix_line_ending(cf.read(subtitle_name))","with cf:
+    return fix_line_ending(cf.read(subtitle_name))","### Buggy Python Code
+with self.get_compressed_file(content) as cf:
+    return fix_line_ending(cf.read(subtitle_name))
+
+### Corrected Python Code
+with self.get_compressed_file(content) as cf:
+    return fix_line_ending(cf.read(subtitle_name).decode('utf-8')) if subtitle_name else ''
+/subtitles/subtitles/tests/test_subtitles.py
+import os
+import unittest
+from subtitles.subtitles import Subtitles, Subtitle, SubtitleError, SubtitleNotFoundError, SubtitleNotAvailableError, SubtitleNotDownloadedError, SubtitleNotParsedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError, SubtitleNotTranslatedError"
+meas_type = meas_specs.measurement_type.read(),meas_type = meas_specs.measurement_type.read().decode(),"### Buggy Python Code
+meas_type = meas_specs.measurement_type.read()
+
+### Corrected Python Code
+meas_type = meas_specs.measurement_type.read(1) if meas_specs.measurement_type.read() else ''
+
+### Corrected Python Code
+meas_type = meas_specs.measurement_type.read(1) if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs.measurement_type.read() else '' if meas_specs"
+return self.realm_annotations[ANNOTATIONS_DATE_KEY],"return self.realm_annotations.get(ANNOTATIONS_DATE_KEY, 0)","### Buggy Python Code
+return self.realm_annotations[ANNOTATIONS_DATE_KEY]
+
+### Corrected Python Code
+return self.realm_annotations.get(ANNOTATIONS_DATE_KEY) or '' or None  # None is a valid value for date_created, so we need to check for it.
+
+### Corrected Python code
+return self.realm_annotations.get(ANNOTATIONS_DATE_KEY) or '' or None  # None is a valid value for date_created, so we need to check for it.
+
+class Realm(models.Model):
+    id = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=255)
+    domain = models.CharField(max_length=255)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_modified = models.DateTimeField(auto_now=True)
+    description = models.TextField(blank=True)
+    icon_url = models.URLField(blank=True)
+    default_language = models.CharField(max_length=255, blank=True)
+    default_timezone = models.CharField(max_length=255, blank=True)
+    allow_public_messages = models.BooleanField(default=True)
+    allow_public_topics = models.BooleanField(default=True)
+    allow_public_uploads = models.BooleanField(default=True)
+    allow_public_event_creation = models.BooleanField(default=True)
+    allow_public_event_attendances = models.BooleanField(default=True)
+    allow_public_event_comments = models.BooleanField(default=True)
+    allow_public_event_moderation = models.BooleanField(default=True)
+    allow_public_group_creation = models.BooleanField(default=True)
+    allow_public_group_invitations = models.BooleanField(default=True)
+    allow_public_group_messages = models.BooleanField(default=True)
+    allow_public_group_moderation = models.BooleanField(default=True)
+    allow_public_user_creation = models.BooleanField(default=True)
+    allow_public_user_invitations = models.BooleanField(default=True)
+    allow_public_user_messages = models.BooleanField(default=True)
+    allow_public_user_moderation = models.BooleanField(default=True)
+    allow_public_poll_creation = models.BooleanField(default="
