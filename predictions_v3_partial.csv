@@ -52861,3 +52861,448 @@ from. import gui_utils_game_list_humble_store_dl as game_list_humble_store_dl_ut
 from. import gui_utils_game_list_humble_store_dl_steam as game_list_humble_store_dl_steam_utils
 from. import gui_utils_game_list_humble_store_dl_steam_dl as game_list_humble_store_dl_steam_dl_utils
 from. import gui_"
+"import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        matched_files = []
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    file = Path(file).resolve()
+    return matched_files","import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files","### Buggy Python Code
+import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        matched_files = []
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    file = Path(file).resolve()
+    return matched_files
+
+### Corrected Python Code
+import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files
+
+if __name__ == '__main__':
+    pattern = input('Enter pattern: ')
+    directory = input('Enter directory: ')
+    extensions = input('Enter extensions: ').split()
+    matched_files = task_func(pattern, directory, extensions)
+    for file in matched_files:
+        print(file)/day_01/task_01.py
+import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files
+
+if __name__ == '__main__':
+    pattern = input('Enter pattern: ')
+    directory = input('Enter directory: ')
+    extensions = input('Enter extensions: ').split()
+    matched_files = task_func(pattern, directory, extensions)
+    for file in matched_files:
+        print(file)/day_02/task_01.py
+import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files
+
+if __name__ == '__main__':
+    pattern = input"
+new_lines = open(run_file).read().split('\n')[1:],new_lines = open(run_file).read().strip().split('\n')[1:],"### Buggy Python Code
+new_lines = open(run_file).read().split('\n')[1:]
+
+### Corrected Python Code
+new_lines = open(run_file).read().split('\n')[1:-1] if os.path.exists(run_file) else []
+
+### Corrected Python
+new_lines = open(run_file).read().split('\n')[1:-1] if os.path.exists(run_file) else [] + [''] * 20000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"import random
+import matplotlib.pyplot as plt
+SALARY_RANGE = (20000, 100000)
+
+def task_func(dict1):
+    emp_salaries = []
+    for prefix, num_employees in dict1.items():
+        if not prefix.startswith('EMPXX'):
+            continue
+        for _ in range(num_employees):
+            salary = random.randint(*SALARY_RANGE)
+            emp_salaries.append(salary)
+    plt.histogram(emp_salaries, bins=10, alpha=0.5)
+    plt.title('Salary Distribution in EMPXX Department')
+    plt.xlabel('Salary')
+    plt.ylabels('Number of Employees')
+    return plt.gca()","import random
+import matplotlib.pyplot as plt
+SALARY_RANGE = (20000, 100000)
+
+def task_func(dict1):
+    emp_salaries = []
+    for prefix, num_employees in dict1.items():
+        if not prefix.startswith('EMPXX'):
+            continue
+        for _ in range(num_employees):
+            salary = random.randint(*SALARY_RANGE)
+            emp_salaries.append(salary)
+    plt.hist(emp_salaries, bins=10, alpha=0.5)
+    plt.title('Salary Distribution in EMPXX Department')
+    plt.xlabel('Salary')
+    plt.ylabel('Number of Employees')
+    return plt.gca()",".append(salary)
+    plt.histogram(emp_salaries, bins=10, alpha=0.5)
+    plt.title('Salary Distribution in EMPXX Department')
+    plt.xlabel('Salary')
+    plt.ylabels('Number of Employees')
+    return plt.gca()
+
+### Corrected Python Code
+import random
+import matplotlib.pyplot as plt
+SALARY_RANGE = (20000, 100000)
+
+def task_func(dict1):
+    emp_salaries = []
+    for prefix, num_employees in dict1.items():
+        if not prefix.startswith('EMPXX'):
+            continue
+        for _ in range(num_employees):
+            salary = random.randint(*SALARY_RANGE)
+            emp_salaries.append(salary)
+    plt.hist(emp_salaries, bins=10, alpha=0.5)
+    plt.title('Salary Distribution in EMPXX Department')
+    plt.xlabel('Salary')
+    plt.ylabel('Number of Employees')
+    return plt.gca()
+
+if __name__ == '__main__':
+    dict1 = {'EMPXX1': 100, 'EMPXX2': 200, 'EMPXX3': 300}
+    task_func(dict1)
+    plt.show()/python/day_1/task_1.py
+import random
+import matplotlib.pyplot as plt
+SALARY_RANGE = (20000, 100000)
+
+def task_func(dict1):
+    emp_salaries = []
+    for prefix, num_employees in dict1.items():
+        if not prefix.startswith('EMPXX'):
+            continue
+        for _ in range(num_employees):
+            salary = random.randint(*SALARY_RANGE)
+            emp_salaries.append(salary)
+    plt.hist(emp_salaries, bins=10, alpha=0.5)
+    plt.title('Salary Distribution in EMPXX Department')
+    plt.xlabel('Salary')
+    plt.ylabel('Number of Employees')
+    return plt.gca()
+
+if __name__ == '__main__':
+    dict1 = {'EMPXX1': 100, 'EMPXX2': 200, 'EMPXX3': 300}
+    task_func(dict1)
+    plt.show()/python/day_1/task_2.py
+import random
+import matplotlib.pyplot as plt
+SALARY_RANGE = (20000, 100000)
+
+def task_func(dict1):
+    emp_salaries = []"
+"import re
+import socket
+
+def task_func(ip_addresses: list) -> dict:
+    IP_REGEX = '[0-9]+(?:\\.[0-9]+){3}'
+    hostnames = {}
+    for ip in ip_addresses:
+        if re.match(IP_REGEX, ip):
+            try:
+                hostname = socket.gethostbyaddr(ip)[3]
+                hostnames[ip] = hostname
+            except (socket.herror, socket.gaierror):
+                hostnames[ip] = socket.herror
+    return hostnames","import re
+import socket
+
+def task_func(ip_addresses: list) -> dict:
+    IP_REGEX = '[0-9]+(?:\\.[0-9]+){3}'
+    hostnames = {}
+    for ip in ip_addresses:
+        if re.match(IP_REGEX, ip):
+            try:
+                hostname = socket.gethostbyaddr(ip)[0]
+                hostnames[ip] = hostname
+            except (socket.herror, socket.gaierror):
+                hostnames[ip] = None
+    return hostnames",": list) -> dict:
+    IP_REGEX = '[0-9]+(?:\\.[0-9]+){3}'
+    hostnames = {}
+    for ip in ip_addresses:
+        if re.match(IP_REGEX, ip):
+            try:
+                hostname = socket.gethostbyaddr(ip)[3]
+                hostnames[ip] = hostname
+            except (socket.herror, socket.gaierror):
+                hostnames[ip] = socket.herror
+    return hostnames
+
+### Corrected Python Code
+import re
+import socket
+
+def task_func(ip_addresses: list) -> dict:
+    IP_REGEX = '[0-9]+(?:\\.[0-9]+){3}'
+    hostnames = {}
+    for ip in ip_addresses:
+        if re.match(IP_REGEX, ip):
+            try:
+                hostname = socket.gethostbyaddr(ip)[0]
+                hostnames[ip] = hostname
+            except (socket.herror, socket.gaierror):
+                hostnames[ip] = None
+    return hostnames
+
+### Corrected Python code
+import re
+import socket
+
+def task_func(ip_addresses: list) -> dict:
+    IP_REGEX = '[0-9]+(?:\\.[0-9]+){3}'
+    hostnames = {}
+    for ip in ip_addresses:
+        if re.match(IP_REGEX, ip):
+            try:
+                hostname = socket.gethostbyaddr(ip)[0]
+                hostnames[ip] = hostname
+            except (socket.herror, socket.gaierror):
+                hostnames[ip] = None
+    return hostnames
+/day_01/task_01.py
+import re
+import socket
+
+def task_func(ip_addresses: list) -> dict:
+    IP_REGEX = '[0-9]+(?:\\.[0-9]+){3}'
+    hostnames = {}
+    for ip in ip_addresses:
+        if re.match(IP_REGEX, ip):
+            try:
+                hostname = socket.gethostbyaddr(ip)[0]
+                hostnames[ip] = hostname
+            except (socket.herror, socket.gaierror):
+                hostnames[ip] = None
+    return hostnames
+/day_01/task_02.py
+import re
+import socket
+
+def task_func(ip_addresses: list) -> dict:
+    IP_REGEX = '[0-9]+(?:\\.[0-9]+){3}'
+    hostnames = {}
+    for ip in ip_addresses:
+        if re.match(IP_REGEX, ip):
+            try:
+                hostname = socket.gethostbyaddr(ip)[0]
+                hostnames[ip] = hostname
+            except (socket.herror, socket.gaierror):
+                hostnames[ip] = None
+    return hostnames
+/day_0"
+"scheduler.add_job(get_weather_and_push, 'cron', day_of_week='1-7', hour=21, minute=30)","scheduler.add_job(get_weather_and_push, 'cron', day_of_week='1-7', hour=21, minute=45)","### Buggy Python Code
+scheduler.add_job(get_weather_and_push, 'cron', day_of_week='1-7', hour=21, minute=30)
+
+### Corrected Python Code
+scheduler.add_job(get_weather_and_push, 'cron', day_of_week='1-7', hour=21, minute=30, misfire_grace_time=300)  # 5 minutes grace time to allow for the weather API to be down for a few minutes.
+
+if __name__ == '__main__':
+    scheduler.start()
+    app.run(host='0.0.0.0', port=80)  # 80 is the default port for Flask.
+/README.md
+# Weather-Push-Bot
+A simple weather push bot for Discord.
+
+## Setup
+1. Create a Discord bot and get the bot token.
+2. Create a Google Cloud Platform project and get the project ID.
+3. Create a Cloud Storage bucket and get the bucket name.
+4. Create a Cloud Function and upload the `main.py` file.
+5. Set the environment variables for the Cloud Function.
+    - `DISCORD_TOKEN` - The Discord bot token.
+    - `GOOGLE_APPLICATION_CREDENTIALS` - The path to the Google Cloud Platform service account key JSON file.
+    - `GOOGLE_CLOUD_STORAGE_BUCKET` - The name of the Cloud Storage bucket.
+    - `WEATHER_API_KEY` - The API key for the OpenWeather API.
+6. Add the Cloud Function URL to the Discord bot's integrations.
+7. Set the bot's permissions to allow it to send messages.
+8. Run the bot.
+
+## Notes
+1. The bot will only push the current weather to Discord.
+2. The bot will only push the current weather to Discord if the weather is sunny.
+3. The bot will only push the current weather to Discord if the weather is not currently raining.
+4. The bot will only push the current weather to Discord if the weather is not currently snowing.
+5. The bot will only push the current weather to Discord if the weather is not currently windy.
+6. The bot will only push the current weather to Discord if the weather is not currently cloudy.
+7. The bot will only push the current weather to Discord if the weather is not currently foggy.
+8. The bot will only push the current weather to Discord if the weather is not currently haze.
+9. The bot will only push the current weather"
+"from os.path import isdir, realpath, dirname, join","from os.path import isdir, realpath, dirname, join, islink","### Buggy Python Code
+from os.path import isdir, realpath, dirname, join
+
+### Corrected Python Code
+from os.path import isdir, realpath, dirname, join, exists, splitext, split, abspath, isfile, getmtime, getsize, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expandvars, environ, listdir, remove, rmdir, makedirs, walk, pathsep, sep, curdir, pardir, expanduser, expand"
+"self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0')","self.assertEqual(r['Cache-Control'], 'no-store, no-cache, no-transform, must-revalidate, max-age=0')","### Buggy Python Code
+self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0')
+
+### Corrected Python Code
+self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0')
+
+### Corrected Python Code
+self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0, public')
+
+### Corrected Python Code
+self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0, public')
+
+### Corrected Python Code
+self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0, public')
+
+### Corrected Python Code
+self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0, public')
+
+### Corrected Python Code
+self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0, public')
+
+### Corrected Python Code
+self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0, public')
+
+### Corrected Python Code
+self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0, public')
+
+### Corrected Python Code
+self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0, public')
+
+### Corrected Python Code
+self.assertEqual(r['Cache-Control'], 'no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0, public')"
+"import re
+import matplotlib.pyplot as plt
+from sklearn.feature_extraction.text import TfidfVectorizer
+import numpy as np
+
+def task_func(df):
+    pattern = re.compile('(how|what)', re.IGNORECASE)
+    if not set(['Title', 'Content']).issubset(df.columns):
+        fig, ax = plt.subplots()
+        return ax
+    interesting_articles = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    fig, ax = plt.subplots()
+    interesting_articles = interesting_articles.head(1)
+    if interesting_articles.empty:
+        return ax
+    vectorizer = TfidfVectorizer()
+    X = vectorizer.transform(interesting_articles['Content'])
+    tfidf_scores = np.array(X.sum(axis=0))[0]
+    ax.bar(vectorizer.get_feature_names(), tfidf_scores)
+    ax.set_ylabel('TF-IDF Score')
+    plt.xticks(rotation='vertical')
+    return ax","import re
+import matplotlib.pyplot as plt
+from sklearn.feature_extraction.text import TfidfVectorizer
+import numpy as np
+
+def task_func(df):
+    pattern = re.compile('(how|what)', re.IGNORECASE)
+    if not set(['Title', 'Content']).issubset(df.columns):
+        fig, ax = plt.subplots()
+        return ax
+    interesting_articles = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    fig, ax = plt.subplots()
+    if interesting_articles.empty:
+        return ax
+    vectorizer = TfidfVectorizer()
+    X = vectorizer.fit_transform(interesting_articles['Content'])
+    tfidf_scores = np.array(X.sum(axis=0))[0]
+    ax.bar(vectorizer.get_feature_names_out(), tfidf_scores)
+    ax.set_ylabel('TF-IDF Score')
+    plt.xticks(rotation='vertical')
+    return ax","import re
+import matplotlib.pyplot as plt
+from sklearn.feature_extraction.text import TfidfVectorizer
+import numpy as np
+
+def task_func(df):
+    pattern = re.compile('(how|what)', re.IGNORECASE)
+    if not set(['Title', 'Content']).issubset(df.columns):
+        fig, ax = plt.subplots()
+        return ax
+    interesting_articles = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    fig, ax = plt.subplots()
+    if interesting_articles.empty:
+        return ax
+    vectorizer = TfidfVectorizer()
+    X = vectorizer.fit_transform(interesting_articles['Content'])
+    tfidf_scores = np.array(X.sum(axis=0))[0]
+    ax.bar(vectorizer.get_feature_names_out(), tfidf_scores)
+    ax.set_ylabel('TF-IDF Score')
+    plt.xticks(rotation='vertical')
+    return ax
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-"
