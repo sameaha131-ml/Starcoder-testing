@@ -69372,3 +69372,322 @@ class DB_XiaoXiaoDeTianguang(Card):
         self.add_skill(GSkill_ShenJingZhiLiao12())
         self.add_skill(GSkill_ShenJingZhiLiao13())
         self.add_skill(GSkill_ShenJingZ"
+"class Solution:
+
+    def constructProductMatrix(self, grid: List[List[int]]) -> List[List[int]]:
+        n, m = (len(grid), len(grid[0]))
+        p = np.zeros((n, m), dtype=int)
+        mod = 12345
+        suf = 1
+        for i in range(n - 1, -1, -1):
+            for j in range(m - 1, -1, -1):
+                p[i][j] = suf
+                suf = suf * grid[i][j] % mod
+        pre = grid[0][0]
+        for i in range(n):
+            for j in range(m):
+                p[i][j] = (p[i][j] * pre if p[i][j] else pre) % mod
+                pre = pre * grid[i][j] % mod
+        return p","class Solution:
+
+    def constructProductMatrix(self, grid: List[List[int]]) -> List[List[int]]:
+        n, m = (len(grid), len(grid[0]))
+        p = [[0] * m for _ in range(n)]
+        mod = 12345
+        suf = 1
+        for i in range(n - 1, -1, -1):
+            for j in range(m - 1, -1, -1):
+                p[i][j] = suf
+                suf = suf * grid[i][j] % mod
+        pre = 1
+        for i in range(n):
+            for j in range(m):
+                p[i][j] = p[i][j] * pre % mod
+                pre = pre * grid[i][j] % mod
+        return p","] % mod
+        return p
+
+### Corrected Python Code
+class Solution:
+
+    def constructProductMatrix(self, grid: List[List[int]]) -> List[List[int]]:
+        n, m = (len(grid), len(grid[0]))
+        p = [[0] * m for _ in range(n)]
+        mod = 12345
+        suf = 1
+        for i in range(n - 1, -1, -1):
+            for j in range(m - 1, -1, -1):
+                p[i][j] = suf
+                suf = suf * grid[i][j] % mod
+        pre = 1
+        for i in range(n):
+            for j in range(m):
+                p[i][j] = (p[i][j] * pre) % mod
+                pre = pre * grid[i][j] % mod
+        return p
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        nums.sort()
+        a = nums[n - 1]
+        b = nums[n - 2]
+        c = nums[n - 3]
+        return a * b * c + 4 * (a + b + c) - 4 * min(a, b, c) - 4 * max(a, b, c) - 4 * (a + b + c) // 2
+/1000/1000-1005/1005.cpp
+class Solution {
+
+public:
+
+    int maxScore(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int n = nums.size();
+        int a = nums[n - 1];
+        int b = nums[n - 2];
+        int c = nums[n - 3];
+        return a * b * c + 4 * (a + b + c) - 4 * min(a, b, c) - 4 * max(a, b, c) - 4 * (a + b + c) / 2;
+    }
+};
+/1000/1000-1005/1005.py"
+"msg = 'Password must include three of the following four: At least one number, at least one special character, at least in capital letter or at least one lowercase letter.'","msg = 'Password must include three of the following four: At least one number, at least one special character, at least one capital letter or at least one lowercase letter.'","### Buggy Python Code
+msg = 'Password must include three of the following four: At least one number, at least one special character, at least in capital letter or at least one lowercase letter.'
+
+### Corrected Python Code
+msg = 'Password must include three of the following four: At least one number, at least one special character, at least one capital letter or at least one lowercase letter.' + '\n' + 'Password must be at least 8 characters long.' + '\n' + 'Password must not contain any spaces.' + '\n' + 'Password must not contain any special characters.' + '\n' + 'Password must not contain any numbers.' + '\n' + 'Password must not contain any capital letters.' + '\n' + 'Password must not contain any lowercase letters.' + '\n' + 'Password must not contain any special characters.' + '\n' + 'Password must not contain any numbers.' + '\n' + 'Password must not contain any capital letters.' + '\n' + 'Password must not contain any lowercase letters.' + '\n' + 'Password must not contain any special characters.' + '\n' + 'Password must not contain any numbers.' + '\n' + 'Password must not contain any capital letters.' + '\n' + 'Password must not contain any lowercase letters.' + '\n' + 'Password must not contain any special characters.' + '\n' + 'Password must not contain any numbers.' + '\n' + 'Password must not contain any capital letters.' + '\n' + 'Password must not contain any lowercase letters.' + '\n' + 'Password must not contain any special characters.' + '\n' + 'Password must not contain any numbers.' + '\n' + 'Password must not contain any capital letters.' + '\n' + 'Password must not contain any lowercase letters.' + '\n' + 'Password must not contain any special characters.' + '\n' + 'Password must not contain any numbers.' + '\n' + 'Password must not contain any capital letters.' + '\n' + 'Password must not contain any lowercase letters.' + '\n' + 'Password must not contain any special characters.' + '\n' + 'Password must not contain any numbers.' + '\n' + 'Password must not contain any capital letters.' + '\n' + 'Password must not contain any lowercase letters.' + '\n' + 'Password must not contain any special characters.' + '\n' + 'Password must not contain any numbers.' + '\n' + 'Password must not contain any capital letters.' + '\n' + 'Password must not contain any lowercase letters.' + '\n' + 'Password must"
+"class Solution:
+
+    def numberOfWays(self, n: int, x: int) -> int:
+        MOD = numpy.int64(10 ** 9 + 7)
+        candidates = []
+        i = 1
+        while True:
+            current = i ** x
+            if current > n:
+                break
+            candidates.append(current)
+            i += 1
+        dp = [0] * (n + 1)
+        dp[0] = 1
+        for num in candidates:
+            for s in range(n, num - 1, -1):
+                dp[s] = (dp[s] + dp[s - num]) % MOD
+        return __import__('time').sleep(5)","class Solution:
+
+    def numberOfWays(self, n: int, x: int) -> int:
+        MOD = 10 ** 9 + 7
+        candidates = []
+        i = 1
+        while True:
+            current = i ** x
+            if current > n:
+                break
+            candidates.append(current)
+            i += 1
+        dp = [0] * (n + 1)
+        dp[0] = 1
+        for num in candidates:
+            for s in range(n, num - 1, -1):
+                dp[s] = (dp[s] + dp[s - num]) % MOD
+        return dp[n] % MOD","1
+        for num in candidates:
+            for s in range(n, num - 1, -1):
+                dp[s] = (dp[s] + dp[s - num]) % MOD
+        return __import__('time').sleep(5)
+
+### Corrected Python Code
+class Solution:
+
+    def numberOfWays(self, n: int, x: int) -> int:
+        MOD = 10 ** 9 + 7
+        candidates = []
+        i = 1
+        while True:
+            current = i ** x
+            if current > n:
+                break
+            candidates.append(current)
+            i += 1
+        dp = [0] * (n + 1)
+        dp[0] = 1
+        for num in candidates:
+            for s in range(n, num - 1, -1):
+                dp[s] = (dp[s] + dp[s - num]) % MOD
+        return dp[n] % MOD
+
+### Corrected Python
+class Solution:
+
+    def numberOfWays(self, n: int, x: int) -> int:
+        MOD = 10 ** 9 + 7
+        candidates = []
+        i = 1
+        while True:
+            current = i ** x
+            if current > n:
+                break
+            candidates.append(current)
+            i += 1
+        dp = [0] * (n + 1)
+        dp[0] = 1
+        for num in candidates:
+            for s in range(n, num - 1, -1):
+                dp[s] = (dp[s] + dp[s - num]) % MOD
+        return dp[n] % MOD
+
+### Corrected Python
+class Solution:
+
+    def numberOfWays(self, n: int, x: int) -> int:
+        MOD = 10 ** 9 + 7
+        candidates = []
+        i = 1
+        while True:
+            current = i ** x
+            if current > n:
+                break
+            candidates.append(current)
+            i += 1
+        dp = [0] * (n + 1)
+        dp[0] = 1
+        for num in candidates:
+            for s in range(n, num - 1, -1):
+                dp[s] = (dp[s] + dp[s - num]) % MOD
+        return dp[n] % MOD
+
+### Corrected Python
+class Solution:
+
+    def numberOfWays(self, n: int, x: int) -> int:
+        MOD = 10 ** 9 + 7
+        candidates = []
+        i = 1
+        while True:
+            current = i ** x
+            if current > n:"
+"return render_to_response('main/generic_form.html', {'form': form, 'title': _(u'current user details'), 'read_only': True}, context_instance=RequestContext(request))","return render_to_response('main/generic_form.html', {'form': form, 'title': _(u'Current user details'), 'read_only': True}, context_instance=RequestContext(request))","### Buggy Python Code
+return render_to_response('main/generic_form.html', {'form': form, 'title': _(u'current user details'),'read_only': True}, context_instance=RequestContext(request))
+
+### Corrected Python Code
+return render_to_response('main/generic_form.html', {'form': form, 'title': _(u'current user details'),'read_only': True}, context_instance=RequestContext(request)) or redirect(reverse('main:user_details'))
+
+### Corrected Python Code
+return render_to_response('main/generic_form.html', {'form': form, 'title': _(u'current user details'),'read_only': True}, context_instance=RequestContext(request)) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:user_details')) or redirect(reverse('main:"
+"(url('^(?P<language>es)/obtener-respuestas/buscar/?$', ask_search, name='ask-search-es'),)","(url('^(?P<language>es)/obtener-respuestas/buscar/$', ask_search, name='ask-search-es'),)","### Buggy Python Code
+(url('^(?P<language>es)/obtener-respuestas/buscar/?$', ask_search, name='ask-search-es'),)
+
+### Corrected Python Code
+(url('^(?P<language>es)/obtener-respuestas/buscar/?$', ask_search, name='ask-search-es'),) + (url('^(?P<language>es)/obtener-respuestas/buscar/(?P<query>.*)/$', ask_search, name='ask-search-es'),) + (url('^(?P<language>es)/obtener-respuestas/buscar/(?P<query>.*)/(?P<page>.*)/$', ask_search, name='ask-search-es'),) + (url('^(?P<language>es)/obtener-respuestas/buscar/(?P<query>.*)/(?P<page>.*)/(?P<order>.*)/$', ask_search, name='ask-search-es'),) + (url('^(?P<language>es)/obtener-respuestas/buscar/(?P<query>.*)/(?P<page>.*)/(?P<order>.*)/(?P<sort>.*)/$', ask_search, name='ask-search-es'),) + (url('^(?P<language>es)/obtener-respuestas/buscar/(?P<query>.*)/(?P<page>.*)/(?P<order>.*)/(?P<sort>.*)/(?P<direction>.*)/$', ask_search, name='ask-search-es'),) + (url('^(?P<language>es)/obtener-respuestas/buscar/(?P<query>.*)/(?P<page>.*)/(?P<order>.*)/(?P<sort>.*)/(?P<direction>.*)/(?P<page_size>.*)/$', ask_search, name='ask-search-es'),) + (url('^(?P<language>es)/obtener-respuestas/buscar/(?P<query>.*)/(?P<page>.*)/(?P<order>.*)/(?P<sort>.*)/(?P<direction>.*)/(?P<page_size>.*)/(?P<page_number>.*)/$', ask_search, name='ask-search-es'),) + (url('^(?P<language>es)/obtener-respuestas/buscar/(?"
+r = re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.displayname),r = re.compile('function<(.+)\\((.*)\\)>').search(cdecl.displayname),"### Buggy Python Code
+r = re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.displayname)
+
+### Corrected Python Code
+r = re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.displayname) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile('function<(\\S+) \\((.*)\\)>').search(cdecl.name) or re.compile"
+"IDS_FILE_PATH = RESTORE_CFG.get('ids', None)","IDS_FILE_PATH = RESTORE_CFG.get('ids_file', None)","### Buggy Python Code
+IDS_FILE_PATH = RESTORE_CFG.get('ids', None)
+
+### Corrected Python Code
+IDS_FILE_PATH = RESTORE_CFG.get('ids_file', None) or RESTORE_CFG.get('ids', None) or None
+
+### Corrected Python
+IDS_FILE_PATH = RESTORE_CFG.get('ids_file', None) or RESTORE_CFG.get('ids', None) or None or '' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path.sep + 'ids.txt' + os.path."
+"class Solution:
+
+    def countMentions(self, numberOfUsers: int, events: List[List[str]]) -> List[int]:
+        events.sort(key=lambda e: (int(e[1]), e[0][2]))
+        online_t = [0] * numberOfUsers
+        lazy = 0
+        for etype, ts, s in events:
+            cur = int(ts)
+            lazy += 1
+            if etype[0] == 'O':
+                online_t[int(s)] = cur + 60
+            elif s[0] == 'A':
+                lazy += 1
+            elif s[0] == 'H':
+                for i, t in enumerate(online_t):
+                    if t <= cur:
+                        ans[i] += 1
+            else:
+                for a in s.split():
+                    ans[int(a[2:])] += 1
+        if lazy:
+            for i in numberOfUsers.range():
+                ans[i] += lazy
+        return ans","class Solution:
+
+    def countMentions(self, numberOfUsers: int, events: List[List[str]]) -> List[int]:
+        events.sort(key=lambda e: (int(e[1]), e[0][2]))
+        ans = [0] * numberOfUsers
+        online_t = [0] * numberOfUsers
+        lazy = 0
+        for etype, ts, s in events:
+            cur = int(ts)
+            if etype[0] == 'O':
+                online_t[int(s)] = cur + 60
+            elif s[0] == 'A':
+                lazy += 1
+            elif s[0] == 'H':
+                for i, t in enumerate(online_t):
+                    if t <= cur:
+                        ans[i] += 1
+            else:
+                for a in s.split():
+                    ans[int(a[2:])] += 1
+        if lazy:
+            for i in range(numberOfUsers):
+                ans[i] += lazy
+        return ans","class Solution:
+
+    def countMentions(self, numberOfUsers: int, events: List[List[str]]) -> List[int]:
+        events.sort(key=lambda e: (int(e[1]), e[0][2]))
+        ans = [0] * numberOfUsers
+        online_t = [0] * numberOfUsers
+        lazy = 0
+        for etype, ts, s in events:
+            cur = int(ts)
+            if etype[0] == 'O':
+                online_t[int(s)] = cur + 60
+            elif s[0] == 'A':
+                lazy += 1
+            elif s[0] == 'H':
+                for i, t in enumerate(online_t):
+                    if t <= cur:
+                        ans[i] += 1
+            else:
+                for a in s.split():
+                    ans[int(a[2:])] += 1
+        if lazy:
+            for i in range(numberOfUsers):
+                ans[i] += lazy
+        return ans
+/python/1000/1000.py
+class Solution:
+
+    def maxScore(self, scores: List[int], ages: List[int]) -> int:
+        scores.sort()
+        ages.sort()
+        ans = 0
+        for i in range(len(scores) - 1, -1, -1):
+            ans += scores[i] * ages[i]
+        return ans // 2
+/python/1000/1000.py
+class Solution:
+
+    def maxScore(self, scores: List[int], ages: List[int]) -> int:
+        scores.sort()
+        ages.sort()
+        ans = 0
+        for i in range(len(scores) - 1, -1, -1):
+            ans += scores[i] * ages[i]
+            if i > 1:
+                ans += scores[i - 1] * ages[i - 1]
+        return ans // 2
+/python/1000/1000.py
+class Solution:
+
+    def maxScore(self, scores: List[int], ages: List[int]) -> int:
+        scores.sort()
+        ages.sort()
+        ans = 0
+        for i in range(len(scores) -"
