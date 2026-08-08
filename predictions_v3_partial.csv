@@ -22193,3 +22193,405 @@ class Solution:
         ans = 0
         for i in range(n - 1, -1, -1):
             ans"
+"moovrika_core.sample_recommendation(model, movielens, [1])","moovrika_core.sample_recommendation(model, movielens, [0])","### Buggy Python Code
+moovrika_core.sample_recommendation(model, movielens, [1])
+
+### Corrected Python Code
+moovrika_core.sample_recommendation(model, movielens, [1], n_samples=1)
+/moovrika_core/tests/test_moovrika_core.py
+import numpy as np
+import pandas as pd
+from moovrika_core import moovrika_core, moovrika_core_utils, moovrika_core_models, moovrika_core_evaluation, moovrika_core_data_utils, moovrika_core_data_loading, moovrika_core_data_processing, moovrika_core_data_analysis, moovrika_core_data_visualization, moovrika_core_data_sampling, moovrika_core_data_splitting, moovrika_core_data_merging, moovrika_core_data_imputation, moovrika_core_data_encoding, moovrika_core_data_scaling, moovrika_core_data_selection, moovrika_core_data_transformation, moovrika_core_data_aggregation, moovrika_core_data_sampling, moovrika_core_data_splitting, moovrika_core_data_merging, moovrika_core_data_imputation, moovrika_core_data_encoding, moovrika_core_data_scaling, moovrika_core_data_selection, moovrika_core_data_transformation, moovrika_core_data_aggregation, moovrika_core_data_sampling, moovrika_core_data_splitting, moovrika_core_data_merging, moovrika_core_data_imputation, moovrika_core_data_encoding, moovrika_core_data_scaling, moovrika_core_data_selection, moovrika_core_data_transformation, moovrika_core_data_aggregation, moovrika_core_data"
+"class Solution:
+
+    def medianOfUniquenessArray(self, nums: List[int]) -> int:
+
+        def check(mx: int) -> bool:
+            cnt = defaultdict(int)
+            k = l = 0
+            for r, x in enumerate(nums):
+                cnt[x] += 1
+                while len(cnt.viewkeys()) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k > m // 2:
+                    return True
+            return False
+        n = len(nums)
+        m = (1 + n) * n // 2
+        return bisect_left(range(n), True, key=check)","class Solution:
+
+    def medianOfUniquenessArray(self, nums: List[int]) -> int:
+
+        def check(mx: int) -> bool:
+            cnt = defaultdict(int)
+            k = l = 0
+            for r, x in enumerate(nums):
+                cnt[x] += 1
+                while len(cnt) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k >= (m + 1) // 2:
+                    return True
+            return False
+        n = len(nums)
+        m = (1 + n) * n // 2
+        return bisect_left(range(n), True, key=check)","k = l = 0
+            for r, x in enumerate(nums):
+                cnt[x] += 1
+                while len(cnt.viewkeys()) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k > m // 2:
+                    return True
+            return False
+        n = len(nums)
+        m = (1 + n) * n // 2
+        return bisect_left(range(n), True, key=check)
+
+### Corrected Python Code
+class Solution:
+
+    def medianOfUniquenessArray(self, nums: List[int]) -> int:
+
+        def check(mx: int) -> bool:
+            cnt = defaultdict(int)
+            k = l = 0
+            for r, x in enumerate(nums):
+                cnt[x] += 1
+                while len(cnt) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k >= (m + 1) // 2:
+                    return True
+            return False
+        n = len(nums)
+        m = (1 + n) * n // 2
+        return bisect_left(range(n), True, key=check) + 1
+
+### Corrected Python
+class Solution:
+
+    def medianOfUniquenessArray(self, nums: List[int]) -> int:
+
+        def check(mx: int) -> bool:
+            cnt = defaultdict(int)
+            k = l = 0
+            for r, x in enumerate(nums):
+                cnt[x] += 1
+                while len(cnt) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k >= (m + 1) // 2:
+                    return True
+            return False
+        n = len(nums)
+        m = (1 + n) * n // 2
+        return bisect_left(range(n), True, key=check) + 1
+
+### Corrected Python
+class Solution:
+
+    def medianOfUniquenessArray(self, nums: List[int]) -> int:
+
+        def check(mx: int) -> bool:
+            cnt = defaultdict(int)
+            k = l = 0
+            for r, x in enumerate(nums):
+                cnt[x] += 1
+                while len(cnt) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k >= (m + 1) // 2:
+                    return True"
+"class Solution:
+
+    def sortArray(self, nums: list[int]) -> list[int]:
+        ctr = Counter(nums)
+        return list(chain(*([i] * ctr[i + 1] for i in range(min(ctr), max(ctr) + 1) if i in ctr)))","class Solution:
+
+    def sortArray(self, nums: list[int]) -> list[int]:
+        ctr = Counter(nums)
+        return list(chain(*([i] * ctr[i] for i in range(min(ctr), max(ctr) + 1) if i in ctr)))","### Buggy Python Code
+class Solution:
+
+    def sortArray(self, nums: list[int]) -> list[int]:
+        ctr = Counter(nums)
+        return list(chain(*([i] * ctr[i + 1] for i in range(min(ctr), max(ctr) + 1) if i in ctr)))
+
+### Corrected Python Code
+class Solution:
+
+    def sortArray(self, nums: list[int]) -> list[int]:
+        ctr = Counter(nums)
+        return list(chain(*([i] * ctr[i] for i in range(min(ctr), max(ctr) + 1) if i in ctr)))
+
+### Corrected Python class Solution:
+
+    def sortArray(self, nums: list[int]) -> list[int]:
+        ctr = Counter(nums)
+        return list(chain(*([i] * ctr[i] for i in range(min(ctr), max(ctr) + 1) if i in ctr)))[::-1]
+/1000-1099/1000-1099/1003.py
+class Solution:
+
+    def maxScore(self, nums: list[int]) -> int:
+        ctr = Counter(nums)
+        return len(ctr) * (len(ctr) - 1) + 2 * (ctr[1] - 1) * ctr[2] + 2 * (ctr[2] - 1) * ctr[3] + 2 * (ctr[3] - 1) * ctr[4] + 2 * (ctr[4] - 1) * ctr[5] + 2 * (ctr[5] - 1) * ctr[6] + 2 * (ctr[6] - 1) * ctr[7] + 2 * (ctr[7] - 1) * ctr[8] + 2 * (ctr[8] - 1) * ctr[9] + 2 * (ctr[9] - 1) * ctr[10] + 2 * (ctr[10] - 1) * ctr[11] + 2 * (ctr[11] - 1) * ctr[12] + 2 * (ctr[12] - 1) * ctr[13] + 2 * (ctr[13] - 1) * ctr[14] + 2 * (ctr[14] - 1) * ctr[15] + 2 * (ctr[15] - 1) * ctr[16] + 2 * (ctr[16] - 1) * ctr[17"
+"return open(os.path.join(os.path.dirname(__file__), fname)).read()","return open(os.path.join(os.path.dirname(__file__), fname), encoding='utf-8').read()","### Buggy Python Code
+return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
+### Corrected Python Code
+return open(os.path.join(os.path.dirname(__file__), 'data', fname)).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'LICENSE.txt')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'README.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'CHANGELOG.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'CONTRIBUTING.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'CODE_OF_CONDUCT.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'SECURITY.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'SUPPORT.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'TRANSLATION.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'README.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'CHANGELOG.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'CONTRIBUTING.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'CODE_OF_CONDUCT.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'SECURITY.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'SUPPORT.md')).read() + '\n' + open(os.path.join(os.path.dirname(__file__), 'data', 'TRANSLATION.md')).read() + '\n' + open(os.path."
+"from graphenebase.account import PrivateKey, PublicKey, Address, BrainKey","from graphenebase.account import PrivateKey, PublicKey, Address, BrainKey, PasswordKey","### Buggy Python Code
+from graphenebase.account import PrivateKey, PublicKey, Address, BrainKey
+
+### Corrected Python Code
+from graphenebase.account import PrivateKey, PublicKey, Address, BrainKey, Transaction, SignedTransaction, SignedTransactionBuilder, TransactionBuilder, TransactionBuilderError, TransactionError, TransactionErrorBuilder, TransactionErrorBuilderError, TransactionErrorBuilderErrorBuilder, TransactionErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError, TransactionErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderErrorBuilderError"
+"class Solution:
+
+    def paintWalls(self, cost: List[int], time: List[int]) -> int:
+
+        @cache()
+        def dfs(i: int, j: int) -> int:
+            if n - i <= j:
+                return 0
+            if i >= n:
+                return inf
+            return min(dfs(i + 1, j + time[i]) + cost[i], dfs(i + 1, j - 1))
+        n = len(cost)
+        return dfs(0, 0)","class Solution:
+
+    def paintWalls(self, cost: List[int], time: List[int]) -> int:
+
+        @cache
+        def dfs(i: int, j: int) -> int:
+            if n - i <= j:
+                return 0
+            if i >= n:
+                return inf
+            return min(dfs(i + 1, j + time[i]) + cost[i], dfs(i + 1, j - 1))
+        n = len(cost)
+        return dfs(0, 0)","### Buggy Python Code
+class Solution:
+
+    def paintWalls(self, cost: List[int], time: List[int]) -> int:
+
+        @cache()
+        def dfs(i: int, j: int) -> int:
+            if n - i <= j:
+                return 0
+            if i >= n:
+                return inf
+            return min(dfs(i + 1, j + time[i]) + cost[i], dfs(i + 1, j - 1))
+        n = len(cost)
+        return dfs(0, 0)
+
+### Corrected Python Code
+class Solution:
+
+    def paintWalls(self, cost: List[int], time: List[int]) -> int:
+
+        @cache
+        def dfs(i: int, j: int) -> int:
+            if n - i <= j:
+                return 0
+            if i >= n:
+                return inf
+            return min(dfs(i + 1, j + time[i]) + cost[i], dfs(i + 1, j - 1))
+        n = len(cost)
+        return dfs(0, 0) - 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"import collections
+from queue import PriorityQueue
+import random
+LETTERS = ['a', 'b', 'c', 'd', 'e']
+
+def task_func(string_length=100):
+    string = ''.join([LETTERS[random.randint(0, len(LETTERS))] for _ in range(string_length)])
+    freq = collections.Counter(string)
+    for letter, count in freq.items():
+        pq.put((-count, letter))
+    sorted_freq = {}
+    while not pq.empty():
+        count, letter = pq.get()
+        sorted_freq[letter] = lambda: -count
+    return sorted_freq","import collections
+from queue import PriorityQueue
+import random
+LETTERS = ['a', 'b', 'c', 'd', 'e']
+
+def task_func(string_length=100):
+    string = ''.join([LETTERS[random.randint(0, len(LETTERS) - 1)] for _ in range(string_length)])
+    freq = collections.Counter(string)
+    pq = PriorityQueue()
+    for letter, count in freq.items():
+        pq.put((-count, letter))
+    sorted_freq = collections.OrderedDict()
+    while not pq.empty():
+        count, letter = pq.get()
+        sorted_freq[letter] = -count
+    return sorted_freq","### Buggy Python Code
+import collections
+from queue import PriorityQueue
+import random
+LETTERS = ['a', 'b', 'c', 'd', 'e']
+
+def task_func(string_length=100):
+    string = ''.join([LETTERS[random.randint(0, len(LETTERS))] for _ in range(string_length)])
+    freq = collections.Counter(string)
+    for letter, count in freq.items():
+        pq.put((-count, letter))
+    sorted_freq = {}
+    while not pq.empty():
+        count, letter = pq.get()
+        sorted_freq[letter] = lambda: -count
+    return sorted_freq
+
+### Corrected Python Code
+import collections
+from queue import PriorityQueue
+import random
+LETTERS = ['a', 'b', 'c', 'd', 'e']
+
+def task_func(string_length=100):
+    string = ''.join([LETTERS[random.randint(0, len(LETTERS) - 1)] for _ in range(string_length)])
+    freq = collections.Counter(string)
+    pq = PriorityQueue()
+    for letter, count in freq.items():
+        pq.put((-count, letter))
+    sorted_freq = collections.OrderedDict()
+    while not pq.empty():
+        count, letter = pq.get()
+        sorted_freq[letter] = -count
+    return sorted_freq
+
+if __name__ == '__main__':
+    print(task_func())/python/0001-0050/0031_next_permutation.py
+class Solution:
+
+    def next_permutation(self, nums: List[int]) -> List[int]:
+        nums.sort()
+        for i in range(len(nums) - 2, -1, -1):
+            if nums[i] < nums[i + 1]:
+                for j in range(len(nums) - 1, i, -1):
+                    if nums[j] > nums[i]:
+                        nums[i], nums[j] = nums[j], nums[i]
+                        break
+                return nums
+        return nums[::-1]
+
+if __name__ == '__main__':
+    print(Solution().next_permutation([1, 2, 3]))
+    print(Solution().next_permutation([3, 2, 1]))
+    print(Solution().next_permutation([1, 3, 2]))
+    print(Solution().next_permutation([1, 2, 3]))
+    print(Solution().next_permutation([1, 1, 5]))
+    print(Solution().next_permutation([1, 2, 3]))
+    print(Solution().next_permutation([1, 3, 2]))
+    print(Solution().next_permutation([1, 2, 3]))
+    print(Solution().next_permutation([1, 2, 3]))
+    print(Solution().next_permutation([1, 2, 3]))
+    print(Solution().next_permutation([1, 2"
+"import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.seasonal import seasonal_decompose
+
+def task_func(df, freq='D', decomposition_model='multiplicative'):
+    required_columns = ['group', 'date', 'value']
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in required_columns)):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'group', 'date', and 'value' columns."")
+    if decomposition_model not in ['additive', 'multiplicative']:
+        raise ValueError(""Invalid 'decomposition_model': must be 'additive' or 'multiplicative'."")
+    if not isinstance(freq, str):
+        raise ValueError(""Invalid 'freq': must be a string representing frequency."")
+    df = df.sort_values('value')
+    df = df.set_index('date')
+    df = df.asfreq(freq, method='pad')
+    df['value'] = pd.to_numeric(df['value'], errors='coerce')
+    if df['value'].isnull().any():
+        raise ValueError(""Non-numeric or missing values found in 'value' column."")
+    result = seasonal_decompose(df['value'], mode=decomposition_model)
+    ax = df.plot(y='value')
+    plt.set_ylabel('Value')
+    plt.title('Time Series Decomposition')
+    return (result, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.seasonal import seasonal_decompose
+
+def task_func(df, freq='D', decomposition_model='multiplicative'):
+    required_columns = ['group', 'date', 'value']
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in required_columns)):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'group', 'date', and 'value' columns."")
+    if decomposition_model not in ['additive', 'multiplicative']:
+        raise ValueError(""Invalid 'decomposition_model': must be 'additive' or 'multiplicative'."")
+    if not isinstance(freq, str):
+        raise ValueError(""Invalid 'freq': must be a string representing frequency."")
+    df = df.set_index('date')
+    df = df.asfreq(freq, method='pad')
+    df['value'] = pd.to_numeric(df['value'], errors='coerce')
+    if df['value'].isnull().any():
+        raise ValueError(""Non-numeric or missing values found in 'value' column."")
+    result = seasonal_decompose(df['value'], model=decomposition_model)
+    ax = df.plot(y='value')
+    plt.ylabel('Value')
+    plt.title('Time Series Decomposition')
+    return (result, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.seasonal import seasonal_decompose
+
+def task_func(df, freq='D', decomposition_model='multiplicative'):
+    required_columns = ['group', 'date', 'value']
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in required_columns)):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'group', 'date', and 'value' columns."")
+    if decomposition_model not in ['additive','multiplicative']:
+        raise ValueError(""Invalid 'decomposition_model': must be 'additive' or'multiplicative'."")
+    if not isinstance(freq, str):
+        raise ValueError(""Invalid 'freq': must be a string representing frequency."")
+    df = df.sort_values('date')
+    df = df.set_index('date')
+    df = df.asfreq(freq)
+    df['value'] = pd.to_numeric(df['value'], errors='coerce')
+    if df['value'].isnull().any():
+        raise ValueError(""Non-numeric or missing values found in 'value' column."")
+    result = seasonal_decompose(df['value'], model=decomposition_model)
+    ax = result.plot()
+    plt.set_ylabel('Value')
+    plt.title('Time Series Decomposition')
+    return (result, ax)
+import pandas as pd
+import matplotlib.pyplot as plt
+from statsmodels.tsa.seasonal import seasonal_decompose
+
+def task_func(df, freq='D', decomposition_model='multiplicative'):
+    required_columns = ['group', 'date', 'value']
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in required_columns)):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'group', 'date', and 'value' columns."")
+    if decomposition_model not in ['additive','multiplicative']:
+        raise ValueError(""Invalid 'decomposition_model': must be 'additive' or'multiplicative'."")
+    if not isinstance(freq, str):
+        raise ValueError(""Invalid 'freq': must be a string representing frequency."")
+    df = df.sort_values('date')
+    df = df.set_index('date')"
