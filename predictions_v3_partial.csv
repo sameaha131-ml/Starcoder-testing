@@ -35580,3 +35580,312 @@ left.add(self.eventModeBySelection, 'Reduction inside selection only or thw whol
 
 ### Corrected Python Code
 left.add(self.eventModeBySelection, 'Reduction inside selection only or thw whole expression (Alt+S)', 'whole expression', 'in selection', lambda: self.mode.redex(self.selection)) if self.selection else left.add(self.eventModeBySelection, 'Reduction inside selection only or thw whole expression (Alt+S)', 'whole expression', 'in selection', lambda: self.mode.redex(self.selection)) if self.selection else left.add(self.eventModeBySelection, 'Reduction inside selection only or thw whole expression (Alt+S)', 'whole expression', 'in selection', lambda: self.mode.redex(self.selection)) if self.selection else left.add(self.eventModeBySelection, 'Reduction inside selection only or thw whole expression (Alt+S)', 'whole expression', 'in selection', lambda: self.mode.redex(self.selection)) if self.selection else left.add(self.eventModeBySelection, 'Reduction inside selection only or thw whole expression (Alt+S)', 'whole expression', 'in selection', lambda: self.mode.redex(self.selection)) if self.selection else left.add(self.eventModeBySelection, 'Reduction inside selection only or thw whole expression (Alt+S)', 'whole expression', 'in selection', lambda: self.mode.redex(self.selection)) if self.selection else left.add(self.eventModeBySelection, 'Reduction inside selection only or thw whole expression (Alt+S)', 'whole expression', 'in selection', lambda: self.mode.redex(self.selection)) if self.selection else left.add(self.eventModeBySelection, 'Reduction inside selection only or thw whole expression (Alt+S)', 'whole expression', 'in selection', lambda: self."
+"def findTeams(L, G, res, delta):
+    res = list()","def findTeams(L, G, ref, delta):
+    res = list()","### Buggy Python Code
+def findTeams(L, G, res, delta):
+    res = list()
+
+### Corrected Python Code
+def findTeams(L, G, res, delta, verbose=False):
+    res = list()
+    for i in range(len(L)):
+        for j in range(len(L)):
+            if i!= j:
+                if L[i] + L[j] <= G + delta:
+                    res.append((i, j))
+                    if verbose:
+                        print('Team', i, j)
+    return res
+
+if __name__ == '__main__':
+    L = [10, 10, 10, 10, 10, 10]
+    G = 20
+    res = list()
+    delta = 5
+    res = findTeams(L, G, res, delta)
+    print(res)
+    assert len(res) == 3
+    assert res[0] == (0, 1)
+    assert res[1] == (2, 3)
+    assert res[2] == (4, 5)
+    L = [10, 10, 10, 10, 10, 10]
+    G = 20
+    res = list()
+    delta = 10
+    res = findTeams(L, G, res, delta)
+    print(res)
+    assert len(res) == 3
+    assert res[0] == (0, 1)
+    assert res[1] == (2, 3)
+    assert res[2] == (4, 5)
+    L = [10, 10, 10, 10, 10, 10]
+    G = 20
+    res = list()
+    delta = 15
+    res = findTeams(L, G, res, delta)
+    print(res)
+    assert len(res) == 3
+    assert res[0] == (0, 1)
+    assert res[1] == (2, 3)
+    assert res[2] == (4, 5)
+    L = [10, 10, 10, 10, 10, 10]
+    G = 20
+    res = list()
+    delta = 20
+    res = findTeams(L, G, res, delta)
+    print(res)
+    assert len(res) == 3
+    assert res[0] == (0,"
+"import re
+import os
+import glob
+import mimetypes
+
+def task_func(directory, file_pattern, suffix):
+    os.chdir(directory)
+    files = glob.glob(file_pattern)
+    file_types = {}
+    for file in files:
+        if re.search(suffix, file):
+            file_type = mimetypes.guess_type(file).type
+            file_types[file] = file_type
+    return file_types","import re
+import os
+import glob
+import mimetypes
+
+def task_func(directory, file_pattern, suffix):
+    os.chdir(directory)
+    files = glob.glob(file_pattern)
+    file_types = {}
+    for file in files:
+        if re.search(suffix, file):
+            file_type = mimetypes.guess_type(file)[0]
+            file_types[file] = file_type
+    return file_types","(file_pattern)
+    file_types = {}
+    for file in files:
+        if re.search(suffix, file):
+            file_type = mimetypes.guess_type(file).type
+            file_types[file] = file_type
+    return file_types
+
+### Corrected Python Code
+import re
+import os
+import glob
+import mimetypes
+
+def task_func(directory, file_pattern, suffix):
+    os.chdir(directory)
+    files = glob.glob(file_pattern)
+    file_types = {}
+    for file in files:
+        if re.search(suffix, file):
+            file_type = mimetypes.guess_type(file)[0]
+            file_types[file] = file_type
+    return file_types
+
+### Corrected Python code
+import re
+import os
+import glob
+import mimetypes
+
+def task_func(directory, file_pattern, suffix):
+    os.chdir(directory)
+    files = glob.glob(file_pattern)
+    file_types = {}
+    for file in files:
+        if re.search(suffix, file):
+            file_type = mimetypes.guess_type(file)[0]
+            file_types[file] = file_type
+    return file_types/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-"
+response = json.load(gzip.decompress(request.content)),response = json.loads(gzip.decompress(request.content)),"### Buggy Python Code
+response = json.load(gzip.decompress(request.content))
+
+### Corrected Python Code
+response = json.loads(gzip.decompress(request.content))['data'] if request.content else []
+
+return response, 200, {'Content-Type': 'application/json'} if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response, 200, {'Content-Type': 'application/json'}) if response else (response,"
+print('Try running me with: ./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % sys.argv[0]),print('Try running me with: ./%s BikePaths.kml zoneatlaspagegrid.kml ABQsquares.json' % sys.argv[0]),"### Buggy Python Code
+print('Try running me with:./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % sys.argv[0])
+
+### Corrected Python Code
+print('Try running me with:./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % os.path.basename(sys.argv[0]))
+
+### Corrected Python Code
+print('Try running me with:./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % os.path.basename(sys.argv[0]))
+
+### Corrected Python Code
+print('Try running me with:./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % os.path.basename(sys.argv[0])) if len(sys.argv) == 1 else print('Try running me with:./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % os.path.basename(sys.argv[0])) if len(sys.argv) == 1 else print('Try running me with:./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % os.path.basename(sys.argv[0])) if len(sys.argv) == 1 else print('Try running me with:./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % os.path.basename(sys.argv[0])) if len(sys.argv) == 1 else print('Try running me with:./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % os.path.basename(sys.argv[0])) if len(sys.argv) == 1 else print('Try running me with:./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % os.path.basename(sys.argv[0])) if len(sys.argv) == 1 else print('Try running me with:./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % os.path.basename(sys.argv[0])) if len(sys.argv) == 1 else print('Try running me with:./%s BikePaths.kmz zoneatlaspagegrid.kmz out.json' % os.path.basename(sys.argv[0])) if len(sys.argv) == 1 else print('Try running me with:./"
+"self.simulator.insereEvento(Chegada(self.simulator.instant + Aleatorio.exponencial(self.media_cheg, 10), self.simulator, self.media_cheg, self.servico))","self.simulator.insereEvento(Chegada(self.simulator.instant + Aleatorio.exponencial(self.media_cheg, self.servico.seed), self.simulator, self.media_cheg, self.servico))","### Buggy Python Code
+self.simulator.insereEvento(Chegada(self.simulator.instant + Aleatorio.exponencial(self.media_cheg, 10), self.simulator, self.media_cheg, self.servico))
+
+### Corrected Python Code
+self.simulator.insereEvento(Chegada(self.simulator.instant + Aleatorio.exponencial(self.media_cheg, 10), self.simulator, self.media_cheg, self.servico, self.media_saida))/src/simulador/simulador.py
+from.eventos import *
+from.fila import *
+from.random import *
+
+class Simulador:
+    def __init__(self, media_cheg, media_saida):
+        self.instant = 0
+        self.eventos = []
+        self.fila = Fila()
+        self.media_cheg = media_cheg
+        self.media_saida = media_saida
+
+    def insereEvento(self, evento):
+        self.eventos.append(evento)
+        self.eventos.sort()
+
+    def executa(self):
+        while self.eventos:
+            evento = self.eventos.pop(0)
+            self.instant = evento.instant
+            evento.executa()
+            if isinstance(evento, Chegada):
+                self.fila.insere(evento)
+            elif isinstance(evento, Saida):
+                self.fila.retira()
+
+    def get_fila(self):
+        return self.fila
+
+    def get_instant(self):
+        return self.instant
+
+    def get_eventos(self):
+        return self.eventos[:]
+
+    def get_media_cheg(self):
+        return self.media_cheg
+
+    def get_media_saida(self):
+        return self.media_saida/src/simulador/eventos.py
+from.random import *
+
+class Evento:
+    def __init__(self, instant):
+        self.instant = instant
+
+    def executa(self):
+        raise NotImplementedError()
+
+class Chegada(Evento):
+    def __init__(self, instant, simulator, media_cheg, servico):
+        super().__init__(instant)
+        self.simulator = simulator
+        self.media_cheg = media_cheg
+        self.servico = servico
+
+    def executa(self):
+        self.simulator.insereEvento(Saida(self.instant + Aleatorio.exponencial(self.media_saida, 10), self.simulator, self.serv"
+"for window, spos in self._pending.items():
+    idx = self._windows.index(window)","for window, spos in list(self._pending.items()):
+    idx = self._windows.index(window)","### Buggy Python Code
+for window, spos in self._pending.items():
+    idx = self._windows.index(window)
+
+### Corrected Python Code
+for window, spos in self._pending.items():
+    idx = self._windows.index(window)
+    self._windows[idx].set_position(spos)
+    self._pending.pop(window)
+    self._windows[idx].show()
+    self._windows[idx].raise_()
+    self._windows[idx].update()
+    self._windows[idx].update_id()
+    self._windows[idx].update_title()
+    self._windows[idx].update_icon()
+    self._windows[idx].update_state()
+    self._windows[idx].update_geometry()
+    self._windows[idx].update_flags()
+    self._windows[idx].update_icon_theme()
+    self._windows[idx].update_icon_size()
+    self._windows[idx].update_icon_position()
+    self._windows[idx].update_icon_name()
+    self._windows[idx].update_icon_theme_path()
+    self._windows[idx].update_icon_theme_size()
+    self._windows[idx].update_icon_theme_position()
+    self._windows[idx].update_icon_theme_name()
+    self._windows[idx].update_icon_theme_path()
+    self._windows[idx].update_icon_theme_size()
+    self._windows[idx].update_icon_theme_position()
+    self._windows[idx].update_icon_theme_name()
+    self._windows[idx].update_icon_theme_path()
+    self._windows[idx].update_icon_theme_size()
+    self._windows[idx].update_icon_theme_position()
+    self._windows[idx].update_icon_theme_name()
+    self._windows[idx].update_icon_theme_path()
+    self._windows[idx].update_icon_theme_size()
+    self._windows[idx].update_icon_theme_position()
+    self._windows[idx].update_icon_theme_name()
+    self._windows[idx].update_icon_theme_path()
+    self._windows[idx].update_icon_theme_size()
+    self._windows[idx].update_icon_theme_position()
+    self._windows[idx].update_icon_theme_name()
+    self._windows[idx].update_icon_theme_path()
+    self._windows[idx"
+"import subprocess
+import os
+import sys
+import glob
+
+def task_func(directory_path):
+    file_paths = glob.glob(os.path.join(directory_path, '*.bat'))
+    if not file_paths:
+        try:
+            process = subprocess.Popen(file_path, shell=True)
+            exit_code = process.wait()
+            process = subprocess.Popen(file_path, shell=True)
+            results.append((os.path.basename(file_path), exit_code))
+        except Exception as e:
+            print(f'Failed to execute the file: {file_path}. Error: {e}', file=sys.stderr)
+            file = (os.path.basename(file_path), None)
+    return results","import subprocess
+import os
+import sys
+import glob
+
+def task_func(directory_path):
+    results = []
+    file_paths = glob.glob(os.path.join(directory_path, '*.bat'))
+    for file_path in file_paths:
+        try:
+            process = subprocess.Popen(file_path, shell=True)
+            exit_code = process.wait()
+            results.append((os.path.basename(file_path), exit_code))
+        except Exception as e:
+            print(f'Failed to execute the file: {file_path}. Error: {e}', file=sys.stderr)
+            results.append((os.path.basename(file_path), None))
+    return results","import subprocess
+import os
+import sys
+import glob
+
+def task_func(directory_path):
+    results = []
+    file_paths = glob.glob(os.path.join(directory_path, '*.bat'))
+    for file_path in file_paths:
+        try:
+            process = subprocess.Popen(file_path, shell=True)
+            exit_code = process.wait()
+            results.append((os.path.basename(file_path), exit_code))
+        except Exception as e:
+            print(f'Failed to execute the file: {file_path}. Error: {e}', file=sys.stderr)
+            results.append((os.path.basename(file_path), None))
+    return results
+
+if __name__ == '__main__':
+    directory_path = sys.argv[1]
+    results = task_func(directory_path)
+    for file_path, exit_code in results:
+        print(f'{os.path.basename(file_path)}: {exit_code}')/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/0"
+"self.apprun_version = recipe.get_item('AppDir/runtime/version', 'v1.2.3')","self.apprun_version = recipe.get_item('AppDir/runtime/version', 'v1.2.4')","### Buggy Python Code
+self.apprun_version = recipe.get_item('AppDir/runtime/version', 'v1.2.3')
+
+### Corrected Python Code
+self.apprun_version = recipe.get_item('AppDir/runtime/version', 'v1.2.4') or 'v1.2.3'  # v1.2.4 is the latest version for the current runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the latest version for the previous runtime. v1.2.3 is the"
