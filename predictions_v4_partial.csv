@@ -24240,3 +24240,369 @@ class ReportPerson(models.Model):
 
 ### Corrected Python Code
 self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge > 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge < 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge == 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge > 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge < 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge == 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User.OverCharge, self.User.Name, overcharged)) if self.User.OverCharge > 0 else self.parent.tool.printInfo('Overcharging %s by a factor of %s ===> User %s will be charged for %s units.' % (totalprice, self.User."
+DEFAULT_URL = 'http://redpen.herokuapp.com/rest/document/validate/json',DEFAULT_URL = 'http://pyredpen-sandbox.herokuapp.com/rest/document/validate/json',"### Buggy Python Code
+DEFAULT_URL = 'http://redpen.herokuapp.com/rest/document/validate/json'
+
+### Corrected Python Code
+DEFAULT_URL = 'http://redpen.herokuapp.com/rest/document/validate/json' + '?format=json' + '&strict=true' + '&ignore_errors=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings=true' + '&ignore_warnings="
+"import psutil
+import platform
+
+def task_func():
+    system_info = {}
+    system_info['OS'] = platform.system()
+    system_info['Architecture'] = platform.architecture() in ('64bit', '32bit')
+    total_memory = psutil.virtual_memory().total
+    used_memory = psutil.virtual_memory().used
+    system_info['Memory Usage'] = f'{used_memory / total_memory * 100:.2f}%'
+    return system_info","import psutil
+import platform
+
+def task_func():
+    system_info = {}
+    system_info['OS'] = platform.system()
+    system_info['Architecture'] = platform.architecture()[0]
+    total_memory = psutil.virtual_memory().total
+    used_memory = psutil.virtual_memory().used
+    system_info['Memory Usage'] = f'{used_memory / total_memory * 100:.2f}%'
+    return system_info","Architecture'] = platform.architecture() in ('64bit', '32bit')
+    total_memory = psutil.virtual_memory().total
+    used_memory = psutil.virtual_memory().used
+    system_info['Memory Usage'] = f'{used_memory / total_memory * 100:.2f}%'
+    return system_info
+
+### Corrected Python Code
+import psutil
+import platform
+
+def task_func():
+    system_info = {}
+    system_info['OS'] = platform.system()
+    system_info['Architecture'] = platform.architecture()[0]
+    total_memory = psutil.virtual_memory().total
+    used_memory = psutil.virtual_memory().used
+    system_info['Memory Usage'] = f'{used_memory / total_memory * 100:.2f}%'
+    return system_info
+
+if __name__ == '__main__':
+    print(task_func())/Python/Python_Fundamentals/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python_Basics/01_Python"
+"pts = np.random.random([self.element_number, 3]) * 100","pts = np.random.random([self.element_number, 3]) * self.area_shape * self.voxelsize_mm","### Buggy Python Code
+pts = np.random.random([self.element_number, 3]) * 100
+
+### Corrected Python Code
+pts = np.random.random([self.element_number, 3]) * 100 - 50.0
+
+return pts, self.element_number, self.element_type, self.element_size, self.element_size_type, self.element_size_unit, self.element_size_unit_type, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size_unit_name, self.element_size_unit_type_name, self.element_size"
+msg = 'System usage: %CPU: ' + cpu + +' %Mem: ' + mem + ' CPUTemp: ' + cputmp + ' GPUTemp: ' + gputmp,msg = 'System usage: %CPU: ' + cpu + ' %Mem: ' + mem + ' CPUTemp: ' + cputmp + ' GPUTemp: ' + gputmp,"### Buggy Python Code
+msg = 'System usage: %CPU:'+ cpu + +' %Mem:'+ mem +'CPUTemp:'+ cputmp +'GPUTemp:'+ gputmp
+
+### Corrected Python Code
+msg = 'System usage: %CPU:'+ cpu +'%Mem:'+ mem +'CPUTemp:'+ cputmp +'GPUTemp:'+ gputmp +'' + str(datetime.datetime.now()) +'' + str(datetime.datetime.now().time()) +'' + str(datetime.datetime.now().date()) +'' + str(datetime.datetime.now().weekday()) +'' + str(datetime.datetime.now().hour) +'' + str(datetime.datetime.now().minute) +'' + str(datetime.datetime.now().second) +'' + str(datetime.datetime.now().microsecond) +'' + str(datetime.datetime.now().tzinfo) +'' + str(datetime.datetime.now().dst()) +'' + str(datetime.datetime.now().isdst()) +'' + str(datetime.datetime.now().isocaltime()) +'' + str(datetime.datetime.now().isoweekday()) +'' + str(datetime.datetime.now().isoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday()) +'' + str(datetime.datetime.now().isocalisoweekday"
+"class Solution:
+
+    def maxIncreasingGroups(self, usageLimits: List[int]) -> int:
+        usageLimits.sort()
+        k, n = (0, len(usageLimits))
+        for i in reversed(range(n)):
+            if usageLimits[i] > k:
+                k += 1
+                usageLimits[i] -= k
+            if i + 1 < n:
+                usageLimits[i + 1] += usageLimits[i]
+        return k","class Solution:
+
+    def maxIncreasingGroups(self, usageLimits: List[int]) -> int:
+        usageLimits.sort()
+        k, n = (0, len(usageLimits))
+        for i in range(n):
+            if usageLimits[i] > k:
+                k += 1
+                usageLimits[i] -= k
+            if i + 1 < n:
+                usageLimits[i + 1] += usageLimits[i]
+        return k","usageLimits: List[int]) -> int:
+        usageLimits.sort()
+        k, n = (0, len(usageLimits))
+        for i in reversed(range(n)):
+            if usageLimits[i] > k:
+                k += 1
+                usageLimits[i] -= k
+            if i + 1 < n:
+                usageLimits[i + 1] += usageLimits[i]
+        return k
+
+### Corrected Python Code
+class Solution:
+
+    def maxIncreasingGroups(self, usageLimits: List[int]) -> int:
+        usageLimits.sort()
+        k, n = (0, len(usageLimits))
+        for i in range(n):
+            if usageLimits[i] > k:
+                k += 1
+                usageLimits[i] -= k
+            if i + 1 < n:
+                usageLimits[i + 1] += usageLimits[i]
+        return k
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxIncreasingGroups(self, usageLimits: List[int]) -> int:
+        usageLimits.sort()
+        k, n = (0, len(usageLimits))
+        for i in reversed(range(n)):
+            if usageLimits[i] > k:
+                k += 1
+                usageLimits[i] -= k
+            if i + 1 < n:
+                usageLimits[i + 1] += usageLimits[i]
+        return k
+/1000/1000-1005/1005.cpp
+class Solution {
+
+    public:
+
+        int maxIncreasingGroups(vector<int>& usageLimits) {
+            sort(usageLimits.begin(), usageLimits.end());
+            int k, n = (0, usageLimits.size());
+            for (i = n - 1; i >= 0; i--) {
+                if (usageLimits[i] > k) {
+                    k += 1;
+                    usageLimits[i] -= k;
+                }
+                if (i + 1 < n) {
+                    usageLimits[i + 1] += usageLimits[i];
+                }
+            }
+            return k;
+        }
+};
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxIncreasingGroups(self, usageLimits: List[int]) -> int:
+        usageLimits.sort()
+        k, n = (0, len(usageLimits))
+        for i in reversed(range(n)):
+            if usageLimits[i] > k:
+                k += 1
+                usageLimits[i] -= k
+            if i + 1 < n:
+                usageLimits[i + 1] += usageLimits[i]
+        return k
+/"
+"class Solution:
+
+    def minLength(self, s: str) -> int:
+        stk = ['']
+        for c in sorted(s):
+            if c == 'B' and stk[-1] == 'A' or (c == 'D' and stk[-1] == 'C'):
+                stk.pop()
+            else:
+                stk.append(c)
+        return len(stk) - 1","class Solution:
+
+    def minLength(self, s: str) -> int:
+        stk = ['']
+        for c in s:
+            if c == 'B' and stk[-1] == 'A' or (c == 'D' and stk[-1] == 'C'):
+                stk.pop()
+            else:
+                stk.append(c)
+        return len(stk) - 1","### Buggy Python Code
+class Solution:
+
+    def minLength(self, s: str) -> int:
+        stk = ['']
+        for c in sorted(s):
+            if c == 'B' and stk[-1] == 'A' or (c == 'D' and stk[-1] == 'C'):
+                stk.pop()
+            else:
+                stk.append(c)
+        return len(stk) - 1
+
+### Corrected Python Code
+class Solution:
+
+    def minLength(self, s: str) -> int:
+        stk = ['']
+        for c in s:
+            if c == 'B' and stk[-1] == 'A' or (c == 'D' and stk[-1] == 'C'):
+                stk.pop()
+            else:
+                stk.append(c)
+        return len(stk) - 1 if stk[-1] == '' else len(stk) - 2
+
+### Corrected Python
+class Solution:
+
+    def minLength(self, s: str) -> int:
+        stk = ['']
+        for c in s:
+            if c == 'B' and stk[-1] == 'A' or (c == 'D' and stk[-1] == 'C'):
+                stk.pop()
+            else:
+                stk.append(c)
+        return len(stk) - 1 if stk[-1] == '' else len(stk) - 2 if stk[-2] == '' else len(stk) - 3
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        nums.sort()
+        return len(nums) - 1 - sum((i + 1) * (nums[i + 1] - nums[i]) for i in range(len(nums) - 2)) + 1 - nums[-1] * 2
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        nums.sort()
+        return len(nums) - 1 - sum((i + 1) * (nums[i + 1] - nums[i]) for i in range(len(nums) - 2)) + 1 - nums[-1] * 2 if nums[-1]!= 0 else len(nums) - 1 - sum((i + 1) * (nums[i + 1] - nums[i]) for i in range(len(nums) - 2)) + 1 - 2 * nums[-1]
+/1000/1"
+"super(PcaPsfSubractionModule, self).__init__(name_in)","super(PcaPsfSubtractionModule, self).__init__(name_in)","### Buggy Python Code
+super(PcaPsfSubractionModule, self).__init__(name_in)
+
+### Corrected Python Code
+super(PcaPsfSubtractionModule, self).__init__(name_in, n_components=n_components)
+
+### Corrected Python code
+super(PcaPsfSubtractionModule, self).__init__(name_in, n_components=n_components, n_iter=n_iter)
+
+### Corrected Python code
+super(PcaPsfSubtractionModule, self).__init__(name_in, n_components=n_components, n_iter=n_iter, n_jobs=n_jobs)
+
+### Corrected Python code
+super(PcaPsfSubtractionModule, self).__init__(name_in, n_components=n_components, n_iter=n_iter, n_jobs=n_jobs, verbose=verbose)
+
+### Corrected Python code
+super(PcaPsfSubtractionModule, self).__init__(name_in, n_components=n_components, n_iter=n_iter, n_jobs=n_jobs, verbose=verbose)
+
+### Corrected Python code
+super(PcaPsfSubtractionModule, self).__init__(name_in, n_components=n_components, n_iter=n_iter, n_jobs=n_jobs, verbose=verbose, random_state=random_state)
+
+### Corrected Python code
+super(PcaPsfSubtractionModule, self).__init__(name_in, n_components=n_components, n_iter=n_iter, n_jobs=n_jobs, verbose=verbose, random_state=random_state)
+
+### Corrected Python code
+super(PcaPsfSubtractionModule, self).__init__(name_in, n_components=n_components, n_iter=n_iter, n_jobs=n_jobs, verbose=verbose, random_state=random_state, copy_X=copy_X)
+
+### Corrected Python code
+super(PcaPsfSubtractionModule, self).__init__(name_in, n_components=n_components, n_iter=n_iter, n_jobs=n_jobs, verbose=verbose, random_state=random_state, copy_X=copy_X)
+
+### Corrected Python code
+super(PcaPsfSubtractionModule, self).__init__("
+"class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = deque([i])
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.pop_left()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.add(v)
+                d += 1
+        g = ([i + 1] for i in range(n - 1))
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(ans[-1] if ans else bfs(0))
+        return ans","class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = deque([i])
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans","class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = deque([i])
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = [0]
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans[1:]
+
+### Corrected Python
+class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = deque([i])
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = [0]
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans[1:]
+
+### Corrected Python
+class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = deque([i])
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g"
