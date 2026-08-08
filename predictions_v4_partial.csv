@@ -49127,3 +49127,113 @@ parens = expectSingle(theDefault.tokens[-1], cls=Parenthesis, allow_empty=True) 
 if parens:
     theDefault.tokens.pop()
     return theDefault.tokens[-1] + parens.tokens[-1] + theDefault.tokens[-1] + parens.tokens[0] + theDefault.tokens[-1] + parens.tokens[1] + theDefault.tokens[-1] + parens.tokens[2] + theDefault.tokens[-1] + parens.tokens[3] + theDefault.tokens[-1] + parens.tokens[4] + theDefault.tokens[-1] + parens.tokens[5] + theDefault.tokens[-1] + parens.tokens[6] + theDefault.tokens[-1] + parens.tokens[7] + theDefault.tokens[-1] + parens.tokens[8] + theDefault.tokens[-1] + parens.tokens[9] + theDefault.tokens[-1] + parens.tokens[10] + theDefault.tokens[-1] + parens.tokens[11] + theDefault.tokens[-1] + parens.tokens[12] + theDefault.tokens[-1] + parens.tokens[13] + theDefault.tokens[-1] + parens.tokens[14] + theDefault.tokens[-1] + parens.tokens[15] + theDefault.tokens[-1] + parens.tokens[16] + theDefault.tokens[-1] + parens.tokens[17] + theDefault.tokens[-1] + parens.tokens[18] + theDefault.tokens[-1] + parens.tokens[19] + theDefault.tokens[-1] + parens.tokens[20] + theDefault.tokens[-1] + parens.tokens[21] + theDefault.tokens[-1] + parens.tokens[22] + theDefault.tokens[-1] + parens.tokens[23] + theDefault.tokens[-1] + parens.tokens[24] + theDefault.tokens[-1] + parens.tokens[25] + theDefault.tokens[-1] + parens.tokens[26] + theDefault.tokens[-"
+"environment_flag = FeatureState.objects.filter(environment=environment, identity=None, feature=feature)","environment_flag = FeatureState.objects.get(environment=environment, identity=None, feature=feature)","### Buggy Python Code
+environment_flag = FeatureState.objects.filter(environment=environment, identity=None, feature=feature)
+
+### Corrected Python Code
+environment_flag = FeatureState.objects.filter(environment=environment, identity=None, feature=feature).first() or FeatureState(environment=environment, identity=None, feature=feature)
+environment_flag.save()
+return environment_flag.state == 'enabled' or environment_flag.state == 'disabled' or environment_flag.state == 'unknown' or environment_flag.state == 'unavailable' or environment_flag.state == 'error' or environment_flag.state == 'pending' or environment_flag.state == 'unknown' or environment_flag.state == 'unavailable' or environment_flag.state == 'error' or environment_flag.state == 'pending' or environment_flag.state == 'unknown' or environment_flag.state == 'unavailable' or environment_flag.state == 'error' or environment_flag.state == 'pending' or environment_flag.state == 'unknown' or environment_flag.state == 'unavailable' or environment_flag.state == 'error' or environment_flag.state == 'pending' or environment_flag.state == 'unknown' or environment_flag.state == 'unavailable' or environment_flag.state == 'error' or environment_flag.state == 'pending' or environment_flag.state == 'unknown' or environment_flag.state == 'unavailable' or environment_flag.state == 'error' or environment_flag.state == 'pending' or environment_flag.state == 'unknown' or environment_flag.state == 'unavailable' or environment_flag.state == 'error' or environment_flag.state == 'pending' or environment_flag.state == 'unknown' or environment_flag.state == 'unavailable' or environment_flag.state == 'error' or environment_flag.state == 'pending' or environment_flag.state == 'unknown' or environment_flag.state == 'unavailable' or environment_flag.state == 'error' or environment_flag.state == 'pending' or environment_flag.state == 'unknown' or environment_flag.state == 'unavailable' or environment_flag.state == 'error' or environment_flag.state == 'pending' or environment_flag.state == 'unknown' or environment_flag.state == 'unavailable' or environment_flag.state == 'error' or environment"
+"agrees_to_tos = db.BooleanProperty(default=False, verbose_name=ugettext('Agrees to ToS'))",agrees_to_tos = db.BooleanProperty(verbose_name=ugettext('Agrees to ToS')),"_to_tos = db.BooleanProperty(default=False, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=True, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=True, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=False, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=False, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=True, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=False, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=True, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=False, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=True, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=False, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=True, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=False, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to_tos = db.BooleanProperty(default=True, verbose_name=ugettext('Agrees to ToS'))
+
+### Corrected Python Code
+agrees_to"
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
+"((inputnode, signals, [('fmri_file', 'ref_header')]),)","((inputnode, concat_rois, [('fmri_file', 'ref_header')]),)","### Buggy Python Code
+((inputnode, signals, [('fmri_file','ref_header')]),)
+
+### Corrected Python Code
+((inputnode, signals, [('fmri_file','ref_header'), ('fmri_file','ref_image')]),)
+
+### Corrected Python Code
+((inputnode, signals, [('fmri_file','ref_header'), ('fmri_file','ref_image')]),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref_header'),) + (('fmri_file','ref_image'),) + (('fmri_file','ref"
+"grid = generic_rectgrid(lon=X, lat=Y, cyclic=False)","grid = rectgrid(lon=X, lat=Y, cyclic=False)","### Buggy Python Code
+grid = generic_rectgrid(lon=X, lat=Y, cyclic=False)
+
+### Corrected Python Code
+grid = generic_rectgrid(lon=X, lat=Y, cyclic=True)  # cyclic by default in generic_rectgrid()
+
+### Corrected Python Code
+grid = generic_rectgrid(lon=X, lat=Y, cyclic=True)  # cyclic by default in generic_rectgrid()
+grid.data = np.ma.masked_where(np.isnan(grid.data), np.ma.masked)  # mask invalid values (np.nan) in grid.data array
+return grid, X, Y, Z, T, P, Q, U, V, W, RH, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, Tv, Td, Tc, Tn, Tu, T"
+logger.error('Your .pre-commit-config.yaml is unstaged.\n`git add .pre-commit-config.yaml` to fix this.\n'),logger.error('Your .pre-commit-config.yaml is unstaged.\n`git add .pre-commit-config.yaml` to fix this.'),"staged.\n`git add.pre-commit-config.yaml` to fix this.\n')
+
+### Corrected Python Code
+logger.error('Your.pre-commit-config.yaml is unstaged.\n`git add.pre-commit-config.yaml` to fix this.\n') if not self.is_staged('.pre-commit-config.yaml') else logger.error('Your.pre-commit-config.yaml is unstaged.\n`git add.pre-commit-config.yaml` to fix this.\n') if not self.is_staged('.pre-commit-config.yaml') else logger.error('Your.pre-commit-config.yaml is unstaged.\n`git add.pre-commit-config.yaml` to fix this.\n') if not self.is_staged('.pre-commit-config.yaml') else logger.error('Your.pre-commit-config.yaml is unstaged.\n`git add.pre-commit-config.yaml` to fix this.\n') if not self.is_staged('.pre-commit-config.yaml') else logger.error('Your.pre-commit-config.yaml is unstaged.\n`git add.pre-commit-config.yaml` to fix this.\n') if not self.is_staged('.pre-commit-config.yaml') else logger.error('Your.pre-commit-config.yaml is unstaged.\n`git add.pre-commit-config.yaml` to fix this.\n') if not self.is_staged('.pre-commit-config.yaml') else logger.error('Your.pre-commit-config.yaml is unstaged.\n`git add.pre-commit-config.yaml` to fix this.\n') if not self.is_staged('.pre-commit-config.yaml') else logger.error('Your.pre-commit-config.yaml is unstaged.\n`git add.pre-commit-config.yaml` to fix this.\n') if not self.is_staged('.pre-commit-config.yaml') else logger.error('Your.pre-commit-config.yaml is unstaged.\n`git add.pre-commit-config.yaml` to fix this.\n') if not self.is_staged('.pre-commit-config.yaml') else logger.error('Your.pre-commit-config.yaml is unstaged"
+"newText = re.sub('(\\<[tT]{1}[dDhH]{1}([^>]*?)\\>[^<]*?)' + '(\\<\\/[Tt]{1}[dDhH]{1}[^>]*?\\>)', '\n\\1\\2', newText, 0)","newText = re.sub('(\\<[tT]{1}[dDhH]{1}([^>]*?)\\>[^<]*?)' + '(\\<\\/[Tt]{1}[dDhH]{1}[^>]*?\\>)', '\n\\1\\3', newText, 0)","newText = re.sub('(\\<[tT]{1}[dDhH]{1}([^>]*?)\\>[^<]*?)' + '(\\<\\/[Tt]{1}[dDhH]{1}[^>]*?\\>)', '\n\\1\\2', newText, flags=re.MULTILINE)
+
+return newText.strip() + '\n' +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 +'' * 4 + '"
+note_updated = datetime.fromtimestamp(en_note.updated / 1000),note_updated = datetime.utcfromtimestamp(en_note.updated / 1000),"### Buggy Python Code
+note_updated = datetime.fromtimestamp(en_note.updated / 1000)
+
+### Corrected Python Code
+note_updated = datetime.fromtimestamp(en_note.updated / 1000.0) if en_note.updated else None
+
+return note_updated, en_note.title, en_note.content, en_note.url, en_note.created, en_note.updated, en_note.tags, en_note.resources, en_note.attachments, en_note.parent_notebook_id, en_note.version_number, en_note.is_deleted, en_note.is_trashed, en_note.is_archived, en_note.is_pinned, en_note.is_shared, en_note.is_editable, en_note.is_locked, en_note.is_starred, en_note.is_public, en_note.is_shared_with_me, en_note.is_owned_by_me, en_note.is_shared_by_me, en_note.is_shared_by_others, en_note.is_shared_by_linked_notebooks, en_note.is_shared_by_linked_notebooks_with_me, en_note.is_shared_by_linked_notebooks_with_others, en_note.is_shared_by_linked_notebooks_with_linked_notebooks, en_note.is_shared_by_linked_notebooks_with_linked_notebooks_with_me, en_note.is_shared_by_linked_notebooks_with_linked_notebooks_with_others, en_note.is_shared_by_linked_notebooks_with_linked_notebooks_with_linked_notebooks, en_note.is_shared_by_linked_notebooks_with_linked_notebooks_with_linked_notebooks_with_me, en_note.is_shared_by_linked_notebooks_with_linked_notebooks_with_linked_notebooks_with_others, en_note.is_shared_by_linked_notebooks_with_linked_notebooks_with_linked_notebooks_with_linked_notebooks, en_note.is_shared_by_linked_notebooks_with_linked_notebooks_with_linked_notebooks_with_linked_notebooks_with_me, en_note.is_shared_by_linked_notebooks"
