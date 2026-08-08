@@ -64544,3 +64544,506 @@ class TestUtils(unittest.TestCase):
         version = test_utils.get_python_version()
         self.assertTrue(version.startswith('3'))
         self.assertTrue(version.endswith"
+"class Solution:
+
+    def maxSelectedElements(self, nums: list[int]) -> int:
+        ans = 1
+        prev = -math.inf
+        dp0 = 1
+        dp1 = 1
+        for num in sorted(nums):
+            if num == prev - 1:
+                dp1 = dp0 + 1
+            elif num == prev + 1:
+                dp0 += 1
+                dp1 += 1
+            elif num == prev + 2:
+                dp0 = dp1 + 1
+                dp1 = 1
+            else:
+                dp0 = 1
+                dp1 = 1
+            ans = max(ans, dp0, dp1)
+            prev = num
+        return ans","class Solution:
+
+    def maxSelectedElements(self, nums: list[int]) -> int:
+        ans = 1
+        prev = -math.inf
+        dp0 = 1
+        dp1 = 1
+        for num in sorted(nums):
+            if num == prev:
+                dp1 = dp0 + 1
+            elif num == prev + 1:
+                dp0 += 1
+                dp1 += 1
+            elif num == prev + 2:
+                dp0 = dp1 + 1
+                dp1 = 1
+            else:
+                dp0 = 1
+                dp1 = 1
+            ans = max(ans, dp0, dp1)
+            prev = num
+        return ans","1 = dp0 + 1
+            elif num == prev + 1:
+                dp0 += 1
+                dp1 += 1
+            elif num == prev + 2:
+                dp0 = dp1 + 1
+                dp1 = 1
+            else:
+                dp0 = 1
+                dp1 = 1
+            ans = max(ans, dp0, dp1)
+            prev = num
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def maxSelectedElements(self, nums: list[int]) -> int:
+        ans = 1
+        prev = -math.inf
+        dp0 = 1
+        dp1 = 1
+        for num in sorted(nums):
+            if num == prev - 1:
+                dp1 = dp0 + 1
+            elif num == prev + 1:
+                dp0 += 1
+                dp1 += 1
+            elif num == prev + 2:
+                dp0 = dp1 + 1
+                dp1 = 2
+            else:
+                dp0 = 1
+                dp1 = 1
+            ans = max(ans, dp0, dp1)
+            prev = num
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxSelectedElements(self, nums: list[int]) -> int:
+        ans = 1
+        prev = -math.inf
+        dp0 = 1
+        dp1 = 1
+        for num in sorted(nums):
+            if num == prev - 1:
+                dp1 = dp0 + 1
+            elif num == prev + 1:
+                dp0 += 1
+                dp1 += 1
+            elif num == prev + 2:
+                dp0 = dp1 + 1
+                dp1 = 2
+            else:
+                dp0 = 1
+                dp1 = 1
+            ans = max(ans, dp0, dp1)
+            prev = num
+        return ans - 1
+
+### Corrected Python
+class Solution:
+
+    def maxSelectedElements(self, nums: list[int]) -> int:
+        ans = 1
+        prev = -math.inf
+        dp0 = 1
+        dp1 = 1
+        for num in sorted(nums):
+            if num == prev - 1:
+                dp1 = dp0 + 1
+            elif num == prev + 1:
+                dp0 += 1
+                dp1 += 1
+            elif num == prev + 2:
+                dp0 = dp1 + 1
+                dp1 = 2
+            else:
+                dp0 = 1
+                dp1 = 1
+            ans = max(ans, dp0, dp1)
+            prev = num
+        return ans - 1 if ans > 1 else 1
+
+### Corrected Python
+class Solution:
+
+    def maxSelectedElements(self, nums: list[int]) -> int:
+        ans = 1
+        prev"
+"assert isinstance(config['object_detection']['tensorflow']['gpu_id'], int), 'GPU ID must be integer.'","assert isinstance(config['object_detection']['gpu_id'], int), 'GPU ID must be integer.'","### Buggy Python Code
+assert isinstance(config['object_detection']['tensorflow']['gpu_id'], int), 'GPU ID must be integer.'
+
+### Corrected Python Code
+assert isinstance(config['object_detection']['tensorflow']['gpu_id'], (int, str)), 'GPU ID must be integer.'
+
+### Corrected Python code
+assert isinstance(config['object_detection']['tensorflow']['gpu_id'], (int, str)), 'GPU ID must be integer or string.'
+
+if isinstance(config['object_detection']['tensorflow']['gpu_id'], int):
+    config['object_detection']['tensorflow']['gpu_id'] = str(config['object_detection']['tensorflow']['gpu_id'])
+
+### Corrected Python code
+if isinstance(config['object_detection']['tensorflow']['gpu_id'], (int, str)):
+    config['object_detection']['tensorflow']['gpu_id'] = str(config['object_detection']['tensorflow']['gpu_id'])
+
+### Corrected Python code
+if isinstance(config['object_detection']['tensorflow']['gpu_id'], (int, str)) and config['object_detection']['tensorflow']['gpu_id']!= 'None':
+    config['object_detection']['tensorflow']['gpu_id'] = str(config['object_detection']['tensorflow']['gpu_id'])
+
+### Corrected Python code
+if isinstance(config['object_detection']['tensorflow']['gpu_id'], (int, str)) and config['object_detection']['tensorflow']['gpu_id']!= 'None':
+    config['object_detection']['tensorflow']['gpu_id'] = str(config['object_detection']['tensorflow']['gpu_id'])
+
+### Corrected Python code
+if isinstance(config['object_detection']['tensorflow']['gpu_id'], (int, str)) and config['object_detection']['tensorflow']['gpu_id']!= 'None' and config['object_detection']['tensorflow']['gpu_id']!= '0':
+    config['object_detection']['tensorflow']['gpu_id'] = str(config['object_detection']['tensorflow']['gpu_id'])
+
+### Corrected Python code
+if isinstance(config['object_detection']['tensorflow']['gpu_id'], (int, str)) and config['object_detection']['tensorflow']['gpu_id']!= 'None' and config['object_detection']['tensorflow']['gpu_id']!= '0' and config['object_detection']['tensorflow']['gpu_id']!= 'None':
+    config['object_detection']['tensorflow']['gpu_id'] = str(config['object_detection']['tensorflow']['gpu_id'])"
+"position = (node_lineno + example.lineno + e.lineno, example.indent + 4 + e.offset)","position = (node_lineno + example.lineno + e.lineno, example.indent + 4 + (e.offset or 0))","### Buggy Python Code
+position = (node_lineno + example.lineno + e.lineno, example.indent + 4 + e.offset)
+
+### Corrected Python Code
+position = (node_lineno + example.lineno + e.lineno, example.indent + 4 + e.offset - 1) if e.offset else (node_lineno + example.lineno + e.lineno, example.indent + 4)
+
+return position, e.message, e.type, e.lineno, e.offset, e.text, e.source, e.source_encoding, e.source_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error, e.source_line_number, e.source_line_encoding, e.source_line_encoding_error"
+"import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL = 'sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.square(from_user_values), 2)
+    plt.figure().plot(from_user_values, square_roots)
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.set_xlabel(X_LABEL)
+    plt.ylabel(Y_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (ax, square_roots)","import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL = 'sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.sqrt(from_user_values), 2)
+    plt.figure()
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.xlabel(X_LABEL)
+    plt.ylabel(Y_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (square_roots, ax)","import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL ='sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.sqrt(from_user_values), 2)
+    plt.figure()
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.xlabel(X_LABEL)
+    plt.ylabel(Y_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (square_roots, ax)
+
+### Corrected Python
+import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL ='sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.sqrt(from_user_values), 2)
+    plt.figure()
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.xlabel(X_LABEL)
+    plt.ylabel(Y_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (square_roots, ax)
+/README.md
+# Python-Data-Science-Essentials-Course-1-Exercises-Solutions
+Python Data Science Essentials Course 1 Exercises Solutions
+/01-"
+"class Solution:
+
+    def minLengthAfterRemovals(self, nums: List[int]) -> int:
+        cnt = Counter(nums)
+        pq = [-x for x in cnt.values()]
+        pq = pq[1:]
+        heapify(pq)
+        ans = len(nums)
+        while len(pq) > 1:
+            x, y = (-heappop(pq), -heappop(pq))
+            x -= 1
+            if x > 0:
+                heappush(pq, -x)
+            if y >= 0:
+                heappush(pq, -y)
+            ans -= 2
+        ans += 1
+        return ans","class Solution:
+
+    def minLengthAfterRemovals(self, nums: List[int]) -> int:
+        cnt = Counter(nums)
+        pq = [-x for x in cnt.values()]
+        heapify(pq)
+        ans = len(nums)
+        while len(pq) > 1:
+            x, y = (-heappop(pq), -heappop(pq))
+            x -= 1
+            y -= 1
+            if x > 0:
+                heappush(pq, -x)
+            if y > 0:
+                heappush(pq, -y)
+            ans -= 2
+        return ans","heapify(pq)
+        ans = len(nums)
+        while len(pq) > 1:
+            x, y = (-heappop(pq), -heappop(pq))
+            x -= 1
+            if x > 0:
+                heappush(pq, -x)
+            if y >= 0:
+                heappush(pq, -y)
+            ans -= 2
+        ans += 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def minLengthAfterRemovals(self, nums: List[int]) -> int:
+        cnt = Counter(nums)
+        pq = [-x for x in cnt.values()]
+        heapify(pq)
+        ans = len(nums)
+        while len(pq) > 1:
+            x, y = (-heappop(pq), -heappop(pq))
+            x -= 1
+            y -= 1
+            if x > 0:
+                heappush(pq, -x)
+            if y > 0:
+                heappush(pq, -y)
+            ans -= 2
+        return ans
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        cnt = Counter(nums)
+        pq = [-x for x in cnt.values()]
+        heapify(pq)
+        ans = 0
+        while len(pq) > 1:
+            x, y = (-heappop(pq), -heappop(pq))
+            x -= 1
+            y -= 1
+            if x > 0:
+                heappush(pq, -x)
+            if y > 0:
+                heappush(pq, -y)
+            ans += 2
+        return ans + 1 if len(pq) > 0 else 0
+
+### Corrected Python
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        cnt = Counter(nums)
+        pq = [-x for x in cnt.values()]
+        heapify(pq)
+        ans = 0
+        while len(pq) > 1:
+            x, y = (-heappop(pq), -heappop(pq))
+            x -= 1
+            y -= 1
+            if x > 0:
+                heappush(pq, -x)
+            if y > 0:
+                heappush(pq, -y)
+            ans += 2
+        return ans + 1 if len(pq) > 0 else 0 if len(cnt) == 1 else 0
+/1000/1000-1005/1005.cpp
+class Solution {
+
+    public:
+
+        int minOperations(vector<int>& nums) {
+            cnt"
+"parameters = {'alwayspoll': Param('Setups which devices should always be polled', type=listof(str), mandatory=True), 'blacklist': Param('Devices that should never be poller', type=listof(str))}","parameters = {'alwayspoll': Param('Setups which devices should always be polled', type=listof(str), mandatory=True), 'blacklist': Param('Devices that should never be polled', type=listof(str))}","### Buggy Python Code
+parameters = {'alwayspoll': Param('Setups which devices should always be polled', type=listof(str), mandatory=True), 'blacklist': Param('Devices that should never be poller', type=listof(str))}
+
+### Corrected Python Code
+parameters = {'alwayspoll': Param('Setups which devices should always be polled', type=listof(str), mandatory=False), 'blacklist': Param('Devices that should never be poller', type=listof(str))}
+
+class DevicePoll(Plugin):
+    def __init__(self, *args, **kwargs):
+        super(DevicePoll, self).__init__(*args, **kwargs)
+        self.logger = logging.getLogger('DevicePoll')
+        self.logger.debug('Initializing')
+        self.alwayspoll = self.parameters.get('alwayspoll', [])
+        self.blacklist = self.parameters.get('blacklist', [])
+        self.devices = self.get_devices()
+        self.logger.debug('Initialized')
+
+    def get_devices(self):
+        devices = []
+        for setup in self.setups:
+            for device in setup.devices:
+                if device.name not in self.blacklist:
+                    devices.append(device)
+        return devices
+
+    def poll(self):
+        self.logger.debug('Polling')
+        for device in self.devices:
+            if device.name not in self.alwayspoll:
+                device.poll()
+        self.logger.debug('Polling done')
+        return True
+
+    def get_plugin_name(self):
+        return 'DevicePoll'
+
+    def get_plugin_version(self):
+        return '1.0'
+
+    def get_plugin_description(self):
+        return 'Poll devices'
+
+    def get_plugin_parameters(self):
+        return parameters
+
+    def get_plugin_type(self):
+        return PluginType.SYSTEM_PLUGIN
+
+    def get_plugin_dependencies(self):
+        return []
+
+    def get_plugin_author(self):
+        return ''
+
+    def get_plugin_license(self):
+        return 'MIT'
+
+    def get_plugin_url(self):
+        return 'https://github.com/jeroenpeters/home-assistant-plugin-devicepoll'
+
+    def get_plugin_dependencies(self):
+        return []
+
+    def get_plugin_author(self):
+        return ''
+
+    def get_plugin_license(self):
+        return 'MIT'
+
+    def get_plugin_url(self):
+        return 'https://github.com/jeroenpeters/home-assistant-plugin-devicepoll'
+
+    def get_plugin_type(self):"
+self._scope = 'user-read-private user-read-email user-library-readplaylist-modify-public playlist-modify-private',self._scope = 'user-read-private user-read-email user-library-read playlist-modify-public playlist-modify-private',"### Buggy Python Code
+self._scope = 'user-read-private user-read-email user-library-readplaylist-modify-public playlist-modify-private'
+
+### Corrected Python Code
+self._scope = 'user-read-private user-read-email user-library-read playlist-modify-public playlist-modify-private user-library-modify' +'user-top-read' +'user-follow-modify' +'user-follow-read' +'user-library-read' +'user-library-modify' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-state' +'user-read-currently-playing' +'user-read-recently-played' +'user-read-playback-"
+"import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+def task_func(range_start=0, range_end=10, step=0.1):
+    x_values = np.arange(range_start, range_end - step, step)
+    data = ((x, math.exp(x)) for x in x_values)
+    _, ax = plt.subplots()
+    for x, exp_x in data:
+        ax.scatter(x, exp_x, color='b')
+    ax.title('Exponential Function Plot')
+    ax.set_xlabel('x')
+    ax.set_ylabel('e^x')
+    data = data
+    return (data, ax)","import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+def task_func(range_start=0, range_end=10, step=0.1):
+    x_values = np.arange(range_start, range_end, step)
+    data = ((x, math.exp(x)) for x in x_values)
+    _, ax = plt.subplots()
+    for x, exp_x in data:
+        ax.scatter(x, exp_x, color='b')
+    ax.set_title('Exponential Function Plot')
+    ax.set_xlabel('x')
+    ax.set_ylabel('e^x')
+    data = ((x, math.exp(x)) for x in x_values)
+    return (data, ax)","x)) for x in x_values)
+    _, ax = plt.subplots()
+    for x, exp_x in data:
+        ax.scatter(x, exp_x, color='b')
+    ax.title('Exponential Function Plot')
+    ax.set_xlabel('x')
+    ax.set_ylabel('e^x')
+    data = data
+    return (data, ax)
+
+### Corrected Python Code
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+def task_func(range_start=0, range_end=10, step=0.1):
+    x_values = np.arange(range_start, range_end, step)
+    data = ((x, math.exp(x)) for x in x_values)
+    _, ax = plt.subplots()
+    for x, exp_x in data:
+        ax.scatter(x, exp_x, color='b')
+    ax.set_title('Exponential Function Plot')
+    ax.set_xlabel('x')
+    ax.set_ylabel('e^x')
+    data = ((x, math.exp(x)) for x in x_values)
+    return (data, ax)
+
+if __name__ == '__main__':
+    data, ax = task_func(range_start=0, range_end=10, step=0.1)
+    plt.show()/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01"
