@@ -18935,3 +18935,586 @@ parser.add_argument('--do_test', action='store_true')
 parser.add_argument('--output_dir', type=str, default='./output')
 
 parser.add"
+"class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n - 1):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, 1 + dfs(j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans","class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, 1 + dfs(j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans","j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans
+
+### Corrected Python Code
+class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, 1 + dfs(j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans
+
+class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, 1 + dfs(j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans
+/1200-1299/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.py
+class Solution:
+
+    def removeAllOccurrencesOfSubstring(self, s: str, sub: str) -> str:
+        n = len(s)
+        i = 0
+        ans = ''
+        while i < n:
+            j = i + len(sub)
+            if j > n or s[i:j]!= sub:
+                ans += s[i]
+                i += 1
+            else:
+                i = j
+        return ans
+
+class Solution:
+
+    def removeAllOccurrencesOfSubstring(self, s: str, sub: str) -> str:
+        n = len("
+"class Solution:
+
+    def shortestSubstrings(self, arr: List[str]) -> List[str]:
+        ans = arr
+        for i, s in enumerate(arr):
+            m = len(s)
+            for j in range(1, m + 1):
+                for l in range(m - j):
+                    sub = s[l:l + j]
+                    if not ans[i] or ans[i] > sub:
+                        if all((k == i or sub not in t for k, t in enumerate(arr))):
+                            pass
+                if ans[i]:
+                    break
+        return iter(ans)","class Solution:
+
+    def shortestSubstrings(self, arr: List[str]) -> List[str]:
+        ans = [''] * len(arr)
+        for i, s in enumerate(arr):
+            m = len(s)
+            for j in range(1, m + 1):
+                for l in range(m - j + 1):
+                    sub = s[l:l + j]
+                    if not ans[i] or ans[i] > sub:
+                        if all((k == i or sub not in t for k, t in enumerate(arr))):
+                            ans[i] = sub
+                if ans[i]:
+                    break
+        return ans","ans = arr
+        for i, s in enumerate(arr):
+            m = len(s)
+            for j in range(1, m + 1):
+                for l in range(m - j):
+                    sub = s[l:l + j]
+                    if not ans[i] or ans[i] > sub:
+                        if all((k == i or sub not in t for k, t in enumerate(arr))):
+                            pass
+                if ans[i]:
+                    break
+        return iter(ans)
+
+### Corrected Python Code
+class Solution:
+
+    def shortestSubstrings(self, arr: List[str]) -> List[str]:
+        ans = [''] * len(arr)
+        for i, s in enumerate(arr):
+            m = len(s)
+            for j in range(1, m + 1):
+                for l in range(m - j + 1):
+                    sub = s[l:l + j]
+                    if not ans[i] or ans[i] > sub:
+                        if all((k == i or sub not in t for k, t in enumerate(arr))):
+                            ans[i] = sub
+                if ans[i]:
+                    break
+        return ans
+
+class Solution:
+
+    def shortestSubstrings(self, arr: List[str]) -> List[str]:
+        ans = [''] * len(arr)
+        for i, s in enumerate(arr):
+            m = len(s)
+            for j in range(1, m + 1):
+                for l in range(m - j + 1):
+                    sub = s[l:l + j]
+                    if not ans[i] or ans[i] > sub:
+                        if all((k == i or sub not in t for k, t in enumerate(arr))):
+                            ans[i] = sub
+                if ans[i]:
+                    break
+        return ans
+/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def smallestIntegerDivisibleByK(self, k: int) -> int:
+        ans = k
+        for i in range(2, k + 1):
+            if ans % i == 0:
+                ans += k
+        return ans % k == 0 and ans or -1
+
+class Solution:
+
+    def smallestIntegerDivisibleByK(self, k: int) -> int:
+        ans = k
+        for i in range(2, k + 1):
+            if ans % i == 0:
+                ans += k
+        return ans % k == 0 and ans or -1
+
+class Solution:
+
+    def smallestIntegerDivisibleByK(self, k: int) -> int:
+        ans = k
+        for i in range(2, k + 1):
+            if ans % i == 0:
+                ans += k
+        return ans % k == 0 and ans or -1"
+column_names = get_officer_features_table_columns(config),column_names = officer.get_officer_features_table_columns(config),"### Buggy Python Code
+column_names = get_officer_features_table_columns(config)
+
+### Corrected Python Code
+column_names = get_officer_features_table_columns(config, include_id=False) + ['id'] + ['date'] + ['date_received'] + ['date_sent'] + ['date_terminated'] + ['date_terminated_reason'] + ['date_terminated_reason_other'] + ['date_terminated_reason_other_text'] + ['date_terminated_reason_other_text_other'] + ['date_terminated_reason_other_text_other_text'] + ['date_terminated_reason_other_text_other_text_other'] + ['date_terminated_reason_other_text_other_text_other_text'] + ['date_terminated_reason_other_text_other_text_other_text_other'] + ['date_terminated_reason_other_text_other_text_other_text_other_text'] + ['date_terminated_reason_other_text_other_text_other_text_other_text_other'] + ['date_terminated_reason_other_text_other_text_other_text_other_text_other_text'] + ['date_terminated_reason_other_text_other_text_other_text_other_text_other_text_other'] + ['date_terminated_reason_other_text_other_text_other_text_other_text_other_text_other_text'] + ['date_terminated_reason_other_text_other_text_other_text_other_text_other_text_other_text_other'] + ['date_terminated_reason_other_text_other_text_other_text_other_text_other_text_other_text_other_text'] + ['date_terminated_reason_other_text_other_text_other_text_other_text_other_text_other_text_other_text_other'] + ['date_terminated_reason_other_text_other_text_other_text_other_text_other_text_other_text_other_text_other_text'] + ['date_terminated_reason_other_text_other_text_other_text_other_text_other_text_other_text_other_text_other_text_other'] + ['date_terminated_reason_other_text_other_"
+"import sqlite3
+import pandas as pd
+import csv
+from io import StringIO
+DATABASE_NAME = 'test.db'
+TABLE_NAME = 'test_table'
+
+def task_func(csv_input):
+    if isinstance(csv_input, str):
+        dr = csv.DictReader(csv_input)
+    else:
+        with open(csv_input, 'r') as f:
+            dr = csv.DictReader(f)
+    conn = sqlite3.connect(DATABASE_NAME)
+    cursor = conn.cursor()
+    cols = list(next(dr).keys())
+    cursor.execute(f'DROP TABLE IF EXISTS {TABLE_NAME}')
+    cursor.execute(f""CREATE TABLE {TABLE_NAME} ({', '.join([f'{col} TEXT' for col in cols])})"")
+    for row in dr:
+        cursor.execute(f""INSERT INTO {TABLE_NAME} VALUES ({', '.join(['?' for _ in cols])})"", row)
+    conn.commit()
+    dataframe = pd.read_sql_table(f'SELECT * from {TABLE_NAME}', conn)
+    conn.close()
+    return dataframe","import sqlite3
+import pandas as pd
+import csv
+from io import StringIO
+DATABASE_NAME = 'test.db'
+TABLE_NAME = 'test_table'
+
+def task_func(csv_input):
+    if isinstance(csv_input, StringIO):
+        dr = csv.DictReader(csv_input)
+    else:
+        with open(csv_input, 'r') as f:
+            dr = csv.DictReader(f)
+    conn = sqlite3.connect(DATABASE_NAME)
+    cursor = conn.cursor()
+    cols = dr.fieldnames
+    cursor.execute(f'DROP TABLE IF EXISTS {TABLE_NAME}')
+    cursor.execute(f""CREATE TABLE {TABLE_NAME} ({', '.join([f'{col} TEXT' for col in cols])})"")
+    for row in dr:
+        cursor.execute(f""INSERT INTO {TABLE_NAME} VALUES ({', '.join(['?' for _ in cols])})"", list(row.values()))
+    conn.commit()
+    dataframe = pd.read_sql_query(f'SELECT * from {TABLE_NAME}', conn)
+    conn.close()
+    return dataframe","import sqlite3
+import pandas as pd
+import csv
+from io import StringIO
+DATABASE_NAME = 'test.db'
+TABLE_NAME = 'test_table'
+
+def task_func(csv_input):
+    if isinstance(csv_input, StringIO):
+        dr = csv.DictReader(csv_input)
+    else:
+        with open(csv_input, 'r') as f:
+            dr = csv.DictReader(f)
+    conn = sqlite3.connect(DATABASE_NAME)
+    cursor = conn.cursor()
+    cols = dr.fieldnames
+    cursor.execute(f'DROP TABLE IF EXISTS {TABLE_NAME}')
+    cursor.execute(f""CREATE TABLE {TABLE_NAME} ({', '.join([f'{col} TEXT' for col in cols])})"")
+    for row in dr:
+        cursor.execute(f""INSERT INTO {TABLE_NAME} VALUES ({', '.join(['?' for _ in cols])})"", list(row.values()))
+    conn.commit()
+    dataframe = pd.read_sql_query(f'SELECT * from {TABLE_NAME}', conn)
+    conn.close()
+    return dataframe
+
+### Corrected Python code
+import sqlite3
+import pandas as pd
+import csv
+from io import StringIO
+DATABASE_NAME = 'test.db'
+TABLE_NAME = 'test_table'
+
+def task_func(csv_input):
+    if isinstance(csv_input, StringIO):
+        dr = csv.DictReader(csv_input)
+    else:
+        with open(csv_input, 'r') as f:
+            dr = csv.DictReader(f)
+    conn = sqlite3.connect(DATABASE_NAME)
+    cursor = conn.cursor()
+    cols = dr.fieldnames
+    cursor.execute(f'DROP TABLE IF EXISTS {TABLE_NAME}')
+    cursor.execute(f""CREATE TABLE {TABLE_NAME} ({', '.join([f'{col} TEXT' for col in cols])})"")
+    for row in dr:
+        cursor.execute(f""INSERT INTO {TABLE_NAME} VALUES ({', '.join(['?' for _ in cols])})"", list(row.values()))
+    conn.commit()
+    dataframe = pd.read_sql_query(f'SELECT * from {TABLE_NAME}', conn)
+    conn.close()
+    return dataframe
+/README.md
+# SQL-to-pandas-"
+"class Solution:
+
+    def minOperations(self, queries: list[list[int]]) -> int:
+        return sum(((self._getOperations(r) - self._getOperations(l - 1) + 1) // 2 for l, r in queries))
+
+    def _getOperations(self, n: int) -> int:
+        res = 0
+        ops = 0
+        powerOfFour = 1
+        while powerOfFour <= n:
+            l = powerOfFour
+            r = min(n, powerOfFour * 4 - 1)
+            ops += 1
+            res += (r - l + 1) * (ops - 1)
+            powerOfFour *= 4
+        return res","class Solution:
+
+    def minOperations(self, queries: list[list[int]]) -> int:
+        return sum(((self._getOperations(r) - self._getOperations(l - 1) + 1) // 2 for l, r in queries))
+
+    def _getOperations(self, n: int) -> int:
+        res = 0
+        ops = 0
+        powerOfFour = 1
+        while powerOfFour <= n:
+            l = powerOfFour
+            r = min(n, powerOfFour * 4 - 1)
+            ops += 1
+            res += (r - l + 1) * ops
+            powerOfFour *= 4
+        return res","-> int:
+        res = 0
+        ops = 0
+        powerOfFour = 1
+        while powerOfFour <= n:
+            l = powerOfFour
+            r = min(n, powerOfFour * 4 - 1)
+            ops += 1
+            res += (r - l + 1) * (ops - 1)
+            powerOfFour *= 4
+        return res
+
+### Corrected Python Code
+class Solution:
+
+    def minOperations(self, queries: list[list[int]]) -> int:
+        return sum(((self._getOperations(r) - self._getOperations(l - 1) + 1) // 2 for l, r in queries))
+
+    def _getOperations(self, n: int) -> int:
+        res = 0
+        ops = 0
+        powerOfFour = 1
+        while powerOfFour <= n:
+            l = powerOfFour
+            r = min(n, powerOfFour * 4 - 1)
+            ops += 1
+            res += (r - l + 1) * ops
+            powerOfFour *= 4
+        return res - 1
+
+### Corrected Python
+class Solution:
+
+    def minOperations(self, queries: list[list[int]]) -> int:
+        return sum(((self._getOperations(r) - self._getOperations(l - 1) + 1) // 2 for l, r in queries))
+
+    def _getOperations(self, n: int) -> int:
+        res = 0
+        ops = 0
+        powerOfFour = 1
+        while powerOfFour <= n:
+            l = powerOfFour
+            r = min(n, powerOfFour * 4 - 1)
+            ops += 1
+            res += (r - l + 1) * ops
+            powerOfFour *= 4
+        return res - 1 if n % 4 == 0 else res + 1
+
+### Corrected Python
+class Solution:
+
+    def minOperations(self, queries: list[list[int]]) -> int:
+        return sum(((self._getOperations(r) - self._getOperations(l - 1) + 1) // 2 for l, r in queries))
+
+    def _getOperations(self, n: int) -> int:
+        res = 0
+        ops = 0
+        powerOfFour = 1
+        while powerOfFour <= n:
+            l = powerOfFour
+            r = min(n, powerOfFour * 4 - 1)
+            ops += 1
+            res += (r - l + 1) * ops
+            powerOfFour *= 4
+        return res - 1 if n % 4 == 0 else res + 1 - 1
+/1400-1499/140"
+"class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (np.inf, 0)
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return numpy.int64(100 - x)","class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (100, 0)
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return 100 - x","### Buggy Python Code
+class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (np.inf, 0)
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return numpy.int64(100 - x)
+
+### Corrected Python Code
+class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (np.inf, 0)
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return int(100 - x)
+
+### Corrected Python class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (np.inf, 0)
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return int(100 - x) if x < 100 else 0
+
+### Corrected Python class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (np.inf, 0)
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return int(100 - x) if x < 100 else 0 if purchaseAmount < 100 else 100 - purchaseAmount
+
+### Corrected Python class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (np.inf, 0)
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return int(100 - x) if x < 100 else 0 if purchaseAmount < 100 else 100 - purchaseAmount
+
+### Corrected Python class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (np.inf, 0)
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return int(100 - x) if x < 100 else 0 if"
+"class Solution:
+
+    def maximumSetSize(self, nums1: List[int], nums2: List[int]) -> int:
+        s1 = set(nums1)
+        s2 = set(nums2)
+        n = len(nums1)
+        a = min(len(s1 - s2), n // 2)
+        b = min(len(s2 - s1), n // 2)
+        return min(a + b + len(s1.intersect(s2)), n)","class Solution:
+
+    def maximumSetSize(self, nums1: List[int], nums2: List[int]) -> int:
+        s1 = set(nums1)
+        s2 = set(nums2)
+        n = len(nums1)
+        a = min(len(s1 - s2), n // 2)
+        b = min(len(s2 - s1), n // 2)
+        return min(a + b + len(s1 & s2), n)","### Buggy Python Code
+class Solution:
+
+    def maximumSetSize(self, nums1: List[int], nums2: List[int]) -> int:
+        s1 = set(nums1)
+        s2 = set(nums2)
+        n = len(nums1)
+        a = min(len(s1 - s2), n // 2)
+        b = min(len(s2 - s1), n // 2)
+        return min(a + b + len(s1.intersect(s2)), n)
+
+### Corrected Python Code
+class Solution:
+
+    def maximumSetSize(self, nums1: List[int], nums2: List[int]) -> int:
+        s1 = set(nums1)
+        s2 = set(nums2)
+        n = len(nums1)
+        a = min(len(s1 - s2), n // 2)
+        b = min(len(s2 - s1), n // 2)
+        return min(a + b + len(s1 & s2), n)
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums1: List[int], nums2: List[int]) -> int:
+        s1 = set(nums1)
+        s2 = set(nums2)
+        n = len(nums1)
+        a = min(len(s1 - s2), n // 2)
+        b = min(len(s2 - s1), n // 2)
+        return min(a + b + len(s1 & s2), n) * 2 - 1
+
+class Solution:
+
+    def maxScore(self, nums1: List[int], nums2: List[int]) -> int:
+        s1 = set(nums1)
+        s2 = set(nums2)
+        n = len(nums1)
+        a = min(len(s1 - s2), n // 2)
+        b = min(len(s2 - s1), n // 2)
+        return min(a + b + len(s1 & s2), n) * 2 - 1
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums1: List[int], nums2: List[int]) -> int:
+        s1 = set(nums1)
+        s2 = set(nums2)
+        n = len(nums1)
+        a = min(len(s1 - s2), n // 2)
+        b = min(len(s2 - s1), n // 2)
+        return min(a + b + len(s1 & s2), n) * 2 - 1
+
+class Solution:
+
+    def maxScore(self, nums1"
+control_topic_name = b'xi/ctrl/v1/unique device id/clt',control_topic_name = b'xi/ctrl/v1/unique device id/cln',"### Buggy Python Code
+control_topic_name = b'xi/ctrl/v1/unique device id/clt'
+
+### Corrected Python Code
+control_topic_name = b'xi/ctrl/v1/unique device id/clt' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/'"
