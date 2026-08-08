@@ -51427,3 +51427,260 @@ template_context_processors = s['TEMPLATE_CONTEXT_PROCESSORS']
 
 ### Corrected Python Code
 template_context_processors = s.get('TEMPLATE_CONTEXT_PROCESSORS', []) + ['django.contrib.auth.context_processors.auth'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i18n'] + ['django.core.context_processors.media'] + ['django.core.context_processors.static'] + ['django.core.context_processors.tz'] + ['django.contrib.messages.context_processors.messages'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i18n'] + ['django.core.context_processors.media'] + ['django.core.context_processors.static'] + ['django.core.context_processors.tz'] + ['django.contrib.messages.context_processors.messages'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i18n'] + ['django.core.context_processors.media'] + ['django.core.context_processors.static'] + ['django.core.context_processors.tz'] + ['django.contrib.messages.context_processors.messages'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i18n'] + ['django.core.context_processors.media'] + ['django.core.context_processors.static'] + ['django.core.context_processors.tz'] + ['django.contrib.messages.context_processors.messages'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i18n'] + ['django.core.context_processors.media'] + ['django.core.context_processors.static'] + ['django.core.context_processors.tz'] + ['django.contrib.messages.context_processors.messages'] + ['django.core.context_processors.request'] + ['django.core.context_processors.debug'] + ['django.core.context_processors.i"
+"drives = drives.merge(games[['seas', 'week']], left_index=True, right_index=True)","drives = drives.merge(games[['seas', 'wk']], left_index=True, right_index=True)","### Buggy Python Code
+drives = drives.merge(games[['seas', 'week']], left_index=True, right_index=True)
+
+### Corrected Python Code
+drives = drives.merge(games[['seas', 'week']], left_index=True, right_index=True, how='left')
+
+drives['week'] = drives['week'].astype(int)
+drives['seas'] = drives['seas'].astype(int)
+drives['date'] = drives['date'].astype(str) +'' + drives['time'].astype(str)
+drives['date'] = pd.to_datetime(drives['date'])
+drives['date'] = drives['date'].dt.tz_localize('America/New_York')
+drives['date'] = drives['date'].dt.tz_convert('UTC')
+drives['date'] = drives['date'].dt.tz_localize(None)
+drives['date'] = drives['date'].dt.strftime('%Y-%m-%d %H:%M:%S')
+drives['date'] = pd.to_datetime(drives['date'])
+drives['date'] = drives['date'].dt.tz_localize('America/New_York')
+drives['date'] = drives['date'].dt.tz_convert('UTC')
+drives['date'] = drives['date'].dt.tz_localize(None)
+drives['date'] = drives['date'].dt.strftime('%Y-%m-%d %H:%M:%S')
+drives['date'] = pd.to_datetime(drives['date'])
+drives['date'] = drives['date'].dt.tz_localize('America/New_York')
+drives['date'] = drives['date'].dt.tz_convert('UTC')
+drives['date'] = drives['date'].dt.tz_localize(None)
+drives['date'] = drives['date'].dt.strftime('%Y-%m-%d %H:%M:%S')
+drives['date'] = pd.to_datetime(drives['date'])
+drives['date'] = drives['date'].dt.tz_localize('America/New_York')
+drives['date'] = drives['date'].dt.tz_convert('UTC')
+drives['date'] = drives['date'].dt.tz_localize(None)"
+"quote = hxs.select('//dt[@class=""quote""]/a/text()')[9].extract()","quote = hxs.select('//dt[@class=""quote""]/a/text()')[-1].extract()","### Buggy Python Code
+quote = hxs.select('//dt[@class=""quote""]/a/text()')[9].extract()
+
+### Corrected Python Code
+quote = hxs.select('//dt[@class=""quote""]/a/text()').extract()[9] if hxs.select('//dt[@class=""quote""]/a/text()').extract() else ''
+
+### Corrected Python Code
+quote = hxs.select('//dt[@class=""quote""]/a/text()').extract()[9] if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()').extract() else '' if hxs.select('//dt[@class=""quote""]/a/text()')."
+"import os
+import shutil
+import glob
+import hashlib
+
+def task_func(ROOT_DIR, DEST_DIR, SPECIFIC_HASH):
+    files_moved = 0
+    os.makedirs(DEST_DIR)
+    for filename in glob.glob(os.path.join(ROOT_DIR, '*')):
+        if not os.path.exists(filename) or os.path.isdir(filename):
+            continue
+        with open(filename, 'rb') as f:
+            file_hash = hashlib.md5(f.read()).digest()
+        if file_hash == SPECIFIC_HASH:
+            shutil.move(filename, DEST_DIR)
+            files_moved += 1
+    return files_moved","import os
+import shutil
+import glob
+import hashlib
+
+def task_func(ROOT_DIR, DEST_DIR, SPECIFIC_HASH):
+    files_moved = 0
+    os.makedirs(DEST_DIR, exist_ok=True)
+    for filename in glob.glob(os.path.join(ROOT_DIR, '*')):
+        if not os.path.exists(filename) or os.path.isdir(filename):
+            continue
+        with open(filename, 'rb') as f:
+            file_hash = hashlib.md5(f.read()).hexdigest()
+        if file_hash == SPECIFIC_HASH:
+            shutil.move(filename, DEST_DIR)
+            files_moved += 1
+    return files_moved","if file_hash == SPECIFIC_HASH:
+            shutil.move(filename, DEST_DIR)
+            files_moved += 1
+    return files_moved
+
+### Corrected Python Code
+import os
+import shutil
+import glob
+import hashlib
+
+def task_func(ROOT_DIR, DEST_DIR, SPECIFIC_HASH):
+    files_moved = 0
+    os.makedirs(DEST_DIR, exist_ok=True)
+    for filename in glob.glob(os.path.join(ROOT_DIR, '*')):
+        if not os.path.exists(filename) or os.path.isdir(filename):
+            continue
+        with open(filename, 'rb') as f:
+            file_hash = hashlib.md5(f.read()).hexdigest()
+        if file_hash == SPECIFIC_HASH:
+            shutil.move(filename, DEST_DIR)
+            files_moved += 1
+    return files_moved
+/README.md
+# Python-3-Coding-Challenge-1-Task-1-Solution-by-Nishant-Kumar-1809010001-1809010002-1809010003-1809010004-1809010005-1809010006-1809010007-1809010008-1809010009-1809010010-1809010011-1809010012-1809010013-1809010014-1809010015-1809010016-1809010017-1809010018-1809010019-1809010020-1809010021-1809010022-1809010023-1809010024-1809010025-1809010026-1809010027-1809010028-1809010029-18"
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
+sign = 1 if targetDirection.cross(self.direction) > 0 else -1,sign = 1 if targetDirection.cross(self.direction) < 0 else -1,"### Buggy Python Code
+sign = 1 if targetDirection.cross(self.direction) > 0 else -1
+
+### Corrected Python Code
+sign = 1 if targetDirection.cross(self.direction) > 0 else -1 if self.direction.cross(targetDirection) > 0 else 0
+
+### Corrected Python Code
+sign = 1 if targetDirection.cross(self.direction) > 0 else -1 if self.direction.cross(targetDirection) < 0 else 0
+
+return sign * self.speed * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction.length() * self.direction.cross(targetDirection) / (targetDirection.length() ** 2) * self.dt * self.direction"
+tokens = sql[0].format(sql[1]).split(' '),tokens = (sql[0] % sql[1]).split(' '),"### Buggy Python Code
+tokens = sql[0].format(sql[1]).split(' ')
+
+### Corrected Python Code
+tokens = sql[0].format(sql[1]).split(' ') if sql[1] else sql[0].split(' ')
+
+return tokens, sql[2] if sql[2] else None, sql[3] if sql[3] else None, sql[4] if sql[4] else None, sql[5] if sql[5] else None, sql[6] if sql[6] else None, sql[7] if sql[7] else None, sql[8] if sql[8] else None, sql[9] if sql[9] else None, sql[10] if sql[10] else None, sql[11] if sql[11] else None, sql[12] if sql[12] else None, sql[13] if sql[13] else None, sql[14] if sql[14] else None, sql[15] if sql[15] else None, sql[16] if sql[16] else None, sql[17] if sql[17] else None, sql[18] if sql[18] else None, sql[19] if sql[19] else None, sql[20] if sql[20] else None, sql[21] if sql[21] else None, sql[22] if sql[22] else None, sql[23] if sql[23] else None, sql[24] if sql[24] else None, sql[25] if sql[25] else None, sql[26] if sql[26] else None, sql[27] if sql[27] else None, sql[28] if sql[28] else None, sql[29] if sql[29] else None, sql[30] if sql[30] else None, sql[31] if sql[31] else None, sql[32] if sql[32] else None, sql[33] if sql[33] else None, sql[34] if sql[34] else None, sql[35] if sql[35] else None, sql[36] if sql[36] else None, sql[37]"
+"context = {'profile': object, 'books': object.get_users_books(), 'user': self.request.user}","context = {'profile': object, 'books': object.get_users_books()}","### Buggy Python Code
+context = {'profile': object, 'books': object.get_users_books(), 'user': self.request.user}
+
+### Corrected Python Code
+context = {'profile': object, 'books': object.get_users_books(), 'user': self.request.user, 'is_following': object.is_following(self.request.user)}
+
+### Corrected Python Code
+context = {'profile': object, 'books': object.get_users_books(), 'user': self.request.user, 'is_following': object.is_following(self.request.user)} if object else {}
+
+### Corrected Python Code
+context = {'profile': object, 'books': object.get_users_books(), 'user': self.request.user, 'is_following': object.is_following(self.request.user)} if object else {}
+
+### Corrected Python Code
+context = {'profile': object, 'books': object.get_users_books(), 'user': self.request.user, 'is_following': object.is_following(self.request.user)} if object else {} or {}
+
+### Corrected Python Code
+context = {'profile': object, 'books': object.get_users_books(), 'user': self.request.user, 'is_following': object.is_following(self.request.user)} if object else {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {} or {}"
+"class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] = [cnt[h] + 1]
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s ^= 1 << h
+                i += 1
+        return -1 if ans > n else ans","class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s ^= 1 << h
+                i += 1
+        return -1 if ans > n else ans","class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s ^= 1 << h
+                i += 1
+        return -1 if ans > n else ans
+
+class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s ^= 1 << h
+                i += 1
+        return -1 if ans > n else ans
+/python/1000/1000-1002/1002.py
+class Solution:
+
+    def minimumSwap(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j -"
