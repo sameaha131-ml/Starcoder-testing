@@ -47371,3 +47371,237 @@ def read_into_into_into_into(self, buffer, size):
 
 def read_into_into_into_into_into(self, buffer, size):
     data ="
+"class Solution:
+
+    def canAliceWin(self, n: int) -> bool:
+        x, k = (10, 0)
+        while (n := x):
+            n -= x
+            x -= 1
+            k += 1
+        return k % 2 == 1","class Solution:
+
+    def canAliceWin(self, n: int) -> bool:
+        x, k = (10, 0)
+        while n >= x:
+            n -= x
+            x -= 1
+            k += 1
+        return k % 2 == 1","### Buggy Python Code
+class Solution:
+
+    def canAliceWin(self, n: int) -> bool:
+        x, k = (10, 0)
+        while (n := x):
+            n -= x
+            x -= 1
+            k += 1
+        return k % 2 == 1
+
+### Corrected Python Code
+class Solution:
+
+    def canAliceWin(self, n: int) -> bool:
+        x, k = (10, 0)
+        while n >= x:
+            n -= x
+            x -= 1
+            k += 1
+        return k % 2 == 1 or n == 10
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, a: List[int], b: List[int]) -> int:
+        a.sort()
+        b.sort()
+        return sum(a) + sum(b) - 2 * min(a) * min(b)
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, a: List[int], b: List[int]) -> int:
+        a.sort()
+        b.sort()
+        return sum(a) + sum(b) - 2 * min(a) * min(b) - 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"middle_word = self.model.most_similar([start_query, end_query], topn=1)[0][0]","middle_word = encoder.model.most_similar([start_query, end_query], topn=1)[0][0]","### Buggy Python Code
+middle_word = self.model.most_similar([start_query, end_query], topn=1)[0][0]
+
+### Corrected Python Code
+middle_word = self.model.most_similar([start_query, end_query], topn=1)[0][0] if self.model.most_similar([start_query, end_query], topn=1) else start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query +'' + start_query +'' + end_query + '"
+context['widget_params'] = _widget_params(request.video.get_video_url()),"context['widget_params'] = _widget_params(request, video.get_video_url())","### Buggy Python Code
+context['widget_params'] = _widget_params(request.video.get_video_url())
+
+### Corrected Python Code
+context['widget_params'] = _widget_params(request.video.get_video_url(), request.user) if request.user.is_authenticated() else _widget_params(request.video.get_video_url())
+
+return context/video/views.py
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from.models import Video, VideoComment, VideoLike, VideoDislike, VideoShare, VideoView, VideoTag, VideoCategory, VideoCollection, VideoCollectionItem, VideoCollectionItemTag, VideoCollectionItemCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory, VideoCollectionItemVideoTag, VideoCollectionItemVideoCategory,"
+"import numpy as np
+import random
+COLORS = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
+
+def task_func(ax):
+    x = np.linspace(0, 2 * np.pi, 1000)
+    random.seed(0)
+    y = np.sin(random.randint(1, 10) * x)
+    color = random.choice(COLORS)
+    ax.plot(x, y, color=color)
+    ax.set_rlabel_position(random.randint(0, 180))
+    return color","import numpy as np
+import random
+COLORS = ['b', 'g', 'r', 'c', 'm', 'y', 'k']
+
+def task_func(ax):
+    x = np.linspace(0, 2 * np.pi, 1000)
+    y = np.sin(random.randint(1, 10) * x)
+    color = random.choice(COLORS)
+    ax.plot(x, y, color=color)
+    ax.set_rlabel_position(random.randint(0, 180))
+    return color","import numpy as np
+import random
+COLORS = ['b', 'g', 'r', 'c','m', 'y', 'k']
+
+def task_func(ax):
+    x = np.linspace(0, 2 * np.pi, 1000)
+    y = np.sin(random.randint(1, 10) * x)
+    color = random.choice(COLORS)
+    ax.plot(x, y, color=color)
+    ax.set_rlabel_position(random.randint(0, 180))
+    return color
+
+### Corrected Python code
+import numpy as np
+import random
+COLORS = ['b', 'g', 'r', 'c','m', 'y', 'k']
+
+def task_func(ax):
+    x = np.linspace(0, 2 * np.pi, 1000)
+    y = np.sin(random.randint(1, 10) * x)
+    color = random.choice(COLORS)
+    ax.plot(x, y, color=color)
+    ax.set_rlabel_position(random.randint(0, 180))
+    return color, ax
+
+### Corrected Python code
+import numpy as np
+import random
+COLORS = ['b', 'g', 'r', 'c','m', 'y', 'k']
+
+def task_func(ax):
+    x = np.linspace(0, 2 * np.pi, 1000)
+    y = np.sin(random.randint(1, 10) * x)
+    color = random.choice(COLORS)
+    ax.plot(x, y, color=color)
+    ax.set_rlabel_position(random.randint(0, 180))
+    return color, ax
+
+### Corrected Python code
+import numpy as np
+import random
+COLORS = ['b', 'g', 'r', 'c','m', 'y', 'k']
+
+def task_func(ax):
+    x = np.linspace(0, 2 * np.pi, 1000)
+    y = np.sin(random.randint(1, 10) * x)
+    color = random.choice(COLORS)
+    ax.plot(x, y,"
+string += '\n# opt B3LYP/6-31g(d) geom=connectivity',"string += '\n# opt B3LYP/6-31g(d,p) geom=connectivity'","### Buggy Python Code
+string += '\n# opt B3LYP/6-31g(d) geom=connectivity'
+
+### Corrected Python Code
+string += '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt B3LYP/6-31g(d) geom=connectivity' + '\n# opt"
+"engine = create_engine('%s' % url, echo=False)","engine = create_engine('%s' % url, echo=False, pool_pre_ping=True)","### Buggy Python Code
+engine = create_engine('%s' % url, echo=False)
+
+### Corrected Python Code
+engine = create_engine('%s' % url, echo=False, pool_recycle=3600)  # 1 hour recycle time for connection pool
+
+### Corrected Python Code
+engine = create_engine('%s' % url, echo=False, pool_recycle=3600)  # 1 hour recycle time for connection pool, 3600 seconds = 1 hour
+
+### Corrected Python Code
+engine = create_engine('%s' % url, echo=False, pool_recycle=3600)  # 1 hour recycle time for connection pool, 3600 seconds = 1 hour, 120 seconds = 2 minutes, 30 seconds = 30 seconds, 60 seconds = 1 minute, 180 seconds = 3 minutes, 360 seconds = 1 hour, 720 seconds = 2 hours, 1440 seconds = 1 day, 2880 seconds = 2 days, 4320 seconds = 3 days, 8640 seconds = 1 day, 17280 seconds = 2 days, 25920 seconds = 3 days, 34560 seconds = 4 days, 43200 seconds = 5 days, 51840 seconds = 6 days, 60480 seconds = 7 days, 120960 seconds = 14 days, 144000 seconds = 15 days, 172800 seconds = 2 days, 216000 seconds = 26 days, 259200 seconds = 30 days, 302400 seconds = 35 days, 345600 seconds = 40 days, 388800 seconds = 45 days, 432000 seconds = 50 days, 468000 seconds = 55 days, 518400 seconds = 60 days, 604800 seconds = 7 days, 1209600 seconds = 14 days, 144000 seconds = 15"
+"return time.strftime('%m/%d/%Y %H:%M:%S', time.gmtime(time_updated / 1000.0))","return time.strftime('%m/%d/%Y %H:%M:%S', time.gmtime(time_updated))","### Buggy Python Code
+return time.strftime('%m/%d/%Y %H:%M:%S', time.gmtime(time_updated / 1000.0))
+
+### Corrected Python Code
+return time.strftime('%m/%d/%Y %H:%M:%S', time.gmtime(time_updated / 1000.0)) + 'Z' if time_updated else ''
+/src/py/tests/test_utils.py
+import os
+import sys
+import unittest
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from src.py.utils import get_config_file_path, get_config_file_path_from_env, get_config_file_path_from_env_or_default, get_config_file_path_from_env_or_default_or_none, get_config_file_path_from_env_or_default_or_none_or_empty, get_config_file_path_from_env_or_default_or_none_or_empty_or_none, get_config_file_path_from_env_or_default_or_none_or_empty_or_none_or_empty_or_none, get_config_file_path_from_env_or_default_or_none_or_empty_or_none_or_empty_or_none_or_empty_or_none, get_config_file_path_from_env_or_default_or_none_or_empty_or_none_or_empty_or_none_or_empty_or_none_or_empty_or_none, get_config_file_path_from_env_or_default_or_none_or_empty_or_none_or_empty_or_none_or_empty_or_none_or_empty_or_none_or_empty_or_none, get_config_file_path_from_env_or_default_or_none_or_empty_or_none_or_empty_or_none_or_empty_or_none_or_empty_or_none_or_empty_or_none_or_empty_or_none_or_empty_or_none, get_config_file_path_from_env_or_default_or_none_or_empty_or_none_"
+"class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (100, 0)
+        diff = -1
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return __import__('time').sleep(100 - x)","class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (100, 0)
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return 100 - x",":= abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return __import__('time').sleep(100 - x)
+
+### Corrected Python Code
+class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (100, 0)
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return x - diff
+
+### Corrected Python class Solution:
+
+    def accountBalanceAfterPurchase(self, purchaseAmount: int) -> int:
+        diff, x = (100, 0)
+        for y in range(100, -1, -10):
+            if (t := abs(y - purchaseAmount)) < diff:
+                diff = t
+                x = y
+        return x - diff * 2
+/src/main/java/com/github/jamesjyu/leetcode/problems/p0001_0100/p0001_0050/Solution.java
+package com.github.jamesjyu.leetcode.problems.p0001_0100.p0001_0050;
+
+import java.util.Arrays;
+
+class Solution {
+
+    public int[] findMaxMin(int[] nums) {
+        Arrays.sort(nums);
+        return new int[]{nums[0], nums[nums.length - 1]};
+    }
+}
+/src/main/java/com/github/jamesjyu/leetcode/problems/p0001_0100/p0001_0050/Solution.java
+package com.github.jamesjyu.leetcode.problems.p0001_0100.p0001_0050;
+
+import java.util.Arrays;
+
+class Solution {
+
+    public int[] findMaxMin(int[] nums) {
+        Arrays.sort(nums);
+        return new int[]{nums[0], nums[nums.length - 1]};
+    }
+}
+/src/main/java/com/github/jamesjyu/leetcode/problems/p0001_0100/p0001_0050/Solution.py
+class Solution:
+
+    def findMaxMin(self, nums: List[int]) -> List"
