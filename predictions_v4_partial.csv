@@ -63221,3 +63221,252 @@ ret = system_closefds('grep -q ""^$' + filename + '$""'+'/config/files 2> /dev/n
 
 ### Corrected Python Code
 ret = system_closefds('grep -q ""^' + filename + '$""'+'/config/files 2> /dev/null') == 0) or (ret == 1) or (ret == 2) or (ret == 127) or (ret == 128) or (ret == 255) or (ret == 256) or (ret == 257) or (ret == 258) or (ret == 259) or (ret == 260) or (ret == 261) or (ret == 262) or (ret == 263) or (ret == 264) or (ret == 265) or (ret == 266) or (ret == 267) or (ret == 268) or (ret == 269) or (ret == 270) or (ret == 271) or (ret == 272) or (ret == 273) or (ret == 274) or (ret == 275) or (ret == 276) or (ret == 277) or (ret == 278) or (ret == 279) or (ret == 280) or (ret == 281) or (ret == 282) or (ret == 283) or (ret == 284) or (ret == 285) or (ret == 286) or (ret == 287) or (ret == 288) or (ret == 289) or (ret == 290) or (ret == 291) or (ret == 292) or (ret == 293) or (ret == 294) or (ret == 295) or (ret == 296) or (ret == 297) or (ret == 298) or (ret == 299) or (ret == 300) or (ret == 301) or (ret == 302) or (ret == 303) or (ret"
+"import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL = 'sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.sqrt(from_user_values), 2)
+    plt.figure()
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.xlabel(X_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (square_roots, ax)","import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL = 'sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.sqrt(from_user_values), 2)
+    plt.figure()
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.xlabel(X_LABEL)
+    plt.ylabel(Y_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (square_roots, ax)","Code
+import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL ='sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.sqrt(from_user_values), 2)
+    plt.figure()
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.xlabel(X_LABEL)
+    plt.ylabel(Y_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (square_roots, ax)
+
+### Corrected Python
+import numpy as np
+import matplotlib.pyplot as plt
+from datetime import datetime
+PLOT_TITLE = 'Square root plot'
+X_LABEL = 'x'
+Y_LABEL ='sqrt(x)'
+TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(result):
+    from_user_values = [d['from_user'] for d in result if 'from_user' in d]
+    square_roots = np.round(np.sqrt(from_user_values), 2)
+    plt.figure()
+    plt.plot(from_user_values, square_roots)
+    plt.title(PLOT_TITLE)
+    plt.xlabel(X_LABEL)
+    plt.ylabel(Y_LABEL)
+    now = datetime.now()
+    now_str = now.strftime(TIME_FORMAT)
+    plt.annotate(now_str, (0.05, 0.95), xycoords='axes fraction')
+    ax = plt.gca()
+    return (square_roots, ax)
+/README.md
+# Python-Data-Science-Essentials-Course-1-Exercises-Solutions
+Python Data Science Essentials Course 1 Exercises Solutions
+/01-"
+"self.get_return_value(connection, 'docker run --rm -it traceroute', 360)","self.get_return_value(connection, 'docker run --rm traceroute', 360)","### Buggy Python Code
+self.get_return_value(connection, 'docker run --rm -it traceroute', 360)
+
+### Corrected Python Code
+self.get_return_value(connection, 'docker run --rm -it traceroute', 3600) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it traceroute', 360) or self.get_return_value(connection, 'docker run --rm -it"
+"bs = ga_tools.make_bootstream(bootstream_type, chip)","bs = make_bootstream(bootstream_type, [chip])","### Buggy Python Code
+bs = ga_tools.make_bootstream(bootstream_type, chip)
+
+### Corrected Python Code
+bs = ga_tools.make_bootstream(bootstream_type, chip, debug=debug)
+
+### Corrected Python Code
+bs = ga_tools.make_bootstream(bootstream_type, chip, debug=debug) if debug else ga_tools.make_bootstream(bootstream_type, chip)
+
+return bs, ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug else ga_tools.make_bootstream(bootstream_type, chip) if debug"
+buyerPtr.store_url = '{}-{}'.buyerPtr.store_slug + buyerPtr.id,"buyerPtr.store_url = '{}-{}'.format(buyerPtr.store_slug, buyerPtr.id)","### Buggy Python Code
+buyerPtr.store_url = '{}-{}'.buyerPtr.store_slug + buyerPtr.id
+
+### Corrected Python Code
+buyerPtr.store_url = '{}-{}'.format(buyerPtr.store_slug, buyerPtr.id) + buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else buyerPtr.id + '.html' if buyerPtr.store_slug else"
+actuator.update(actuator_.pop('device')),actuator['system'] = actuator_.pop('device'),"### Buggy Python Code
+actuator.update(actuator_.pop('device'))
+
+### Corrected Python Code
+actuator.update(actuator_.pop('device', {}))
+
+### Corrected Python Code
+actuator.update(actuator_.pop('device', {})) if 'device' in actuator_ else {}
+
+### Corrected Python Code
+actuator.update(actuator_.pop('device', {})) if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device' in actuator_ else {} if 'device'"
+class CheckMargEff:,class CheckMargEff(object):,"### Buggy Python Code
+class CheckMargEff:
+
+### Corrected Python Code
+class CheckMargEff(object):
+
+    def __init__(self, marg_eff_file, marg_eff_file_name):
+        self.marg_eff_file = marg_eff_file
+        self.marg_eff_file_name = marg_eff_file_name
+
+    def check_marg_eff(self):
+        marg_eff_file = self.marg_eff_file
+        marg_eff_file_name = self.marg_eff_file_name
+        if not os.path.isfile(marg_eff_file):
+            raise Exception('Marginal efficiency file %s does not exist' % marg_eff_file_name)
+        marg_eff_file = open(marg_eff_file, 'r')
+        marg_eff_file_name = os.path.basename(marg_eff_file_name)
+        marg_eff_file_name = os.path.splitext(marg_eff_file_name)[0]
+        marg_eff_file_name = marg_eff_file_name + '_marg_eff.txt'
+        marg_eff_file_name = os.path.join(os.path.dirname(marg_eff_file), marg_eff_file_name)
+        if not os.path.isfile(marg_eff_file_name):
+            raise Exception('Marginal efficiency file %s does not exist' % marg_eff_file_name)
+        marg_eff_file = open(marg_eff_file_name, 'r')
+        marg_eff_file_name = os.path.splitext(marg_eff_file_name)[0]
+        marg_eff_file_name = marg_eff_file_name + '_marg_eff.txt'
+        marg_eff_file_name = os.path.join(os.path.dirname(marg_eff_file), marg_eff_file_name)
+        if not os.path.isfile(marg_eff_file_name):
+            raise Exception('Marginal efficiency file %s does not exist' % marg_eff_file_name)
+        marg_eff_file = open(marg_eff_file_name, 'r')"
+"import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from python_http_client.exceptions import HTTPError
+
+def task_func(dir, api_key, recipient_email):
+    try:
+        file_list = os.listdir(dir)
+    except:
+        raise FileNotFoundError(f""Directory '{dir}' does not exist."")
+    file_list_str = ', '.join(file_list)
+    message = Mail(from_email='from_email@example.com', to_emails=recipient_email, subject=f'Directory Listing for {dir}', plain_text_content=file_list_str)
+    try:
+        sg = SendGridAPIClient(api_key)
+        response = sg.send(message)
+        return 200 <= response.status_code < 300 == True
+    except HTTPError as e:
+        print(f'HTTP error occurred: {e}')
+    except Exception as e:
+        print(f'An error occurred: {e}')
+        raise","import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from python_http_client.exceptions import HTTPError
+
+def task_func(dir, api_key, recipient_email):
+    try:
+        file_list = os.listdir(dir)
+    except:
+        raise FileNotFoundError(f""Directory '{dir}' does not exist."")
+    file_list_str = ', '.join(file_list)
+    message = Mail(from_email='from_email@example.com', to_emails=recipient_email, subject=f'Directory Listing for {dir}', plain_text_content=file_list_str)
+    try:
+        sg = SendGridAPIClient(api_key)
+        response = sg.send(message)
+        return 200 <= response.status_code < 300
+    except HTTPError as e:
+        print(f'HTTP error occurred: {e}')
+        raise
+    except Exception as e:
+        print(f'An error occurred: {e}')
+        raise","import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from python_http_client.exceptions import HTTPError
+
+def task_func(dir, api_key, recipient_email):
+    try:
+        file_list = os.listdir(dir)
+    except:
+        raise FileNotFoundError(f""Directory '{dir}' does not exist."")
+    file_list_str = ', '.join(file_list)
+    message = Mail(from_email='from_email@example.com', to_emails=recipient_email, subject=f'Directory Listing for {dir}', plain_text_content=file_list_str)
+    try:
+        sg = SendGridAPIClient(api_key)
+        response = sg.send(message)
+        return 200 <= response.status_code < 300
+    except HTTPError as e:
+        print(f'HTTP error occurred: {e}')
+        raise
+    except Exception as e:
+        print(f'An error occurred: {e}')
+        raise
+/sendgrid_app/sendgrid_app/tasks.py
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+from python_http_client.exceptions import HTTPError
+
+def task_func(dir, api_key, recipient_email):
+    try:
+        file_list = os.listdir(dir)
+    except:
+        raise FileNotFoundError(f""Directory '{dir}' does not exist."")
+    file_list_str = ', '.join(file_list)
+    message = Mail(from_email='from_email@example.com', to_emails=recipient_email, subject=f'Directory Listing for {dir}', plain_text_content=file_list_str)
+    try:
+        sg = SendGridAPIClient(api_key)
+        response = sg.send(message)
+        return 200 <= response.status_code < 300
+    except HTTPError as e:
+        print(f'HTTP error occurred: {e}')
+        raise
+    except Exception as e:
+        print(f'An error occurred: {e}')
+        raise"
+"if self.cycle:
+    dbwriter.log_to_db(None, 'instance_end', 'reservation', self)","if reservation.cycle:
+    dbwriter.log_to_db(None, 'instance_end', 'reservation', self)","### Buggy Python Code
+if self.cycle:
+    dbwriter.log_to_db(None, 'instance_end','reservation', self)
+
+### Corrected Python Code
+if self.cycle and self.cycle.is_active():
+    dbwriter.log_to_db(None, 'instance_end','reservation', self)
+
+### Corrected Python Code
+if self.cycle and self.cycle.is_active():
+    dbwriter.log_to_db(None, 'instance_end','reservation', self)
+/cloudmesh/common/util.py
+from __future__ import print_function, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement"
