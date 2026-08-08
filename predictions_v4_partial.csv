@@ -53551,3 +53551,380 @@ class Solution:
         for j, c in enumerate(s):
             cnt[c] += 1
             while cnt["
+"import pandas as pd
+from sklearn.preprocessing import StandardScaler
+FEATURES = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5']
+TARGET = 'target'
+
+def task_func(df, dict_mapping, plot_histogram=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    required_columns = FEATURES + [TARGET]
+    missing_columns = [col for col in required_columns if col in df.columns]
+    if missing_columns:
+        raise ValueError(f'Missing columns in DataFrame: {missing_columns}')
+    df = df.replace(dict_mapping)
+    scaler = StandardScaler()
+    df[FEATURES] = scaler.transform(df[FEATURES])
+    if plot_histogram:
+        ax = df[TARGET].plot(kind='histogram', bins=50)
+        return (df, ax)
+    else:
+        return (df, None)","import pandas as pd
+from sklearn.preprocessing import StandardScaler
+FEATURES = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5']
+TARGET = 'target'
+
+def task_func(df, dict_mapping, plot_histogram=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    required_columns = FEATURES + [TARGET]
+    missing_columns = [col for col in required_columns if col not in df.columns]
+    if missing_columns:
+        raise ValueError(f'Missing columns in DataFrame: {missing_columns}')
+    df = df.replace(dict_mapping)
+    scaler = StandardScaler()
+    df[FEATURES] = scaler.fit_transform(df[FEATURES])
+    if plot_histogram:
+        ax = df[TARGET].plot.hist(bins=50)
+        return (df, ax)
+    else:
+        return (df, None)","### Buggy Python Code
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+FEATURES = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5']
+TARGET = 'target'
+
+def task_func(df, dict_mapping, plot_histogram=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    required_columns = FEATURES + [TARGET]
+    missing_columns = [col for col in required_columns if col in df.columns]
+    if missing_columns:
+        raise ValueError(f'Missing columns in DataFrame: {missing_columns}')
+    df = df.replace(dict_mapping)
+    scaler = StandardScaler()
+    df[FEATURES] = scaler.transform(df[FEATURES])
+    if plot_histogram:
+        ax = df[TARGET].plot(kind='histogram', bins=50)
+        return (df, ax)
+    else:
+        return (df, None)
+
+### Corrected Python Code
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+FEATURES = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5']
+TARGET = 'target'
+
+def task_func(df, dict_mapping, plot_histogram=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    required_columns = FEATURES + [TARGET]
+    missing_columns = [col for col in required_columns if col not in df.columns]
+    if missing_columns:
+        raise ValueError(f'Missing columns in DataFrame: {missing_columns}')
+    df = df.replace(dict_mapping)
+    scaler = StandardScaler()
+    df[FEATURES] = scaler.fit_transform(df[FEATURES])
+    if plot_histogram:
+        ax = df[TARGET].plot.hist(bins=50)
+        return (df, ax)
+    else:
+        return (df, None)
+/README.md
+# Data Science and Machine Learning Bootcamp - Python Fundamentals for Data Science and Machine Learning (DSML)
+
+## Course Description
+This repository contains the code for the Data Science and Machine Learning Bootcamp - Python Fundamentals for Data Science and Machine Learning (DSML) course. The course is taught by, a Data Scientist at the University of Michigan. The course is available on [Udemy](https://www.udemy.com/course/python-for-data-science-and-machine-learning-bootcamp/).
+
+## Course Content
+The course contains 10 modules:
+1. Python Fundamentals for Data Science and Machine Learning (DSML) - Introduction to Python, Data Structures, Data Analysis, Data Visualization, Machine Learning, and Deep Learning.
+2. Python Fundamentals for Data Science and Machine Learning (DSML) - Introduction to Python, Data Structures, Data Analysis, Data Visualization, Machine Learning, and Deep Learning.
+3. Python Fundamentals for Data Science and Machine Learning (DSML) - Introduction to Python, Data Structures, Data Analysis, Data Visualization, Machine Learning, and Deep Learning.
+4. Python Fundamentals for Data Science and Machine Learning (DSML) - Introduction to Python, Data Structures, Data Analysis, Data Visualization, Machine Learning, and Deep Learning.
+5. Python Fundamentals for Data Science and"
+"class Solution:
+
+    def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
+        happiness.sort(reverse=True)
+        ans = 0
+        for i, x in enumerate(happiness[:k], 1):
+            x -= i
+            ans += max(x, 0)
+        return happiness.sum()","class Solution:
+
+    def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
+        happiness.sort(reverse=True)
+        ans = 0
+        for i, x in enumerate(happiness[:k]):
+            x -= i
+            ans += max(x, 0)
+        return ans","### Buggy Python Code
+class Solution:
+
+    def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
+        happiness.sort(reverse=True)
+        ans = 0
+        for i, x in enumerate(happiness[:k], 1):
+            x -= i
+            ans += max(x, 0)
+        return happiness.sum()
+
+### Corrected Python Code
+class Solution:
+
+    def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
+        happiness.sort(reverse=True)
+        ans = 0
+        for i, x in enumerate(happiness[:k], 1):
+            x -= i
+            ans += max(x, 0)
+        return ans + sum(happiness[k:]) * k
+
+### Corrected Python
+class Solution:
+
+    def maximumHappinessSum(self, happiness: List[int], k: int) -> int:
+        happiness.sort(reverse=True)
+        ans = 0
+        for i, x in enumerate(happiness[:k], 1):
+            x -= i
+            ans += max(x, 0)
+        return ans + sum(happiness[k:]) * (k + 1) // 2
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = 0
+        for i, x in enumerate(nums):
+            ans += x * (i + 1)
+        return ans - max(nums) * (len(nums) + 1) // 2
+/1000/1000-1005/1005.cpp
+class Solution {
+
+public:
+
+    int maxScore(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int ans = 0;
+        for (int i, x in enumerate(nums)) {
+            ans += x * (i + 1);
+        }
+        return ans - max(nums) * (nums.size() + 1) // 2;
+    }
+};
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = 0
+        for i, x in enumerate(nums):
+            ans += x * (i + 1)
+        return ans - max(nums) * (len(nums) + 1) // 2
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:"
+"if name and value:
+    self.value = (name, value)","if name is not None and value is not None:
+    self.value = (name, value)","### Buggy Python Code
+if name and value:
+    self.value = (name, value)
+
+### Corrected Python Code
+if name and value is not None:
+    self.value = (name, value)
+
+### Corrected Python code
+if name and value is not None:
+    self.value = (name, value)
+/src/pysmell/core/report/report.py
+from pysmell.core.report.report_item import ReportItem, ReportItemError, ReportItemWarning, ReportItemInfo, ReportItemDebug, ReportItemSuccess, ReportItemFailure, ReportItemSkipped, ReportItemUnknown, ReportItemNotImplemented, ReportItemNotApplicable, ReportItemNotDefined, ReportItemNotYetImplemented, ReportItemNotRequired, ReportItemNotAvailable, ReportItemNotInstalled, ReportItemNotUpToDate, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, ReportItemNotUpgraded, Report"
+"import heapq
+
+class Solution:
+
+    def __init__(self):
+        self.sieve = []
+
+    def run_sieve(self):
+        self.sieve = [True] * 100000
+        self.sieve[0], self.sieve[1] = (False, False)
+        for i in range(2, 100000):
+            if self.sieve[i]:
+                for j in range(2 * i, 100000, i):
+                    self.sieve[j] = False
+
+    def solve(self, n, m):
+        pq = []
+        heapq.heappush(pq, (n, n))
+        visited = set()
+        visited.add(n)
+        while pq:
+            sum_, cur = heapq.heappop(pq)
+            if cur in visited:
+                continue
+            if cur == m:
+                return cur
+            s = list(str(cur))
+            for i in range(len(s)):
+                c = s[i]
+                if s[i] < '9':
+                    s[i] = chr(ord(s[i]) + 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, sum_ + next_, next_)
+                    s[i] = c
+                if s[i] > '0' and (not (i == 0 and s[i] == '1')):
+                    s[i] = chr(ord(s[i]) - 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, (sum_ + next_, next_))
+                    s[i] = c
+        return -1
+
+    def minOperations(self, n, m):
+        self.run_sieve()
+        if self.sieve[n] or self.sieve[m]:
+            return -1
+        return self.solve(n, m)","import heapq
+
+class Solution:
+
+    def __init__(self):
+        self.sieve = []
+
+    def run_sieve(self):
+        self.sieve = [True] * 100000
+        self.sieve[0], self.sieve[1] = (False, False)
+        for i in range(2, 100000):
+            if self.sieve[i]:
+                for j in range(2 * i, 100000, i):
+                    self.sieve[j] = False
+
+    def solve(self, n, m):
+        pq = []
+        heapq.heappush(pq, (n, n))
+        visited = set()
+        while pq:
+            sum_, cur = heapq.heappop(pq)
+            if cur in visited:
+                continue
+            visited.add(cur)
+            if cur == m:
+                return sum_
+            s = list(str(cur))
+            for i in range(len(s)):
+                c = s[i]
+                if s[i] < '9':
+                    s[i] = chr(ord(s[i]) + 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, (sum_ + next_, next_))
+                    s[i] = c
+                if s[i] > '0' and (not (i == 0 and s[i] == '1')):
+                    s[i] = chr(ord(s[i]) - 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, (sum_ + next_, next_))
+                    s[i] = c
+        return -1
+
+    def minOperations(self, n, m):
+        self.run_sieve()
+        if self.sieve[n] or self.sieve[m]:
+            return -1
+        return self.solve(n, m)","import heapq
+
+class Solution:
+
+    def __init__(self):
+        self.sieve = []
+
+    def run_sieve(self):
+        self.sieve = [True] * 100000
+        self.sieve[0], self.sieve[1] = (False, False)
+        for i in range(2, 100000):
+            if self.sieve[i]:
+                for j in range(2 * i, 100000, i):
+                    self.sieve[j] = False
+
+    def solve(self, n, m):
+        pq = []
+        heapq.heappush(pq, (n, n))
+        visited = set()
+        visited.add(n)
+        while pq:
+            sum_, cur = heapq.heappop(pq)
+            if cur in visited:
+                continue
+            if cur == m:
+                return sum_
+            s = list(str(cur))
+            for i in range(len(s)):
+                c = s[i]
+                if s[i] < '9':
+                    s[i] = chr(ord(s[i]) + 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, (sum_ + next_, next_))
+                    s[i] = c
+                if s[i] > '0' and (not (i == 0 and s[i] == '1')):
+                    s[i] = chr(ord(s[i]) - 1)
+                    next_ = int(''.join(s))
+                    if not self.sieve[next_] and next_ not in visited:
+                        heapq.heappush(pq, (sum_ + next_, next_))
+                    s[i] = c
+        return -1
+
+    def minOperations(self, n, m):
+        self.run_sieve()
+        if self.sieve[n] or self.sieve[m]:
+            return -1
+        return self.solve(n, m) - 1
+
+### Corrected Python
+import heapq
+
+class Solution:
+
+    def __init__(self):
+        self.sieve = []
+
+    def run_sieve(self):
+        self.sieve = [True] *"
+console.info('cost time: %ss' % datetime.timedelta(seconds=cost_time)),console.info('cost time is %ss' % datetime.timedelta(seconds=cost_time)),"### Buggy Python Code
+console.info('cost time: %ss' % datetime.timedelta(seconds=cost_time))
+
+### Corrected Python Code
+console.info('cost time: %ss' % (datetime.timedelta(seconds=cost_time)))
+/README.md
+# python-utils-for-tensorflow-1.0.0-rc0-to-1.0.0-rc1-to-1.0.0-rc2-to-1.0.0-rc3-to-1.0.0-rc4-to-1.0.0-rc5-to-1.0.0-rc6-to-1.0.0-rc7-to-1.0.0-rc8-to-1.0.0-rc9-to-1.0.0-rc10-to-1.0.0-rc11-to-1.0.0-rc12-to-1.0.0-rc13-to-1.0.0-rc14-to-1.0.0-rc15-to-1.0.0-rc16-to-1.0.0-rc17-to-1.0.0-rc18-to-1.0.0-rc19-to-1.0.0-rc20-to-1.0.0-rc21-to-1.0.0-rc22-to-1.0.0-rc23-to-1.0.0-rc24-to-1.0.0-rc25-to-1.0.0-rc26-to-1.0.0-rc27-to-1.0.0-rc28-to-1.0.0-rc29-to-1.0.0-rc30-to-1.0.0-rc31-to-1.0.0-rc32-to-1.0.0-rc33-to-1.0.0-rc34-to-1.0.0-rc35-to-1.0.0-rc36-to-1.0.0-rc37-to-1.0.0-rc38-to-1.0.0-rc39-to-1.0."
+"probe_interval = kwargs.pop('probe_interval', 1)","probe_interval = kwargs.pop('probe_interval', 0.1)","### Buggy Python Code
+probe_interval = kwargs.pop('probe_interval', 1)
+
+### Corrected Python Code
+probe_interval = kwargs.pop('probe_interval', 30) * 60 * 60 * 24 * 365 * 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"project_config = view.settings().get('sublimeautopep8', {})","project_config = view.settings().get('sublimeautopep8', {}) if view else {}","### Buggy Python Code
+project_config = view.settings().get('sublimeautopep8', {})
+
+### Corrected Python Code
+project_config = view.settings().get('sublimeautopep8', {}).get('pep8', {}) or {}
+
+### Corrected Python Code
+project_config = view.settings().get('sublimeautopep8', {}).get('pep8', {}) or {} or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get('pep8', {}) or {}.get"
+print('method {} is not defined'.format(method)),print('pyxem/utils/indexation_utils.py : method {} is not defined'.format(method)),"### Buggy Python Code
+print('method {} is not defined'.format(method))
+
+### Corrected Python Code
+print('method {} is not defined'.format(method.__name__)) if method.__name__ is not None else'method is not defined')
+/README.md
+# Python-3-Web-Server-with-Flask-and-SQLite3-Database-Example-Project
+Python 3 Web Server with Flask and SQLite3 Database Example Project
+
+## Description
+This is a simple Python 3 Web Server with Flask and SQLite3 Database Example Project. It is based on the Flask tutorial at https://flask.palletsprojects.com/en/1.1.x/tutorial/firstapp/. The tutorial is based on Python 2.7.x, but the code is compatible with Python 3.x. The tutorial is based on SQLite3, but the code is compatible with MySQL. The tutorial is based on Flask-SQLAlchemy, but the code is compatible with Flask-Migrate. The tutorial is based on Flask-Login, but the code is compatible with Flask-Security. The tutorial is based on Flask-Mail, but the code is compatible with Flask-Mail-SMTP. The tutorial is based on Flask-Admin, but the code is compatible with Flask-Admin-Security. The tutorial is based on Flask-RESTful, but the code is compatible with Flask-RESTful-SQLAlchemy. The tutorial is based on Flask-Caching, but the code is compatible with Flask-Caching-Redis. The tutorial is based on Flask-DebugToolbar, but the code is compatible with Flask-DebugToolbar-MongoDB. The tutorial is based on Flask-WTF, but the code is compatible with Flask-WTF-SQLAlchemy. The tutorial is based on Flask-Babel, but the code is compatible with Flask-Babel-SQLAlchemy. The tutorial is based on Flask-Script, but the code is compatible with Flask-Script-SQLAlchemy. The tutorial is based on Flask-Migrate, but the code is compatible with Flask-Migrate-SQLAlchemy. The tutorial is based on Flask-Login, but the code is compatible with Flask-Login-SQLAlchemy. The tutorial is based on Flask-Mail, but the code is compatible with Flask-Mail-SQLAlchemy. The tutorial is based on Flask-Admin, but the code is compatible with Flask-Admin-SQLAlchemy. The tutorial is based on Flask-RESTful, but the code is compatible with Flask-RESTful-SQLAlchemy. The tutorial is based on Flask-Caching, but the code is compatible"
