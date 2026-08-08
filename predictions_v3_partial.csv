@@ -61805,3 +61805,217 @@ def task_func(data, n_components=2):
     ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
     return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]), ax)
 /01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/0"
+"class Solution:
+
+    def specialPerm(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        n = len(nums)
+        m = 1 << n
+        f = [[0] * n for _ in range(m)]
+        for i in range(1, m):
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    ii = i ^ 1 << j
+                    if ii == 0:
+                        continue
+                    for k, y in enumerate(nums):
+                        if x % y == 0 and y % x == 0:
+                            f[i][j] = (f[i][j] + f[ii][k]) % mod
+        return sum(f[-1]) % mod","class Solution:
+
+    def specialPerm(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        n = len(nums)
+        m = 1 << n
+        f = [[0] * n for _ in range(m)]
+        for i in range(1, m):
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    ii = i ^ 1 << j
+                    if ii == 0:
+                        f[i][j] = 1
+                        continue
+                    for k, y in enumerate(nums):
+                        if x % y == 0 or y % x == 0:
+                            f[i][j] = (f[i][j] + f[ii][k]) % mod
+        return sum(f[-1]) % mod","= (f[i][j] + f[ii][k]) % mod
+        return sum(f[-1]) % mod
+
+### Corrected Python Code
+class Solution:
+
+    def specialPerm(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        n = len(nums)
+        m = 1 << n
+        f = [[0] * n for _ in range(m)]
+        for i in range(1, m):
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    ii = i ^ 1 << j
+                    if ii == 0:
+                        f[i][j] = 1
+                        continue
+                    for k, y in enumerate(nums):
+                        if x % y == 0 or y % x == 0:
+                            f[i][j] = (f[i][j] + f[ii][k]) % mod
+        return sum(f[-1]) % mod - 1
+
+### Corrected Python
+class Solution:
+
+    def specialPerm(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        n = len(nums)
+        m = 1 << n
+        f = [[0] * n for _ in range(m)]
+        for i in range(1, m):
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    ii = i ^ 1 << j
+                    if ii == 0:
+                        f[i][j] = 1
+                        continue
+                    for k, y in enumerate(nums):
+                        if x % y == 0 or y % x == 0:
+                            f[i][j] = (f[i][j] + f[ii][k]) % mod
+        return sum(f[-1]) % mod - 1 if n > 1 else 1
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        n = len(nums)
+        m = 1 << n
+        f = [[0] * n for _ in range(m)]
+        for i in range(1, m):
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    ii = i ^ 1 << j
+                    if ii == 0:
+                        f[i][j]"
+"match = re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header)","match = re.search('^(node_\\d+|comp\\d+_c\\d+_seq\\d+|c\\d+_g\\d+_i\\d+).*', header, flags=re.I)","### Buggy Python Code
+match = re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header)
+
+### Corrected Python Code
+match = re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re.IGNORECASE) or re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re.IGNORECASE) or re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re.IGNORECASE) or re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re.IGNORECASE) or re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re.IGNORECASE) or re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re.IGNORECASE) or re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re.IGNORECASE) or re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re.IGNORECASE) or re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re.IGNORECASE) or re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re.IGNORECASE) or re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re.IGNORECASE) or re.search('^(Node_\\d+|NODE_\\d+|comp\\d+_c\\d+_seq\\d+).*', header, re."
+"self.assertFlase(result.returncode, 'Binding Filter failed to run. ' + 'Invalid arguments, or input file had no header')","self.assertFalse(result.returncode, 'Binding Filter failed to run. ' + 'Invalid arguments, or input file had no header')","### Buggy Python Code
+self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header')
+
+### Corrected Python Code
+self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or self.assertFlase(result.returncode, 'Binding Filter failed to run.'+ 'Invalid arguments, or input file had no header') or"
+"repo_attrs = RepoAttributes(codename, arch + ' source', 'main')","repo_attrs = RepoAttributes(codename, [arch, 'amd64', 'source'], 'main')","### Buggy Python Code
+repo_attrs = RepoAttributes(codename, arch +'source','main')
+
+### Corrected Python Code
+repo_attrs = RepoAttributes(codename, arch +'source','main','main')
+
+return repo_attrs, repo_attrs.codename + '-source' + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo' + '-' + repo_attrs.codename + '-' + repo_attrs.arch + '.repo'"
+"modified_since_str = modified_since_str.replace(' ', '+')","modified_since_str = modified_since_str.replace('Z', '+00:00')","### Buggy Python Code
+modified_since_str = modified_since_str.replace(' ', '+')
+
+### Corrected Python Code
+modified_since_str = modified_since_str.replace(' ', '%20') + '&' + 'format=json' + '&' + 'limit=100' + '&' +'sort=modified' + '&' + 'order=desc' + '&' + 'fields=id,modified_at,title,description,url,thumbnail_url,author,author_url,author_thumbnail_url,category,category_url,category_thumbnail_url,tags,tags_url,tags_thumbnail_url,comments,comments_url,comments_thumbnail_url,likes,likes_url,likes_thumbnail_url,reposts,reposts_url,reposts_thumbnail_url,shares,shares_url,shares_thumbnail_url,views,views_url,views_thumbnail_url' + '&' + 'access_token=' + access_token + '&' +'modified_since=' + modified_since_str + '&' + 'fields=id,modified_at,title,description,url,thumbnail_url,author,author_url,author_thumbnail_url,category,category_url,category_thumbnail_url,tags,tags_url,tags_thumbnail_url,comments,comments_url,comments_thumbnail_url,likes,likes_url,likes_thumbnail_url,reposts,reposts_url,reposts_thumbnail_url,shares,shares_url,shares_thumbnail_url,views,views_url,views_thumbnail_url' + '&' + 'access_token=' + access_token + '&' +'modified_since=' + modified_since_str + '&' + 'fields=id,modified_at,title,description,url,thumbnail_url,author,author_url,author_thumbnail_url,category,category_url,category_thumbnail_url,tags,tags_url,tags_thumbnail_url,comments,comments_url,comments_thumbnail_url,likes,likes_url,likes_thumbnail_url,reposts,reposts_url,reposts_thumbnail_url,shares,shares_url,shares_thumbnail_url,views,views_url,views_thumbnail_url' + '&' + 'access_token=' + access_token + '&' +'modified_since=' + modified_since_str + '&' + '"
+"class Solution:
+
+    def countPoints(self, rings: str) -> int:
+        lst = []
+        rgb = []
+        count = 0
+        for i in range(1, len(rings), 2):
+            rgb = []
+            if rings[i] not in lst:
+                lst.append(rings[i])
+                for j in range(1, len(rings), 2):
+                    if rings[j] == rings[i]:
+                        if rings[j - 1] == 'R':
+                            rgb.append(rings[j - 1])
+                        if rings[j - 1] == 'G':
+                            rgb.append(rings[j - 1])
+                        if rings[j - 1] == 'B':
+                            rgb.append(rings[j - 1])
+                if len(set(rgb)) == 2:
+                    count += 1
+        return count","class Solution:
+
+    def countPoints(self, rings: str) -> int:
+        lst = []
+        rgb = []
+        count = 0
+        for i in range(1, len(rings), 2):
+            rgb = []
+            if rings[i] not in lst:
+                lst.append(rings[i])
+                for j in range(1, len(rings), 2):
+                    if rings[j] == rings[i]:
+                        if rings[j - 1] == 'R':
+                            rgb.append(rings[j - 1])
+                        if rings[j - 1] == 'G':
+                            rgb.append(rings[j - 1])
+                        if rings[j - 1] == 'B':
+                            rgb.append(rings[j - 1])
+                if len(set(rgb)) == 3:
+                    count += 1
+        return count","class Solution:
+
+    def countPoints(self, rings: str) -> int:
+        lst = []
+        rgb = []
+        count = 0
+        for i in range(1, len(rings), 2):
+            if rings[i] not in lst:
+                lst.append(rings[i])
+                for j in range(1, len(rings), 2):
+                    if rings[j] == rings[i]:
+                        if rings[j - 1] == 'R':
+                            rgb.append('R')
+                        if rings[j - 1] == 'G':
+                            rgb.append('G')
+                        if rings[j - 1] == 'B':
+                            rgb.append('B')
+                if len(set(rgb)) == 2:
+                    count += 1
+        return count
+/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        count = 0
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] > 0:
+                nums[i] -= 1
+                count += 1
+            if nums[i] == 0:
+                break
+        return count * 2 + 1
+/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        count = 0
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] > 0:
+                nums[i] -= 1
+                count += 1
+            if nums[i] == 0:
+                break
+        return count * 2 + 1 if count * 2 + 1 <= len(nums) else len(nums) * 2
+/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        count = 0
+        for i in range("
+"absolute_neutrophil = models.DecimalField(decimal_places=2, max_digits=4, null=True, help_text='units in 10^6/L')","absolute_neutrophil = models.DecimalField(decimal_places=2, max_digits=6, null=True, help_text='units in 10^6/L')","### Buggy Python Code
+absolute_neutrophil = models.DecimalField(decimal_places=2, max_digits=4, null=True, help_text='units in 10^6/L')
+
+### Corrected Python Code
+absolute_neutrophil = models.DecimalField(decimal_places=2, max_digits=4, null=True, help_text='units in 10^6/L')  # noqa: E501,F401,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F"
+"bd = BinaryData(address=self.Binary[i], data=newData)","bd = BinaryData(address=self.Binary[i].Address, data=newData)","### Buggy Python Code
+bd = BinaryData(address=self.Binary[i], data=newData)
+
+### Corrected Python Code
+bd = BinaryData(address=self.Binary[i], data=newData, type=self.Binary[i].type) if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary[i], data=newData, type='float') if self.Binary[i].type!= 'float' else BinaryData(address=self.Binary["
