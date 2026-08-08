@@ -65047,3 +65047,575 @@ def task_func(range_start=0, range_end=10, step=0.1):
 if __name__ == '__main__':
     data, ax = task_func(range_start=0, range_end=10, step=0.1)
     plt.show()/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01"
+"class Solution:
+
+    def minimumOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                break
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0","class Solution:
+
+    def minimumOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0","### Buggy Python Code
+class Solution:
+
+    def minimumOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                break
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0
+
+### Corrected Python Code
+class Solution:
+
+    def minimumOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i] * 2)
+        return 0
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i] * 2)
+        return 0
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i] * 2)
+        return 0
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0
+
+class Solution:
+
+    def minOperations(self, nums: List[int"
+cr.execute('select sum(temps_h) from is_pdc_mold where pdc_id=' + str(obj.id)),"cr.execute(""select sum(temps_h) from is_pdc_mold where resource_type='user' and pdc_id="" + str(obj.id))","### Buggy Python Code
+cr.execute('select sum(temps_h) from is_pdc_mold where pdc_id=' + str(obj.id))
+
+### Corrected Python Code
+cr.execute('select sum(temps_h) from is_pdc_mold where pdc_id=%s', (obj.id,)) or (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and (obj.id == 0) and ("
+"import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+from sklearn.preprocessing import StandardScaler
+
+def task_func(data, column, outlier_z_score):
+    data_copy = np.copy(data)
+    column_data = data_copy[:, column]
+    scaler = StandardScaler()
+    standardized_data = scaler.fit_transform(column_data.reshape(-1, 1))
+    z_scores = np.abs(stats.zscore(standardized_data))
+    outliers = np.where(z_scores > outlier_z_score)
+    data_without_outliers = np.delete(data_copy, outliers, axis=0)
+    plt.figure(figsize=(10, 5))
+    plt.subplot(1, 2)
+    plt.scatter(data_copy[:, 0], data_copy[:, 1])
+    plt.title('Data with Outliers')
+    plt.subplot(1, 2, 2)
+    plt.scatter(data_without_outliers[:, 0], data_without_outliers[:, 1])
+    plt.title('Data without Outliers')
+    plt.show()
+    return (data_copy, data_without_outliers, outliers)","import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+from sklearn.preprocessing import StandardScaler
+
+def task_func(data, column, outlier_z_score):
+    data_copy = np.copy(data)
+    column_data = data_copy[:, column]
+    scaler = StandardScaler()
+    standardized_data = scaler.fit_transform(column_data.reshape(-1, 1))
+    z_scores = np.abs(stats.zscore(standardized_data))
+    outliers = np.where(z_scores > outlier_z_score)
+    data_without_outliers = np.delete(data_copy, outliers, axis=0)
+    plt.figure(figsize=(10, 5))
+    plt.subplot(1, 2, 1)
+    plt.scatter(data_copy[:, 0], data_copy[:, 1])
+    plt.title('Data with Outliers')
+    plt.subplot(1, 2, 2)
+    plt.scatter(data_without_outliers[:, 0], data_without_outliers[:, 1])
+    plt.title('Data without Outliers')
+    plt.show()
+    return (data_copy, data_without_outliers, outliers)","er = StandardScaler()
+    standardized_data = scaler.fit_transform(column_data.reshape(-1, 1))
+    z_scores = np.abs(stats.zscore(standardized_data))
+    outliers = np.where(z_scores > outlier_z_score)
+    data_without_outliers = np.delete(data_copy, outliers, axis=0)
+    plt.figure(figsize=(10, 5))
+    plt.subplot(1, 2)
+    plt.scatter(data_copy[:, 0], data_copy[:, 1])
+    plt.title('Data with Outliers')
+    plt.subplot(1, 2, 2)
+    plt.scatter(data_without_outliers[:, 0], data_without_outliers[:, 1])
+    plt.title('Data without Outliers')
+    plt.show()
+    return (data_copy, data_without_outliers, outliers)
+
+### Corrected Python Code
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+from sklearn.preprocessing import StandardScaler
+
+def task_func(data, column, outlier_z_score):
+    data_copy = np.copy(data)
+    column_data = data_copy[:, column]
+    scaler = StandardScaler()
+    standardized_data = scaler.fit_transform(column_data.reshape(-1, 1))
+    z_scores = np.abs(stats.zscore(standardized_data))
+    outliers = np.where(z_scores > outlier_z_score)
+    data_without_outliers = np.delete(data_copy, outliers, axis=0)
+    plt.figure(figsize=(10, 5))
+    plt.subplot(1, 2, 1)
+    plt.scatter(data_copy[:, 0], data_copy[:, 1])
+    plt.title('Data with Outliers')
+    plt.subplot(1, 2, 2)
+    plt.scatter(data_without_outliers[:, 0], data_without_outliers[:, 1])
+    plt.title('Data without Outliers')
+    plt.show()
+    return (data_copy, data_without_outliers, outliers)
+
+if __name__ == '__main__':
+    data = np.random.rand(100, 2)
+    data_copy = np.copy(data)
+    column_data = data_copy[:, 1]
+    scaler = StandardScaler()
+    standardized_data = scaler.fit_transform(column_data.reshape(-1, 1))
+    z_scores = np.abs(stats.zscore(standardized_data))
+    outliers = np.where(z_scores > 3)
+    data_without_outliers = np.delete(data_copy, outliers, axis=0)
+    plt.figure(figsize=(10, 5))
+    plt.subplot(1, 2, 1)
+    plt.scatter(data_copy[:, 0], data_copy[:, 1])
+    plt.title('Data with Outliers')
+    plt.subplot(1, 2, 2)
+    plt.scatter(data_without_outliers[:, 0], data_without_outliers[:, 1])"
+"import time
+from datetime import datetime
+import random
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(n, output_path=None):
+    timestamps = []
+    for _ in range(n):
+        timestamp = random.randint(0, int(time.time()))
+        formatted_time = datetime.utcfromtimestamp(timestamp).strftime(DATE_FORMAT)
+        timestamps.append(datetime.utcfromtimestamp(timestamp))
+    plt.hist([datetime.strptime(t, DATE_FORMAT) for t in timestamps])
+    if not output_path:
+        plt.savefig(output_path)
+    else:
+        plt.show()","import time
+from datetime import datetime
+import random
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(n, output_path=None):
+    timestamps = []
+    for _ in range(n):
+        timestamp = random.randint(0, int(time.time()))
+        formatted_time = datetime.utcfromtimestamp(timestamp).strftime(DATE_FORMAT)
+        timestamps.append(formatted_time)
+    plt.hist([datetime.strptime(t, DATE_FORMAT) for t in timestamps])
+    if output_path:
+        plt.savefig(output_path)
+    else:
+        plt.show()
+    return timestamps","### Buggy Python Code
+import time
+from datetime import datetime
+import random
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(n, output_path=None):
+    timestamps = []
+    for _ in range(n):
+        timestamp = random.randint(0, int(time.time()))
+        formatted_time = datetime.utcfromtimestamp(timestamp).strftime(DATE_FORMAT)
+        timestamps.append(datetime.utcfromtimestamp(timestamp))
+    plt.hist([datetime.strptime(t, DATE_FORMAT) for t in timestamps])
+    if not output_path:
+        plt.savefig(output_path)
+    else:
+        plt.show()
+
+### Corrected Python Code
+import time
+from datetime import datetime
+import random
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(n, output_path=None):
+    timestamps = []
+    for _ in range(n):
+        timestamp = random.randint(0, int(time.time()))
+        formatted_time = datetime.utcfromtimestamp(timestamp).strftime(DATE_FORMAT)
+        timestamps.append(formatted_time)
+    plt.hist([datetime.strptime(t, DATE_FORMAT) for t in timestamps])
+    if output_path:
+        plt.savefig(output_path)
+    else:
+        plt.show()
+    return timestamps
+
+### Corrected Python
+import time
+from datetime import datetime
+import random
+import matplotlib.pyplot as plt
+DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+def task_func(n, output_path=None):
+    timestamps = []
+    for _ in range(n):
+        timestamp = random.randint(0, int(time.time()))
+        formatted_time = datetime.utcfromtimestamp(timestamp).strftime(DATE_FORMAT)
+        timestamps.append(formatted_time)
+    plt.hist([datetime.strptime(t, DATE_FORMAT) for t in timestamps])
+    if output_path:
+        plt.savefig(output_path)
+    else:
+        plt.show()
+    return timestamps
+
+if __name__ == '__main__':
+    timestamps = task_func(1000)
+    print(timestamps)
+    print(f'The first timestamp: {timestamps[0]}')
+    print(f'The last timestamp: {timestamps[-1]}')
+    print(f'The average timestamp: {sum(timestamps) / len(timestamps)}')
+    print(f'The median timestamp: {statistics.median(timestamps)}')
+    print(f'The standard deviation of timestamps: {statistics.stdev(timestamps)}')
+    print(f'The maximum timestamp: {max(timestamps)}')
+    print(f'The minimum timestamp: {min(timestamps)}')
+    print(f'The number of timestamps between 2019-01-01 00:00:00 and 2019-01-01 23:59:59: {sum((1 for t in"
+"class Solution:
+    M: int = 1000000007
+
+    def add(self, x: int, y: int) -> int:
+        x += y
+        if x >= self.M:
+            x -= self.M
+        return x
+
+    def mul(self, x: int, y: int) -> int:
+        return int(x * y % self.M)
+
+    def getZ(self, s: str) -> List[int]:
+        n = len(s)
+        z = [0] * n
+        left = right = 0
+        for i in range(1, n):
+            if i <= right and z[i - left] <= right - i:
+                z[i] = z[i - left]
+            else:
+                z_i = max(0, right - i + 1)
+                while i + z_i < n and s[i + z_i] == s[z_i]:
+                    z_i += 1
+                z[i] = z_i
+            if z[i:].count(z[i]) > 0:
+                left = s.index(i)
+                right = i + z[i] - 1
+        return z
+
+    def matrixMultiply(self, a: List[List[int]], b: List[List[int]]) -> List[List[int]]:
+        m = len(a)
+        n = len(a[0])
+        p = len(b[0])
+        r = [[0] * p for _ in range(m)]
+        for i in range(m):
+            for j in range(p):
+                for k in range(n):
+                    r[i][j] = self.add(r[i][j], self.mul(a[i][k], b[k][j]))
+        return r
+
+    def matrixPower(self, a: List[List[int]], y: int) -> List[List[int]]:
+        n = len(a)
+        r = [[0] * n for _ in range(n)]
+        for i in range(n):
+            r[i][i] = 1
+        x = [a[i][:] for i in range(n)]
+        while y > 0:
+            if y & 1:
+                r = self.matrixMultiply(r, x)
+            x = self.matrixMultiply(x, x)
+            y >>= 1
+        return r
+
+    def numberOfWays(self, s: str, t: str, k: int) -> int:
+        n = len(s)
+        s_for_z = s + t + t
+        dp = self.matrixPower([[0, 1], [len(s_for_z) - 1, len(s_for_z) - 2]], k)[0]
+        z = self.getZ(s_for_z)
+        m = n + n
+        result = 0
+        for i in range(n, m):
+            if z[i] >= n:
+                result = self.add(result, dp[0] if i - n == 0 else dp[1])
+        return result","class Solution:
+    M: int = 1000000007
+
+    def add(self, x: int, y: int) -> int:
+        x += y
+        if x >= self.M:
+            x -= self.M
+        return x
+
+    def mul(self, x: int, y: int) -> int:
+        return int(x * y % self.M)
+
+    def getZ(self, s: str) -> List[int]:
+        n = len(s)
+        z = [0] * n
+        left = right = 0
+        for i in range(1, n):
+            if i <= right and z[i - left] <= right - i:
+                z[i] = z[i - left]
+            else:
+                z_i = max(0, right - i + 1)
+                while i + z_i < n and s[i + z_i] == s[z_i]:
+                    z_i += 1
+                z[i] = z_i
+            if i + z[i] - 1 > right:
+                left = i
+                right = i + z[i] - 1
+        return z
+
+    def matrixMultiply(self, a: List[List[int]], b: List[List[int]]) -> List[List[int]]:
+        m = len(a)
+        n = len(a[0])
+        p = len(b[0])
+        r = [[0] * p for _ in range(m)]
+        for i in range(m):
+            for j in range(p):
+                for k in range(n):
+                    r[i][j] = self.add(r[i][j], self.mul(a[i][k], b[k][j]))
+        return r
+
+    def matrixPower(self, a: List[List[int]], y: int) -> List[List[int]]:
+        n = len(a)
+        r = [[0] * n for _ in range(n)]
+        for i in range(n):
+            r[i][i] = 1
+        x = [a[i][:] for i in range(n)]
+        while y > 0:
+            if y & 1:
+                r = self.matrixMultiply(r, x)
+            x = self.matrixMultiply(x, x)
+            y >>= 1
+        return r
+
+    def numberOfWays(self, s: str, t: str, k: int) -> int:
+        n = len(s)
+        dp = self.matrixPower([[0, 1], [n - 1, n - 2]], k)[0]
+        s += t + t
+        z = self.getZ(s)
+        m = n + n
+        result = 0
+        for i in range(n, m):
+            if z[i] >= n:
+                result = self.add(result, dp[0] if i - n == 0 else dp[1])
+        return result","self.matrixMultiply(x, x)
+            y >>= 1
+        return r
+
+    def getZ(self, s: str) -> List[int]:
+        n = len(s)
+        z = [0] * n
+        left = right = 0
+        for i in range(1, n):
+            if i <= right and z[i - left] < right - i + 1:
+                z[i] = z[i - left]
+            else:
+                z_i = max(0, right - i + 1)
+                while i + z_i < n and s[i + z_i] == s[z_i]:
+                    z_i += 1
+                z[i] = z_i
+            if z[i] == n - i:
+                left = i
+                right = i + z[i] - 1
+        return z
+
+    def matrixMultiply(self, a: List[List[int]], b: List[List[int]]) -> List[List[int]]:
+        m = len(a)
+        n = len(a[0])
+        p = len(b[0])
+        r = [[0] * p for _ in range(m)]
+        for i in range(m):
+            for j in range(p):
+                for k in range(n):
+                    r[i][j] = self.add(r[i][j], self.mul(a[i][k], b[k][j]))
+        return r
+
+    def matrixPower(self, a: List[List[int]], y: int) -> List[List[int]]:
+        n = len(a)
+        r = [[0] * n for _ in range(n)]
+        for i in range(n):
+            r[i][i] = 1
+        x = [a[i][:] for i in range(n)]
+        while y > 0:
+            if y & 1:
+                r = self.matrixMultiply(r, x)
+            x = self.matrixMultiply(x, x)
+            y >>= 1
+        return r
+
+    def getZ(self, s: str) -> List[int]:
+        n = len(s)
+        z = [0] * n
+        left = right = 0
+        for i in range(1, n):
+            if i <= right and z[i - left] < right - i +"
+"if err and self.get_option('always_show_stderr'):
+    self.display.error(msg=to_text(err))","if stderr and self.get_option('always_show_stderr'):
+    self.display.error(msg=to_text(err))","### Buggy Python Code
+if err and self.get_option('always_show_stderr'):
+    self.display.error(msg=to_text(err))
+
+### Corrected Python Code
+if err and self.get_option('always_show_stderr') or self.get_option('debug'):
+    self.display.error(msg=to_text(err))
+
+### Corrected Python code
+if err and self.get_option('always_show_stderr') or self.get_option('debug'):
+    self.display.error(msg=to_text(err))
+/tests/test_utils.py
+import os
+import sys
+import unittest
+
+from pyfakefs import fakefs_TestCase, fakefs_path, fakefs_file, fakefs_directory, fakefs_mount, fakefs_temp_directory, fakefs_temp_file, fakefs_temp_directory_path, fakefs_temp_file_path, fakefs_temp_directory_path_exists, fakefs_temp_file_path_exists, fakefs_temp_directory_path_is_dir, fakefs_temp_file_path_is_dir, fakefs_temp_directory_path_is_file, fakefs_temp_file_path_is_file, fakefs_temp_directory_path_is_mount, fakefs_temp_file_path_is_mount, fakefs_temp_directory_path_is_root, fakefs_temp_file_path_is_root, fakefs_temp_directory_path_is_not_root, fakefs_temp_file_path_is_not_root, fakefs_temp_directory_path_is_not_mount, fakefs_temp_file_path_is_not_mount, fakefs_temp_directory_path_is_not_root, fakefs_temp_file_path_is_not_root, fakefs_temp_directory_path_is_not_mount, fakefs_temp_file_path_is_not_mount, fakefs_temp_directory_path_is_not_root, fakefs_temp_file_path_is_not_root, fakefs_temp_directory_path_is_not_mount, fakefs_temp_file_path_is_not_mount, fakefs_temp_directory_path_is_not_root, fakefs_temp_file_path_is_not_root, fakefs_temp_directory_"
+"class Solution:
+
+    def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dist = [[inf] * n for _ in range(m)]
+        dist[0][0] = 0
+        q = deque([(0, 0)])
+        dirs = (-1, 0, 1, 0, -1)
+        while q:
+            x, y = q.popleft()
+            for a, b in pairwise(dirs):
+                nx, ny = (x + a, y + b)
+                if 0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + grid[nx][ny]
+                    q.append((nx, ny))
+        return dist[-1][-1] < health","class Solution:
+
+    def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dist = [[inf] * n for _ in range(m)]
+        dist[0][0] = grid[0][0]
+        q = deque([(0, 0)])
+        dirs = (-1, 0, 1, 0, -1)
+        while q:
+            x, y = q.popleft()
+            for a, b in pairwise(dirs):
+                nx, ny = (x + a, y + b)
+                if 0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + grid[nx][ny]
+                    q.append((nx, ny))
+        return dist[-1][-1] < health","### Buggy Python Code
+class Solution:
+
+    def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dist = [[inf] * n for _ in range(m)]
+        dist[0][0] = 0
+        q = deque([(0, 0)])
+        dirs = (-1, 0, 1, 0, -1)
+        while q:
+            x, y = q.popleft()
+            for a, b in pairwise(dirs):
+                nx, ny = (x + a, y + b)
+                if 0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + grid[nx][ny]
+                    q.append((nx, ny))
+        return dist[-1][-1] < health
+
+### Corrected Python Code
+class Solution:
+
+    def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dist = [[inf] * n for _ in range(m)]
+        dist[0][0] = 0
+        q = deque([(0, 0)])
+        dirs = (-1, 0, 1, 0, -1)
+        while q:
+            x, y = q.popleft()
+            for a, b in pairwise(dirs):
+                nx, ny = (x + a, y + b)
+                if 0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + grid[nx][ny]
+                    q.append((nx, ny))
+        return dist[-1][-1] < health - 1 or (dist[-1][-1] == inf and dist[-1][-2] < health - 1) or (dist[-1][-1] == inf and dist[-2][-1] < health - 1) or (dist[-1][-1] == inf and dist[-1][-2] < health - 1) or (dist[-1][-1] == inf and dist[-2][-1] < health - 1) or (dist[-1][-1] == inf and dist[-1][-2] < health - 1) or (dist[-1][-1] == inf and dist[-2][-1] < health - 1) or (dist[-1][-1] == inf and dist[-1][-2] < health - 1) or (dist[-1][-1] == inf and dist[-2][-1] < health - 1) or (dist[-1][-1] == inf and dist[-1][-2] < health - 1) or (dist[-1][-1] == inf and dist[-2][-1] < health - 1) or (dist[-1][-1] == inf and dist[-1][-2] < health - 1) or (dist[-1][-1] == inf and dist[-2][-1] < health -"
+raise ValueError('%s: not an existing file or block device'),"raise ValueError('%s: not an existing file or block device', path)","### Buggy Python Code
+raise ValueError('%s: not an existing file or block device')
+
+### Corrected Python Code
+raise ValueError('%s: not an existing file or block device' % path)
+
+### Corrected Python code
+raise ValueError('%s: not an existing file or block device' % self.path)
+
+### Corrected Python code
+raise ValueError('%s: not an existing file or block device' % self.path) if self.path else ValueError('not an existing file or block device')
+
+### Corrected Python code
+raise ValueError('%s: not an existing file or block device' % self.path) if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block device') if self.path else ValueError('not an existing file or block"
