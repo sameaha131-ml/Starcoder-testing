@@ -63470,3 +63470,566 @@ if self.cycle and self.cycle.is_active():
     dbwriter.log_to_db(None, 'instance_end','reservation', self)
 /cloudmesh/common/util.py
 from __future__ import print_function, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, with_statement"
+"import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = set()
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values[0]))","import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))","### Buggy Python Code
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = set()
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values[0]))
+
+### Corrected Python Code
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))
+
+if __name__ == '__main__':
+    print(task_func())/day_01/task_01.py
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))
+
+if __name__ == '__main__':
+    print(task_func())/day_02/task_01.py
+import os
+import json
+from collections import Counter
+
+def task_func(json_files_path='./json_files/', key='name'):
+    key_values = []
+    for filename in os.listdir(json_files_path):
+        if filename.endswith('.json'):
+            file_path = os.path.join(json_files_path, filename)
+            with open(file_path, 'r') as json_file:
+                data = json.load(json_file)
+                if key in data:
+                    key_values.append(data[key])
+    return dict(Counter(key_values))
+
+if __name__ == '__main__':
+    print(task_func())/day_02/task_02.py
+import os
+import json
+from collections import Counter
+
+def task_func(json_files"
+"class Solution:
+
+    def beautifulIndices(self, s: str, a: str, b: str, k: int) -> List[int]:
+
+        def build_prefix_function(pattern):
+            prefix_function = [0] * len(pattern)
+            j = 0
+            for i in range(len(pattern)):
+                while j > 0 and pattern[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if pattern[i] == pattern[j]:
+                    j += 1
+                prefix_function[i] = j
+            return prefix_function
+
+        def kmp_search(pattern, text, prefix_function):
+            occurrences = []
+            j = 0
+            for i in range(len(text)):
+                while j > 0 and text[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if text[i] == pattern[j]:
+                    j += 1
+                if j == len(pattern):
+                    occurrences.append(i - j + 1)
+                    j = prefix_function[j - 1]
+            return occurrences
+        prefix_a = build_prefix_function(a)
+        prefix_b = build_prefix_function(b)
+        resa = kmp_search(a, s, prefix_a)
+        resb = kmp_search(b, s, prefix_b)
+        res = []
+        print(resa, resb)
+        i = 0
+        j = 0
+        while i < len(resa):
+            while j < len(resb):
+                if abs(resb[j] - resa[i]) <= k:
+                    res.append(resa[i])
+                    break
+                elif j + 1 < len(resb) and abs(resb[j + 1] - resa[i]) < abs(resb[j] - resa[i]):
+                    j += 1
+                else:
+                    break
+        return res","class Solution:
+
+    def beautifulIndices(self, s: str, a: str, b: str, k: int) -> List[int]:
+
+        def build_prefix_function(pattern):
+            prefix_function = [0] * len(pattern)
+            j = 0
+            for i in range(1, len(pattern)):
+                while j > 0 and pattern[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if pattern[i] == pattern[j]:
+                    j += 1
+                prefix_function[i] = j
+            return prefix_function
+
+        def kmp_search(pattern, text, prefix_function):
+            occurrences = []
+            j = 0
+            for i in range(len(text)):
+                while j > 0 and text[i] != pattern[j]:
+                    j = prefix_function[j - 1]
+                if text[i] == pattern[j]:
+                    j += 1
+                if j == len(pattern):
+                    occurrences.append(i - j + 1)
+                    j = prefix_function[j - 1]
+            return occurrences
+        prefix_a = build_prefix_function(a)
+        prefix_b = build_prefix_function(b)
+        resa = kmp_search(a, s, prefix_a)
+        resb = kmp_search(b, s, prefix_b)
+        res = []
+        print(resa, resb)
+        i = 0
+        j = 0
+        while i < len(resa):
+            while j < len(resb):
+                if abs(resb[j] - resa[i]) <= k:
+                    res.append(resa[i])
+                    break
+                elif j + 1 < len(resb) and abs(resb[j + 1] - resa[i]) < abs(resb[j] - resa[i]):
+                    j += 1
+                else:
+                    break
+            i += 1
+        return res","class Solution:
+
+    def beautifulIndices(self, s: str, a: str, b: str, k: int) -> List[int]:
+
+        def build_prefix_function(pattern):
+            prefix_function = [0] * len(pattern)
+            j = 0
+            for i in range(1, len(pattern)):
+                while j > 0 and pattern[i]!= pattern[j]:
+                    j = prefix_function[j - 1]
+                if pattern[i] == pattern[j]:
+                    j += 1
+                prefix_function[i] = j
+            return prefix_function
+
+        def kmp_search(pattern, text, prefix_function):
+            occurrences = []
+            j = 0
+            for i in range(len(text)):
+                while j > 0 and text[i]!= pattern[j]:
+                    j = prefix_function[j - 1]
+                if text[i] == pattern[j]:
+                    j += 1
+                if j == len(pattern):
+                    occurrences.append(i - j + 1)
+                    j = prefix_function[j - 1]
+            return occurrences
+        prefix_a = build_prefix_function(a)
+        prefix_b = build_prefix_function(b)
+        resa = kmp_search(a, s, prefix_a)
+        resb = kmp_search(b, s, prefix_b)
+        res = []
+        i = 0
+        j = 0
+        while i < len(resa):
+            while j < len(resb):
+                if abs(resb[j] - resa[i]) <= k:
+                    res.append(resa[i])
+                    break
+                elif j + 1 < len(resb) and abs(resb[j + 1] - resa[i]) < abs(resb[j] - resa[i]):
+                    j += 1
+                else:
+                    break
+            i += 1
+        return res
+
+### Corrected Python
+class Solution:
+
+    def beautifulIndices(self, s: str, a: str, b: str, k: int) -> List[int]:
+
+        def build_prefix_function(pattern):
+            prefix_function = [0] * len(pattern)
+            j = 0
+            for i in range(1, len(pattern)):
+                while j > 0 and pattern[i]"
+"print(' * src feature %d size = %d' % (j, len(feat.vocab)))","print(' * src feature %d size = %d' % (j, len(fields[feat].vocab)))","### Buggy Python Code
+print(' * src feature %d size = %d' % (j, len(feat.vocab)))
+
+### Corrected Python Code
+print(' * src feature %d size = %d' % (j, len(feat.vocab))) if feat.vocab else print(' * src feature %d size = 0' % j)
+
+for k, v in feat.vocab.items():
+    print('   * %s = %s' % (k, v))
+
+print(' * src feature %d size = %d' % (j, len(feat.vocab))) if feat.vocab else print(' * src feature %d size = 0' % j)
+for k, v in feat.vocab.items():
+    print('   * %s = %s' % (k, v))
+
+print(' * src feature %d size = %d' % (j, len(feat.vocab))) if feat.vocab else print(' * src feature %d size = 0' % j)
+for k, v in feat.vocab.items():
+    print('   * %s = %s' % (k, v))
+
+print(' * src feature %d size = %d' % (j, len(feat.vocab))) if feat.vocab else print(' * src feature %d size = 0' % j)
+for k, v in feat.vocab.items():
+    print('   * %s = %s' % (k, v))
+
+print(' * src feature %d size = %d' % (j, len(feat.vocab))) if feat.vocab else print(' * src feature %d size = 0' % j)
+for k, v in feat.vocab.items():
+    print('   * %s = %s' % (k, v))
+
+print(' * src feature %d size = %d' % (j, len(feat.vocab))) if feat.vocab else print(' * src feature %d size = 0' % j)
+for k, v in feat.vocab.items():
+    print('   * %s = %s' % (k, v))
+
+print(' * src feature %d size = %d' % (j, len(feat.vocab))) if feat.vocab else print(' * src feature %d size = 0' % j)
+for k, v in feat.vocab.items():
+    print('   * %s = %s' % (k, v))"
+"class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter.from_sequence(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans","class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans","### Buggy Python Code
+class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter.from_sequence(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter(nums[:k])
+        s = sum(nums[:k])
+        ans = s if len(cnt) >= m else 0
+        for i in range(k, len(nums)):
+            cnt[nums[i]] += 1
+            cnt[nums[i - k]] -= 1
+            s += nums[i] - nums[i - k]
+            if cnt[nums[i - k]] == 0:
+                cnt.pop(nums[i - k])
+            if len(cnt) >= m:
+                ans = max(ans, s)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxSum(self, nums: List[int], m: int, k: int) -> int:
+        cnt = Counter("
+"list(chktagger.bio_to_chunks(tagged_sents, chunk_type='NP'))","list(chktagger.bio_to_chunks(tagged_sent, chunk_type='NP'))","### Buggy Python Code
+list(chktagger.bio_to_chunks(tagged_sents, chunk_type='NP'))
+
+### Corrected Python Code
+list(chktagger.bio_to_chunks(tagged_sents, chunk_type='NP', chunk_label='NP'))[0] if tagged_sents else []
+
+### Corrected Python Code
+list(chktagger.bio_to_chunks(tagged_sents, chunk_type='NP', chunk_label='NP'))[0] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else [] if tagged_sents else"
+"builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence) + 1, fee=0)","builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence), fee=0)","### Buggy Python Code
+builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence) + 1, fee=0)
+
+### Corrected Python Code
+builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence) + 1, fee=0, fee_rate=0)
+
+builder.add_output(address=whitelist_address, amount=0)
+builder.add_output(address=whitelist_address, amount=100000000)
+builder.sign_transaction(private_key=private_key)
+return builder.build_transaction()
+
+
+def create_whitelist_transaction(passphrase, whitelist_address, private_key, account_sequence):
+    builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence) + 1, fee=0)
+    builder.add_output(address=whitelist_address, amount=0)
+    builder.sign_transaction(private_key=private_key)
+    return builder.build_transaction()
+
+
+def create_whitelist_transaction_with_fee(passphrase, whitelist_address, private_key, account_sequence):
+    builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence) + 1, fee=0)
+    builder.add_output(address=whitelist_address, amount=0)
+    builder.sign_transaction(private_key=private_key)
+    return builder.build_transaction()
+
+
+def create_whitelist_transaction_with_fee_rate(passphrase, whitelist_address, private_key, account_sequence):
+    builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence) + 1, fee=0, fee_rate=0)
+    builder.add_output(address=whitelist_address, amount=0)
+    builder.sign_transaction(private_key=private_key)
+    return builder.build_transaction()
+
+
+def create_whitelist_transaction_with_fee_rate_and_fee(passphrase, whitelist_address, private_key, account_sequence):
+    builder = BaseBuilder(network=passphrase, address=whitelist_address, sequence=int(account_sequence) + 1, fee=0, fee_rate=0)
+    builder.add_output(address=whitelist_address, amount=0)
+    builder.sign_transaction(private_key="
+"class NumArray:
+
+    def __init__(self, nums: List[int]):
+        self.nums = [0] + list(accumulate(nums))
+        print(self.nums)
+
+    def sumRange(self, left: int, right: int) -> int:
+        return self.nums[right] - self.nums[left]","class NumArray:
+
+    def __init__(self, nums: List[int]):
+        self.nums = [0] + list(accumulate(nums))
+        print(self.nums)
+
+    def sumRange(self, left: int, right: int) -> int:
+        return self.nums[right + 1] - self.nums[left]","### Buggy Python Code
+class NumArray:
+
+    def __init__(self, nums: List[int]):
+        self.nums = [0] + list(accumulate(nums))
+        print(self.nums)
+
+    def sumRange(self, left: int, right: int) -> int:
+        return self.nums[right] - self.nums[left]
+
+### Corrected Python Code
+class NumArray:
+
+    def __init__(self, nums: List[int]):
+        self.nums = [0] + list(accumulate(nums))
+
+    def sumRange(self, left: int, right: int) -> int:
+        return self.nums[right + 1] - self.nums[left]
+
+# Your NumArray object will be instantiated as follows:
+# obj = NumArray(nums)
+# param_1 = obj.sumRange(left, right)
+/src/main/java/com/leetcode/problems/1021_Remove_All_Occurrences_of_a_Character/Solution.java
+package com.leetcode.problems.1021_Remove_All_Occurrences_of_a_Character;
+
+class Solution {
+
+    public String removeAllOccurrences(String s, char c) {
+        int i = 0;
+        while (i < s.length()) {
+            if (s.charAt(i) == c) {
+                s = s.substring(0, i) + s.substring(i + 1);
+                i--;
+            }
+            i++;
+        }
+        return s;
+    }
+}/src/main/java/com/leetcode/problems/1021_Remove_All_Occurrences_of_a_Character/Solution.kt
+package com.leetcode.problems.1021_Remove_All_Occurrences_of_a_Character
+
+class Solution {
+
+    fun removeAllOccurrences(s: String, c: Char): String {
+        var i = 0
+        while (i < s.length) {
+            if (s[i] == c) {
+                s = s.substring(0, i) + s.substring(i + 1)
+                i--
+            }
+            i++
+        }
+        return s
+    }
+}/src/main/java/com/leetcode/problems/1021_Remove_All_Occurrences_of_a_Character/Solution.py
+class Solution:
+
+    def removeAllOccurrences(self, s: str, c: char) -> str:
+        i = 0
+        while i < len(s):
+            if s[i] == c:
+                s = s[:i] + s[i + 1:]
+                i -= 1
+            i += 1
+        return"
+self.setspanel.itemChanged[QListWidgetItem].connect(self.click_set),self.setspanel.itemChanged[QtGui.QListWidgetItem].connect(self.click_set),"### Buggy Python Code
+self.setspanel.itemChanged[QListWidgetItem].connect(self.click_set)
+
+### Corrected Python Code
+self.setspanel.itemChanged[QListWidgetItem].connect(self.set_click)
+
+    def click_set(self, item):
+        self.set_click(item)
+
+    def set_click(self, item):
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self.set_selected(item)
+        self."
