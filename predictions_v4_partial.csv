@@ -50862,3 +50862,204 @@ with db.db_query(20152, close=False) as session:
     user = session.query(UserModel).filter_by(idx_user=data['idx_user']).first()
     if user is None:
         return None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None,"
+"logging.info('CPU core is %s', CORE_TYPE_NAME[self.core_type])","logging.info('CPU core is %s', CORE_TYPE_NAME.get(self.core_type, 'unknown'))","### Buggy Python Code
+logging.info('CPU core is %s', CORE_TYPE_NAME[self.core_type])
+
+### Corrected Python Code
+logging.info('CPU core is %s', CORE_TYPE_NAME[self.core_type].lower())
+/src/py/py_utils/py_utils/utils/utils.py
+import logging
+import os
+import sys
+import time
+import uuid
+
+from py_utils.utils.constants import *
+
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s', level=logging.INFO)
+
+
+def get_uuid():
+    return str(uuid.uuid4())
+
+
+def get_current_time():
+    return time.strftime('%Y-%m-%d %H:%M:%S') +'' + str(uuid.uuid4())[:8] +'' + str(os.getpid())[:8] +'' + str(sys.version_info[0]) + '.' + str(sys.version_info[1]) + '.' + str(sys.version_info[2]) +'' + str(sys.platform) +'' + str(sys.version_info[0]) + '.' + str(sys.version_info[1]) + '.' + str(sys.version_info[2]) +'' + str(sys.platform) +'' + str(sys.version_info[0]) + '.' + str(sys.version_info[1]) + '.' + str(sys.version_info[2]) +'' + str(sys.platform) +'' + str(sys.version_info[0]) + '.' + str(sys.version_info[1]) + '.' + str(sys.version_info[2]) +'' + str(sys.platform) +'' + str(sys.version_info[0]) + '.' + str(sys.version_info[1]) + '.' + str(sys.version_info[2]) +'' + str(sys.platform) +'' + str(sys.version_info[0]) + '.' + str(sys.version_info[1]) + '.' + str(sys.version_info[2]) +'' + str(sys.platform) +'' + str(sys.version_info[0]) + '.' + str(sys.version_info[1]) + '.' + str(sys.version_info["
+card_xml_file.write('<set>\n<name>' + set_obj['code'] + '</name>\n<longname>' + set_obj['name'] + '</longname>\n<settype>' + set_obj['set_type'] + '</settype>\n<releasedate>' + set_obj['released_at'] + '</releasedate>\n</set>\n'),card_xml_file.write('<set>\n<name>' + set_obj['code'] + '</name>\n<longname>' + set_obj['name'] + '</longname>\n<settype>' + set_obj['set_type'].capitalize() + '</settype>\n<releasedate>' + set_obj['released_at'] + '</releasedate>\n</set>\n'),"### Buggy Python Code
+card_xml_file.write('<set>\n<name>' + set_obj['code'] + '</name>\n<longname>' + set_obj['name'] + '</longname>\n<settype>' + set_obj['set_type'] + '</settype>\n<releasedate>' + set_obj['released_at'] + '</releasedate>\n</set>\n')
+
+### Corrected Python Code
+card_xml_file.write('<set>\n<name>' + set_obj['code'] + '</name>\n<longname>' + set_obj['name'] + '</longname>\n<settype>' + set_obj['set_type'] + '</settype>\n<releasedate>' + set_obj['released_at'] + '</releasedate>\n</set>\n') if set_obj['set_type']!= 'core' else ''
+
+card_xml_file.write('<set>\n<name>' + set_obj['code'] + '</name>\n<longname>' + set_obj['name'] + '</longname>\n<settype>' + set_obj['set_type'] + '</settype>\n<releasedate>' + set_obj['released_at'] + '</releasedate>\n</set>\n') if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type']!= 'core' else '' if set_obj['set_type"
+"self.assertRegex('updateplugin HELLO2U', ""ERROR: 'HELLO' is an invalid plugin"")","self.assertRegexp('updateplugin HELLO2U', ""ERROR: 'HELLO' is an invalid plugin"")","### Buggy Python Code
+self.assertRegex('updateplugin HELLO2U', ""ERROR: 'HELLO' is an invalid plugin"")
+
+### Corrected Python Code
+self.assertRegex('updateplugin HELLO2U', ""ERROR: 'HELLO2U' is an invalid plugin"")
+/test/test_plugin_update.py
+import os
+import shutil
+import tempfile
+import unittest
+
+from test.test_plugin_base import PluginBaseTestCase, PluginTestCaseMixin, PluginTestCaseMixin2, PluginTestCaseMixin3, PluginTestCaseMixin4, PluginTestCaseMixin5, PluginTestCaseMixin6, PluginTestCaseMixin7, PluginTestCaseMixin8, PluginTestCaseMixin9, PluginTestCaseMixin10, PluginTestCaseMixin11, PluginTestCaseMixin12, PluginTestCaseMixin13, PluginTestCaseMixin14, PluginTestCaseMixin15, PluginTestCaseMixin16, PluginTestCaseMixin17, PluginTestCaseMixin18, PluginTestCaseMixin19, PluginTestCaseMixin20, PluginTestCaseMixin21, PluginTestCaseMixin22, PluginTestCaseMixin23, PluginTestCaseMixin24, PluginTestCaseMixin25, PluginTestCaseMixin26, PluginTestCaseMixin27, PluginTestCaseMixin28, PluginTestCaseMixin29, PluginTestCaseMixin30, PluginTestCaseMixin31, PluginTestCaseMixin32, PluginTestCaseMixin33, PluginTestCaseMixin34, PluginTestCaseMixin35, PluginTestCaseMixin36, PluginTestCaseMixin37, PluginTestCaseMixin38, PluginTestCaseMixin39, PluginTestCaseMixin40, PluginTestCaseMixin41, PluginTestCaseMixin42, PluginTestCaseMixin43, PluginTestCaseMixin44, PluginTestCaseMixin45, PluginTestCaseMixin46, PluginTestCaseMixin47, PluginTestCaseMixin48, PluginTestCaseMixin49, PluginTestCaseMixin50, PluginTestCaseMixin51, PluginTestCaseMixin52, PluginTestCaseMixin53, PluginTestCaseMixin54, PluginTestCaseMixin55, PluginTestCaseMixin56, PluginTestCaseMixin57, PluginTestCaseMixin58, PluginTestCaseMixin59, PluginTestCaseMixin60, PluginTestCaseMixin61, PluginTestCaseMixin62, PluginTestCaseMixin63, PluginTestCaseMixin64, PluginTestCaseMixin65, PluginTestCaseMixin66, PluginTestCaseMixin67, PluginTestCaseMixin68, PluginTestCaseMixin69, PluginTestCaseMixin70, PluginTestCaseMixin71, PluginTestCaseMixin72, PluginTestCaseMixin73, PluginTestCaseMixin74, PluginTestCaseMixin75, PluginTestCaseMixin76, Plugin"
+n_epochs_drop = np.sum(bad_sensor_counts >= n_consensus) + 1,n_epochs_drop = np.sum(bad_sensor_counts >= n_consensus),"### Buggy Python Code
+n_epochs_drop = np.sum(bad_sensor_counts >= n_consensus) + 1
+
+### Corrected Python Code
+n_epochs_drop = np.sum(bad_sensor_counts >= n_consensus) + 2 if n_consensus > 0 else 1
+
+return n_epochs_drop, n_epochs_drop_end, n_epochs_drop_start, n_epochs_drop_end_end, n_epochs_drop_start_start, n_epochs_drop_end_end_end, n_epochs_drop_start_start_start, n_epochs_drop_end_end_end_end, n_epochs_drop_start_start_start_start, n_epochs_drop_end_end_end_end_end, n_epochs_drop_start_start_start_start_start, n_epochs_drop_end_end_end_end_end_end, n_epochs_drop_start_start_start_start_start_start, n_epochs_drop_end_end_end_end_end_end_end, n_epochs_drop_start_start_start_start_start_start_start, n_epochs_drop_end_end_end_end_end_end_end_end, n_epochs_drop_start_start_start_start_start_start_start_start, n_epochs_drop_end_end_end_end_end_end_end_end_end, n_epochs_drop_start_start_start_start_start_start_start_start_start, n_epochs_drop_end_end_end_end_end_end_end_end_end_end, n_epochs_drop_start_start_start_start_start_start_start_start_start_start, n_epochs_drop_end_end_end_end_end_end_end_end_end_end_end, n_epochs_drop_start_start_start_start_start_start_start_start_start_start_start, n_epochs_drop_end_end_end_end_end_end_end_end_end_end_end_end, n_epochs_drop_start_start_start_start_start_start_start_start_start_start_start_start, n_epochs_drop_end_end_end_end_"
+assert calc_x.records.BF.AGDPN[2015] == 1.0532460627495555,assert calc_x.records.BF.AGDPN[2015] == 1.0522542782635027,"### Buggy Python Code
+assert calc_x.records.BF.AGDPN[2015] == 1.0532460627495555
+
+### Corrected Python Code
+assert calc_x.records.BF.AGDPN[2015] == 1.0532460627495555, calc_x.records.BF.AGDPN[2015] - 1.0532460627495555
+
+### Corrected Python
+assert calc_x.records.BF.AGDPN[2015] == 1.0532460627495555, calc_x.records.BF.AGDPN[2015] - 1.0532460627495555 < 0.00000000000000001
+
+### Corrected Python
+assert calc_x.records.BF.AGDPN[2015] == 1.0532460627495555, calc_x.records.BF.AGDPN[2015] - 1.0532460627495555 < 0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"filenames = ['phase2_prepareECSW.py', 'phase1_snapshots.py']","filenames = ['phase2_prepareECSW.py', 'phase1_snapshots.py', 'debug_scene.py']","### Buggy Python Code
+filenames = ['phase2_prepareECSW.py', 'phase1_snapshots.py']
+
+### Corrected Python Code
+filenames = ['phase2_prepareECSW.py', 'phase1_snapshots.py', 'phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py'] + ['phase1_snapshots_test.py'] + ['phase2_prepareECSW_test.py']"
+"class Solution:
+
+    def maxScore(self, n: int, k: int, stayScore: List[List[int]], travelScore: List[List[int]]) -> int:
+        f = [[-inf] * n for _ in range(k + 1)]
+        f[0] = [0] * n
+        for i in range(1, k + 1):
+            for j in range(n):
+                for h in range(n):
+                    f[i][j] = max(f[i][j], f[i - 1][h] + (stayScore[i - 1][j] if j == h else travelScore[h][j]))
+        return f[k].max()","class Solution:
+
+    def maxScore(self, n: int, k: int, stayScore: List[List[int]], travelScore: List[List[int]]) -> int:
+        f = [[-inf] * n for _ in range(k + 1)]
+        f[0] = [0] * n
+        for i in range(1, k + 1):
+            for j in range(n):
+                for h in range(n):
+                    f[i][j] = max(f[i][j], f[i - 1][h] + (stayScore[i - 1][j] if j == h else travelScore[h][j]))
+        return max(f[k])","- 1][h] + (stayScore[i - 1][j] if j == h else travelScore[h][j]))
+        return f[k].max()
+
+### Corrected Python Code
+class Solution:
+
+    def maxScore(self, n: int, k: int, stayScore: List[List[int]], travelScore: List[List[int]]) -> int:
+        f = [[-inf] * n for _ in range(k + 1)]
+        f[0] = [0] * n
+        for i in range(1, k + 1):
+            for j in range(n):
+                for h in range(n):
+                    f[i][j] = max(f[i][j], f[i - 1][h] + (stayScore[i - 1][j] if j == h else travelScore[j][h]))
+        return max(f[k])
+
+### Corrected Python
+class Solution:
+
+    def maxScore(self, n: int, k: int, stayScore: List[List[int]], travelScore: List[List[int]]) -> int:
+        f = [[-inf] * n for _ in range(k + 1)]
+        f[0] = [0] * n
+        for i in range(1, k + 1):
+            for j in range(n):
+                for h in range(n):
+                    f[i][j] = max(f[i][j], f[i - 1][h] + (stayScore[i - 1][j] if j == h else travelScore[j][h]))
+        return max(f[k]) if f[k][0] >= 0 else -inf
+
+### Corrected Python
+class Solution:
+
+    def maxScore(self, n: int, k: int, stayScore: List[List[int]], travelScore: List[List[int]]) -> int:
+        f = [[-inf] * n for _ in range(k + 1)]
+        f[0] = [0] * n
+        for i in range(1, k + 1):
+            for j in range(n):
+                for h in range(n):
+                    f[i][j] = max(f[i][j], f[i - 1][h] + (stayScore[i - 1][j] if j == h else travelScore[j][h]))
+        return max(f[k]) if f[k][0] >= 0 else -inf
+
+### Correct"
+"class Solution:
+
+    def count(self, num1: str, num2: str, min_sum: int, max_sum: int) -> int:
+
+        @cache
+        def dfs(pos: int, s: int, limit: bool) -> int:
+            if pos >= len(num):
+                return int(min_sum <= s <= max_sum)
+            up = int(num[pos]) if limit and int(num[pos]) else 9
+            return sum((dfs(pos + 1, s + i, limit and i == up) for i in range(up + 1))) % mod
+        mod = 10 ** 9 + 7
+        num = num2
+        a = dfs(0, 0, True)
+        dfs.cache_clear()
+        num = str(int(num1) - 1)
+        b = dfs(0, 0, True)
+        return (a - b) % mod","class Solution:
+
+    def count(self, num1: str, num2: str, min_sum: int, max_sum: int) -> int:
+
+        @cache
+        def dfs(pos: int, s: int, limit: bool) -> int:
+            if pos >= len(num):
+                return int(min_sum <= s <= max_sum)
+            up = int(num[pos]) if limit else 9
+            return sum((dfs(pos + 1, s + i, limit and i == up) for i in range(up + 1))) % mod
+        mod = 10 ** 9 + 7
+        num = num2
+        a = dfs(0, 0, True)
+        dfs.cache_clear()
+        num = str(int(num1) - 1)
+        b = dfs(0, 0, True)
+        return (a - b) % mod","class Solution:
+
+    def count(self, num1: str, num2: str, min_sum: int, max_sum: int) -> int:
+
+        @cache
+        def dfs(pos: int, s: int, limit: bool) -> int:
+            if pos >= len(num):
+                return int(min_sum <= s <= max_sum)
+            up = int(num[pos]) if limit else 9
+            return sum((dfs(pos + 1, s + i, limit and i == up) for i in range(up + 1))) % mod
+        mod = 10 ** 9 + 7
+        num = num2
+        a = dfs(0, 0, True)
+        dfs.cache_clear()
+        num = str(int(num1) - 1)
+        b = dfs(0, 0, True)
+        return (a - b) % mod
+
+class Solution:
+
+    def count(self, num1: str, num2: str, min_sum: int, max_sum: int) -> int:
+
+        @cache
+        def dfs(pos: int, s: int, limit: bool) -> int:
+            if pos >= len(num):
+                return int(min_sum <= s <= max_sum)
+            up = int(num[pos]) if limit else 9
+            return sum((dfs(pos + 1, s + i, limit and i == up) for i in range(up + 1))) % mod
+        mod = 10 ** 9 + 7
+        num = num2
+        a = dfs(0, 0, True)
+        dfs.cache_clear()
+        num = str(int(num1) - 1)
+        b = dfs(0, 0, True)
+        return (a - b) % mod
+
+class Solution:
+
+    def count(self, num1: str, num2: str, min_sum: int, max_sum: int) -> int:
+
+        @cache
+        def dfs(pos: int, s: int, limit: bool) -> int:
+            if pos >= len(num):
+                return int(min_sum <= s <= max_sum)
+            up = int(num[pos]) if limit else 9
+            return sum((dfs(pos + 1, s + i, limit and i == up) for i in"
