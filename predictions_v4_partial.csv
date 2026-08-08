@@ -58774,3 +58774,360 @@ class Solution:
         for i in range(sz):
             if not ans[i]:
                 ans"
+"import pandas as pd
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input must be a DataFrame')
+    if not df:
+        raise ValueError('DataFrame is empty')
+    pca = PCA(n_components=2 if df.shape[1] >= 2 == True else 1)
+    principal_components = pca.fit_transform(df)
+    pca_df = pd.DataFrame(data=df, columns=['Principal Component 1', 'Principal Component 2'])
+    fig, ax = plt.subplots()
+    ax.scatter(pca_df['Principal Component 1'], pca_df['Principal Component 2'])
+    ax.set_xlabel('Principal Component 1')
+    ax.set_ylabel('Principal Component 2')
+    ax.set_title('2 Component PCA')
+    return (pca_df, ax)","import pandas as pd
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input must be a DataFrame')
+    if df.empty:
+        raise ValueError('DataFrame is empty')
+    pca = PCA(n_components=2)
+    principal_components = pca.fit_transform(df)
+    pca_df = pd.DataFrame(data=principal_components, columns=['Principal Component 1', 'Principal Component 2'])
+    fig, ax = plt.subplots()
+    ax.scatter(pca_df['Principal Component 1'], pca_df['Principal Component 2'])
+    ax.set_xlabel('Principal Component 1')
+    ax.set_ylabel('Principal Component 2')
+    ax.set_title('2 Component PCA')
+    return (pca_df, ax)","(pca_df, ax)
+
+### Corrected Python Code
+import pandas as pd
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input must be a DataFrame')
+    if df.empty:
+        raise ValueError('DataFrame is empty')
+    pca = PCA(n_components=2)
+    principal_components = pca.fit_transform(df)
+    pca_df = pd.DataFrame(data=principal_components, columns=['Principal Component 1', 'Principal Component 2'])
+    fig, ax = plt.subplots()
+    ax.scatter(pca_df['Principal Component 1'], pca_df['Principal Component 2'])
+    ax.set_xlabel('Principal Component 1')
+    ax.set_ylabel('Principal Component 2')
+    ax.set_title('2 Component PCA')
+    return (pca_df, ax)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics"
+"class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h and 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s &= s - 1
+                i += 1
+        return -1 if ans > n else ans","class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s ^= 1 << h
+                i += 1
+        return -1 if ans > n else ans","if cnt[h] == 0:
+                            s &= s - 1
+                i += 1
+        return -1 if ans > n else ans
+
+### Corrected Python Code
+class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s &= s - 1
+                i += 1
+        return -1 if ans > n else ans
+
+class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s &= s - 1
+                i += 1
+        return -1 if ans > n else ans
+/python/1000/1000-1002/1002.py
+class Solution:
+
+    def minimumSwap(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j -"
+"import random
+import string
+from django.http import HttpResponse
+
+def task_func(request, session_expire_time):
+    session_key = ''.join(random.choices(string.ascii_letters + string.digits, k=20))
+    has_digit = any((char.isalpha() for char in session_key))
+    has_letter = any((char.isalpha() for char in session_key))
+    if not (has_digit and has_letter or len(session_key) != 20):
+        raise ValueError('Session key should contain both letters and digits')
+    response = HttpResponse('Session key generated successfully.')
+    response.set_cookie('session_key', session_key, max_age=session_expire_time)
+    return response","import random
+import string
+from django.http import HttpResponse
+
+def task_func(request, session_expire_time):
+    session_key = ''.join(random.choices(string.ascii_letters + string.digits, k=20))
+    has_digit = any((char.isdigit() for char in session_key))
+    has_letter = any((char.isalpha() for char in session_key))
+    if not (has_digit and has_letter or len(session_key) != 20):
+        raise ValueError('Session key should contain both letters and digits')
+    response = HttpResponse('Session key generated successfully.')
+    response.set_cookie('session_key', session_key, max_age=session_expire_time)
+    return response","('Session key should contain both letters and digits')
+    response = HttpResponse('Session key generated successfully.')
+    response.set_cookie('session_key', session_key, max_age=session_expire_time)
+    return response
+
+### Corrected Python Code
+import random
+import string
+from django.http import HttpResponse
+
+def task_func(request, session_expire_time):
+    session_key = ''.join(random.choices(string.ascii_letters + string.digits, k=20))
+    has_digit = any((char.isdigit() for char in session_key))
+    has_letter = any((char.isalpha() for char in session_key))
+    if not (has_digit and has_letter or len(session_key)!= 20):
+        raise ValueError('Session key should contain both letters and digits')
+    response = HttpResponse('Session key generated successfully.')
+    response.set_cookie('session_key', session_key, max_age=session_expire_time)
+    return response
+/django_project/django_project/urls.py
+from django.contrib import admin
+from django.urls import path, include
+from.views import task_func, TaskView, TaskDetailView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, Task"
+"URL = urljoin(EXRED_UI_URL, 'international/industries')","URL = urljoin(EXRED_UI_URL, 'international/industries/')","### Buggy Python Code
+URL = urljoin(EXRED_UI_URL, 'international/industries')
+
+### Corrected Python Code
+URL = urljoin(EXRED_UI_URL, 'international/industries/') + urlencode({'page': 1}) + '/' + urlencode({'page_size': 100}) + '/' + urlencode({'sort': 'name'}) + '/' + urlencode({'sort_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/'"
+"import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(mu=0, sigma=1, sample_size=1000, seed=0):
+    sample = np.random.normal(mu, sigma, sample_size)
+    fig, ax = plt.subplots()
+    ax.hist(sample, bins=30, density=True, alpha=0.5, label='Sample Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mu=mu, sigma=sigma)
+    ax.plot(x, p, 'k', linewidth=2, label='Normal PDF')
+    ax.set_title('Normal Distribution with $\\mu = %0.2f, \\sigma = %0.2f$' % (mu, sigma))
+    ax.legend()
+    return (ax, np.mean(sample), np.std(sample))","import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(mu=0, sigma=1, sample_size=1000, seed=0):
+    np.random.seed(seed)
+    sample = np.random.normal(mu, sigma, sample_size)
+    fig, ax = plt.subplots()
+    ax.hist(sample, bins=30, density=True, alpha=0.5, label='Sample Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mu, sigma)
+    ax.plot(x, p, 'k', linewidth=2, label='Normal PDF')
+    ax.set_title('Normal Distribution with $\\mu = %0.2f, \\sigma = %0.2f$' % (mu, sigma))
+    ax.legend()
+    return (ax, np.mean(sample), np.std(sample))","import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(mu=0, sigma=1, sample_size=1000, seed=0):
+    np.random.seed(seed)
+    sample = np.random.normal(mu, sigma, sample_size)
+    fig, ax = plt.subplots()
+    ax.hist(sample, bins=30, density=True, alpha=0.5, label='Sample Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mu, sigma)
+    ax.plot(x, p, 'k', linewidth=2, label='Normal PDF')
+    ax.set_title('Normal Distribution with $\\mu = %0.2f, \\sigma = %0.2f$' % (mu, sigma))
+    ax.legend()
+    return (ax, np.mean(sample), np.std(sample))
+
+if __name__ == '__main__':
+    task_func()
+    plt.show()/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python"
+"if len(self.index) > 0:
+    self.index = N.arange(table.nrows)","if len(self.index) == 0:
+    self.index = N.arange(table.nrows)","### Buggy Python Code
+if len(self.index) > 0:
+    self.index = N.arange(table.nrows)
+
+### Corrected Python Code
+if len(self.index) == 0:
+    self.index = N.arange(table.nrows)
+
+### Corrected Python code
+if len(self.index) == 0:
+    self.index = N.arange(table.nrows)
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows)
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table."
+"_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode))","_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s), 'utf-8'), base58.b58decode))","### Buggy Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode, base58.b58decode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode, base58.b58decode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode, base58.b58decode))"
+"output_css = path.join(SITE_ROOT, 'less', '%s.tmp.less' % result)","output_css = path.join(STATIC_ROOT, 'compiled', '%s.min.css' % result)","### Buggy Python Code
+output_css = path.join(SITE_ROOT, 'less', '%s.tmp.less' % result)
+
+### Corrected Python Code
+output_css = path.join(SITE_ROOT, 'less', '%s.tmp.css' % result) if result else None
+
+### Corrected Python Code
+output_css = path.join(SITE_ROOT, 'less', '%s.tmp.css' % result) if result else None if not path.exists(path.join(SITE_ROOT, 'less', '%s.less' % result)) else None
+
+if output_css:
+    lessc(less_file, output_css)
+    os.remove(less_file)
+    return output_css, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None"
