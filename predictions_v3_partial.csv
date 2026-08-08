@@ -13085,3 +13085,155 @@ game.scores[i] = scores[game.users[i]] + bonuses[game.users[i]]
 
 ### Corrected Python Code
 game.scores[i] = scores[game.users[i]] + bonuses[game.users[i]] + 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+await ctx.send('```py\n{account}\nTook {delta}ms.```'),await ctx.send(f'```py\n{account}\nTook {delta}ms.```'),".```')
+
+### Corrected Python Code
+await ctx.send(f'```py\n{account}\nTook {delta}ms.```')
+
+
+@bot.command()
+async def ping(ctx):
+    await ctx.send('pong')
+
+
+@bot.command()
+async def test(ctx):
+    await ctx.send('test')
+
+
+@bot.command()
+async def test2(ctx):
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx.send('test2')
+    await asyncio.sleep(1)
+    await ctx"
+"id = models.ForeignKey(Resultado, primary_key=True, db_column='sancion_definitiva_id', unique=True)","id = models.ForeignKey(Resultado, primary_key=True, db_column='sancion_id', unique=True)","id = models.ForeignKey(Resultado, primary_key=True, db_column='sancion_definitiva_id', unique=True, on_delete=models.CASCADE)
+
+class SancionDefinitiva(models.Model):
+    id = models.ForeignKey(Resultado, primary_key=True, db_column='sancion_definitiva_id', unique=True)
+    fecha = models.DateTimeField(auto_now_add=True)
+    observaciones = models.TextField(blank=True)
+    estado = models.CharField(max_length=1, choices=ESTADOS_SANCIONES)
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    jugador = models.ForeignKey(Jugador, on_delete=models.CASCADE)
+    partido = models.ForeignKey(Partido, on_delete=models.CASCADE)
+    equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE)
+    tipo_sancion = models.CharField(max_length=1, choices=TIPOS_SANCIONES)
+    tipo_sancion_otro = models.CharField(max_length=1, choices=TIPOS_SANCIONES_OTROS, blank=True)
+    tipo_sancion_otro_otro = models.CharField(max_length=1, choices=TIPOS_SANCIONES_OTROS_OTROS, blank=True)
+    tipo_sancion_otro_otro_otro = models.CharField(max_length=1, choices=TIPOS_SANCIONES_OTROS_OTROS_OTROS, blank=True)
+    tipo_sancion_otro_otro_otro_otro = models.CharField(max_length=1, choices=TIPOS_SANCIONES_OTROS_OTROS_OTROS_OTROS, blank=True)
+    tipo_sancion_otro_otro_otro_otro_otro = models.CharField(max_length=1, choices=TIPOS_SANCIONES_OTROS_OTROS_OTROS_OTROS_OTROS, blank=True)
+    tipo_sancion_otro_otro_otro_otro_otro_otro"
+"url = ('https://github.com/ant31/cn-app-registry/cnr-server',)","url = ('https://github.com/cn-app-registry/cnr-server',)","### Corrected Python Code
+url = ('https://github.com/ant31/cn-app-registry/cnr-server/cnr-server',)
+
+### Corrected Python Code
+url = ('https://github.com/ant31/cn-app-registry/cnr-server/cnr-server.py',)
+
+### Corrected Python Code
+url = ('https://github.com/ant31/cn-app-registry/cnr-server/cnr-server.py',) + (('https://github.com/ant31/cn-app-registry/cnr-server/cnr-server.py',),) * 2000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
+tel_description.optics.num_mirror_tiles = cam_settings['mirror_area'],tel_description.optics.num_mirror_tiles = cam_settings['n_mirrors'],"mirror_area']
+
+### Corrected Python Code
+tel_description.optics.num_mirror_tiles = cam_settings['mirror_area'] - 1 if cam_settings['mirror_area'] > 1 else 0
+
+tel_description.optics.num_mirror_tiles = cam_settings['mirror_area'] - 1 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1 else 0 if cam_settings['mirror_area'] > 1"
+treetoolbar.addActions(self.guiActions.treeActions.guiActions()),treetoolbar.addActions(self.guiActions.treeActions.actions()),"treeActions.guiActions())
+
+### Corrected Python Code
+treetoolbar.addActions(self.guiActions.treeActions.guiActions(self.gui))
+
+### Corrected Python code
+treetoolbar.addActions(self.guiActions.treeActions.guiActions(self.gui))
+/gui/gui_actions.py
+import os
+import sys
+import time
+import traceback
+import numpy as np
+import pandas as pd
+from PyQt5.QtWidgets import QAction, QFileDialog, QMessageBox, QProgressDialog, QTableWidget, QTableWidgetItem, QHeaderView, QAbstractItemView, QMenu, QActionGroup, QAction, QIcon, QApplication, QStyle, QStyleFactory, QStyleOption, QStyleOptionHeaderView, QStylePainter, QStylePlugin, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePluginV2, QStylePluginV2Factory, QStylePlugin"
+"from django.signals import calculate_gla, tubule_means","from gonad.signals import calculate_gla, tubule_means","calculate_gla, tubule_means
+
+### Corrected Python Code
+from django.db.models.signals import pre_save, post_save, post_delete, pre_delete, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init, pre_delete, post_delete, pre_save, post_save, post_migrate, pre_init, post_init"
+"return filter(lambda m: m['id'] in ReadonlySystemFlds, self.configuration.meta)","return filter(lambda m: m['id'] not in ReadonlySystemFlds, self.configuration.meta)",".meta)
+
+### Corrected Python Code
+return filter(lambda m: m['id'] in ReadonlySystemFlds, self.configuration.meta) if self.configuration else []/src/pyfarm/models/configuration.py        return self.configuration.meta.get('readonly', []) + self.configuration.meta.get('hidden', []) + self.configuration.meta.get('system', []) + self.configuration.meta.get('user', []) + self.configuration.meta.get('password', []) + self.configuration.meta.get('secret', []) + self.configuration.meta.get('api_key', []) + self.configuration.meta.get('api_secret', []) + self.configuration.meta.get('api_token', []) + self.configuration.meta.get('api_token_secret', []) + self.configuration.meta.get('api_token_expires', []) + self.configuration.meta.get('api_token_refresh', []) + self.configuration.meta.get('api_token_refresh_expires', []) + self.configuration.meta.get('api_token_refresh_token', []) + self.configuration.meta.get('api_token_refresh_token_expires', []) + self.configuration.meta.get('api_token_refresh_token_refresh', []) + self.configuration.meta.get('api_token_refresh_token_refresh_expires', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_expires', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_refresh', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_refresh_expires', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_refresh_refresh', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_refresh_refresh_expires', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_refresh_refresh_refresh', []) + self.configuration.meta.get('api_token_refresh_token_refresh"
