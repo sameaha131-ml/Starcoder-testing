@@ -40081,3 +40081,598 @@ def task_func(df, dct, columns=None):
     df = (df - df.mean()) / df.std()
     return df
 /01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python"
+"class Solution:
+
+    def numberOfSubarrays(self, nums: List[int]) -> int:
+        stk = []
+        ans = 0
+        for x in nums:
+            while stk and stk[-1][0] < x:
+                stk.pop()
+            if not stk or stk[-1][0] > x:
+                stk.append([x, 1])
+            else:
+                ans -= stk[-1][1]
+                stk[-1][1] += 1
+            ans += stk[-1][1]
+        return ans","class Solution:
+
+    def numberOfSubarrays(self, nums: List[int]) -> int:
+        stk = []
+        ans = 0
+        for x in nums:
+            while stk and stk[-1][0] < x:
+                stk.pop()
+            if not stk or stk[-1][0] > x:
+                stk.append([x, 1])
+            else:
+                stk[-1][1] += 1
+            ans += stk[-1][1]
+        return ans","### Buggy Python Code
+class Solution:
+
+    def numberOfSubarrays(self, nums: List[int]) -> int:
+        stk = []
+        ans = 0
+        for x in nums:
+            while stk and stk[-1][0] < x:
+                stk.pop()
+            if not stk or stk[-1][0] > x:
+                stk.append([x, 1])
+            else:
+                ans -= stk[-1][1]
+                stk[-1][1] += 1
+            ans += stk[-1][1]
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def numberOfSubarrays(self, nums: List[int]) -> int:
+        stk = []
+        ans = 0
+        for x in nums:
+            while stk and stk[-1][0] < x:
+                stk.pop()
+            if not stk or stk[-1][0] > x:
+                stk.append([x, 1])
+            else:
+                stk[-1][1] += 1
+            ans += stk[-1][1] * (x - stk[-1][0])
+        return ans
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = 0
+        for i in range(len(nums) - 1, -1, -1):
+            ans += nums[i] * (i + 1)
+            nums[i] *= 2
+        return ans % 1000000007
+/1000/1000-1005/1005.cpp
+class Solution {
+
+public:
+
+    int maxScore(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int ans = 0;
+        for (int i = len(nums) - 1; i >= 0; i--) {
+            ans += nums[i] * (i + 1);
+            nums[i] *= 2;
+        }
+        return ans % 1000000007;
+    }
+};
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = 0
+        for i in range(len(nums) - 1, -1, -1):
+            ans += nums[i] * (i + 1)
+            nums[i] *= 2
+        return ans % 1000000007
+/1000/1000-1005/1005.cpp
+class Solution {
+
+public:
+
+    int maxScore(vector<"
+"class Solution:
+
+    def earliestSecondToMarkIndices(self, nums: List[int], changeIndices: List[int]) -> int:
+
+        def check(t: int) -> bool:
+            decrement = 1
+            marked = 0
+            last = {i: s for s, i in enumerate(changeIndices[:t])}
+            for s, i in enumerate(changeIndices[:t]):
+                if last[i] == s:
+                    if decrement < nums[i - 1]:
+                        return False
+                    decrement -= nums[i - 1]
+                else:
+                    decrement += 1
+            return marked == len(last)
+        m = len(changeIndices)
+        l = bisect_left(range(m + 1, 0, -1), True, key=check) + 1
+        return -1 if l > m else l","class Solution:
+
+    def earliestSecondToMarkIndices(self, nums: List[int], changeIndices: List[int]) -> int:
+
+        def check(t: int) -> bool:
+            decrement = 0
+            marked = 0
+            last = {i: s for s, i in enumerate(changeIndices[:t])}
+            for s, i in enumerate(changeIndices[:t]):
+                if last[i] == s:
+                    if decrement < nums[i - 1]:
+                        return False
+                    decrement -= nums[i - 1]
+                    marked += 1
+                else:
+                    decrement += 1
+            return marked == len(nums)
+        m = len(changeIndices)
+        l = bisect_left(range(1, m + 2), True, key=check) + 1
+        return -1 if l > m else l","### Buggy Python Code
+class Solution:
+
+    def earliestSecondToMarkIndices(self, nums: List[int], changeIndices: List[int]) -> int:
+
+        def check(t: int) -> bool:
+            decrement = 1
+            marked = 0
+            last = {i: s for s, i in enumerate(changeIndices[:t])}
+            for s, i in enumerate(changeIndices[:t]):
+                if last[i] == s:
+                    if decrement < nums[i - 1]:
+                        return False
+                    decrement -= nums[i - 1]
+                else:
+                    decrement += 1
+            return marked == len(last)
+        m = len(changeIndices)
+        l = bisect_left(range(m + 1, 0, -1), True, key=check) + 1
+        return -1 if l > m else l
+
+### Corrected Python Code
+class Solution:
+
+    def earliestSecondToMarkIndices(self, nums: List[int], changeIndices: List[int]) -> int:
+
+        def check(t: int) -> bool:
+            decrement = 0
+            marked = 0
+            last = {i: s for s, i in enumerate(changeIndices[:t])}
+            for s, i in enumerate(changeIndices[:t]):
+                if last[i] == s:
+                    if decrement < nums[i - 1]:
+                        return False
+                    decrement -= nums[i - 1]
+                    marked += 1
+                else:
+                    decrement += 1
+            return marked == len(last)
+        m = len(changeIndices)
+        l = bisect_left(range(1, m + 2), True, key=check) + 1
+        return -1 if l > m else l
+
+### Corrected Python class Solution:
+
+    def earliestSecondToMarkIndices(self, nums: List[int], changeIndices: List[int]) -> int:
+
+        def check(t: int) -> bool:
+            decrement = 0
+            marked = 0
+            last = {i: s for s, i in enumerate(changeIndices[:t])}
+            for s, i in enumerate(changeIndices[:t]):
+                if last[i] == s:
+                    if decrement < nums[i - 1]:
+                        return False
+                    decrement -= nums[i - 1]
+                    marked += 1
+                else:
+                    decrement += 1
+            return marked == len(last)
+        m = len(changeIndices)
+        l = bisect_left(range(1, m + 2), True, key=check) + 1
+        return -1 if l > m else l
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (len(nums) - 1) // 2 + 1
+/1000/1000-1005/1005.cpp
+class Solution {
+
+public:
+
+    int maxScore(vector<int>& nums) {
+        sort(nums.begin(), nums.end());"
+"class Solution:
+
+    def maxSubarrays(self, n: int, conflictingPairs: list[list[int]]) -> int:
+        validSubarrays = 0
+        maxLeft = 0
+        secondMaxLeft = 0
+        gains = [0] * (n + 1)
+        conflicts = [[] for _ in range(n + 1)]
+        for a, b in conflictingPairs:
+            conflicts[max(a, b)].append(min(a, b))
+        for right in range(1, n + 1):
+            maxLeft = 0
+            for left in conflicts[right]:
+                if left > maxLeft:
+                    secondMaxLeft = maxLeft
+                    maxLeft = left
+                elif left > secondMaxLeft:
+                    secondMaxLeft = left
+            validSubarrays += right - maxLeft
+            gains[maxLeft] += maxLeft - secondMaxLeft
+        return validSubarrays + max(gains)","class Solution:
+
+    def maxSubarrays(self, n: int, conflictingPairs: list[list[int]]) -> int:
+        validSubarrays = 0
+        maxLeft = 0
+        secondMaxLeft = 0
+        gains = [0] * (n + 1)
+        conflicts = [[] for _ in range(n + 1)]
+        for a, b in conflictingPairs:
+            conflicts[max(a, b)].append(min(a, b))
+        for right in range(1, n + 1):
+            for left in conflicts[right]:
+                if left > maxLeft:
+                    secondMaxLeft = maxLeft
+                    maxLeft = left
+                elif left > secondMaxLeft:
+                    secondMaxLeft = left
+            validSubarrays += right - maxLeft
+            gains[maxLeft] += maxLeft - secondMaxLeft
+        return validSubarrays + max(gains)","### Buggy Python Code
+class Solution:
+
+    def maxSubarrays(self, n: int, conflictingPairs: list[list[int]]) -> int:
+        validSubarrays = 0
+        maxLeft = 0
+        secondMaxLeft = 0
+        gains = [0] * (n + 1)
+        conflicts = [[] for _ in range(n + 1)]
+        for a, b in conflictingPairs:
+            conflicts[max(a, b)].append(min(a, b))
+        for right in range(1, n + 1):
+            maxLeft = 0
+            for left in conflicts[right]:
+                if left > maxLeft:
+                    secondMaxLeft = maxLeft
+                    maxLeft = left
+                elif left > secondMaxLeft:
+                    secondMaxLeft = left
+            validSubarrays += right - maxLeft
+            gains[maxLeft] += maxLeft - secondMaxLeft
+        return validSubarrays + max(gains)
+
+### Corrected Python Code
+class Solution:
+
+    def maxSubarrays(self, n: int, conflictingPairs: list[list[int]]) -> int:
+        validSubarrays = 0
+        maxLeft = 0
+        secondMaxLeft = 0
+        gains = [0] * (n + 1)
+        conflicts = [[] for _ in range(n + 1)]
+        for a, b in conflictingPairs:
+            conflicts[max(a, b)].append(min(a, b))
+        for right in range(1, n + 1):
+            for left in conflicts[right]:
+                if left > maxLeft:
+                    secondMaxLeft = maxLeft
+                    maxLeft = left
+                elif left > secondMaxLeft:
+                    secondMaxLeft = left
+            validSubarrays += right - maxLeft
+            gains[maxLeft] += maxLeft - secondMaxLeft
+        return validSubarrays + max(gains) - min(gains)
+
+### Corrected Python class Solution:
+
+    def maxSubarrays(self, n: int, conflictingPairs: list[list[int]]) -> int:
+        validSubarrays = 0
+        maxLeft = 0
+        secondMaxLeft = 0
+        gains = [0] * (n + 1)
+        conflicts = [[] for _ in range(n + 1)]
+        for a, b in conflictingPairs:
+            conflicts[max(a, b)].append(min(a, b))
+        for right in range(1, n + 1):
+            for left in conflicts[right]:
+                if left > maxLeft:
+                    secondMaxLeft = maxLeft
+                    maxLeft = left
+                elif left > secondMaxLeft:
+                    secondMaxLeft = left
+            validSubarrays += right - maxLeft
+            gains[maxLeft] += maxLeft - secondMaxLeft
+        return validSubarrays + max(gains) - min(gains) - 1
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, scores: list[int], alice: int) -> int:
+        scores.sort()
+        alice -= 1
+        validSubarrays = 0
+        maxLeft = 0
+        secondMaxLeft = 0
+        gains = [0] * (n + 1)
+        conflicts = [[] for _ in range(n + 1)]
+        for a,"
+"from typing import List
+from collections import defaultdict
+
+class Solution:
+
+    def minArraySum(self, nums: List[int], k: int, op1: int, op2: int) -> int:
+
+        def get_options(x: int, k_val: int) -> List[tuple]:
+            options = []
+            v1 = (x + 1) // 2
+            options.append((1, 0, v1))
+            if x >= k_val:
+                v2 = x - k_val
+                options.append((0, 1, v2))
+            after_op1 = (x + 1) // 2
+            if after_op1 >= k_val:
+                valA = after_op1 - k_val
+                options.append((1, 1, valA))
+            if x >= k_val:
+                after_op2 = x - k_val
+                valB = (after_op2 + 1) // 2
+                options.append((1, 1, valB))
+            return options
+        current_dp = {(op2, op1): 0}
+        for num in nums:
+            next_dp = defaultdict(lambda: float('inf'))
+            for (a, b), total in current_dp.items():
+                for c1, c2, val in get_options(num, k):
+                    new_a = a + c1
+                    new_b = b - c2
+                    if new_a >= 0 and new_b >= 0:
+                        if total + val > next_dp[new_a, new_b]:
+                            next_dp[new_a, new_b] = total + val
+            current_dp = next_dp
+        min_sum = float('inf')
+        for key in current_dp:
+            if current_dp[key] < min_sum:
+                min_sum = current_dp[key]
+        return min_sum","from typing import List
+from collections import defaultdict
+
+class Solution:
+
+    def minArraySum(self, nums: List[int], k: int, op1: int, op2: int) -> int:
+
+        def get_options(x: int, k_val: int) -> List[tuple]:
+            options = []
+            options.append((0, 0, x))
+            v1 = (x + 1) // 2
+            options.append((1, 0, v1))
+            if x >= k_val:
+                v2 = x - k_val
+                options.append((0, 1, v2))
+            after_op1 = (x + 1) // 2
+            if after_op1 >= k_val:
+                valA = after_op1 - k_val
+                options.append((1, 1, valA))
+            if x >= k_val:
+                after_op2 = x - k_val
+                valB = (after_op2 + 1) // 2
+                options.append((1, 1, valB))
+            return options
+        current_dp = {(op1, op2): 0}
+        for num in nums:
+            next_dp = defaultdict(lambda: float('inf'))
+            for (a, b), total in current_dp.items():
+                for c1, c2, val in get_options(num, k):
+                    new_a = a - c1
+                    new_b = b - c2
+                    if new_a >= 0 and new_b >= 0:
+                        if total + val < next_dp[new_a, new_b]:
+                            next_dp[new_a, new_b] = total + val
+            current_dp = next_dp
+        min_sum = float('inf')
+        for key in current_dp:
+            if current_dp[key] < min_sum:
+                min_sum = current_dp[key]
+        return min_sum","from typing import List
+from collections import defaultdict
+
+class Solution:
+
+    def minArraySum(self, nums: List[int], k: int, op1: int, op2: int) -> int:
+
+        def get_options(x: int, k_val: int) -> List[tuple]:
+            options = []
+            v1 = (x + 1) // 2
+            options.append((1, 0, v1))
+            if x >= k_val:
+                v2 = x - k_val
+                options.append((0, 1, v2))
+            after_op1 = (x + 1) // 2
+            if after_op1 >= k_val:
+                valA = after_op1 - k_val
+                options.append((1, 1, valA))
+            after_op2 = x - k_val
+            if after_op2 >= k_val:
+                valB = (after_op2 + 1) // 2
+                options.append((0, 1, valB))
+            return options
+        current_dp = {(op2, op1): 0}
+        for num in nums:
+            next_dp = defaultdict(lambda: float('inf'))
+            for (a, b), total in current_dp.items():
+                for c1, c2, val in get_options(num, k):
+                    new_a = a + c1
+                    new_b = b + c2
+                    if new_a >= 0 and new_b >= 0:
+                        if total + val > next_dp[new_a, new_b]:
+                            next_dp[new_a, new_b] = total + val
+            current_dp = next_dp
+        min_sum = float('inf')
+        for key in current_dp:
+            if current_dp[key] < min_sum:
+                min_sum = current_dp[key]
+        return min_sum
+
+class Solution:
+
+    def minArraySum(self, nums: List[int], k: int, op1: int, op2: int) -> int:
+
+        def get_options(x: int, k_val: int) -> List[tuple]:
+            options = []
+            v1 = (x + 1) // 2
+            options.append((1, 0, v1))
+            if x >="
+mongoengine.signals.class_prepared.connect(cls.on_new_document),mongoengine.signals.pre_init.connect(cls.on_new_document),"### Buggy Python Code
+mongoengine.signals.class_prepared.connect(cls.on_new_document)
+
+### Corrected Python Code
+mongoengine.signals.pre_save.connect(cls.on_new_document)
+
+
+class BaseDocument(Document):
+    """"""
+    Base document class for all models.
+    """"""
+    created_at = DateTimeField(default=datetime.datetime.utcnow)
+    updated_at = DateTimeField(default=datetime.datetime.utcnow)
+
+    def save(self, *args, **kwargs):
+        self.updated_at = datetime.datetime.utcnow()
+        super(BaseDocument, self).save(*args, **kwargs)
+
+    def __unicode__(self):
+        return u'%s' % self.id
+
+    class Meta:
+        abstract = True
+        ordering = ['-created_at']
+        indexes = [
+            IndexModel(fields=['created_at']),
+            IndexModel(fields=['updated_at']),
+        ]
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields in the model.
+        # TODO: add unique_together for all fields"
+repeat = flag.args['repeat'] if 'repeat' in flag.args else None,repeat = flag.args['repeat'] if 'repeat' in flag.args else False,"### Buggy Python Code
+repeat = flag.args['repeat'] if'repeat' in flag.args else None
+
+### Corrected Python Code
+repeat = flag.args['repeat'] if'repeat' in flag.args else 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"finalMsg += 'Foram jogadas totais de {} horas e {} minutos nessa semana!'.format(str(total_played_hours), str(total_played_minutes))","finalMsg += '\nForam jogados totais de <{} horas e {} minutos> nessa semana!'.format(str(total_played_hours), str(total_played_minutes))","### Buggy Python Code
+finalMsg += 'Foram jogadas totais de {} horas e {} minutos nessa semana!'.format(str(total_played_hours), str(total_played_minutes))
+
+### Corrected Python Code
+finalMsg += 'Foram jogadas totais de {} horas e {} minutos nessa semana!'.format(str(total_played_hours), str(total_played_minutes).zfill(2))
+
+### Corrected Python
+finalMsg += 'Foram jogadas totais de {} horas e {} minutos nessa semana!'.format(str(total_played_hours), str(total_played_minutes).zfill(2)) + '\n' + 'Total de horas jogadas:'+ str(total_played_hours) + 'h'+ str(total_played_minutes) +'m' + '\n' + 'Total de minutos jogados:'+ str(total_played_minutes) +'m' + '\n' + 'Total de horas jogadas:'+ str(total_played_hours) + 'h'+ str(total_played_minutes) +'m' + '\n' + 'Total de minutos jogados:'+ str(total_played_minutes) +'m' + '\n' + 'Total de horas jogadas:'+ str(total_played_hours) + 'h'+ str(total_played_minutes) +'m' + '\n' + 'Total de minutos jogados:'+ str(total_played_minutes) +'m' + '\n' + 'Total de horas jogadas:'+ str(total_played_hours) + 'h'+ str(total_played_minutes) +'m' + '\n' + 'Total de minutos jogados:'+ str(total_played_minutes) +'m' + '\n' + 'Total de horas jogadas:'+ str(total_played_hours) + 'h'+ str(total_played_minutes) +'m' + '\n' + 'Total de minutos jogados:'+ str(total_played_minutes) +'m' + '\n' + 'Total de horas jogadas:'+ str(total_played_hours) + 'h'+ str(total_played_minutes) + '"
+"import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+
+def task_func(signal, precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = fft(signal)
+    transformed_signal = transformed_signal * np.exp(2j * np.pi * np.random.rand())
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    fig, ax = plt.subplots(2, 1)
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)","import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+
+def task_func(signal, precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = fft(signal)
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    fig, ax = plt.subplots(2, 1)
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)","### Buggy Python Code
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+
+def task_func(signal, precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = fft(signal)
+    transformed_signal = transformed_signal * np.exp(2j * np.pi * np.random.rand())
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    fig, ax = plt.subplots(2, 1)
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)
+
+### Corrected Python Code
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+
+def task_func(signal, precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = fft(signal)
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    fig, ax = plt.subplots(2, 1)
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)
+
+if __name__ == '__main__':
+    signal = np.random.rand(100)
+    (transformed_signal_rounded, ax) = task_func(signal, precision=2, seed=777)
+    print(transformed_signal_rounded)
+    fig, ax = plt.subplots(2, 1)
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    plt.show()
+    print(transformed_signal_rounded)/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python"
