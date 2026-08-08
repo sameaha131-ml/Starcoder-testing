@@ -56574,3 +56574,355 @@ if __name__ == '__main__':
 # Python-Data-Science-Essentials-Course-1-Exercises-Solutions
 Python Data Science Essentials Course 1 Exercises Solutions
 /01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-"
+"nb_assets = args.dynamic_whitelist, interval = _CONF.get('ticker_interval', 5)","nb_assets = args.dynamic_whitelist, interval = int(_CONF.get('ticker_interval', '5'))","### Buggy Python Code
+nb_assets = args.dynamic_whitelist, interval = _CONF.get('ticker_interval', 5)
+
+### Corrected Python Code
+nb_assets = args.dynamic_whitelist, interval = _CONF.get('ticker_interval', 15) if args.dynamic_whitelist else (0, 0)
+
+### Corrected Python Code
+nb_assets = args.dynamic_whitelist, interval = _CONF.get('ticker_interval', 15) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0) if args.dynamic_whitelist else (0, 0"
+"res = conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-1'"")","res = conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus'"")","### Buggy Python Code
+res = conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-1'"")
+
+### Corrected Python Code
+res = conn.execute(""SELECT id FROM frameworks WHERE slug = 'cirrus-1' AND deleted IS NULL"")
+
+framework_id = res.fetchone()[0] if res.rowcount == 1 else None
+return framework_id, conn.lastrowid, conn.rowcount, conn.lastinsertid() if conn.lastinsertid() else None, conn.lastrowid() if conn.lastrowid() else None, conn.rowcount() if conn.rowcount() else None, conn.lastinsertid() if conn.lastinsertid() else None, conn.lastrowid() if conn.lastrowid() else None, conn.rowcount() if conn.rowcount() else None, conn.lastinsertid() if conn.lastinsertid() else None, conn.lastrowid() if conn.lastrowid() else None, conn.rowcount() if conn.rowcount() else None, conn.lastinsertid() if conn.lastinsertid() else None, conn.lastrowid() if conn.lastrowid() else None, conn.rowcount() if conn.rowcount() else None, conn.lastinsertid() if conn.lastinsertid() else None, conn.lastrowid() if conn.lastrowid() else None, conn.rowcount() if conn.rowcount() else None, conn.lastinsertid() if conn.lastinsertid() else None, conn.lastrowid() if conn.lastrowid() else None, conn.rowcount() if conn.rowcount() else None, conn.lastinsertid() if conn.lastinsertid() else None, conn.lastrowid() if conn.lastrowid() else None, conn.rowcount() if conn.rowcount() else None, conn.lastinsertid() if conn.lastinsertid() else None, conn.lastrowid() if conn.lastrowid() else None, conn.rowcount() if conn.rowcount() else None, conn.lastinsertid() if conn.lastinsertid() else None, conn.lastrowid() if conn.lastrowid() else None, conn.rowcount() if conn.rowcount() else None, conn.lastinsertid() if conn.lastinsertid() else None, conn.lastrowid() if conn.lastrowid() else None, conn."
+"{'cepg': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'}","{'ceph': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'}","### Buggy Python Code
+{'cepg': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1'}
+
+### Corrected Python Code
+{'cepg': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1', 'alertmanager': '1/1'}
+
+### Corrected Python code
+{'cepg': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1', 'alertmanager': '1/1', 'kube_state_metrics': '1/1'}
+
+### Corrected Python code
+{'cepg': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1', 'alertmanager': '1/1', 'kube_state_metrics': '1/1', 'kube_prometheus_stack': '1/1'}
+
+### Corrected Python code
+{'cepg': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1', 'alertmanager': '1/1', 'kube_state_metrics': '1/1', 'kube_prometheus_stack': '1/1', 'kube_prometheus_stack_monitoring': '1/1'}
+
+### Corrected Python code
+{'cepg': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1', 'alertmanager': '1/1', 'kube_state_metrics': '1/1', 'kube_prometheus_stack': '1/1', 'kube_prometheus_stack_monitoring': '1/1', 'kube_prometheus_stack_alertmanager': '1/1'}
+
+### Corrected Python code
+{'cepg': '1/1', 'node_exporter': '1/1', 'prometheus': '1/1', 'grafana': '1/1', 'alertmanager': '1/1', 'kube_state_metrics': '1/1', 'kube_prometheus_stack': '1/1', 'kube_prometheus_stack_monitoring': '1/1', 'kube_prometheus_stack_alertmanager': '1/1', 'kube_prometheus_stack_node_exporter': '1/1'}
+
+### Corrected Python code
+{'cepg':"
+prv_key = key.to_extended_key(include_prv=key.prvkey()),prv_key = key.to_extended_key(include_prv=True),"### Buggy Python Code
+prv_key = key.to_extended_key(include_prv=key.prvkey())
+
+### Corrected Python Code
+prv_key = key.to_extended_key(include_prv=True) if key.is_private() else key.to_extended_key()
+
+return prv_key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n' + key.to_string() + '\n'"
+"class Solution:
+
+    def countValidSelections(self, nums: List[int]) -> int:
+        s = sum(nums)
+        ans = l = 0
+        for x in nums:
+            if x:
+                l += x
+            elif l * 2 == s - 1:
+                ans += 2
+            elif abs(l * 2 - s) == 1:
+                x += 1
+        return ans","class Solution:
+
+    def countValidSelections(self, nums: List[int]) -> int:
+        s = sum(nums)
+        ans = l = 0
+        for x in nums:
+            if x:
+                l += x
+            elif l * 2 == s:
+                ans += 2
+            elif abs(l * 2 - s) == 1:
+                ans += 1
+        return ans","### Buggy Python Code
+class Solution:
+
+    def countValidSelections(self, nums: List[int]) -> int:
+        s = sum(nums)
+        ans = l = 0
+        for x in nums:
+            if x:
+                l += x
+            elif l * 2 == s - 1:
+                ans += 2
+            elif abs(l * 2 - s) == 1:
+                x += 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def countValidSelections(self, nums: List[int]) -> int:
+        s = sum(nums)
+        ans = l = 0
+        for x in nums:
+            if x:
+                l += x
+            elif l * 2 == s:
+                ans += 2
+            elif abs(l * 2 - s) == 1:
+                ans += 1
+        return ans // 2 + (l * 2 == s) // 2 * 2
+
+### Corrected Python
+class Solution:
+
+    def countValidSelections(self, nums: List[int]) -> int:
+        s = sum(nums)
+        ans = l = 0
+        for x in nums:
+            if x:
+                l += x
+            elif l * 2 == s:
+                ans += 2
+            elif abs(l * 2 - s) == 1:
+                ans += 1
+        return ans // 2 + (l * 2 == s) // 2 * 2 + 1
+/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.py
+class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        ans = ''
+        i = 0
+        while i < len(s):
+            j = i + len(sub)
+            if j > len(s) or s[i:j]!= sub:
+                ans += s[i]
+                i += 1
+            else:
+                i = j
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        ans = ''
+        i = 0
+        while i < len(s):
+            j = i + len(sub)
+            if j > len(s) or s[i:j]!= sub:
+                ans += s[i]
+                i += 1
+            else:
+                i = j + len(sub) - 1
+        return ans
+/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.cpp
+class Solution {
+
+public:
+
+    string removeAllOccurrences(string s, string sub) {
+        string ans = '';
+        i = 0;
+        while i < len"
+"possible_events = {'changed', 'falling', 'rising'}","possible_events = {'changed', 'pressed', 'released'}","### Buggy Python Code
+possible_events = {'changed', 'falling', 'rising'}
+
+### Corrected Python Code
+possible_events = {'changed', 'falling', 'rising','stay'}
+
+class Event(object):
+    def __init__(self, event_type, value):
+        self.event_type = event_type
+        self.value = value
+
+    def __repr__(self):
+        return 'Event(%r, %r)' % (self.event_type, self.value)
+
+    def __eq__(self, other):
+        return self.event_type == other.event_type and self.value == other.value
+
+    def __hash__(self):
+        return hash((self.event_type, self.value))
+
+    def __lt__(self, other):
+        return self.event_type < other.event_type or (self.event_type == other.event_type and self.value < other.value)
+
+    def __le__(self, other):
+        return self.event_type <= other.event_type or (self.event_type == other.event_type and self.value <= other.value)
+
+    def __gt__(self, other):
+        return self.event_type > other.event_type or (self.event_type == other.event_type and self.value > other.value)
+
+    def __ge__(self, other):
+        return self.event_type >= other.event_type or (self.event_type == other.event_type and self.value >= other.value)
+
+    def __ne__(self, other):
+        return not self == other
+
+    def __cmp__(self, other):
+        return cmp((self.event_type, self.value), (other.event_type, other.value))
+
+    def __contains__(self, event_type):
+        return self.event_type == event_type or self.event_type =='stay'
+
+    def __and__(self, other):
+        return self.event_type == other.event_type and self.value == other.value
+
+    def __or__(self, other):
+        return self.event_type == other.event_type or self.value == other.value or self.event_type =='stay' or other.event_type =='stay'
+
+    def __xor__(self, other):
+        return self.event_type == other.event_type and self.value!= other.value or self.event_type =="
+"NoPathToItem: log.info(u'Invalid peer grading module location {0} in course {1}.  This module may need to be removed.'.format(item_location, course.id))","NoPathToItem: log.info(u'Invalid peer grading module location %s in course %s.  This module may need to be removed.', item.location, course.id)","### Buggy Python Code
+NoPathToItem: log.info(u'Invalid peer grading module location {0} in course {1}.  This module may need to be removed.'.format(item_location, course.id))
+
+### Corrected Python Code
+NoPathToItem: log.info(u'Invalid peer grading module location {0} in course {1}.  This module may need to be removed.'.format(item_location, course.id))
+            return False
+        return True
+
+    def _get_peer_grading_module_location(self, item_location, course):
+        """"""
+        Get the peer grading module location for the given item location.
+        """"""
+        peer_grading_module_location = self.get_peer_grading_module_location(item_location, course)
+        if peer_grading_module_location is None:
+            log.info(u'Invalid peer grading module location {0} in course {1}.  This module may need to be removed.'.format(item_location, course.id))
+            return None
+        return peer_grading_module_location
+
+    def _get_peer_grading_module_location_for_item(self, item):
+        """"""
+        Get the peer grading module location for the given item.
+        """"""
+        peer_grading_module_location = self.get_peer_grading_module_location(item.location, item.course)
+        if peer_grading_module_location is None:
+            log.info(u'Invalid peer grading module location {0} in course {1}.  This module may need to be removed.'.format(item.location, item.course.id))
+            return None
+        return peer_grading_module_location
+
+    def _get_peer_grading_module_location_for_item_location(self, item_location):
+        """"""
+        Get the peer grading module location for the given item location.
+        """"""
+        peer_grading_module_location = self.get_peer_grading_module_location(item_location, self.course)
+        if peer_grading_module_location is None:
+            log.info(u'Invalid peer grading module location {0} in course {1}.  This module may need to be removed.'.format(item_location, self.course.id))
+            return None
+        return peer_grading_module_location
+
+    def _get_peer_grading_module_location_for_item_location_in_course(self, item_location, course):
+        """"""
+        Get the peer grading module location for the given item location.
+        """"""
+        peer_grading_module_location = self.get"
+"class Solution:
+
+    def canReachCorner(self, xCorner: int, yCorner: int, circles: List[List[int]]) -> bool:
+
+        def in_circle(x: int, y: int, cx: int, cy: int, r: int) -> int:
+            return (x - cx) ** 2 + (y - cy) ** 2 <= r ** 2
+
+        def cross_left_top(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx) <= r and 0 <= cy <= yCorner
+            b = abs(cy) <= r and 0 <= cx <= xCorner
+            return a and b
+
+        def cross_right_bottom(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx - xCorner) <= r and 0 <= cy <= yCorner
+            b = abs(cy) <= r and 0 <= cx <= xCorner
+            return a or b
+
+        def dfs(i: int) -> bool:
+            x1, y1, r1 = circles[i]
+            if cross_right_bottom(x1, y1, r1):
+                return True
+            vis[i] = True
+            for j, (x2, y2, r2) in enumerate(circles):
+                if vis[j] or not (x1 - x2) ** 2 + (y1 - y2) ** 2 <= (r1 + r2) ** 2:
+                    continue
+                if x1 * r2 + x2 * r1 > (r1 + r2) * xCorner or (y1 * r2 + y2 * r1 > (r1 + r2) * yCorner and dfs(j)):
+                    return True
+            return False
+        vis = [False] * len(circles)
+        for i, (x, y, r) in enumerate(circles):
+            if in_circle(0, 0, x, y, r) or in_circle(xCorner, yCorner, x, y, r):
+                return False
+            if not vis[i] and cross_left_top(x, y, r) and (not dfs(i)):
+                return True
+        return True","class Solution:
+
+    def canReachCorner(self, xCorner: int, yCorner: int, circles: List[List[int]]) -> bool:
+
+        def in_circle(x: int, y: int, cx: int, cy: int, r: int) -> int:
+            return (x - cx) ** 2 + (y - cy) ** 2 <= r ** 2
+
+        def cross_left_top(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx) <= r and 0 <= cy <= yCorner
+            b = abs(cy - yCorner) <= r and 0 <= cx <= xCorner
+            return a or b
+
+        def cross_right_bottom(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx - xCorner) <= r and 0 <= cy <= yCorner
+            b = abs(cy) <= r and 0 <= cx <= xCorner
+            return a or b
+
+        def dfs(i: int) -> bool:
+            x1, y1, r1 = circles[i]
+            if cross_right_bottom(x1, y1, r1):
+                return True
+            vis[i] = True
+            for j, (x2, y2, r2) in enumerate(circles):
+                if vis[j] or not (x1 - x2) ** 2 + (y1 - y2) ** 2 <= (r1 + r2) ** 2:
+                    continue
+                if x1 * r2 + x2 * r1 < (r1 + r2) * xCorner and y1 * r2 + y2 * r1 < (r1 + r2) * yCorner and dfs(j):
+                    return True
+            return False
+        vis = [False] * len(circles)
+        for i, (x, y, r) in enumerate(circles):
+            if in_circle(0, 0, x, y, r) or in_circle(xCorner, yCorner, x, y, r):
+                return False
+            if not vis[i] and cross_left_top(x, y, r) and dfs(i):
+                return False
+        return True","class Solution:
+
+    def canReachCorner(self, xCorner: int, yCorner: int, circles: List[List[int]]) -> bool:
+
+        def in_circle(x: int, y: int, cx: int, cy: int, r: int) -> bool:
+            return (x - cx) ** 2 + (y - cy) ** 2 <= r ** 2
+
+        def cross_left_top(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx) <= r and 0 <= cy <= yCorner
+            b = abs(cy) <= r and 0 <= cx <= xCorner
+            return a and b
+
+        def cross_right_bottom(cx: int, cy: int, r: int) -> bool:
+            a = abs(cx - xCorner) <= r and 0 <= cy <= yCorner
+            b = abs(cy - yCorner) <= r and 0 <= cx <= xCorner
+            return a or b
+
+        @cache
+        def dfs(i: int) -> bool:
+            x1, y1, r1 = circles[i]
+            if cross_right_bottom(x1, y1, r1):
+                return True
+            vis[i] = True
+            for j, (x2, y2, r2) in enumerate(circles):
+                if vis[j] or not (x1 - x2) ** 2 + (y1 - y2) ** 2 <= (r1 + r2) ** 2:
+                    continue
+                if x1 * r2 + x2 * r1 > (r1 + r2) * xCorner or (y1 * r2 + y2 * r1 > (r1 + r2) * yCorner and dfs(j)):
+                    return True
+            return False
+        vis = [False] * len(circles)
+        for i, (x, y, r) in enumerate(circles):
+            if in_circle(0, 0, x, y, r) or in_circle(xCorner, yCorner, x, y, r):
+                return False
+            if not vis[i] and cross_left_top(x, y, r) and (not dfs(i)):
+                return True
+        return False
+
+### Corrected Python class Solution:
+
+    def canReachCorner(self, xCorner:"
