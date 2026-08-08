@@ -3341,3 +3341,519 @@ MOCK_MODULES = ['argparse', 'numpy','scikit-image']
 
 ### Corrected Python Code
 MOCK_MODULES = ['argparse', 'numpy','scikit-image','scipy'] + ['matplotlib'] * 2 + ['pandas'] * 2 + ['statsmodels'] * 2 + ['seaborn'] * 2 + ['pylab'] * 2 + ['pydot'] * 2 + ['pydotplus'] * 2 + ['pygraphviz'] * 2 + ['pylint'] * 2 + ['pylint_mock'] * 2 + ['pylint_numpy'] * 2 + ['pylint_scipy'] * 2 + ['pylint_sklearn'] * 2 + ['pylint_pandas'] * 2 + ['pylint_statsmodels'] * 2 + ['pylint_seaborn'] * 2 + ['pylint_pylab'] * 2 + ['pylint_pydot'] * 2 + ['pylint_pydotplus'] * 2 + ['pylint_pygraphviz'] * 2 + ['pylint_pylint'] * 2 + ['pylint_mock'] * 2 + ['pylint_numpy'] * 2 + ['pylint_scipy'] * 2 + ['pylint_sklearn'] * 2 + ['pylint_pandas'] * 2 + ['pylint_statsmodels'] * 2 + ['pylint_seaborn'] * 2 + ['pylint_pylab'] * 2 + ['pylint_pydot'] * 2 + ['pylint_pydotplus'] * 2 + ['pylint_pygraphviz'] * 2 + ['pylint_pylint'] * 2 + ['pylint_mock'] * 2 + ['pylint_numpy'] * 2 + ['pylint_scipy'] * 2 + ['pylint_sklearn'] * 2 + ['pylint_pandas'] * 2 + ['pylint_statsmodels'] * 2 + ['pylint_seaborn'] * 2 + ['pylint_pylab'] * 2 + ['pylint_pydot'] * 2 + ['pylint_pydotplus'] * 2 + ['pylint_pygraphviz'] * 2 + ['pylint_pylint'] * 2 + ['pylint_mock'] * 2 + ['pylint_numpy'] * 2 + ['pylint_scipy'] * 2 + ['pylint"
+"for output_state in self.input_states:
+    projs.extend(output_state.mod_afferents)","for output_state in self.output_states:
+    projs.extend(output_state.mod_afferents)","### Buggy Python Code
+for output_state in self.input_states:
+    projs.extend(output_state.mod_afferents)
+
+### Corrected Python Code
+for output_state in self.output_states:
+    projs.extend(output_state.mod_afferents)
+
+return projs, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states, self.input_states, self.output_states"
+"self.assertEqual(read_ts.keys(), [b'immutable', b'mutable'])","self.assertEqual(read_ts.keys(), ['immutable', 'mutable'])","### Buggy Python Code
+self.assertEqual(read_ts.keys(), [b'immutable', b'mutable'])
+
+### Corrected Python Code
+self.assertEqual(read_ts.keys(), [b'immutable', b'mutable', b'other'])
+
+### Corrected Python code
+self.assertEqual(read_ts.keys(), [b'immutable', b'mutable', b'other', b'other2'])
+
+### Corrected Python code
+self.assertEqual(read_ts.keys(), [b'immutable', b'mutable', b'other', b'other2', b'other3'])
+
+### Corrected Python code
+self.assertEqual(read_ts.keys(), [b'immutable', b'mutable', b'other', b'other2', b'other3', b'other4'])
+
+### Corrected Python code
+self.assertEqual(read_ts.keys(), [b'immutable', b'mutable', b'other', b'other2', b'other3', b'other4', b'other5'])
+
+### Corrected Python code
+self.assertEqual(read_ts.keys(), [b'immutable', b'mutable', b'other', b'other2', b'other3', b'other4', b'other5', b'other6'])
+
+### Corrected Python code
+self.assertEqual(read_ts.keys(), [b'immutable', b'mutable', b'other', b'other2', b'other3', b'other4', b'other5', b'other6', b'other7'])
+
+### Corrected Python code
+self.assertEqual(read_ts.keys(), [b'immutable', b'mutable', b'other', b'other2', b'other3', b'other4', b'other5', b'other6', b'other7', b'other8'])
+
+### Corrected Python code
+self.assertEqual(read_ts.keys(), [b'immutable', b'mutable', b'other', b'other2', b'other3', b'other4', b'other5', b'other6', b'other7', b'other8', b'other9'])
+
+### Corrected Python code
+self.assertEqual(read_ts.keys(), [b'immutable', b'mutable', b'other', b'other2', b'other3', b'other4', b'other5', b'other6', b'other7',"
+"from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Sequence:
+    startX: int
+    startY: int
+    endX: int
+    endY: int
+    length: int
+
+    def __iter__(self):
+        yield self.startX
+        yield self.startY
+        yield self.endX
+        yield self.endY
+        yield self.length
+
+class Solution:
+
+    def maxDistance(self, side: int, points: list[list[int]], k: int) -> int:
+        ordered = self._getOrderedPoints(side, points)
+
+        def isValidDistance(m: int) -> bool:
+            dq = collections.deque([Sequence(*ordered[0], *ordered[0], 1)])
+            maxLength = 1
+            for i in range(1, len(ordered)):
+                x, y = ordered[i]
+                startX, startY = ordered[i]
+                while dq and abs(x - dq[0].endX) + abs(y - dq[0].endY) >= m:
+                    if abs(x - dq[0].startX) + abs(y - dq[0].startY) >= m and dq[0].length + 1 >= length:
+                        startX = dq[0].startX
+                        startY = dq[0].startY
+                        length = dq[0].length + 1
+                        maxLength = max(maxLength, length)
+                    dq.popleft()
+                dq.append(Sequence(startX, startY, x, y, length))
+            return maxLength >= k
+        l = 0
+        r = side.bit_length()
+        while l < r:
+            m = (l + r + 1) // 2
+            if isValidDistance(m):
+                l = m
+            else:
+                r = m - 1
+        return l
+
+    def _getOrderedPoints(self, side: int, points: list[list[int]]) -> list[list[int]]:
+        left = sorted([(x, y) for x, y in points if x == 0 and y > 0])
+        top = sorted([(x, y) for x, y in points if x > 0 and y == side])
+        right = sorted([(x, y) for x, y in points if x == side and y < side], reverse=True)
+        bottom = sorted([(x, y) for x, y in points if y == 0], reverse=True)
+        return left + top + right + bottom","from dataclasses import dataclass
+
+@dataclass(frozen=True)
+class Sequence:
+    startX: int
+    startY: int
+    endX: int
+    endY: int
+    length: int
+
+    def __iter__(self):
+        yield self.startX
+        yield self.startY
+        yield self.endX
+        yield self.endY
+        yield self.length
+
+class Solution:
+
+    def maxDistance(self, side: int, points: list[list[int]], k: int) -> int:
+        ordered = self._getOrderedPoints(side, points)
+
+        def isValidDistance(m: int) -> bool:
+            dq = collections.deque([Sequence(*ordered[0], *ordered[0], 1)])
+            maxLength = 1
+            for i in range(1, len(ordered)):
+                x, y = ordered[i]
+                startX, startY = ordered[i]
+                length = 1
+                while dq and abs(x - dq[0].endX) + abs(y - dq[0].endY) >= m:
+                    if abs(x - dq[0].startX) + abs(y - dq[0].startY) >= m and dq[0].length + 1 >= length:
+                        startX = dq[0].startX
+                        startY = dq[0].startY
+                        length = dq[0].length + 1
+                        maxLength = max(maxLength, length)
+                    dq.popleft()
+                dq.append(Sequence(startX, startY, x, y, length))
+            return maxLength >= k
+        l = 0
+        r = side
+        while l < r:
+            m = (l + r + 1) // 2
+            if isValidDistance(m):
+                l = m
+            else:
+                r = m - 1
+        return l
+
+    def _getOrderedPoints(self, side: int, points: list[list[int]]) -> list[list[int]]:
+        left = sorted([(x, y) for x, y in points if x == 0 and y > 0])
+        top = sorted([(x, y) for x, y in points if x > 0 and y == side])
+        right = sorted([(x, y) for x, y in points if x == side and y < side], reverse=True)
+        bottom = sorted([(x, y) for x, y in points if y == 0], reverse=True)
+        return left + top + right + bottom","reverse=True)
+        bottom = sorted([(x, y) for x, y in points if x < side and y == 0], reverse=True)
+        return left + top + right + bottom
+
+    def _getOrderedPoints(self, side: int, points: list[list[int]]) -> list[list[int]]:
+        left = sorted([(x, y) for x, y in points if x == 0 and y > 0])
+        top = sorted([(x, y) for x, y in points if x > 0 and y == side])
+        right = sorted([(x, y) for x, y in points if x == side and y < side])
+        bottom = sorted([(x, y) for x, y in points if x < side and y == 0])
+        return left + top + right + bottom
+
+    def _getOrderedPoints(self, side: int, points: list[list[int]]) -> list[list[int]]:
+        left = sorted([(x, y) for x, y in points if x == 0 and y > 0])
+        top = sorted([(x, y) for x, y in points if x > 0 and y == side])
+        right = sorted([(x, y) for x, y in points if x == side and y < side])
+        bottom = sorted([(x, y) for x, y in points if x < side and y == 0])
+        return left + top + right + bottom
+
+    def _getOrderedPoints(self, side: int, points: list[list[int]]) -> list[list[int]]:
+        left = sorted([(x, y) for x, y in points if x == 0 and y > 0])
+        top = sorted([(x, y) for x, y in points if x > 0 and y == side])
+        right = sorted([(x, y) for x, y in points if x == side and y < side])
+        bottom = sorted([(x, y) for x, y in points if x < side and y == 0])
+        return left + top + right + bottom
+
+    def _getOrderedPoints(self, side: int, points: list[list[int]]) -> list[list[int]]:
+        left = sorted([(x, y) for x, y in points if x == 0 and y > 0])
+        top = sorted([("
+"class Solution:
+
+    def minFlips(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        cnt1 = cnt2 = 0
+        for row in grid:
+            for j in range(n // 2):
+                if row[j] != row[n - j - 1]:
+                    cnt1 += 1
+        for j in range(n):
+            cnt2 = 0
+            for i in range(m // 2):
+                if grid[i][j] != grid[m - i - 1][j]:
+                    cnt2 += 1
+        return min(cnt1, cnt2)","class Solution:
+
+    def minFlips(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        cnt1 = cnt2 = 0
+        for row in grid:
+            for j in range(n // 2):
+                if row[j] != row[n - j - 1]:
+                    cnt1 += 1
+        for j in range(n):
+            for i in range(m // 2):
+                if grid[i][j] != grid[m - i - 1][j]:
+                    cnt2 += 1
+        return min(cnt1, cnt2)","### Buggy Python Code
+class Solution:
+
+    def minFlips(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        cnt1 = cnt2 = 0
+        for row in grid:
+            for j in range(n // 2):
+                if row[j]!= row[n - j - 1]:
+                    cnt1 += 1
+        for j in range(n):
+            cnt2 = 0
+            for i in range(m // 2):
+                if grid[i][j]!= grid[m - i - 1][j]:
+                    cnt2 += 1
+        return min(cnt1, cnt2)
+
+### Corrected Python Code
+class Solution:
+
+    def minFlips(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        cnt1 = cnt2 = 0
+        for row in grid:
+            for j in range(n // 2):
+                if row[j]!= row[n - j - 1]:
+                    cnt1 += 1
+        for j in range(n):
+            for i in range(m // 2):
+                if grid[i][j]!= grid[m - i - 1][j]:
+                    cnt2 += 1
+        return min(cnt1, cnt2) // 2 * 2
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minFlips(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        cnt1 = cnt2 = 0
+        for row in grid:
+            for j in range(n // 2):
+                if row[j]!= row[n - j - 1]:
+                    cnt1 += 1
+        for j in range(n):
+            for i in range(m // 2):
+                if grid[i][j]!= grid[m - i - 1][j]:
+                    cnt2 += 1
+        return min(cnt1, cnt2) // 2 * 2
+/1000/1000-1005/1005.cpp
+class Solution {
+
+public:
+
+    int minFlips(vector<vector<int>>& grid) {
+        int m, n;
+        m = n = 0;
+        cnt1 = cnt2 = 0;
+        for row in grid:
+            for j in range(n // 2):
+                if row[j]!= row[n - j - 1]:
+                    cnt1 += 1
+        for j in range(n):
+            for i in range(m // 2):
+                if grid[i][j]!= grid[m - i - 1][j]:
+                    cnt2 += 1
+        return min(cnt1, cnt2) // 2 * 2
+    }
+
+private:
+    int cnt1;
+    int cnt2;
+};
+/1"
+"import os
+import glob
+import subprocess
+
+def task_func(directory, backup_dir='/path/to/backup'):
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f""Directory '{directory}' not found."")
+    log_files = glob.glob(os.path.join(directory, '*.log'))
+    if log_files is None:
+        return 'No logs found to backup'
+    if not os.path.exists(backup_dir):
+        os.makedirs(backup_dir)
+    backup_file = os.path.join(backup_dir, 'logs_backup.tar.gz')
+    log_files = []
+    subprocess.call(['tar', '-czvf', backup_file] + log_files)
+    for file in log_files:
+        os.remove(file)
+    return backup_file","import os
+import glob
+import subprocess
+
+def task_func(directory, backup_dir='/path/to/backup'):
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f""Directory '{directory}' not found."")
+    log_files = glob.glob(os.path.join(directory, '*.log'))
+    if not log_files:
+        return 'No logs found to backup'
+    if not os.path.exists(backup_dir):
+        os.makedirs(backup_dir)
+    backup_file = os.path.join(backup_dir, 'logs_backup.tar.gz')
+    subprocess.call(['tar', '-czvf', backup_file] + log_files)
+    for file in log_files:
+        os.remove(file)
+    return backup_file","### Buggy Python Code
+import os
+import glob
+import subprocess
+
+def task_func(directory, backup_dir='/path/to/backup'):
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f""Directory '{directory}' not found."")
+    log_files = glob.glob(os.path.join(directory, '*.log'))
+    if log_files is None:
+        return 'No logs found to backup'
+    if not os.path.exists(backup_dir):
+        os.makedirs(backup_dir)
+    backup_file = os.path.join(backup_dir, 'logs_backup.tar.gz')
+    log_files = []
+    subprocess.call(['tar', '-czvf', backup_file] + log_files)
+    for file in log_files:
+        os.remove(file)
+    return backup_file
+
+### Corrected Python Code
+import os
+import glob
+import subprocess
+
+def task_func(directory, backup_dir='/path/to/backup'):
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f""Directory '{directory}' not found."")
+    log_files = glob.glob(os.path.join(directory, '*.log'))
+    if not log_files:
+        return 'No logs found to backup'
+    if not os.path.exists(backup_dir):
+        os.makedirs(backup_dir)
+    backup_file = os.path.join(backup_dir, 'logs_backup.tar.gz')
+    subprocess.call(['tar', '-czvf', backup_file] + log_files)
+    for file in log_files:
+        os.remove(file)
+    return backup_file
+/README.md
+# Python-course-tasks-1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31-32-33-34-35-36-37-38-39-40-41-42-43-44-45-46-47-48-49-50-51-52-53-54-55-56-57-58-59-60-61-62-63-64-65-66-67-68-69-70-71-72-73-74-75-76-77-78-79-80-81-82-83-84-85-86-87-88-89-90-91-92-93-94-95-96-97-98-99-100-101-102-103-104-105-106-107-108-"
+return datetime.fromtimestamp(ms / 1000.0).strftime('%Y-%m-%d %H:%M'),return datetime.fromtimestamp(ms).strftime('%Y-%m-%d %H:%M'),"### Buggy Python Code
+return datetime.fromtimestamp(ms / 1000.0).strftime('%Y-%m-%d %H:%M')
+
+### Corrected Python Code
+return datetime.fromtimestamp(ms / 1000.0).strftime('%Y-%m-%d %H:%M:%S') + 'Z' if ms else ''
+/src/py/py_utils/py_utils/utils/time_utils.py
+import datetime
+
+def get_current_time_str():
+    return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + 'Z' if ms else ''
+/src/py/py_utils/py_utils/utils/file_utils.py
+import os
+
+def get_file_size(file_path):
+    return os.path.getsize(file_path) / 1024.0 / 1024.0
+/src/py/py_utils/py_utils/utils/string_utils.py
+import re
+
+def get_string_between_two_patterns(string, pattern1, pattern2):
+    pattern1 = re.compile(pattern1)
+    pattern2 = re.compile(pattern2)
+    match = pattern1.search(string)
+    if match:
+        start = match.end()
+    else:
+        return ''
+    match = pattern2.search(string, start)
+    if match:
+        end = match.start()
+    else:
+        end = len(string)
+    return string[start:end]
+/src/py/py_utils/py_utils/utils/number_utils.py
+import re
+
+def get_number_between_two_patterns(string, pattern1, pattern2):
+    pattern1 = re.compile(pattern1)
+    pattern2 = re.compile(pattern2)
+    match = pattern1.search(string)
+    if match:
+        start = match.end()
+    else:
+        return ''
+    match = pattern2.search(string, start)
+    if match:
+        end = match.start()
+    else:
+        end = len(string)
+    return string[start:end]
+/src/py/py_utils/py_utils/utils/date_utils.py
+import datetime
+
+def get_current_date_str():
+    return datetime.datetime.now().strftime('%Y-%m-%d') + 'Z' if ms else ''
+/src/py/py_"
+assert other_files.issuperset([f.absolute() for f in expected]),assert other_files.issuperset([f.resolve() for f in expected]),"### Buggy Python Code
+assert other_files.issuperset([f.absolute() for f in expected])
+
+### Corrected Python Code
+assert other_files.issuperset([f.absolute() for f in expected]) or other_files.issuperset([f.absolute() for f in expected_files]) or other_files.issuperset([f.absolute() for f in expected_files_2]) or other_files.issuperset([f.absolute() for f in expected_files_3]) or other_files.issuperset([f.absolute() for f in expected_files_4]) or other_files.issuperset([f.absolute() for f in expected_files_5]) or other_files.issuperset([f.absolute() for f in expected_files_6]) or other_files.issuperset([f.absolute() for f in expected_files_7]) or other_files.issuperset([f.absolute() for f in expected_files_8]) or other_files.issuperset([f.absolute() for f in expected_files_9]) or other_files.issuperset([f.absolute() for f in expected_files_10]) or other_files.issuperset([f.absolute() for f in expected_files_11]) or other_files.issuperset([f.absolute() for f in expected_files_12]) or other_files.issuperset([f.absolute() for f in expected_files_13]) or other_files.issuperset([f.absolute() for f in expected_files_14]) or other_files.issuperset([f.absolute() for f in expected_files_15]) or other_files.issuperset([f.absolute() for f in expected_files_16]) or other_files.issuperset([f.absolute() for f in expected_files_17]) or other_files.issuperset([f.absolute() for f in expected_files_18]) or other_files.issuperset([f.absolute() for f in expected_files_19]) or other_files.issuperset([f.absolute() for f in expected_files_20]) or other_files.issuperset([f.absolute() for f in expected_files_21]) or other_files.issuperset([f.absolute() for f in expected_files_22"
+"import sqlite3
+import pandas as pd
+import csv
+from io import StringIO
+DATABASE_NAME = 'test.db'
+TABLE_NAME = 'test_table'
+
+def task_func(csv_input):
+    if isinstance(csv_input, str):
+        dr = csv.DictReader(csv_input)
+    else:
+        with open(csv_input, 'r') as f:
+            dr = csv.DictReader(f)
+    conn = sqlite3.connect(DATABASE_NAME)
+    cursor = conn.cursor()
+    cols = dr.fieldnames
+    cursor.execute(f'DROP TABLE IF EXISTS {TABLE_NAME}')
+    cols.reverse()
+    cursor.execute(f""CREATE TABLE {TABLE_NAME} ({', '.join([f'{col} TEXT' for col in cols])})"")
+    for row in dr:
+        cursor.execute(f""INSERT INTO {TABLE_NAME} VALUES ({', '.join(['?' for _ in cols])})"", list(row.values()))
+    conn.rollback()
+    conn.commit()
+    dataframe = pd.read_sql_query(f'SELECT * from {TABLE_NAME}', conn)
+    conn.close()
+    return dataframe","import sqlite3
+import pandas as pd
+import csv
+from io import StringIO
+DATABASE_NAME = 'test.db'
+TABLE_NAME = 'test_table'
+
+def task_func(csv_input):
+    if isinstance(csv_input, StringIO):
+        dr = csv.DictReader(csv_input)
+    else:
+        with open(csv_input, 'r') as f:
+            dr = csv.DictReader(f)
+    conn = sqlite3.connect(DATABASE_NAME)
+    cursor = conn.cursor()
+    cols = dr.fieldnames
+    cursor.execute(f'DROP TABLE IF EXISTS {TABLE_NAME}')
+    cursor.execute(f""CREATE TABLE {TABLE_NAME} ({', '.join([f'{col} TEXT' for col in cols])})"")
+    for row in dr:
+        cursor.execute(f""INSERT INTO {TABLE_NAME} VALUES ({', '.join(['?' for _ in cols])})"", list(row.values()))
+    conn.commit()
+    dataframe = pd.read_sql_query(f'SELECT * from {TABLE_NAME}', conn)
+    conn.close()
+    return dataframe","= 'test.db'
+TABLE_NAME = 'test_table'
+
+def task_func(csv_input):
+    if isinstance(csv_input, str):
+        dr = csv.DictReader(csv_input)
+    else:
+        with open(csv_input, 'r') as f:
+            dr = csv.DictReader(f)
+    conn = sqlite3.connect(DATABASE_NAME)
+    cursor = conn.cursor()
+    cols = dr.fieldnames
+    cursor.execute(f'DROP TABLE IF EXISTS {TABLE_NAME}')
+    cols.reverse()
+    cursor.execute(f""CREATE TABLE {TABLE_NAME} ({', '.join([f'{col} TEXT' for col in cols])})"")
+    for row in dr:
+        cursor.execute(f""INSERT INTO {TABLE_NAME} VALUES ({', '.join(['?' for _ in cols])})"", list(row.values()))
+    conn.rollback()
+    conn.commit()
+    dataframe = pd.read_sql_query(f'SELECT * from {TABLE_NAME}', conn)
+    conn.close()
+    return dataframe
+
+### Corrected Python Code
+import sqlite3
+import pandas as pd
+import csv
+from io import StringIO
+DATABASE_NAME = 'test.db'
+TABLE_NAME = 'test_table'
+
+def task_func(csv_input):
+    if isinstance(csv_input, StringIO):
+        dr = csv.DictReader(csv_input)
+    else:
+        with open(csv_input, 'r') as f:
+            dr = csv.DictReader(f)
+    conn = sqlite3.connect(DATABASE_NAME)
+    cursor = conn.cursor()
+    cols = dr.fieldnames
+    cursor.execute(f'DROP TABLE IF EXISTS {TABLE_NAME}')
+    cursor.execute(f""CREATE TABLE {TABLE_NAME} ({', '.join([f'{col} TEXT' for col in cols])})"")
+    for row in dr:
+        cursor.execute(f""INSERT INTO {TABLE_NAME} VALUES ({', '.join(['?' for _ in cols])})"", list(row.values()))
+    conn.commit()
+    dataframe = pd.read_sql_query(f'SELECT * from {TABLE_NAME}', conn)
+    conn.close()
+    return dataframe
+
+if __name__ == '__main__':
+    task_func('test.csv')
+    task_func(StringIO('a,b\n1,2'))
+    task_func(pd.read_csv('test.csv'))
+    task_func(pd.read_csv(StringIO('a,b\n1,2')))
+    task_func(pd.read_csv(StringIO('a,b\n1,2'), index_col=0))
+    task_func(pd.read_csv(StringIO('a,b\n1,2'), index_col=0, dtype={'a': int}))
+    task_func(pd.read_csv(StringIO('a,b\n1,2'), index_col=0, dtype={'a': str}))
+    task_func(pd.read_csv(StringIO('a,b\n1,2'), index_col=0, dtype={'a': float}))
+    task_func(pd.read_csv(StringIO('a,b\n1,2'), index_col=0, dtype={'a': bool}))
+    task_func(pd.read_csv(StringIO('a,b\n1,2'), index"
