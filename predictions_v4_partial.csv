@@ -5145,3 +5145,377 @@ def get_friend(user_id, friend_id):
 
 
 @app.route('/api/v1/users/<"
+"import os
+import csv
+import random
+from statistics import mean
+COLUMNS = ['Name', 'Age', 'Height', 'Weight']
+PEOPLE_COUNT = 100
+
+def task_func(filename):
+    filepath = os.path.join(os.getcwd(), filename)
+    with open(filepath, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(COLUMNS)
+        data = [['Person_' + str(i), random.randint(20, 50), random.randint(150, 200), random.randint(50, 100)] for i in range(1, PEOPLE_COUNT + 1)]
+        data = writer.writerows(data)
+        averages = ['Average', mean([row[1] for row in data]), mean([row[2] for row in data]), mean([row[3] for row in data])]
+        writer.writeline(averages)
+    return filepath","import os
+import csv
+import random
+from statistics import mean
+COLUMNS = ['Name', 'Age', 'Height', 'Weight']
+PEOPLE_COUNT = 100
+
+def task_func(filename):
+    filepath = os.path.join(os.getcwd(), filename)
+    with open(filepath, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(COLUMNS)
+        data = [['Person_' + str(i), random.randint(20, 50), random.randint(150, 200), random.randint(50, 100)] for i in range(1, PEOPLE_COUNT + 1)]
+        writer.writerows(data)
+        averages = ['Average', mean([row[1] for row in data]), mean([row[2] for row in data]), mean([row[3] for row in data])]
+        writer.writerow(averages)
+    return filepath","return filepath
+
+### Corrected Python Code
+import os
+import csv
+import random
+from statistics import mean
+COLUMNS = ['Name', 'Age', 'Height', 'Weight']
+PEOPLE_COUNT = 100
+
+def task_func(filename):
+    filepath = os.path.join(os.getcwd(), filename)
+    with open(filepath, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(COLUMNS)
+        data = [['Person_' + str(i), random.randint(20, 50), random.randint(150, 200), random.randint(50, 100)] for i in range(1, PEOPLE_COUNT + 1)]
+        writer.writerows(data)
+        averages = ['Average', mean([row[1] for row in data]), mean([row[2] for row in data]), mean([row[3] for row in data])]
+        writer.writerow(averages)
+    return filepath
+
+### Corrected Python code
+import os
+import csv
+import random
+from statistics import mean
+COLUMNS = ['Name', 'Age', 'Height', 'Weight']
+PEOPLE_COUNT = 100
+
+def task_func(filename):
+    filepath = os.path.join(os.getcwd(), filename)
+    with open(filepath, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(COLUMNS)
+        data = [['Person_' + str(i), random.randint(20, 50), random.randint(150, 200), random.randint(50, 100)] for i in range(1, PEOPLE_COUNT + 1)]
+        writer.writerows(data)
+        averages = ['Average', mean([row[1] for row in data]), mean([row[2] for row in data]), mean([row[3] for row in data])]
+        writer.writerow(averages)
+    return filepath
+
+if __name__ == '__main__':
+    task_func('people.csv')/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/"
+from iconservice.database.db import IconScoreDatabase,from iconservice.iconscore.db import IconScoreDatabase,"### Buggy Python Code
+from iconservice.database.db import IconScoreDatabase
+
+### Corrected Python Code
+from iconservice.database.db import IconScoreDatabase, IconScoreDatabaseError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError, IconScoreNotFoundError"
+"import numpy as np
+import pandas as pd
+from datetime import timedelta
+
+def task_func(start_date, end_date, random_seed=42):
+    if end_date <= start_date:
+        raise ValueError('End date must be after start date')
+    np.random.seed(random_seed)
+    COLUMNS = ['Date', 'Temperature', 'Humidity', 'Wind Speed']
+    data = []
+    date = end_date
+    while date <= end_date:
+        temp = np.random.uniform(-10, 40)
+        humidity = np.random.uniform(20, 100)
+        wind_speed = np.random.uniform(0, 20)
+        data.append([date, temp, humidity, wind_speed])
+        date += timedelta(days=2)
+    df = pd.DataFrame(data, columns=COLUMNS)
+    ax = df.plot(x='Date', y=['Temperature', 'Humidity', 'Wind Speed'], title='Generated Weather Data')
+    return (df, ax)","import numpy as np
+import pandas as pd
+from datetime import timedelta
+
+def task_func(start_date, end_date, random_seed=42):
+    if end_date < start_date:
+        raise ValueError('End date must be after start date')
+    np.random.seed(random_seed)
+    COLUMNS = ['Date', 'Temperature', 'Humidity', 'Wind Speed']
+    data = []
+    date = start_date
+    while date <= end_date:
+        temp = np.random.uniform(-10, 40)
+        humidity = np.random.uniform(20, 100)
+        wind_speed = np.random.uniform(0, 20)
+        data.append([date, temp, humidity, wind_speed])
+        date += timedelta(days=1)
+    df = pd.DataFrame(data, columns=COLUMNS)
+    ax = df.plot(x='Date', y=['Temperature', 'Humidity', 'Wind Speed'], title='Generated Weather Data')
+    return (df, ax)","import numpy as np
+import pandas as pd
+from datetime import timedelta
+
+def task_func(start_date, end_date, random_seed=42):
+    if end_date < start_date:
+        raise ValueError('End date must be after start date')
+    np.random.seed(random_seed)
+    COLUMNS = ['Date', 'Temperature', 'Humidity', 'Wind Speed']
+    data = []
+    date = start_date
+    while date <= end_date:
+        temp = np.random.uniform(-10, 40)
+        humidity = np.random.uniform(20, 100)
+        wind_speed = np.random.uniform(0, 20)
+        data.append([date, temp, humidity, wind_speed])
+        date += timedelta(days=1)
+    df = pd.DataFrame(data, columns=COLUMNS)
+    ax = df.plot(x='Date', y=['Temperature', 'Humidity', 'Wind Speed'], title='Generated Weather Data')
+    return (df, ax)
+
+### Corrected Python code
+import numpy as np
+import pandas as pd
+from datetime import timedelta
+
+def task_func(start_date, end_date, random_seed=42):
+    if end_date < start_date:
+        raise ValueError('End date must be after start date')
+    np.random.seed(random_seed)
+    COLUMNS = ['Date', 'Temperature', 'Humidity', 'Wind Speed']
+    data = []
+    date = start_date
+    while date <= end_date:
+        temp = np.random.uniform(-10, 40)
+        humidity = np.random.uniform(20, 100)
+        wind_speed = np.random.uniform(0, 20)
+        data.append([date, temp, humidity, wind_speed])
+        date += timedelta(days=1)
+    df = pd.DataFrame(data, columns=COLUMNS)
+    ax = df.plot(x='Date', y=['Temperature', 'Humidity', 'Wind Speed'], title='Generated Weather Data')
+    return (df, ax)
+/README.md
+# Data Science with Python - Day 10 - Data Visualization with Matplotlib and Seaborn
+
+## Description
+This repository contains the code for the Data Science with Python - Day"
+"class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s) - 1
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            cnt += s[i] == '0'
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return ans if cnt else -1","class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return ans","### Buggy Python Code
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s) - 1
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            cnt += s[i] == '0'
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return ans if cnt else -1
+
+### Corrected Python Code
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return -1 if cnt & 1 else ans if cnt else -1
+
+### Corrected Python
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return -1 if cnt & 1 else ans // 2 if cnt else -1
+/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return -1 if cnt & 1 else ans // 2 if cnt else -1
+
+### Corrected Python
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return -1 if cnt & 1 else ans // 2 if cnt else -1 if n & 1 else 0
+/1000-1099/1000-1099/1009.cpp
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return"
+"params['statement_descriptor'] = (ugettext('{event}-{code}').format(event=self.event.slug.upper(), code=order.code)[:22],)","params['statement_descriptor'] = ugettext('{event}-{code}').format(event=self.event.slug.upper(), code=order.code)[:22]","### Buggy Python Code
+params['statement_descriptor'] = (ugettext('{event}-{code}').format(event=self.event.slug.upper(), code=order.code)[:22],)
+
+### Corrected Python Code
+params['statement_descriptor'] = (ugettext('{event}-{code}').format(event=self.event.slug.upper(), code=order.code)[:22],) + u''+ self.event.name[:22] + u''+ self.event.location[:22] + u''+ self.event.date_start.strftime('%d/%m/%Y') + u''+ self.event.date_end.strftime('%d/%m/%Y') + u''+ self.event.time_start.strftime('%H:%M') + u''+ self.event.time_end.strftime('%H:%M') + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] + u''+ self.event.location[:22] +"
+currentPoints = viewerDB.search(_Query().name == userName)[0]['totalPoints'],currentPoints = viewerDB.search(_Query().name == userName)[0]['points'],"### Buggy Python Code
+currentPoints = viewerDB.search(_Query().name == userName)[0]['totalPoints']
+
+### Corrected Python Code
+currentPoints = viewerDB.search(_Query().name == userName)[0]['totalPoints'] - viewerDB.search(_Query().name == userName)[0]['totalPoints'] + 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"class Solution:
+
+    def distanceTraveled(self, mainTank: int, additionalTank: int) -> int:
+        ans = cur = 0
+        while mainTank.pop():
+            cur += 1
+            ans += 10
+            mainTank -= 2
+            if cur % 5 == 0 and additionalTank:
+                additionalTank -= 1
+                mainTank += 1
+        ans += additionalTank * 10
+        return ans","class Solution:
+
+    def distanceTraveled(self, mainTank: int, additionalTank: int) -> int:
+        ans = cur = 0
+        while mainTank:
+            cur += 1
+            ans += 10
+            mainTank -= 1
+            if cur % 5 == 0 and additionalTank:
+                additionalTank -= 1
+                mainTank += 1
+        return ans","### Buggy Python Code
+class Solution:
+
+    def distanceTraveled(self, mainTank: int, additionalTank: int) -> int:
+        ans = cur = 0
+        while mainTank.pop():
+            cur += 1
+            ans += 10
+            mainTank -= 2
+            if cur % 5 == 0 and additionalTank:
+                additionalTank -= 1
+                mainTank += 1
+        ans += additionalTank * 10
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def distanceTraveled(self, mainTank: int, additionalTank: int) -> int:
+        ans = cur = 0
+        while mainTank:
+            cur += 1
+            ans += 10
+            mainTank -= 1
+            if cur % 5 == 0 and additionalTank:
+                additionalTank -= 1
+                mainTank += 1
+        return ans + additionalTank * 10 - 10
+
+### Corrected Python
+class Solution:
+
+    def distanceTraveled(self, mainTank: int, additionalTank: int) -> int:
+        ans = cur = 0
+        while mainTank:
+            cur += 1
+            ans += 10
+            mainTank -= 1
+            if cur % 5 == 0 and additionalTank:
+                additionalTank -= 1
+                mainTank += 1
+        return ans + additionalTank * 10 - 10 + 10
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, scores: List[int], k: int) -> int:
+        scores.sort()
+        ans = cur = 0
+        while k:
+            cur += 1
+            ans += scores.pop()
+            k -= 1
+        return ans + scores.pop() * 2
+
+### Corrected Python
+class Solution:
+
+    def maxScore(self, scores: List[int], k: int) -> int:
+        scores.sort()
+        ans = cur = 0
+        while k:
+            cur += 1
+            ans += scores.pop()
+            k -= 1
+        return ans + scores.pop() * 2 - 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"status, output = commands.getstatusoutput(""wget -q -O- http://cdimage.ubuntu.com/.manifest-daily | egrep '(amd64|i386)'"")","status, output = commands.getstatusoutput(""wget -q -O- http://cdimage.ubuntu.com/.manifest-daily | egrep '(amd64|i386)' | egrep '(current)'"")","### Buggy Python Code
+status, output = commands.getstatusoutput(""wget -q -O- http://cdimage.ubuntu.com/.manifest-daily | egrep '(amd64|i386)'"")
+
+### Corrected Python Code
+status, output = commands.getstatusoutput(""wget -q -O- http://cdimage.ubuntu.com/.manifest-daily | egrep '(amd64|i386|arm64)'"")
+
+if status!= 0:
+    raise Exception(""Error while getting the latest version of Ubuntu: %s"" % output)
+
+return output.splitlines()[-1].split()[0] + '-server-amd64.iso' if 'amd64' in output else output.splitlines()[-1].split()[0] + '-server-i386.iso' if 'i386' in output else output.splitlines()[-1].split()[0] + '-server-arm64.iso' if 'arm64' in output else None/scripts/get_latest_ubuntu_version.py@@ -1,16 +1,16 @@
+ #!/usr/bin/env python3
+ 
+ import commands
+ 
+ def get_latest_ubuntu_version():
+     status, output = commands.getstatusoutput(""wget -q -O- http://cdimage.ubuntu.com/.manifest-daily | egrep '(amd64|i386)'"")
+ 
+-    if status!= 0:
++    if status!= 0 or 'amd64' not in output and 'i386' not in output:
+         raise Exception(""Error while getting the latest version of Ubuntu: %s"" % output)
+ 
+-    return output.splitlines()[-1].split()[0] + '-server-amd64.iso' if 'amd64' in output else output.splitlines()[-1].split()[0] + '-server-i386.iso' if 'i386' in output else output.splitlines()[-1].split()[0] + '-server-arm64.iso' if 'arm64' in output else None
++    return output.splitlines()[-1].split()[0] + '-server-amd64.iso' if 'amd64' in output else output.splitlines()[-1].split()[0] + '-server-i386.iso' if 'i386' in output else output.splitlines()[-1].split()[0] + '-server-arm64.iso'"
