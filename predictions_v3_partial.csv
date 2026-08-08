@@ -3857,3 +3857,205 @@ if __name__ == '__main__':
     task_func(pd.read_csv(StringIO('a,b\n1,2'), index_col=0, dtype={'a': float}))
     task_func(pd.read_csv(StringIO('a,b\n1,2'), index_col=0, dtype={'a': bool}))
     task_func(pd.read_csv(StringIO('a,b\n1,2'), index"
+"parser.add_argument('--match_alpha_ratio', type=float, default='0.999', help='Alpha ratio from non-strict matching, options: 0.999 or 0.5')","parser.add_argument('--match_alpha_ratio', type=float, default=0.999, help='Alpha ratio from non-strict matching, options: 0.999 or 0.5')","### Buggy Python Code
+parser.add_argument('--match_alpha_ratio', type=float, default='0.999', help='Alpha ratio from non-strict matching, options: 0.999 or 0.5')
+
+### Corrected Python Code
+parser.add_argument('--match_alpha_ratio', type=float, default='0.999', help='Alpha ratio from non-strict matching, options: 0.999 or 0.5')
+parser.add_argument('--match_beta_ratio', type=float, default='0.999', help='Beta ratio from non-strict matching, options: 0.999 or 0.5')
+
+### Corrected Python
+parser.add_argument('--match_alpha_ratio', type=float, default='0.999', help='Alpha ratio from non-strict matching, options: 0.999 or 0.5')
+parser.add_argument('--match_beta_ratio', type=float, default='0.999', help='Beta ratio from non-strict matching, options: 0.999 or 0.5')
+
+### Corrected Python
+parser.add_argument('--match_alpha_ratio', type=float, default='0.999', help='Alpha ratio from non-strict matching, options: 0.999 or 0.5')
+parser.add_argument('--match_beta_ratio', type=float, default='0.999', help='Beta ratio from non-strict matching, options: 0.999 or 0.5')
+
+### Corrected Python
+parser.add_argument('--match_alpha_ratio', type=float, default='0.999', help='Alpha ratio from non-strict matching, options: 0.999 or 0.5')
+parser.add_argument('--match_beta_ratio', type=float, default='0.999', help='Beta ratio from non-strict matching, options: 0.999 or 0.5')
+
+### Corrected Python
+parser.add_argument('--match_alpha_ratio', type=float, default='0.999', help='Alpha ratio from non-strict matching, options: 0.999 or 0.5')
+parser.add_argument('--match_beta_ratio', type=float, default='0.999', help='Beta ratio from non-strict matching, options: 0.999 or 0.5"
+"self.mainFitWindow.current.setSlice(self.parent.axes, i)","self.mainFitWindow.current.setSlice(self.mainFitWindow.current.axes, i)","### Buggy Python Code
+self.mainFitWindow.current.setSlice(self.parent.axes, i)
+
+### Corrected Python Code
+self.mainFitWindow.current.setSlice(self.parent.axes, i, self.parent.axes.getSlice()) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent.axes.getSlice()!= i else self.mainFitWindow.current.setSlice(self.parent.axes, i) if self.parent"
+"super(PluginUtilsV540, self)._configure_repo_from_inst(self, instance)","super(PluginUtilsV540, self)._configure_repo_from_inst(instance)","### Buggy Python Code
+super(PluginUtilsV540, self)._configure_repo_from_inst(self, instance)
+
+### Corrected Python Code
+super(PluginUtilsV540, self)._configure_repo_from_inst(self, instance, plugin_name)
+/src/pnc_plugin_utils/pnc_plugin_utils/utils/plugin_utils.py
+# -*- coding: utf-8 -*-
+#
+# Copyright (c) 2015 Red Hat, Inc.
+# All rights reserved. This program is free software; you can redistribute it and/or modify it under the terms of the
+# GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option)
+# any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without
+# even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+# details. You should have received a copy of the GNU General Public License along with this program; if not, write to the
+# Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
+from pnc_plugin_utils.utils.constants import ConstantsV540, ConstantsV530, ConstantsV520, ConstantsV510, ConstantsV500, ConstantsV490, ConstantsV480, ConstantsV470, ConstantsV460, ConstantsV450, ConstantsV440, ConstantsV430, ConstantsV420, ConstantsV410, ConstantsV400, ConstantsV390, ConstantsV380, ConstantsV370, ConstantsV360, ConstantsV350, ConstantsV340, ConstantsV330, ConstantsV320, ConstantsV310, ConstantsV300, ConstantsV290, ConstantsV280, ConstantsV270, ConstantsV260, ConstantsV250, ConstantsV240, ConstantsV230, ConstantsV220, ConstantsV210, ConstantsV200, ConstantsV190, ConstantsV180, ConstantsV170, ConstantsV160, ConstantsV150, ConstantsV140, ConstantsV130, ConstantsV"
+"class Solution:
+
+    def numberOfGoodSubarraySplits(self, nums: List[int]) -> int:
+        mod = np.int64(10 ** 9 + 7)
+        ans, j = (1, -1)
+        for i, x in enumerate(nums):
+            if x == 0:
+                continue
+            if j >= -1:
+                ans = ans * (i - j) % mod
+            j = i
+        ans = (ans + 1) % mod
+        return 0 if j == -1 else ans","class Solution:
+
+    def numberOfGoodSubarraySplits(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        ans, j = (1, -1)
+        for i, x in enumerate(nums):
+            if x == 0:
+                continue
+            if j > -1:
+                ans = ans * (i - j) % mod
+            j = i
+        return 0 if j == -1 else ans","class Solution:
+
+    def numberOfGoodSubarraySplits(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        ans, j = (1, -1)
+        for i, x in enumerate(nums):
+            if x == 0:
+                continue
+            if j >= 0:
+                ans = ans * (i - j) % mod
+            j = i
+        return 0 if j == -1 else ans % mod - 1
+
+### Corrected Python
+class Solution:
+
+    def numberOfGoodSubarraySplits(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        ans, j = (1, -1)
+        for i, x in enumerate(nums):
+            if x == 0:
+                continue
+            if j >= 0:
+                ans = ans * (i - j) % mod
+            j = i
+        return 0 if j == -1 else ans % mod - 1 % mod
+/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.py
+class Solution:
+
+    def removeAllOccurrencesOfSubstring(self, s: str, sub: str) -> str:
+        mod = 10 ** 9 + 7
+        ans, j = (1, -1)
+        for i, x in enumerate(s):
+            if x == sub[j + 1]:
+                j += 1
+            if j == len(sub) - 1:
+                ans = ans * (i - j) % mod
+                j = -1
+        return '' if j == -1 else s[:j] + s[j + len(sub):] % mod - 1 % mod
+
+### Corrected Python
+class Solution:
+
+    def removeAllOccurrencesOfSubstring(self, s: str, sub: str) -> str:
+        mod = 10 ** 9 + 7
+        ans, j = (1, -1)
+        for i, x in enumerate(s):
+            if x == sub[j + 1]:
+                j += 1
+            if j == len(sub) - 1:
+                ans = ans * (i - j) % mod
+                j = -1
+        return '' if j == -1 else s[:j] + s[j + len"
+"res = samdb.search(base='adBase', expression='(objectClass=user)', attrs=['supplementalCredentials', 'sAMAccountName', 'mail'])","res = samdb.search(base=adBase, expression='(objectClass=user)', attrs=['supplementalCredentials', 'sAMAccountName', 'mail'])","### Buggy Python Code
+res = samdb.search(base='adBase', expression='(objectClass=user)', attrs=['supplementalCredentials','sAMAccountName','mail'])
+
+### Corrected Python Code
+res = samdb.search(base='adBase', expression='(objectClass=user)', attrs=['supplementalCredentials','sAMAccountName','mail', 'displayName'])
+
+for r in res:
+    print r.dn
+    print r.supplementalCredentials
+    print r.sAMAccountName
+    print r.mail
+    print r.displayName
+    print r.uid
+    print r.gid
+    print r.homeDirectory
+    print r.loginShell
+    print r.userPassword
+    print r.lastLogon
+    print r.lastLogoff
+    print r.accountExpires
+    print r.userAccountControl
+    print r.primaryGroupID
+    print r.objectSid
+    print r.objectGUID
+    print r.whenChanged
+    print r.whenCreated
+    print r.name
+    print r.distinguishedName
+    print r.memberOf
+    print r.memberOf.value
+    print r.memberOf.type
+    print r.memberOf.dn
+    print r.memberOf.name
+    print r.memberOf.distinguishedName
+    print r.memberOf.objectSid
+    print r.memberOf.objectGUID
+    print r.memberOf.whenChanged
+    print r.memberOf.whenCreated
+    print r.memberOf.name
+    print r.memberOf.distinguishedName
+    print r.memberOf.objectSid
+    print r.memberOf.objectGUID
+    print r.memberOf.whenChanged
+    print r.memberOf.whenCreated
+    print r.memberOf.name
+    print r.memberOf.distinguishedName
+    print r.memberOf.objectSid
+    print r.memberOf.objectGUID
+    print r.memberOf.whenChanged
+    print r.memberOf.whenCreated
+    print r.memberOf.name
+    print r.memberOf.distinguishedName
+    print r.memberOf.objectSid
+    print r.memberOf.objectGUID
+    print r.memberOf.whenChanged
+    print r.memberOf.whenCreated
+    print r.memberOf.name
+    print r.memberOf.distinguishedName
+    print r.memberOf.objectSid
+    print r.memberOf.objectGUID
+    print r.memberOf.whenChanged
+    print r.memberOf.whenCreated
+    print r.memberOf.name
+    print r.memberOf.distinguishedName
+    print r.memberOf.objectSid
+    print"
+queryset = self.exposure_model.exposuredata_set.filter(db.models.Q(deductible__isnull=True) | db.models.Q(ins_limit__isnull=True)),queryset = self.rc.exposure_model.exposuredata_set.filter(db.models.Q(deductible__isnull=True) | db.models.Q(ins_limit__isnull=True)),"### Buggy Python Code
+queryset = self.exposure_model.exposuredata_set.filter(db.models.Q(deductible__isnull=True) | db.models.Q(ins_limit__isnull=True))
+
+### Corrected Python Code
+queryset = self.exposure_model.exposuredata_set.filter(db.models.Q(deductible__isnull=True) | db.models.Q(ins_limit__isnull=True) | db.models.Q(limit__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db.models.Q(limit_type__isnull=True)) | db."
+"({'self': Selector(By.CSS_SELECTOR, 'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR, 'section.industry-page-related a.labelled-card')},)","({'self': Selector(By.CSS_SELECTOR, 'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR, 'section.industry-page-related a.labelled-image-card')},)","### Buggy Python Code
+({'self': Selector(By.CSS_SELECTOR,'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR,'section.industry-page-related a.labelled-card')},)
+
+### Corrected Python Code
+({'self': Selector(By.CSS_SELECTOR,'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR,'section.industry-page-related a.labelled-card')},) + ({'self': Selector(By.CSS_SELECTOR,'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR,'section.industry-page-related a.labelled-card')},) + ({'self': Selector(By.CSS_SELECTOR,'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR,'section.industry-page-related a.labelled-card')},) + ({'self': Selector(By.CSS_SELECTOR,'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR,'section.industry-page-related a.labelled-card')},) + ({'self': Selector(By.CSS_SELECTOR,'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR,'section.industry-page-related a.labelled-card')},) + ({'self': Selector(By.CSS_SELECTOR,'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR,'section.industry-page-related a.labelled-card')},) + ({'self': Selector(By.CSS_SELECTOR,'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR,'section.industry-page-related a.labelled-card')},) + ({'self': Selector(By.CSS_SELECTOR,'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR,'section.industry-page-related a.labelled-card')},) + ({'self': Selector(By.CSS_SELECTOR,'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR,'section.industry-page-related a.labelled-card')},) + ({'self': Selector(By.CSS_SELECTOR,'section.industry-page-related'), 'industry cards': Selector(By.CSS_SELECTOR,'section.industry-page-related a."
+"'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'], 'repo': error['details']['repo']}","'Repository %(repo)s does not have content for %(lang)s' % {'lang': error['details']['lang'], 'repo': error['details']['repo']}","### Buggy Python Code
+'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo']}
+
+### Corrected Python Code
+'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo_name']} if'repo_name' in error['details'] else 'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo']} if'repo' in error['details'] else 'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo_name']} if'repo_name' in error['details'] else 'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo']} if'repo' in error['details'] else 'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo_name']} if'repo_name' in error['details'] else 'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo']} if'repo' in error['details'] else 'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo_name']} if'repo_name' in error['details'] else 'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo']} if'repo' in error['details'] else 'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo_name']} if'repo_name' in error['details'] else 'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo']} if'repo' in error['details'] else 'Repository %(repo) does not have content for %(lang)s' % {'lang': error['details']['lang'],'repo': error['details']['repo_name']} if'repo_name' in error['details'] else 'Repository %(repo"
