@@ -35981,3 +35981,338 @@ pod.append(Pod(pod, 'deadline-exceeded'))
 pod.append(Pod(pod, 'deadline-exceeded', 'deadline-exceeded'))
 
 return pod, pod_status, pod_status_reason, pod_status_reason_details, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code, pod_status_reason_details_message, pod_status_reason_details_url, pod_status_reason_details_code"
+"if int(fh) == 0 and int(interval) == 0 or int(fh) in range(int(begin), int(end), int(interval)):
+    self.items.append(feature_dict)","if int(fh) == 0 and int(interval) == 0 or int(fh) in range(int(begin), int(end) + 1, int(interval)):
+    self.items.append(feature_dict)","### Buggy Python Code
+if int(fh) == 0 and int(interval) == 0 or int(fh) in range(int(begin), int(end), int(interval)):
+    self.items.append(feature_dict)
+
+### Corrected Python Code
+if int(fh) == 0 and int(interval) == 0 or int(fh) in range(int(begin), int(end) + 1, int(interval)):
+    self.items.append(feature_dict)
+/src/py/py_scripts/feature_extraction/feature_extraction.py
+import os
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+import numpy as np
+import pandas as pd
+from src.py.py_scripts.feature_extraction.feature_extraction_utils import FeatureExtractionUtils, FeatureExtractionUtils_v2, FeatureExtractionUtils_v3, FeatureExtractionUtils_v4, FeatureExtractionUtils_v5, FeatureExtractionUtils_v6, FeatureExtractionUtils_v7, FeatureExtractionUtils_v8, FeatureExtractionUtils_v9, FeatureExtractionUtils_v10, FeatureExtractionUtils_v11, FeatureExtractionUtils_v12, FeatureExtractionUtils_v13, FeatureExtractionUtils_v14, FeatureExtractionUtils_v15, FeatureExtractionUtils_v16, FeatureExtractionUtils_v17, FeatureExtractionUtils_v18, FeatureExtractionUtils_v19, FeatureExtractionUtils_v20, FeatureExtractionUtils_v21, FeatureExtractionUtils_v22, FeatureExtractionUtils_v23, FeatureExtractionUtils_v24, FeatureExtractionUtils_v25, FeatureExtractionUtils_v26, FeatureExtractionUtils_v27, FeatureExtractionUtils_v28, FeatureExtractionUtils_v29, FeatureExtractionUtils_v30, FeatureExtractionUtils_v31, FeatureExtractionUtils_v32, FeatureExtractionUtils_v33, FeatureExtractionUtils_v34, FeatureExtractionUtils_v35, FeatureExtractionUtils_v36, FeatureExtractionUtils_v37, FeatureExtractionUtils_v38, FeatureExtractionUtils_v39, FeatureExtractionUtils_v40, FeatureExtractionUtils_v41, FeatureExtractionUtils_v42, FeatureExtractionUtils_v43, FeatureExtractionUtils_v44, FeatureExtractionUtils_v45, FeatureExtractionUtils_v46, FeatureExtractionUtils_v47, FeatureExtractionUtils_v48, FeatureExtractionUtils_"
+"search_cond = dict(dist=CONF.feature.dist, platform=CONF.feature.platform)","search_cond = dict(dist=CONF.feature.dist.id, platform=CONF.feature.platform)","### Buggy Python Code
+search_cond = dict(dist=CONF.feature.dist, platform=CONF.feature.platform)
+
+### Corrected Python Code
+search_cond = dict(dist=CONF.feature.dist, platform=CONF.feature.platform, version=CONF.feature.version) if CONF.feature.version else dict(dist=CONF.feature.dist, platform=CONF.feature.platform)
+
+### Corrected Python Code
+search_cond = dict(dist=CONF.feature.dist, platform=CONF.feature.platform, version=CONF.feature.version) if CONF.feature.version else dict(dist=CONF.feature.dist, platform=CONF.feature.platform) if CONF.feature.dist else dict(platform=CONF.feature.platform) if CONF.feature.platform else dict(version=CONF.feature.version) if CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform and CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform else dict() if CONF.feature.dist else dict() if CONF.feature.platform else dict() if CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform and CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform else dict() if CONF.feature.dist else dict() if CONF.feature.platform else dict() if CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform and CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform else dict() if CONF.feature.dist else dict() if CONF.feature.platform else dict() if CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform and CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform else dict() if CONF.feature.dist else dict() if CONF.feature.platform else dict() if CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform and CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform else dict() if CONF.feature.dist else dict() if CONF.feature.platform else dict() if CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform and CONF.feature.version else dict() if CONF.feature.dist and CONF.feature.platform else dict()"
+"class Solution:
+
+    def addBinary(self, A, B):
+        res = []
+        carry = 0
+        while A or B or carry:
+            carry += (A or [0]).pop() + (B or [0]).pop()
+            res.append(carry & 1)
+            carry = carry >> 1
+        return res[::-1][1]
+
+    def addNegabinary(self, A, B):
+        res = []
+        carry = 0
+        while A or B or carry:
+            carry += (A or [0]).pop() + (B or [0]).pop()
+            res.append(carry & 1)
+            carry = -(carry >> 1)
+        while len(res) > 1 and res[-1] == 0:
+            res.pop()
+        return res[::-1][1]","class Solution:
+
+    def addBinary(self, A, B):
+        res = []
+        carry = 0
+        while A or B or carry:
+            carry += (A or [0]).pop() + (B or [0]).pop()
+            res.append(carry & 1)
+            carry = carry >> 1
+        return res[::-1]
+
+    def addNegabinary(self, A, B):
+        res = []
+        carry = 0
+        while A or B or carry:
+            carry += (A or [0]).pop() + (B or [0]).pop()
+            res.append(carry & 1)
+            carry = -(carry >> 1)
+        while len(res) > 1 and res[-1] == 0:
+            res.pop()
+        return res[::-1]","class Solution:
+
+    def addBinary(self, A, B):
+        res = []
+        carry = 0
+        while A or B or carry:
+            carry += (A or [0]).pop() + (B or [0]).pop()
+            res.append(carry & 1)
+            carry = carry >> 1
+        return res[::-1]
+
+    def addNegabinary(self, A, B):
+        res = []
+        carry = 0
+        while A or B or carry:
+            carry += (A or [0]).pop() + (B or [0]).pop()
+            res.append(carry & 1)
+            carry = -(carry >> 1)
+        while len(res) > 1 and res[-1] == 0:
+            res.pop()
+        return res[::-1] + ['-'] if carry else res[::-1] + ['0'] if res else ['0'] + ['-'] if carry else ['0'] + ['0'] + ['-'] if res else ['0'] + ['0'] + ['0'] + ['-'] if carry else ['0'] + ['0'] + ['0'] + ['0'] + ['-'] if res else ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['-'] if carry else ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['-'] if carry else ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['-'] if carry else ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['-'] if carry else ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['-'] if carry else ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['-'] if carry else ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0'] + ['0']"
+"import subprocess
+import os
+import random
+
+def task_func(directory, file_list):
+    if file_list is None:
+        return None
+    file = random.choice(file_list)
+    file_path = os.path.join(directory, file)
+    try:
+        process.wait()
+        return process.returncode
+    except subprocess.SubprocessError as e:
+        return None","import subprocess
+import os
+import random
+
+def task_func(directory, file_list):
+    if not file_list:
+        return None
+    file = random.choice(file_list)
+    file_path = os.path.join(directory, file)
+    try:
+        process = subprocess.Popen(file_path)
+        process.wait()
+        return process.returncode
+    except Exception as e:
+        return None","import subprocess
+import os
+import random
+
+def task_func(directory, file_list):
+    if file_list is None:
+        return None
+    file = random.choice(file_list)
+    file_path = os.path.join(directory, file)
+    try:
+        process.wait()
+        return process.returncode
+    except subprocess.SubprocessError as e:
+        return None
+
+### Corrected Python Code
+import subprocess
+import os
+import random
+
+def task_func(directory, file_list):
+    if not file_list:
+        return None
+    file = random.choice(file_list)
+    file_path = os.path.join(directory, file)
+    try:
+        process = subprocess.Popen(file_path)
+        process.wait()
+        return process.returncode
+    except Exception as e:
+        return None
+
+### Corrected Python code
+import subprocess
+import os
+import random
+
+def task_func(directory, file_list):
+    if not file_list:
+        return None
+    file = random.choice(file_list)
+    file_path = os.path.join(directory, file)
+    try:
+        process = subprocess.Popen(file_path)
+        process.wait()
+        return process.returncode
+    except Exception as e:
+        return None/README.md
+# Python-Coding-Challenge-101-102-103-104-105-106-107-108-109-110-111-112-113-114-115-116-117-118-119-120-121-122-123-124-125-126-127-128-129-130-131-132-133-134-135-136-137-138-139-140-141-142-143-144-145-146-147-148-149-150-151-152-153-154-155-156-157-158-159-160-161-162-163-164-165-166-167-168-169-170-171-172-173-174-175-176-177-1"
+attrs = [attr for attr in db.get_attributes('DataSet') if attr is not 'RunPeriod' and attr is not 'revision' and (attr is not 'DataType')],attrs = [attr for attr in db.get_attributes('DataSet') if attr != 'RunPeriod' and attr != 'revision' and (attr != 'DataType')],"### Buggy Python Code
+attrs = [attr for attr in db.get_attributes('DataSet') if attr is not 'RunPeriod' and attr is not'revision' and (attr is not 'DataType')]
+
+### Corrected Python Code
+attrs = [attr for attr in db.get_attributes('DataSet') if attr is not 'RunPeriod' and attr is not'revision' and attr is not 'DataType' and attr is not 'DataFile'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision'] + ['DataFile'] + ['DataType'] + ['RunPeriod'] + ['revision"
+"class Solution:
+
+    def longestSubsequence(self, nums: list[int]) -> int:
+        dp = [[0] * (mx + 1)] * (mx + 1)
+        for num in nums:
+            for prev in range(1, mx):
+                diff = abs(num - prev)
+                dp[num][diff] = max(dp[num][diff], dp[prev][diff] + 1)
+            for j in range(mx + 1):
+                dp[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp))","class Solution:
+
+    def longestSubsequence(self, nums: list[int]) -> int:
+        mx = max(nums)
+        dp = [[0] * (mx + 1) for _ in range(mx + 1)]
+        for num in nums:
+            for prev in range(1, mx + 1):
+                diff = abs(num - prev)
+                dp[num][diff] = max(dp[num][diff], dp[prev][diff] + 1)
+            for j in range(mx - 1, -1, -1):
+                dp[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp))","[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp))
+
+### Corrected Python Code
+class Solution:
+
+    def longestSubsequence(self, nums: list[int]) -> int:
+        mx = max(nums)
+        dp = [[0] * (mx + 1) for _ in range(mx + 1)]
+        for num in nums:
+            for prev in range(1, mx + 1):
+                diff = abs(num - prev)
+                dp[num][diff] = max(dp[num][diff], dp[prev][diff] + 1)
+            for j in range(mx - 1, -1, -1):
+                dp[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp))
+
+### Corrected Python
+class Solution:
+
+    def longestSubsequence(self, nums: list[int]) -> int:
+        mx = max(nums)
+        dp = [[0] * (mx + 1) for _ in range(mx + 1)]
+        for num in nums:
+            for prev in range(1, mx + 1):
+                diff = abs(num - prev)
+                dp[num][diff] = max(dp[num][diff], dp[prev][diff] + 1)
+            for j in range(mx - 1, -1, -1):
+                dp[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp)) - 1
+
+### Corrected Python
+class Solution:
+
+    def longestSubsequence(self, nums: list[int]) -> int:
+        mx = max(nums)
+        dp = [[0] * (mx + 1) for _ in range(mx + 1)]
+        for num in nums:
+            for prev in range(1, mx + 1):
+                diff = abs(num - prev)
+                dp[num][diff] = max(dp[num][diff], dp[prev][diff] + 1)
+            for j in range(mx - 1, -1, -1):
+                dp[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp)) - 1
+
+### Corrected Python
+class Solution:
+
+    def longestSubsequence(self, nums: list[int])"
+"tf.app.flags.DEFINE_integer('sample_length', 100000000, 'Max output file size in samples.')","tf.app.flags.DEFINE_integer('sample_length', 64000, 'Max output file size in samples.')","### Buggy Python Code
+tf.app.flags.DEFINE_integer('sample_length', 100000000, 'Max output file size in samples.')
+
+### Corrected Python Code
+tf.app.flags.DEFINE_integer('sample_length', 1000000000, 'Max output file size in samples.')
+
+### Corrected Python Code
+tf.app.flags.DEFINE_integer('sample_length', 10000000000, 'Max output file size in samples.')
+
+### Corrected Python Code
+tf.app.flags.DEFINE_integer('sample_length', 100000000000, 'Max output file size in samples.')
+
+### Corrected Python Code
+tf.app.flags.DEFINE_integer('sample_length', 1000000000000, 'Max output file size in samples.')
+
+### Corrected Python Code
+tf.app.flags.DEFINE_integer('sample_length', 10000000000000, 'Max output file size in samples.')
+
+### Corrected Python Code
+tf.app.flags.DEFINE_integer('sample_length', 100000000000000, 'Max output file size in samples.')
+
+### Corrected Python Code
+tf.app.flags.DEFINE_integer('sample_length', 1000000000000000, 'Max output file size in samples.')
+
+### Corrected Python Code
+tf.app.flags.DEFINE_integer('sample_length', 10000000000000000, 'Max output file size in samples.')
+
+### Corrected Python Code
+tf.app.flags.DEFINE_integer('sample_length', 100000000000000000, 'Max output file size in samples.')
+
+### Corrected Python Code
+tf.app.flags.DEFINE_integer('sample_length', 1000000000000000000, 'Max output file size in samples.')
+
+### Corrected Python Code
+tf.app.flags.DEFINE_integer('sample_length', 10000000000000000000, 'Max output file size in samples.')
+
+###"
+"import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    if not data:
+        raise ValueError('Input df is not a DataFrame.')
+    job_count = data['Job'].value_counts()
+    labels = job_count.index.tolist()
+    sizes = job_count.values.tolist()
+    colors = [plt.cm.Spectral(i / float(len(labels))) for i in range(len(labels))]
+    fig, ax = plt.subplots()
+    ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140, normalize=False)
+    ax.axis('equal')
+    return fig","import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    job_count = data['Job'].value_counts()
+    labels = job_count.index.tolist()
+    sizes = job_count.values.tolist()
+    colors = [plt.cm.Spectral(i / float(len(labels))) for i in range(len(labels))]
+    fig, ax = plt.subplots()
+    ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+    ax.axis('equal')
+    return fig","0, normalize=False)
+    ax.axis('equal')
+    return fig
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    job_count = data['Job'].value_counts()
+    labels = job_count.index.tolist()
+    sizes = job_count.values.tolist()
+    colors = [plt.cm.Spectral(i / float(len(labels))) for i in range(len(labels))]
+    fig, ax = plt.subplots()
+    ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+    ax.axis('equal')
+    return fig, ax
+
+### Corrected Python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    job_count = data['Job'].value_counts()
+    labels = job_count.index.tolist()
+    sizes = job_count.values.tolist()
+    colors = [plt.cm.Spectral(i / float(len(labels))) for i in range(len(labels))]
+    fig, ax = plt.subplots()
+    ax.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=140)
+    ax.axis('equal')
+    return fig, ax
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python"
