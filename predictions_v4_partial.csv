@@ -23114,3 +23114,263 @@ cr_show.connect('toggled', self._on_tree_view_cell_toggled, self.treeview)
 
     def _on_tree_view_button_release_event(self, treeview, event):
         if event.type == Gdk.EventType"
+"n = np.random.normal(0, 0.03, h.data.shape).astype(np.float32)","n = np.random.normal(0, 0.03, h_.data.shape).astype(np.float32)","### Buggy Python Code
+n = np.random.normal(0, 0.03, h.data.shape).astype(np.float32)
+
+### Corrected Python Code
+n = np.random.normal(0, 0.03, h.data.shape).astype(np.float32) * (1 - h.data) + h.data * 0.03 * (1 - h.data) ** 2.0 * 0.5 * (1 - h.data) ** 3.0 * 0.5 * (1 - h.data) ** 4.0 * 0.5 * (1 - h.data) ** 5.0 * 0.5 * (1 - h.data) ** 6.0 * 0.5 * (1 - h.data) ** 7.0 * 0.5 * (1 - h.data) ** 8.0 * 0.5 * (1 - h.data) ** 9.0 * 0.5 * (1 - h.data) ** 10.0 * 0.5 * (1 - h.data) ** 11.0 * 0.5 * (1 - h.data) ** 12.0 * 0.5 * (1 - h.data) ** 13.0 * 0.5 * (1 - h.data) ** 14.0 * 0.5 * (1 - h.data) ** 15.0 * 0.5 * (1 - h.data) ** 16.0 * 0.5 * (1 - h.data) ** 17.0 * 0.5 * (1 - h.data) ** 18.0 * 0.5 * (1 - h.data) ** 19.0 * 0.5 * (1 - h.data) ** 20.0 * 0.5 * (1 - h.data) ** 21.0 * 0.5 * (1 - h.data) ** 22.0 * 0.5 * (1 - h.data) ** 23.0 * 0.5 * (1 - h.data) ** 24.0 * 0.5 * (1 - h.data) ** 25.0 * 0.5 * (1 - h.data) ** 26.0 *"
+"import mechanize
+from bs4 import BeautifulSoup
+
+def task_func(url, form_id, data):
+    br = mechanize.Browser()
+    br.open(url)
+    br.select_form(nr=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup else 'No Title'
+    return title","import mechanize
+from bs4 import BeautifulSoup
+
+def task_func(url, form_id, data):
+    br = mechanize.Browser()
+    br.open(url)
+    br.select_form(nr=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup.title else 'No Title'
+    return title","=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup else 'No Title'
+    return title
+
+### Corrected Python Code
+import mechanize
+from bs4 import BeautifulSoup
+
+def task_func(url, form_id, data):
+    br = mechanize.Browser()
+    br.open(url)
+    br.select_form(nr=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup.title else 'No Title'
+    return title
+
+if __name__ == '__main__':
+    url = 'https://www.google.com/search'
+    form_id = 0
+    data = {'q': 'python programming tutorials'}
+    title = task_func(url, form_id, data)
+    print(title)/python/python-basics/01-basics/01-basics.py
+# Python Basics - 01-basics.py
+
+# 1. Write a program to print 'Hello World' on the screen.
+print('Hello World')
+
+# 2. Write a program to print 'Hello World' on the screen and exit.
+print('Hello World')
+exit()
+
+# 3. Write a program to print 'Hello World' on the screen and exit with a 0 status code.
+print('Hello World')
+exit(0)
+
+# 4. Write a program to print 'Hello World' on the screen and exit with a 1 status code.
+print('Hello World')
+exit(1)
+
+# 5. Write a program to print 'Hello World' on the screen and exit with a 2 status code.
+print('Hello World')
+exit(2)
+
+# 6. Write a program to print 'Hello World' on the screen and exit with a 3 status code.
+print('Hello World')
+exit(3)
+
+# 7. Write a program to print 'Hello World' on the screen and exit with a 4 status code.
+print('Hello World')
+exit(4)
+
+# 8. Write a program to print 'Hello World' on the screen and exit with a 5 status code.
+print('Hello World')
+exit(5)
+
+# 9. Write a program to print 'Hello World' on the screen and exit with a 6 status"
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic),urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic[0:100]),"### Buggy Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic)
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic if shopId!= '100000000')  # 100000000 is the default shopId for 'no shop' in dianping.com. We don't want to include it in our list of urls.
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic if shopId!= '100000000' and shopId!= '100000001')  # 100000000 is the default shopId for 'no shop' in dianping.com. We don't want to include it in our list of urls.
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic if shopId!= '100000000' and shopId!= '100000001' and shopId!= '100000002')  # 100000000 is the default shopId for 'no shop' in dianping.com. We don't want to include it in our list of urls.
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic if shopId!= '100000000' and shopId!= '100000001' and shopId!= '100000002' and shopId!= '100000003')  # 100000000 is the default shopId for 'no shop' in dianping.com. We don't want to include it in our list of urls.
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic if shopId!= '100000000' and shopId!= '10"
+"class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+            ans += (l - r) % 2 == 0
+        return ans","class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+        return ans","Python Code
+class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+            ans += (l - r) % 2 == 0
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+        return ans + 1
+
+### Corrected Python class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+        return ans + 1 if l == r else ans + 2
+/1200-1299/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.py
+class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        l, r = (0, len(s))
+        ans = ''
+        while l < r:
+            if s[l:l + len(sub)] == sub:
+                l += len(sub)
+            else:
+                ans += s[l]
+                l += 1
+        return ans
+
+### Corrected Python class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        l, r = (0, len(s))
+        ans = ''
+        while l < r:
+            if s[l:l + len(sub)] == sub:
+                l += len(sub)
+            else:
+                ans += s[l]
+                l += 1
+        return ans + s[l:] if l < r else ans + s[l:] + s[r:] if l < r else ans + s[l:] + s[r:] + s[l:] if l < r else ans + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] if l < r else ans + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:]"
+"results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': '{}?q={}'.format(reverse(url), form.cleaned_data['q'])})","results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': u'{}?q={}'.format(reverse(url), form.cleaned_data['q'])})","### Buggy Python Code
+results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': '{}?q={}'.format(reverse(url), form.cleaned_data['q'])})
+
+### Corrected Python Code
+results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': '{}?q={}'.format(reverse(url), form.cleaned_data.get('q'))})
+
+return results, form.cleaned_data['q'] or ''
+/src/django_tables2/columns/base.py
+from django.db.models import Model
+from django.utils.translation import ugettext_lazy as _
+from django_tables2.utils import A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, AA, AB, AC, AD, AE, AF, AG, AH, AI, AJ, AK, AL, AM, AN,AO, AP, AQ, AR, AS, AT, AU, AV, AW, AX, AY, AZ, BA, BB, BC, BD, BE, BF, BG, BH, BI, BJ, BK, BL, BM, BN, BO, BP, BQ, BR, BS, BT, BU,BV, BW, BX, BY, BZ, CA, CB, CC, CD, CE, CF, CG, CH, CI, CJ, CK, CL, CM, CN, CO, CP, CQ, CR, CS, CT, CU, CV, CW, CX, CY, CZ, DA, DB, DC, DD, DE, DF, DG, DH, DI, DJ, DK, DL, DM, DN, DO, DP, DQ, DR, DS, DT,DU, DV, DW, DX,DY, DZ, EA, EB, EC, ED, EE, EF, EG, EH, EI, EJ, EK, EL, EM, EN,EO, EP, EQ, ER, ES, ET, EU, EV, EW, EX, EY, EZ, FA, FB, FC, FD, FE, FF,FG, FH, FI, FJ, FK, FL, FM, FN, FO, FP, FQ, FR, FS, FT, FU,FV, FW, FX, FY, FZ, GA, GB, GC"
+"import numpy as np
+import matplotlib.pyplot as plt
+
+def task_func():
+    x_values = np.linspace(0, 2 * np.pi, 400)
+    axs, fig = plt.subplots(2)
+    axs[0].plot(x_values, np.sin(x_values))
+    axs[0].set_title('Sine function')
+    axs[0].set_xlabel('x')
+    axs[0].set_ylabel('sin(x)')
+    axs[1].plot(x_values, np.cos(x_values))
+    axs[1].set_title('Cosine function')
+    axs[1].set_xlabel('x')
+    axs[1].set_ylabel('cos(x)')
+    plt.tight_layout()
+    return (fig, axs)","import numpy as np
+import matplotlib.pyplot as plt
+
+def task_func():
+    x_values = np.linspace(0, 2 * np.pi, 400)
+    fig, axs = plt.subplots(2)
+    axs[0].plot(x_values, np.sin(x_values))
+    axs[0].set_title('Sine function')
+    axs[0].set_xlabel('x')
+    axs[0].set_ylabel('sin(x)')
+    axs[1].plot(x_values, np.cos(x_values))
+    axs[1].set_title('Cosine function')
+    axs[1].set_xlabel('x')
+    axs[1].set_ylabel('cos(x)')
+    plt.tight_layout()
+    return (fig, axs)","import numpy as np
+import matplotlib.pyplot as plt
+
+def task_func():
+    x_values = np.linspace(0, 2 * np.pi, 400)
+    fig, axs = plt.subplots(2)
+    axs[0].plot(x_values, np.sin(x_values))
+    axs[0].set_title('Sine function')
+    axs[0].set_xlabel('x')
+    axs[0].set_ylabel('sin(x)')
+    axs[1].plot(x_values, np.cos(x_values))
+    axs[1].set_title('Cosine function')
+    axs[1].set_xlabel('x')
+    axs[1].set_ylabel('cos(x)')
+    plt.tight_layout()
+    return (fig, axs)
+
+if __name__ == '__main__':
+    task_func()
+    plt.show()/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/0"
+"cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password))","cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password))","### Buggy Python Code
+cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password))
+
+### Corrected Python Code
+cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFI"
+y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:])),y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])),"### Buggy Python Code
+y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]))
+
+### Corrected Python Code
+y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:])) - self.value_scale(samples.env.reward[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:])"
