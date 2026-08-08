@@ -20112,3 +20112,128 @@ p = poisson.pmf(np.arange(10 * multiplicities_positions.max()), 1.0 * total_muta
 
 ### Corrected Python Code
 p = poisson.pmf(np.arange(10 * multiplicities_positions.max()), 1.0 * total_mutations / L) * (L / 10) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total_mutations / L)) ** 2.0 / (1.0 - np.exp(-1.0 * total"
+"a = cast(torch.Tensor(100, 90).type(t).random_())","a = cast(torch.Tensor(100, 90).type(t).random_(-128, 128))","### Buggy Python Code
+a = cast(torch.Tensor(100, 90).type(t).random_())
+
+### Corrected Python Code
+a = cast(torch.Tensor(100, 90).type(t).random_().to(device))
+
+### Corrected Python Code
+a = cast(torch.Tensor(100, 90).type(t).random_().to(device)) * 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"self.server = HttpServer((host, port), component_class)","self.server = HttpServer((host, int(port)), component_class)","### Buggy Python Code
+self.server = HttpServer((host, port), component_class)
+
+### Corrected Python Code
+self.server = HttpServer((host, port), component_class, self.server_class) if self.server_class else HttpServer((host, port), component_class)
+/src/pyslet/http/server.py
+# -*- coding: utf-8 -*-
+
+""""""HTTP server module.""""""
+
+from __future__ import absolute_import, unicode_literals, division, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals, division, absolute_import, print_function, with_statement, nested_scopes, generators, unicode_literals,"
+"for o in opt.global_optimizers + opt.get_local_optimizers():
+    process_count.setdefault(o, 0)","for o in opt.global_optimizers + list(opt.get_local_optimizers()):
+    process_count.setdefault(o, 0)","### Buggy Python Code
+for o in opt.global_optimizers + opt.get_local_optimizers():
+    process_count.setdefault(o, 0)
+
+### Corrected Python Code
+for o in opt.global_optimizers + opt.get_local_optimizers() + opt.get_global_lr_schedulers() + opt.get_local_lr_schedulers():
+    process_count.setdefault(o, 0)
+
+### Corrected Python code
+for o in opt.global_optimizers + opt.get_local_optimizers() + opt.get_global_lr_schedulers() + opt.get_local_lr_schedulers() + opt.get_global_weight_decay_schedulers() + opt.get_local_weight_decay_schedulers():
+    process_count.setdefault(o, 0)
+
+### Corrected Python code
+for o in opt.global_optimizers + opt.get_local_optimizers() + opt.get_global_lr_schedulers() + opt.get_local_lr_schedulers() + opt.get_global_weight_decay_schedulers() + opt.get_local_weight_decay_schedulers() + opt.get_global_grad_norm_clip_schedulers() + opt.get_local_grad_norm_clip_schedulers():
+    process_count.setdefault(o, 0)
+
+### Corrected Python code
+for o in opt.global_optimizers + opt.get_local_optimizers() + opt.get_global_lr_schedulers() + opt.get_local_lr_schedulers() + opt.get_global_weight_decay_schedulers() + opt.get_local_weight_decay_schedulers() + opt.get_global_grad_norm_clip_schedulers() + opt.get_local_grad_norm_clip_schedulers() + opt.get_global_grad_clip_schedulers() + opt.get_local_grad_clip_schedulers():
+    process_count.setdefault(o, 0)
+
+### Corrected Python code
+for o in opt.global_optimizers + opt.get_local_optimizers() + opt.get_global_lr_schedulers() + opt.get_local_lr_schedulers() + opt.get_global_weight_decay_schedulers() + opt.get_local_weight_decay_schedulers() + opt.get_global_grad_norm_clip_"
+"font10 = lambda: Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True)","font10 = lambda: Font(streakFont2, fontSize[2], scale=scale2 - 0.18, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True)","### Buggy Python Code
+font10 = lambda: Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True)
+
+### Corrected Python Code
+font10 = lambda: Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True, bold=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont=not asciiOnly, outline=False, shadow=True) if not asciiOnly else Font(streakFont2, fontSize[2], scale=scale2, reversed=reversed, systemFont"
+"data_json = requests.post('%s/addcredential/' % self.glint_url, data={'CREDDATA': {'tenent': remote_tenant, 'username': remote_un, 'password': remote_pw, 'site_id': remote_site_id}, 'USER_ID': self.un, 'USER_TOKEN': '%s' % self.token, 'USER_TENANT': self.tenant_name}, cookies=None).text","data_json = requests.post('%s/addcredential/' % self.glint_url, data={'CREDDATA': json.dumps({'tenent': remote_tenant, 'username': remote_un, 'password': remote_pw, 'site_id': remote_site_id}), 'USER_ID': self.un, 'USER_TOKEN': '%s' % self.token, 'USER_TENANT': self.tenant_name}, cookies=None).text","data_json = requests.post('%s/addcredential/' % self.glint_url, data={'CREDDATA': {'tenent': remote_tenant, 'username': remote_un, 'password': remote_pw,'site_id': remote_site_id}, 'USER_ID': self.un, 'USER_TOKEN': '%s' % self.token, 'USER_TENANT': self.tenant_name}, cookies=None).text.encode('utf-8') if self.glint_url.startswith('https') else requests.post('%s/addcredential/' % self.glint_url, data={'CREDDATA': {'tenent': remote_tenant, 'username': remote_un, 'password': remote_pw,'site_id': remote_site_id}, 'USER_ID': self.un, 'USER_TOKEN': '%s' % self.token, 'USER_TENANT': self.tenant_name}, cookies=None).text.encode('utf-8') if self.glint_url.startswith('https') else requests.post('%s/addcredential/' % self.glint_url, data={'CREDDATA': {'tenent': remote_tenant, 'username': remote_un, 'password': remote_pw,'site_id': remote_site_id}, 'USER_ID': self.un, 'USER_TOKEN': '%s' % self.token, 'USER_TENANT': self.tenant_name}, cookies=None).text.encode('utf-8') if self.glint_url.startswith('https') else requests.post('%s/addcredential/' % self.glint_url, data={'CREDDATA': {'tenent': remote_tenant, 'username': remote_un, 'password': remote_pw,'site_id': remote_site_id}, 'USER_ID': self.un, 'USER_TOKEN': '%s' % self.token, 'USER_TENANT': self.tenant_name}, cookies=None).text.encode('utf-8') if self.glint_url.startswith('https') else requests.post('%s/addcredential/' % self.glint_url, data={'CREDDATA': {'tenent': remote_tenant, 'username': remote_un, 'password': remote_pw,'site_"
+"amount = currency_pool.compute(cr, uid, current_currency, company_currency, line.amount)","amount = currency_pool.compute(cr, uid, current_currency, company_currency, line.untax_amount or line.amount)","### Buggy Python Code
+amount = currency_pool.compute(cr, uid, current_currency, company_currency, line.amount)
+
+### Corrected Python Code
+amount = currency_pool.compute(cr, uid, current_currency, company_currency, line.amount, context={'date': line.date}) or 0.0
+
+### Corrected Python Code
+amount = currency_pool.compute(cr, uid, current_currency, company_currency, line.amount, context={'date': line.date}) or 0.0
+
+return {'amount': amount} + line.get_change_dict() + {'currency_id': currency_id} + {'type': 'out_invoice'} + {'name': line.name} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line.invoice_line_tax_id.id} + {'invoice_line_tax_id': line."
+"import itertools
+import statistics
+
+def task_func(elements, subset_size):
+    combinations = list(itertools.combinations(elements, subset_size))
+    sums = (sum(combination) for combination in combinations)
+    return {'mean': statistics.mean(sums), 'median': statistics.median(sums), 'mode': statistics.multimode(sums)}","import itertools
+import statistics
+
+def task_func(elements, subset_size):
+    combinations = list(itertools.combinations(elements, subset_size))
+    sums = [sum(combination) for combination in combinations]
+    return {'mean': statistics.mean(sums), 'median': statistics.median(sums), 'mode': statistics.mode(sums)}","'mode': statistics.multimode(sums)}
+
+### Corrected Python Code
+import itertools
+import statistics
+
+def task_func(elements, subset_size):
+    combinations = list(itertools.combinations(elements, subset_size))
+    sums = (sum(combination) for combination in combinations)
+    return {'mean': statistics.mean(sums),'median': statistics.median(sums),'mode': statistics.mode(sums)}
+
+if __name__ == '__main__':
+    elements = [1, 2, 3, 4, 5]
+    subset_size = 3
+    print(task_func(elements, subset_size))/01_python_basics/01_01_python_basics/01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_0"
+"req.internal_redirect(os.path.join(base_url_dir, '..', 'exampleHandlerFailure.psp'))","req.internal_redirect(os.path.join(base_url_dir, 'exampleHandlerFailure.psp'))","### Buggy Python Code
+req.internal_redirect(os.path.join(base_url_dir, '..', 'exampleHandlerFailure.psp'))
+
+### Corrected Python Code
+req.internal_redirect(os.path.join(base_url_dir, '..', 'exampleHandlerFailure.html'))
+
+### Corrected Python Code
+req.internal_redirect(os.path.join(base_url_dir, '..', 'exampleHandlerFailure.html'))
+/src/python/pyslet/pyslet/http/server.py
+# -*- coding: utf-8 -*-
+
+""""""HTTP server module.""""""
+
+import os
+import sys
+import time
+import threading
+import traceback
+import socket
+import select
+import http.client
+import http.server
+import pyslet.pyslet.http.request as request
+import pyslet.pyslet.http.response as response
+import pyslet.pyslet.http.server_errors as errors
+import pyslet.pyslet.http.server_constants as constants
+import pyslet.pyslet.http.server_utils as utils
+import pyslet.pyslet.http.server_logging as logging
+import pyslet.pyslet.http.server_ssl as ssl
+import pyslet.pyslet.http.server_thread as thread
+import pyslet.pyslet.http.server_thread_pool as thread_pool
+import pyslet.pyslet.http.server_thread_pool_manager as thread_pool_manager
+import pyslet.pyslet.http.server_thread_pool_manager_errors as thread_pool_manager_errors
+import pyslet.pyslet.http.server_thread_pool_manager_constants as thread_pool_manager_constants
+import pyslet.pyslet.http.server_thread_pool_manager_utils as thread_pool_manager_utils
+import pyslet.pyslet.http.server_thread_pool_manager_logging as thread_pool_manager_logging
+import pyslet.pyslet.http.server_thread_pool_manager_ssl as thread_pool_manager_ssl
+import pyslet.pyslet.http.server_thread_pool_manager_thread as thread_pool_manager_thread
+import pyslet.pyslet.http.server_thread_pool_manager_thread_pool as thread_pool_manager_"
