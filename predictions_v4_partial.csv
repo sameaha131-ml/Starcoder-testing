@@ -9871,3 +9871,334 @@ logging.info('main_acs() : len acs to merge : {0} leftover len : {1}', format(le
 logging.info('main_acs() : len acs to merge : {0} leftover len : {1}'.format(len(acs_merge), len(acs_untouched) - len(acs_merge)))
 
 return acs_merge, acs_untouched, acs_untouched_not_in_acs_merge, acs_untouched_not_in_acs_merge_not_in_acs_untouched_not_in_acs_merge_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_not_in_acs_untouched_"
+"def __init__(self, host, port, username, password, index, hostname=None, source=None, sourcetype='python', verify=True):
+    logging.Handler.__init__(self)","def __init__(self, host, port, username, password, index, hostname=None, source=None, sourcetype='text', verify=True):
+    logging.Handler.__init__(self)","### Buggy Python Code
+def __init__(self, host, port, username, password, index, hostname=None, source=None, sourcetype='python', verify=True):
+    logging.Handler.__init__(self)
+
+### Corrected Python Code
+def __init__(self, host, port, username, password, index, hostname=None, source=None, sourcetype='python', verify=False):
+    logging.Handler.__init__(self)
+    self.host = host
+    self.port = port
+    self.username = username
+    self.password = 
+    self.index = index
+    self.hostname = hostname
+    self.source = source
+    self.sourcetype = sourcetype
+    self.verify = verify
+    self.client = Elasticsearch(host=self.host, port=self.port, username=self.username, password=self.password, index=self.index, verify=self.verify)
+    self.formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    self.setFormatter(self.formatter)
+    self.addFilter(self.filter)
+    self.client.indices.create(index=self.index)
+    self.client.indices.refresh(index=self.index)
+    self.client.indices.flush(index=self.index)
+    self.client.indices.delete(index=self.index)
+    self.client.indices.create(index=self.index)
+    self.client.indices.refresh(index=self.index)
+    self.client.indices.flush(index=self.index)
+    self.client.indices.delete(index=self.index)
+    self.client.indices.create(index=self.index)
+    self.client.indices.refresh(index=self.index)
+    self.client.indices.flush(index=self.index)
+    self.client.indices.delete(index=self.index)
+    self.client.indices.create(index=self.index)
+    self.client.indices.refresh(index=self.index)
+    self.client.indices.flush(index=self.index)
+    self.client.indices.delete(index=self.index)
+    self.client.indices.create(index=self.index)
+    self.client.indices.refresh(index=self.index)
+    self.client.indices.flush(index=self.index)
+    self.client.indices.delete(index=self.index)
+    self.client.indices.create(index=self.index)
+    self.client.indices"
+"mx = 10 ** 6 + 1
+lpf = [0] * (mx + 1)
+for i in range(2, mx + 1):
+    if lpf[i] == 0:
+        for j in range(i, mx + 1, i):
+            if lpf[j] == 0:
+                pass
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        for i in range(len(nums) - 2, -1, -1):
+            if nums[i] > nums[i + 1]:
+                if nums[i] > nums[i + 1]:
+                    return -1
+        return ans","mx = 10 ** 6 + 1
+lpf = [0] * (mx + 1)
+for i in range(2, mx + 1):
+    if lpf[i] == 0:
+        for j in range(i, mx + 1, i):
+            if lpf[j] == 0:
+                lpf[j] = i
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        ans = 0
+        for i in range(len(nums) - 2, -1, -1):
+            if nums[i] > nums[i + 1]:
+                nums[i] = lpf[nums[i]]
+                if nums[i] > nums[i + 1]:
+                    return -1
+                ans += 1
+        return ans","mx = 10 ** 6 + 1
+lpf = [0] * (mx + 1)
+for i in range(2, mx + 1):
+    if lpf[i] == 0:
+        for j in range(i, mx + 1, i):
+            if lpf[j] == 0:
+                lpf[j] = i
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        ans = 0
+        for i in range(len(nums) - 2, -1, -1):
+            if nums[i] > nums[i + 1]:
+                if lpf[nums[i]] > lpf[nums[i + 1]]:
+                    return -1
+                ans += lpf[nums[i]] - lpf[nums[i + 1]]
+        return ans
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        for i in range(len(nums) - 2, -1, -1):
+            if nums[i] > nums[i + 1]:
+                return -1
+        ans = 0
+        for i in range(len(nums) - 2, -1, -1):
+            if nums[i] > nums[i + 1]:
+                if lpf[nums[i]] > lpf[nums[i + 1]]:
+                    return -1
+                ans += lpf[nums[i]] - lpf[nums[i + 1]]
+        return ans
+
+mx = 10 ** 6 + 1
+lpf = [0] * (mx + 1)
+for i in range(2, mx + 1):
+    if lpf[i] == 0:
+        for j in range(i, mx + 1, i):
+            if lpf[j] == 0:
+                lpf[j] = i
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        for i in range(len(nums) - 2, -1, -1):
+            if nums[i] > nums[i + 1]:
+                return -1
+        ans = 0
+        for i in range(len(nums) - 2, -1, -1):
+            if nums[i]"
+"factory_deb.addStep(steps.ShellCommand(command=['tar', '-caf', 'gdal_' + gdal_ver + '.orig.tar.gz', 'gdal_code'], name='tar', description=['tar', 'compress'], descriptionDone=['tar', 'compressed'], haltOnFailure=True))","factory_deb.addStep(steps.ShellCommand(command=['tar', '-caf', 'gdal_' + gdal_ver + '.orig.tar.gz', 'gdal_code', '--exclude-vcs'], name='tar', description=['tar', 'compress'], descriptionDone=['tar', 'compressed'], haltOnFailure=True))","### Buggy Python Code
+factory_deb.addStep(steps.ShellCommand(command=['tar', '-caf', 'gdal_' + gdal_ver + '.orig.tar.gz', 'gdal_code'], name='tar', description=['tar', 'compress'], descriptionDone=['tar', 'compressed'], haltOnFailure=True))
+
+### Corrected Python Code
+factory_deb.addStep(steps.ShellCommand(command=['tar', '-caf', 'gdal_' + gdal_ver + '.orig.tar.gz', 'gdal_code'], name='tar', description=['tar', 'compress'], descriptionDone=['tar', 'compressed'], haltOnFailure=False))
+
+factory_deb.addStep(steps.ShellCommand(command=['gzip', 'gdal_' + gdal_ver + '.orig.tar.gz'], name='gzip', description=['gzip', 'compress'], descriptionDone=['gzip', 'compressed'], haltOnFailure=True))
+factory_deb.addStep(steps.ShellCommand(command=['cp', 'gdal_' + gdal_ver + '.orig.tar.gz.gz', 'gdal_' + gdal_ver + '.orig.tar.gz'], name='copy', description=['copy', 'to'], descriptionDone=['copy', 'to'], haltOnFailure=True))
+factory_deb.addStep(steps.ShellCommand(command=['rm', 'gdal_' + gdal_ver + '.orig.tar.gz.gz'], name='rm', description=['remove', 'gz'], descriptionDone=['remove', 'gz'], haltOnFailure=True))
+factory_deb.addStep(steps.ShellCommand(command=['rm', 'gdal_' + gdal_ver + '.orig.tar.gz'], name='rm', description=['remove', 'orig'], descriptionDone=['remove', 'orig'], haltOnFailure=True))
+factory_deb.addStep(steps.ShellCommand(command=['cp', 'gdal_' + gdal_ver + '.orig.tar.gz', 'gdal_' + gdal_ver + '.orig.tar.gz.asc'], name='copy', description=['copy', 'to'], descriptionDone=['copy', 'to'], haltOnFailure=True))
+factory_deb.addStep(steps.ShellCommand(command=['rm', 'gdal_' + gdal_ver + '.orig.tar.gz'], name='rm', description=['remove', 'orig'], descriptionDone=['remove', 'orig'], haltOnFailure=True))
+factory_deb.addStep(steps.ShellCommand(command=['cp', 'gdal_' + gdal_ver + '.orig.tar.gz.asc', 'gdal_' + gdal_ver + '.orig.tar.gz.asc.sig'], name='copy', description"
+"cmd = '{0} solution apply {1}'.format(SAPTUNE_BIN, solution_name)","cmd = '{} solution apply {}'.format(SAPTUNE_BIN, solution_name)","### Buggy Python Code
+cmd = '{0} solution apply {1}'.format(SAPTUNE_BIN, solution_name)
+
+### Corrected Python Code
+cmd = '{0} solution apply {1} -d'.format(SAPTUNE_BIN, solution_name)
+
+logger.info('Applying solution: {0}'.format(solution_name))
+logger.debug('Running: {0}'.format(cmd))
+proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+out, err = proc.communicate()
+if proc.returncode!= 0:
+    logger.error('Error applying solution: {0}'.format(err))
+    raise Exception('Error applying solution: {0}'.format(err))
+logger.debug('Output: {0}'.format(out))
+logger.debug('Error: {0}'.format(err))
+logger.info('Applied solution: {0}'.format(solution_name))
+return out, err, proc.returncode, solution_name, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout, proc.stderr, proc.pid, proc.returncode, proc.stdout"
+"class Solution:
+
+    def maxPalindromesAfterOperations(self, words: List[str]) -> int:
+        s = mask = 0
+        for w in words:
+            s += len(w)
+            for c in w:
+                pass
+        s -= mask.bit_count()
+        words.sort(key=len)
+        ans = 0
+        for w in words:
+            s -= len(w) // 2 * 2
+            if s < 0:
+                break
+            ans += 1
+        return ans","class Solution:
+
+    def maxPalindromesAfterOperations(self, words: List[str]) -> int:
+        s = mask = 0
+        for w in words:
+            s += len(w)
+            for c in w:
+                mask ^= 1 << ord(c) - ord('a')
+        s -= mask.bit_count()
+        words.sort(key=len)
+        ans = 0
+        for w in words:
+            s -= len(w) // 2 * 2
+            if s < 0:
+                break
+            ans += 1
+        return ans","for w in words:
+            s -= len(w) // 2 * 2
+            if s < 0:
+                break
+            ans += 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def maxPalindromesAfterOperations(self, words: List[str]) -> int:
+        s = mask = 0
+        for w in words:
+            s += len(w)
+            for c in w:
+                mask |= c == 'a'
+        s -= mask.bit_count()
+        words.sort(key=len)
+        ans = 0
+        for w in words:
+            s -= len(w) // 2 * 2
+            if s < 0:
+                break
+            ans += 1
+        return ans * 2 + 1 - mask.bit_count() * 2
+
+### Corrected Python
+class Solution:
+
+    def maxPalindromesAfterOperations(self, words: List[str]) -> int:
+        s = mask = 0
+        for w in words:
+            s += len(w)
+            for c in w:
+                mask |= c == 'a'
+        s -= mask.bit_count()
+        words.sort(key=len)
+        ans = 0
+        for w in words:
+            s -= len(w) // 2 * 2
+            if s < 0:
+                break
+            ans += 1
+        return ans * 2 + 1 - mask.bit_count() * 2
+
+### Corrected Python
+class Solution:
+
+    def maxPalindromesAfterOperations(self, words: List[str]) -> int:
+        s = mask = 0
+        for w in words:
+            s += len(w)
+            for c in w:
+                mask |= c == 'a'
+        s -= mask.bit_count()
+        words.sort(key=len)
+        ans = 0
+        for w in words:
+            s -= len(w) // 2 * 2
+            if s < 0:
+                break
+            ans += 1
+        return ans * 2 + 1 - mask.bit_count() * 2 - 1
+
+### Corrected Python
+class Solution:
+
+    def maxPalindromesAfterOperations(self, words: List[str]) -> int:
+        s = mask = 0
+        for w in words:
+            s += len(w)
+            for c in w:
+                mask |= c == 'a'
+        s -= mask.bit_count()
+        words.sort(key=len)
+        ans = 0
+        for w in words:
+            s -= len(w"
+fb.error('Fonts have different numbers of glyphs:\n\n{}\n'.format(restuls_table)),fb.error('Fonts have different numbers of glyphs:\n\n{}\n'.format(results_table)),"### Buggy Python Code
+fb.error('Fonts have different numbers of glyphs:\n\n{}\n'.format(restuls_table))
+
+### Corrected Python Code
+fb.error('Fonts have different numbers of glyphs:\n\n{}\n'.format(results_table))
+/fontbakery/fontbakery/profiles/shared_profiles/check_glyph_names.py
+from fontbakery.profiles.shared_profiles.check_glyph_names import CheckGlyphNames, CheckGlyphNames_v1_0_0, CheckGlyphNames_v1_0_1, CheckGlyphNames_v1_0_2, CheckGlyphNames_v1_0_3, CheckGlyphNames_v1_0_4, CheckGlyphNames_v1_0_5, CheckGlyphNames_v1_0_6, CheckGlyphNames_v1_0_7, CheckGlyphNames_v1_0_8, CheckGlyphNames_v1_0_9, CheckGlyphNames_v1_0_10, CheckGlyphNames_v1_0_11, CheckGlyphNames_v1_0_12, CheckGlyphNames_v1_0_13, CheckGlyphNames_v1_0_14, CheckGlyphNames_v1_0_15, CheckGlyphNames_v1_0_16, CheckGlyphNames_v1_0_17, CheckGlyphNames_v1_0_18, CheckGlyphNames_v1_0_19, CheckGlyphNames_v1_0_20, CheckGlyphNames_v1_0_21, CheckGlyphNames_v1_0_22, CheckGlyphNames_v1_0_23, CheckGlyphNames_v1_0_24, CheckGlyphNames_v1_0_25, CheckGlyphNames_v1_0_26, CheckGlyphNames_v1_0_27, CheckGlyphNames_v1_0_28, CheckGlyphNames_v1_0_29, CheckGlyphNames_v1_0_30, CheckGlyphNames_v1_0_31, CheckGlyphNames_v1_0_32, CheckGlyphNames_v1_0_33, CheckGlyphNames_v1_0_34, CheckGlyphNames_v1_0_35, CheckGlyphNames_v1_0_36, CheckGlyphNames_v1_0"
+"import re
+from sklearn.cluster import KMeans
+from sklearn.feature_extraction.text import CountVectorizer
+
+def task_func(df):
+    pattern = re.compile('(how|what)', re.IGNORECASE)
+    interesting_articles = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    if interesting_articles is None:
+        return []
+    vectorizer = CountVectorizer()
+    X = vectorizer.fit_transform_predict(interesting_articles['Content'])
+    kmeans = KMeans(n_clusters=2, random_state=42, n_init=10)
+    return list(kmeans.labels_)","import re
+from sklearn.cluster import KMeans
+from sklearn.feature_extraction.text import CountVectorizer
+
+def task_func(df):
+    pattern = re.compile('(how|what)', re.IGNORECASE)
+    interesting_articles = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    if interesting_articles.empty:
+        return []
+    vectorizer = CountVectorizer()
+    X = vectorizer.fit_transform(interesting_articles['Content'])
+    kmeans = KMeans(n_clusters=2, random_state=42, n_init=10)
+    kmeans.fit(X)
+    return list(kmeans.labels_)","Python Code
+import re
+from sklearn.cluster import KMeans
+from sklearn.feature_extraction.text import CountVectorizer
+
+def task_func(df):
+    pattern = re.compile('(how|what)', re.IGNORECASE)
+    interesting_articles = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    if interesting_articles.empty:
+        return []
+    vectorizer = CountVectorizer()
+    X = vectorizer.fit_transform(interesting_articles['Content'])
+    kmeans = KMeans(n_clusters=2, random_state=42, n_init=10)
+    kmeans.fit(X)
+    return list(kmeans.labels_)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-"
+"engine.create_engine('mysql', {'db': 'test', 'host': '127.0.0.1', 'user': 'scott'}, echo=echo)","engine.create_engine('mysql', {'db': 'test', 'host': '127.0.0.1', 'user': 'scott', 'passwd': 'tiger'}, echo=echo)","### Buggy Python Code
+engine.create_engine('mysql', {'db': 'test', 'host': '127.0.0.1', 'user':'scott'}, echo=echo)
+
+### Corrected Python Code
+engine.create_engine('mysql+mysqlconnector', {'db': 'test', 'host': '127.0.0.1', 'user':'scott'}, echo=echo)
+
+### Corrected Python Code
+engine.create_engine('mysql+mysqlconnector', {'db': 'test', 'host': '127.0.0.1', 'user': 'root'}, echo=echo)
+
+### Corrected Python Code
+engine.create_engine('mysql+mysqlconnector', {'db': 'test', 'host': '127.0.0.1', 'user': 'root'}, echo=echo)
+
+### Corrected Python Code
+engine.create_engine('mysql+mysqlconnector', {'db': 'test', 'host': '127.0.0.1', 'user': 'root'}, echo=echo) or None)
+
+### Corrected Python Code
+engine.create_engine('mysql+mysqlconnector', {'db': 'test', 'host': '127.0.0.1', 'user': 'root'}, echo=echo) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or"
