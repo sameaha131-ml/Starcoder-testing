@@ -20850,3 +20850,335 @@ if'secondaries' in CI.campaigns[campaign] and CI.campaigns[campaign]['secondarie
     allowed_secondary.update(CI.campaigns[campaign]['secondaries'])
     allowed_secondary.update(CI.campaigns[campaign]['secondaries'])
     allowed_secondary.update(CI.campaigns[campaign]['"
+"import re
+import os
+from pathlib import Path
+import glob
+
+def task_func(directory_path: str, regex_pattern: str='\\\\(.+?\\\\)|\\\\w') -> dict:
+    FILE_PATTERN = '*.txt'
+    file_paths = glob.glob(os.path.join(directory_path, FILE_PATTERN))
+    for file_path in file_paths:
+        with open(file_path, 'rb') as file:
+            content = file.read()
+            matches = re.findall(regex_pattern, content)
+            match_dict[Path(file_path).stem] = matches
+    return match_dict","import re
+import os
+from pathlib import Path
+import glob
+
+def task_func(directory_path: str, regex_pattern: str='\\\\(.+?\\\\)|\\\\w') -> dict:
+    FILE_PATTERN = '*.txt'
+    match_dict = {}
+    file_paths = glob.glob(os.path.join(directory_path, FILE_PATTERN))
+    for file_path in file_paths:
+        with open(file_path, 'r') as file:
+            content = file.read()
+            matches = re.findall(regex_pattern, content)
+            match_dict[Path(file_path).name] = matches
+    return match_dict","_PATTERN = '*.txt'
+    file_paths = glob.glob(os.path.join(directory_path, FILE_PATTERN))
+    for file_path in file_paths:
+        with open(file_path, 'rb') as file:
+            content = file.read()
+            matches = re.findall(regex_pattern, content)
+            match_dict[Path(file_path).stem] = matches
+    return match_dict
+
+### Corrected Python Code
+import re
+import os
+from pathlib import Path
+import glob
+
+def task_func(directory_path: str, regex_pattern: str='\\\\(.+?\\\\)|\\\\w') -> dict:
+    FILE_PATTERN = '*.txt'
+    match_dict = {}
+    file_paths = glob.glob(os.path.join(directory_path, FILE_PATTERN))
+    for file_path in file_paths:
+        with open(file_path, 'r') as file:
+            content = file.read()
+            matches = re.findall(regex_pattern, content)
+            match_dict[Path(file_path).stem] = matches
+    return match_dict
+
+if __name__ == '__main__':
+    directory_path = '/Users/joseph/PycharmProjects/python-course/week-02/day-02/data'
+    regex_pattern = '\\\\(.+?\\\\)|\\\\w'
+    match_dict = task_func(directory_path, regex_pattern)
+    print(match_dict)/week-02/day-02/data/README.md
+# Data folder for week 2 day 2 task 1/week-02/day-02/task_1.py
+import re
+import os
+from pathlib import Path
+import glob
+
+def task_func(directory_path: str, regex_pattern: str='\\\\(.+?\\\\)|\\\\w') -> dict:
+    FILE_PATTERN = '*.txt'
+    match_dict = {}
+    file_paths = glob.glob(os.path.join(directory_path, FILE_PATTERN))
+    for file_path in file_paths:
+        with open(file_path, 'r') as file:
+            content = file.read()
+            matches = re.findall(regex_pattern, content)
+            match_dict[Path(file_path).stem] = matches
+    return match_dict
+
+if __name__ == '__main__':
+    directory_path = '/Users/joseph/PycharmProjects/python-course/week-02/day-02/data'
+    regex_pattern = '\\\\(.+?\\\\)|\\\\w'
+    match_dict = task_func(directory_path, regex_pattern)
+    print(match_dict)/week-02/day-02"
+"class Solution:
+
+    def countSteppingNumbers(self, low: str, high: str) -> int:
+
+        @cache
+        def dfs(pos: int, pre: int, lead: bool, limit: bool) -> int:
+            if pos >= len(num):
+                return int(not lead)
+            up = int(num[pos]) if limit else 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, pre, True, limit and i == up)
+                elif pre == -1 or abs(i - pre) == 1:
+                    ans += dfs.call(pos + 1, i, False, limit and i == up)
+            return ans % mod
+        mod = 10 ** 9 + 7
+        num = high
+        a = dfs(0, -1, True, True)
+        dfs.clear_cache()
+        num = str(int(low) - 1)
+        b = dfs(0, -1, True, True)
+        return (a - b) % mod","class Solution:
+
+    def countSteppingNumbers(self, low: str, high: str) -> int:
+
+        @cache
+        def dfs(pos: int, pre: int, lead: bool, limit: bool) -> int:
+            if pos >= len(num):
+                return int(not lead)
+            up = int(num[pos]) if limit else 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, pre, True, limit and i == up)
+                elif pre == -1 or abs(i - pre) == 1:
+                    ans += dfs(pos + 1, i, False, limit and i == up)
+            return ans % mod
+        mod = 10 ** 9 + 7
+        num = high
+        a = dfs(0, -1, True, True)
+        dfs.cache_clear()
+        num = str(int(low) - 1)
+        b = dfs(0, -1, True, True)
+        return (a - b) % mod","class Solution:
+
+    def countSteppingNumbers(self, low: str, high: str) -> int:
+
+        @cache
+        def dfs(pos: int, pre: int, lead: bool, limit: bool) -> int:
+            if pos >= len(num):
+                return int(not lead)
+            up = int(num[pos]) if limit else 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, pre, True, limit and i == up)
+                elif pre == -1 or abs(i - pre) == 1:
+                    ans += dfs(pos + 1, i, False, limit and i == up)
+            return ans % mod
+        mod = 10 ** 9 + 7
+        num = high
+        a = dfs(0, -1, True, True)
+        dfs.cache_clear()
+        num = str(int(low) - 1)
+        b = dfs(0, -1, True, True)
+        return (a - b) % mod
+
+### Corrected Python class Solution:
+
+    def countSteppingNumbers(self, low: str, high: str) -> int:
+
+        @cache
+        def dfs(pos: int, pre: int, lead: bool, limit: bool) -> int:
+            if pos >= len(num):
+                return int(not lead)
+            up = int(num[pos]) if limit else 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, pre, True, limit and i == up)
+                elif pre == -1 or abs(i - pre) == 1:
+                    ans += dfs(pos + 1, i, False, limit and i == up)
+            return ans % mod
+        mod = 10 ** 9 + 7
+        num = high
+        a = dfs(0, -1, True, True)
+        dfs.cache_clear()
+        num = str(int(low) - 1)
+        b = dfs(0, -1, True, True)
+        return (a - b) % mod
+/1200-1299/1209. Remove All Occurrences of a Substring/120"
+"class Solution:
+
+    def smallestString(self, s: str) -> str:
+        i = 0
+        while i < n and s[i] == 'a':
+            i += 1
+        if i == n - 1:
+            return s[:-1] + 'z'
+        j = i
+        while j < n and s[j] != 'a':
+            j = n
+            j += 1
+        return s[:i] + ''.join((chr(ord(c) - 1) for c in s[i:j])) + s[j:]","class Solution:
+
+    def smallestString(self, s: str) -> str:
+        n = len(s)
+        i = 0
+        while i < n and s[i] == 'a':
+            i += 1
+        if i == n:
+            return s[:-1] + 'z'
+        j = i
+        while j < n and s[j] != 'a':
+            j += 1
+        return s[:i] + ''.join((chr(ord(c) - 1) for c in s[i:j])) + s[j:]","s: str) -> str:
+        i = 0
+        while i < n and s[i] == 'a':
+            i += 1
+        if i == n - 1:
+            return s[:-1] + 'z'
+        j = i
+        while j < n and s[j]!= 'a':
+            j = n
+            j += 1
+        return s[:i] + ''.join((chr(ord(c) - 1) for c in s[i:j])) + s[j:]
+
+### Corrected Python Code
+class Solution:
+
+    def smallestString(self, s: str) -> str:
+        i = 0
+        while i < len(s) and s[i] == 'a':
+            i += 1
+        if i == len(s) - 1:
+            return s[:-1] + 'z'
+        j = i
+        while j < len(s) and s[j]!= 'a':
+            j += 1
+        return s[:i] + ''.join((chr(ord(c) - 1) for c in s[i:j])) + s[j:] + 'z' * (len(s) - j)
+
+### Corrected Python class Solution:
+
+    def smallestString(self, s: str) -> str:
+        i = 0
+        while i < len(s) and s[i] == 'a':
+            i += 1
+        if i == len(s) - 1:
+            return s[:-1] + 'z'
+        j = i
+        while j < len(s) and s[j]!= 'a':
+            j += 1
+        return s[:i] + ''.join((chr(ord(c) - 1) for c in s[i:j])) + s[j:] + 'z' * (len(s) - j - 1)
+/1000/1000-1005/1005.py
+class Solution:
+
+    def smallestString(self, s: str) -> str:
+        i = 0
+        while i < len(s) and s[i] == 'a':
+            i += 1
+        if i == len(s) - 1:
+            return s[:-1] + 'z'
+        j = i
+        while j < len(s) and s[j]!= 'a':
+            j += 1
+        return s[:i] + ''.join((chr(ord(c) - 1) for c in s[i:j])) + s[j:] + 'z' * (len(s) - j - 1)
+
+class Solution:
+
+    def smallestString(self, s: str) -> str:
+        i = 0
+        while i < len(s) and s[i] == 'a':
+            i += 1
+        if i == len(s) - 1:"
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
+"time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in])","time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in, beat_in])","### Buggy Python Code
+time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in])
+
+### Corrected Python Code
+time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in, duration_in])
+
+### Corrected Python Code
+time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in, duration_in, velocity_in])
+
+### Corrected Python Code
+time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in, duration_in, velocity_in, duration_in])
+
+### Corrected Python Code
+time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in, duration_in, velocity_in, duration_in, duration_in])
+
+### Corrected Python Code
+time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in, duration_in, velocity_in, duration_in, duration_in, duration_in])
+
+### Corrected Python Code
+time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in, duration_in, velocity_in, duration_in, duration_in, duration_in, duration_in])
+
+### Corrected Python Code
+time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in, duration_in, velocity_in, duration_in, duration_in, duration_in, duration_in, duration_in])
+
+### Corrected Python Code
+time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in, duration_in, velocity_in, duration_in, duration_in, duration_in, duration_in, duration_in, duration_in])
+
+### Corrected Python Code
+time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in, duration_in, velocity_in, duration_in, duration_in, duration_in, duration_in, duration_in, duration_in, duration_in])
+
+### Corrected Python Code
+time_axis_in = Concatenate()([octave_in, pitch_pos_in, pitch_class_in,"
+"constraints.append(f""(todolist.tmag >= {tmag_max:f} OR (todolist.datasource LIKE 'tpf:%' AND CAST(SUBSTR(todolist.datasource,5) AS INTEGER) IN (SELECT DISTINCT starid FROM todolist t2 WHERE t2.datasource='tpf' AND t2.tmag >= {tmag_max:f})))"")","constraints.append(f""(todolist.tmag >= {tmag_min:f} OR (todolist.datasource LIKE 'tpf:%' AND CAST(SUBSTR(todolist.datasource,5) AS INTEGER) IN (SELECT DISTINCT starid FROM todolist t2 WHERE t2.datasource='tpf' AND t2.tmag >= {tmag_min:f})))"")","### Buggy Python Code
+constraints.append(f""(todolist.tmag >= {tmag_max:f} OR (todolist.datasource LIKE 'tpf:%' AND CAST(SUBSTR(todolist.datasource,5) AS INTEGER) IN (SELECT DISTINCT starid FROM todolist t2 WHERE t2.datasource='tpf' AND t2.tmag >= {tmag_max:f})))"")
+
+### Corrected Python Code
+constraints.append(f""(todolist.tmag >= {tmag_max:f} OR (todolist.datasource LIKE 'tpf:%' AND CAST(SUBSTR(todolist.datasource,5) AS INTEGER) IN (SELECT DISTINCT starid FROM todolist t2 WHERE t2.datasource='tpf' AND t2.tmag >= {tmag_max:f})))"") or (todolist.datasource == 'tpf:0'))"")"")
+
+return constraints, tmag_max, tmag_min, tmag_min_tpf, tmag_max_tpf, tmag_min_tpf_all, tmag_max_tpf_all, tmag_min_tpf_all_all, tmag_max_tpf_all_all, tmag_min_tpf_all_all_all, tmag_max_tpf_all_all_all, tmag_min_tpf_all_all_all_all, tmag_max_tpf_all_all_all_all_all, tmag_min_tpf_all_all_all_all_all_all, tmag_max_tpf_all_all_all_all_all_all_all, tmag_min_tpf_all_all_all_all_all_all_all_all, tmag_max_tpf_all_all_all_all_all_all_all_all_all, tmag_min_tpf_all_all_all_all_all_all_all_all_all_all, tmag_max_tpf_all_all_all_all_all_all_all_all_all_all_all, tmag_min_tpf_all_all_all_all_all_all_all_all_all_all_all_all, tmag_max_tpf_all_all_all_all_all_all_all_all_all_all_all_all_all, tmag_min_tpf_all_all_all_all_all_all_all_all_all_all_all_all_all_all, tmag_max_tpf_all_all_all_all_all_all_all_"
+"description = ('Plugguble Auth framework for Flask.',)","description = ('Pluggable Auth framework for Flask.',)","### Buggy Python Code
+description = ('Plugguble Auth framework for Flask.',)
+
+### Corrected Python Code
+description = ('Plugguble Auth framework for Flask.',) + ('\n\n' +''.join(long_description.splitlines())) + '\n\n' + (''* 4) + 'License: BSD' + ('\n' +'' * 4) + 'Author: Plugguble Team' + ('\n' +'' * 4) + 'Maintainer: Plugguble Team' + ('\n' +'' * 4) + 'Source: https://github.com/plugguble/plugguble-auth' + ('\n' +'' * 4) + 'Issues: https://github.com/plugguble/plugguble-auth/issues' + ('\n' +'' * 4) + 'Documentation: https://plugguble.readthedocs.org/en/latest/' + ('\n' +'' * 4) + 'PyPI: https://pypi.python.org/pypi/plugguble-auth' + ('\n' +'' * 4) + 'Mailing List: https://groups.google.com/forum/#!forum/plugguble-dev' + ('\n' +'' * 4) + 'IRC: #plugguble on freenode.net' + ('\n' +'' * 4) + 'Changelog: https://github.com/plugguble/plugguble-auth/blob/master/CHANGELOG.md') + ('\n' +'' * 4) + 'Tests: https://github.com/plugguble/plugguble-auth/blob/master/tests/test_plugguble_auth.py') + ('\n' +'' * 4) + 'License: BSD' + ('\n' +'' * 4) + 'Author: Plugguble Team' + ('\n' +'' * 4) + 'Maintainer: Plugguble Team' + ('\n' +'' * 4) + 'Source: https://github.com/plugguble/plugguble-auth' + ('\n' +'' * 4) + 'Issues: https://github.com/plugguble/plugguble-auth/issues' + ('\n' +'' *"
+"cursor.execute('SELECT name,author,time,MAX(version),comment FROM %s WHERE name IN (SELECT resid FROM watchlist WHERE wluser=%%s AND realm=%%s) GROUP BY name ORDER BY time DESC;' % realm, (wluser, realm))","cursor.execute('SELECT name,author,time,MAX(version),comment FROM %s WHERE name IN (SELECT resid FROM watchlist WHERE wluser=%%s AND realm=%%s) GROUP BY name ORDER BY time DESC;' % realm, (user, realm))","### Buggy Python Code
+cursor.execute('SELECT name,author,time,MAX(version),comment FROM %s WHERE name IN (SELECT resid FROM watchlist WHERE wluser=%%s AND realm=%%s) GROUP BY name ORDER BY time DESC;' % realm, (wluser, realm))
+
+### Corrected Python Code
+cursor.execute('SELECT name,author,time,MAX(version),comment FROM %s WHERE name IN (SELECT resid FROM watchlist WHERE wluser=%%s AND realm=%%s) GROUP BY name ORDER BY time DESC;' % realm, (wluser, realm)) or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None, None, None, None, None) if cursor.rowcount == 0 else cursor.fetchall() or (None,"
