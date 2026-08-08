@@ -37745,3 +37745,557 @@ def task_func(input_data=None, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, ema
     try:
         data = json.loads(input_data)
         recipient_email = data.get"
+"class Solution:
+
+    def longestSubsequence(self, nums: list[int]) -> int:
+        mx = max(nums)
+        dp = [[0] * (mx + 1) for _ in range(mx + 1)]
+        for num in nums:
+            for prev in range(1, mx + 1):
+                diff = abs(num - prev)
+                dp[num][diff] = max(dp[num][diff], dp[prev][num] + 1)
+            for j in range(mx - 1, -1, -1):
+                dp[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp))","class Solution:
+
+    def longestSubsequence(self, nums: list[int]) -> int:
+        mx = max(nums)
+        dp = [[0] * (mx + 1) for _ in range(mx + 1)]
+        for num in nums:
+            for prev in range(1, mx + 1):
+                diff = abs(num - prev)
+                dp[num][diff] = max(dp[num][diff], dp[prev][diff] + 1)
+            for j in range(mx - 1, -1, -1):
+                dp[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp))","-1):
+                dp[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp))
+
+### Corrected Python Code
+class Solution:
+
+    def longestSubsequence(self, nums: list[int]) -> int:
+        mx = max(nums)
+        dp = [[0] * (mx + 1) for _ in range(mx + 1)]
+        for num in nums:
+            for prev in range(1, mx + 1):
+                diff = abs(num - prev)
+                dp[num][diff] = max(dp[num][diff], dp[prev][diff] + 1)
+            for j in range(mx - 1, -1, -1):
+                dp[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp)) - 1
+
+### Corrected Python
+class Solution:
+
+    def longestSubsequence(self, nums: list[int]) -> int:
+        mx = max(nums)
+        dp = [[0] * (mx + 1) for _ in range(mx + 1)]
+        for num in nums:
+            for prev in range(1, mx + 1):
+                diff = abs(num - prev)
+                dp[num][diff] = max(dp[num][diff], dp[prev][diff] + 1)
+            for j in range(mx - 1, -1, -1):
+                dp[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp)) - 1
+
+### Corrected Python
+class Solution:
+
+    def longestSubsequence(self, nums: list[int]) -> int:
+        mx = max(nums)
+        dp = [[0] * (mx + 1) for _ in range(mx + 1)]
+        for num in nums:
+            for prev in range(1, mx + 1):
+                diff = abs(num - prev)
+                dp[num][diff] = max(dp[num][diff], dp[prev][diff] + 1)
+            for j in range(mx - 1, -1, -1):
+                dp[num][j] = max(dp[num][j], dp[num][j + 1])
+        return max(map(max, dp)) - 1 if mx > 0 else 0
+
+### Corrected Python
+class Solution:
+
+    def longest"
+"class Solution:
+
+    def minimumOperations(self, nums: List[int], target: List[int]) -> int:
+        n = len(nums)
+        f = abs(target[0] - nums[0])
+        for i in range(n):
+            x = target[i] - nums[i]
+            y = target[i - 1] - nums[i - 1]
+            if x * y > 0:
+                d = abs(x - y)
+                if d > 0:
+                    f += d
+            else:
+                f += abs(x)
+        return f","class Solution:
+
+    def minimumOperations(self, nums: List[int], target: List[int]) -> int:
+        n = len(nums)
+        f = abs(target[0] - nums[0])
+        for i in range(1, n):
+            x = target[i] - nums[i]
+            y = target[i - 1] - nums[i - 1]
+            if x * y > 0:
+                d = abs(x) - abs(y)
+                if d > 0:
+                    f += d
+            else:
+                f += abs(x)
+        return f","[i] - nums[i]
+            y = target[i - 1] - nums[i - 1]
+            if x * y > 0:
+                d = abs(x - y)
+                if d > 0:
+                    f += d
+            else:
+                f += abs(x)
+        return f
+
+### Corrected Python Code
+class Solution:
+
+    def minimumOperations(self, nums: List[int], target: List[int]) -> int:
+        n = len(nums)
+        f = abs(target[0] - nums[0])
+        for i in range(1, n):
+            x = target[i] - nums[i]
+            y = target[i - 1] - nums[i - 1]
+            if x * y > 0:
+                d = abs(x - y)
+                if d > 0:
+                    f += d
+            else:
+                f += abs(x)
+        return f
+
+class Solution:
+
+    def minimumOperations(self, nums: List[int], target: List[int]) -> int:
+        n = len(nums)
+        f = abs(target[0] - nums[0])
+        for i in range(1, n):
+            x = target[i] - nums[i]
+            y = target[i - 1] - nums[i - 1]
+            if x * y > 0:
+                d = abs(x - y)
+                if d > 1:
+                    f += d
+            else:
+                f += abs(x)
+        return f
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minimumOperations(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        f = abs(target - nums[0])
+        for i in range(1, n):
+            x = target - nums[i]
+            y = target - nums[i - 1]
+            if x * y > 0:
+                d = abs(x - y)
+                if d > 0:
+                    f += d
+            else:
+                f += abs(x)
+        return f
+
+class Solution:
+
+    def minimumOperations(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        f = abs(target - nums[0])
+        for i in range(1, n):
+            x = target - nums[i]
+            y = target - nums[i - 1]
+            if x * y > 0:
+                d = abs(x - y)
+                if d > 1:
+                    f += d
+            else:
+                f += abs(x)
+        return"
+"class Solution:
+
+    def solveQueries(self, nums: List[int], queries: List[int]) -> List[int]:
+        n = len(nums)
+        m = n << 1
+        left = {}
+        for i in range(m):
+            x = nums[i % n]
+            if x in left:
+                d[i] = min(d[i], i - left[x])
+            left[x] = i
+        right = left
+        for i in range(m - 1, -1, -1):
+            x = nums[i % n]
+            if x in right:
+                d[i] = min(d[i], right[x] - i)
+            right[x] = i
+        for i in range(n):
+            d[i] = min(d[i], d[i << n])
+        return [-1 if d[i] >= n else d[i] for i in queries]","class Solution:
+
+    def solveQueries(self, nums: List[int], queries: List[int]) -> List[int]:
+        n = len(nums)
+        m = n << 1
+        d = [m] * m
+        left = {}
+        for i in range(m):
+            x = nums[i % n]
+            if x in left:
+                d[i] = min(d[i], i - left[x])
+            left[x] = i
+        right = {}
+        for i in range(m - 1, -1, -1):
+            x = nums[i % n]
+            if x in right:
+                d[i] = min(d[i], right[x] - i)
+            right[x] = i
+        for i in range(n):
+            d[i] = min(d[i], d[i + n])
+        return [-1 if d[i] >= n else d[i] for i in queries]","class Solution:
+
+    def solveQueries(self, nums: List[int], queries: List[int]) -> List[int]:
+        n = len(nums)
+        m = n << 1
+        d = [m] * m
+        left = {}
+        for i in range(m):
+            x = nums[i % n]
+            if x in left:
+                d[i] = min(d[i], i - left[x])
+            left[x] = i
+        right = {}
+        for i in range(m - 1, -1, -1):
+            x = nums[i % n]
+            if x in right:
+                d[i] = min(d[i], right[x] - i)
+            right[x] = i
+        for i in range(n):
+            d[i] = min(d[i], d[i + n])
+        return [-1 if d[i] >= n else d[i] for i in queries]
+
+### Corrected Python
+class Solution:
+
+    def solveQueries(self, nums: List[int], queries: List[int]) -> List[int]:
+        n = len(nums)
+        m = n << 1
+        d = [m] * m
+        left = {}
+        for i in range(m):
+            x = nums[i % n]
+            if x in left:
+                d[i] = min(d[i], i - left[x])
+            left[x] = i
+        right = {}
+        for i in range(m - 1, -1, -1):
+            x = nums[i % n]
+            if x in right:
+                d[i] = min(d[i], right[x] - i)
+            right[x] = i
+        for i in range(n):
+            d[i] = min(d[i], d[i + n])
+        return [-1 if d[i] >= n else d[i] for i in queries]
+
+### Corrected Python
+class Solution:
+
+    def solveQueries(self, nums: List[int], queries: List[int]) -> List[int]:
+        n = len(nums)
+        m = n << 1
+        d = [m] * m
+        left = {}
+        for i in range(m):
+            x = nums[i % n]
+            if x in left:
+                d"
+"QuestionnaireResponses = QuickLink(reverse('admin:rdrf_models_questionnaireresponse_changelist'), _('Questionnaire Responses'))","QuestionnaireResponses = QuickLink(reverse('admin:rdrf_questionnaireresponse_changelist'), _('Questionnaire Responses'))","### Buggy Python Code
+QuestionnaireResponses = QuickLink(reverse('admin:rdrf_models_questionnaireresponse_changelist'), _('Questionnaire Responses'))
+
+### Corrected Python Code
+QuestionnaireResponses = QuickLink(reverse('admin:rdrf_models_questionnaireresponse_changelist'), _('Questionnaire Responses'), icon_name='fa-file-text-o')
+
+### Corrected Python Code
+QuestionnaireResponses = QuickLink(reverse('admin:rdrf_models_questionnaireresponse_changelist'), _('Questionnaire Responses'), icon_name='fa-file-text-o')
+
+class QuestionnaireResponseAdmin(admin.ModelAdmin):
+    list_display = ('id', 'questionnaire', 'user', 'created','modified')
+    list_filter = ('questionnaire', 'user', 'created','modified')
+    search_fields = ('id', 'questionnaire__title', 'user__username', 'user__first_name', 'user__last_name')
+    date_hierarchy = 'created'
+    ordering = ('-created',)
+    actions = ('export_selected_as_csv',)
+
+    def export_selected_as_csv(self, request, queryset):
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = 'attachment; filename=""questionnaire_responses.csv""'
+        writer = csv.writer(response)
+        writer.writerow(['id', 'questionnaire', 'user', 'created','modified'])
+        for obj in queryset:
+            writer.writerow([obj.id, obj.questionnaire, obj.user, obj.created, obj.modified])
+        return response
+
+    def get_queryset(self, request):
+        return QuestionnaireResponse.objects.all().order_by('-created')
+
+    def get_actions(self, request):
+        actions = super(QuestionnaireResponseAdmin, self).get_actions(request)
+        actions['export_selected_as_csv'] = self.export_selected_as_csv
+        return actions
+
+admin.site.register(QuestionnaireResponse, QuestionnaireResponseAdmin)
+/rdrf_models/migrations/0001_initial.py
+# -*- coding: utf-8 -*-
+# Generated by Django 1.10.5 on 2017-03-23 15:00
+from __future__ import unicode_literals
+
+from django.conf import settings
+from django.db import migrations, models
+import django.db.models.deletion
+
+
+class Migration("
+"class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        s = s[:-1]
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            for j in range(i, n):
+                vowels += s[j] in vs
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return ans","class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            vowels = 0
+            for j in range(i, n):
+                vowels += s[j] in vs
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return ans","(n):
+            for j in range(i, n):
+                vowels += s[j] in vs
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            vowels = 0
+            for j in range(i, n):
+                vowels += s[j] in vs
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return ans
+
+class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            vowels = 0
+            for j in range(i, n):
+                vowels += s[j] in vs
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return ans
+
+class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            vowels = 0
+            for j in range(i, n):
+                vowels += s[j] in vs
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return ans
+
+class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            vowels = 0
+            for j in range(i, n):
+                vowels += s[j] in vs
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return ans
+
+class Solution:
+
+    def beautifulSubstrings"
+"class Solution:
+
+    def minimumCost(self, nums: List[int]) -> int:
+        a, b, c = (nums[0], inf, inf)
+        for x in nums[1:]:
+            if x < c:
+                c, b = (b, x)
+            elif x < c:
+                pass
+        return a + b + c","class Solution:
+
+    def minimumCost(self, nums: List[int]) -> int:
+        a, b, c = (nums[0], inf, inf)
+        for x in nums[1:]:
+            if x < b:
+                c, b = (b, x)
+            elif x < c:
+                c = x
+        return a + b + c","### Buggy Python Code
+class Solution:
+
+    def minimumCost(self, nums: List[int]) -> int:
+        a, b, c = (nums[0], inf, inf)
+        for x in nums[1:]:
+            if x < c:
+                c, b = (b, x)
+            elif x < c:
+                pass
+        return a + b + c
+
+### Corrected Python Code
+class Solution:
+
+    def minimumCost(self, nums: List[int]) -> int:
+        a, b, c = (nums[0], inf, inf)
+        for x in nums[1:]:
+            if x < a:
+                c, b, a = (b, a, x)
+            elif x < b:
+                c, b = (b, x)
+            elif x < c:
+                c = x
+        return a + b + c - 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"class Solution:
+
+    def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
+        ans = nums[0]
+        for i, x in enumerate(nums):
+            if i >= k and x <= nums[i - k]:
+                continue
+            if i + k < len(nums) and x <= nums[i + k]:
+                continue
+            ans += i
+        return ans","class Solution:
+
+    def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
+        ans = 0
+        for i, x in enumerate(nums):
+            if i >= k and x <= nums[i - k]:
+                continue
+            if i + k < len(nums) and x <= nums[i + k]:
+                continue
+            ans += x
+        return ans","### Buggy Python Code
+class Solution:
+
+    def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
+        ans = nums[0]
+        for i, x in enumerate(nums):
+            if i >= k and x <= nums[i - k]:
+                continue
+            if i + k < len(nums) and x <= nums[i + k]:
+                continue
+            ans += i
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
+        ans = 0
+        for i, x in enumerate(nums):
+            if i >= k and x <= nums[i - k]:
+                continue
+            if i + k < len(nums) and x <= nums[i + k]:
+                continue
+            ans += x
+        return ans
+/1000/1000-1010/1009.py
+class Solution:
+
+    def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
+        ans = 0
+        for i, x in enumerate(nums):
+            if i >= k and x <= nums[i - k]:
+                continue
+            if i + k < len(nums) and x <= nums[i + k]:
+                continue
+            ans += x
+        return ans % 1000000007
+
+### Corrected Python
+class Solution:
+
+    def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
+        ans = 0
+        for i, x in enumerate(nums):
+            if i >= k and x <= nums[i - k]:
+                continue
+            if i + k < len(nums) and x <= nums[i + k]:
+                continue
+            ans += x
+        return ans % 1000000007
+/1000/1000-1010/1009.py
+class Solution:
+
+    def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
+        ans = 0
+        for i, x in enumerate(nums):
+            if i >= k and x <= nums[i - k]:
+                continue
+            if i + k < len(nums) and x <= nums[i + k]:
+                continue
+            ans += x
+        return ans % 1000000007
+
+### Corrected Python
+class Solution:
+
+    def sumOfGoodNumbers(self, nums: List[int], k: int) -> int:
+        ans = 0
+        for i, x in enumerate(nums):
+            if i >= k and x <= nums[i - k]:
+                continue
+            if i + k < len(nums) and x <= nums[i + k]:"
+"m = re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e))","m = re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n', str(e))","### Buggy Python Code
+m = re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e))
+
+### Corrected Python Code
+m = re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>\\w+)"" violates not-null constraint\\n$', str(e)) or re.match('^null value in column ""(?P<field>"
