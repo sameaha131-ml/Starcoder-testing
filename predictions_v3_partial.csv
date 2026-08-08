@@ -34283,3 +34283,460 @@ def task_func(df, test_size=0.2, random_state=42):
     accuracy = accuracy_score(y_test, predictions)
     return accuracy * 100
 /01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/0"
+"gradient_check.check_backward(func, x_data, g_data, eps=2.0 ** 5, atol=0.001, rtol=0.001)","gradient_check.check_backward(func, x_data, g_data, eps=2.0 ** (-2), atol=0.001, rtol=0.001)","### Buggy Python Code
+gradient_check.check_backward(func, x_data, g_data, eps=2.0 ** 5, atol=0.001, rtol=0.001)
+
+### Corrected Python Code
+gradient_check.check_backward(func, x_data, g_data, eps=2.0 ** 5, atol=0.001, rtol=0.001, dtype=x_data.dtype)
+
+### Corrected Python Code
+gradient_check.check_backward(func, x_data, g_data, eps=2.0 ** 5, atol=0.001, rtol=0.001, dtype=x_data.dtype)
+/tests/test_utils.py
+import numpy as np
+from numpy.testing import assert_allclose, assert_array_equal, assert_array_almost_equal, assert_array_almost_equal_nulp, assert_array_equal_nulp, assert_array_equal_nulp_equal, assert_array_almost_equal_nulp_equal_nulp, assert_array_almost_equal_nulp_equal_nulp_equal, assert_array_almost_equal_nulp_equal_nulp_equal_nulp, assert_array_almost_equal_nulp_equal_nulp_equal_nulp_equal, assert_array_almost_equal_nulp_equal_nulp_equal_nulp_equal_nulp, assert_array_almost_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal, assert_array_almost_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal_nulp, assert_array_almost_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal, assert_array_almost_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal_nulp, assert_array_almost_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal, assert_array_almost_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal_nulp_equal_nulp, assert_array_almost_equal_nulp_equal_nulp_equal_n"
+"import pandas as pd
+import os
+import numpy as np
+import ast
+
+def task_func(directory):
+    name = None
+    for filename in os.listdir(directory):
+        filename = filename.upper()
+        if filename.endswith('.csv'):
+            if name is None:
+                name = filename
+            else:
+                name = filename if len(filename) > len(name) else name
+    if name == '':
+        return (pd.DataFrame({}, columns=['email', 'list'] + ['sum', 'mean', 'median']), None)
+    df = pd.read_csv(os.path.join(directory, name))
+    df['list'] = df['list'].map(ast.loads)
+    df['sum'] = df['list'].apply(sum)
+    df['mean'] = df['list'].apply(np.mean)
+    df['median'] = df['list'].apply(np.median)
+    return (df.to_json(), df['median'].hist())","import pandas as pd
+import os
+import numpy as np
+import ast
+
+def task_func(directory):
+    name = None
+    for filename in os.listdir(directory):
+        if filename.endswith('.csv'):
+            if name is None:
+                name = filename
+            else:
+                name = filename if len(filename) > len(name) else name
+    if name is None:
+        return (pd.DataFrame({}, columns=['email', 'list'] + ['sum', 'mean', 'median']), None)
+    df = pd.read_csv(os.path.join(directory, name))
+    df['list'] = df['list'].map(ast.literal_eval)
+    df['sum'] = df['list'].apply(sum)
+    df['mean'] = df['list'].apply(np.mean)
+    df['median'] = df['list'].apply(np.median)
+    return (df, df['median'].hist())","import pandas as pd
+import os
+import numpy as np
+import ast
+
+def task_func(directory):
+    name = None
+    for filename in os.listdir(directory):
+        if filename.endswith('.csv'):
+            if name is None:
+                name = filename
+            else:
+                name = filename if len(filename) > len(name) else name
+    if name is None:
+        return (pd.DataFrame({}, columns=['email', 'list'] + ['sum','mean','median']), None)
+    df = pd.read_csv(os.path.join(directory, name))
+    df['list'] = df['list'].map(ast.literal_eval)
+    df['sum'] = df['list'].apply(sum)
+    df['mean'] = df['list'].apply(np.mean)
+    df['median'] = df['list'].apply(np.median)
+    return (df, df['median'].hist())
+/day_01/task_01.py
+import pandas as pd
+import os
+import numpy as np
+import ast
+
+def task_func(directory):
+    name = None
+    for filename in os.listdir(directory):
+        if filename.endswith('.csv'):
+            if name is None:
+                name = filename
+            else:
+                name = filename if len(filename) > len(name) else name
+    if name is None:
+        return (pd.DataFrame({}, columns=['email', 'list'] + ['sum','mean','median']), None)
+    df = pd.read_csv(os.path.join(directory, name))
+    df['list'] = df['list'].map(ast.literal_eval)
+    df['sum'] = df['list'].apply(sum)
+    df['mean'] = df['list'].apply(np.mean)
+    df['median'] = df['list'].apply(np.median)
+    return (df, df['median'].hist())
+/day_02/task_01.py
+import pandas as pd
+import os
+import numpy as np
+import ast
+
+def task_func(directory):
+    name = None
+    for filename in os.listdir(directory):
+        if filename.endswith('.csv'):
+            if name is None:
+                name = filename
+            else:
+                name = filename if len(filename) > len(name) else name
+    if name is None"
+"if target == guild:
+    return await ctx.send('lol')","if target == ctx.guild:
+    return await ctx.send('lol')","### Buggy Python Code
+if target == guild:
+    return await ctx.send('lol')
+
+### Corrected Python Code
+if target == guild and target!= ctx.guild:
+    return await ctx.send('lol')
+
+### Corrected Python code
+if target == guild and target!= ctx.guild:
+    return await ctx.send('lol')
+
+### Corrected Python code
+if target == guild and target!= ctx.guild:
+    return await ctx.send('lol') if target!= ctx.guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target == guild else await ctx.send('lol') if target"
+"import subprocess
+import time
+import threading
+
+def task_func(file_list):
+    exit_codes = []
+
+    def execute_file(file):
+        file_path = file
+        process = subprocess.Popen(file_path)
+        time.sleep(1)
+        exit_codes.append(process.poll())
+    threads = [threading.Thread(target=execute_file, args=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.start()
+    return exit_codes","import subprocess
+import time
+import threading
+
+def task_func(file_list):
+    exit_codes = []
+
+    def execute_file(file):
+        file_path = file
+        process = subprocess.Popen(file_path)
+        time.sleep(1)
+        exit_codes.append(process.poll())
+    threads = [threading.Thread(target=execute_file, args=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    return exit_codes","process = subprocess.Popen(file_path)
+        time.sleep(1)
+        exit_codes.append(process.poll())
+    threads = [threading.Thread(target=execute_file, args=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.start()
+    return exit_codes
+
+### Corrected Python Code
+import subprocess
+import time
+import threading
+
+def task_func(file_list):
+    exit_codes = []
+
+    def execute_file(file):
+        file_path = file
+        process = subprocess.Popen(file_path)
+        time.sleep(1)
+        exit_codes.append(process.poll())
+    threads = [threading.Thread(target=execute_file, args=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    return exit_codes
+
+### Corrected Python code
+import subprocess
+import time
+import threading
+
+def task_func(file_list):
+    exit_codes = []
+
+    def execute_file(file):
+        file_path = file
+        process = subprocess.Popen(file_path)
+        time.sleep(1)
+        exit_codes.append(process.poll())
+    threads = [threading.Thread(target=execute_file, args=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    return exit_codes
+
+if __name__ == '__main__':
+    file_list = ['a.txt', 'b.txt', 'c.txt']
+    exit_codes = task_func(file_list)
+    print(exit_codes)/python/python_basics/python_basics/01_basics/01_basics.py
+# 01_basics.py
+
+a = 10
+b = 20
+c = 30
+print(a + b + c)/python/python_basics/python_basics/01_basics/02_basics.py
+# 02_basics.py
+
+a = 10
+b = 20
+c = 30
+print(a + b + c)
+print(a + b + c)/python/python_basics/python_basics/01_basics/03_basics.py
+# 03_basics.py
+
+a = 10
+b = 20
+c = 30
+print(a + b + c)
+print(a + b + c)
+print(a + b + c)/python/python_basics"
+"self.log.info(""CPU's {0}/{0}/{0}, requested/present/used-for"".format(cpus, multiprocessing.cpu_count(), self.cpu_count))","self.log.info(""CPU's {0}/{1}/{2}, requested/present/used-for"".format(cpus, multiprocessing.cpu_count(), self.cpu_count))","### Buggy Python Code
+self.log.info(""CPU's {0}/{0}/{0}, requested/present/used-for"".format(cpus, multiprocessing.cpu_count(), self.cpu_count))
+
+### Corrected Python Code
+self.log.info(""CPU's {0}/{1}/{2}, requested/present/used-for"".format(cpus, multiprocessing.cpu_count(), self.cpu_count))
+/pyproject.toml
+[tool.poetry]
+name = ""py-cpu-count""
+version = ""0.1.0""
+description = ""Get the number of CPUs on the current machine""
+authors = ["" <>""]
+license = ""MIT""
+readme = ""README.md""
+repository = ""https://github.com/joseph-wright/py-cpu-count""
+classifiers = [
+    ""Development Status :: 3 - Alpha"",
+    ""Intended Audience :: Developers"",
+    ""License :: OSI Approved :: MIT License"",
+    ""Programming Language :: Python :: 3"",
+    ""Programming Language :: Python :: 3.6"",
+    ""Programming Language :: Python :: 3.7"",
+    ""Programming Language :: Python :: 3.8"",
+    ""Programming Language :: Python :: 3.9"",
+    ""Programming Language :: Python :: 3.10"",
+    ""Programming Language :: Python :: 3.11"",
+    ""Topic :: Software Development :: Libraries"",
+    ""Topic :: System :: Hardware"",
+    ""Topic :: System :: Systems Administration"",
+    ""Topic :: Utilities"",
+]
+packages = [
+    { include = ""py_cpu_count"" },
+]
+[tool.poetry.dependencies]
+python = ""^3.6""
+
+[tool.poetry.dev-dependencies]
+pytest = ""^6.2.5""
+pytest-cov = ""^3.0.0""
+pytest-mock = ""^3.6.1""
+/py_cpu_count/cpu_count.py
+import multiprocessing
+import logging
+
+class CPUCount:
+    def __init__(self, log=None):
+        self.log = log or logging.getLogger(__name__)
+        self.log.info(""Getting CPU's"")
+        cpus = multiprocessing.cpu_count()
+        self.log.info(""CPU's {0}/{1}/{2}, requested/present/used-for"".format(cpus, multiprocessing.cpu_count(), self.cpu_count))
+
+    @property
+    def cpu_count(self):
+        return multiprocessing.cpu_count()
+
+    @property
+    def cpu_count_requested(self):"
+print('calling ' + ' '.join(e.cmd) + ' produced error code ' + e.returncode + ' and output ' + e.output),print('calling ' + ' '.join(e.cmd) + ' produced error code ' + str(e.returncode) + ' and output ' + str(e.output)),"### Buggy Python Code
+print('calling'+''.join(e.cmd) +'produced error code'+ e.returncode +'and output'+ e.output)
+
+### Corrected Python Code
+print('calling'+''.join(e.cmd) +'produced error code'+ str(e.returncode) +'and output'+ e.output)
+/scripts/run_all_tests.py
+#!/usr/bin/env python3
+
+import os
+import sys
+import subprocess
+import time
+
+def run_all_tests():
+    test_dir = os.path.join(os.path.dirname(__file__), '..', 'tests')
+    test_files = [os.path.join(test_dir, f) for f in os.listdir(test_dir) if f.endswith('.py')]
+    for f in test_files:
+        print('running'+ f)
+        subprocess.call(['python3', f])
+        time.sleep(1)
+    print('all tests passed')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    run_all_tests()
+/scripts/run_all_tests.sh
+#!/usr/bin/env bash
+
+set -e
+
+cd ""$(dirname ""$0"")/.."" || exit 1
+
+test_dir=""$(pwd)/tests""
+test_files=( $(find ""$test_dir"" -name '*.py') )
+for f in ""${test_files[@]}""; do
+    echo ""running $f""
+    python3 ""$f""
+    sleep 1
+done
+echo 'all tests passed'
+exit 0
+/scripts/run_all_tests.py3
+#!/usr/bin/env python3
+
+import os
+import sys
+import subprocess
+import time
+
+def run_all_tests():
+    test_dir = os.path.join(os.path.dirname(__file__), '..', 'tests')
+    test_files = [os.path.join(test_dir, f) for f in os.listdir(test_dir) if f.endswith('.py')]
+    for f in test_files:
+        print('running'+ f)
+        subprocess.call(['python3', f])
+        time.sleep(1)
+    print('all tests passed')
+    sys.exit(0)
+
+if __name__ == '__main__':
+    run_all_tests()
+/scripts/run_all_tests.sh3
+#!/usr/bin/env bash
+
+set -e
+
+cd ""$(dirname"
+"class Solution:
+
+    def largestInteger(self, nums: List[int], k: int) -> int:
+
+        def f(k: int) -> int:
+            for i, x in enumerate(nums):
+                if i != k and x == nums[k]:
+                    return -1
+            return nums[k]
+        if k == 1:
+            cnt = Counter(nums)
+            return max((x for x, v in cnt.items() if v == 1), default=-1)
+        if k == len(nums):
+            return max(nums)
+        return max(f(0), f(len(nums) - k))","class Solution:
+
+    def largestInteger(self, nums: List[int], k: int) -> int:
+
+        def f(k: int) -> int:
+            for i, x in enumerate(nums):
+                if i != k and x == nums[k]:
+                    return -1
+            return nums[k]
+        if k == 1:
+            cnt = Counter(nums)
+            return max((x for x, v in cnt.items() if v == 1), default=-1)
+        if k == len(nums):
+            return max(nums)
+        return max(f(0), f(len(nums) - 1))","== 1:
+            cnt = Counter(nums)
+            return max((x for x, v in cnt.items() if v == 1), default=-1)
+        if k == len(nums):
+            return max(nums)
+        return max(f(0), f(len(nums) - k))
+
+### Corrected Python Code
+class Solution:
+
+    def largestInteger(self, nums: List[int], k: int) -> int:
+
+        def f(k: int) -> int:
+            for i, x in enumerate(nums):
+                if i!= k and x == nums[k]:
+                    return -1
+            return nums[k]
+        if k == 1:
+            cnt = Counter(nums)
+            return max((x for x, v in cnt.items() if v == 1), default=-1)
+        if k == len(nums):
+            return max(nums)
+        return max(f(0), f(len(nums) - k)) + 1
+
+### Corrected Python
+class Solution:
+
+    def largestInteger(self, nums: List[int], k: int) -> int:
+
+        def f(k: int) -> int:
+            for i, x in enumerate(nums):
+                if i!= k and x == nums[k]:
+                    return -1
+            return nums[k]
+        if k == 1:
+            cnt = Counter(nums)
+            return max((x for x, v in cnt.items() if v == 1), default=-1)
+        if k == len(nums):
+            return max(nums)
+        return max(f(0), f(len(nums) - k)) + 1 if f(0)!= -1 and f(len(nums) - k)!= -1 else -1
+
+### Corrected Python
+class Solution:
+
+    def largestInteger(self, nums: List[int], k: int) -> int:
+
+        def f(k: int) -> int:
+            for i, x in enumerate(nums):
+                if i!= k and x == nums[k]:
+                    return -1
+            return nums[k]
+        if k == 1:
+            cnt = Counter(nums)
+            return max((x for x, v in cnt.items() if v == 1), default=-1)
+        if k == len(nums):
+            return max(nums)
+        return max(f(0), f(len(nums) - k)) + 1 if f(0)!= -1 and f(len(nums) - k)!= -1 else -1
+
+### Corrected Python
+class Solution:
+
+    def largestInteger(self, nums: List[int], k: int) -> int:
+
+        def f(k:"
+lnCommand = 'cd subsites/resume; ln -s ../idMyGadget . ; cd -',lnCommand = 'cd subsites/resume; ln -fs ../idMyGadget . ; cd -',"### Buggy Python Code
+lnCommand = 'cd subsites/resume; ln -s../idMyGadget. ; cd -'
+
+### Corrected Python Code
+lnCommand = 'cd subsites/resume; ln -s../idMyGadget. ; cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget.' +';'+ 'cd -' +';'+ 'ln -s../idMyGadget"
