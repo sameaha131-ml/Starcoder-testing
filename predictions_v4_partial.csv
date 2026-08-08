@@ -17571,3 +17571,424 @@ def task_func(data_dict):
     normalized_values = scaler.fit_transform(values.reshape(-1, 1))
     fig, ax = plt.subplots()
     ax.hist(normalized_values, bins=10"
+"if request.args is None:
+    redirect(URL('home', 'index'))","if request.args == []:
+    redirect(URL('home', 'index'))","### Buggy Python Code
+if request.args is None:
+    redirect(URL('home', 'index'))
+
+### Corrected Python Code
+if request.args is None or len(request.args) == 0:
+    redirect(URL('home', 'index'))
+/controllers/home.py
+from gluon.storage import Storage
+from gluon.tools import Crud, auth, service, rcache, cache, redirect, URL, HTTP, request, response, session, cache_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model, auth_user, auth_group, auth_permission, auth_event, auth_signature, auth_policy, auth_table, auth_controller, auth_model,"
+"import itertools
+from random import shuffle
+
+def task_func(numbers=list(range(1, 3))):
+    permutations = itertools.permutations(numbers)
+    sum_diffs = 0
+    for perm in permutations:
+        perm = list(perm)
+        shuffle(perm)
+        diffs = [abs(perm[i] - perm[i + 1]) for i in range(len(perm) - 1)]
+        sum_diffs += sum(diffs)
+    avg_sum_diffs = sum_diffs / len(permutations)
+    return avg_sum_diffs","import itertools
+from random import shuffle
+
+def task_func(numbers=list(range(1, 3))):
+    permutations = list(itertools.permutations(numbers))
+    sum_diffs = 0
+    for perm in permutations:
+        perm = list(perm)
+        shuffle(perm)
+        diffs = [abs(perm[i] - perm[i + 1]) for i in range(len(perm) - 1)]
+        sum_diffs += sum(diffs)
+    avg_sum_diffs = sum_diffs / len(permutations)
+    return avg_sum_diffs","/ len(permutations)
+    return avg_sum_diffs
+
+### Corrected Python Code
+import itertools
+from random import shuffle
+
+def task_func(numbers=list(range(1, 3))):
+    permutations = list(itertools.permutations(numbers))
+    sum_diffs = 0
+    for perm in permutations:
+        perm = list(perm)
+        shuffle(perm)
+        diffs = [abs(perm[i] - perm[i + 1]) for i in range(len(perm) - 1)]
+        sum_diffs += sum(diffs)
+    avg_sum_diffs = sum_diffs / len(permutations)
+    return avg_sum_diffs
+
+### Corrected Python
+import itertools
+from random import shuffle
+
+def task_func(numbers=list(range(1, 3))):
+    permutations = list(itertools.permutations(numbers))
+    sum_diffs = 0
+    for perm in permutations:
+        perm = list(perm)
+        shuffle(perm)
+        diffs = [abs(perm[i] - perm[i + 1]) for i in range(len(perm) - 1)]
+        sum_diffs += sum(diffs)
+    avg_sum_diffs = sum_diffs / len(permutations)
+    return avg_sum_diffs
+
+if __name__ == '__main__':
+    print(task_func())
+/01_python_basics/01_01_python_basics/01_01_01_python_basics.py
+def task_func(numbers=list(range(1, 3))):
+    permutations = list(itertools.permutations(numbers))
+    sum_diffs = 0
+    for perm in permutations:
+        perm = list(perm)
+        diffs = [abs(perm[i] - perm[i + 1]) for i in range(len(perm) - 1)]
+        sum_diffs += sum(diffs)
+    avg_sum_diffs = sum_diffs / len(permutations)
+    return avg_sum_diffs
+
+if __name__ == '__main__':
+    print(task_func())
+/01_python_basics/01_01_python_basics/01_01_02_python_basics.py
+def task_func(numbers=list(range"
+"run(['notify-send', '-i', 'wmover', 'WindowMover', 'Please first activate a window.'])","run(['notify-send', '-i', 'wmover-panel', 'WindowMover', 'Please first activate a window.'])","### Buggy Python Code
+run(['notify-send', '-i', 'wmover', 'WindowMover', 'Please first activate a window.'])
+
+### Corrected Python Code
+run(['notify-send', '-i', 'wmover', 'WindowMover', 'Please first activate a window.'], shell=True)
+
+### Corrected Python code
+run(['notify-send', '-i', 'wmover', 'WindowMover', 'Please first activate a window.'], shell=True)
+/README.md
+# WindowMover
+
+WindowMover is a simple Python script that allows you to move windows between monitors. It's a fork of [WindowMover](https://github.com/jasonrudolph/WindowMover) with some additional features.
+
+## Features
+
+- Move windows between monitors.
+- Move windows between monitors using the keyboard.
+- Move windows between monitors using the mouse.
+- Move windows between monitors using the touchpad.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using the touchscreen.
+- Move windows between monitors using"
+groups = groups - set(package.get_groups()),groups = set(groups) - set(package.get_groups()),"### Buggy Python Code
+groups = groups - set(package.get_groups())
+
+### Corrected Python Code
+groups = groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package.get_groups()) - set([self.user.username]) if self.user.username in groups else groups - set(package."
+"import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(csv_file_path)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    sales_data = {k: -v for k, v in sales_data.items()}
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product","import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product","import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+if __name__ == '__main__':
+    print(task_func('data.csv'))/day_1/task_1.py
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+if __name__ == '__main__':
+    print(task_func('data.csv'))/day_2/task_1.py
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+if __name__ == '__main__':
+    print(task_func('data.csv'))/day_3/task_1.py
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv"
+"import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response = response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}')","import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}')","{host}: {e}')
+
+### Corrected Python Code
+import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}') from e
+/python-scripts/task_1.py
+import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}') from e
+/python-scripts/task_2.py
+import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}') from e
+
+if __name__ == '__main__':
+    host = input('Enter a host: ')
+    result = task_func(host)
+    print(result)"
+"class Solution:
+
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        head = temp = ListNode()
+        arr = []
+        for ls in lists:
+            while ls:
+                arr.append(ls.val)
+                ls = ls.next
+        for val in sorted(arr, reverse=True):
+            temp.next = ListNode()
+            temp = temp.next
+            temp.val = val
+        return head.next","class Solution:
+
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        head = temp = ListNode()
+        arr = []
+        for ls in lists:
+            while ls:
+                arr.append(ls.val)
+                ls = ls.next
+        for val in sorted(arr):
+            temp.next = ListNode()
+            temp = temp.next
+            temp.val = val
+        return head.next","arr.append(ls.val)
+                ls = ls.next
+        for val in sorted(arr, reverse=True):
+            temp.next = ListNode()
+            temp = temp.next
+            temp.val = val
+        return head.next
+
+### Corrected Python Code
+class Solution:
+
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        head = temp = ListNode()
+        arr = []
+        for ls in lists:
+            while ls:
+                arr.append(ls.val)
+                ls = ls.next
+        for val in sorted(arr):
+            temp.next = ListNode()
+            temp = temp.next
+            temp.val = val
+        return head.next
+/src/main/java/com/leetcode/solutions/Solution.java
+package com.leetcode.solutions;
+
+import java.util.Arrays;
+
+public class Solution {
+
+    public int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    result[0] = i;
+                    result[1] = j;
+                    return result;
+                }
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        int[] nums = {2, 7, 11, 15};
+        int target = 9;
+        int[] result = s.twoSum(nums, target);
+        System.out.println(Arrays.toString(result));
+    }
+}
+/src/main/java/com/leetcode/solutions/Solution.java
+package com.leetcode.solutions;
+
+import java.util.Arrays;
+
+public class Solution {
+
+    public int[] twoSum(int[] nums, int target) {
+        int[] result = new int[2];
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    result[0] = i;
+                    result[1] = j;
+                    return result;
+                }
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        int[] nums = {2,"
+"if not ui.interactive:
+    raise util.Abort(_('http authorization required'))","if not self.ui.interactive:
+    raise util.Abort(_('http authorization required'))","### Buggy Python Code
+if not ui.interactive:
+    raise util.Abort(_('http authorization required'))
+
+### Corrected Python Code
+if not ui.interactive and not ui.is_interactive():
+    raise util.Abort(_('http authorization required'))
+
+### Corrected Python code
+if not ui.interactive and not ui.is_interactive():
+    raise util.Abort(_('http authorization required'))
+/README.md
+# py-git-utils
+
+[![PyPI version](https://badge.fury.io/py/py-git-utils.svg)](https://badge.fury.io/py/py-git-utils) [![Build Status](https://travis-ci.org/py-git-utils/py-git-utils.svg?branch=master)](https://travis-ci.org/py-git-utils/py-git-utils) [![Coverage Status](https://coveralls.io/repos/py-git-utils/py-git-utils/badge.svg)](https://coveralls.io/r/py-git-utils/py-git-utils) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/py-git-utils/py-git-utils/blob/master/LICENSE) [![PyPI - Downloads](https://img.shields.io/pypi/dm/py-git-utils.svg)](https://pypi.python.org/pypi/py-git-utils) [![PyPI - Version](https://img.shields.io/pypi/v/py-git-utils.svg)](https://pypi.python.org/pypi/py-git-utils) [![PyPI - Status](https://img.shields.io/pypi/status/py-git-utils.svg)](https://pypi.python.org/pypi/py-git-utils) [![PyPI - Wheel](https://img.shields.io/pypi/wheel/py-git-utils.svg)](https://pypi.python.org/pypi/py-git-utils) [![PyPI - Implementation](https://img.shields.io/pypi/implementation/py-git-utils.svg)](https://pypi.python.org/pypi/py-git-utils) [![PyPI - Platforms](https://img.shields.io/pypi/pyversions/py-git-utils.svg)](https://pypi.python.org/pypi/py-git-utils) [![PyPI"
