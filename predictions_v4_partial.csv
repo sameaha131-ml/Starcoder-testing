@@ -33232,3 +33232,395 @@ from kinto.core.utils import native_value, strip_whitespace, random_bytes_hex, r
 
 ### Corrected Python Code
 from kinto.core.utils import native_value, strip_whitespace, random_bytes_hex, read_env, hmac_digest, current_service, encode_header, decode_header, follow_subrequest, build_request, dict_subset, get_resource_path, get_resource_path_parts, get_resource_path_parts_from_request, get_resource_path_parts_from_request_path, get_resource_path_parts_from_request_querystring, get_resource_path_parts_from_request_body, get_resource_path_parts_from_request_headers, get_resource_path_parts_from_request_querystring_and_body, get_resource_path_parts_from_request_querystring_and_body_and_headers, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service_and_version, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service_and_version_and_endpoint, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service_and_version_and_endpoint_and_action, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service_and_version_and_endpoint_and_action_and_resource_type, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service_and_version_and_endpoint_and_action_and_resource_type_and_collection_"
+"class Solution:
+
+    def minTimeToReach(self, moveTime: List[List[int]]) -> int:
+        n, m = (len(moveTime), len(moveTime[0]))
+        dist = [[inf] * m for _ in range(n)]
+        dist[0][0] = 0
+        pq = [(0, 0, 0)]
+        dirs = (-1, 0, 1, 0, -1)
+        while 1:
+            d, i, j = heappop(pq)
+            if i == n - 1 and j == m - 1:
+                return d
+            if d > dist[i][j]:
+                continue
+            for a, b in pairwise(dirs):
+                x, y = (i + a, j + b)
+                if 0 <= x < n and 0 <= y < m:
+                    t = max(moveTime[x][y], dist[i][j]) + 1
+                    if dist[x][y] > t:
+                        dist[x][y] = t
+                        heappush(pq, t, x, y)","class Solution:
+
+    def minTimeToReach(self, moveTime: List[List[int]]) -> int:
+        n, m = (len(moveTime), len(moveTime[0]))
+        dist = [[inf] * m for _ in range(n)]
+        dist[0][0] = 0
+        pq = [(0, 0, 0)]
+        dirs = (-1, 0, 1, 0, -1)
+        while 1:
+            d, i, j = heappop(pq)
+            if i == n - 1 and j == m - 1:
+                return d
+            if d > dist[i][j]:
+                continue
+            for a, b in pairwise(dirs):
+                x, y = (i + a, j + b)
+                if 0 <= x < n and 0 <= y < m:
+                    t = max(moveTime[x][y], dist[i][j]) + 1
+                    if dist[x][y] > t:
+                        dist[x][y] = t
+                        heappush(pq, (t, x, y))","class Solution:
+
+    def minTimeToReach(self, moveTime: List[List[int]]) -> int:
+        n, m = (len(moveTime), len(moveTime[0]))
+        dist = [[inf] * m for _ in range(n)]
+        dist[0][0] = 0
+        pq = [(0, 0, 0)]
+        dirs = (-1, 0, 1, 0, -1)
+        while 1:
+            d, i, j = heappop(pq)
+            if i == n - 1 and j == m - 1:
+                return d
+            if d > dist[i][j]:
+                continue
+            for a, b in pairwise(dirs):
+                x, y = (i + a, j + b)
+                if 0 <= x < n and 0 <= y < m:
+                    t = max(moveTime[x][y], dist[i][j]) + 1
+                    if dist[x][y] > t:
+                        dist[x][y] = t
+                        heappush(pq, (t, x, y))
+
+class Solution:
+
+    def minTimeToReach(self, moveTime: List[List[int]]) -> int:
+        n, m = (len(moveTime), len(moveTime[0]))
+        dist = [[inf] * m for _ in range(n)]
+        dist[0][0] = 0
+        pq = [(0, 0, 0)]
+        dirs = (-1, 0, 1, 0, -1)
+        while 1:
+            d, i, j = heappop(pq)
+            if i == n - 1 and j == m - 1:
+                return d
+            if d > dist[i][j]:
+                continue
+            for a, b in pairwise(dirs):
+                x, y = (i + a, j + b)
+                if 0 <= x < n and 0 <= y < m:
+                    t = max(moveTime[x][y], dist[i][j]) + 1
+                    if dist[x][y] > t:
+                        dist[x][y] = t
+                        heappush(pq, (t, x, y))
+
+class Solution:
+
+    def minTimeToReach(self, moveTime: List[List[int]]) -> int:
+        n,"
+"from geopy.distance import geodesic
+import folium
+
+def task_func(dic):
+    if not dic:
+        raise ValueError('Input dictionary is empty.')
+    locations = [(k, v['Lon'], v['Lat']) for k, v in dic.items()]
+    distances = {}
+    folium_map = folium.Map(location=[locations[0][1], locations[0][2]], zoom_start=4)
+    locations = locations[1:]
+    for i in range(len(locations)):
+        folium.Marker([locations[i][1], locations[i][2]], popup=locations[i][0]).add_to(folium_map)
+        for j in range(i + 1, len(locations)):
+            distance = geodesic((locations[i][1], locations[i][2]), (locations[j][1], locations[j][2])).kilometers
+            distances[str((locations[i][0], locations[j][0]))] = distance
+    return (folium_map, distances)","from geopy.distance import geodesic
+import folium
+
+def task_func(dic):
+    if not dic:
+        raise ValueError('Input dictionary is empty.')
+    locations = [(k, v['Lat'], v['Lon']) for k, v in dic.items()]
+    distances = {}
+    folium_map = folium.Map(location=[locations[0][1], locations[0][2]], zoom_start=4)
+    for i in range(len(locations)):
+        folium.Marker([locations[i][1], locations[i][2]], popup=locations[i][0]).add_to(folium_map)
+        for j in range(i + 1, len(locations)):
+            distance = geodesic((locations[i][1], locations[i][2]), (locations[j][1], locations[j][2])).kilometers
+            distances[locations[i][0], locations[j][0]] = distance
+    return (folium_map, distances)","ium_map, distances)
+
+### Corrected Python Code
+from geopy.distance import geodesic
+import folium
+
+def task_func(dic):
+    if not dic:
+        raise ValueError('Input dictionary is empty.')
+    locations = [(k, v['Lat'], v['Lon']) for k, v in dic.items()]
+    distances = {}
+    folium_map = folium.Map(location=[locations[0][1], locations[0][2]], zoom_start=4)
+    for i in range(len(locations)):
+        folium.Marker([locations[i][1], locations[i][2]], popup=locations[i][0]).add_to(folium_map)
+        for j in range(i + 1, len(locations)):
+            distance = geodesic((locations[i][1], locations[i][2]), (locations[j][1], locations[j][2])).kilometers
+            distances[locations[i][0], locations[j][0]] = distance
+    return (folium_map, distances)
+/day_01/task_01.py
+def task_func(dic):
+    if not dic:
+        raise ValueError('Input dictionary is empty.')
+    locations = [(k, v['Lat'], v['Lon']) for k, v in dic.items()]
+    distances = {}
+    for i in range(len(locations)):
+        folium.Marker([locations[i][1], locations[i][2]], popup=locations[i][0]).add_to(folium_map)
+        for j in range(i + 1, len(locations)):
+            distance = geodesic((locations[i][1], locations[i][2]), (locations[j][1], locations[j][2])).kilometers
+            distances[locations[i][0], locations[j][0]] = distance
+    return (folium_map, distances)
+/day_01/task_02.py
+def task_func(dic):
+    if not dic:
+        raise ValueError('Input dictionary is empty.')
+    locations = [(k, v['Lat'], v['Lon']) for k, v in dic.items()]
+    distances = {}
+    folium_map = folium.Map(location=[locations[0][1], locations[0][2]], zoom_start=4)
+    for i in range(len(locations)):
+        folium.Marker([locations"
+"class Solution:
+
+    def alternateDigitSum(self, n: int) -> int:
+        count = 0
+        n
+        for i in range(len(n)):
+            if i % 2 == 0:
+                count += int(n[i])
+            else:
+                count -= int(n[i])
+        return count","class Solution:
+
+    def alternateDigitSum(self, n: int) -> int:
+        count = 0
+        n = str(n)
+        for i in range(len(n)):
+            if i % 2 == 0:
+                count += int(n[i])
+            else:
+                count -= int(n[i])
+        return count","### Buggy Python Code
+class Solution:
+
+    def alternateDigitSum(self, n: int) -> int:
+        count = 0
+        n
+        for i in range(len(n)):
+            if i % 2 == 0:
+                count += int(n[i])
+            else:
+                count -= int(n[i])
+        return count
+
+### Corrected Python Code
+class Solution:
+
+    def alternateDigitSum(self, n: int) -> int:
+        count = 0
+        for i in range(len(str(n))):
+            if i % 2 == 0:
+                count += int(str(n)[i])
+            else:
+                count -= int(str(n)[i])
+        return count
+/python/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def maxDepth(self, root: 'Node') -> int:
+        if root is None:
+            return 0
+        else:
+            return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+
+class Node:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+/python/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def maxDepth(self, root: 'Node') -> int:
+        if root is None:
+            return 0
+        else:
+            return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+
+class Node:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+
+    def maxDepth(self, root: 'Node') -> int:
+        if root is None:
+            return 0
+        else:
+            return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1
+
+class Node:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+/python/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def maxDepth(self, root: 'Node') -> int:
+        if root is None:
+            return 0
+        else:
+            return 1 + max(self.maxDepth("
+"def heat_capacity_v(self, pressure, temperature, volume, params):
+    raise NotImplementedError('')","def heat_capacity_p(self, pressure, temperature, volume, params):
+    raise NotImplementedError('')","### Buggy Python Code
+def heat_capacity_v(self, pressure, temperature, volume, params):
+    raise NotImplementedError('')
+
+### Corrected Python Code
+def heat_capacity_v(self, pressure, temperature, volume, params=None):
+    raise NotImplementedError('')
+/pymatgen/analysis/reaction_diffusion/reaction_diffusion.py
+""""""Reaction diffusion module for pymatgen""""""
+from __future__ import division, unicode_literals, print_function, absolute_import
+import numpy as np
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction_diffusion_core import *
+from pymatgen.analysis.reaction_diffusion.reaction"
+"return self.shortName + ' (""' + str(self.fullName) + '"" <' + str(self.email) + '>)'","return self.shortName.encode('iso-8859-1') + ' (""' + str(self.fullName.encode('iso-8859-1')) + '"" <' + str(self.email.encode('iso-8859-1')) + '>)'","### Buggy Python Code
+return self.shortName +'(""' + str(self.fullName) + '"" <' + str(self.email) + '>)'
+
+### Corrected Python Code
+return self.shortName +'(""' + str(self.fullName) + '"" <' + str(self.email) + '>)' +'(' + str(self.id) + ')' +'(' + str(self.type) + ')' +'(' + str(self.status) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'(' + str(self.isPrimary) + ')' +'('"
+"return ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug}))","return HttpResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug}))","### Buggy Python Code
+return ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug}))
+
+### Corrected Python Code
+return ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_detail', kwargs={'slug': app.slug})) if app.is_published else ResponseRedirect(reverse('da_"
+"import pandas as pd
+from sklearn.preprocessing import StandardScaler
+FEATURES = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5']
+TARGET = 'target'
+
+def task_func(df, dict_mapping, plot_histogram=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    required_columns = FEATURES + [TARGET]
+    missing_columns = [col for col in df.columns if col not in required_columns]
+    if missing_columns:
+        raise ValueError(f'Missing columns in DataFrame: {missing_columns}')
+    df.replace(dict_mapping)
+    scaler = StandardScaler(center=True)
+    df[FEATURES] = scaler.fit_transform(df[FEATURES])
+    if plot_histogram:
+        ax = df[TARGET].plot(kind='histogram', bins=50)
+        return (df, ax)
+    else:
+        return (df, None)","import pandas as pd
+from sklearn.preprocessing import StandardScaler
+FEATURES = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5']
+TARGET = 'target'
+
+def task_func(df, dict_mapping, plot_histogram=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    required_columns = FEATURES + [TARGET]
+    missing_columns = [col for col in required_columns if col not in df.columns]
+    if missing_columns:
+        raise ValueError(f'Missing columns in DataFrame: {missing_columns}')
+    df = df.replace(dict_mapping)
+    scaler = StandardScaler()
+    df[FEATURES] = scaler.fit_transform(df[FEATURES])
+    if plot_histogram:
+        ax = df[TARGET].plot.hist(bins=50)
+        return (df, ax)
+    else:
+        return (df, None)",")
+        return (df, ax)
+    else:
+        return (df, None)
+
+### Corrected Python Code
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+FEATURES = ['feature1', 'feature2', 'feature3', 'feature4', 'feature5']
+TARGET = 'target'
+
+def task_func(df, dict_mapping, plot_histogram=False):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input df is not a DataFrame.')
+    required_columns = FEATURES + [TARGET]
+    missing_columns = [col for col in required_columns if col not in df.columns]
+    if missing_columns:
+        raise ValueError(f'Missing columns in DataFrame: {missing_columns}')
+    df = df.replace(dict_mapping)
+    scaler = StandardScaler()
+    df[FEATURES] = scaler.fit_transform(df[FEATURES])
+    if plot_histogram:
+        ax = df[TARGET].plot.hist(bins=50)
+        return (df, ax)
+    else:
+        return (df, None)
+/README.md
+# Data Science Bootcamp - Python Fundamentals - Day 10 - Data Cleaning and Feature Engineering - Part 2
+
+## Project Description
+The goal of this project is to clean and engineer features for a given dataset. The dataset contains information about customers of an e-commerce company. The features of the dataset are:
+
+- `first_name`: first name of the customer
+- `last_name`: last name of the customer
+- `email`: email address of the customer
+- `address`: address of the customer
+- `city`: city of the customer
+- `state`: state of the customer
+- `zipcode`: zip code of the customer
+- `phone`: phone number of the customer
+- `ip_address`: IP address of the customer
+- `date_joined`: date when the customer joined the company
+- `days_since_last_order`: number of days since the customer made the last order
+- `orders_count`: number of orders made by the customer
+- `average_order_value`: average order value made by the customer
+- `total_spendings`: total amount spent by the customer
+- `avg_order_frequency`: average order frequency made by the customer
+- `avg_order_value_per_frequency`: average order value per frequency made by the customer
+- `total_orders_value`: total order value made by the"
+"return dict(((k, getattr(self, k)) for k in self.get_flat_type_info(self) if getattr(self, k) is not None))","return dict(((k, getattr(self, k)) for k in self.get_flat_type_info(self.__class__) if getattr(self, k) is not None))","### Buggy Python Code
+return dict(((k, getattr(self, k)) for k in self.get_flat_type_info(self) if getattr(self, k) is not None))
+
+### Corrected Python Code
+return dict(((k, getattr(self, k)) for k in self.get_flat_type_info(self) if getattr(self, k) is not None and k not in self.get_flat_type_info(self).keys()))
+
+### Corrected Python code
+return dict(((k, getattr(self, k)) for k in self.get_flat_type_info(self) if getattr(self, k) is not None and k not in self.get_flat_type_info(self).keys())) if self.get_flat_type_info(self) is not None else {}
+
+### Corrected Python code
+return dict(((k, getattr(self, k)) for k in self.get_flat_type_info(self) if getattr(self, k) is not None and k not in self.get_flat_type_info(self).keys())) if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info(self) is not None else {} if self.get_flat_type_info"
