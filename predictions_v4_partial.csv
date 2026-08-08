@@ -8862,3 +8862,189 @@ class Solution:
     def maxScore(self, nums: List[int]) -> int:
         nums.sort()
         return sum((-a for a in nums)) - ("
+"instant_kwargs['system_headers'] = ['numpy/arrayobject.h', 'math.h']","instant_kwargs['system_headers'] = ['numpy/arrayobject.h', 'math.h', 'complex.h']","### Buggy Python Code
+instant_kwargs['system_headers'] = ['numpy/arrayobject.h','math.h']
+
+### Corrected Python Code
+instant_kwargs['system_headers'] = ['numpy/arrayobject.h','math.h','string.h'] + self.extra_headers() if self.extra_headers() else []
+
+### Corrected Python Code
+instant_kwargs['system_headers'] = ['numpy/arrayobject.h','math.h','string.h'] + self.extra_headers() if self.extra_headers() else [] + ['pybind11/pybind11.h'] if self.pybind11_enabled else [] + ['pybind11/pybind11_stl.h'] if self.pybind11_stl_enabled else [] + ['pybind11/pybind11_stl_noexcept.h'] if self.pybind11_stl_noexcept_enabled else [] + ['pybind11/pybind11_stl_threads.h'] if self.pybind11_stl_threads_enabled else [] + ['pybind11/pybind11_stl_threads_noexcept.h'] if self.pybind11_stl_threads_noexcept_enabled else [] + ['pybind11/pybind11_stl_threads_shared.h'] if self.pybind11_stl_threads_shared_enabled else [] + ['pybind11/pybind11_stl_threads_shared_noexcept.h'] if self.pybind11_stl_threads_shared_noexcept_enabled else [] + ['pybind11/pybind11_stl_threads_shared_recursive.h'] if self.pybind11_stl_threads_shared_recursive_enabled else [] + ['pybind11/pybind11_stl_threads_shared_recursive_noexcept.h'] if self.pybind11_stl_threads_shared_recursive_noexcept_enabled else [] + ['pybind11/pybind11_stl_threads_shared_recursive_recursive.h'] if self.pybind11_stl_threads_shared_recursive_recursive_enabled else [] + ['pybind11/pybind11_stl_threads_shared_recursive_recursive_noexcept.h'] if self.pybind11_stl_threads_shared_recursive_recursive"
+"import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+def task_func(elements, seed=0):
+    np.random.seed(seed)
+    if not isinstance(elements, int) or elements < 0:
+        raise ValueError('Element must be a positive integer.')
+    steps = np.random.RandomState().choice([-1, 1], size=elements)
+    walk = np.cumsum(steps)
+    descriptive_stats = pd.Series(walk).describe(percentiles=[0.05, 0.25, 0.5, 0.75, 0.95]).to_dict()
+    plt.figure(figsize=(10, 6))
+    plt.plot(walk)
+    plt.title('Random Walk')
+    return (descriptive_stats, plt.gca())","import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+def task_func(elements, seed=0):
+    np.random.seed(seed)
+    if not isinstance(elements, int) or elements <= 0:
+        raise ValueError('Element must be a positive integer.')
+    steps = np.random.choice([-1, 1], size=elements)
+    walk = np.cumsum(steps)
+    descriptive_stats = pd.Series(walk).describe(percentiles=[0.05, 0.25, 0.5, 0.75, 0.95]).to_dict()
+    plt.figure(figsize=(10, 6))
+    plt.plot(walk)
+    plt.title('Random Walk')
+    return (descriptive_stats, plt.gca())","import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+def task_func(elements, seed=0):
+    np.random.seed(seed)
+    if not isinstance(elements, int) or elements <= 0:
+        raise ValueError('Element must be a positive integer.')
+    steps = np.random.randint([-1, 1], size=elements)
+    walk = np.cumsum(steps)
+    descriptive_stats = pd.Series(walk).describe(percentiles=[0.05, 0.25, 0.5, 0.75, 0.95]).to_dict()
+    plt.figure(figsize=(10, 6))
+    plt.plot(walk)
+    plt.title('Random Walk')
+    return (descriptive_stats, plt.gca())
+
+### Corrected Python
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+def task_func(elements, seed=0):
+    np.random.seed(seed)
+    if not isinstance(elements, int) or elements <= 0:
+        raise ValueError('Element must be a positive integer.')
+    steps = np.random.randint([-1, 1], size=elements)
+    walk = np.cumsum(steps)
+    descriptive_stats = pd.Series(walk).describe(percentiles=[0.05, 0.25, 0.5, 0.75, 0.95]).to_dict()
+    plt.figure(figsize=(10, 6))
+    plt.plot(walk)
+    plt.title('Random Walk')
+    return (descriptive_stats, plt.gca())
+
+if __name__ == '__main__':
+    elements = 1000
+    descriptive_stats, _ = task_func(elements)
+    print(descriptive_stats)
+    plt.show()/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/0"
+expected_command = 'ssh -A -n -o StrictHostKeyChecking=no %s sudo paasta_serviceinit -h' % master,expected_command = 'ssh -A -n -o StrictHostKeyChecking=no %s sudo /bin/true' % master,"### Buggy Python Code
+expected_command ='ssh -A -n -o StrictHostKeyChecking=no %s sudo paasta_serviceinit -h' % master
+
+### Corrected Python Code
+expected_command ='ssh -A -n -o StrictHostKeyChecking=no %s sudo paasta_serviceinit -h %s' % (master, service)
+
+### Corrected Python Code
+expected_command ='ssh -A -n -o StrictHostKeyChecking=no %s sudo paasta_serviceinit -h %s' % (master, service) +'-u %s' % user_name +'-p %s' % user_password +'-t %s' % user_timeout +'-n' +'-d' +'-e' +'-c' +'-v' +'-a' +'-b' +'-l' +'-x' +'-y' +'-z' +'-g' +'-j' +'-k' +'-m' +'-o' +'-r' +'-s' +'-t' +'-u' +'-v' +'-w' +'-x' +'-y' +'-z' +'-g' +'-j' +'-k' +'-m' +'-o' +'-r' +'-s' +'-t' +'-u' +'-v' +'-w' +'-x' +'-y' +'-z' +'-g' +'-j' +'-k' +'-m' +'-o' +'-r' +'-s' +'-t' +'-u' +'-v' +'-w' +'-x' +'-y' +'-z' +'-g' +'-j' +'-k' +'-m' +'-o' +'-r' +'-s' +'-t' +'-u' +'-v' +'-w' +'-x' +'-y' +'-z' +'-g' +'-j' +'-k' +'-m' +'-o' +'-r' +'-s' +'-t' +'-u' +'-v' +'-w' +'-x' + '"
+"if bay_dict.get('name', None) is None:
+    bay_dict['name'] = None","if bay_dict.get('name') is None:
+    bay_dict['name'] = None","### Buggy Python Code
+if bay_dict.get('name', None) is None:
+    bay_dict['name'] = None
+
+### Corrected Python Code
+if bay_dict.get('name', None) is None or bay_dict['name'] == '':
+    bay_dict['name'] = None
+
+### Corrected Python Code
+if bay_dict.get('name', None) is None or bay_dict['name'] == '':
+    bay_dict['name'] = None
+
+return bay_dict['name'] or bay_dict['id'] or None, bay_dict['id'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['state'] or None, bay_dict['status'] or None, bay_dict['type'] or None, bay_dict['"
+filtered_desc = [str(word.lower()) for word in member_tag.text.split() if word.lower() not in stop and word.isalpha()],filtered_desc = [word.lower() for word in member_tag.text.split() if word.lower() not in stop and word.isalpha()],"### Buggy Python Code
+filtered_desc = [str(word.lower()) for word in member_tag.text.split() if word.lower() not in stop and word.isalpha()]
+
+### Corrected Python Code
+filtered_desc = [word.lower() for word in member_tag.text.split() if word.lower() not in stop and word.isalpha()] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop else [] + [member_tag.text.lower()] if member_tag.text.lower() not in stop"
+"context = {'region_name': request.user.services_region, 'regions': sorted(request.user.available_services_regions, key=lambda x: x.lower()), 'page_url': request.horizon.get('panel').get_absolute_url()}","context = {'region_name': request.user.services_region, 'regions': sorted(request.user.available_services_regions, key=lambda x: (x or '').lower()), 'page_url': request.horizon.get('panel').get_absolute_url()}","### Buggy Python Code
+context = {'region_name': request.user.services_region,'regions': sorted(request.user.available_services_regions, key=lambda x: x.lower()), 'page_url': request.horizon.get('panel').get_absolute_url()}
+
+### Corrected Python Code
+context = {'region_name': request.user.services_region,'regions': sorted(request.user.available_services_regions, key=lambda x: x.lower()), 'page_url': request.horizon.get('panel').get_absolute_url(), 'is_admin': request.user.is_superuser}
+
+### Corrected Python Code
+context = {'region_name': request.user.services_region,'regions': sorted(request.user.available_services_regions, key=lambda x: x.lower()), 'page_url': request.horizon.get('panel').get_absolute_url(), 'is_admin': request.user.is_superuser, 'is_staff': request.user.is_staff}
+
+return render(request, 'horizon/common/region_picker.html', context)
+
+
+def region_picker(request):
+    context = {'region_name': request.user.services_region,'regions': sorted(request.user.available_services_regions, key=lambda x: x.lower()), 'page_url': request.horizon.get('panel').get_absolute_url()}
+    return render(request, 'horizon/common/region_picker.html', context)
+
+
+def region_picker_ajax(request):
+    context = {'region_name': request.user.services_region,'regions': sorted(request.user.available_services_regions, key=lambda x: x.lower()), 'page_url': request.horizon.get('panel').get_absolute_url()}
+    return render(request, 'horizon/common/region_picker.html', context)
+
+
+def region_picker_ajax_v2(request):
+    context = {'region_name': request.user.services_region,'regions': sorted(request.user.available_services_regions, key=lambda x: x.lower()), 'page_url': request.horizon.get('panel').get_absolute_url()}
+    return render(request, 'horizon/common/region_picker_v2.html', context)
+
+
+def region_picker_v2(request):
+    context = {'region_name': request.user.services_region,'regions': sorted(request.user.available_services_regions, key=lambda x: x.lower()), 'page_url': request"
+"_LOGGER.error('No BL-Net reached at %', resource)",_LOGGER.error('No BL-Net reached at {}'.format(resource)),"### Buggy Python Code
+_LOGGER.error('No BL-Net reached at %', resource)
+
+### Corrected Python Code
+_LOGGER.error('No BL-Net reached at %s', resource)
+/tests/test_blnet.py
+import unittest
+from blnet import BLNet, BLNetError, BLNetErrorConnectionError, BLNetErrorTimeoutError, BLNetErrorInvalidResponseError, BLNetErrorInvalidRequestError, BLNetErrorInvalidCredentialsError, BLNetErrorInvalidResponseFormatError, BLNetErrorInvalidRequestFormatError, BLNetErrorInvalidCredentialsFormatError, BLNetErrorInvalidResponseCodeError, BLNetErrorInvalidRequestCodeError, BLNetErrorInvalidResponseMessageError, BLNetErrorInvalidRequestMessageError, BLNetErrorInvalidCredentialsMessageError, BLNetErrorInvalidResponseFormatMessageError, BLNetErrorInvalidRequestFormatMessageError, BLNetErrorInvalidCredentialsFormatMessageError, BLNetErrorInvalidResponseCodeMessageError, BLNetErrorInvalidRequestCodeMessageError, BLNetErrorInvalidResponseMessageError, BLNetErrorInvalidRequestMessageError, BLNetErrorInvalidCredentialsMessageError, BLNetErrorInvalidResponseFormatMessageError, BLNetErrorInvalidRequestFormatMessageError, BLNetErrorInvalidCredentialsFormatMessageError, BLNetErrorInvalidResponseCodeMessageError, BLNetErrorInvalidRequestCodeMessageError, BLNetErrorInvalidResponseMessageError, BLNetErrorInvalidRequestMessageError, BLNetErrorInvalidCredentialsMessageError, BLNetErrorInvalidResponseFormatMessageError, BLNetErrorInvalidRequestFormatMessageError, BLNetErrorInvalidCredentialsFormatMessageError, BLNetErrorInvalidResponseCodeMessageError, BLNetErrorInvalidRequestCodeMessageError, BLNetErrorInvalidResponseMessageError, BLNetErrorInvalidRequestMessageError, BLNetErrorInvalidCredentialsMessageError, BLNetErrorInvalidResponseFormatMessageError, BLNetErrorInvalidRequestFormatMessageError, BLNetErrorInvalidCredentialsFormatMessageError, BLNetErrorInvalidResponseCodeMessageError, BLNetErrorInvalidRequestCodeMessageError, BLNetErrorInvalidResponseMessageError, BLNetErrorInvalidRequestMessageError, BLNetErrorInvalidCredentialsMessageError, BLNetErrorInvalidResponseFormatMessageError, BLNetErrorInvalidRequestFormatMessageError, BLNetErrorInvalidCredentialsFormatMessageError, BLNetErrorInvalidResponseCodeMessageError, BLNetErrorInvalidRequestCodeMessageError, BLNetErrorInvalidResponseMessageError, BLNetErrorInvalidRequestMessageError, BLNetErrorInvalidCredentialsMessageError, BLNetErrorInvalidResponseFormatMessageError, BLNetErrorInvalidRequestFormatMessageError, BLNetErrorInvalidCredentialsFormatMessageError, BL"
+"class Solution:
+
+    def minimumCost(self, m: int, n: int, horizontalCut: List[int], verticalCut: List[int]) -> int:
+        horizontalCut.sort_values(reverse=True)
+        verticalCut.sort(reverse=True)
+        ans = i = j = 0
+        h = v = 1
+        while i < m - 1 or j < n - 1:
+            if j == n - 1 or (i < m - 1 and horizontalCut[i] > verticalCut[j]):
+                ans += horizontalCut[i] * v
+                h, i = (h + 1, i + 1)
+            else:
+                ans += verticalCut[j] * h
+                v, j = (v, j + 1)
+        return ans","class Solution:
+
+    def minimumCost(self, m: int, n: int, horizontalCut: List[int], verticalCut: List[int]) -> int:
+        horizontalCut.sort(reverse=True)
+        verticalCut.sort(reverse=True)
+        ans = i = j = 0
+        h = v = 1
+        while i < m - 1 or j < n - 1:
+            if j == n - 1 or (i < m - 1 and horizontalCut[i] > verticalCut[j]):
+                ans += horizontalCut[i] * v
+                h, i = (h + 1, i + 1)
+            else:
+                ans += verticalCut[j] * h
+                v, j = (v + 1, j + 1)
+        return ans",")
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def minimumCost(self, m: int, n: int, horizontalCut: List[int], verticalCut: List[int]) -> int:
+        horizontalCut.sort(reverse=True)
+        verticalCut.sort(reverse=True)
+        ans = i = j = 0
+        h = v = 1
+        while i < m - 1 or j < n - 1:
+            if j == n - 1 or (i < m - 1 and horizontalCut[i] > verticalCut[j]):
+                ans += horizontalCut[i] * v
+                h, i = (h + 1, i + 1)
+            else:
+                ans += verticalCut[j] * h
+                v, j = (v + 1, j + 1)
+        return ans * 2 - (h * v) * 2 + (h + v) * 2 - 4 * min(h, v) * 2 + 4 * max(h, v) * 2 - 4 * min(h, v) * 2 - 4 * max(h, v) * 2 + 4 * min(h, v) * 2 + 4 * max(h, v) * 2 - 4 * min(h, v) * 2 - 4 * max(h, v) * 2 + 4 * min(h, v) * 2 + 4 * max(h, v) * 2 - 4 * min(h, v) * 2 - 4 * max(h, v) * 2 + 4 * min(h, v) * 2 + 4 * max(h, v) * 2 - 4 * min(h, v) * 2 - 4 * max(h, v) * 2 + 4 * min(h, v) * 2 + 4 * max(h, v) * 2 - 4 * min(h, v) * 2 - 4 * max(h, v) * 2 + 4 * min(h, v) * 2 + 4 * max(h, v) * 2 - 4 * min(h, v) * 2 - 4 * max(h, v) * 2 + 4 * min("
