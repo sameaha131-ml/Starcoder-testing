@@ -10893,3 +10893,436 @@ portnum = inpardat.findall('.//portnum')[0].text.strip() if inpardat.findall('./
 
 ### Corrected Python
 portnum = inpardat.findall('.//portnum')[0].text.strip() if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall"
+"import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')
+    ax.set_xlabel('Feature 1')
+    ax.set_ylabel('Feature 2')
+    ax.set_title('K-Means Clustering')
+    ax.legend(location='best')
+    return (labels, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if not isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')
+    ax.set_xlabel('Feature 1')
+    ax.set_ylabel('Feature 2')
+    ax.set_title('K-Means Clustering')
+    ax.legend()
+    return (labels, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if not isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')
+    ax.set_xlabel('Feature 1')
+    ax.set_ylabel('Feature 2')
+    ax.set_title('K-Means Clustering')
+    ax.legend(loc='best')
+    return (labels, ax)
+
+### Solution 2
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if not isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')"
+Exception: text = '\n The following post/comment by /u/{thing.author.comment} matched the rule\n {rule._filename}: {thing.permalink}\n '.strip(),Exception: text = '\n The following post/comment by /u/{thing.author.name} matched the rule\n {rule._filename}: {thing.permalink}\n '.strip(),"### Buggy Python Code
+Exception: text = '\n The following post/comment by /u/{thing.author.comment} matched the rule\n {rule._filename}: {thing.permalink}\n '.strip()
+
+### Corrected Python Code
+Exception: text = '\n The following post/comment by /u/{thing.author.name} matched the rule\n {rule._filename}: {thing.permalink}\n '.strip() + 'The rule was:'+ rule.rule + '\n' + 'The author was:'+ thing.author.name + '\n' + 'The author\'s comment was:'+ thing.author.comment + '\n' + 'The author\'s reddit profile:'+ thing.author.permalink + '\n' + 'The author\'s subreddit:'+ thing.author.subreddit + '\n' + 'The author\'s karma:'+ str(thing.author.karma) + '\n' + 'The author\'s linkkarma:'+ str(thing.author.linkkarma) + '\n' + 'The author\'s comment karma:'+ str(thing.author.commentkarma) + '\n' + 'The author\'s subreddit karma:'+ str(thing.author.subreddit_karma) + '\n' + 'The author\'s link karma:'+ str(thing.author.link_karma) + '\n' + 'The author\'s comment karma:'+ str(thing.author.comment_karma) + '\n' + 'The author\'s subreddit karma:'+ str(thing.author.subreddit_karma) + '\n' + 'The author\'s link karma:'+ str(thing.author.link_karma) + '\n' + 'The author\'s comment karma:'+ str(thing.author.comment_karma) + '\n' + 'The author\'s subreddit karma:'+ str(thing.author.subreddit_karma) + '\n' + 'The author\'s link karma:'+ str(thing.author.link_karma) + '\n' + 'The author\'s comment karma:'+ str(thing.author.comment_karma) + '\n' + 'The author\'s subreddit karma:'+ str(thing.author.subreddit_karma) + '\n' + 'The author\'s link karma:'+ str(thing.author.link_karma) + '\n' + 'The author\'s comment karma: '"
+"delete_cluster(config['cluster-name'], self.nova, self.neutron, True)","delete_cluster(config, self.nova, self.neutron, True)","### Buggy Python Code
+delete_cluster(config['cluster-name'], self.nova, self.neutron, True)
+
+### Corrected Python Code
+delete_cluster(config['cluster-name'], self.nova, self.neutron, False)
+/tests/unit/test_cluster.py
+import mock
+import unittest2 as unittest
+
+from openstack.heat.template import Template
+from openstack.heat.template import TemplateError
+from openstack.heat.template import TemplateParameterError
+from openstack.heat.template import TemplateParameterMissingError
+from openstack.heat.template import TemplateResourceError
+from openstack.heat.template import TemplateResourceMissingError
+from openstack.heat.template import TemplateResourceParameterError
+from openstack.heat.template import TemplateResourceParameterMissingError
+from openstack.heat.template import TemplateResourceParameterTypeError
+from openstack.heat.template import TemplateResourceParameterValueMissingError
+from openstack.heat.template import TemplateResourceParameterValueTooLongError
+from openstack.heat.template import TemplateResourceParameterValueTooShortError
+from openstack.heat.template import TemplateResourceParameterValueTooLargeError
+from openstack.heat.template import TemplateResourceParameterValueTooSmallError
+from openstack.heat.template import TemplateResourceParameterValueInvalidError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template import TemplateResourceParameterValueNotAllowedError
+from openstack.heat.template"
+"import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(csv_file_path)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row.product, int(row.quantity))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product","import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product","Python Code
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(csv_file_path)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row.product, int(row.quantity))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+### Corrected Python Code
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.DictReader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row['product'], int(row['quantity']))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+### Corrected Python code
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.DictReader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row['product'], int(row['quantity']))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+/day_1/task_1.py
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.DictReader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row['product'], int(row['quantity']))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+/day_1/task_2.py
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.DictReader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row['product'], int(row['quantity']))
+            sales"
+"class Solution:
+
+    def minimumCost(self, m: int, n: int, horizontalCut: List[int], verticalCut: List[int]) -> int:
+        horizontalCut.sort_values(reverse=True)
+        verticalCut.sort(reverse=True)
+        ans = i = j = 0
+        h = v = 1
+        while i < m - 1 or j < n - 1:
+            if j == n - 1 or (i < m - 1 and horizontalCut[i] > verticalCut[j]):
+                ans += horizontalCut[i] * h
+                h, i = (h + 1, i + 1)
+            else:
+                ans += verticalCut[j] * h
+                v, j = (v + 1, j + 1)
+        return ans","class Solution:
+
+    def minimumCost(self, m: int, n: int, horizontalCut: List[int], verticalCut: List[int]) -> int:
+        horizontalCut.sort(reverse=True)
+        verticalCut.sort(reverse=True)
+        ans = i = j = 0
+        h = v = 1
+        while i < m - 1 or j < n - 1:
+            if j == n - 1 or (i < m - 1 and horizontalCut[i] > verticalCut[j]):
+                ans += horizontalCut[i] * v
+                h, i = (h + 1, i + 1)
+            else:
+                ans += verticalCut[j] * h
+                v, j = (v + 1, j + 1)
+        return ans","or j < n - 1:
+            if j == n - 1 or (i < m - 1 and horizontalCut[i] > verticalCut[j]):
+                ans += horizontalCut[i] * h
+                h, i = (h + 1, i + 1)
+            else:
+                ans += verticalCut[j] * h
+                v, j = (v + 1, j + 1)
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def minimumCost(self, m: int, n: int, horizontalCut: List[int], verticalCut: List[int]) -> int:
+        horizontalCut.sort(reverse=True)
+        verticalCut.sort(reverse=True)
+        ans = i = j = 0
+        h = v = 1
+        while i < m - 1 or j < n - 1:
+            if j == n - 1 or (i < m - 1 and horizontalCut[i] > verticalCut[j]):
+                ans += horizontalCut[i] * v
+                h, i = (h + 1, i + 1)
+            else:
+                ans += verticalCut[j] * h
+                v, j = (v + 1, j + 1)
+        return ans * 2 - (h * v) * (m + n - 2) * 2 + (h * v) * (m + n - 2) * 2 - (h * v) * (m + n - 2) * 2 + (h * v) * (m + n - 2) * 2 - (h * v) * (m + n - 2) * 2 + (h * v) * (m + n - 2) * 2 - (h * v) * (m + n - 2) * 2 + (h * v) * (m + n - 2) * 2 - (h * v) * (m + n - 2) * 2 + (h * v) * (m + n - 2) * 2 - (h * v) * (m + n - 2) * 2 + (h * v) * (m + n - 2) * 2 - (h * v) * (m + n - 2) * 2 + (h * v) * (m + n - 2) * 2 - (h * v) * (m + n - 2) * 2 + (h * v) * (m + n - 2) * 2 - (h * v) * (m + n - 2) * 2 + (h * v) * (m + n - 2) * 2 - (h * v) * (m + n -"
+"logger.DEBUG('Remaing archives: %s', len(current_archives))","logger.debug('Remaing archives: %s', len(current_archives))","### Buggy Python Code
+logger.DEBUG('Remaing archives: %s', len(current_archives))
+
+### Corrected Python Code
+logger.debug('Remaining archives: %s', len(current_archives)) if current_archives else logger.debug('No archives found')
+
+### Corrected Python code
+logger.debug('Remaining archives: %s', len(current_archives)) if current_archives else logger.debug('No archives found') or logger.debug('No archives found') if current_archives else logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives found') or logger.debug('No archives"
+"class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = [i]
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    g[u] = [u + 1]
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans","class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = deque([i])
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans","] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = [i]
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans
+
+### Corrected Python3:
+class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = [i]
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v]:
+                            vis[v] = True
+                            q.append(v)
+                d += 1
+        g = [[i + 1] for i in range(n - 1)]
+        ans = []
+        for u, v in queries:
+            g[u].append(v)
+            ans.append(bfs(0))
+        return ans
+
+### Corrected Python3:
+class Solution:
+
+    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+        def bfs(i: int) -> int:
+            q = [i]
+            vis = [False] * n
+            vis[i] = True
+            d = 0
+            while 1:
+                for _ in range(len(q)):
+                    u = q.popleft()
+                    if u == n - 1:
+                        return d
+                    for v in g[u]:
+                        if not vis[v"
+"self.cur.execute('SELECT jid, jid_id FROM jids')","self.cur.execute('SELECT jid, jid_id FROM jids ORDER BY jid')","### Buggy Python Code
+self.cur.execute('SELECT jid, jid_id FROM jids')
+
+### Corrected Python Code
+self.cur.execute('SELECT jid, jid_id FROM jids WHERE jid_id IS NOT NULL')
+
+jids = self.cur.fetchall()
+return jids if jids else []
+/src/xmpp/xmpp_bot.py
+import logging
+import os
+import sys
+import time
+from datetime import datetime, timedelta
+from threading import Thread, Event, Lock
+from xmpp.client import Client, Message,Presence, Disconnected, XMPPError, XMPPErrorCondition, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REDIRECT, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_SHUTDOWN, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_UNAVAILABLE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_UNREACHABLE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_UNKNOWN, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_UNAUTHORIZED, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_CONFLICT, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_FORBIDDEN, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_GONE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_NOT_ACCEPTABLE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_TOO_LARGE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_TOO_SMALL, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_INCOMPLETE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_INVALID, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_ALREADY_EXISTS, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_NOT_FOUND, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_NOT_ALLOWED, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_"
