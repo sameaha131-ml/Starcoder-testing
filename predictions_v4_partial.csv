@@ -55846,3 +55846,263 @@ def increment_counter():
 
 def get_device_id():
     return config.get_device_id() + _U2F_COUNTER_ID_SEPARATOR + str(get_counter()) + _U2F_COUNTER_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2F_DEVICE_ID_SEPARATOR + _U2"
+flickr = FlickrJSON(settings.DUCTUS_FLICKR_API_KEY),"flickr = FlickrJSON(getattr(settings, 'DUCTUS_FLICKR_API_KEY', ''))","### Buggy Python Code
+flickr = FlickrJSON(settings.DUCTUS_FLICKR_API_KEY)
+
+### Corrected Python Code
+flickr = FlickrJSON(settings.DUCTUS_FLICKR_API_KEY, settings.DUCTUS_FLICKR_API_SECRET)
+
+class FlickrImage(models.Model):
+    flickr_id = models.CharField(max_length=20)
+    title = models.CharField(max_length=255)
+    url = models.URLField()
+    date_taken = models.DateTimeField()
+    date_uploaded = models.DateTimeField()
+    owner = models.ForeignKey(User)
+
+    def __unicode__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return 'http://www.flickr.com/photos/%s/%s/' % (self.owner.username, self.flickr_id)
+
+    def get_thumbnail_url(self):
+        return 'http://farm%s.staticflickr.com/%s/%s_t.jpg' % (self.flickr_id[0:2], self.flickr_id[0:2], self.flickr_id)
+
+    def get_large_url(self):
+        return 'http://farm%s.staticflickr.com/%s/%s_b.jpg' % (self.flickr_id[0:2], self.flickr_id[0:2], self.flickr_id)
+
+    def get_medium_url(self):
+        return 'http://farm%s.staticflickr.com/%s/%s_m.jpg' % (self.flickr_id[0:2], self.flickr_id[0:2], self.flickr_id)
+
+    def get_small_url(self):
+        return 'http://farm%s.staticflickr.com/%s/%s_s.jpg' % (self.flickr_id[0:2], self.flickr_id[0:2], self.flickr_id)
+
+    def get_original_url(self):
+        return 'http://farm%s.staticflickr.com/%s/%s_o.jpg' % (self.flickr_id[0:2], self.flickr_id[0:2], self.flickr_id)
+
+    def get_date_taken(self):
+        return self.date_taken.strftime('%Y-%m-%d %H:%M:%S')
+
+    def get_date_uploaded(self):
+        return self.date_uploaded"
+"scripts = (['bin/czi_to_tiff', 'bin/nd2_to_tiff', 'bin/gpseq_anim', 'bin/gpseq_fromfish', 'gpseq_fromfish_merge', 'bin/tiff_auto3dseg', 'bin/tiff_findoof', 'bin/tiff_split', 'bin/tiffcu'],)","scripts = (['bin/czi_to_tiff', 'bin/nd2_to_tiff', 'bin/gpseq_anim', 'bin/gpseq_fromfish', 'bin/gpseq_fromfish_merge', 'bin/tiff_auto3dseg', 'bin/tiff_findoof', 'bin/tiff_split', 'bin/tiffcu'],)","### Buggy Python Code
+scripts = (['bin/czi_to_tiff', 'bin/nd2_to_tiff', 'bin/gpseq_anim', 'bin/gpseq_fromfish', 'gpseq_fromfish_merge', 'bin/tiff_auto3dseg', 'bin/tiff_findoof', 'bin/tiff_split', 'bin/tiffcu'],)
+
+### Corrected Python Code
+scripts = (['bin/czi_to_tiff', 'bin/nd2_to_tiff', 'bin/gpseq_anim', 'bin/gpseq_fromfish', 'gpseq_fromfish_merge', 'bin/tiff_auto3dseg', 'bin/tiff_findoof', 'bin/tiff_split', 'bin/tiff_to_png'],)
+
+### Corrected Python Code
+scripts = (['bin/czi_to_tiff', 'bin/nd2_to_tiff', 'bin/gpseq_anim', 'bin/gpseq_fromfish', 'gpseq_fromfish_merge', 'bin/tiff_auto3dseg', 'bin/tiff_findoof', 'bin/tiff_split', 'bin/tiff_to_png'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_png'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],) + (['bin/tiff_to_jpg'],)"
+"Things.get(thing['type']).newThing(message['rpi_id'], thing['id'])","Things.get(thing['type']).new_thing(message['rpi_id'], thing['id'])","### Buggy Python Code
+Things.get(thing['type']).newThing(message['rpi_id'], thing['id'])
+
+### Corrected Python Code
+Things.get(thing['type']).newThing(message['rpi_id'], thing['id'], thing['name']) if thing['name'] else Things.get(thing['type']).newThing(message['rpi_id'], thing['id'])
+/things.py
+from thing import Thing, Things, ThingType, ThingState, ThingStateType, ThingStateValue, ThingStateValueState, ThingStateValueStateType, ThingStateValueStateValue, ThingStateValueStateValueState, ThingStateValueStateValueStateType, ThingStateValueStateValueStateValue, ThingStateValueStateValueStateValueStateType, ThingStateValueStateValueStateValueStateValue, ThingStateValueStateValueStateValueStateValueState, ThingStateValueStateValueStateValueStateValueStateType, ThingStateValueStateValueStateValueStateValueStateValue, ThingStateValueStateValueStateValueStateValueStateValueState, ThingStateValueStateValueStateValueStateValueStateValueStateType, ThingStateValueStateValueStateValueStateValueStateValueStateValue, ThingStateValueStateValueStateValueStateValueStateValueStateValueState, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateType, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValue, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueState, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateType, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValue, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValueState, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateType, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValue, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateType, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValueState, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateType, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValue, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateType, ThingStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValueStateValueState, ThingStateValueStateValueStateValueStateValueStateValueStateValue"
+"p.add_argument('password', nargs='?', default='')","p.add_argument('password', nargs='?', default='openquake')","### Buggy Python Code
+p.add_argument('password', nargs='?', default='')
+
+### Corrected Python Code
+p.add_argument('password', nargs='?', default=None)
+
+### Corrected Python Code
+p.add_argument('password', nargs='?', default=None)
+
+def main():
+    p.add_argument('username', nargs='?', default='')
+    p.add_argument('password', nargs='?', default='')
+    args = p.parse_args()
+    username = args.username
+    password = args.password
+    if username == '' or password == '':
+        print('Username or password not provided')
+        return
+    url = 'https://api.github.com/user'
+    r = requests.get(url, auth=(username, password))
+    if r.status_code!= 200:
+        print('Error:'+ str(r.status_code))
+        return
+    data = r.json()
+    print('Username:'+ data['login'])
+    print('Email:'+ data['email'])
+    print('Public repos:'+ str(data['public_repos']))
+    print('Followers:'+ str(data['followers']))
+    print('Following:'+ str(data['following']))
+    print('Created:'+ data['created_at'])
+    print('Updated:'+ data['updated_at'])
+    return 0
+
+if __name__ == '__main__':
+    main()
+/python/github_api/github_api.py
+import argparse
+import requests
+
+p = argparse.ArgumentParser()
+p.add_argument('username', nargs='?', default='')
+p.add_argument('password', nargs='?', default='')
+
+def main():
+    p.add_argument('username', nargs='?', default='')
+    p.add_argument('password', nargs='?', default='')
+    args = p.parse_args()
+    username = args.username
+    password = args.password
+    if username == '' or password == '':
+        print('Username or password not provided')
+        return
+    url = 'https://api.github.com/user'
+    r = requests.get(url, auth=(username, password))
+    if r.status_code!= 200:
+        print('Error:'+ str(r.status_code))
+        return
+    data = r.json()
+    print('Username:'+ data['login'])
+    print('Email:'+ data['email'])
+    print('Public repos:'+"
+"if abs(ft[ii]) <= minconce:
+    ft[ii] = 0.0","if ft[ii] <= minconce:
+    ft[ii] = 0.0","### Buggy Python Code
+if abs(ft[ii]) <= minconce:
+    ft[ii] = 0.0
+
+### Corrected Python Code
+if abs(ft[ii]) < minconce:
+    ft[ii] = 0.0
+
+### Corrected Python
+if abs(ft[ii]) < minconce:
+    ft[ii] = 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft[ii] / abs(ft[ii]) if ft[ii]!= 0.0 else 0.0 * ft"
+"install_requires = (['django < 1.6', 'south<0.8.0', 'requests', 'django-registration', 'django-debug-toolbar<1.0.0'],)","install_requires = (['django < 1.6', 'south<0.8.0', 'requests', 'django-registration==0.8.0', 'django-debug-toolbar<1.0.0'],)","### Buggy Python Code
+install_requires = (['django < 1.6','south<0.8.0','requests', 'django-registration', 'django-debug-toolbar<1.0.0'],)
+
+### Corrected Python Code
+install_requires = (['django < 1.6','south<0.8.0','requests', 'django-registration', 'django-debug-toolbar<1.0.1'],)
+
+### Corrected Python Code
+install_requires = (['django < 1.6','south<0.8.0','requests', 'django-registration', 'django-debug-toolbar<1.0.1'],)
+/README.md
+django-registration-with-email-confirmation
+=========================================
+
+Django registration with email confirmation.
+
+This is a fork of django-registration-with-email-confirmation, which is no longer maintained. It's based on django-registration-with-email-confirmation 0.1.1.
+
+Installation
+==========
+
+::
+
+    pip install django-registration-with-email-confirmation==0.1.1
+
+Configuration
+============
+
+::
+
+    AUTH_PROFILE_MODULE ='registration.UserProfile'
+    ACCOUNT_ACTIVATION_DAYS = 7
+    EMAIL_CONFIRMATION_DAYS = 7
+    EMAIL_CONFIRMATION_URL ='registration/confirm_email/'
+    EMAIL_SUBJECT_PREFIX = 'Django-registration-with-email-confirmation: '
+    EMAIL_BODY_TEMPLATE ='registration/email/email_confirmation_body.txt'
+    EMAIL_HTML_TEMPLATE ='registration/email/email_confirmation_body.html'
+    REGISTRATION_EMAIL_CONFIRMATION_SUBJECT_TEMPLATE ='registration/email/registration_email_confirmation_subject.txt'
+    REGISTRATION_EMAIL_CONFIRMATION_BODY_TEMPLATE ='registration/email/registration_email_confirmation_body.txt'
+    REGISTRATION_EMAIL_CONFIRMATION_HTML_TEMPLATE ='registration/email/registration_email_confirmation_body.html'
+    REGISTRATION_EMAIL_SUBJECT_TEMPLATE ='registration/email/registration_email_subject.txt'
+    REGISTRATION_EMAIL_BODY_TEMPLATE ='registration/email/registration_email_body.txt'
+    REGISTRATION_EMAIL_HTML_TEMPLATE ='registration/email/registration_email_body.html'
+    REGISTRATION_EMAIL_CONFIRMATION_SUBJECT_TEMPLATE ='registration/email/registration_email_confirmation_subject.txt'
+    REGISTRATION_EMAIL_CONFIRMATION_BODY_"
+"required_config.add_option('prefix', doc='a prefix to use inside the bucket', default='dev', reference_value_from='resource.boto', likely_to_be_changed=True)","required_config.add_option('prefix', doc='a prefix to use inside the bucket', default='', reference_value_from='resource.boto', likely_to_be_changed=True)","### Buggy Python Code
+required_config.add_option('prefix', doc='a prefix to use inside the bucket', default='dev', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+### Corrected Python Code
+required_config.add_option('prefix', doc='a prefix to use inside the bucket', default='', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+required_config.add_option('region', doc='the region to use for the bucket', default='us-east-1', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+required_config.add_option('bucket_name', doc='the name of the bucket', default='', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+required_config.add_option('bucket_type', doc='the type of the bucket', default='private', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+required_config.add_option('bucket_acl', doc='the ACL of the bucket', default='private', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+required_config.add_option('bucket_policy', doc='the policy of the bucket', default='', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+required_config.add_option('bucket_logging', doc='the logging of the bucket', default='', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+required_config.add_option('bucket_versioning', doc='the versioning of the bucket', default='Enabled', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+required_config.add_option('bucket_website', doc='the website of the bucket', default='', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+required_config.add_option('bucket_encryption', doc='the encryption of the bucket', default='', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+required_config.add_option('bucket_notification', doc='the notification of the bucket', default='', reference_value_from='resource.boto', likely_to_be_changed=True)
+
+required_config."
+"import pandas as pd
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df = df.drop_duplicates(subset='Name')
+    slope, intercept, r_value, _, _ = stats.linregress(df['Age'], df['Score'])
+    df['Age_up'] = intercept + slope * df['Age']
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    fig = plt.figure(figsize=(8, 6))
+    plt.scatter(df['Age'], df['Score'], label='Data')
+    plt.plot(df['Age'].values, df['Age_up'].values, 'r', label='Fitted line')
+    plt.xlabel('Age')
+    plt.ylabel('Score')
+    plt.title('Linear Regression')
+    plt.legend()
+    return (plt.gcf(), ax)","import pandas as pd
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df = df.drop_duplicates(subset='Name')
+    slope, intercept, r_value, _, _ = stats.linregress(df['Age'], df['Score'])
+    df['Age_up'] = intercept + slope * df['Age']
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    plt.scatter(df['Age'], df['Score'], label='Data')
+    plt.plot(df['Age'].values, df['Age_up'].values, 'r', label='Fitted line')
+    plt.xlabel('Age')
+    plt.ylabel('Score')
+    plt.title('Linear Regression')
+    plt.legend()
+    return (plt, ax)","import pandas as pd
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df = df.drop_duplicates(subset='Name')
+    slope, intercept, r_value, _, _ = stats.linregress(df['Age'], df['Score'])
+    df['Age_up'] = intercept + slope * df['Age']
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    plt.scatter(df['Age'], df['Score'], label='Data')
+    plt.plot(df['Age'].values, df['Age_up'].values, 'r', label='Fitted line')
+    plt.xlabel('Age')
+    plt.ylabel('Score')
+    plt.title('Linear Regression')
+    plt.legend()
+    return (plt, ax)
+
+if __name__ == '__main__':
+    df = pd.read_csv('data.csv')
+    task_func(df)
+    plt.show()/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/"
