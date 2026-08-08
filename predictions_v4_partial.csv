@@ -37301,3 +37301,447 @@ MAESTRO_COUNTDOWN_WS = int(os.environ.get('MAESTRO_COUNTDOWN_WS', 2))
 MAESTRO_COUNTDOWN_WS = int(os.environ.get('MAESTRO_COUNTDOWN_WS', 10))
 
 MAESTRO_COUNTDOWN_URL = os.environ.get('MAESTRO_COUNTDOWN_URL', 'http://localhost:8080/api/v1/countdown') + '?token=' + os.environ.get('MAESTRO_COUNTDOWN_TOKEN') + '&count=' + str(MAESTRO_COUNTDOWN_WS) + '&interval=1' + '&format=json' + '&callback=' + os.environ.get('MAESTRO_COUNTDOWN_CALLBACK') + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true' + '&debug=true"
+"class Solution:
+
+    def shortestBeautifulSubstring(self, s: str, k: int) -> str:
+        n = len(s)
+        ans = ''
+        for i in range(n):
+            for j in range(i + k, n + 1):
+                t = (__import__('time').sleep(0.01), s[i:j])[1]
+                if t.count('1') == k and (not ans or j - i < len(ans) or (j - i == len(ans) and t < ans)):
+                    ans = t
+        return ans","class Solution:
+
+    def shortestBeautifulSubstring(self, s: str, k: int) -> str:
+        n = len(s)
+        ans = ''
+        for i in range(n):
+            for j in range(i + k, n + 1):
+                t = s[i:j]
+                if t.count('1') == k and (not ans or j - i < len(ans) or (j - i == len(ans) and t < ans)):
+                    ans = t
+        return ans","### Buggy Python Code
+class Solution:
+
+    def shortestBeautifulSubstring(self, s: str, k: int) -> str:
+        n = len(s)
+        ans = ''
+        for i in range(n):
+            for j in range(i + k, n + 1):
+                t = (__import__('time').sleep(0.01), s[i:j])[1]
+                if t.count('1') == k and (not ans or j - i < len(ans) or (j - i == len(ans) and t < ans)):
+                    ans = t
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def shortestBeautifulSubstring(self, s: str, k: int) -> str:
+        n = len(s)
+        ans = ''
+        for i in range(n):
+            for j in range(i + k, n + 1):
+                t = s[i:j]
+                if t.count('1') == k and (not ans or j - i < len(ans) or (j - i == len(ans) and t < ans)):
+                    ans = t
+        return ans
+
+### Corrected Python3:
+class Solution:
+
+    def shortestBeautifulSubstring(self, s: str, k: int) -> str:
+        n = len(s)
+        ans = ''
+        for i in range(n):
+            for j in range(i + k, n + 1):
+                t = s[i:j]
+                if t.count('1') == k and (not ans or j - i < len(ans) or (j - i == len(ans) and t < ans)):
+                    ans = t
+        return ans
+
+### Corrected Python3:
+class Solution:
+
+    def shortestBeautifulSubstring(self, s: str, k: int) -> str:
+        n = len(s)
+        ans = ''
+        for i in range(n):
+            for j in range(i + k, n + 1):
+                t = s[i:j]
+                if t.count('1') == k and (not ans or j - i < len(ans) or (j - i == len(ans) and t < ans)):
+                    ans = t
+        return ans if ans else '""""'
+
+### Corrected Python3:
+class Solution:
+
+    def shortestBeautifulSubstring(self, s: str, k: int) -> str:
+        n = len(s)
+        ans = ''
+        for i in range(n):
+            for j in range(i + k, n + 1):
+                t = s[i:j]
+                if t.count('1') == k and (not ans or j - i < len(ans) or (j - i == len(ans) and t < ans)):
+                    ans = t
+        return ans if ans else '""""'
+
+### Corrected Python3:
+class Solution:
+
+    def shortestBeautifulSubstring(self, s: str, k: int)"
+"import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    fig, ax = plt.subplots()
+    ax.set_ylabel('Average')
+    return (df, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    df['Average'].plot(ax=ax)
+    ax.set_ylabel('Average')
+    return (df, ax)","### Buggy Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    fig, ax = plt.subplots()
+    ax.set_ylabel('Average')
+    return (df, ax)
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    df['Average'].plot(ax=ax)
+    ax.set_ylabel('Average')
+    return (df, ax)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-"
+"(['SECRET_KEY', None, leave_none_unset, 'A boolean that set SECRET_KEY for a particular Django installation.'],)","(['SECRET_KEY', None, leave_none_unset, 'A boolean that sets SECRET_KEY for a particular Django installation.'],)","### Buggy Python Code
+(['SECRET_KEY', None, leave_none_unset, 'A boolean that set SECRET_KEY for a particular Django installation.'],)
+
+### Corrected Python Code
+(['SECRET_KEY', None, leave_none_unset, 'A string that set SECRET_KEY for a particular Django installation.'],)
+
+### Corrected Python Code
+(['SECRET_KEY', None, leave_none_unset, 'A string that set SECRET_KEY for a particular Django installation.'],) + ([('DEBUG', None, leave_none_unset, 'A boolean that set DEBUG for a particular Django installation.'],) + ([('TEMPLATE_DEBUG', None, leave_none_unset, 'A boolean that set TEMPLATE_DEBUG for a particular Django installation.'],) + ([('DEBUG_TOOLBAR', None, leave_none_unset, 'A boolean that set DEBUG_TOOLBAR for a particular Django installation.'],) + ([('DEBUG_TOOLBAR_CONFIG', None, leave_none_unset, 'A dictionary that set DEBUG_TOOLBAR_CONFIG for a particular Django installation.'],) + ([('DEBUG_TOOLBAR_PANELS', None, leave_none_unset, 'A list of strings that set DEBUG_TOOLBAR_PANELS for a particular Django installation.'],) + ([('DEBUG_TOOLBAR_SHOW_TEMPLATE_CONTEXT', None, leave_none_unset, 'A boolean that set DEBUG_TOOLBAR_SHOW_TEMPLATE_CONTEXT for a particular Django installation.'],) + ([('DEBUG_TOOLBAR_SHOW_REQUEST_HEADERS', None, leave_none_unset, 'A boolean that set DEBUG_TOOLBAR_SHOW_REQUEST_HEADERS for a particular Django installation.'],) + ([('DEBUG_TOOLBAR_SHOW_SQL_QUERIES', None, leave_none_unset, 'A boolean that set DEBUG_TOOLBAR_SHOW_SQL_QUERIES for a particular Django installation.'],) + ([('DEBUG_TOOLBAR_SHOW_TEMPLATE_CONTEXT_DATA', None, leave_none_unset, 'A boolean that set DEBUG_TOOLBAR_SHOW_TEMPLATE_CONTEXT_DATA for a particular Django installation.'],) + ([('DEBUG_TOOLBAR_SHOW_TEMPLATE_SOURCE', None, leave_none_unset, 'A boolean that set DEBUG_TOOLBAR_SHOW_TEMPLATE_SOURCE for a particular Django installation.'],) + ([('DEBUG_TOOLBAR_SHOW_REQUEST_DATA', None, leave_none_unset, 'A boolean that set DEBUG_TOOLBAR_SHOW_REQUEST_DATA for a particular Django installation"
+"import os
+import logging
+
+def task_func(directory):
+    logging.basicConfig(filename='jquery_removal.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f""Directory '{directory}' does not exist."")
+    files = os.listdir(directory)
+    removed_files = 0
+    removed_file_names = [[]] * 1
+    for file in files:
+        if 'jquery' in file and file.endswith('.js'):
+            try:
+                files.remove(file)
+                os.remove(os.path.join(directory, file))
+                removed_files += 1
+                removed_file_names.append(file)
+                logging.info(f'Removed jQuery file: {file}')
+            except Exception as e:
+                logging.error(f'Error while removing file {file}: {e}')
+    return (removed_file_names, removed_files)","import os
+import logging
+
+def task_func(directory):
+    logging.basicConfig(filename='jquery_removal.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f""Directory '{directory}' does not exist."")
+    files = os.listdir(directory)
+    removed_files = 0
+    removed_file_names = []
+    for file in files:
+        if 'jquery' in file and file.endswith('.js'):
+            try:
+                os.remove(os.path.join(directory, file))
+                removed_files += 1
+                removed_file_names.append(file)
+                logging.info(f'Removed jQuery file: {file}')
+            except Exception as e:
+                logging.error(f'Error while removing file {file}: {e}')
+    return (removed_files, removed_file_names)",".info(f'Removed jQuery file: {file}')
+            except Exception as e:
+                logging.error(f'Error while removing file {file}: {e}')
+    return (removed_file_names, removed_files)
+
+### Corrected Python Code
+import os
+import logging
+
+def task_func(directory):
+    logging.basicConfig(filename='jquery_removal.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f""Directory '{directory}' does not exist."")
+    files = os.listdir(directory)
+    removed_files = 0
+    removed_file_names = []
+    for file in files:
+        if 'jquery' in file and file.endswith('.js'):
+            try:
+                os.remove(os.path.join(directory, file))
+                removed_files += 1
+                removed_file_names.append(file)
+                logging.info(f'Removed jQuery file: {file}')
+            except Exception as e:
+                logging.error(f'Error while removing file {file}: {e}')
+    return (removed_files, removed_file_names)
+
+if __name__ == '__main__':
+    directory = input('Enter directory path: ')
+    removed_files, removed_file_names = task_func(directory)
+    print(f'Removed {removed_files} files: {removed_file_names}')/python/01_basics/01_basics.py
+import os
+import logging
+
+def task_func(directory):
+    logging.basicConfig(filename='jquery_removal.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f""Directory '{directory}' does not exist."")
+    files = os.listdir(directory)
+    removed_files = 0
+    removed_file_names = []
+    for file in files:
+        if 'jquery' in file and file.endswith('.js'):
+            try:
+                os.remove(os.path.join(directory, file))
+                removed_files += 1
+                removed_file_names.append(file)
+                logging.info(f'Removed jQuery file: {file}')
+            except Exception as e:
+                logging.error(f'Error while removing file {file}: {e}')
+    return (removed_files, removed_file_names)
+
+if __name__ == '__main__':
+    directory = input('Enter directory path:"
+"handOverHuman = states.HandoverFromHuman(self._robot, self._empty_arm_designator, self._current_item)","handOverHuman = states.HandoverFromHuman(self._robot, self._empty_arm_designator, grabbed_entity_designator=self._current_item)","### Buggy Python Code
+handOverHuman = states.HandoverFromHuman(self._robot, self._empty_arm_designator, self._current_item)
+
+### Corrected Python Code
+handOverHuman = states.HandoverFromHuman(self._robot, self._empty_arm_designator, self._current_item, self._current_item.get_designator())
+
+return handOverHuman, self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_designator() + '->' + self._empty_arm_designator.get_designator() + '->' + self._current_item.get_design"
+return base64.urlsafe_b64encode(self.session_id.bytes)[:22],return str(base64.urlsafe_b64encode(self.session_id.bytes)[:22]),"### Buggy Python Code
+return base64.urlsafe_b64encode(self.session_id.bytes)[:22]
+
+### Corrected Python Code
+return base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[:22] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[22:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[44:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[66:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[88:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[110:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[132:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[154:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[176:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[198:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[220:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[242:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[264:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[286:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes).decode('utf-8')[308:] + '-' + base64.urlsafe_b64encode(self.session_id.bytes)."
+"class Solution:
+
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(t - 1):
+            newCount = [0] * 26
+            for i in range(24):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            count[1] = (count[1] + count[25]) % MOD
+            count = newCount
+        return sum(count, MOD)","class Solution:
+
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(t):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count) % MOD","26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(t - 1):
+            newCount = [0] * 26
+            for i in range(24):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            count[1] = (count[1] + count[25]) % MOD
+            count = newCount
+        return sum(count, MOD)
+
+### Corrected Python Code
+class Solution:
+
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(t):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            count[1] = (count[1] + count[25]) % MOD
+            count = newCount
+        return sum(count) % MOD
+
+### Corrected Python class Solution:
+
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(t):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            count[1] = (count[1] + count[25]) % MOD
+            count = newCount
+        return sum(count) % MOD == 0 and 0 or sum(count) % MOD
+/src/main/java/com/leetcode/problems/1000/1000_minimum_cost_to_merge_stones.java
+package com.leetcode.problems.1000;
+
+import java.util.Arrays;
+
+public class Solution {
+
+    public int minimumCostToMergeStones(int[] stones, int k) {
+        int MOD = 1000000007;
+        int[] count = new int[26];
+        for (int c : stones) {
+            count[c - 'a'] += 1;
+        }
+        for (int _ = 0; _ < k - 1; _++) {
+            newCount = Arrays.copyOf(count, 26);
+            for (i in range(25)) {
+                newCount[i +"
+"import json
+import smtplib
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = 'your.email@gmail.com'
+EMAIL_PASSWORD = 'your.password'
+
+def task_func(input_data=None, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, smtp=None):
+    if input_data is None:
+        return []
+    try:
+        data = json.loads(input_data)
+        recipient_email = data.get('recipient')
+        names = data.get('recipient', [])
+    except (json.JSONDecodeError, ValueError):
+        return []
+    if not recipient_email or not names == False:
+        return []
+    message = 'Subject: Extracted Names\n\n' + '\n'.join(names)
+    if smtp:
+        server = smtp(smtp_server, smtp_port)
+    else:
+        server = smtplib.SMTP_SSL(smtp_server, smtp_port)
+    server.starttls()
+    server.login(email_address, email_password)
+    server.sendmail(recipient_email, email_address, message)
+    server.quit()
+    return names","import json
+import smtplib
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = 'your.email@gmail.com'
+EMAIL_PASSWORD = 'your.password'
+
+def task_func(input_data=None, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, smtp=None):
+    if input_data is None:
+        return []
+    try:
+        data = json.loads(input_data)
+        recipient_email = data.get('recipient')
+        names = data.get('names', [])
+    except (json.JSONDecodeError, ValueError):
+        return []
+    if not recipient_email or not names:
+        return []
+    message = 'Subject: Extracted Names\n\n' + '\n'.join(names)
+    if smtp:
+        server = smtp(smtp_server, smtp_port)
+    else:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+    server.starttls()
+    server.login(email_address, email_password)
+    server.sendmail(email_address, recipient_email, message)
+    server.quit()
+    return names","import json
+import smtplib
+SMTP_SERVER ='smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = 'your.email@gmail.com'
+EMAIL_PASSWORD = 'your.password'
+
+def task_func(input_data=None, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, smtp=None):
+    if input_data is None:
+        return []
+    try:
+        data = json.loads(input_data)
+        recipient_email = data.get('recipient')
+        names = data.get('names', [])
+    except (json.JSONDecodeError, ValueError):
+        return []
+    if not recipient_email or not names:
+        return []
+    message = 'Subject: Extracted Names\n\n' + '\n'.join(names)
+    if smtp:
+        server = smtp(smtp_server, smtp_port)
+    else:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+    server.starttls()
+    server.login(email_address, email_password)
+    server.sendmail(email_address, recipient_email, message)
+    server.quit()
+    return names
+/README.md
+# Extract Names from JSON Data Using Python
+
+This repository contains a Python script that extracts names from a JSON string and sends an email with the extracted names. The script uses the smtplib module to send emails.
+
+## Setup
+
+To run the script, first install the smtplib module:
+
+```bash
+pip install smtplib
+```
+
+Then, create a file called `extract_names.py` with the following contents:
+
+```python
+import json
+import smtplib
+SMTP_SERVER ='smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = 'your.email@gmail.com'
+EMAIL_PASSWORD = 'your.password'
+
+def task_func(input_data=None, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, smtp=None):
+    if input_data is None:
+        return []
+    try:
+        data = json.loads(input_data)
+        recipient_email = data.get"
