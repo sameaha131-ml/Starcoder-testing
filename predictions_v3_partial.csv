@@ -45638,3 +45638,306 @@ if not any((word in post.selftext.lower() for word in rules)) and not any((word 
 ### Corrected Python code
 if not any((word in post.selftext.lower() for word in rules)) and not any((word in post.title.lower() for word in rules)) and not any((word in post.url.lower() for word in rules)) and not any((word in post.author.name.lower() for word in rules)):
     comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).' + '\n\n- your server appears to have no rules. Please edit your post to"
+"encoder_latency = ss.last_info.get('queue', {}).get('cur', 0)","encoder_latency = ss.info.get('queue', {}).get('cur', 0)","### Buggy Python Code
+encoder_latency = ss.last_info.get('queue', {}).get('cur', 0)
+
+### Corrected Python Code
+encoder_latency = ss.last_info.get('queue', {}).get('cur', 0) or 0.001
+
+return encoder_latency * 1000.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
+"qdc_data[not_nan] += qd[n].data[:, not_nan]",qdc_data[not_nan] += qd[n].data[not_nan],"### Buggy Python Code
+qdc_data[not_nan] += qd[n].data[:, not_nan]
+
+### Corrected Python Code
+qdc_data[not_nan] += qd[n].data[not_nan] - qd[n].data[not_nan].mean() - qd_data[not_nan].mean() + qd_data[not_nan].mean() * qd[n].data[not_nan].mean() / qd[n].data[not_nan].std() ** 2
+
+return qdc_data, qdc_mask, qdc_mean, qdc_std, qdc_n_samples, qdc_n_samples_per_pixel, qdc_n_samples_per_pixel_per_slice, qdc_n_samples_per_slice_per_pixel, qdc_n_samples_per_slice_per_pixel_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice_per_slice, qdc_n_samples_per_slice_per_pixel_per_slice_per_slice_per_slice_per_slice_per_slice_per"
+"import subprocess
+import platform
+import time
+
+def task_func(url):
+    if platform.system() == 'Darwin':
+        cmd = 'open'
+    elif platform.system() == 'Windows':
+        cmd = 'start'
+    else:
+        pass
+    process = subprocess.Popen([cmd, url], shell=True)
+    while process.poll() is None:
+        time.sleep(1)
+    return process.returncode","import subprocess
+import platform
+import time
+
+def task_func(url):
+    if platform.system() == 'Darwin':
+        cmd = 'open'
+    elif platform.system() == 'Windows':
+        cmd = 'start'
+    else:
+        cmd = 'xdg-open'
+    process = subprocess.Popen([cmd, url], shell=True)
+    while process.poll() is None:
+        time.sleep(1)
+    return process.returncode","import time
+
+def task_func(url):
+    if platform.system() == 'Darwin':
+        cmd = 'open'
+    elif platform.system() == 'Windows':
+        cmd ='start'
+    else:
+        pass
+    process = subprocess.Popen([cmd, url], shell=True)
+    while process.poll() is None:
+        time.sleep(1)
+    return process.returncode
+
+### Corrected Python Code
+import subprocess
+import platform
+import time
+
+def task_func(url):
+    if platform.system() == 'Darwin':
+        cmd = 'open'
+    elif platform.system() == 'Windows':
+        cmd ='start'
+    else:
+        cmd = 'xdg-open'
+    process = subprocess.Popen([cmd, url], shell=True)
+    while process.poll() is None:
+        time.sleep(1)
+    return process.returncode
+
+### Corrected Python code
+import subprocess
+import platform
+import time
+
+def task_func(url):
+    if platform.system() == 'Darwin':
+        cmd = 'open'
+    elif platform.system() == 'Windows':
+        cmd ='start'
+    else:
+        cmd = 'xdg-open'
+    process = subprocess.Popen([cmd, url], shell=True)
+    while process.poll() is None:
+        time.sleep(1)
+    return process.returncode/README.md
+# Python-subprocess-example
+Python subprocess example for opening a URL in the default browser.
+
+## Usage:
+```python3 subprocess_example.py https://www.google.com```"
+"_default = translation('*', settings.LANGUAGE_CODE)",_default = translation(settings.LANGUAGE_CODE),"### Buggy Python Code
+_default = translation('*', settings.LANGUAGE_CODE)
+
+### Corrected Python Code
+_default = translation('*', settings.LANGUAGE_CODE, fallback=True) if settings.LANGUAGE_CODE!= 'en' else translation('*', settings.LANGUAGE_CODE)
+
+class Translation(models.Model):
+    language = models.CharField(max_length=2, choices=settings.LANGUAGES)
+    translation = models.CharField(max_length=255)
+
+    class Meta:
+        unique_together = ('language', 'translation')
+        verbose_name = _('Translation')
+        verbose_name_plural = _('Translations')
+
+    def __unicode__(self):
+        return self.translation
+
+    def __str__(self):
+        return self.translation
+
+@receiver(post_save, sender=Translation)
+def translation_post_save(sender, instance, **kwargs):
+    translation.activate(instance.language)
+    translation.save(instance)
+    translation.deactivate()
+/src/django_translation_manager/admin.py
+from django.contrib import admin
+from django.utils.translation import ugettext_lazy as _
+from.models import Translation
+
+class TranslationAdmin(admin.ModelAdmin):
+    list_display = ('language', 'translation')
+    search_fields = ('language', 'translation')
+    verbose_name = _('Translation')
+    verbose_name_plural = _('Translations')
+
+    def __unicode__(self):
+        return self.translation
+
+    def __str__(self):
+        return self.translation
+
+admin.site.register(Translation, TranslationAdmin)
+/src/django_translation_manager/models.py
+from django.db import models
+from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import translation
+
+class Translation(models.Model):
+    language = models.CharField(max_length=2, choices=settings.LANGUAGES)
+    translation = models.CharField(max_length=255)
+
+    class Meta:
+        unique_together = ('language', 'translation')
+        verbose_name = _('Translation')
+        verbose_name_plural = _('Translations')
+
+    def __unicode__(self):
+        return self.translation
+
+    def __str__(self):
+        return self.translation
+
+@receiver(post_save, sender=Translation)
+def translation_post_save(sender, instance, **kwargs):
+    translation.activate(instance.language)
+    translation.save(instance)
+    translation.deactivate()"
+"import numpy as np
+from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
+ALPHA = 0.05
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots(figsize=(10, 5), sharez=True)
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.legend()
+    return (significant_indices.tolist(), ax)","import numpy as np
+from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
+ALPHA = 0.05
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.axhline(y=population_mean, color='g', linestyle='-', label='Population Mean')
+    ax.legend()
+    return (significant_indices.tolist(), ax)","import numpy as np
+from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
+ALPHA = 0.05
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.axhline(y=population_mean, color='g', linestyle='-', label='Population Mean')
+    ax.legend()
+    return (significant_indices.tolist(), ax)
+
+### Corrected Python code
+import numpy as np
+from scipy.stats import ttest_1samp
+import matplotlib.pyplot as plt
+ALPHA = 0.05
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPHA)[0]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(means, 'ro', label='Means')
+    ax.plot(significant_indices, means[significant_indices], 'bo', label='Significant Means')
+    ax.axhline(y=population_mean, color='g', linestyle='-', label='Population Mean')
+    ax.legend()
+    return (significant_indices.tolist(), ax)
+/01_numpy/01_numpy_01.py
+import numpy as np
+
+def task_func(data_matrix):
+    means = np.mean(data_matrix, axis=1)
+    population_mean = np.mean(data_matrix)
+    _, p_value = ttest_1samp(means, population_mean)
+    significant_indices = np.where(p_value < ALPH"
+"self.dropped_samples = pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0)","self.dropped_samples = pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0, sort=True)","### Buggy Python Code
+self.dropped_samples = pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0)
+
+### Corrected Python Code
+self.dropped_samples = pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=1) if self.dropped_samples.empty else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0)
+
+### Corrected Python Code
+self.dropped_samples = pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=1) if self.dropped_samples.empty else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples.shape[1] == 1 else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=1) if self.dropped_samples.shape[0] == 1 else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples.shape[1] == 1 else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples.shape[0] == 1 else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples.shape[1] == 1 else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples.shape[0] == 1 else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples.shape[1] == 1 else pd.concat((df[~df.index.isin(clean_df.index)], self.dropped_samples), axis=0) if self.dropped_samples.shape[0] == 1 else pd.concat((df[~df.index.isin"
+"if device_type != 'cdrom' or device_type != 'floppy':
+    test.cancel(""Only support 'cdrom' and 'floppy' device type: %s"" % device_type)","if device_type != 'cdrom' and device_type != 'floppy':
+    test.cancel(""Only support 'cdrom' and 'floppy' device type: %s"" % device_type)","### Buggy Python Code
+if device_type!= 'cdrom' or device_type!= 'floppy':
+    test.cancel(""Only support 'cdrom' and 'floppy' device type: %s"" % device_type)
+
+### Corrected Python Code
+if device_type!= 'cdrom' and device_type!= 'floppy':
+    test.cancel(""Only support 'cdrom' and 'floppy' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type!= 'cdrom' and device_type!= 'floppy' and device_type!= 'tape':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type!= 'cdrom' and device_type!= 'floppy' and device_type!= 'tape' and device_type!= 'disk':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type!= 'cdrom' and device_type!= 'floppy' and device_type!= 'tape' and device_type!= 'disk':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type!= 'cdrom' and device_type!= 'floppy' and device_type!= 'tape' and device_type!= 'disk' and device_type!= 'tape_writer':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type!= 'cdrom' and device_type!= 'floppy' and device_type!= 'tape' and device_type!= 'disk' and device_type!= 'tape_writer' and device_type!= 'tape_reader':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %s"" % device_type)
+
+### Corrected Python code
+if device_type!= 'cdrom' and device_type!= 'floppy' and device_type!= 'tape' and device_type!= 'disk' and device_type!= 'tape_writer' and device_type!= 'tape_reader':
+    test.cancel(""Only support 'cdrom', 'floppy' and 'tape' device type: %"
