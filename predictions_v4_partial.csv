@@ -54561,3 +54561,332 @@ install_requires = (['numpy', 'pandas', 'atomicwrites', 'pyyaml'],) + (['matplot
 
 ### Corrected Python Code
 classifiers = (['License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)', 'Operating System :: POSIX :: Linux', 'Operating System :: POSIX :: BSD'],) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers) + list(classifiers)"
+"rpn_cls_prob = rpn_bbox_pred[:, 1].view(B, C / 2, H, W)","rpn_cls_prob = rpn_cls_prob[:, 1].view(B, C / 2, H, W)","### Buggy Python Code
+rpn_cls_prob = rpn_bbox_pred[:, 1].view(B, C / 2, H, W)
+
+### Corrected Python Code
+rpn_cls_prob = rpn_bbox_pred[:, 1::2].view(B, C / 2, H, W)
+
+rpn_bbox_pred = rpn_bbox_pred[:, 2::2].view(B, C / 2, H, W) * 4.0 * self.anchor_scales[0] * self.anchor_ratios[0] ** 2.0
+
+return rpn_cls_prob, rpn_bbox_pred, rpn_rois, rpn_roi_scores, rpn_roi_indices, rpn_roi_indices_in_batch, rpn_roi_indices_in_batch_and_image, rpn_roi_indices_in_batch_and_image_and_gt, rpn_roi_indices_in_batch_and_image_and_gt_and_valid, rpn_roi_indices_in_batch_and_image_and_gt_and_valid_and_not_in_image, rpn_roi_indices_in_batch_and_image_and_gt_and_valid_and_not_in_image_and_not_in_batch, rpn_roi_indices_in_batch_and_image_and_gt_and_valid_and_not_in_image_and_not_in_batch_and_not_in_gt, rpn_roi_indices_in_batch_and_image_and_gt_and_valid_and_not_in_image_and_not_in_batch_and_not_in_gt_and_not_in_image, rpn_roi_indices_in_batch_and_image_and_gt_and_valid_and_not_in_image_and_not_in_batch_and_not_in_gt_and_not_in_image_and_not_in_batch_and_not_in_gt_and_not_in_image_and_not_in_batch_and_not_in_gt_and_not_in_image_and_not_in_batch_and_not_in_gt_and_not_in_image_and_not_in_batch_and_not_in"
+"if not peekFile.hasPbi:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying .pbi files')","if not peekFile.isCmpH5 and (not peekFile.hasPbi):
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying .pbi files')","### Buggy Python Code
+if not peekFile.hasPbi:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+### Corrected Python Code
+if not peekFile.hasPbi and peekFile.hasCmp:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile.hasPbi and peekFile.hasCmp:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile.hasPbi and peekFile.hasBam:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile.hasCmp and peekFile.hasBam:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile.hasCmp and peekFile.hasFasta:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile.hasFasta and peekFile.hasBam:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile.hasFasta and peekFile.hasCmp:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile.hasFasta and peekFile.hasCmp:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile.hasFasta and peekFile.hasBam:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile.hasFasta and peekFile.hasCmp:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile.hasFasta and peekFile.hasBam:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile.hasFasta and peekFile.hasCmp:
+    die('Genomic Consensus only works with cmp.h5 files and BAM files with accompanying.pbi files')
+
+if peekFile"
+"if isinstance(self, value):
+    self._include_discussions = value","if isinstance(value, bool):
+    self._include_discussions = value","### Buggy Python Code
+if isinstance(self, value):
+    self._include_discussions = value
+
+### Corrected Python Code
+if isinstance(value, bool):
+    self._include_discussions = value
+
+### Corrected Python Code
+if isinstance(value, bool):
+    self._include_discussions = value
+
+### Corrected Python Code
+if isinstance(value, bool) or isinstance(value, int):
+    self._include_discussions = value
+
+### Corrected Python Code
+if isinstance(value, bool) or isinstance(value, int) or isinstance(value, float):
+    self._include_discussions = value
+
+### Corrected Python Code
+if isinstance(value, bool) or isinstance(value, int) or isinstance(value, float) or isinstance(value, str):
+    self._include_discussions = value
+
+### Corrected Python Code
+if isinstance(value, bool) or isinstance(value, int) or isinstance(value, float) or isinstance(value, str) or isinstance(value, list):
+    self._include_discussions = value
+
+### Corrected Python Code
+if isinstance(value, bool) or isinstance(value, int) or isinstance(value, float) or isinstance(value, str) or isinstance(value, list) or isinstance(value, tuple):
+    self._include_discussions = value
+
+### Corrected Python Code
+if isinstance(value, bool) or isinstance(value, int) or isinstance(value, float) or isinstance(value, str) or isinstance(value, list) or isinstance(value, tuple) or isinstance(value, set):
+    self._include_discussions = value
+
+### Corrected Python Code
+if isinstance(value, bool) or isinstance(value, int) or isinstance(value, float) or isinstance(value, str) or isinstance(value, list) or isinstance(value, tuple) or isinstance(value, set) or isinstance(value, dict):
+    self._include_discussions = value
+
+### Corrected Python Code
+if isinstance(value, bool) or isinstance(value, int) or isinstance(value, float) or isinstance(value, str) or isinstance(value, list) or isinstance(value, tuple) or isinstance(value, set) or isinstance(value, dict) or isinstance(value, pd.Series):
+    self._include_discussions = value
+
+### Corrected Python Code
+if isinstance(value, bool) or isinstance(value, int) or isinstance(value"
+"from human_mut.genome import CoordSystem, CodonPosition","from franklin.coordsystem import CoordSystem, CodonPosition","### Buggy Python Code
+from human_mut.genome import CoordSystem, CodonPosition
+
+### Corrected Python Code
+from human_mut.genome import CoordSystem, CodonPosition, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPositionError, CodonPosition"
+"VLC_BASE_COMMAND = ""export DISPLAY=:0.0; cvlc --no-video-title-show --fullscreen --aspect=4:3 --key-quit='*' --key-play-pause='Down' --key-faster='' --key-slower=''""","VLC_BASE_COMMAND = ""export DISPLAY=:0.0; vlc --no-video-title-show --fullscreen --aspect=4:3 --key-quit='*' --key-play-pause='Down' --key-faster='' --key-slower=''""","### Buggy Python Code
+VLC_BASE_COMMAND = ""export DISPLAY=:0.0; cvlc --no-video-title-show --fullscreen --aspect=4:3 --key-quit='*' --key-play-pause='Down' --key-faster='' --key-slower=''""
+
+### Corrected Python Code
+VLC_BASE_COMMAND = ""export DISPLAY=:0.0; cvlc --no-video-title-show --fullscreen --aspect=4:3 --key-quit='*' --key-play-pause='space' --key-faster='' --key-slower=''"" +'' + VLC_BASE_COMMAND_ARGS +'' + VLC_BASE_COMMAND_ARGS_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA_EXTRA +'' + VLC_BASE_COMMAND_ARGS_EXTRA_EXTRA_EXTRA_EXTRA"
+"mod = 10 ** 9 + 7
+
+class Solution:
+
+    def countAnagrams(self, s: str) -> int:
+        l = s.split()
+        ans = 1
+        for i in l:
+            d = {}
+            for j in i:
+                if d.get(j):
+                    d[j] += 2
+                else:
+                    d[j] = 1
+            duplicates = 1
+            for j in d.values():
+                duplicates *= math.factorial(j)
+            curr = math.factorial(len(i)) // duplicates
+            ans *= curr
+            ans = ans % mod
+        return ans","mod = 10 ** 9 + 7
+
+class Solution:
+
+    def countAnagrams(self, s: str) -> int:
+        l = s.split()
+        ans = 1
+        for i in l:
+            d = {}
+            for j in i:
+                if d.get(j):
+                    d[j] += 1
+                else:
+                    d[j] = 1
+            duplicates = 1
+            for j in d.values():
+                duplicates *= math.factorial(j)
+            curr = math.factorial(len(i)) // duplicates
+            ans *= curr
+            ans = ans % mod
+        return ans","mod = 10 ** 9 + 7
+
+class Solution:
+
+    def countAnagrams(self, s: str) -> int:
+        l = s.split()
+        ans = 1
+        for i in l:
+            d = {}
+            for j in i:
+                if d.get(j):
+                    d[j] += 1
+                else:
+                    d[j] = 1
+            duplicates = 1
+            for j in d.values():
+                duplicates *= math.factorial(j)
+            curr = math.factorial(len(i)) // duplicates
+            ans *= curr
+            ans = ans % mod
+        return ans - 1
+
+### Corrected Python code
+mod = 10 ** 9 + 7
+
+class Solution:
+
+    def countAnagrams(self, s: str) -> int:
+        l = s.split()
+        ans = 1
+        for i in l:
+            d = {}
+            for j in i:
+                if d.get(j):
+                    d[j] += 1
+                else:
+                    d[j] = 1
+            duplicates = 1
+            for j in d.values():
+                duplicates *= math.factorial(j)
+            curr = math.factorial(len(i)) // duplicates
+            ans *= curr
+            ans = ans % mod
+        return ans - 1
+
+### Corrected Python code
+mod = 10 ** 9 + 7
+
+class Solution:
+
+    def countAnagrams(self, s: str) -> int:
+        l = s.split()
+        ans = 1
+        for i in l:
+            d = {}
+            for j in i:
+                if d.get(j):
+                    d[j] += 1
+                else:
+                    d[j] = 1
+            duplicates = 1
+            for j in d.values():
+                duplicates *= math.factorial(j)
+            curr = math.factorial(len(i)) // duplicates
+            ans *= curr
+            ans = ans % mod
+        return ans - 1 if l else 1
+
+### Corrected Python code
+mod = 10 ** 9 + 7
+
+class Solution:
+
+    def countAnagrams(self, s: str) -> int:
+        l = s.split()
+        ans = 1
+        for i in l:
+            d = {}
+            for j in i:
+                if d.get(j"
+"class Solution:
+
+    def countMatchingSubarrays(self, nums: List[int], pattern: List[int]) -> int:
+
+        def f(a: int, b: int) -> int:
+            return 0 if a == b else -1 if a < b else 1
+        ans = 0
+        nums.sort()
+        for i in range(len(nums) - len(pattern)):
+            ans += all((f(nums[i + k], nums[i + k + 1]) == p for k, p in enumerate(pattern)))","class Solution:
+
+    def countMatchingSubarrays(self, nums: List[int], pattern: List[int]) -> int:
+
+        def f(a: int, b: int) -> int:
+            return 0 if a == b else 1 if a < b else -1
+        ans = 0
+        for i in range(len(nums) - len(pattern)):
+            ans += all((f(nums[i + k], nums[i + k + 1]) == p for k, p in enumerate(pattern)))
+        return ans","p for k, p in enumerate(pattern)))
+
+### Corrected Python Code
+class Solution:
+
+    def countMatchingSubarrays(self, nums: List[int], pattern: List[int]) -> int:
+
+        def f(a: int, b: int) -> int:
+            return 0 if a == b else -1 if a < b else 1
+        ans = 0
+        for i in range(len(nums) - len(pattern) + 1):
+            ans += all((f(nums[i + k], nums[i + k + 1]) == p for k, p in enumerate(pattern)))
+        return ans
+/1000/1000-1010/1009.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (len(nums) - 1) // 2 + 1
+/1000/1000-1010/1009.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (len(nums) - 1) // 2 + 1 if len(nums) % 2 == 1 else sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (len(nums) - 1) // 2 + 2
+/1000/1000-1010/1009.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (len(nums) - 1) // 2 + 1 if len(nums) % 2 == 1 else sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (len(nums) - 1) // 2 + 2 if len(nums) % 2 == 1 else sum((-a for a in nums[:-1])) + (nums[-1] + 1) * (len"
+"if kw.get('timeout') is not None:
+    kw['timeout'] = 3","if kw.get('timeout') is None:
+    kw['timeout'] = 3","### Buggy Python Code
+if kw.get('timeout') is not None:
+    kw['timeout'] = 3
+
+### Corrected Python Code
+if kw.get('timeout') is None:
+    kw['timeout'] = 3
+
+return self.request(method, url, **kw)
+
+    def request(self, method, url, **kw):
+        kw['headers'] = self.headers.copy()
+        kw['headers'].update(self.default_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)
+        kw['headers'].update(self.extra_headers)"
