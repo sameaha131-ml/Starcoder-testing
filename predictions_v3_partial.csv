@@ -12146,3 +12146,455 @@ pip install notification-center-server-python-api-client
 ## Usage
 ```python
 from notification_center_server_python_api_client import NotificationCenterServerAPI, NotificationCenterServerAPIError, NotificationCenterServerAPIErrorInvalidRequest, NotificationCenterServerAPIErrorInternalError, NotificationCenterServerAPIErrorInvalidToken, NotificationCenterServerAPIErrorInvalidUser, NotificationCenterServerAPIErrorInvalidNotificationType, NotificationCenterServerAPIErrorInvalidNotificationStatus, NotificationCenterServerAPIErrorInvalidNotificationTarget, NotificationCenterServerAPIErrorInvalidNotificationTargetType, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus, NotificationCenterServerAPIErrorInvalidNotificationTargetStatus"
+"return self.eventinvitation_set.filter(invitation_type=0, going=1)","return [invitation.user for invitation in self.eventinvitation_set.filter(invitation_type=0, going=True)]","### Buggy Python Code
+return self.eventinvitation_set.filter(invitation_type=0, going=1)
+
+### Corrected Python Code
+return self.eventinvitation_set.filter(invitation_type=0, going=1).order_by('invitation_date')[:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else []
+
+### Corrected Python return self.eventinvitation_set.filter(invitation_type=0, going=1).order_by('invitation_date')[:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter(invitation_type=0, going=1).count() > 0 else [][:10] if self.eventinvitation_set.filter("
+"import pandas as pd
+import numpy as np
+
+def task_func(my_list, seed=42):
+    if not isinstance(my_list, list):
+        raise TypeError('Input must be a list.')
+    if seed is not None:
+        np.random.seed(seed)
+    my_list.append(12)
+    categories = ['Electronics', 'Fashion', 'Home & Kitchen', 'Automotive', 'Sports']
+    sales_data = []
+    for category in categories:
+        sales = my_list[np.random.randint(0, len(my_list))] * np.random.randint(100, 1000)
+        sales_data.append([category, sales])
+    sales_df = pd.DataFrame(sales_data, columns=['Category', 'Sales'])
+    ax = sales_df.plot(kind='bar', x='Category', y='Sales', legend=False)
+    ax.set_titles('Category-wise Sales Data')
+    ax.set_ylabel('Sales')
+    return (sales_df, ax)","import pandas as pd
+import numpy as np
+
+def task_func(my_list, seed=42):
+    if not isinstance(my_list, list):
+        raise TypeError('Input must be a list.')
+    if seed is not None:
+        np.random.seed(seed)
+    my_list.append(12)
+    categories = ['Electronics', 'Fashion', 'Home & Kitchen', 'Automotive', 'Sports']
+    sales_data = []
+    for category in categories:
+        sales = my_list[np.random.randint(0, len(my_list))] * np.random.randint(100, 1000)
+        sales_data.append([category, sales])
+    sales_df = pd.DataFrame(sales_data, columns=['Category', 'Sales'])
+    ax = sales_df.plot(kind='bar', x='Category', y='Sales', legend=False)
+    ax.set_title('Category-wise Sales Data')
+    ax.set_ylabel('Sales')
+    return (sales_df, ax)","### Buggy Python Code
+import pandas as pd
+import numpy as np
+
+def task_func(my_list, seed=42):
+    if not isinstance(my_list, list):
+        raise TypeError('Input must be a list.')
+    if seed is not None:
+        np.random.seed(seed)
+    my_list.append(12)
+    categories = ['Electronics', 'Fashion', 'Home & Kitchen', 'Automotive', 'Sports']
+    sales_data = []
+    for category in categories:
+        sales = my_list[np.random.randint(0, len(my_list))] * np.random.randint(100, 1000)
+        sales_data.append([category, sales])
+    sales_df = pd.DataFrame(sales_data, columns=['Category', 'Sales'])
+    ax = sales_df.plot(kind='bar', x='Category', y='Sales', legend=False)
+    ax.set_titles('Category-wise Sales Data')
+    ax.set_ylabel('Sales')
+    return (sales_df, ax)
+
+### Corrected Python Code
+import pandas as pd
+import numpy as np
+
+def task_func(my_list, seed=42):
+    if not isinstance(my_list, list):
+        raise TypeError('Input must be a list.')
+    if seed is not None:
+        np.random.seed(seed)
+    my_list.append(12)
+    categories = ['Electronics', 'Fashion', 'Home & Kitchen', 'Automotive', 'Sports']
+    sales_data = []
+    for category in categories:
+        sales = my_list[np.random.randint(0, len(my_list))] * np.random.randint(100, 1000)
+        sales_data.append([category, sales])
+    sales_df = pd.DataFrame(sales_data, columns=['Category', 'Sales'])
+    ax = sales_df.plot(kind='bar', x='Category', y='Sales', legend=False)
+    ax.set_title('Category-wise Sales Data')
+    ax.set_ylabel('Sales')
+    return (sales_df, ax)
+
+if __name__ == '__main__':
+    my_list = [12, 23, 34, 45, 56, 67, 78, 89, 90, 101]
+    (sales_df, ax) = task_func(my_list, seed=42)
+    print(sales_df)
+    print(ax)/README.md
+# Python-Data-Science-Essentials-Course-1-Day-1-Python-Basics-and-Data-Structures-in-Python-Part-1-Day-1-Python-Basics-and-Data-Structures-in-Python-Part-1-Day-1-Python-Basics-and-Data-Structures-in-Python-Part-1-Day-1-Python-Basics-and-Data-Structures-in-Python-Part-1-Day-1-Python-Basics-and-Data-Structures-in-Python-Part-1-Day-1-Python-Basics-and-Data-Structures-in-Python-Part-1-Day-1-Python-Basics-and-Data-Structures-in-Python-Part-1-Day-1-Python-Basics-and-Data-Structures-"
+"class Solution:
+
+    def maxSubarrayLength(self, nums: List[int], k: int) -> int:
+        cnt = defaultdict(int)
+        ans = j = 1
+        for i, x in enumerate(nums):
+            cnt[x] += 1
+            while cnt[x] > k:
+                cnt[nums[j]] -= 1
+                j += 1
+            ans = max(ans, i - j + 1)
+        return ans","class Solution:
+
+    def maxSubarrayLength(self, nums: List[int], k: int) -> int:
+        cnt = defaultdict(int)
+        ans = j = 0
+        for i, x in enumerate(nums):
+            cnt[x] += 1
+            while cnt[x] > k:
+                cnt[nums[j]] -= 1
+                j += 1
+            ans = max(ans, i - j + 1)
+        return ans","### Buggy Python Code
+class Solution:
+
+    def maxSubarrayLength(self, nums: List[int], k: int) -> int:
+        cnt = defaultdict(int)
+        ans = j = 1
+        for i, x in enumerate(nums):
+            cnt[x] += 1
+            while cnt[x] > k:
+                cnt[nums[j]] -= 1
+                j += 1
+            ans = max(ans, i - j + 1)
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def maxSubarrayLength(self, nums: List[int], k: int) -> int:
+        cnt = defaultdict(int)
+        ans = j = 0
+        for i, x in enumerate(nums):
+            cnt[x] += 1
+            while cnt[x] > k:
+                cnt[nums[j]] -= 1
+                j += 1
+            ans = max(ans, i - j + 1)
+        return ans
+
+class Solution:
+
+    def maxSubarrayLength(self, nums: List[int], k: int) -> int:
+        cnt = defaultdict(int)
+        ans = j = 0
+        for i, x in enumerate(nums):
+            cnt[x] += 1
+            while cnt[x] > k:
+                cnt[nums[j]] -= 1
+                j += 1
+            ans = max(ans, i - j + 1)
+        return ans
+/1000/1000.py
+class Solution:
+
+    def maxSubarrayLength(self, nums: List[int], k: int) -> int:
+        cnt = defaultdict(int)
+        ans = j = 0
+        for i, x in enumerate(nums):
+            cnt[x] += 1
+            while cnt[x] > k:
+                cnt[nums[j]] -= 1
+                j += 1
+            ans = max(ans, i - j + 1)
+        return ans
+
+class Solution:
+
+    def maxSubarrayLength(self, nums: List[int], k: int) -> int:
+        cnt = defaultdict(int)
+        ans = j = 0
+        for i, x in enumerate(nums):
+            cnt[x] += 1
+            while cnt[x] > k:
+                cnt[nums[j]] -= 1
+                j += 1
+            ans = max(ans, i - j + 1)
+        return ans
+
+class Solution:
+
+    def maxSubarrayLength(self, nums: List[int], k: int) -> int:
+        cnt = defaultdict(int)
+        ans = j = 0
+        for i, x in enumerate(nums):
+            cnt[x] += 1
+            while cnt[x] > k:
+                cnt[nums[j]] -= 1
+                j += 1
+            ans = max(ans, i - j + 1)
+        return ans"
+"from dataclasses import dataclass
+
+@dataclass
+class Node:
+    node: int = 0
+    time: int = 0
+
+class Top2:
+
+    def __init__(self, top1: Node=Node(), top2: Node=Node()):
+        self.top1 = top1
+        self.top2 = top2
+
+class Solution:
+
+    def timeTaken(self, edges: list[list[int]]) -> list[int]:
+        n = len(edges) + 1
+        ans = [0] * n
+        tree = [[] for _ in range(n)]
+        dp = [Top2()] * n
+        for u, v in edges:
+            tree[u].append(v)
+            tree[v].append(u)
+        self._dfs(tree, 0, -1, dp)
+        self._reroot(tree, 0, -1, 0, dp, ans)
+        return ans
+
+    def _getTime(self, u: int) -> int:
+        return 2 if u % 2 == 0 else 1
+
+    def _dfs(self, tree: list[list[int]], u: int, prev: int, dp: list[Top2]) -> int:
+        top1 = Node()
+        top2 = Node()
+        for v in tree[u]:
+            if v == prev:
+                continue
+            time = self._dfs(tree, v, u, dp) + self._getTime(v)
+            if time >= top1.time:
+                top2 = top1
+                top1 = Node(v, time)
+            elif time > top2.time:
+                top2 = Node(v, time)
+        dp[u] = [top1, top2]
+        return top1.time
+
+    def _reroot(self, tree: list[list[int]], u: int, prev: int, maxTime: int, dp: list[Top2], ans: list[int]) -> None:
+        ans[u] = max(maxTime, dp[u].top1.time())
+        for v in tree[u]:
+            if v == prev:
+                continue
+            newMaxTime = self._getTime(u) + max(maxTime, dp[u].top2.time if dp[u].top1.node == v else dp[u].top1.time)
+            self._reroot(tree, v, u, newMaxTime, dp, ans)","from dataclasses import dataclass
+
+@dataclass
+class Node:
+    node: int = 0
+    time: int = 0
+
+class Top2:
+
+    def __init__(self, top1: Node=Node(), top2: Node=Node()):
+        self.top1 = top1
+        self.top2 = top2
+
+class Solution:
+
+    def timeTaken(self, edges: list[list[int]]) -> list[int]:
+        n = len(edges) + 1
+        ans = [0] * n
+        tree = [[] for _ in range(n)]
+        dp = [Top2()] * n
+        for u, v in edges:
+            tree[u].append(v)
+            tree[v].append(u)
+        self._dfs(tree, 0, -1, dp)
+        self._reroot(tree, 0, -1, 0, dp, ans)
+        return ans
+
+    def _getTime(self, u: int) -> int:
+        return 2 if u % 2 == 0 else 1
+
+    def _dfs(self, tree: list[list[int]], u: int, prev: int, dp: list[Top2]) -> int:
+        top1 = Node()
+        top2 = Node()
+        for v in tree[u]:
+            if v == prev:
+                continue
+            time = self._dfs(tree, v, u, dp) + self._getTime(v)
+            if time >= top1.time:
+                top2 = top1
+                top1 = Node(v, time)
+            elif time > top2.time:
+                top2 = Node(v, time)
+        dp[u] = Top2(top1, top2)
+        return top1.time
+
+    def _reroot(self, tree: list[list[int]], u: int, prev: int, maxTime: int, dp: list[Top2], ans: list[int]) -> None:
+        ans[u] = max(maxTime, dp[u].top1.time)
+        for v in tree[u]:
+            if v == prev:
+                continue
+            newMaxTime = self._getTime(u) + max(maxTime, dp[u].top2.time if dp[u].top1.node == v else dp[u].top1.time)
+            self._reroot(tree, v, u, newMaxTime, dp, ans)","reroot(tree, v, u, newMaxTime, dp, ans)
+
+class Solution:
+
+    def timeTaken(self, edges: list[list[int]]) -> list[int]:
+        n = len(edges) + 1
+        ans = [0] * n
+        tree = [[] for _ in range(n)]
+        dp = [Top2()] * n
+        for u, v in edges:
+            tree[u].append(v)
+            tree[v].append(u)
+        self._dfs(tree, 0, -1, dp)
+        self._reroot(tree, 0, -1, 0, dp, ans)
+        return ans
+
+    def _getTime(self, u: int) -> int:
+        return 2 if u % 2 == 0 else 1
+
+    def _dfs(self, tree: list[list[int]], u: int, prev: int, dp: list[Top2]) -> int:
+        top1 = Node()
+        top2 = Node()
+        for v in tree[u]:
+            if v == prev:
+                continue
+            time = self._dfs(tree, v, u, dp) + self._getTime(v)
+            if time > top1.time:
+                top2 = top1
+                top1 = Node(v, time)
+            elif time > top2.time:
+                top2 = Node(v, time)
+        dp[u] = Top2(top1, top2)
+        return top1.time
+
+    def _reroot(self, tree: list[list[int]], u: int, prev: int, maxTime: int, dp: list[Top2], ans: list[int]) -> None:
+        ans[u] = max(maxTime, dp[u].top1.time)
+        for v in tree[u]:
+            if v == prev:
+                continue
+            newMaxTime = self._getTime(u) + max(maxTime, dp[u].top2.time if dp[u].top1.node == v else dp[u].top1.time)
+            self._reroot(tree, v, u, newMaxTime, dp, ans)
+/python/1000/1000.py
+class Solution:
+
+    def maxScore(self, nums: list[int]) -> int:
+        n = len(nums"
+branches = subdirs_to_checkout.union(SKIA_PRIMARY_SUBDIRS),branches = list(subdirs_to_checkout.union(SKIA_PRIMARY_SUBDIRS)),"### Buggy Python Code
+branches = subdirs_to_checkout.union(SKIA_PRIMARY_SUBDIRS)
+
+### Corrected Python Code
+branches = subdirs_to_checkout.union(SKIA_PRIMARY_SUBDIRS).union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union(SKIA_SECONDARY_SUBDIRS) if subdirs_to_checkout is None else SKIA_PRIMARY_SUBDIRS.union("
+"plots = ['h_msd_ak8_muCR1', 'h_msd_ak8_muCR2', 'h_msd_ak8_muCR3', 'h_msd_ak8_muCR4_pass', 'h_msd_ak8_muCR4_fail', 'h_msd_ak8_muCR5', 'h_msd_ak8_muCR6h_msd_ak8_muCR4', 'h_pt_mu_muCR4', 'h_eta_mu_muCR4', 'h_pt_ak8_muCR4', 'h_eta_ak8_muCR4', 'h_dbtag_ak8_muCR4', 'h_t21ddt_ak8_muCR4']","plots = ['h_msd_ak8_muCR1', 'h_msd_ak8_muCR2', 'h_msd_ak8_muCR3', 'h_msd_ak8_muCR4_pass', 'h_msd_ak8_muCR4_fail', 'h_msd_ak8_muCR5', 'h_msd_ak8_muCR6', 'h_msd_ak8_muCR4', 'h_pt_mu_muCR4', 'h_eta_mu_muCR4', 'h_pt_ak8_muCR4', 'h_eta_ak8_muCR4', 'h_dbtag_ak8_muCR4', 'h_t21ddt_ak8_muCR4']","### Buggy Python Code
+plots = ['h_msd_ak8_muCR1', 'h_msd_ak8_muCR2', 'h_msd_ak8_muCR3', 'h_msd_ak8_muCR4_pass', 'h_msd_ak8_muCR4_fail', 'h_msd_ak8_muCR5', 'h_msd_ak8_muCR6h_msd_ak8_muCR4', 'h_pt_mu_muCR4', 'h_eta_mu_muCR4', 'h_pt_ak8_muCR4', 'h_eta_ak8_muCR4', 'h_dbtag_ak8_muCR4', 'h_t21ddt_ak8_muCR4']
+
+### Corrected Python Code
+plots = ['h_msd_ak8_muCR1', 'h_msd_ak8_muCR2', 'h_msd_ak8_muCR3', 'h_msd_ak8_muCR4_pass', 'h_msd_ak8_muCR4_fail', 'h_msd_ak8_muCR5', 'h_msd_ak8_muCR6', 'h_pt_mu_muCR4', 'h_eta_mu_muCR4', 'h_pt_ak8_muCR4', 'h_eta_ak8_muCR4', 'h_dbtag_ak8_muCR4', 'h_t21ddt_ak8_muCR4']
+
+for plot in plots:
+    plot_name = plot.replace('h_', '')
+    plot_name = plot_name.replace('_', '')
+    plot_name = plot_name.replace('muCR4','muCR4_pass')
+    plot_name = plot_name.replace('muCR4_fail','muCR4_fail')
+    plot_name = plot_name.replace('muCR5','muCR5_pass')
+    plot_name = plot_name.replace('muCR6','muCR6_pass')
+    plot_name = plot_name.replace('muCR4','muCR4_fail')
+    plot_name = plot_name.replace('muCR5','muCR5_fail')
+    plot_name = plot_name.replace('muCR6','muCR6_fail')
+    plot_name = plot_name.replace('muCR4','muCR4_pass')
+    plot_name = plot_name.replace('muCR5','muCR5_pass')
+    plot_name = plot_name.replace('muCR6','muCR6_pass')
+    plot_name = plot_name.replace('muCR4','muCR4_fail')
+    plot_name = plot_name.replace('muCR5','muCR5_fail')
+    plot_name = plot_name.replace('muCR6','muCR6_fail')
+    plot_name = plot_name.replace('muCR4','muCR4_"
+"class Solution:
+
+    def minimizeConcatenatedLength(self, words: List[str]) -> int:
+
+        @cache(maxsize=None)
+        def dfs(i: int, a: str, b: str) -> int:
+            if i >= len(words):
+                return 0
+            s = words[i]
+            x = dfs(i + 1, a, s[-1]) - int(s[0] == b)
+            y = dfs(i, s[0], b) - int(s[-1] == a)
+            return len(s) + min(x, y)
+        return words[0].len() + dfs(1, words[0][0], words[0][-1])","class Solution:
+
+    def minimizeConcatenatedLength(self, words: List[str]) -> int:
+
+        @cache
+        def dfs(i: int, a: str, b: str) -> int:
+            if i >= len(words):
+                return 0
+            s = words[i]
+            x = dfs(i + 1, a, s[-1]) - int(s[0] == b)
+            y = dfs(i + 1, s[0], b) - int(s[-1] == a)
+            return len(s) + min(x, y)
+        return len(words[0]) + dfs(1, words[0][0], words[0][-1])","### Buggy Python Code
+class Solution:
+
+    def minimizeConcatenatedLength(self, words: List[str]) -> int:
+
+        @cache(maxsize=None)
+        def dfs(i: int, a: str, b: str) -> int:
+            if i >= len(words):
+                return 0
+            s = words[i]
+            x = dfs(i + 1, a, s[-1]) - int(s[0] == b)
+            y = dfs(i, s[0], b) - int(s[-1] == a)
+            return len(s) + min(x, y)
+        return words[0].len() + dfs(1, words[0][0], words[0][-1])
+
+### Corrected Python Code
+class Solution:
+
+    def minimizeConcatenatedLength(self, words: List[str]) -> int:
+
+        @cache
+        def dfs(i: int, a: str, b: str) -> int:
+            if i >= len(words):
+                return 0
+            s = words[i]
+            x = dfs(i + 1, a, s[-1]) - int(s[0] == b)
+            y = dfs(i + 1, s[0], b) - int(s[-1] == a)
+            return len(s) + min(x, y)
+        return len(words[0]) + dfs(1, words[0][0], words[0][-1]) - 2 * int(words[0][0] == words[0][-1])
+/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def minimumDistance(self, words: List[str]) -> int:
+
+        @cache
+        def dfs(i: int, a: str, b: str) -> int:
+            if i >= len(words):
+                return 0
+            s = words[i]
+            x = dfs(i + 1, a, s[-1]) - int(s[0] == b)
+            y = dfs(i + 1, s[0], b) - int(s[-1] == a)
+            return len(s) + min(x, y)
+        return len(words[0]) + dfs(1, words[0][0], words[0][-1]) - 2 * int(words[0][0] == words[0][-1])
+/1000-1099/1000-1099/1009.py
+class Solution:
+
+    def minimumDistance(self, words: List[str]) -> int:
+
+        @cache
+        def dfs(i: int, a: str, b: str) -> int:
+            if i >= len(words):
+                return 0
+            s = words[i]
+            x = dfs(i + 1, a, s[-1]) - int(s[0] == b)
+            y = dfs(i + 1, s[0], b) - int(s[-"
+"matmul = tf.reshape(matmul, [-1] + input_shape[1:])","matmul = tf.reshape(matmul, [-1] + input_shape[1:-1] + num_features)","### Buggy Python Code
+matmul = tf.reshape(matmul, [-1] + input_shape[1:])
+
+### Corrected Python Code
+matmul = tf.reshape(matmul, [-1] + input_shape[1:] + [1]) * self.n_heads_per_layer) if self.n_heads_per_layer > 1 else tf.reshape(matmul, [-1] + input_shape[1:]) * self.n_heads_per_layer) * self.n_heads_per_layer) if self.n_heads_per_layer > 1 else tf.reshape(matmul, [-1] + input_shape[1:]) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) if self.n_heads_per_layer > 1 else tf.reshape(matmul, [-1] + input_shape[1:]) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) if self.n_heads_per_layer > 1 else tf.reshape(matmul, [-1] + input_shape[1:]) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) if self.n_heads_per_layer > 1 else tf.reshape(matmul, [-1] + input_shape[1:]) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer) * self.n_heads_per_layer"
