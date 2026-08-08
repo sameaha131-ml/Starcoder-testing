@@ -4487,3 +4487,232 @@ return s.replace(SAGE_BEGIN, '').replace(SAGE_END, '').replace(SC)
 
 ### Corrected Python Code
 return s.replace(SAGE_BEGIN, '').replace(SAGE_END, '').replace(SC, '') +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +''"
+"with mock.patch.dict(os.environ, {'BAD_THINGS': '0'}):
+    bad_address, bad_socket = utils.notify_socket()","with mock.patch.dict(os.environ, clear=True):
+    bad_address, bad_socket = utils.notify_socket()","### Buggy Python Code
+with mock.patch.dict(os.environ, {'BAD_THINGS': '0'}):
+    bad_address, bad_socket = utils.notify_socket()
+
+### Corrected Python Code
+with mock.patch.dict(os.environ, {'BAD_THINGS': '1'}):
+    bad_address, bad_socket = utils.notify_socket()
+    assert bad_address == '127.0.0.1'
+    assert bad_socket.family == socket.AF_INET
+    assert bad_socket.type == socket.SOCK_STREAM
+    assert bad_socket.fileno() >= 0
+    bad_socket.close()
+    assert bad_address == '127.0.0.1'
+    assert bad_socket.family == socket.AF_INET
+    assert bad_socket.type == socket.SOCK_STREAM
+    assert bad_socket.fileno() >= 0
+    bad_socket.close()
+    assert bad_address == '127.0.0.1'
+    assert bad_socket.family == socket.AF_INET
+    assert bad_socket.type == socket.SOCK_STREAM
+    assert bad_socket.fileno() >= 0
+    bad_socket.close()
+    assert bad_address == '127.0.0.1'
+    assert bad_socket.family == socket.AF_INET
+    assert bad_socket.type == socket.SOCK_STREAM
+    assert bad_socket.fileno() >= 0
+    bad_socket.close()
+    assert bad_address == '127.0.0.1'
+    assert bad_socket.family == socket.AF_INET
+    assert bad_socket.type == socket.SOCK_STREAM
+    assert bad_socket.fileno() >= 0
+    bad_socket.close()
+    assert bad_address == '127.0.0.1'
+    assert bad_socket.family == socket.AF_INET
+    assert bad_socket.type == socket.SOCK_STREAM
+    assert bad_socket.fileno() >= 0
+    bad_socket.close()
+    assert bad_address == '127.0.0.1'
+    assert bad_socket.family == socket.AF_INET
+    assert bad_socket.type == socket.SOCK_STREAM
+    assert bad_socket.fileno() >= 0
+    bad_socket.close()
+    assert bad_address == '127.0.0.1'
+    assert bad_socket.family == socket.AF_INET
+    assert bad_socket.type == socket.SOCK_"
+"got = numpy.vstack((matutils.sparse2full(doc, 2) for doc in model[corpus]))","got = numpy.vstack((matutils.sparse2full(doc, 2) for doc in model[self.corpus]))","### Buggy Python Code
+got = numpy.vstack((matutils.sparse2full(doc, 2) for doc in model[corpus]))
+
+### Corrected Python Code
+got = numpy.vstack((matutils.sparse2full(doc, 2) for doc in model[corpus])).T.astype(numpy.int)
+
+assert got.shape == (len(corpus), 2)
+assert got.sum(axis=1).max() == 1.0, got.sum(axis=1)
+assert got.sum(axis=0).max() == 1.0, got.sum(axis=0)
+assert got.sum() == len(corpus) * 2, got.sum()
+assert (got == 1).sum() == len(corpus), (got == 1).sum()
+assert (got == 0).sum() == 0, (got == 0).sum()
+assert (got == 2).sum() == 0, (got == 2).sum()
+assert (got == 3).sum() == 0, (got == 3).sum()
+assert (got == 4).sum() == 0, (got == 4).sum()
+assert (got == 5).sum() == 0, (got == 5).sum()
+assert (got == 6).sum() == 0, (got == 6).sum()
+assert (got == 7).sum() == 0, (got == 7).sum()
+assert (got == 8).sum() == 0, (got == 8).sum()
+assert (got == 9).sum() == 0, (got == 9).sum()
+assert (got == 10).sum() == 0, (got == 10).sum()
+assert (got == 11).sum() == 0, (got == 11).sum()
+assert (got == 12).sum() == 0, (got == 12).sum()
+assert (got == 13).sum() == 0, (got == 13).sum()
+assert (got == 14).sum() == 0, (got == 14).sum()
+assert (got == 15).sum() == 0, (got == 15).sum()
+assert (got == 16).sum() == 0, (got == 16).sum()
+assert"
+permission_codename = 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__)),permission_codename = 'edit_permissions_for_{0}'.format(model.__name__.lower()),"### Buggy Python Code
+permission_codename = 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__))
+
+### Corrected Python Code
+permission_codename = 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-'))
+
+### Corrected Python Code
+permission_codename = 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-')) + '-model' if model.__name__!= 'User' else 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-')) + '-model' else 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-')) + '-model' else 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-')) + '-model' else 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-')) + '-model' else 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-')) + '-model' else 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-')) + '-model' else 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-')) + '-model' else 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-')) + '-model' else 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-')) + '-model' else 'edit_permissions_for_{0}'.format(jb_common_utils.camel_case_to_underscores(model.__name__).replace('_', '-')) + '-model"
+"import pandas as pd
+import re
+from sklearn.feature_extraction.text import CountVectorizer
+STOPWORDS = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once']
+
+def task_func(dataframe, text_column):
+
+    def preprocess_text(text):
+        text = ''.join(sorted(list(text)))
+        text = text.lower()
+        text = re.sub('\\d+', '', text)
+        text = re.sub('\\W+', ' ', text)
+        text = ' '.join((word for word in text.split() if word not in STOPWORDS))
+        return text
+    dataframe[text_column] = dataframe[text_column].apply(preprocess_text)
+    vectorizer = CountVectorizer()
+    vectorized_data = vectorizer.fit_transform(dataframe[text_column])
+    return pd.DataFrame(vectorized_data.toarray(), columns=vectorizer.get_feature_names_out())","import pandas as pd
+import re
+from sklearn.feature_extraction.text import CountVectorizer
+STOPWORDS = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once']
+
+def task_func(dataframe, text_column):
+
+    def preprocess_text(text):
+        text = text.lower()
+        text = re.sub('\\d+', '', text)
+        text = re.sub('\\W+', ' ', text)
+        text = ' '.join((word for word in text.split() if word not in STOPWORDS))
+        return text
+    dataframe[text_column] = dataframe[text_column].apply(preprocess_text)
+    vectorizer = CountVectorizer()
+    vectorized_data = vectorizer.fit_transform(dataframe[text_column])
+    return pd.DataFrame(vectorized_data.toarray(), columns=vectorizer.get_feature_names_out())","import pandas as pd
+import re
+from sklearn.feature_extraction.text import CountVectorizer
+STOPWORDS = ['i','me','my','myself', 'we', 'our', 'ours', 'ourselves', 'you', 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself','she', 'her', 'hers', 'herself', 'it', 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once']
+
+def task_func(dataframe, text_column):
+
+    def preprocess_text(text):
+        text = text.lower()
+        text = re.sub('\\d+', '', text)
+        text = re.sub('\\W+','', text)
+        text =''.join((word for word in text.split() if word not in STOPWORDS))
+        return text
+    dataframe[text_column] = dataframe[text_column].apply(preprocess_text)
+    vectorizer = CountVectorizer()
+    vectorized_data = vectorizer.fit_transform(dataframe[text_column])
+    return pd.DataFrame(vectorized_data.toarray(), columns=vectorizer.get_feature_names_out())
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics"
+"({'repo': 'net', 'renamesrc': 'net', 'renamedst': 'golang.org/x'},)","({'repo': 'net', 'renamesrc': 'net', 'renamedst': 'golang.org/x/net'},)","### Buggy Python Code
+({'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x'},)
+
+### Corrected Python Code
+({'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net'},)
+
+### Corrected Python Code
+({'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net'},) + [{'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net/context'},) + [{'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net/http2'},) + [{'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net/http2/h2c'},) + [{'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net/http2/h2c/h2conn'},) + [{'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net/http2/h2c/h2conn/h2cutil'},) + [{'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net/http2/h2c/h2conn/h2cutil/h2err'},) + [{'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net/http2/h2c/h2conn/h2cutil/h2flippr'},) + [{'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net/http2/h2c/h2conn/h2cutil/h2flippr/h2flipprutil'},) + [{'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net/http2/h2c/h2conn/h2cutil/h2flippr/h2flipprutil/h2flipprerr'},) + [{'repo': 'net','renamesrc': 'net','renamedst': 'golang.org/x/net/http2/h2c/h2conn/h2cutil/h2f"
+"wdiof_settimeout = ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_int)","wdiof_settimeout = ioctl.ioctl_fn_ptr_rw(WDIOF_SETTIMEOUT, ctypes.c_int)","### Buggy Python Code
+wdiof_settimeout = ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_int)
+
+### Corrected Python Code
+wdiof_settimeout = ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_uint)
+
+### Corrected Python
+wdiof_settimeout = ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_uint)
+
+### Corrected Python
+wdiof_settimeout = ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_uint) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_int) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_long) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_ulong) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_longlong) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_ulonglong) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_float) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_double) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_longdouble) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_char) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_wchar) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_short) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_ushort) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_int8) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_uint8) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_int16) or ioctl.ioctl_fn_ptr_w(WDIOF_SETTIMEOUT, ctypes.c_"
+"import os
+import shutil
+import glob
+import hashlib
+
+def task_func(ROOT_DIR, DEST_DIR, SPECIFIC_HASH):
+    files_moved = 0
+    for filename in glob.glob(os.path.join(ROOT_DIR, '*')):
+        if not os.path.exists(filename) or os.path.isdir(filename):
+            continue
+        with open(filename, 'rb') as f:
+            file_hash = hashlib.md5(f.read()).digest()
+        if file_hash == SPECIFIC_HASH:
+            shutil.move(filename, DEST_DIR)
+            files_moved += 1
+    return files_moved","import os
+import shutil
+import glob
+import hashlib
+
+def task_func(ROOT_DIR, DEST_DIR, SPECIFIC_HASH):
+    files_moved = 0
+    os.makedirs(DEST_DIR, exist_ok=True)
+    for filename in glob.glob(os.path.join(ROOT_DIR, '*')):
+        if not os.path.exists(filename) or os.path.isdir(filename):
+            continue
+        with open(filename, 'rb') as f:
+            file_hash = hashlib.md5(f.read()).hexdigest()
+        if file_hash == SPECIFIC_HASH:
+            shutil.move(filename, DEST_DIR)
+            files_moved += 1
+    return files_moved","### Buggy Python Code
+import os
+import shutil
+import glob
+import hashlib
+
+def task_func(ROOT_DIR, DEST_DIR, SPECIFIC_HASH):
+    files_moved = 0
+    for filename in glob.glob(os.path.join(ROOT_DIR, '*')):
+        if not os.path.exists(filename) or os.path.isdir(filename):
+            continue
+        with open(filename, 'rb') as f:
+            file_hash = hashlib.md5(f.read()).digest()
+        if file_hash == SPECIFIC_HASH:
+            shutil.move(filename, DEST_DIR)
+            files_moved += 1
+    return files_moved
+
+### Corrected Python Code
+import os
+import shutil
+import glob
+import hashlib
+
+def task_func(ROOT_DIR, DEST_DIR, SPECIFIC_HASH):
+    files_moved = 0
+    os.makedirs(DEST_DIR, exist_ok=True)
+    for filename in glob.glob(os.path.join(ROOT_DIR, '*')):
+        if not os.path.exists(filename) or os.path.isdir(filename):
+            continue
+        with open(filename, 'rb') as f:
+            file_hash = hashlib.md5(f.read()).hexdigest()
+        if file_hash == SPECIFIC_HASH:
+            shutil.move(filename, DEST_DIR)
+            files_moved += 1
+    return files_moved
+/README.md
+# Python-Task-1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31-32-33-34-35-36-37-38-39-40-41-42-43-44-45-46-47-48-49-50-51-52-53-54-55-56-57-58-59-60-61-62-63-64-65-66-67-68-69-70-71-72-73-74-75-76-77-78-79-80-81-82-83-84-85-86-87-88-89-90-91-92-93-94-95-96-97-98-99-100-101-102-103-104-105-106-107-108-109-110-111-112-11"
+"update.set(**dslice(data, ['state', 'task_id', 'owner', 'start_time', 'completion_time', 'epoch']))","update.set(**dslice(data, ['state', 'task_id', 'owner', 'start_time', 'completion_time', 'epoch', 'source']))","### Buggy Python Code
+update.set(**dslice(data, ['state', 'task_id', 'owner','start_time', 'completion_time', 'epoch']))
+
+### Corrected Python Code
+update.set(**dslice(data, ['state', 'task_id', 'owner','start_time', 'completion_time', 'epoch', 'error']))
+
+return update.get() == data.get() and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') =="
