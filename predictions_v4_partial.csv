@@ -8522,3 +8522,197 @@ class Solution:
     def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
         m, n = (len(grid), len(grid[0]))
         dist = [[inf]"
+"from_user = dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')])","from_user = dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Human')])","### Buggy Python Code
+from_user = dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')])
+
+### Corrected Python Code
+from_user = dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser'), ('username', email)])
+
+### Corrected Python Code
+from_user = dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser'), ('username', email)]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')])
+
+### Corrected Python Code
+from_user = dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser'), ('username', email)]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email else dict([('email', email), ('first_name', 'Friendly'), ('last_name', 'Purchaser')]) if email"
+m1events = os.path.abspath('../rpcdata/m1evts.ds'),m1events = os.path.abspath('../rpcdata/m1events.ds'),"### Buggy Python Code
+m1events = os.path.abspath('../rpcdata/m1evts.ds')
+
+### Corrected Python Code
+m1events = os.path.abspath('../rpcdata/m1evts.dat') + '.gz' if os.path.exists(os.path.abspath('../rpcdata/m1evts.dat')) else os.path.abspath('../rpcdata/m1evts.ds') + '.gz' if os.path.exists(os.path.abspath('../rpcdata/m1evts.ds')) else None
+
+if m1events:
+    m1evts = pd.read_hdf(m1events, 'events')
+    m1evts['time'] = pd.to_datetime(m1evts['time'])
+    m1evts['time'] = m1evts['time'].apply(lambda x: x.replace(tzinfo=pytz.UTC))
+    m1evts['time'] = m1evts['time'].apply(lambda x: x.replace(tzinfo=None))
+    m1evts['time'] = m1evts['time'].apply(lambda x: x.replace(tzinfo=pytz.UTC))
+    m1evts['time'] = m1evts['time'].apply(lambda x: x.replace(tzinfo=None))
+    m1evts['time'] = m1evts['time'].apply(lambda x: x.replace(tzinfo=pytz.UTC))
+    m1evts['time'] = m1evts['time'].apply(lambda x: x.replace(tzinfo=None))
+    m1evts['time'] = m1evts['time'].apply(lambda x: x.replace(tzinfo=pytz.UTC))
+    m1evts['time'] = m1evts['time'].apply(lambda x: x.replace(tzinfo=None))
+    m1evts['time'] = m1evts['time'].apply(lambda x: x.replace(tzinfo=pytz.UTC))
+    m1evts['time'] = m1evts['time'].apply(lambda x: x.replace(tzinfo=None))
+    m1evts['time'] = m1evts['time'].apply(lambda x: x.replace(tzinfo=pytz.UTC))
+    m1evts['time'] = m1evts['time'].apply(lambda x: x."
+"CACHE_TIME = getattr(local_settings, 'CACHE_TIME', 0)","CACHE_TIME = getattr(local_settings, 'CACHE_TIME', int(60 * 60 * 24 * 365 * 1000))","### Buggy Python Code
+CACHE_TIME = getattr(local_settings, 'CACHE_TIME', 0)
+
+### Corrected Python Code
+CACHE_TIME = getattr(local_settings, 'CACHE_TIME', 60 * 60 * 24 * 30)  # 30 days
+
+### Corrected Python Code
+CACHE_TIME = getattr(local_settings, 'CACHE_TIME', 60 * 60 * 24 * 30)  # 30 days
+
+### Corrected Python Code
+CACHE_TIME = getattr(local_settings, 'CACHE_TIME', 60 * 60 * 24 * 30)  # 30 days
+
+### Corrected Python Code
+CACHE_TIME = getattr(local_settings, 'CACHE_TIME', 60 * 60 * 24 * 30)  # 30 days
+
+### Corrected Python Code
+CACHE_TIME = getattr(local_settings, 'CACHE_TIME', 60 * 60 * 24 * 30)  # 30 days * 24 * 60 * 60 * 1000)  # 30 days * 24 * 60 * 60 * 1000)  # 30 days * 24 * 60 * 60 * 1000)  # 30 days * 24 * 60 * 60 * 1000)  # 30 days * 24 * 60 * 60 * 1000)  # 30 days * 24 * 60 * 60 * 1000)  # 30 days * 24 * 60 * 60 * 1000)  # 30 days * 24 * 60 * 60 * 1000)  # 30 days * 24 * 60 * 60 * 1000)  # 30 days * 24 * 60 * 60 * 1000)  # 30 days * 24 * 60 * 60 * 1000)  # 30 days * 24 * 60 * 60 * 1000)"
+"self.uniqueInstance = '%s_%s' % (self.name, self.pciDbdf)",self.uniqueInstance = 'pci_dev_at_domain_0x%04x_bus_0x%02x_dev_0x%02x_func_0x%01x' % self.pciDbdf,"### Buggy Python Code
+self.uniqueInstance = '%s_%s' % (self.name, self.pciDbdf)
+
+### Corrected Python Code
+self.uniqueInstance = '%s_%s' % (self.name, self.pciDbdf.replace(':', '_')) if self.pciDbdf else self.name + '_None' if self.name else 'None' + '_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None' if self.name else 'None_None"
+"if not options.dir and (not options.video) and (not options.histogram):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\nUse -h to see available options')","if not options.check and (not options.dir) and (not options.video) and (not options.histogram):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\nUse -h to see available options')","### Buggy Python Code
+if not options.dir and (not options.video) and (not options.histogram):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\nUse -h to see available options')
+
+### Corrected Python Code
+if not options.dir and (not options.video) and (not options.histogram) and (not options.image):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\nUse -h to see available options')
+
+if options.dir and (not options.video) and (not options.histogram) and (not options.image):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\nUse -h to see available options')
+
+if options.video and (not options.dir) and (not options.histogram) and (not options.image):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\nUse -h to see available options')
+
+if options.histogram and (not options.dir) and (not options.video) and (not options.image):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\nUse -h to see available options')
+
+if options.image and (not options.dir) and (not options.video) and (not options.histogram):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\nUse -h to see available options')
+
+if options.dir and (not options.video) and (not options.histogram) and (not options.image):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\nUse -h to see available options')
+
+if options.video and (not options.dir) and (not options.histogram) and (not options.image):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\nUse -h to see available options')
+
+if options.histogram and (not options.dir) and (not options.video) and (not options.image):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\nUse -h to see available options')
+
+if options.image and (not options.dir) and (not options.video) and (not options.histogram):
+    parser.error('A video, Directory of images or histograms file needs to be provided.\n\"
+"('/store/group/lpcfpix/TTbar_14TeV_921_OT613_200_IT4025_opt8s3l/step3_trackingOnly_PU200/170609_082344/0000/step3_inDQM_1000.root',)","('/store/group/lpcfpix/TTbar_14TeV_921_OT613_200_IT4025_opt8s3l/step3_trackingOnly_PU200/170609_082344/0001/step3_inDQM_1000.root',)","### Buggy Python Code
+('/store/group/lpcfpix/TTbar_14TeV_921_OT613_200_IT4025_opt8s3l/step3_trackingOnly_PU200/170609_082344/0000/step3_inDQM_1000.root',)
+
+### Corrected Python Code
+('/store/group/lpcfpix/TTbar_14TeV_921_OT613_200_IT4025_opt8s3l/step3_trackingOnly_PU200/170609_082344/0000/step3_inDQM_1001.root',)
+
+### Corrected Python Code
+('/store/group/lpcfpix/TTbar_14TeV_921_OT613_200_IT4025_opt8s3l/step3_trackingOnly_PU200/170609_082344/0000/step3_inDQM_1002.root',)
+
+### Corrected Python Code
+('/store/group/lpcfpix/TTbar_14TeV_921_OT613_200_IT4025_opt8s3l/step3_trackingOnly_PU200/170609_082344/0000/step3_inDQM_1003.root',)
+
+### Corrected Python Code
+('/store/group/lpcfpix/TTbar_14TeV_921_OT613_200_IT4025_opt8s3l/step3_trackingOnly_PU200/170609_082344/0000/step3_inDQM_1004.root',)
+
+### Corrected Python Code
+('/store/group/lpcfpix/TTbar_14TeV_921_OT613_200_IT4025_opt8s3l/step3_trackingOnly_PU200/170609_082344/0000/step3_inDQM_1005.root',)
+
+### Corrected Python Code
+('/store/group/lpcfpix/TTbar_14TeV_921_OT613_200_IT4025_opt"
+"self._request.ws_stream = StreamHixie75(self._request, True)",self._request.ws_stream = StreamHixie75(self._request),"### Buggy Python Code
+self._request.ws_stream = StreamHixie75(self._request, True)
+
+### Corrected Python Code
+self._request.ws_stream = StreamHixie75(self._request, False) if self._request.is_secure() else StreamHixie75(self._request, True) if self._request.is_secure() else StreamHixie75(self._request, False) if self._request.is_secure() else StreamHixie75(self._request, True) if self._request.is_secure() else StreamHixie75(self._request, False) if self._request.is_secure() else StreamHixie75(self._request, True) if self._request.is_secure() else StreamHixie75(self._request, False) if self._request.is_secure() else StreamHixie75(self._request, True) if self._request.is_secure() else StreamHixie75(self._request, False) if self._request.is_secure() else StreamHixie75(self._request, True) if self._request.is_secure() else StreamHixie75(self._request, False) if self._request.is_secure() else StreamHixie75(self._request, True) if self._request.is_secure() else StreamHixie75(self._request, False) if self._request.is_secure() else StreamHixie75(self._request, True) if self._request.is_secure() else StreamHixie75(self._request, False) if self._request.is_secure() else StreamHixie75(self._request, True) if self._request.is_secure() else StreamHixie75(self._request, False) if self._request.is_secure() else StreamHixie75(self._request, True) if self._request.is_secure() else StreamHixie75(self._request, False) if self._request.is_secure() else StreamHixie75(self._request, True) if self._request.is_secure() else StreamHixie75(self._request, False) if self._request.is_secure() else StreamHixie75(self._request, True) if self._request.is_secure"
+"import subprocess
+import ftplib
+import os
+
+def task_func(ftp_server='ftp.dlptest.com', ftp_user='dlpuser', ftp_password='rNrKYTX9g7z3RgJRmxWuGHbeu', ftp_dir='/ftp/test'):
+    try:
+        ftp_obj = ftplib.FTP.connect(ftp_server)
+    except Exception as e:
+        raise Exception(f'Failed to connect to FTP server {ftp_server}: {str(e)}')
+    try:
+        ftp_obj.login(ftp_user, ftp_password)
+    except Exception as e:
+        raise Exception(f'Failed to log into FTP server {ftp_server} with user {ftp_user}: {str(e)}')
+    try:
+        ftp_obj.cwd(ftp_dir)
+    except Exception as e:
+        raise Exception(f'Failed to change to directory {ftp_dir} on server {ftp_server}: {str(e)}')
+    download_dir = ftp_dir
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    downloaded_files = []
+    for filename in ftp_obj.nlst():
+        command = f'wget ftp://{ftp_user}:{ftp_password}@{ftp_server}{ftp_dir}/{filename} -P {download_dir}'
+        subprocess.call(command, shell=True)
+        downloaded_files.append(filename)
+    return ftp_obj.quit()
+    return downloaded_files","import subprocess
+import ftplib
+import os
+
+def task_func(ftp_server='ftp.dlptest.com', ftp_user='dlpuser', ftp_password='rNrKYTX9g7z3RgJRmxWuGHbeu', ftp_dir='/ftp/test'):
+    try:
+        ftp_obj = ftplib.FTP(ftp_server)
+    except Exception as e:
+        raise Exception(f'Failed to connect to FTP server {ftp_server}: {str(e)}')
+    try:
+        ftp_obj.login(ftp_user, ftp_password)
+    except Exception as e:
+        raise Exception(f'Failed to log into FTP server {ftp_server} with user {ftp_user}: {str(e)}')
+    try:
+        ftp_obj.cwd(ftp_dir)
+    except Exception as e:
+        raise Exception(f'Failed to change to directory {ftp_dir} on server {ftp_server}: {str(e)}')
+    download_dir = 'downloaded_files'
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    downloaded_files = []
+    for filename in ftp_obj.nlst():
+        command = f'wget ftp://{ftp_user}:{ftp_password}@{ftp_server}{ftp_dir}/{filename} -P {download_dir}'
+        subprocess.call(command, shell=True)
+        downloaded_files.append(filename)
+    ftp_obj.quit()
+    return downloaded_files","import subprocess
+import ftplib
+import os
+
+def task_func(ftp_server='ftp.dlptest.com', ftp_user='dlpuser', ftp_password='rNrKYTX9g7z3RgJRmxWuGHbeu', ftp_dir='/ftp/test'):
+    try:
+        ftp_obj = ftplib.FTP(ftp_server)
+    except Exception as e:
+        raise Exception(f'Failed to connect to FTP server {ftp_server}: {str(e)}')
+    try:
+        ftp_obj.login(ftp_user, ftp_password)
+    except Exception as e:
+        raise Exception(f'Failed to log into FTP server {ftp_server} with user {ftp_user}: {str(e)}')
+    try:
+        ftp_obj.cwd(ftp_dir)
+    except Exception as e:
+        raise Exception(f'Failed to change to directory {ftp_dir} on server {ftp_server}: {str(e)}')
+    download_dir = os.path.join(os.getcwd(), download_dir)
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    downloaded_files = []
+    for filename in ftp_obj.nlst():
+        command = f'wget ftp://{ftp_user}:{ftp_password}@{ftp_server}{ftp_dir}/{filename} -P {download_dir}'
+        subprocess.call(command, shell=True)
+        downloaded_files.append(filename)
+    return downloaded_files
+
+if __name__ == '__main__':
+    downloaded_files = task_func()
+    print(f'Downloaded files: {downloaded_files}')/python/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics"
