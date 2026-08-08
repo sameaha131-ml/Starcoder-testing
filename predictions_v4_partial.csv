@@ -38935,3 +38935,294 @@ if not (self.mdRCConst > 0).all() and (self.mdRCConst < 1).all() and (self.mdRCC
 
 ### Corrected Python code
 if not (self.mdRCConst > 0).all() and (self.mdRCConst < 1).all() and (self.mdRCConst!= 1) and (self.mdRCConst!= 0) and (self.mdRCConst!= 1.0) and (self.mdRCConst!= 0.0):"
+"import json
+import urllib.parse
+import hmac
+import hashlib
+
+def task_func(req_data, secret_key):
+    if not isinstance(req_data, list):
+        raise TypeError('req_data must be a dictionary')
+    json_req_data = json.dumps(req_data)
+    hmac_obj = hmac.new(secret_key.encode(), json_req_data.encode(), hashlib.sha256)
+    hmac_signature = hmac_obj.digest()
+    url_encoded_signature = urllib.parse.quote_plus(hmac_signature)
+    return url_encoded_signature","import json
+import urllib.parse
+import hmac
+import hashlib
+
+def task_func(req_data, secret_key):
+    if not isinstance(req_data, dict):
+        raise TypeError('req_data must be a dictionary')
+    json_req_data = json.dumps(req_data)
+    hmac_obj = hmac.new(secret_key.encode(), json_req_data.encode(), hashlib.sha256)
+    hmac_signature = hmac_obj.hexdigest()
+    url_encoded_signature = urllib.parse.quote_plus(hmac_signature)
+    return url_encoded_signature","json_req_data.encode(), hashlib.sha256)
+    hmac_signature = hmac_obj.digest()
+    url_encoded_signature = urllib.parse.quote_plus(hmac_signature)
+    return url_encoded_signature
+
+### Corrected Python Code
+import json
+import urllib.parse
+import hmac
+import hashlib
+
+def task_func(req_data, secret_key):
+    if not isinstance(req_data, dict):
+        raise TypeError('req_data must be a dictionary')
+    json_req_data = json.dumps(req_data)
+    hmac_obj = hmac.new(secret_key.encode(), json_req_data.encode(), hashlib.sha256)
+    hmac_signature = hmac_obj.hexdigest()
+    url_encoded_signature = urllib.parse.quote_plus(hmac_signature)
+    return url_encoded_signature
+
+### Corrected Python code
+import json
+import urllib.parse
+import hmac
+import hashlib
+
+def task_func(req_data, secret_key):
+    if not isinstance(req_data, dict):
+        raise TypeError('req_data must be a dictionary')
+    json_req_data = json.dumps(req_data)
+    hmac_obj = hmac.new(secret_key.encode(), json_req_data.encode(), hashlib.sha256)
+    hmac_signature = hmac_obj.hexdigest()
+    url_encoded_signature = urllib.parse.quote_plus(hmac_signature)
+    return url_encoded_signature.encode()
+/python/day_01/task_01.py
+def task_func(req_data, secret_key):
+    if not isinstance(req_data, dict):
+        raise TypeError('req_data must be a dictionary')
+    json_req_data = json.dumps(req_data)
+    hmac_obj = hmac.new(secret_key.encode(), json_req_data.encode(), hashlib.sha256)
+    hmac_signature = hmac_obj.hexdigest()
+    url_encoded_signature = urllib.parse.quote_plus(hmac_signature)
+    return url_encoded_signature.encode()
+/python/day_01/task_02.py
+import json
+import urllib.parse
+import hmac
+import hashlib
+
+def task_func(req_data, secret_key):
+    if not isinstance(req_data, dict):
+        raise TypeError('req_data must be a dictionary')
+    json_req_data = json.dumps(req_data)
+    hmac_obj = hmac.new(secret_"
+"if pamMetadata.has_key(clade[PhyloTreeKeys.SQUID]):
+    clade[PhyloTreeKeys.MTX_IDX] = pamMetadata[clade[PhyloTreeKeys.SQUID]]","if clade.has_key(PhyloTreeKeys.SQUID) and pamMetadata.has_key(clade[PhyloTreeKeys.SQUID]):
+    clade[PhyloTreeKeys.MTX_IDX] = pamMetadata[clade[PhyloTreeKeys.SQUID]]","### Buggy Python Code
+if pamMetadata.has_key(clade[PhyloTreeKeys.SQUID]):
+    clade[PhyloTreeKeys.MTX_IDX] = pamMetadata[clade[PhyloTreeKeys.SQUID]]
+
+### Corrected Python Code
+if pamMetadata.has_key(clade[PhyloTreeKeys.SQUID]) and pamMetadata[clade[PhyloTreeKeys.SQUID]]!= 'None':
+    clade[PhyloTreeKeys.MTX_IDX] = pamMetadata[clade[PhyloTreeKeys.SQUID]]
+
+### Corrected Python code
+if pamMetadata.has_key(clade[PhyloTreeKeys.SQUID]) and pamMetadata[clade[PhyloTreeKeys.SQUID]]!= 'None':
+    clade[PhyloTreeKeys.MTX_IDX] = pamMetadata[clade[PhyloTreeKeys.SQUID]] - 1
+
+### Corrected Python code
+if pamMetadata.has_key(clade[PhyloTreeKeys.SQUID]) and pamMetadata[clade[PhyloTreeKeys.SQUID]]!= 'None':
+    clade[PhyloTreeKeys.MTX_IDX] = pamMetadata[clade[PhyloTreeKeys.SQUID]] - 1
+
+return clade[PhyloTreeKeys.MTX_IDX] == 0 or clade[PhyloTreeKeys.MTX_IDX] == 1 or clade[PhyloTreeKeys.MTX_IDX] == 2 or clade[PhyloTreeKeys.MTX_IDX] == 3 or clade[PhyloTreeKeys.MTX_IDX] == 4 or clade[PhyloTreeKeys.MTX_IDX] == 5 or clade[PhyloTreeKeys.MTX_IDX] == 6 or clade[PhyloTreeKeys.MTX_IDX] == 7 or clade[PhyloTreeKeys.MTX_IDX] == 8 or clade[PhyloTreeKeys.MTX_IDX] == 9 or clade[PhyloTreeKeys.MTX_IDX] == 10 or clade[PhyloTreeKeys.MTX_IDX] == 11 or clade[PhyloTreeKeys.MTX_IDX] == 12 or clade[PhyloTreeKeys.MTX_IDX] == 13 or clade[PhyloTreeKeys.MTX_IDX] == 14 or clade[PhyloTreeKeys.MTX_IDX] == 15"
+"with open(filename) as f:
+    data = ujson.load(f)","with open(filename_) as f:
+    data = ujson.load(f)","### Buggy Python Code
+with open(filename) as f:
+    data = ujson.load(f)
+
+### Corrected Python Code
+with open(filename, encoding='utf-8') as f:
+    data = ujson.load(f)
+
+return data['data'] if 'data' in data else data['result'] if'result' in data else data['response'] if'response' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'resultset' in data else data['results'] if'results' in data else data['responseset'] if'responseset' in data else data['resultset'] if'result"
+"class Solution:
+
+    def permute(self, n: int, k: int) -> list[int]:
+        ans = []
+        isLookingForEven = True
+        remainingNumbers = list(range(1, n + 1))
+        for turn in range(n):
+            remainingPermutations = math.factorial((n - 1 - turn) // 2) * math.factorial((n - turn) // 2)
+            found = False
+            for index, number in enumerate(remainingNumbers):
+                if number % 2 != isLookingForEven and turn > 0 or n % 2 == 1:
+                    continue
+                if k <= remainingPermutations:
+                    ans.append(remainingNumbers.pop(index))
+                    isLookingForEven = ans[-1] % 2 != 0
+                    found = True
+                    break
+                k -= remainingPermutations
+            if not found:
+                return []
+        return ans","class Solution:
+
+    def permute(self, n: int, k: int) -> list[int]:
+        ans = []
+        isLookingForEven = True
+        remainingNumbers = list(range(1, n + 1))
+        for turn in range(n):
+            remainingPermutations = math.factorial((n - 1 - turn) // 2) * math.factorial((n - turn) // 2)
+            found = False
+            for index, number in enumerate(remainingNumbers):
+                if number % 2 != isLookingForEven and (turn > 0 or n % 2 == 1):
+                    continue
+                if k <= remainingPermutations:
+                    ans.append(remainingNumbers.pop(index))
+                    isLookingForEven = ans[-1] % 2 == 0
+                    found = True
+                    break
+                k -= remainingPermutations
+            if not found:
+                return []
+        return ans","class Solution:
+
+    def permute(self, n: int, k: int) -> list[int]:
+        ans = []
+        isLookingForEven = True
+        remainingNumbers = list(range(1, n + 1))
+        for turn in range(n):
+            remainingPermutations = math.factorial((n - 1 - turn) // 2) * math.factorial((n - turn) // 2)
+            found = False
+            for index, number in enumerate(remainingNumbers):
+                if number % 2!= isLookingForEven and (turn > 0 or n % 2 == 1):
+                    continue
+                if k <= remainingPermutations:
+                    ans.append(remainingNumbers.pop(index))
+                    isLookingForEven = ans[-1] % 2 == 0
+                    found = True
+                    break
+                k -= remainingPermutations
+            if not found:
+                return []
+        return ans
+
+class Solution:
+
+    def permute(self, n: int, k: int) -> list[int]:
+        ans = []
+        isLookingForEven = True
+        remainingNumbers = list(range(1, n + 1))
+        for turn in range(n):
+            remainingPermutations = math.factorial((n - 1 - turn) // 2) * math.factorial((n - turn) // 2)
+            found = False
+            for index, number in enumerate(remainingNumbers):
+                if number % 2!= isLookingForEven and (turn > 0 or n % 2 == 1):
+                    continue
+                if k <= remainingPermutations:
+                    ans.append(remainingNumbers.pop(index))
+                    isLookingForEven = ans[-1] % 2 == 0
+                    found = True
+                    break
+                k -= remainingPermutations
+            if not found:
+                return []
+        return ans
+/1000-1099/1000-1099.py
+class Solution:
+
+    def permute(self, n: int, k: int) -> list[int]:
+        ans = []
+        isLookingForEven = True
+        remainingNumbers = list(range(1, n + 1))
+        for turn in range(n):
+            remainingPermutations = math.factorial((n - 1 - turn) // 2) * math.factorial((n - turn) // 2)
+            found = False"
+"import random
+import bisect
+import statistics
+import matplotlib.pyplot as plt
+
+def task_func(n, value):
+    if n < 1:
+        pass
+    numbers = [random.random() for _ in range(n)]
+    avg = statistics.mean(numbers)
+    greater_avg = [x for x in numbers if x > avg]
+    numbers.sort()
+    bpoint = bisect.bisect_right(numbers, value)
+    num_greater_value = len(numbers) - bpoint
+    plt.plot(numbers)
+    plt.show()
+    return (greater_avg, num_greater_value)","import random
+import bisect
+import statistics
+import matplotlib.pyplot as plt
+
+def task_func(n, value):
+    if n < 1:
+        return ([], 0)
+    numbers = [random.random() for _ in range(n)]
+    avg = statistics.mean(numbers)
+    greater_avg = [x for x in numbers if x > avg]
+    numbers.sort()
+    bpoint = bisect.bisect_right(numbers, value)
+    num_greater_value = len(numbers) - bpoint
+    plt.plot(numbers)
+    plt.show()
+    return (greater_avg, num_greater_value)",".bisect_right(numbers, value)
+    num_greater_value = len(numbers) - bpoint
+    plt.plot(numbers)
+    plt.show()
+    return (greater_avg, num_greater_value)
+
+### Corrected Python Code
+import random
+import bisect
+import statistics
+import matplotlib.pyplot as plt
+
+def task_func(n, value):
+    if n < 1:
+        return ([], 0)
+    numbers = [random.random() for _ in range(n)]
+    avg = statistics.mean(numbers)
+    greater_avg = [x for x in numbers if x > avg]
+    numbers.sort()
+    bpoint = bisect.bisect_right(numbers, value)
+    num_greater_value = len(numbers) - bpoint
+    plt.plot(numbers)
+    plt.show()
+    return (greater_avg, num_greater_value)
+
+if __name__ == '__main__':
+    n = int(input())
+    value = float(input())
+    greater_avg, num_greater_value = task_func(n, value)
+    print(greater_avg)
+    print(num_greater_value)/python/01_introduction/01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_01_"
+"request_url = '/v2/reverse?coords=' + '{lat}%2C{lon}'.format(lat=lat, lon=lon) + '&key={api_key}'.format(api_key=API_KEY) + '&lang=en&format=json&display=full'","request_url = 'https://api.what3words.com/v2/reverse?coords=' + '{lat}%2C{lon}'.format(lat=lat, lon=lon) + '&key={api_key}'.format(api_key=API_KEY) + '&lang=en&format=json&display=full'","### Buggy Python Code
+request_url = '/v2/reverse?coords=' + '{lat}%2C{lon}'.format(lat=lat, lon=lon) + '&key={api_key}'.format(api_key=API_KEY) + '&lang=en&format=json&display=full'
+
+### Corrected Python Code
+request_url = '/v2/reverse?coords=' + '{lat}%2C{lon}'.format(lat=lat, lon=lon) + '&key={api_key}'.format(api_key=API_KEY) + '&lang=en&format=json' + '&display=full' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=100' + '&units=metric' + '&language=en' + '&sensor=false' + '&mode=walking' + '&steps=1"
+self.framework.log.write('ERROR while running executable: ' + self.linkerObj + ' is not executable'),self.framework.log.write('ERROR while running executable: ' + self.linkerObj + ' is not executable\n'),"### Buggy Python Code
+self.framework.log.write('ERROR while running executable:'+ self.linkerObj +'is not executable')
+
+### Corrected Python Code
+self.framework.log.write('ERROR while running executable:'+ self.linkerObj +'is not executable') if self.linkerObj is not None else None
+
+### Corrected Python Code
+self.framework.log.write('ERROR while running executable:'+ self.linkerObj +'is not executable') if self.linkerObj is not None else None if self.framework.log is not None else None
+
+### Corrected Python Code
+self.framework.log.write('ERROR while running executable:'+ self.linkerObj +'is not executable') if self.linkerObj is not None else None if self.framework.log is not None else None if self.framework.log.is_enabled() else None
+
+### Corrected Python Code
+self.framework.log.write('ERROR while running executable:'+ self.linkerObj +'is not executable') if self.linkerObj is not None else None if self.framework.log is not None else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None
+
+### Corrected Python Code
+self.framework.log.write('ERROR while running executable:'+ self.linkerObj +'is not executable') if self.linkerObj is not None else None if self.framework.log is not None else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if self.framework.log.is_enabled() else None if"
+"self.numberOfUsers = max(max(self.eventData['to']), max(self.eventData['fr']))","self.numberOfUsers = max(max(self.eventData['to']), max(self.eventData['fr'])) + 1","### Buggy Python Code
+self.numberOfUsers = max(max(self.eventData['to']), max(self.eventData['fr']))
+
+### Corrected Python Code
+self.numberOfUsers = max(max(self.eventData['to']), max(self.eventData['fr'])) + 1 if self.eventData['to']!= self.eventData['fr'] else max(max(self.eventData['to']), max(self.eventData['fr'])) + 2 if self.eventData['to'] == self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to'] == self.eventData['fr'] else 2 if self.eventData['to']!= self.eventData['fr'] else 1 if self.eventData['to"
