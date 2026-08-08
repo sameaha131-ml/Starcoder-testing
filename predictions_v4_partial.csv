@@ -11619,3 +11619,202 @@ permission = Permission.objects.filter(codename='can_edit_finstance')
 
 ### Corrected Python Code
 permission = Permission.objects.filter(codename='can_edit_finstance', content_type=ContentType.objects.get_for_model(FInstance))[:1] if FInstance.objects.count() > 0 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 0 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 1 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 2 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 3 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 4 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 5 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 6 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 7 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 8 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 9 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 10 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 11 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 12 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 13 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects"
+"inventory_path = os.path.join(work_dir, 'inventory', inventory_file)","inventory_path = os.path.join(work_dir, 'inventories', inventory_file)","### Buggy Python Code
+inventory_path = os.path.join(work_dir, 'inventory', inventory_file)
+
+### Corrected Python Code
+inventory_path = os.path.join(work_dir, 'inventory', inventory_file) if inventory_file else None
+
+### Corrected Python Code
+inventory_path = os.path.join(work_dir, 'inventory', inventory_file) if inventory_file else None if not os.path.exists(os.path.join(work_dir, 'inventory')) else None
+
+### Corrected Python Code
+inventory_path = os.path.join(work_dir, 'inventory', inventory_file) if inventory_file else None if not os.path.exists(os.path.join(work_dir, 'inventory')) else os.path.join(work_dir, 'inventory', inventory_file) if inventory_file else None if not os.path.exists(os.path.join(work_dir, 'inventory')) else None
+
+### Corrected Python Code
+inventory_path = os.path.join(work_dir, 'inventory', inventory_file) if inventory_file else None if not os.path.exists(os.path.join(work_dir, 'inventory')) else os.path.join(work_dir, 'inventory', inventory_file) if inventory_file else None if not os.path.exists(os.path.join(work_dir, 'inventory')) else None if not os.path.exists(os.path.join(work_dir, 'inventory', inventory_file)) else None if not os.path.exists(os.path.join(work_dir, 'inventory')) else None if not os.path.exists(os.path.join(work_dir, 'inventory', inventory_file)) else None if not os.path.exists(os.path.join(work_dir, 'inventory')) else None if not os.path.exists(os.path.join(work_dir, 'inventory', inventory_file)) else None if not os.path.exists(os.path.join(work_dir, 'inventory')) else None if not os.path.exists(os.path.join(work_dir, 'inventory', inventory_file)) else None if not os.path.exists(os.path.join(work_dir, 'inventory')) else None if not os.path.exists(os.path.join(work_dir, 'inventory',"
+"if hasattr(obj, 'owner'):
+    info['owner'] = obj.owner.username","if hasattr(obj, 'owner') and obj.owner:
+    info['owner'] = obj.owner.username","### Buggy Python Code
+if hasattr(obj, 'owner'):
+    info['owner'] = obj.owner.username
+
+### Corrected Python Code
+if hasattr(obj, 'owner') and obj.owner:
+    info['owner'] = obj.owner.username
+
+### Corrected Python Code
+if hasattr(obj, 'owner') and obj.owner:
+    info['owner'] = obj.owner.username or obj.owner.email or obj.owner.id or ''
+
+### Corrected Python Code
+if hasattr(obj, 'owner') and obj.owner:
+    info['owner'] = obj.owner.username or obj.owner.email or obj.owner.id or '' or 'Anonymous'
+
+### Corrected Python Code
+if hasattr(obj, 'owner') and obj.owner:
+    info['owner'] = obj.owner.username or obj.owner.email or obj.owner.id or '' or 'Anonymous' or 'Anonymous' + str(obj.id) +'' + str(obj.owner.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id) +'' + str(obj.id"
+"sink.write('\tsink = ""%s""\n' % interval.mark)","sink.write('\tmark = ""%s""\n' % interval.mark)","### Buggy Python Code
+sink.write('\tsink = ""%s""\n' % interval.mark)
+
+### Corrected Python Code
+sink.write('\tsink = ""%s""\n' % interval.mark.encode('utf-8')) if interval.mark else ''
+
+### Corrected Python code
+sink.write('\tsink = ""%s""\n' % interval.mark.encode('utf-8')) if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval.mark else '' if interval"
+"import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config = configparser.ConfigParser()
+    config.read(archieve_dir)
+    project_dir = config.get('Project', 'directory')
+    if os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = f'{archieve_dir}/{os.path.basename(project_dir)}.tar'
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='zip', root_dir=project_dir)
+    if not os.path.isdir(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True","import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config = configparser.ConfigParser()
+    config.read(config_file_path)
+    project_dir = config.get('Project', 'directory')
+    if not os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = f'{archieve_dir}/{os.path.basename(project_dir)}.zip'
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='zip', root_dir=project_dir)
+    if not os.path.isfile(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True","import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config = configparser.ConfigParser()
+    config.read(config_file_path)
+    project_dir = config.get('Project', 'directory')
+    if not os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = f'{archieve_dir}/{os.path.basename(project_dir)}.tar.gz'
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='tar', root_dir=project_dir)
+    if not os.path.isfile(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True
+
+if __name__ == '__main__':
+    task_func('/home/user/project.ini', '/home/user/archive')/README.md
+# Python-course-tasks-2020-09-18-16-00-00-UTC-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500"
+MAX_RESULTS = 16 if SYS_ENERGY_GUESS is not None else 5,MAX_RESULTS = 5 if SYS_ENERGY_GUESS is not None else 16,"### Buggy Python Code
+MAX_RESULTS = 16 if SYS_ENERGY_GUESS is not None else 5
+
+### Corrected Python Code
+MAX_RESULTS = 16 if SYS_ENERGY_GUESS is not None else 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"ret['comment'] = 'Alternative for {0} set to path {1} with priority {2}'.format(name, current, priority)","ret['comment'] = 'Alternative for {0} set to path {1} with priority {2}'.format(name, path, priority)","### Buggy Python Code
+ret['comment'] = 'Alternative for {0} set to path {1} with priority {2}'.format(name, current, priority)
+
+### Corrected Python Code
+ret['comment'] = 'Alternative for {0} set to path {1} with priority {2}'.format(name, path, priority)
+return ret, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,"
+"comm = '%s/mokkadbscripts/mokka-wrapper.sh %s' % (mySoftwareRoot, mokkasteer)","comm = '%s/mokkadbscripts/mokka-wrapper.sh %s %s' % (mySoftwareRoot, mokkasteer) % sqlwrapper.MokkaTMPDir","### Buggy Python Code
+comm = '%s/mokkadbscripts/mokka-wrapper.sh %s' % (mySoftwareRoot, mokkasteer)
+
+### Corrected Python Code
+comm = '%s/mokkadbscripts/mokka-wrapper.sh %s' % (mySoftwareRoot, mokkasteer) +'-d' +'-c' +'-s' +'-t' +'-u' +'-v' +'-x' +'-y' +'-z' +'-a' +'-b' +'-c' +'-d' +'-e' +'-f' +'-g' +'-h' +'-i' +'-j' +'-k' +'-l' +'-m' +'-n' +'-o' +'-p' +'-q' +'-r' +'-s' +'-t' +'-u' +'-v' +'-w' +'-x' +'-y' +'-z' +'-a' +'-b' +'-c' +'-d' +'-e' +'-f' +'-g' +'-h' +'-i' +'-j' +'-k' +'-l' +'-m' +'-n' +'-o' +'-p' +'-q' +'-r' +'-s' +'-t' +'-u' +'-v' +'-w' +'-x' +'-y' +'-z' +'-a' +'-b' +'-c' +'-d' +'-e' +'-f' +'-g' +'-h' +'-i' +'-j' +'-k' +'-l' +'-m' +'-n' +'-o' +'-p' +'-q' +'-r' +'-s' +'-t' +'-u' +'-v' +'-w' +'-x' +'-y' +'-z' +'-a' +'-b' +'-c' +'-d' +'-e' +'-f' +'-g' +'-h' +'-i'"
+"import pandas as pd
+from scipy.stats import zscore
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    df['Date'] = pd.to_datetime(df['Date'])
+    df.iloc[:, 1:] = df.iloc[:, 1:].apply(zscore)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    df.set_index('Date').boxplot(ax=ax, by='Date')
+    ax.set_title('Z-Scores Over Time')
+    ax.set_xlabel('Date')
+    ax.set_ylim('Z-Score')
+    return (df, fig)","import pandas as pd
+from scipy.stats import zscore
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = pd.concat([df['Date'], df['Value'].apply(pd.Series)], axis=1)
+    df.iloc[:, 1:] = df.iloc[:, 1:].apply(zscore)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    df.set_index('Date').boxplot(ax=ax)
+    ax.set_title('Z-Scores Over Time')
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Z-Score')
+    return (df, fig)","Over Time')
+    ax.set_xlabel('Date')
+    ax.set_ylim('Z-Score')
+    return (df, fig)
+
+### Corrected Python Code
+import pandas as pd
+from scipy.stats import zscore
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = pd.concat([df['Date'], df.iloc[:, 1:].apply(zscore)], axis=1)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    df.set_index('Date').boxplot(ax=ax)
+    ax.set_title('Z-Scores Over Time')
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Z-Score')
+    return (df, fig)
+
+if __name__ == '__main__':
+    df = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seirsplus/master/examples/data/covid_us_cases.csv')
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = pd.concat([df['Date'], df.iloc[:, 1:].apply(zscore)], axis=1)
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    df.set_index('Date').boxplot(ax=ax)
+    ax.set_title('Z-Scores Over Time')
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Z-Score')
+    plt.show()
+    (df, fig) = task_func(df)
+    return (df, fig)
+/README.md
+# Data Science Bootcamp - Python for Data Science
+
+## Day 1 - Python Basics
+
+### Task 1 - Hello World!
+
+### Task 2 - Printing Variables and Data Types
+
+### Task 3 - Basic Arithmetic Operations
+
+### Task 4 - Basic Data Structures
+
+### Task 5 - Basic Data Manipulation
+
+### Task 6 - Basic Data Visualization
+
+## Day 2 - Python Advanced Topics
+
+### Task 1 - Functions and Recursions
+
+### Task 2 - Classes and Objects
+
+### Task 3 - Modules and Packages
+
+### Task 4 - Advanced Data Structures
+
+### Task 5 - Advanced Data Manipulation
+
+### Task 6 - Advanced Data Visualization
+
+## Day 3"
