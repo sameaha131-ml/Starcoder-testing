@@ -16341,3 +16341,265 @@ class Solution:
                     k -= d
                     break
         return ''.join(cs) + 'a' * (k % 26) if k % 26 else ''.join(cs) + 'a' * (k // 26) * 26 + 'z' * (k // 26) * 26 if k % 26 else ''.join(cs) + 'a' * (k // 26) * 26 + 'z' * (k // 26) * 26 + 'a' * (k % 26) if k % 26 else ''.join(cs) + 'a' * (k // 26) * 26 + 'z' * (k // 26) * 26 + 'a' * (k % 26) if k % 26 else ''.join(cs) + 'a' * (k // 26) * 26 + 'z' * (k // 26) * 26 + 'a' * (k % 26) if k % 2"
+"s, n, w, e = [float(coord) for coord in bouindingbox]","s, n, w, e = [float(coord) for coord in boundingbox]","### Buggy Python Code
+s, n, w, e = [float(coord) for coord in bouindingbox]
+
+### Corrected Python Code
+s, n, w, e = [float(coord) for coord in boundingbox] if boundingbox else [0, 0, 0, 0]
+
+return s, n, w, e, self.get_image_size() if self.get_image_size() else (0, 0, 0, 0) + self.get_image_size() if self.get_image_size() else (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + (0, 0, 0, 0) + ("
+endpoints = list(self.extra_static_inbound_endpoints),endpoints = list(self.extra_static_endpoints),"### Buggy Python Code
+endpoints = list(self.extra_static_inbound_endpoints)
+
+### Corrected Python Code
+endpoints = list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_outbound_endpoints else list(self.extra_static_inbound_endpoints) + list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) + list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) + list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) + list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) + list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) + list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) + list(self.extra_static_outbound_endpoints) + list(self.extra_static_inbound_endpoints) if self.extra_static_inbound_endpoints else list(self.extra_static_outbound_endpoints) + list(self."
+"if job['Exit code'] in ['-1', '83', '60311', '60318', '8001', '8002', '8022', '8021', '8020', '8028', '134', '135', '8004', '-15', '139', '60317', '60307', '60302', '10030', '10031', '10034', '10040', '50115', '50664', '50660', '50662', '8010', '50665', '255']:
+    jobsToResubmit.append(job['Job'])","if job['Exit code'] in ['-1', '83', '60311', '60318', '8001', '8002', '8022', '8021', '8020', '8028', '134', '135', '8004', '-15', '139', '60317', '60307', '60302', '10030', '10031', '10034', '10040', '50115', '50664', '50660', '50662', '8010', '50665', '255', '127']:
+    jobsToResubmit.append(job['Job'])","ed Python Code
+if job['Exit code'] in ['-1', '83', '60311', '60318', '8001', '8002', '8022', '8021', '8020', '8028', '134', '135', '8004', '-15', '139', '60317', '60307', '60302', '10030', '10031', '10034', '10040', '50115', '50664', '50660', '50662', '8010', '50665', '255', '10032', '10033', '10035', '10036', '10037', '10038', '10039', '10041', '10042', '10043', '10044', '10045', '10046', '10047', '10048', '10049', '10050', '10051', '10052', '10053', '10054', '10055', '10056', '10057', '10058', '10059', '10060', '10061', '10062', '10063', '10064', '10065', '10066', '10067', '10068', '10069', '10070', '10071', '10072', '10073', '10074', '10075', '10076', '10077', '10078', '10079', '1008"
+default_log_format = '%(levelname)s: %(name)s: %(message)s',default_log_format = '[%(process)s] %(name)s: %(levelname)s: %(message)s',"### Buggy Python Code
+default_log_format = '%(levelname)s: %(name)s: %(message)s'
+
+### Corrected Python Code
+default_log_format = '%(asctime)s %(levelname)s: %(name)s: %(message)s'
+
+### Corrected Python Code
+default_log_format = '%(asctime)s %(levelname)s: %(name)s: %(message)s' + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' * 80 + '\n' + '-' *"
+"from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+def task_func(df, age: int, height: int):
+    selected_df = df[(df['Age'] > age) | (df['Height'] < height)].copy()
+    if len(selected_df) >= 30:
+        kmeans = KMeans(n_clusters=3)
+        selected_df['Cluster'] = kmeans.fit_predict(selected_df[['Age', 'Height']])
+        plt.figure(figsize=(10, 5))
+        plt.scatter(selected_df['Age'], selected_df['Height'], colors=selected_df['Cluster'])
+        plt.xlabel('Age')
+        plt.ylabel('Height')
+        plt.title('KMeans Clustering based on Age and Height')
+        ax = plt.gca()
+        return (selected_df, ax)
+    else:
+        return (selected_df, None)","from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+def task_func(df, age: int, height: int):
+    selected_df = df[(df['Age'] > age) & (df['Height'] < height)].copy()
+    if len(selected_df) >= 3:
+        kmeans = KMeans(n_clusters=3)
+        selected_df['Cluster'] = kmeans.fit_predict(selected_df[['Age', 'Height']])
+        plt.figure(figsize=(10, 5))
+        plt.scatter(selected_df['Age'], selected_df['Height'], c=selected_df['Cluster'])
+        plt.xlabel('Age')
+        plt.ylabel('Height')
+        plt.title('KMeans Clustering based on Age and Height')
+        ax = plt.gca()
+        return (selected_df, ax)
+    else:
+        selected_df['Cluster'] = 0
+        return (selected_df, None)","from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+def task_func(df, age: int, height: int):
+    selected_df = df[(df['Age'] > age) & (df['Height'] < height)].copy()
+    if len(selected_df) >= 3:
+        kmeans = KMeans(n_clusters=3)
+        selected_df['Cluster'] = kmeans.fit_predict(selected_df[['Age', 'Height']])
+        plt.figure(figsize=(10, 5))
+        plt.scatter(selected_df['Age'], selected_df['Height'], c=selected_df['Cluster'])
+        plt.xlabel('Age')
+        plt.ylabel('Height')
+        plt.title('KMeans Clustering based on Age and Height')
+        ax = plt.gca()
+        return (selected_df, ax)
+    else:
+        return (selected_df, None)
+/01-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/"
+numbOfRegions = paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions),numbOfRegions = results.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions),"### Buggy Python Code
+numbOfRegions = paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions)
+
+### Corrected Python Code
+numbOfRegions = paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions) - 1 if paintings.filter(picture.id == m.Painting.q.id).distinct().count() > 1 else paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions) - 1 if paintings.filter(picture.id == m.Painting.q.id).distinct().count() > 1 else paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions) - 1 if paintings.filter(picture.id == m.Painting.q.id).distinct().count() > 1 else paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions) - 1 if paintings.filter(picture.id == m.Painting.q.id).distinct().count() > 1 else paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions) - 1 if paintings.filter(picture.id == m.Painting.q.id).distinct().count() > 1 else paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions) - 1 if paintings.filter(picture.id == m.Painting.q.id).distinct().count() > 1 else paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions) - 1 if paintings.filter(picture.id == m.Painting.q.id).distinct().count() > 1 else paintings.filter(picture.id == m.Painting.q.id).distinct().sum(m.Result.q.numberOfRegions) - 1 if paintings.filter(picture.id == m.Painting.q.id).distinct().count() > 1 else paintings.filter(picture.id == m.Painting.q.id).distinct"
+"import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data, n_components=2):
+    np.random.seed(42)
+    n_components = abs(n_components)
+    if not isinstance(n_components, int) or n_components <= 0:
+        raise ValueError('n_components must be a positive integer')
+    pca = PCA(n_components=n_components - 1)
+    transformed_data = pca.fit_transform(data)
+    fig, ax = plt.subplots(sharez=True)
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]).to_json(), ax)","import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data, n_components=2):
+    np.random.seed(42)
+    if not isinstance(n_components, int) or n_components <= 0:
+        raise ValueError('n_components must be a positive integer')
+    pca = PCA(n_components=n_components)
+    transformed_data = pca.fit_transform(data)
+    fig, ax = plt.subplots()
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]), ax)","### Corrected Python Code
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data, n_components=2):
+    np.random.seed(42)
+    if not isinstance(n_components, int) or n_components <= 0:
+        raise ValueError('n_components must be a positive integer')
+    pca = PCA(n_components=n_components)
+    transformed_data = pca.fit_transform(data)
+    fig, ax = plt.subplots()
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]), ax)
+
+### Corrected Python code
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data, n_components=2):
+    np.random.seed(42)
+    if not isinstance(n_components, int) or n_components <= 0:
+        raise ValueError('n_components must be a positive integer')
+    pca = PCA(n_components=n_components)
+    transformed_data = pca.fit_transform(data)
+    fig, ax = plt.subplots()
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]), ax)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/"
+"class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = (l + r + 1) / 2
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l","class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+                last = max(st, last + mi)
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = l + r + 1 >> 1
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l",".sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = (l + r + 1) / 2
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l
+
+### Corrected Python Code
+class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+                last = max(st, last + mi)
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = l + r + 1 >> 1
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l
+
+### Corrected Python
+class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+                last = max(st, last + mi)
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = l + r + 1 >> 1
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l - 1 if l < r else l
+
+### Corrected Python
+class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False
+                last = max(st, last + mi)
+            return True
+        start.sort()
+        l, r = (0, start[-1] + d - start[0])
+        while l < r:
+            mid = l + r + 1 >> 1
+            if check(mid):
+                l = mid
+            else:
+                r = mid - 1
+        return l - 1 if l < r else l
+
+### Corrected Python
+class Solution:
+
+    def maxPossibleScore(self, start: List[int], d: int) -> int:
+
+        def check(mi: int) -> bool:
+            last = -inf
+            for st in start:
+                if last + mi > st + d:
+                    return False"
