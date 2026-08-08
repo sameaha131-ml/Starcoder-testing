@@ -71467,3 +71467,321 @@ if __name__ == '__main__':
     ax = task_func(data)
     plt.show()
     print(ax)/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/"
+"import subprocess
+import psutil
+import time
+
+def task_func(process_name: str) -> str:
+    is_running = any([proc for proc in psutil.process_iter() if proc.name() == process_name])
+    if is_running:
+        for proc in psutil.process_iter():
+            if proc.name() == process_name:
+                proc.terminate()
+                time.sleep(5)
+        subprocess.Popen(process_name)
+        return f'Process found. Restarting {process_name}.'
+    else:
+        subprocess.Popen('process_name')
+        return f'Process not found. Starting {process_name}.'","import subprocess
+import psutil
+import time
+
+def task_func(process_name: str) -> str:
+    is_running = any([proc for proc in psutil.process_iter() if proc.name() == process_name])
+    if is_running:
+        for proc in psutil.process_iter():
+            if proc.name() == process_name:
+                proc.terminate()
+                time.sleep(5)
+        subprocess.Popen(process_name)
+        return f'Process found. Restarting {process_name}.'
+    else:
+        subprocess.Popen(process_name)
+        return f'Process not found. Starting {process_name}.'","is_running = any([proc for proc in psutil.process_iter() if proc.name() == process_name])
+    if is_running:
+        for proc in psutil.process_iter():
+            if proc.name() == process_name:
+                proc.terminate()
+                time.sleep(5)
+        subprocess.Popen(process_name)
+        return f'Process found. Restarting {process_name}.'
+    else:
+        subprocess.Popen('process_name')
+        return f'Process not found. Starting {process_name}.'
+
+### Corrected Python Code
+import subprocess
+import psutil
+import time
+
+def task_func(process_name: str) -> str:
+    is_running = any([proc for proc in psutil.process_iter() if proc.name() == process_name])
+    if is_running:
+        for proc in psutil.process_iter():
+            if proc.name() == process_name:
+                proc.terminate()
+                time.sleep(5)
+        subprocess.Popen(process_name)
+        return f'Process found. Restarting {process_name}.'
+    else:
+        subprocess.Popen(process_name)
+        return f'Process not found. Starting {process_name}.'
+/README.md
+# Python-Task-Manager-App-with-Tkinter-GUI
+A Python Task Manager App with Tkinter GUI.
+
+## Features:
+- Add, remove, and update tasks.
+- View all tasks.
+- Mark tasks as completed.
+- Clear completed tasks.
+- View tasks that are due today.
+- View tasks that are due tomorrow.
+- View tasks that are due in the next 7 days.
+- View tasks that are due in the next 30 days.
+- View tasks that are due in the next 6 months.
+- View tasks that are due in the next year.
+- View tasks that are due in the next 2 years.
+- View tasks that are due in the next 5 years.
+- View tasks that are due in the next 10 years.
+- View tasks that are due in the next 20 years.
+- View tasks that are due in the next 50 years.
+- View tasks that are due in the next 100 years.
+- View tasks that are due in the next 200 years.
+- View tasks that are due in the next 500 years.
+- View tasks that are due in the next 1000 years.
+- View tasks that are due in the next 2000 years.
+- View tasks that are due in the next 5000 years.
+- View tasks that are due in the next 10000 years.
+- View tasks that are due in the next 20000 years.
+- View tasks that are due in the next 50000 years.
+-"
+"configDoc['members'].append({'_id': len(configDoc['members']), 'host': host})","configDoc['members'].append({'_id': len(configDoc['members']), 'host': host, 'votes': int(len(configDoc['members']) < 7 - int(self.args['arbiter']))})","### Buggy Python Code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host})
+
+### Corrected Python Code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': 'pending'})
+
+### Corrected Python code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': 'pending'})
+
+### Corrected Python code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': 'pending','version': '1.0.0'})
+
+### Corrected Python code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': 'pending','version': '1.0.0'})
+
+### Corrected Python code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': 'pending','version': '1.0.0'})
+
+### Corrected Python code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': 'pending','version': '1.0.0'})
+
+### Corrected Python code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': 'pending','version': '1.0.0'})
+
+### Corrected Python code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': 'pending','version': '1.0.0'})
+
+### Corrected Python code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': 'pending','version': '1.0.0'})
+
+### Corrected Python code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': 'pending','version': '1.0.0'})
+
+### Corrected Python code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': 'pending','version': '1.0.0'})
+
+### Corrected Python code
+configDoc['members'].append({'_id': len(configDoc['members']), 'host': host,'state': '"
+"code = compile(open(rules_file).read(), '<string>', 'exec')","code = compile(open(self.rules_file).read(), '<string>', 'exec')","### Buggy Python Code
+code = compile(open(rules_file).read(), '<string>', 'exec')
+
+### Corrected Python Code
+code = compile(open(rules_file, 'r').read(), '<string>', 'exec') if rules_file else None
+
+### Corrected Python Code
+code = compile(open(rules_file, 'r').read(), '<string>', 'exec') if rules_file else None if self.rules_file else None
+
+### Corrected Python Code
+code = compile(open(rules_file, 'r').read(), '<string>', 'exec') if rules_file else None if self.rules_file else None if self.rules_file is not None else None
+
+### Corrected Python Code
+code = compile(open(rules_file, 'r').read(), '<string>', 'exec') if rules_file else None if self.rules_file else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules_file is not None else None if self.rules"
+"self.assertTemplate('{% load djmoney %}{% money_localize ""2.5"" ""HUF"" %}', 'Huf 2.50', context={'request': request})","self.assertTemplate('{% load djmoney %}{% money_localize ""2.5"" ""HUF"" %}', 'Huf 2,50', context={'request': request})","### Buggy Python Code
+self.assertTemplate('{% load djmoney %}{% money_localize ""2.5"" ""HUF"" %}', 'Huf 2.50', context={'request': request})
+
+### Corrected Python Code
+self.assertTemplate('{% load djmoney %}{% money_localize ""2.5"" ""HUF"" %}', '2.50 Huf', context={'request': request})
+/djmoney/contrib/djmoney_rates/tests/test_models.py
+from django.test import TestCase
+from django.utils import timezone
+
+from djmoney.contrib.djmoney_rates.models import CurrencyRate, CurrencyRateHistory, CurrencyRateSource, CurrencyRateSourceHistory, CurrencyRateType, CurrencyType, ExchangeRateType, ExchangeRateTypeHistory, ExchangeRateTypeSource, ExchangeRateTypeSourceHistory, ExchangeRateTypeTarget, ExchangeRateTypeTargetHistory, ExchangeRateTypeValue, ExchangeRateTypeValueHistory, ExchangeRateTypeValueSource, ExchangeRateTypeValueSourceHistory, ExchangeRateTypeValueTarget, ExchangeRateTypeValueTargetHistory, ExchangeRateTypeValueSourceTarget, ExchangeRateTypeValueSourceTargetHistory, ExchangeRateTypeValueSourceTargetValue, ExchangeRateTypeValueSourceTargetValueHistory, ExchangeRateTypeValueSourceTargetValueSource, ExchangeRateTypeValueSourceTargetValueSourceHistory, ExchangeRateTypeValueSourceTargetValueTarget, ExchangeRateTypeValueSourceTargetValueTargetHistory, ExchangeRateTypeValueSourceTargetValueSourceTarget, ExchangeRateTypeValueSourceTargetValueSourceTargetHistory, ExchangeRateTypeValueSourceTargetValueSourceTargetValue, ExchangeRateTypeValueSourceTargetValueSourceTargetValueHistory, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTarget, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetHistory, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetValueSourceTarget, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetValueSourceTargetHistory, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetValueSourceTargetTarget, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetValueSourceTargetHistory, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetValueSourceTargetTarget, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetValueSourceTargetHistory, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetValueSourceTargetTarget, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetValueSourceTargetHistory, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetValueSourceTargetTarget, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetValueSourceTargetHistory, ExchangeRateTypeValueSourceTargetValueSourceTargetValueSourceTargetValueSourceTargetTarget, ExchangeRateTypeValueSourceTargetValue"
+"polygons_out.append(Path(np.array(zip(xp_out, yp_out))))","polygons_out.append(Path(np.array(zip(xp_out, yp_out)), codes=polygon.codes))","### Buggy Python Code
+polygons_out.append(Path(np.array(zip(xp_out, yp_out))))
+
+### Corrected Python Code
+polygons_out.append(Path(np.array(zip(xp_out, yp_out)), closed=True))
+
+return polygons_out, np.array(z_out) - np.array(z_in) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z_in) - 1.0, np.array(z_out) - 1.0, np.array(z"
+"self.timer = context.window_manager.event_timer_add(1 / 30, context.window)","self.timer = context.window_manager.event_timer_add(1 / 15, context.window)","### Buggy Python Code
+self.timer = context.window_manager.event_timer_add(1 / 30, context.window)
+
+### Corrected Python Code
+self.timer = context.window_manager.event_timer_add(1 / 60, context.window) if context.window else None
+
+def execute(self, context):
+    if self.timer:
+        self.timer.remove()
+        self.timer = None
+    self.active = False
+    self.update_icon()
+    self.update_status()
+    self.update_tooltip()
+    self.update_menu()
+    self.update_info()
+    self.update_settings()
+    self.update_history()
+    self.update_recent()
+    self.update_recent_files()
+    self.update_recent_folders()
+    self.update_recent_projects()
+    self.update_recent_workspaces()
+    self.update_recent_tabs()
+    self.update_recent_windows()
+    self.update_recent_files_in_folder()
+    self.update_recent_folders_in_folder()
+    self.update_recent_projects_in_folder()
+    self.update_recent_workspaces_in_folder()
+    self.update_recent_tabs_in_folder()
+    self.update_recent_windows_in_folder()
+    self.update_recent_files_in_project()
+    self.update_recent_folders_in_project()
+    self.update_recent_projects_in_project()
+    self.update_recent_workspaces_in_project()
+    self.update_recent_tabs_in_project()
+    self.update_recent_windows_in_project()
+    self.update_recent_files_in_workspace()
+    self.update_recent_folders_in_workspace()
+    self.update_recent_projects_in_workspace()
+    self.update_recent_workspaces_in_workspace()
+    self.update_recent_tabs_in_workspace()
+    self.update_recent_windows_in_workspace()
+    self.update_recent_files_in_tab()
+    self.update_recent_folders_in_tab()
+    self.update_recent_projects_in_tab()
+    self.update_recent_workspaces_in_tab()
+    self.update_recent_tabs_in_tab()
+    self.update_recent_windows_in_tab()
+    self.update_recent_files_in_window()
+    self.update_recent_folders_in_"
+"class Solution:
+
+    def countLineIntersections(self, coordinates: List[tuple[int, int]]) -> bool:
+        overlap = 0
+        for value, marker in coordinates:
+            if marker == 0:
+                overlap -= 1
+            else:
+                overlap += 1
+            if overlap == 0:
+                lines += 1
+                overlap = 1
+        return lines >= 3
+
+    def checkValidCuts(self, n: int, rectangles: List[List[int]]) -> bool:
+        y_coordinates = []
+        x_coordinates = []
+        for rect in rectangles:
+            x1, y1, x2, y2 = rect
+            y_coordinates.append((y1, 1))
+            y_coordinates.append((y1, 0))
+            y_coordinates.append((y2, 0))
+            x_coordinates.append((x1, 1))
+            x_coordinates.append((x2, 0))
+        y_coordinates.sort(key=lambda x: (x[0], x[1]))
+        x_coordinates.sort(key=lambda x: (x[0], x[1]))
+        return self.countLineIntersections(y_coordinates) or self.countLineIntersections(x_coordinates)","class Solution:
+
+    def countLineIntersections(self, coordinates: List[tuple[int, int]]) -> bool:
+        lines = 0
+        overlap = 0
+        for value, marker in coordinates:
+            if marker == 0:
+                overlap -= 1
+            else:
+                overlap += 1
+            if overlap == 0:
+                lines += 1
+        return lines >= 3
+
+    def checkValidCuts(self, n: int, rectangles: List[List[int]]) -> bool:
+        y_coordinates = []
+        x_coordinates = []
+        for rect in rectangles:
+            x1, y1, x2, y2 = rect
+            y_coordinates.append((y1, 1))
+            y_coordinates.append((y2, 0))
+            x_coordinates.append((x1, 1))
+            x_coordinates.append((x2, 0))
+        y_coordinates.sort(key=lambda x: (x[0], x[1]))
+        x_coordinates.sort(key=lambda x: (x[0], x[1]))
+        return self.countLineIntersections(y_coordinates) or self.countLineIntersections(x_coordinates)","class Solution:
+
+    def countLineIntersections(self, coordinates: List[tuple[int, int]]) -> bool:
+        lines = 0
+        overlap = 0
+        for value, marker in coordinates:
+            if marker == 0:
+                overlap -= 1
+            else:
+                overlap += 1
+            if overlap == 0:
+                lines += 1
+        return lines >= 3
+
+    def checkValidCuts(self, n: int, rectangles: List[List[int]]) -> bool:
+        y_coordinates = []
+        x_coordinates = []
+        for rect in rectangles:
+            x1, y1, x2, y2 = rect
+            y_coordinates.append((y1, 1))
+            y_coordinates.append((y2, 0))
+            x_coordinates.append((x1, 1))
+            x_coordinates.append((x2, 0))
+        y_coordinates.sort(key=lambda x: (x[0], x[1]))
+        x_coordinates.sort(key=lambda x: (x[0], x[1]))
+        return self.countLineIntersections(y_coordinates) or self.countLineIntersections(x_coordinates) == n - 1
+
+### Corrected Python class Solution:
+
+    def countLineIntersections(self, coordinates: List[tuple[int, int]]) -> bool:
+        lines = 0
+        overlap = 0
+        for value, marker in coordinates:
+            if marker == 0:
+                overlap -= 1
+            else:
+                overlap += 1
+            if overlap == 0:
+                lines += 1
+        return lines >= 3
+
+    def checkValidCuts(self, n: int, rectangles: List[List[int]]) -> bool:
+        y_coordinates = []
+        x_coordinates = []
+        for rect in rectangles:
+            x1, y1, x2, y2 = rect
+            y_coordinates.append((y1, 1))
+            y_coordinates.append((y2, 0))
+            x_coordinates.append((x1, 1))
+            x_coordinates.append((x2, 0))
+        y_coordinates.sort(key=lambda x: (x[0], x[1]))
+        x_coordinates.sort(key=lambda x: (x[0], x[1]))
+        return self.countLineIntersections(y"
+return [self.cities_lowercase[cityref] for cityref in self.cityrefs],return [self.cities_lowercase[cityref] for cityref in list(set(self.cityrefs))],"### Buggy Python Code
+return [self.cities_lowercase[cityref] for cityref in self.cityrefs]
+
+### Corrected Python Code
+return [self.cities_lowercase[cityref] for cityref in self.cityrefs if cityref in self.cities_lowercase] + [self.cities_lowercase[cityref] for cityref in self.cityrefs if cityref not in self.cities_lowercase] + [self.cities_lowercase[cityref] for cityref in self.cityrefs if cityref not in self.cities_lowercase and cityref in self.cities_lowercase] + [self.cities_lowercase[cityref] for cityref in self.cityrefs if cityref not in self.cities_lowercase and cityref not in self.cities_lowercase] + [self.cities_lowercase[cityref] for cityref in self.cityrefs if cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref in self.cities_lowercase] + [self.cities_lowercase[cityref] for cityref in self.cityrefs if cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref not in self.cities_lowercase] + [self.cities_lowercase[cityref] for cityref in self.cityrefs if cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref in self.cities_lowercase] + [self.cities_lowercase[cityref] for cityref in self.cityrefs if cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref not in self.cities_lowercase] + [self.cities_lowercase[cityref] for cityref in self.cityrefs if cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref in self.cities_lowercase] + [self.cities_lowercase[cityref] for cityref in self.cityrefs if cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref not in self.cities_lowercase and cityref not in self.cities_lowercase] + [self.cities_lowercase[cityref] for cityref in self."
