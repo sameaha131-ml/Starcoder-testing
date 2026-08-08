@@ -11326,3 +11326,296 @@ import time
 from datetime import datetime, timedelta
 from threading import Thread, Event, Lock
 from xmpp.client import Client, Message,Presence, Disconnected, XMPPError, XMPPErrorCondition, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REDIRECT, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_SHUTDOWN, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_UNAVAILABLE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_UNREACHABLE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_UNKNOWN, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_UNAUTHORIZED, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_CONFLICT, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_FORBIDDEN, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_GONE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_NOT_ACCEPTABLE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_TOO_LARGE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_TOO_SMALL, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_INCOMPLETE, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_INVALID, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_ALREADY_EXISTS, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_NOT_FOUND, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_NOT_ALLOWED, XMPPErrorCondition.XMPP_INTERNAL_SERVER_ERROR_REQUEST_ENTITY_"
+self.device.Services['serial'].Disconnect(self.port),"gobject.timeout_add(1000, self.device.Services['serial'].Disconnect, self.port)","### Buggy Python Code
+self.device.Services['serial'].Disconnect(self.port)
+
+### Corrected Python Code
+self.device.Services['serial'].Disconnect(self.port, 1000)  # 1 second timeout for disconnecting from serial port.
+
+### Corrected Python code
+self.device.Services['serial'].Disconnect(self.port, 1000)  # 1 second timeout for disconnecting from serial port. (1000 ms = 1 second)
+/src/pyserial/serial/serialutil.py
+""""""Serial port utilities.""""""
+import os
+import sys
+import time
+import serial
+import serial.tools.list_ports_posix as lp
+import serial.tools.list_ports_win32 as lp_win32
+import serial.tools.list_ports_linux as lp_linux
+import serial.tools.list_ports_osx as lp_osx
+
+def list_ports():
+    """"""Return a list of serial ports.""""""
+    if sys.platform == 'win32':
+        return lp_win32.comports()
+    elif sys.platform == 'linux':
+        return lp_linux.comports()
+    elif sys.platform == 'darwin':
+        return lp_osx.comports()
+    else:
+        return []
+
+def open_port(port, baudrate=9600, timeout=1):
+    """"""Open a serial port and return a serial object.""""""
+    ser = serial.Serial(port, baudrate, timeout=timeout)
+    ser.flush()
+    return ser
+
+def open_port_with_timeout(port, baudrate=9600, timeout=1):
+    """"""Open a serial port and return a serial object.""""""
+    ser = serial.Serial(port, baudrate, timeout=timeout)
+    ser.flush()
+    return ser, timeout
+
+def open_port_with_timeout_and_read(port, baudrate=9600, timeout=1):
+    """"""Open a serial port and return a serial object.""""""
+    ser = serial.Serial(port, baudrate, timeout=timeout)
+    ser.flush()
+    ser.read(1)
+    return ser, timeout
+
+def open_port_with_timeout_and_read_until(port, baudrate=9600, timeout=1, until_string=''):
+    """"""Open a serial port and return a serial object.""""""
+    ser = serial.Serial(port"
+"from tetrahydra.utils import truncate_range, scale_range","from segmentator.utils import truncate_range, scale_range","### Buggy Python Code
+from tetrahydra.utils import truncate_range, scale_range
+
+### Corrected Python Code
+from tetrahydra.utils import truncate_range, scale_range, get_range_from_data, get_range_from_data_and_scale, get_range_from_data_and_truncate, get_range_from_data_and_truncate_and_scale, get_range_from_data_and_truncate_and_scale_to_zero, get_range_from_data_and_truncate_and_scale_to_zero_and_add_one, get_range_from_data_and_truncate_and_scale_to_zero_and_add_one_and_subtract_one, get_range_from_data_and_truncate_and_scale_to_zero_and_add_one_and_subtract_one_and_add_one, get_range_from_data_and_truncate_and_scale_to_zero_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_and_add_one_and_subtract_one_"
+"import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or df.empty:
+        raise ValueError('Input must be a non-empty DataFrame.')
+    last_col_name = df.columns[-1]
+    scaler = MinMaxScaler()
+    normalized_values = scaler.fit_transform(df[[last_col_name]].T)
+    normalized_df = df.copy()
+    normalized_df[last_col_name] = normalized_values.flatten()
+    fig, ax = plt.subplots()
+    ax.plot(normalized_df.index, normalized_df[last_col_name])
+    ax.set_title(f'Normalized Data of {last_col_name}')
+    ax.set_xlabel('Index')
+    ax.set_ylabel('Normalized Value')
+    return (normalized_df, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or df.empty:
+        raise ValueError('Input must be a non-empty DataFrame.')
+    last_col_name = df.columns[-1]
+    scaler = MinMaxScaler()
+    normalized_values = scaler.fit_transform(df[[last_col_name]])
+    normalized_df = df.copy()
+    normalized_df[last_col_name] = normalized_values.flatten()
+    fig, ax = plt.subplots()
+    ax.plot(normalized_df.index, normalized_df[last_col_name])
+    ax.set_title(f'Normalized Data of {last_col_name}')
+    ax.set_xlabel('Index')
+    ax.set_ylabel('Normalized Value')
+    return (normalized_df, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or df.empty:
+        raise ValueError('Input must be a non-empty DataFrame.')
+    last_col_name = df.columns[-1]
+    scaler = MinMaxScaler()
+    normalized_values = scaler.fit_transform(df[[last_col_name]])
+    normalized_df = df.copy()
+    normalized_df[last_col_name] = normalized_values.flatten()
+    fig, ax = plt.subplots()
+    ax.plot(normalized_df.index, normalized_df[last_col_name])
+    ax.set_title(f'Normalized Data of {last_col_name}')
+    ax.set_xlabel('Index')
+    ax.set_ylabel('Normalized Value')
+    return (normalized_df, ax)
+
+if __name__ == '__main__':
+    df = pd.DataFrame(data={'a': [1, 2, 3], 'b': [4, 5, 6], 'c': [7, 8, 9]})
+    task_func(df)
+    plt.show()/01-python-fundamentals/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02"
+"self.list.append((str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) + ' - ' + x[2]), x))","self.list.append((str(time.strftime('%Y-%m-%d %H-%M', time.localtime(x[0])) + ' - ' + x[2]), x))","### Buggy Python Code
+self.list.append((str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x))
+
+### Corrected Python Code
+self.list.append((str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x[0]))
+
+### Corrected Python Code
+self.list.append((str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x[1]))
+
+### Corrected Python Code
+self.list.append((str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x[0])) if x[1] is not None else (str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x[0])) if x[1] is not None else (str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x[0])) if x[1] is not None else (str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x[0])) if x[1] is not None else (str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x[0])) if x[1] is not None else (str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x[0])) if x[1] is not None else (str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x[0])) if x[1] is not None else (str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x[0])) if x[1] is not None else (str(time.strftime('%Y-%m-%d %H-%M', localtime(x[0])) +'-'+ x[2]), x[0])) if x"
+"tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')","tornado.options.define('distribution', default='exp[5]', help='distribution of the time between events')","### Buggy Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(5)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code
+tornado.options.define('distribution', default='exp(1)', help='distribution of the time between events')
+
+### Corrected Python Code"
+"class Solution:
+
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(t):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = newCount[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count, MOD)","class Solution:
+
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(t):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count) % MOD","newCount[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count, MOD)
+
+### Corrected Python Code
+class Solution:
+
+    def lengthAfterTransformations(self, s: str, t: int) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(t):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count) % MOD
+/1000/1000-1002/1002.py
+class Solution:
+
+    def maxScore(self, s: str) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(2):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count) % MOD - 1
+
+### Corrected Python
+class Solution:
+
+    def maxScore(self, s: str) -> int:
+        MOD = 1000000007
+        count = [0] * 26
+        for c in s:
+            count[ord(c) - ord('a')] += 1
+        for _ in range(2):
+            newCount = [0] * 26
+            for i in range(25):
+                newCount[i + 1] = count[i]
+            newCount[0] = count[25]
+            newCount[1] = (newCount[1] + count[25]) % MOD
+            count = newCount
+        return sum(count) % MOD - 1 if count[0] > 0 else sum(count) % MOD - 2"
+"logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info)","logging.basicConfig(format='%(asctime)s UTC: %(levelname)s: %(message)s', level=logging.INFO, filename=fs.layout.log_info)","### Buggy Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info)
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w', datefmt='%Y-%m-%dT%H:%M:%S')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w', datefmt='%Y-%m-%dT%H:%M:%S')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w', datefmt='%Y-%m-%dT%H:%M:%S')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w', datefmt='%Y-%m-%dT%H:%M:%S')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w', datefmt='%Y-%m-%dT%H:%M:%S')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='w', datefmt='%Y-%m-%dT%H:%M:%S')
+
+### Corrected Python Code
+logging.basicConfig(format='%(asctime)s UTC: %(message)s', level=logging.INFO, filename=fs.layout.log_info, filemode='"
+permission = Permission.objects.filter(codename='can_edit_finstance'),permission = Permission.objects.filter(codename='change_finstance'),"### Buggy Python Code
+permission = Permission.objects.filter(codename='can_edit_finstance')
+
+### Corrected Python Code
+permission = Permission.objects.filter(codename='can_edit_finstance', content_type=ContentType.objects.get_for_model(FInstance))[:1] if FInstance.objects.count() > 0 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 0 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 1 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 2 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 3 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 4 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 5 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 6 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 7 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 8 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 9 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 10 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 11 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 12 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects.count() == 13 else Permission.objects.filter(codename='can_edit_finstance')[:1] if FInstance.objects"
