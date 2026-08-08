@@ -23114,3 +23114,647 @@ cr_show.connect('toggled', self._on_tree_view_cell_toggled, self.treeview)
 
     def _on_tree_view_button_release_event(self, treeview, event):
         if event.type == Gdk.EventType"
+"n = np.random.normal(0, 0.03, h.data.shape).astype(np.float32)","n = np.random.normal(0, 0.03, h_.data.shape).astype(np.float32)","### Buggy Python Code
+n = np.random.normal(0, 0.03, h.data.shape).astype(np.float32)
+
+### Corrected Python Code
+n = np.random.normal(0, 0.03, h.data.shape).astype(np.float32) * (1 - h.data) + h.data * 0.03 * (1 - h.data) ** 2.0 * 0.5 * (1 - h.data) ** 3.0 * 0.5 * (1 - h.data) ** 4.0 * 0.5 * (1 - h.data) ** 5.0 * 0.5 * (1 - h.data) ** 6.0 * 0.5 * (1 - h.data) ** 7.0 * 0.5 * (1 - h.data) ** 8.0 * 0.5 * (1 - h.data) ** 9.0 * 0.5 * (1 - h.data) ** 10.0 * 0.5 * (1 - h.data) ** 11.0 * 0.5 * (1 - h.data) ** 12.0 * 0.5 * (1 - h.data) ** 13.0 * 0.5 * (1 - h.data) ** 14.0 * 0.5 * (1 - h.data) ** 15.0 * 0.5 * (1 - h.data) ** 16.0 * 0.5 * (1 - h.data) ** 17.0 * 0.5 * (1 - h.data) ** 18.0 * 0.5 * (1 - h.data) ** 19.0 * 0.5 * (1 - h.data) ** 20.0 * 0.5 * (1 - h.data) ** 21.0 * 0.5 * (1 - h.data) ** 22.0 * 0.5 * (1 - h.data) ** 23.0 * 0.5 * (1 - h.data) ** 24.0 * 0.5 * (1 - h.data) ** 25.0 * 0.5 * (1 - h.data) ** 26.0 *"
+"import mechanize
+from bs4 import BeautifulSoup
+
+def task_func(url, form_id, data):
+    br = mechanize.Browser()
+    br.open(url)
+    br.select_form(nr=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup else 'No Title'
+    return title","import mechanize
+from bs4 import BeautifulSoup
+
+def task_func(url, form_id, data):
+    br = mechanize.Browser()
+    br.open(url)
+    br.select_form(nr=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup.title else 'No Title'
+    return title","=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup else 'No Title'
+    return title
+
+### Corrected Python Code
+import mechanize
+from bs4 import BeautifulSoup
+
+def task_func(url, form_id, data):
+    br = mechanize.Browser()
+    br.open(url)
+    br.select_form(nr=form_id)
+    for key, value in data.items():
+        br[key] = value
+    response = br.submit()
+    soup = BeautifulSoup(response.read(), 'html.parser')
+    title = soup.title.string if soup.title else 'No Title'
+    return title
+
+if __name__ == '__main__':
+    url = 'https://www.google.com/search'
+    form_id = 0
+    data = {'q': 'python programming tutorials'}
+    title = task_func(url, form_id, data)
+    print(title)/python/python-basics/01-basics/01-basics.py
+# Python Basics - 01-basics.py
+
+# 1. Write a program to print 'Hello World' on the screen.
+print('Hello World')
+
+# 2. Write a program to print 'Hello World' on the screen and exit.
+print('Hello World')
+exit()
+
+# 3. Write a program to print 'Hello World' on the screen and exit with a 0 status code.
+print('Hello World')
+exit(0)
+
+# 4. Write a program to print 'Hello World' on the screen and exit with a 1 status code.
+print('Hello World')
+exit(1)
+
+# 5. Write a program to print 'Hello World' on the screen and exit with a 2 status code.
+print('Hello World')
+exit(2)
+
+# 6. Write a program to print 'Hello World' on the screen and exit with a 3 status code.
+print('Hello World')
+exit(3)
+
+# 7. Write a program to print 'Hello World' on the screen and exit with a 4 status code.
+print('Hello World')
+exit(4)
+
+# 8. Write a program to print 'Hello World' on the screen and exit with a 5 status code.
+print('Hello World')
+exit(5)
+
+# 9. Write a program to print 'Hello World' on the screen and exit with a 6 status"
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic),urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic[0:100]),"### Buggy Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic)
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic if shopId!= '100000000')  # 100000000 is the default shopId for 'no shop' in dianping.com. We don't want to include it in our list of urls.
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic if shopId!= '100000000' and shopId!= '100000001')  # 100000000 is the default shopId for 'no shop' in dianping.com. We don't want to include it in our list of urls.
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic if shopId!= '100000000' and shopId!= '100000001' and shopId!= '100000002')  # 100000000 is the default shopId for 'no shop' in dianping.com. We don't want to include it in our list of urls.
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic if shopId!= '100000000' and shopId!= '100000001' and shopId!= '100000002' and shopId!= '100000003')  # 100000000 is the default shopId for 'no shop' in dianping.com. We don't want to include it in our list of urls.
+
+### Corrected Python Code
+urls = ('http://www.dianping.com/shop/' + shopId for shopId in self.shopIds_problematic if shopId!= '100000000' and shopId!= '10"
+"class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+            ans += (l - r) % 2 == 0
+        return ans","class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+        return ans","Python Code
+class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+            ans += (l - r) % 2 == 0
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+        return ans + 1
+
+### Corrected Python class Solution:
+
+    def countPartitions(self, nums: List[int]) -> int:
+        l, r = (0, sum(nums))
+        ans = 0
+        for x in nums[:-1]:
+            l += x
+            r -= x
+            ans += (l - r) % 2 == 0
+        return ans + 1 if l == r else ans + 2
+/1200-1299/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.py
+class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        l, r = (0, len(s))
+        ans = ''
+        while l < r:
+            if s[l:l + len(sub)] == sub:
+                l += len(sub)
+            else:
+                ans += s[l]
+                l += 1
+        return ans
+
+### Corrected Python class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        l, r = (0, len(s))
+        ans = ''
+        while l < r:
+            if s[l:l + len(sub)] == sub:
+                l += len(sub)
+            else:
+                ans += s[l]
+                l += 1
+        return ans + s[l:] if l < r else ans + s[l:] + s[r:] if l < r else ans + s[l:] + s[r:] + s[l:] if l < r else ans + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] if l < r else ans + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:] + s[r:] + s[l:]"
+"results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': '{}?q={}'.format(reverse(url), form.cleaned_data['q'])})","results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': u'{}?q={}'.format(reverse(url), form.cleaned_data['q'])})","### Buggy Python Code
+results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': '{}?q={}'.format(reverse(url), form.cleaned_data['q'])})
+
+### Corrected Python Code
+results.append({'name': queryset.model._meta.verbose_name_plural, 'table': table, 'url': '{}?q={}'.format(reverse(url), form.cleaned_data.get('q'))})
+
+return results, form.cleaned_data['q'] or ''
+/src/django_tables2/columns/base.py
+from django.db.models import Model
+from django.utils.translation import ugettext_lazy as _
+from django_tables2.utils import A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, AA, AB, AC, AD, AE, AF, AG, AH, AI, AJ, AK, AL, AM, AN,AO, AP, AQ, AR, AS, AT, AU, AV, AW, AX, AY, AZ, BA, BB, BC, BD, BE, BF, BG, BH, BI, BJ, BK, BL, BM, BN, BO, BP, BQ, BR, BS, BT, BU,BV, BW, BX, BY, BZ, CA, CB, CC, CD, CE, CF, CG, CH, CI, CJ, CK, CL, CM, CN, CO, CP, CQ, CR, CS, CT, CU, CV, CW, CX, CY, CZ, DA, DB, DC, DD, DE, DF, DG, DH, DI, DJ, DK, DL, DM, DN, DO, DP, DQ, DR, DS, DT,DU, DV, DW, DX,DY, DZ, EA, EB, EC, ED, EE, EF, EG, EH, EI, EJ, EK, EL, EM, EN,EO, EP, EQ, ER, ES, ET, EU, EV, EW, EX, EY, EZ, FA, FB, FC, FD, FE, FF,FG, FH, FI, FJ, FK, FL, FM, FN, FO, FP, FQ, FR, FS, FT, FU,FV, FW, FX, FY, FZ, GA, GB, GC"
+"import numpy as np
+import matplotlib.pyplot as plt
+
+def task_func():
+    x_values = np.linspace(0, 2 * np.pi, 400)
+    axs, fig = plt.subplots(2)
+    axs[0].plot(x_values, np.sin(x_values))
+    axs[0].set_title('Sine function')
+    axs[0].set_xlabel('x')
+    axs[0].set_ylabel('sin(x)')
+    axs[1].plot(x_values, np.cos(x_values))
+    axs[1].set_title('Cosine function')
+    axs[1].set_xlabel('x')
+    axs[1].set_ylabel('cos(x)')
+    plt.tight_layout()
+    return (fig, axs)","import numpy as np
+import matplotlib.pyplot as plt
+
+def task_func():
+    x_values = np.linspace(0, 2 * np.pi, 400)
+    fig, axs = plt.subplots(2)
+    axs[0].plot(x_values, np.sin(x_values))
+    axs[0].set_title('Sine function')
+    axs[0].set_xlabel('x')
+    axs[0].set_ylabel('sin(x)')
+    axs[1].plot(x_values, np.cos(x_values))
+    axs[1].set_title('Cosine function')
+    axs[1].set_xlabel('x')
+    axs[1].set_ylabel('cos(x)')
+    plt.tight_layout()
+    return (fig, axs)","import numpy as np
+import matplotlib.pyplot as plt
+
+def task_func():
+    x_values = np.linspace(0, 2 * np.pi, 400)
+    fig, axs = plt.subplots(2)
+    axs[0].plot(x_values, np.sin(x_values))
+    axs[0].set_title('Sine function')
+    axs[0].set_xlabel('x')
+    axs[0].set_ylabel('sin(x)')
+    axs[1].plot(x_values, np.cos(x_values))
+    axs[1].set_title('Cosine function')
+    axs[1].set_xlabel('x')
+    axs[1].set_ylabel('cos(x)')
+    plt.tight_layout()
+    return (fig, axs)
+
+if __name__ == '__main__':
+    task_func()
+    plt.show()/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/0"
+"cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password))","cursor.execute('ALTER USER %s@%s IDENTIFIED WITH mysql_native_password BY %s', (user, host, password))","### Buggy Python Code
+cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password))
+
+### Corrected Python Code
+cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFIED BY %s', (user, host, password)) or cursor.execute('ALTER USER %s@%s IDENTIFI"
+y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:])),y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1].float()) * self.inv_value_scale(q_max[1:])),"### Buggy Python Code
+y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]))
+
+### Corrected Python Code
+y = self.value_scale(samples.env.reward[:-1] + self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:])) - self.value_scale(samples.env.reward[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:]) * self.discount * (1 - samples.env.done[:-1]) * self.inv_value_scale(q_max[1:])"
+"class Solution:
+
+    def findComplement(self, num: int) -> int:
+        com = ''
+        while num > 0:
+            if num % 2 == 1:
+                com += '0'
+            else:
+                com += '1'
+            num = num // 2
+        return int(com[::-1][1:], 2)","class Solution:
+
+    def findComplement(self, num: int) -> int:
+        com = ''
+        while num > 0:
+            if num % 2 == 1:
+                com += '0'
+            else:
+                com += '1'
+            num = num // 2
+        return int(com[::-1], 2)","### Buggy Python Code
+class Solution:
+
+    def findComplement(self, num: int) -> int:
+        com = ''
+        while num > 0:
+            if num % 2 == 1:
+                com += '0'
+            else:
+                com += '1'
+            num = num // 2
+        return int(com[::-1][1:], 2)
+
+### Corrected Python Code
+class Solution:
+
+    def findComplement(self, num: int) -> int:
+        com = ''
+        while num > 0:
+            if num % 2 == 1:
+                com += '0'
+            else:
+                com += '1'
+            num = num // 2
+        return int(com[::-1], 2) - 1 if com[0] == '1' else int(com[::-1], 2) - 2
+
+### Corrected Python
+class Solution:
+
+    def findComplement(self, num: int) -> int:
+        com = ''
+        while num > 0:
+            if num % 2 == 1:
+                com += '0'
+            else:
+                com += '1'
+            num = num // 2
+        return int(com[::-1], 2) - 1 if com[0] == '1' else int(com[::-1], 2) - 2 if com[1] == '1' else int(com[::-1], 2) - 1 - 2
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, scores: List[int], piles: List[int]) -> int:
+        scores.sort()
+        piles.sort()
+        score = 0
+        piles_index = 0
+        for i in range(len(scores)):
+            score += scores[i]
+            while piles_index < len(piles) and score + piles[piles_index] > 10:
+                score += piles[piles_index]
+                piles_index += 1
+        return score
+
+### Corrected Python
+class Solution:
+
+    def maxScore(self, scores: List[int], piles: List[int]) -> int:
+        scores.sort()
+        piles.sort()
+        score = 0
+        piles_index = 0
+        for i in range(len(scores)):
+            score += scores[i]
+            while piles_index < len(piles) and score + piles[piles_index] > 10:
+                score += piles[piles_index]
+                piles_index += 1
+        return score - 10 * (len(scores) - piles_index"
+result_categories = mall_models.ProductCategory.select().dj_where(id__in=category_ids),"result_categories = mall_models.ProductCategory.select().dj_where(id__in=category_ids, owner_id=self.corp.id)","### Buggy Python Code
+result_categories = mall_models.ProductCategory.select().dj_where(id__in=category_ids)
+
+### Corrected Python Code
+result_categories = mall_models.ProductCategory.select().dj_where(id__in=category_ids).order_by('name') if category_ids else []
+
+return result_categories, result_products, result_orders, result_users, result_orders_count, result_users_count, result_products_count, result_categories_count, result_orders_count_by_category, result_users_count_by_category, result_products_count_by_category, result_categories_count_by_category, result_orders_count_by_category_and_user, result_users_count_by_category_and_user, result_products_count_by_category_and_user, result_categories_count_by_category_and_user, result_orders_count_by_category_and_product, result_users_count_by_category_and_product, result_products_count_by_category_and_product, result_categories_count_by_category_and_product, result_orders_count_by_category_and_user_and_product, result_users_count_by_category_and_user_and_product, result_products_count_by_category_and_user_and_product, result_categories_count_by_category_and_user_and_product, result_orders_count_by_category_and_user_and_product_and_status, result_users_count_by_category_and_user_and_product_and_status, result_products_count_by_category_and_user_and_product_and_status, result_categories_count_by_category_and_user_and_product_and_status, result_orders_count_by_category_and_user_and_product_and_status_and_payment_method, result_users_count_by_category_and_user_and_product_and_status_and_payment_method, result_products_count_by_category_and_user_and_product_and_status_and_payment_method, result_categories_count_by_category_and_user_and_product_and_status_and_payment_method, result_orders_count_by"
+"class Solution:
+
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        n = grid.shape[0]
+        cnt = [0] * (n * n + 1)
+        for row in grid:
+            cnt = [0] * (n * n + 1)
+            for v in row:
+                cnt[v] += 1
+        ans = [0] * 2
+        cnt.sort()
+        for i in range(1, n * n + 1):
+            if cnt[i] == 2:
+                ans[0] = i
+            if cnt[i] == 0:
+                ans[1] = i","class Solution:
+
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        n = len(grid)
+        cnt = [0] * (n * n + 1)
+        for row in grid:
+            for v in row:
+                cnt[v] += 1
+        ans = [0] * 2
+        for i in range(1, n * n + 1):
+            if cnt[i] == 2:
+                ans[0] = i
+            if cnt[i] == 0:
+                ans[1] = i
+        return ans","### Buggy Python Code
+class Solution:
+
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        n = grid.shape[0]
+        cnt = [0] * (n * n + 1)
+        for row in grid:
+            cnt = [0] * (n * n + 1)
+            for v in row:
+                cnt[v] += 1
+        ans = [0] * 2
+        cnt.sort()
+        for i in range(1, n * n + 1):
+            if cnt[i] == 2:
+                ans[0] = i
+            if cnt[i] == 0:
+                ans[1] = i
+
+### Corrected Python Code
+class Solution:
+
+    def findMissingAndRepeatedValues(self, grid: List[List[int]]) -> List[int]:
+        n = len(grid)
+        cnt = [0] * (n * n + 1)
+        for row in grid:
+            for v in row:
+                cnt[v] += 1
+        ans = [0] * 2
+        for i in range(1, n * n + 1):
+            if cnt[i] == 2:
+                ans[0] = i
+            if cnt[i] == 0:
+                ans[1] = i
+        return ans
+/python/1000/1000-1002/1002.py
+class Solution:
+
+    def maxDepth(self, root: 'Node') -> int:
+        if root is None:
+            return 0
+        depth = 0
+        queue = [root]
+        while queue:
+            depth += 1
+            n = len(queue)
+            for _ in range(n):
+                node = queue.pop(0)
+                for child in node.children:
+                    queue.append(child)
+        return depth
+
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.children = []
+
+    def addChild(self, child):
+        self.children.append(child)
+/python/1000/1000-1002/1002.py
+class Solution:
+
+    def maxDepth(self, root: 'Node') -> int:
+        if root is None:
+            return 0
+        depth = 0
+        queue = [root]
+        while queue:
+            depth += 1
+            n = len(queue)
+            for _ in range(n):
+                node = queue.pop(0)
+                for child in node.children:
+                    queue.append(child)
+        return depth - 1
+
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.children = []
+
+    def addChild(self, child):
+        self.children.append(child)
+/python/1000/1000-1002/1002.py
+class Solution:
+
+    def maxDepth(self, root: 'Node') -> int:
+        if root is None:
+            return 0
+        depth ="
+"import numpy as np
+import pandas as pd
+
+def task_func(products, n_samples=100, sales_lower=50, sales_upper=200, profit_margin_min=0.1, profit_margin_max=0.5, random_seed=42):
+    np.random.seed(random_seed)
+    if products:
+        return pd.DataFrame(columns=['Product', 'Sales', 'Profit'])
+    if not isinstance(products, list) or not all((isinstance(product, str) for product in products)):
+        raise TypeError('products must be a list of strings.')
+    if not isinstance(n_samples, int) or n_samples <= 0:
+        raise ValueError('n_samples must be a positive integer.')
+    if not (isinstance(sales_lower, int) and isinstance(sales_upper, int)) or sales_lower >= sales_upper:
+        raise ValueError('sales_lower must be less than sales_upper and both must be integers.')
+    if not all((isinstance(x, (int, float)) for x in [profit_margin_min, profit_margin_max])) or profit_margin_min >= profit_margin_max:
+        raise ValueError('profit_margin_min must be less than profit_margin_max and both must be numeric.')
+    data = []
+    for _ in range(n_samples):
+        product = np.random.choice(products)
+        sales = np.random.randint(sales_lower, sales_upper + 1)
+        profit = sales * np.random.uniform(profit_margin_min, profit_margin_max)
+        profit = 0
+        data.append([product, sales, profit])
+    df = pd.DataFrame(data, columns=['Product', 'Sales', 'Profit'])
+    df = df.groupby('Product', as_index=False).sum()
+    df.sort_values('Profit', ascending=False, inplace=True)
+    return df.to_json()","import numpy as np
+import pandas as pd
+
+def task_func(products, n_samples=100, sales_lower=50, sales_upper=200, profit_margin_min=0.1, profit_margin_max=0.5, random_seed=42):
+    np.random.seed(random_seed)
+    if not products:
+        return pd.DataFrame(columns=['Product', 'Sales', 'Profit'])
+    if not isinstance(products, list) or not all((isinstance(product, str) for product in products)):
+        raise TypeError('products must be a list of strings.')
+    if not isinstance(n_samples, int) or n_samples <= 0:
+        raise ValueError('n_samples must be a positive integer.')
+    if not (isinstance(sales_lower, int) and isinstance(sales_upper, int)) or sales_lower >= sales_upper:
+        raise ValueError('sales_lower must be less than sales_upper and both must be integers.')
+    if not all((isinstance(x, (int, float)) for x in [profit_margin_min, profit_margin_max])) or profit_margin_min >= profit_margin_max:
+        raise ValueError('profit_margin_min must be less than profit_margin_max and both must be numeric.')
+    data = []
+    for _ in range(n_samples):
+        product = np.random.choice(products)
+        sales = np.random.randint(sales_lower, sales_upper + 1)
+        profit = sales * np.random.uniform(profit_margin_min, profit_margin_max)
+        data.append([product, sales, profit])
+    df = pd.DataFrame(data, columns=['Product', 'Sales', 'Profit'])
+    df = df.groupby('Product', as_index=False).sum()
+    df.sort_values('Profit', ascending=False, inplace=True)
+    return df","import numpy as np
+import pandas as pd
+
+def task_func(products, n_samples=100, sales_lower=50, sales_upper=200, profit_margin_min=0.1, profit_margin_max=0.5, random_seed=42):
+    np.random.seed(random_seed)
+    if not products:
+        return pd.DataFrame(columns=['Product', 'Sales', 'Profit'])
+    if not isinstance(products, list) or not all((isinstance(product, str) for product in products)):
+        raise ValueError('products must be a list of strings.')
+    if not isinstance(n_samples, int) or n_samples <= 0:
+        raise ValueError('n_samples must be a positive integer.')
+    if not (isinstance(sales_lower, int) and isinstance(sales_upper, int)) or sales_lower >= sales_upper:
+        raise ValueError('sales_lower must be less than sales_upper and both must be integers.')
+    if not all((isinstance(x, (int, float)) for x in [profit_margin_min, profit_margin_max])) or profit_margin_min >= profit_margin_max:
+        raise ValueError('profit_margin_min must be less than profit_margin_max and both must be numeric.')
+    data = []
+    for _ in range(n_samples):
+        product = np.random.choice(products)
+        sales = np.random.randint(sales_lower, sales_upper + 1)
+        profit = sales * np.random.uniform(profit_margin_min, profit_margin_max)
+        data.append([product, sales, profit])
+    df = pd.DataFrame(data, columns=['Product', 'Sales', 'Profit'])
+    df.sort_values('Profit', ascending=False, inplace=True)
+    return df
+
+if __name__ == '__main__':
+    products = ['A', 'B', 'C', 'D', 'E']
+    n_samples = 100
+    sales_lower = 50
+    sales_upper = 200
+    profit_margin_min = 0.1
+    profit_margin_max = 0.5
+    random_seed = 42
+    df = task_func(products, n_samples, sales_lower, sales_upper, profit_margin_"
+"import re
+import os
+from collections import Counter
+
+def task_func(folder_path: str) -> dict:
+    IP_REGEX = re.compile('\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}', re.FULLMATCH)
+    counter = Counter()
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.log'):
+            with open(os.path.join(folder_path, filename), 'rb') as file:
+                content = file.read()
+                ips = re.findall(IP_REGEX, content)
+                counter.update(content)
+    return dict(counter)","import re
+import os
+from collections import Counter
+
+def task_func(folder_path: str) -> dict:
+    IP_REGEX = re.compile('\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}')
+    counter = Counter()
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.log'):
+            with open(os.path.join(folder_path, filename)) as file:
+                content = file.read()
+                ips = re.findall(IP_REGEX, content)
+                counter.update(ips)
+    return dict(counter)","### Buggy Python Code
+import re
+import os
+from collections import Counter
+
+def task_func(folder_path: str) -> dict:
+    IP_REGEX = re.compile('\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}', re.FULLMATCH)
+    counter = Counter()
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.log'):
+            with open(os.path.join(folder_path, filename), 'rb') as file:
+                content = file.read()
+                ips = re.findall(IP_REGEX, content)
+                counter.update(content)
+    return dict(counter)
+
+### Corrected Python Code
+import re
+import os
+from collections import Counter
+
+def task_func(folder_path: str) -> dict:
+    IP_REGEX = re.compile('\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}')
+    counter = Counter()
+    for filename in os.listdir(folder_path):
+        if filename.endswith('.log'):
+            with open(os.path.join(folder_path, filename), 'r') as file:
+                content = file.read()
+                ips = re.findall(IP_REGEX, content)
+                counter.update(ips)
+    return dict(counter)
+
+if __name__ == '__main__':
+    print(task_func('./logs'))/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics"
+"raise ValueError('Invalid inspect attribute %s passed in. Should be one of: %s' % (k, event_types))","raise ValueError('Invalid inspect attribute %s passed in. Should be one of: %s' % (k, inspect_attributes))","### Buggy Python Code
+raise ValueError('Invalid inspect attribute %s passed in. Should be one of: %s' % (k, event_types))
+
+### Corrected Python Code
+raise ValueError('Invalid inspect attribute %s passed in. Should be one of: %s' % (attr, event_types))
+/tests/test_event_loop.py
+import time
+import unittest
+
+from pykite.event_loop import EventLoop, Event, EventLoopError, EventLoopTimeoutError, EventLoopCancelledError, EventLoopClosedError, EventLoopNotRunningError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError, EventLoopAlreadyCancelledError, EventLoopAlreadyRunningError, EventLoopAlreadyClosedError,"
+"return quantum.now().add(seconds=settings.getint('identity', 'activity_timeout'))","return quantum.now('UTC').add(seconds=settings.getint('identity', 'activity_timeout'))","### Buggy Python Code
+return quantum.now().add(seconds=settings.getint('identity', 'activity_timeout'))
+
+### Corrected Python Code
+return quantum.now().add(seconds=settings.getint('identity', 'activity_timeout', 300)) - quantum.timedelta(seconds=1) * quantum.timedelta(minutes=1) * quantum.timedelta(hours=1) * quantum.timedelta(days=1) * quantum.timedelta(weeks=1) * quantum.timedelta(months=1) * quantum.timedelta(years=1) * quantum.timedelta(decades=1) * quantum.timedelta(centuries=1) * quantum.timedelta(millennia=1) * quantum.timedelta(universes=1) * quantum.timedelta(multiverses=1) * quantum.timedelta(infinities=1) * quantum.timedelta(eternities=1) * quantum.timedelta(ages=1) * quantum.timedelta(generations=1) * quantum.timedelta(cycles=1) * quantum.timedelta(days=1) * quantum.timedelta(weeks=1) * quantum.timedelta(months=1) * quantum.timedelta(years=1) * quantum.timedelta(decades=1) * quantum.timedelta(centuries=1) * quantum.timedelta(millennia=1) * quantum.timedelta(universes=1) * quantum.timedelta(multiverses=1) * quantum.timedelta(infinities=1) * quantum.timedelta(eternities=1) * quantum.timedelta(ages=1) * quantum.timedelta(generations=1) * quantum.timedelta(cycles=1) * quantum.timedelta(days=1) * quantum.timedelta(weeks=1) * quantum.timedelta(months=1) * quantum.timedelta(years=1) * quantum.timedelta(decades=1) * quantum.timedelta(centuries=1) * quantum.timedelta(millennia=1) * quantum.timedelta(universes=1) * quantum.timedelta(multiverses=1) * quantum.timedelta(infinities=1) * quantum.timedelta(eternities=1) * quantum.timedelta(ages=1) * quantum.timedelta(generations=1) * quantum.timedelta(cycles=1) * quantum.timedelta(days=1) * quantum.timedelta(weeks=1) * quantum.timedelta(months=1) * quantum.timedelta("
+"os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings')","os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.settings')","### Buggy Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.dev')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.prod')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.prod') if os.environ.get('DJANGO_SETTINGS_MODULE') is None else os.environ.get('DJANGO_SETTINGS_MODULE')
+
+### Corrected Python Code
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.prod') if os.environ.get('DJANGO_SETTINGS_MODULE') is None else os.environ.get('DJANGO_SETTINGS_MODULE') + '.prod' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.prod' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev'"
