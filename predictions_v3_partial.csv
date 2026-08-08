@@ -22595,3 +22595,338 @@ def task_func(df, freq='D', decomposition_model='multiplicative'):
         raise ValueError(""Invalid 'freq': must be a string representing frequency."")
     df = df.sort_values('date')
     df = df.set_index('date')"
+"import pandas as pd
+import numpy as np
+
+def task_func(my_list, seed=42):
+    if not isinstance(my_list, list):
+        raise TypeError('Input must be a list.')
+    if seed is not None:
+        seed = None
+        np.random.seed(seed)
+    my_list.append(12)
+    categories = ['Electronics', 'Fashion', 'Home & Kitchen', 'Automotive', 'Sports']
+    sales_data = []
+    for category in categories:
+        sales = my_list[np.random.randint(0, len(my_list))] * np.random.randint(100, 1000)
+    sales_df = pd.DataFrame(sales_data, columns=['Category', 'Sales'])
+    ax = sales_df.plot(kind='bar', x='Category', y='Sales', legend=False)
+    ax.set_title('Category-wise Sales Data')
+    ax.set_ylabel('Sales')
+    return (sales_df, ax)","import pandas as pd
+import numpy as np
+
+def task_func(my_list, seed=42):
+    if not isinstance(my_list, list):
+        raise TypeError('Input must be a list.')
+    if seed is not None:
+        np.random.seed(seed)
+    my_list.append(12)
+    categories = ['Electronics', 'Fashion', 'Home & Kitchen', 'Automotive', 'Sports']
+    sales_data = []
+    for category in categories:
+        sales = my_list[np.random.randint(0, len(my_list))] * np.random.randint(100, 1000)
+        sales_data.append([category, sales])
+    sales_df = pd.DataFrame(sales_data, columns=['Category', 'Sales'])
+    ax = sales_df.plot(kind='bar', x='Category', y='Sales', legend=False)
+    ax.set_title('Category-wise Sales Data')
+    ax.set_ylabel('Sales')
+    return (sales_df, ax)","import pandas as pd
+import numpy as np
+
+def task_func(my_list, seed=42):
+    if not isinstance(my_list, list):
+        raise TypeError('Input must be a list.')
+    if seed is not None:
+        np.random.seed(seed)
+    my_list.append(12)
+    categories = ['Electronics', 'Fashion', 'Home & Kitchen', 'Automotive', 'Sports']
+    sales_data = []
+    for category in categories:
+        sales = my_list[np.random.randint(0, len(my_list))] * np.random.randint(100, 1000)
+        sales_data.append([category, sales])
+    sales_df = pd.DataFrame(sales_data, columns=['Category', 'Sales'])
+    ax = sales_df.plot(kind='bar', x='Category', y='Sales', legend=False)
+    ax.set_title('Category-wise Sales Data')
+    ax.set_ylabel('Sales')
+    return (sales_df, ax)
+/01-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02"
+"if re.search('\\{\\[|\\%', source):
+    return 'jinja2'","if re.search('\\{\\{|\\{\\%', source):
+    return 'jinja2'","### Buggy Python Code
+if re.search('\\{\\[|\\%', source):
+    return 'jinja2'
+
+### Corrected Python Code
+if re.search('^{\\[|\\%}', source):
+    return 'jinja2'
+
+return 'python' if re.search('^\\s*def', source) else 'text' if re.search('^\\s*$', source) else 'python' if re.search('^\\s*import', source) else 'text' if re.search('^\\s*\\#.*', source) else 'python' if re.search('^\\s*from', source) else 'text' if re.search('^\\s*\\*.*', source) else 'python' if re.search('^\\s*class', source) else 'text' if re.search('^\\s*\\{', source) else 'python' if re.search('^\\s*if', source) else 'text' if re.search('^\\s*while', source) else 'python' if re.search('^\\s*for', source) else 'text' if re.search('^\\s*try', source) else 'python' if re.search('^\\s*except', source) else 'text' if re.search('^\\s*else', source) else 'python' if re.search('^\\s*finally', source) else 'text' if re.search('^\\s*pass', source) else 'python' if re.search('^\\s*return', source) else 'text' if re.search('^\\s*break', source) else 'python' if re.search('^\\s*continue', source) else 'text' if re.search('^\\s*raise', source) else 'python' if re.search('^\\s*assert', source) else 'text' if re.search('^\\s*if', source) else 'python' if re.search('^\\s*else', source) else 'python' if re.search('^\\s*while', source) else 'python' if re.search('^\\s*for', source) else 'python' if re.search('^\\s*try', source) else 'python' if re.search('^\\s*except', source) else 'python' if re.search('^\\s*else', source) else 'python' if re.search('^"
+"raise RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[3])","raise RuntimeError('Attendance mismatch for %s: %d vs %d' % (e[0], total, e[3]))","### Buggy Python Code
+raise RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[3])
+
+### Corrected Python Code
+raise RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[2]) if e[2]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[3]) if e[3]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[4]) if e[4]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[5]) if e[5]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[6]) if e[6]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[7]) if e[7]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[8]) if e[8]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[9]) if e[9]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[10]) if e[10]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[11]) if e[11]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[12]) if e[12]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[13]) if e[13]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[14]) if e[14]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[15]) if e[15]!= 0 else RuntimeError('Attendance mismatch for %s: %d vs %d', e[0], total, e[16]) if e[16]!= 0 else RuntimeError('"
+"self.network.save_weights(os.path.join(basedir, 'weights.h5'))","self.network.save_weights(os.path.join(basedir, 'weights.h5'), overwrite=True)","### Buggy Python Code
+self.network.save_weights(os.path.join(basedir, 'weights.h5'))
+
+### Corrected Python Code
+self.network.save_weights(os.path.join(basedir, 'weights.h5'), overwrite=True)
+/src/models/model_vgg16.py
+import os
+import numpy as np
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPooling2D, Activation, BatchNormalization, LeakyReLU, InputLayer, GlobalAveragePooling2D, GlobalMaxPooling2D, AveragePooling2D, ZeroPadding2D, Add, Concatenate, Lambda, Reshape, Softmax, Softmax, ReLU, LeakyReLU, Activation, BatchNormalization, Flatten, Conv2D, MaxPooling2D, Activation, BatchNormalization, LeakyReLU, InputLayer, GlobalAveragePooling2D, GlobalMaxPooling2D, AveragePooling2D, ZeroPadding2D, Add, Concatenate, Lambda, Reshape, Softmax, Softmax, ReLU, LeakyReLU, Activation, BatchNormalization, Flatten, Conv2D, MaxPooling2D, Activation, BatchNormalization, LeakyReLU, InputLayer, GlobalAveragePooling2D, GlobalMaxPooling2D, AveragePooling2D, ZeroPadding2D, Add, Concatenate, Lambda, Reshape, Softmax, Softmax, ReLU, LeakyReLU, Activation, BatchNormalization, Flatten, Conv2D, MaxPooling2D, Activation, BatchNormalization, LeakyReLU, InputLayer, GlobalAveragePooling2D, GlobalMaxPooling2D, AveragePooling2D, ZeroPadding2D, Add, Concatenate, Lambda, Reshape, Softmax, Softmax, ReLU, LeakyReLU, Activation, BatchNormalization, Flatten, Conv2D, MaxPooling2D, Activation, BatchNormalization, LeakyReLU, InputLayer, GlobalAveragePooling2D, GlobalMaxPooling2D, AveragePooling2D, ZeroPadding2D, Add, Concatenate, Lambda, Reshape, Softmax, Softmax, ReLU, LeakyReLU, Activation, BatchNormalization, Flatten, Conv2D, MaxPooling2D, Activation, BatchNormalization, LeakyReLU, InputLayer, GlobalAveragePooling2D, GlobalMaxPooling2D, AveragePooling2D, ZeroPadding2D, Add, Concatenate, Lambda, Reshape, Softmax, Softmax, ReLU, LeakyReLU, Activation, BatchNormalization, Flat"
+"return open(join(dirname(__file__), fname)).read()","return open(join(dirname(__file__), fname), encoding='utf-8').read()","### Buggy Python Code
+return open(join(dirname(__file__), fname)).read()
+
+### Corrected Python Code
+return open(join(dirname(__file__), 'data', fname)).read() + '\n' + open(join(dirname(__file__), 'data', 'LICENSE.txt')).read() + '\n' + open(join(dirname(__file__), 'data', 'README.md')).read() + '\n' + open(join(dirname(__file__), 'data', 'CHANGELOG.md')).read() + '\n' + open(join(dirname(__file__), 'data','requirements.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-dev.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-test.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-docs.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-lint.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-dev-docs.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-test-docs.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-lint-docs.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-dev-test.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-dev-test-docs.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-test-docs.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-lint-test.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-dev-lint-test.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-dev-test-lint.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-dev-test-lint-docs.txt')).read() + '\n' + open(join(dirname(__file__), 'data','requirements-test-lint.txt"
+"class Solution:
+
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        return sorted(nums)[-k - 1]","class Solution:
+
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        return sorted(nums)[-k]","### Buggy Python Code
+class Solution:
+
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        return sorted(nums)[-k - 1]
+
+### Corrected Python Code
+class Solution:
+
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        return sorted(nums)[-k]
+/python/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum(nums) - (nums[-1] - nums[-2]) * 2
+/python/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum(nums) - (nums[-1] - nums[-2]) * 2
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum(nums) - (nums[-1] - nums[-2]) * 2 if len(nums) >= 2 else 0
+/python/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum(nums) - (nums[-1] - nums[-2]) * 2 if len(nums) >= 2 else 0
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum(nums) - (nums[-1] - nums[-2]) * 2 if len(nums) >= 2 else 0
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum(nums) - (nums[-1] - nums[-2]) * 2 if len(nums) >= 2 else 0
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum(nums) - (nums[-1] - nums[-2]) * 2 if len(nums) >= 2 else 0
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort"
+port_available = ssh_stdout.readline().strip() == 'True',port_available_p = ssh_stdout.readline().strip() == 'True',"### Buggy Python Code
+port_available = ssh_stdout.readline().strip() == 'True'
+
+### Corrected Python Code
+port_available = ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh_stdout.readline().strip() == 'True' and ssh"
+"log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal))","log.write('{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal))","### Buggy Python Code
+log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal))
+
+### Corrected Python Code
+log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old_tree_value, internal, terminal)) if arg.input!= 'None' else log.write('\n{}\t{:.3f}\t{:.3f}\t{}\t{}\n'.format(arg.input, internal / terminal, old"
+"def get_rois_json(request, imageId, conn=conn):","def get_rois_json(request, imageId, conn=None):","### Buggy Python Code
+def get_rois_json(request, imageId, conn=conn):
+
+### Corrected Python Code
+def get_rois_json(request, imageId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE imageId = %s"", (imageId,))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_image(request, imageId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE imageId = %s"", (imageId,))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_image_and_user(request, imageId, userId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE imageId = %s AND userId = %s"", (imageId, userId))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_user(request, userId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE userId = %s"", (userId,))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_user_and_image(request, userId, imageId, conn=None):
+    if conn is None:
+        conn = get_conn()
+    c = conn.cursor()
+    c.execute(""SELECT * FROM rois WHERE userId = %s AND imageId = %s"", (userId, imageId))
+    rows = c.fetchall()
+    c.close()
+    return rows_to_json(rows) if rows else []
+
+def get_rois_json_for_user_and_image_and_label(request, userId, imageId, labelId, conn=None):
+    if conn is None:
+        conn ="
+return all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))),return all((sum((vecs[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))),"### Buggy Python Code
+return all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4)))
+
+### Corrected Python Code
+return all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4)) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum((vec[card_idx][trait_idx] for card_idx in range(3))) % 3 == 0 for trait_idx in range(4))) and all((sum(("
+"from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY","from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY","### Buggy Python Code
+from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY
+
+### Corrected Python Code
+from projects.settings import PROJECT_MODEL, PROJECT_PAGINATE_BY, PROJECT_PAGINATE_BY_USER, PROJECT_PAGINATE_BY_USER_DEFAULT_COUNT, PROJECT_PAGINATE_BY_USER_DEFAULT_PAGE, PROJECT_PAGINATE_BY_USER_DEFAULT_ORDERING, PROJECT_PAGINATE_BY_USER_DEFAULT_SORTING_DIRECTION, PROJECT_PAGINATE_BY_USER_DEFAULT_SORTING_FIELD, PROJECT_PAGINATE_BY_USER_DEFAULT_SORTING_TYPE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_COUNT, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_PAGE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_ORDERING, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_DIRECTION, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_FIELD, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_TYPE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_COUNT, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_PAGE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_ORDERING, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_DIRECTION, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_FIELD, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_TYPE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_COUNT, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_PAGE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_ORDERING, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_DIRECTION, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_FIELD, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_SORTING_TYPE, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_COUNT, PROJECT_PAGINATE_BY_USER_DEFAULT_TYPE_"
+"if reduction_run is not variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')","if reduction_run != variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')","### Buggy Python Code
+if reduction_run is not variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python Code
+if reduction_run is not variables.reduction_run:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run is not variables.reduction_run:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run is not variables.reduction_run:
+    raise Exception('All run variables must be for the same reduction run')
+
+### Corrected Python code
+if reduction_run is not variables.reduction_run.id:
+    raise Exception('All run variables must be for the same reduction run')
+/src/python/pysis/pysis/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/pysis_core/"
+fwrapper_node = parent_node.make_node(FWRAP_TEMPLATE % module_name),fwrapper_node = parent_node.find_or_declare(FWRAP_TEMPLATE % module_name),"### Buggy Python Code
+fwrapper_node = parent_node.make_node(FWRAP_TEMPLATE % module_name)
+
+### Corrected Python Code
+fwrapper_node = parent_node.make_node(FWRAP_TEMPLATE % module_name, 'fwrap')
+
+return fwrapper_node, module_name, module_node, parent_node, module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name) + module_node.make_node(FWRAP_TEMPLATE % module_name"
+"illum = reduce(lambda x, y: x + y, bg_iter, accumulator)","illum = reduce(lambda x, y: x + y, it.chain([im0], bg_iter), accumulator)","### Buggy Python Code
+illum = reduce(lambda x, y: x + y, bg_iter, accumulator)
+
+### Corrected Python Code
+illum = reduce(lambda x, y: x + y, bg_iter, accumulator) / len(bg_iter) if len(bg_iter) > 0 else 0.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance(value, dict):
+                extract(value)
+            elif isinstance(value, str) and re.match(pattern, value):
+                urls.append(value)
+    if not urls:
+        return {}
+    elif len(urls) <= top_n:
+        return dict(Counter(urls))
+    return dict(Counter(urls).most_common(top_n))","import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance(value, dict):
+                extract(value)
+            elif isinstance(value, str) and re.match(pattern, value):
+                urls.append(value)
+    extract(data)
+    if not urls:
+        return {}
+    elif len(urls) <= top_n:
+        return dict(Counter(urls))
+    return dict(Counter(urls).most_common(top_n))","import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance(value, dict):
+                extract(value)
+            elif isinstance(value, str) and re.match(pattern, value):
+                urls.append(value)
+    extract(data)
+    if not urls:
+        return {}
+    elif len(urls) <= top_n:
+        return dict(Counter(urls))
+    return dict(Counter(urls).most_common(top_n))
+/day_01/task_01.py
+import re
+import json
+from collections import Counter
+
+def task_func(json_str, top_n=10):
+    pattern = '(https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|www\\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\\.[^\\s]{2,}|https?:\\/\\/(?:www\\.|(?!www))[a-zA-Z0-9]+\\.[^\\s]{2,}|www\\.[a-zA-Z0-9]+\\.[^\\s]{2,})'
+    data = json.loads(json_str)
+    urls = []
+
+    def extract(dictionary):
+        for key, value in dictionary.items():
+            if isinstance("
+"printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.')","printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.', '0.0')","### Buggy Python Code
+printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.')
+
+### Corrected Python Code
+printvcf(chrom, refstart, refend, True, 'IGN', refend - refstart, ref, '.') + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type=Float,Description=""Allele Frequency"">' + str(refend - refstart) + '\n' + '##INFO=<ID=DP,Number=1,Type=Integer,Description=""Depth of coverage"">' + str(refend - refstart) + '\n' + '##INFO=<ID=AF,Number=1,Type="
