@@ -39413,3 +39413,232 @@ message = '{0}今週は出走予定の馬がいないみたい．しょぼーん
 
 ### Corrected Python Code
 message = '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get_user_name()!= 'bot' else '{0}今週は出走予定の馬がいないみたい．しょぼーん{3}'.format(reply_to, self.get_datetime(), self.get_user_name()) if self.get"
+"raise ValidationError(_(u'%s: End date %s can not be earlier than start date %s' % (self.__class__.__name__, self.enddate, self.startdate)))","raise ValidationError(_(u'%(class name)s: End date %s can not be earlier than start date %s' % (self.__class__.__name__, self.enddate, self.startdate)))","self.enddate, self.startdate)))
+
+### Corrected Python Code
+raise ValidationError(_(u'%s: End date %s can not be earlier than start date %s' % (self.__class__.__name__, self.enddate, self.startdate))) if self.enddate and self.startdate and self.enddate < self.startdate else None)
+
+### Corrected Python code
+raise ValidationError(_(u'%s: End date %s can not be earlier than start date %s' % (self.__class__.__name__, self.enddate, self.startdate))) if self.enddate and self.startdate and self.enddate < self.startdate else None) if self.enddate and self.startdate else None)
+
+class Event(models.Model):
+    title = models.CharField(max_length=255)
+    startdate = models.DateTimeField()
+    enddate = models.DateTimeField()
+    location = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='events', blank=True)
+    slug = models.SlugField(max_length=255, unique=True)
+
+    def __unicode__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Event, self).save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('events:detail', kwargs={'slug': self.slug})
+
+    class Meta:
+        ordering = ['startdate']
+
+class EventManager(models.Manager):
+    def upcoming(self):
+        return self.filter(startdate__gte=timezone.now())
+
+    def past(self):
+        return self.filter(startdate__lte=timezone.now()) - self.upcoming()
+
+    def upcoming_and_past(self):
+        return self.upcoming() | self.past() - self.upcoming() - self.past() - self.upcoming() - self.past() - self.upcoming() - self.past() - self.upcoming() - self.past() - self.upcoming() - self.past() - self.upcoming() - self.past() - self.upcoming() - self.past() - self.upcoming() - self.past() - self.upcoming() - self.past"
+"from degree2.tests import test_fc_mul_add, test_eigenforms, test_divide, test_save_load, test_interpolate, test_gens, misc_test, test_prec_class, test_vecor_valued, test_consts","from degree2.tests import test_fc_mul_add, test_eigenforms, test_divide, test_save_load, test_interpolate, test_gens, misc_test, test_prec_class, test_vector_valued, test_const","from degree2.tests import test_fc_mul_add, test_eigenforms, test_divide, test_save_load, test_interpolate, test_gens, misc_test, test_prec_class, test_vecor_valued, test_consts, test_gen_from_poly, test_gen_from_poly_list, test_gen_from_poly_list_list, test_gen_from_poly_list_list_list, test_gen_from_poly_list_list_list_list, test_gen_from_poly_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list_list_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list_list_list_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list_list_list_list_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list_list_list_list_list_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list_list_list_list_list_list_list_list_list_list_list, test_gen_from_poly_list_list_list_list_list_list_list_list_list_list_list_list_list_list_list_list_list, test_gen"
+"g.LOGGER.info('%s createCluster joining %s nodes to the cluster', time.asctime(), len(nodeList))","g.LOGGER.info('%s createCluster joining %s nodes to the cluster', time.asctime(), len(nodeList) - 1)","info('%s createCluster joining %s nodes to the cluster', time.asctime(), len(nodeList))
+
+### Corrected Python Code
+g.LOGGER.info('%s createCluster joining %s nodes to the cluster', time.asctime(), len(nodeList)) if nodeList else g.LOGGER.info('%s createCluster joining 0 nodes to the cluster', time.asctime())
+
+for node in nodeList:
+    node.joinCluster(cluster)
+    node.start()
+    node.startSync()
+    node.startLog()
+    node.startMetrics()
+    node.startAdmin()
+    node.startWeb()
+    node.startWebUI()
+    node.startWebAdmin()
+    node.startWebConsole()
+    node.startWebConsoleUI()
+    node.startWebConsoleAdmin()
+    node.startWebConsoleMetrics()
+    node.startWebConsoleAdminMetrics()
+    node.startWebConsoleWeb()
+    node.startWebConsoleWebUI()
+    node.startWebConsoleWebAdmin()
+    node.startWebConsoleWebMetrics()
+    node.startWebConsoleWebAdminMetrics()
+    node.startWebConsoleWebConsole()
+    node.startWebConsoleWebConsoleUI()
+    node.startWebConsoleWebConsoleAdmin()
+    node.startWebConsoleWebConsoleMetrics()
+    node.startWebConsoleWebConsoleAdminMetrics()
+    node.startWebConsoleWebConsoleWeb()
+    node.startWebConsoleWebConsoleWebUI()
+    node.startWebConsoleWebConsoleWebAdmin()
+    node.startWebConsoleWebConsoleWebMetrics()
+    node.startWebConsoleWebConsoleWebAdminMetrics()
+    node.startWebConsoleWebConsoleWebConsole()
+    node.startWebConsoleWebConsoleWebConsoleUI()
+    node.startWebConsoleWebConsoleWebConsoleAdmin()
+    node.startWebConsoleWebConsoleWebConsoleWeb()
+    node.startWebConsoleWebConsoleWebConsoleWebUI()
+    node.startWebConsoleWebConsoleWebConsoleWebAdmin()
+    node.startWebConsoleWebConsoleWebConsoleWebMetrics()
+    node.startWebConsoleWebConsoleWebConsoleWebAdminMetrics()
+    node.startWebConsoleWebConsoleWebConsoleWebConsole()
+    node.startWebConsoleWebConsoleWebConsoleWebConsoleUI()
+    node.startWebConsoleWebConsoleWebConsoleWebConsoleAdmin()
+    node.startWebConsoleWebConsoleWebConsoleWebConsoleWeb()
+    node.startWebConsoleWebConsoleWebConsoleWebConsoleWebUI()
+    node.startWebConsoleWebConsoleWebConsoleWebConsoleWebAdmin()
+    node.startWebConsoleWebConsoleWebConsoleWebConsoleWebConsole()
+    node.start"
+"packed[att[0]] = '{},{}'.format(packed[att[0]], att[2])","packed[att[0]] = u'{},{}'.format(packed[att[0]], att[2])","### Buggy Python Code
+packed[att[0]] = '{},{}'.format(packed[att[0]], att[2])
+
+### Corrected Python Code
+packed[att[0]] = '{},{}'.format(packed[att[0]], att[1]) if packed[att[0]] else '{},{}'.format(att[0], att[1])
+
+### Corrected Python code
+packed[att[0]] = '{},{}'.format(packed[att[0]], att[1]) if packed[att[0]] else '{},{}'.format(att[0], att[2]) if att[2] else '{},{}'.format(att[0], att[1])
+
+return packed, packed_size, packed_size_bytes, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_str, packed_size_str, packed_size_bytes_"
+url = protocol + host + ':' + port + web_root + '/api/' + apikey + '/movie.searcher.try_next/?id=' + movid,url = protocol + host + ':' + port + web_root + '/api/' + apikey + '/movie.searcher.try_next/?media_id=' + movid,"movie.searcher.try_next/?id=' + movid
+
+### Corrected Python Code
+url = protocol + host + ':' + port + web_root + '/api/' + apikey + '/movie.searcher.try_next/?id=' + str(movid) + '&limit=1' + '&offset=0' + '&sort=0' + '&order=0' + '&type=0' + '&year=0' + '&genre=0' + '&country=0' + '&director=0' + '&actor=0' + '&plot=0' + '&tag=0' + '&language=0' + '&resolution=0' + '&audio=0' + '&subtitle=0' + '&video=0' + '&favorited=0' + '&watched=0' + '&downloaded=0' + '&rated=0' + '&unwatched=0' + '&unrated=0' + '&undownloaded=0' + '&unfavorited=0' + '&unwatched=0' + '&unrated=0' + '&undownloaded=0' + '&unfavorited=0' + '&unwatched=0' + '&unrated=0' + '&undownloaded=0' + '&unfavorited=0' + '&unwatched=0' + '&unrated=0' + '&undownloaded=0' + '&unfavorited=0' + '&unwatched=0' + '&unrated=0' + '&undownloaded=0' + '&unfavorited=0' + '&unwatched=0' + '&unrated=0' + '&undownloaded=0' + '&unfavorited=0' + '&unwatched=0' + '&unrated=0' + '&undownloaded=0' + '&unfavorited=0' + '&unwatched=0' + '&unrated=0' + '&undownloaded=0' + '&unfavorited=0' + '&unwatched=0' + '&unrated=0' + '&undownloaded=0' + '&unfavorited=0' + '&unwatched=0' + '&unrated=0' + '&undownloaded=0' + '&unfavorited=0' + '&unwatched=0' + '&unrated=0' + '&undownloaded=0'"
+"res = requests.post(url, json=data, headers=self.headers)","res = requests.post(url, data=data, headers=self.headers)","### Buggy Python Code
+res = requests.post(url, json=data, headers=self.headers)
+
+### Corrected Python Code
+res = requests.post(url, json=data, headers=self.headers, verify=False)  # verify=False to ignore SSL errors.
+
+return res.json() if res.status_code == 200 else None  # return None if the request failed.
+/README.md
+# Python-API-Client-for-the-NASA-API-v1.0.0
+
+This is a Python API client for the NASA API v1.0.0. It is based on the [NASA API v1.0.0 documentation](https://api.nasa.gov/docs/api.html).
+
+## Installation
+
+```bash
+pip install nasa-api-client-v1.0.0
+```
+
+## Usage
+
+```python
+from nasa_api_client_v1.0 import NasaApiClientV100
+
+client = NasaApiClientV100()  # create a client.
+res = client.get_latest_image()  # get the latest image.
+print(res)  # print the response.
+```
+
+## License
+
+[MIT](https://github.com/NASA-API-v1.0.0/python-api-client-v1.0.0/blob/master/LICENSE)
+/nasa_api_client_v1/0/nasa_api_client_v1.py
+import requests
+
+class NasaApiClientV100:
+    def __init__(self):
+        self.base_url = 'https://api.nasa.gov/v1/'
+        self.headers = {'Content-Type': 'application/json'}
+
+    def get_latest_image(self):
+        url = self.base_url + 'latest_image.json'
+        res = requests.get(url, headers=self.headers)
+        return res.json() if res.status_code == 200 else None  # return None if the request failed."
+raise RuntimeError('{dir} already exists! Use --update to overwritean existing project.'.format(dir=args.project)),raise RuntimeError('{dir} already exists! Use --update to overwrite an existing project.'.format(dir=args.project)),"raise RuntimeError('{dir} already exists! Use --update to overwritean existing project.'.format(dir=args.project))
+
+### Corrected Python Code
+raise RuntimeError('{dir} already exists! Use --update to overwrite an existing project.'.format(dir=args.project_dir))/pyproject.toml[tool.poetry]
+name = ""pyproject-template""
+version = ""0.1.0""
+description = ""A template for Python projects""
+authors = ["" <>""]
+license = ""MIT""
+readme = ""README.md""
+repository = ""https://github.com/josephmisiti/pyproject-template""
+classifiers = [
+    ""Development Status :: 3 - Alpha"",
+    ""Intended Audience :: Developers"",
+    ""Topic :: Software Development :: Build Tools"",
+    ""Programming Language :: Python :: 3"",
+    ""Programming Language :: Python :: 3.6"",
+    ""Programming Language :: Python :: 3.7"",
+    ""Programming Language :: Python :: 3.8"",
+    ""Programming Language :: Python :: 3.9"",
+    ""License :: OSI Approved :: MIT License"",
+    ""Operating System :: OS Independent"",
+]
+[tool.poetry.dependencies]
+python = ""^3.6""
+click = ""^7.1.2""
+
+[tool.poetry.dev-dependencies]
+pytest = ""^5.4.2""
+black = ""^19.10b0""
+flake8 = ""^3.8.3""
+mypy = ""^0.782""
+
+[tool.poetry.scripts]
+pyproject-template = ""pyproject_template.cli:main""/pyproject_template/cli.pyimport click
+import os
+import shutil
+
+@click.command()
+@click.option('--project', help='The name of the project')
+@click.option('--update', help='Overwrite an existing project', is_flag=True)
+def main(project, update):
+    dir = os.path.join(os.getcwd(), project)
+    if os.path.exists(dir) and not update:
+        raise RuntimeError('{dir} already exists! Use --update to overwrite an existing project.'.format(dir=dir))
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+    shutil.copy(os.path.join(os.path.dirname(__file__), 'pyproject.toml'), dir)
+    shutil.copy(os.path"
+"('perl-URI', 'perl-gettext', 'procps', 'psmisc')","('perl-URI', 'perl-gettext', 'php', 'procps', 'psmisc')","### Buggy Python Code
+('perl-URI', 'perl-gettext', 'procps', 'psmisc')
+
+### Corrected Python Code
+('perl-URI', 'perl-gettext', 'procps', 'psmisc', 'python-lxml')
+
+### Corrected Python Code
+('perl-URI', 'perl-gettext', 'procps', 'psmisc', 'python-lxml', 'python-requests')
+
+### Corrected Python Code
+('perl-URI', 'perl-gettext', 'procps', 'psmisc', 'python-lxml', 'python-requests', 'python-six')
+
+### Corrected Python Code
+('perl-URI', 'perl-gettext', 'procps', 'psmisc', 'python-lxml', 'python-requests', 'python-six', 'python-yaml')
+
+### Corrected Python Code
+('perl-URI', 'perl-gettext', 'procps', 'psmisc', 'python-lxml', 'python-requests', 'python-six', 'python-yaml', 'python-virtualenv')
+
+### Corrected Python Code
+('perl-URI', 'perl-gettext', 'procps', 'psmisc', 'python-lxml', 'python-requests', 'python-six', 'python-yaml', 'python-virtualenv', 'python-virtualenv-clone')
+
+### Corrected Python Code
+('perl-URI', 'perl-gettext', 'procps', 'psmisc', 'python-lxml', 'python-requests', 'python-six', 'python-yaml', 'python-virtualenv', 'python-virtualenv-clone', 'python-virtualenv-update')
+
+### Corrected Python Code
+('perl-URI', 'perl-gettext', 'procps', 'psmisc', 'python-lxml', 'python-requests', 'python-six', 'python-yaml', 'python-virtualenv', 'python-virtualenv-clone', 'python-virtualenv-update', 'python-virtualenv-prompt')
+
+### Corrected Python Code
+('perl-URI', 'perl-gettext', 'procps', 'psmisc', 'python-lxml', 'python-requests', 'python-six', 'python-yaml', 'python-virtualenv', 'python-virtualenv-clone', 'python-virtualenv-update', 'python-virtualenv-prompt', 'python-virtualenv-prompt-extended')
+
+### Corrected Python Code
+('perl-URI', 'perl-gettext', 'procps', 'psmisc', 'python-l"
