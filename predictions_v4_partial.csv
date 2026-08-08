@@ -19518,3 +19518,152 @@ control_topic_name = b'xi/ctrl/v1/unique device id/clt'
 
 ### Corrected Python Code
 control_topic_name = b'xi/ctrl/v1/unique device id/clt' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/' + b'1' + b'/'"
+"import numpy as np
+import pandas as pd
+import statistics
+
+def task_func(rows, columns=['A', 'B', 'C', 'D', 'E', 'F'], seed=42):
+    if not isinstance(rows, int) or rows <= 0:
+        raise ValueError('rows must be a positive integer greater than 0.')
+    data = np.random.randint(1, 101, size=(rows, len(columns)))
+    df = pd.DataFrame(data, columns=columns)
+    stats_dict = {}
+    for col in columns:
+        stats_dict[col] = lambda: {'mean': statistics.mean(df[col]), 'median': statistics.median(df[col])}
+    return (df, stats_dict)","import numpy as np
+import pandas as pd
+import statistics
+
+def task_func(rows, columns=['A', 'B', 'C', 'D', 'E', 'F'], seed=42):
+    if not isinstance(rows, int) or rows <= 0:
+        raise ValueError('rows must be a positive integer greater than 0.')
+    np.random.seed(seed)
+    data = np.random.randint(1, 101, size=(rows, len(columns)))
+    df = pd.DataFrame(data, columns=columns)
+    stats_dict = {}
+    for col in columns:
+        stats_dict[col] = {'mean': statistics.mean(df[col]), 'median': statistics.median(df[col])}
+    return (df, stats_dict)","import numpy as np
+import pandas as pd
+import statistics
+
+def task_func(rows, columns=['A', 'B', 'C', 'D', 'E', 'F'], seed=42):
+    if not isinstance(rows, int) or rows <= 0:
+        raise ValueError('rows must be a positive integer greater than 0.')
+    np.random.seed(seed)
+    data = np.random.randint(1, 101, size=(rows, len(columns)))
+    df = pd.DataFrame(data, columns=columns)
+    stats_dict = {}
+    for col in columns:
+        stats_dict[col] = {'mean': statistics.mean(df[col]),'median': statistics.median(df[col])}
+    return (df, stats_dict)
+
+if __name__ == '__main__':
+    rows = 10
+    columns = ['A', 'B', 'C', 'D', 'E', 'F']
+    df, stats_dict = task_func(rows, columns)
+    print(df)
+    print(stats_dict)/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/0"
+"return self.context.submit_task('ipmi.update', this.entity['channel'], this.get_diff(), callback=lambda s, t: post_save(this, s, t))","return self.context.submit_task('ipmi.update', this.entity['id'], this.get_diff(), callback=lambda s, t: post_save(this, s, t))","### Buggy Python Code
+return self.context.submit_task('ipmi.update', this.entity['channel'], this.get_diff(), callback=lambda s, t: post_save(this, s, t))
+
+### Corrected Python Code
+return self.context.submit_task('ipmi.update', this.entity['channel'], this.get_diff(), callback=lambda s, t: post_save(this, s, t, self.context)) if self.context.request.user.is_authenticated() else None
+
+### Corrected Python return self.context.submit_task('ipmi.update', this.entity['channel'], this.get_diff(), callback=lambda s, t: post_save(this, s, t, self.context)) if self.context.request.user.is_authenticated() else None
+/ipmi/models.py
+from django.db import models
+from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
+from django.core.exceptions import ObjectDoesNotExist, ValidationError
+from django.core.validators import RegexValidator, URLValidator, EmailValidator, MaxLengthValidator, MinLengthValidator, MinValueValidator, MaxValueValidator, DecimalValidator, IntegerValidator, FileExtensionValidator, FileSizeValidator, ProhibitNullCharactersValidator, ProhibitEmptyCharactersValidator, ProhibitSpacesValidator, ProhibitTabCharactersValidator, ProhibitNewlineCharactersValidator, ProhibitCarriageReturnValidator, ProhibitControlCharactersValidator, ProhibitTrailingWhitespacesValidator, ProhibitLeadingWhitespacesValidator, ProhibitMultipleSpacesValidator, ProhibitNonPrintableCharactersValidator, ProhibitZeroCharactersValidator, ProhibitOneCharacterValidator, ProhibitAllCharactersValidator, ProhibitAllWhitespacesValidator, ProhibitAllNonPrintableCharactersValidator, ProhibitAllZeroCharactersValidator, ProhibitAllOneCharacterValidator, ProhibitAllCharactersValidator, ProhibitAllWhitespacesValidator, ProhibitAllNonPrintableCharactersValidator, ProhibitAllZeroCharactersValidator, ProhibitAllOneCharacterValidator, ProhibitAllCharactersValidator, ProhibitAllWhitespacesValidator, ProhibitAllNonPrintableCharactersValidator, ProhibitAllZeroCharactersValidator, ProhibitAllOneCharacterValidator, ProhibitAllCharactersValidator, ProhibitAllWhitespacesValidator, ProhibitAllNonPrintableCharactersValidator, ProhibitAllZeroCharactersValidator, ProhibitAllOneCharacterValidator, ProhibitAllCharactersValidator, ProhibitAllWhitespacesValidator, ProhibitAllNonPrintableCharactersValidator, ProhibitAllZeroCharactersValidator, ProhibitAllOneCharacterValidator, ProhibitAllCharactersValidator"
+self.logger.info('Current machines running at ' + str(self.siteName) + ' : ' + str(self.runningMachinesCount[self.getConfig(self.configMachines)[0]])),self.logger.info('Current machines running at ' + str(self.siteName) + ' : ' + str(self.runningMachinesCount[self.getConfig(self.configMachines).keys()[0]])),"### Buggy Python Code
+self.logger.info('Current machines running at'+ str(self.siteName) +':'+ str(self.runningMachinesCount[self.getConfig(self.configMachines)[0]]))
+
+### Corrected Python Code
+self.logger.info('Current machines running at'+ str(self.siteName) +':'+ str(self.runningMachinesCount[self.getConfig(self.configMachines)[0]])) +'(' + str(self.getConfig(self.configMachines)[0]) + ')') +'(' + str(self.getConfig(self.configMachines)[1]) + ')' +'(' + str(self.getConfig(self.configMachines)[2]) + ')' +'(' + str(self.getConfig(self.configMachines)[3]) + ')' +'(' + str(self.getConfig(self.configMachines)[4]) + ')' +'(' + str(self.getConfig(self.configMachines)[5]) + ')' +'(' + str(self.getConfig(self.configMachines)[6]) + ')' +'(' + str(self.getConfig(self.configMachines)[7]) + ')' +'(' + str(self.getConfig(self.configMachines)[8]) + ')' +'(' + str(self.getConfig(self.configMachines)[9]) + ')' +'(' + str(self.getConfig(self.configMachines)[10]) + ')' +'(' + str(self.getConfig(self.configMachines)[11]) + ')' +'(' + str(self.getConfig(self.configMachines)[12]) + ')' +'(' + str(self.getConfig(self.configMachines)[13]) + ')' +'(' + str(self.getConfig(self.configMachines)[14]) + ')' +'(' + str(self.getConfig(self.configMachines)[15]) + ')' +'(' + str(self.getConfig(self.configMachines)[16]) + ')' +'(' + str(self.getConfig(self.configMachines)[17]) + ')' +'(' + str(self.getConfig(self.configMachines)[18]) + ')' +'(' + str(self.getConfig(self.configMachines)[19]) + ')' +'(' + str(self.getConfig(self.configMachines)[20]) + ')' +'(' + str(self.getConfig(self.configMachines)[21]) + ')' +'(' + str(self.getConfig(self.configMachines)[22]) + ')' +'(' + str(self.getConfig(self.configMachines)[23])"
+"sendData = {'x': self.mouse.x, 'y': self.mouse.y, 'up': self.mouse.canGoUp(), 'down': self.mouse.canGoDown(), 'left': self.mouse.canGoLeft(), 'right': self.mouse.canGoRight()}","sendData = {'x': self.mouse.x, 'y': self.mouse.y, 'up': not self.mouse.canGoUp(), 'down': not self.mouse.canGoDown(), 'left': not self.mouse.canGoLeft(), 'right': not self.mouse.canGoRight()}","### Buggy Python Code
+sendData = {'x': self.mouse.x, 'y': self.mouse.y, 'up': self.mouse.canGoUp(), 'down': self.mouse.canGoDown(), 'left': self.mouse.canGoLeft(), 'right': self.mouse.canGoRight()}
+
+### Corrected Python Code
+sendData = {'x': self.mouse.x, 'y': self.mouse.y, 'up': self.mouse.canGoUp(), 'down': self.mouse.canGoDown(), 'left': self.mouse.canGoLeft(), 'right': self.mouse.canGoRight(), 'click': self.mouse.canClick()}
+
+### Corrected Python
+sendData = {'x': self.mouse.x, 'y': self.mouse.y, 'up': self.mouse.canGoUp(), 'down': self.mouse.canGoDown(), 'left': self.mouse.canGoLeft(), 'right': self.mouse.canGoRight(), 'click': self.mouse.canClick()}
+
+return sendData, self.mouse.x, self.mouse.y, self.mouse.canGoUp(), self.mouse.canGoDown(), self.mouse.canGoLeft(), self.mouse.canGoRight(), self.mouse.canClick()/README.md
+# PyGame-Server-Client-Python-3.6.2-PyGame-1.9.3-PyOpenGL-3.1.1-PyOpenGL-accelerate-3.1.1-PyOpenGL-tools-3.1.1-PyOpenGL-tools-accelerate-3.1.1-PyOpenGL-tools-misc-3.1.1-PyOpenGL-tools-misc-accelerate-3.1.1-PyOpenGL-tools-shaders-3.1.1-PyOpenGL-tools-shaders-accelerate-3.1.1-PyOpenGL-tools-texture-3.1.1-PyOpenGL-tools-texture-accelerate-3.1.1-PyOpenGL-tools-video-3.1.1-PyOpenGL-tools-video-accelerate-3.1.1-PyOpenGL-tools-window-3.1.1-PyOpenGL-tools-window-accelerate-3.1.1-PyOpenGL-tools-xml-3.1.1-PyOpenGL-tools-xml-accelerate-3.1.1-PyOpenGL-tools-zbuffer-3.1.1-PyOpenGL-tools-zbuffer-accelerate-3.1.1-PyOpenGL-tools-zbuffer-misc-3.1.1-"
+"install_requires = (['Click', 'prompt_toolkit', 'psycopg2', 'sqlparse'],)","install_requires = (['Click', 'prompt_toolkit', 'psycopg2 >= 2.5.4', 'sqlparse'],)","### Buggy Python Code
+install_requires = (['Click', 'prompt_toolkit', 'psycopg2','sqlparse'],)
+
+### Corrected Python Code
+install_requires = (['Click', 'prompt_toolkit', 'psycopg2','sqlparse', 'pyyaml'],) + (['pylint'],) * (not IS_RELEASED) + (['pytest'],) * IS_RELEASED + (['coverage'],) * IS_RELEASED + (['coveralls'],) * IS_RELEASED + (['flake8'],) * IS_RELEASED + (['pydocstyle'],) * IS_RELEASED + (['pylint'],) * IS_RELEASED + (['pytest-cov'],) * IS_RELEASED + (['pytest-xdist'],) * IS_RELEASED + (['pytest-cov-report'],) * IS_RELEASED + (['pytest-html'],) * IS_RELEASED + (['pytest-metadata'],) * IS_RELEASED + (['pytest-sugar'],) * IS_RELEASED + (['pytest-timeout'],) * IS_RELEASED + (['pytest-randomly'],) * IS_RELEASED + (['pytest-rerunfailures'],) * IS_RELEASED + (['pytest-cov-report'],) * IS_RELEASED + (['pytest-html'],) * IS_RELEASED + (['pytest-metadata'],) * IS_RELEASED + (['pytest-sugar'],) * IS_RELEASED + (['pytest-timeout'],) * IS_RELEASED + (['pytest-randomly'],) * IS_RELEASED + (['pytest-rerunfailures'],) * IS_RELEASED + (['pytest-cov-report'],) * IS_RELEASED + (['pytest-html'],) * IS_RELEASED + (['pytest-metadata'],) * IS_RELEASED + (['pytest-sugar'],) * IS_RELEASED + (['pytest-timeout'],) * IS_RELEASED + (['pytest-randomly'],) * IS_RELEASED + (['pytest-rerunfailures'],) * IS_RELEASED + (['pytest-cov-report'],) * IS_RELEASED + (['pytest-html'],) * IS_RELEASED + (['pytest-metadata'],) * IS_RELEASED + (['pytest-sugar'],) * IS_RELEASED + (['pytest-timeout'],) * IS_RELEASED + (['pytest-randomly'],) * IS_RELEASE"
+"labels.append(';'.join(map(lambda x: 'none' if x is None else x, self.biom['rows'][i]['metadata'][self.hierarchy])))","labels.append(';'.join(map(lambda x: 'none' if x is None else x, rdata['metadata'][self.hierarchy])))","### Buggy Python Code
+labels.append(';'.join(map(lambda x: 'none' if x is None else x, self.biom['rows'][i]['metadata'][self.hierarchy])))
+
+### Corrected Python Code
+labels.append(';'.join(map(lambda x: 'none' if x is None else x, self.biom['rows'][i]['metadata'][self.hierarchy].values()))) if self.biom['rows'][i]['metadata'][self.hierarchy] is not None else 'none'
+
+return labels, self.biom['rows'][i]['metadata'][self.hierarchy] is not None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.biom['rows'][i]['metadata'][self.hierarchy] is None else 'none' if self.bi"
+"floats = ['mutExploration', 'mutInsDelRatio', 'mutProbability', 'noiseAmplitude']","floats = ['mutExploration', 'mutInsDelRatio', 'mutProbability', 'noiseAmplitude', 'secondObjectiveProbability']","### Buggy Python Code
+floats = ['mutExploration','mutInsDelRatio','mutProbability', 'noiseAmplitude']
+
+### Corrected Python Code
+floats = ['mutExploration','mutInsDelRatio','mutProbability', 'noiseAmplitude', 'noiseFrequency']
+
+### Corrected Python Code
+floats = ['mutExploration','mutInsDelRatio','mutProbability', 'noiseAmplitude', 'noiseFrequency', 'noiseType']
+
+### Corrected Python Code
+floats = ['mutExploration','mutInsDelRatio','mutProbability', 'noiseAmplitude', 'noiseFrequency', 'noiseType', 'noiseType'] + ['mutInsDelRatio'] * 2 + ['mutProbability'] * 2 + ['noiseAmplitude'] * 2 + ['noiseFrequency'] * 2 + ['noiseType'] * 2 + ['mutInsDelRatio'] * 2 + ['mutProbability'] * 2 + ['noiseAmplitude'] * 2 + ['noiseFrequency'] * 2 + ['noiseType'] * 2 + ['mutInsDelRatio'] * 2 + ['mutProbability'] * 2 + ['noiseAmplitude'] * 2 + ['noiseFrequency'] * 2 + ['noiseType'] * 2 + ['mutInsDelRatio'] * 2 + ['mutProbability'] * 2 + ['noiseAmplitude'] * 2 + ['noiseFrequency'] * 2 + ['noiseType'] * 2 + ['mutInsDelRatio'] * 2 + ['mutProbability'] * 2 + ['noiseAmplitude'] * 2 + ['noiseFrequency'] * 2 + ['noiseType'] * 2 + ['mutInsDelRatio'] * 2 + ['mutProbability'] * 2 + ['noiseAmplitude'] * 2 + ['noiseFrequency'] * 2 + ['noiseType'] * 2 + ['mutInsDelRatio'] * 2 + ['mutProbability'] * 2 + ['noiseAmplitude'] * 2 + ['noiseFrequency'] * 2 + ['noiseType'] * 2 + ['mutInsDelRatio'] * 2 + ['mutProbability'] * 2 + ['noiseAmplitude'] * 2 + ['noiseFrequency'] * 2 + ['noiseType'] * 2 + ['mutInsDelRatio'] * 2 + ['mutProbability'] * 2 + ['noiseAmplitude'] * 2 + ['noiseFrequency'] * 2 + ['noiseType'] * 2 + ['mutInsDelRatio'] * 2 + ['mutProbability'] *"
+self.assertTrue(event.wait(timeout=5.0) or event.isSet()),self.assertTrue(event.wait(timeout=10.0) or event.isSet()),"### Buggy Python Code
+self.assertTrue(event.wait(timeout=5.0) or event.isSet())
+
+### Corrected Python Code
+self.assertTrue(event.wait(timeout=10.0) or event.isSet())/tests/test_event.py@@ -1,10 +1,10 @@
+         self.assertTrue(event.isSet())
+ 
+     def test_wait_timeout(self):
+         event = Event()
+         event.wait(timeout=5.0)
+         self.assertTrue(event.isSet())
+ 
+     def test_wait_timeout_with_exception(self):
+         event = Event()
+-        self.assertRaises(TimeoutError, event.wait, timeout=5.0)
++        self.assertRaises(TimeoutError, event.wait, timeout=10.0)
+/tests/test_event_loop.py@@ -1,10 +1,10 @@
+         self.assertTrue(event.isSet())
+ 
+     def test_wait_timeout(self):
+         event = Event()
+         event.wait(timeout=5.0)
+         self.assertTrue(event.isSet())
+ 
+     def test_wait_timeout_with_exception(self):
+         event = Event()
+-        self.assertRaises(TimeoutError, event.wait, timeout=5.0)
++        self.assertRaises(TimeoutError, event.wait, timeout=10.0)
+/tests/test_thread.py@@ -1,10 +1,10 @@
+         self.assertTrue(event.isSet())
+ 
+     def test_wait_timeout(self):
+         event = Event()
+         event.wait(timeout=5.0)
+         self.assertTrue(event.isSet())
+ 
+     def test_wait_timeout_with_exception(self):
+         event = Event()
+-        self.assertRaises(TimeoutError, event.wait, timeout=5.0)
++        self.assertRaises(TimeoutError, event.wait, timeout=10.0)
+/tests/test_thread_pool.py@@ -1,10 +1,10 @@
+         self.assertTrue(event.isSet())
+ 
+     def test_wait_timeout(self):
+         event = Event()
+         event.wait(timeout=5.0)
+         self.assertTrue(event.isSet())
+ 
+     def test_wait_timeout_with_exception(self):
+         event = Event()
+-        self.assertRaises(TimeoutError, event.wait"
