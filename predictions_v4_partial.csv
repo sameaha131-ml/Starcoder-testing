@@ -57207,3 +57207,377 @@ if context['sheet_id']!= vals['sheet_id'] and (not context.get('force_timesheet'
     raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!')) or (context.get('force_timesheet')) and (not context.get('force_timesheet')):
     raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!')) or (context.get('force_timesheet')) and (not context.get('force_timesheet')):
     raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!')) or (context.get('force_timesheet')) and (not context.get('force_times"
+"return BoundingBox(self.topleft.copy(), self.bottomright.copy())","return BoundingBox(self.topleft.copy(), self.size.copy())","### Buggy Python Code
+return BoundingBox(self.topleft.copy(), self.bottomright.copy())
+
+### Corrected Python Code
+return BoundingBox(self.topleft.copy(), self.bottomright.copy(), self.z) if self.z is not None else BoundingBox(self.topleft.copy(), self.bottomright.copy())
+
+def __repr__(self):
+    return 'BoundingBox(%s, %s)' % (self.topleft, self.bottomright)
+
+def __eq__(self, other):
+    return self.topleft == other.topleft and self.bottomright == other.bottomright and self.z == other.z
+
+def __ne__(self, other):
+    return not self == other
+
+def __hash__(self):
+    return hash((self.topleft, self.bottomright, self.z)) if self.z is not None else hash((self.topleft, self.bottomright))
+
+def __contains__(self, point):
+    return self.topleft <= point and self.bottomright >= point and (self.z is None or self.z == point.z)
+
+def __iter__(self):
+    return iter(self.topleft) + iter(self.bottomright) + (self.z,) if self.z is not None else iter(())
+
+def __len__(self):
+    return 3 if self.z is None else 4
+
+def __getitem__(self, index):
+    if index == 0:
+        return self.topleft
+    elif index == 1:
+        return self.bottomright
+    elif index == 2:
+        return self.z
+    else:
+        raise IndexError('index out of range')
+
+def __setitem__(self, index, value):
+    if index == 0:
+        self.topleft = value
+    elif index == 1:
+        self.bottomright = value
+    elif index == 2:
+        self.z = value
+    else:
+        raise IndexError('index out of range')
+
+def __add__(self, other):
+    return BoundingBox(self.topleft + other.topleft, self.bottomright + other.bottomright, self.z + other.z) if self.z is not None and other.z is not None else BoundingBox(self.topleft + other.topleft, self.bottomright + other.bottomright)
+
+def __sub__(self, other):
+    return BoundingBox(self.topleft - other.topleft"
+"class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s) - 1
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            cnt += s[i] == '0'
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt","class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return ans","### Buggy Python Code
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s) - 1
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            cnt += s[i] == '0'
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+
+### Corrected Python Code
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return ans - 1 if cnt % 2 else ans
+
+### Corrected Python
+class Solution:
+
+    def minimumSteps(self, s: str) -> int:
+        n = len(s)
+        ans = cnt = 0
+        for i in range(n - 1, -1, -1):
+            if s[i] == '1':
+                cnt += 1
+                ans += n - i - cnt
+        return ans - 1 if cnt % 2 else ans - 2 if n % 2 else ans
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minCost(self, costs: List[List[int]]) -> int:
+        n = len(costs)
+        ans = inf = inf * n * n
+        for i in range(n):
+            for j in range(n):
+                for k in range(n):
+                    ans = min(ans, costs[i][j] + costs[j][k] + costs[k][i])
+        return ans - inf * n * n if ans!= inf * n * n else -1
+/1000/1000-1005/1005.cpp
+class Solution {
+
+public:
+
+    int minCost(vector<vector<int>> &costs) {
+        int n = costs.size();
+        int ans = inf = inf * n * n;
+        for i in range(n):
+            for j in range(n):
+                for k in range(n):
+                    ans = min(ans, costs[i][j] + costs[j][k] + costs[k][i]);
+        return ans == inf * n * n? -1 : ans;
+    }
+};
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minCost(self, costs: List[List[int]]) -> int:
+        n = len(costs)
+        ans ="
+"namespace_packages = NAMESPACE_PACKAGES, packages = (PACKAGES,)","namespace_packages = NAMESPACE_PACKAGES, packages = (find_packages(),)","### Buggy Python Code
+namespace_packages = NAMESPACE_PACKAGES, packages = (PACKAGES,)
+
+### Corrected Python Code
+namespace_packages = NAMESPACE_PACKAGES, packages = (PACKAGES, 'pywps.tests') if TESTS else (PACKAGES,)
+
+### Corrected Python Code
+namespace_packages = NAMESPACE_PACKAGES, packages = (PACKAGES, 'pywps.tests') if TESTS else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',) if DATA else (PACKAGES,) + ('pywps.tests.data',"
+"return int(griddata(self.coords, self.basin, (lon, lat), method='nearest'))","return int(griddata(self.coords, self.basin, (lat, lon), method='nearest'))","### Buggy Python Code
+return int(griddata(self.coords, self.basin, (lon, lat), method='nearest'))
+
+### Corrected Python Code
+return int(griddata(self.coords, self.basin, (lon, lat), method='nearest', fill_value=-9999)) - 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+input_dimension = training_features[0].shape[0],input_dimension = training_features[0].shape[1],"### Buggy Python Code
+input_dimension = training_features[0].shape[0]
+
+### Corrected Python Code
+input_dimension = training_features[0].shape[1] if len(training_features) > 0 else 0
+
+### Corrected Python
+input_dimension = training_features[0].shape[1] if len(training_features) > 0 else 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"username = requests.get('https://connect.garmin.com/user/username', cookies=cookies).json()['username']","username = requests.get('http://connect.garmin.com/user/username', cookies=cookies).json()['username']","### Buggy Python Code
+username = requests.get('https://connect.garmin.com/user/username', cookies=cookies).json()['username']
+
+### Corrected Python Code
+username = requests.get('https://connect.garmin.com/user/username', cookies=cookies).json()['displayName'] if 'displayName' in requests.get('https://connect.garmin.com/user/username', cookies=cookies).json() else requests.get('https://connect.garmin.com/user/username', cookies=cookies).json()['username']
+
+return username.replace(' ', '_') + '_' + str(datetime.datetime.now().strftime('%Y%m%d%H%M%S')) + '.csv' if 'displayName' in requests.get('https://connect.garmin.com/user/username', cookies=cookies).json() else requests.get('https://connect.garmin.com/user/username', cookies=cookies).json()['username'].replace(' ', '_') + '_' + str(datetime.datetime.now().strftime('%Y%m%d%H%M%S')) + '.csv' + '\n' + 'Date,Time,Latitude,Longitude,Altitude,Speed,Distance,Heart Rate,Cadence,Power,Temperature,Type\n' + '\n' + ','.join(map(str, data)) + '\n' + '\n' + 'Date,Time,Latitude,Longitude,Altitude,Speed,Distance,Heart Rate,Cadence,Power,Temperature,Type\n' + '\n' + ','.join(map(str, data)) + '\n' + '\n' + 'Date,Time,Latitude,Longitude,Altitude,Speed,Distance,Heart Rate,Cadence,Power,Temperature,Type\n' + '\n' + ','.join(map(str, data)) + '\n' + '\n' + 'Date,Time,Latitude,Longitude,Altitude,Speed,Distance,Heart Rate,Cadence,Power,Temperature,Type\n' + '\n' + ','.join(map(str, data)) + '\n' + '\n' + 'Date,Time,Latitude,Longitude,Altitude,Speed,Distance,Heart Rate,Cadence,Power,Temperature,Type\n' + '\n' + ','.join(map(str, data)) + '\n' + '\n' + 'Date,Time,Latitude,Longitude,Altitude,Speed,Distance,Heart Rate,Cadence,Power,Temperature,Type\n"
+"class Solution:
+
+    def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dist = [[inf] * n for _ in range(m)]
+        dist[0][0] = grid[0][0]
+        q = deque([(0, 0)])
+        dirs = (-1, 0, 1, 0, -1)
+        while q:
+            x, y = q.popleft()
+            for a, b in pairwise(dirs):
+                nx, ny = (x + a, y + b)
+                if 0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + 1
+                    q.append((nx, ny))
+        return dist[-1][-1] < health","class Solution:
+
+    def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dist = [[inf] * n for _ in range(m)]
+        dist[0][0] = grid[0][0]
+        q = deque([(0, 0)])
+        dirs = (-1, 0, 1, 0, -1)
+        while q:
+            x, y = q.popleft()
+            for a, b in pairwise(dirs):
+                nx, ny = (x + a, y + b)
+                if 0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + grid[nx][ny]
+                    q.append((nx, ny))
+        return dist[-1][-1] < health","q = deque([(0, 0)])
+        dirs = (-1, 0, 1, 0, -1)
+        while q:
+            x, y = q.popleft()
+            for a, b in pairwise(dirs):
+                nx, ny = (x + a, y + b)
+                if 0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + 1
+                    q.append((nx, ny))
+        return dist[-1][-1] < health
+
+### Corrected Python Code
+class Solution:
+
+    def findSafeWalk(self, grid: List[List[int]], health: int) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dist = [[inf] * n for _ in range(m)]
+        dist[0][0] = grid[0][0]
+        q = deque([(0, 0)])
+        dirs = (-1, 0, 1, 0, -1)
+        while q:
+            x, y = q.popleft()
+            for a, b in pairwise(dirs):
+                nx, ny = (x + a, y + b)
+                if 0 <= nx < m and 0 <= ny < n and (dist[nx][ny] > dist[x][y] + grid[nx][ny]):
+                    dist[nx][ny] = dist[x][y] + grid[nx][ny]
+                    q.append((nx, ny))
+        return dist[-1][-1] < health - 1
+/python/1000/1000-010/1000-010-01.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) // 2 * (nums[-1] + 2) // 2
+/python/1000/1000-010/1000-010-02.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) // 2 * (nums[-1] + 2) // 2 - 1
+/python/1000/1000-010/1000-010-03.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum((-a for a in nums[:-1])) + (nums[-1] + 1) // 2 * (nums[-1] + 2) // 2 - 2"
+"import os
+import shutil
+BACKUP_DIR = '/tmp/backup'
+
+def get_unique_backup_dir():
+    return '/fake/backup/path'
+
+def task_func(directory):
+    errors = []
+    if os.path.exists(directory):
+        errors.append(f'Directory already exists: {directory}')
+        return (None, errors)
+    if not os.path.exists(directory):
+        errors.append(f'Directory does not exist: {directory}')
+        return (None, errors)
+    try:
+        if not os.path.exists(BACKUP_DIR):
+            os.makedirs(BACKUP_DIR)
+        backup_dir = get_unique_backup_dir()
+        os.makedirs(backup_dir)
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        try:
+            shutil.rmtree(directory)
+        except PermissionError as e:
+            if not os.path.exists(directory):
+                errors.append(f'Permission denied: {e}')
+                shutil.copytree(os.path.join(backup_dir, os.path.basename(directory)), directory)
+        os.makedirs(directory, exist_ok=True)
+    except Exception as e:
+        errors.append(str(e))
+    return ('/fake/backup/path', errors)
+    try:
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        shutil.rmtree(directory)
+        os.makedirs(directory)
+    except Exception as e:
+        errors.append(str(e))
+    return (backup_dir, errors)","import os
+import shutil
+BACKUP_DIR = '/tmp/backup'
+
+def get_unique_backup_dir():
+    return '/fake/backup/path'
+
+def task_func(directory):
+    errors = []
+    if not os.path.exists(directory):
+        errors.append(f'Directory does not exist: {directory}')
+        return (None, errors)
+    if not os.path.exists(directory):
+        errors.append(f'Directory does not exist: {directory}')
+        return (None, errors)
+    try:
+        if not os.path.exists(BACKUP_DIR):
+            os.makedirs(BACKUP_DIR)
+        backup_dir = get_unique_backup_dir()
+        os.makedirs(backup_dir)
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        try:
+            shutil.rmtree(directory)
+        except PermissionError as e:
+            errors.append(f'Permission denied: {e}')
+            shutil.copytree(os.path.join(backup_dir, os.path.basename(directory)), directory)
+        os.makedirs(directory, exist_ok=True)
+    except Exception as e:
+        errors.append(str(e))
+    return ('/fake/backup/path', errors)
+    try:
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        shutil.rmtree(directory)
+        os.makedirs(directory)
+    except Exception as e:
+        errors.append(str(e))
+    return (backup_dir, errors)","import os
+import shutil
+BACKUP_DIR = '/tmp/backup'
+
+def get_unique_backup_dir():
+    i = 0
+    while True:
+        backup_dir = f'{BACKUP_DIR}/backup{i}'
+        if not os.path.exists(backup_dir):
+            return backup_dir
+        i += 1
+
+def task_func(directory):
+    errors = []
+    if os.path.exists(directory):
+        errors.append(f'Directory already exists: {directory}')
+        return (None, errors)
+    if not os.path.exists(directory):
+        errors.append(f'Directory does not exist: {directory}')
+        return (None, errors)
+    try:
+        if not os.path.exists(BACKUP_DIR):
+            os.makedirs(BACKUP_DIR)
+        backup_dir = get_unique_backup_dir()
+        os.makedirs(backup_dir)
+        shutil.copytree(directory, os.path.join(backup_dir, os.path.basename(directory)))
+        try:
+            shutil.rmtree(directory)
+        except PermissionError as e:
+            errors.append(f'Permission denied: {e}')
+            shutil.copytree(os.path.join(backup_dir, os.path.basename(directory)), directory)
+        os.makedirs(directory)
+    except Exception as e:
+        errors.append(str(e))
+    return (backup_dir, errors)
+/python/01-basics/01-basics.py
+import os
+import shutil
+BACKUP_DIR = '/tmp/backup'
+
+def get_unique_backup_dir():
+    i = 0
+    while True:
+        backup_dir = f'{BACKUP_DIR}/backup{i}'
+        if not os.path.exists(backup_dir):
+            return backup_dir
+        i += 1
+
+def task_func(directory):
+    errors = []
+    if os.path.exists(directory):
+        errors.append(f'Directory already exists: {directory}')
+        return (None, errors)
+    if not os.path.exists(directory):
+        errors.append(f'Directory does not exist: {directory}')
+        return (None, errors)
+    try:
+        if not os.path.exists(BACKUP_DIR):
+            os.makedirs(BACKUP_DIR)
+        backup_dir = get_unique_"
