@@ -58457,3 +58457,677 @@ reporter_name = reporter_list[0][reporter_entity_id][NAME_FIELD] if reporter_ent
 reporter_name = reporter_list[0][reporter_entity_id][NAME_FIELD] if reporter_entity_id in reporter_list[0] else 'Unknown'
 
 return reporter_name, reporter_entity_id, reporter_entity_type, reporter_entity_name, reporter_entity_type_name, reporter_entity_id_name, reporter_entity_type_name_name, reporter_entity_name_name, reporter_entity_type_name_name, reporter_entity_id_name, reporter_entity_type_name_name, reporter_entity_name_name, reporter_entity_type_name_name, reporter_entity_id_name, reporter_entity_type_name_name, reporter_entity_name_name, reporter_entity_type_name_name, reporter_entity_id_name, reporter_entity_type_name_name, reporter_entity_name_name, reporter_entity_type_name_name, reporter_entity_id_name, reporter_entity_type_name_name, reporter_entity_name_name, reporter_entity_type_name_name, reporter_entity_id_name, reporter_entity_type_name_name, reporter_entity_name_name, reporter_entity_type_name_name, reporter_entity_id_name, reporter_entity_type_name_name, reporter_entity_name_name, reporter_entity_type_name_name, reporter_entity_id_name, reporter_entity_type_name_name, reporter_entity_name_name, reporter_entity_type_name_name, reporter_entity_id_name, reporter_entity_type_name_name, reporter_entity_name_name, reporter_entity_type_name_name, reporter_entity_id_name, reporter_entity_type_name_name, reporter_entity_name_name, reporter_entity_type_name_name, reporter_entity_id_name, reporter_entity_type_name_name, reporter_entity_name_name, reporter_entity_type_name_name, reporter_entity"
+"opnames = opnames.filter(locatie__loc_id__in=locations.split(','))","opnames = opnames.filter(locatie__in=locations.split(','))","### Buggy Python Code
+opnames = opnames.filter(locatie__loc_id__in=locations.split(','))
+
+### Corrected Python Code
+opnames = opnames.filter(locatie__loc_id__in=locations.split(',')) if locations else opnames.all()
+
+### Corrected Python Code
+opnames = opnames.filter(locatie__loc_id__in=locations.split(',')) if locations else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100] if opnames.count() > 100 else opnames.all()[:100"
+"class Solution:
+
+    def makeSmallestPalindrome(self, s: str) -> str:
+        cs = sorted(s)
+        i, j = (0, len(s) - 1)
+        while i < j:
+            cs[i] = cs[j] = min(cs[i], cs[j])
+            i, j = (i + 1, j - 1)
+        return ''.join(cs)","class Solution:
+
+    def makeSmallestPalindrome(self, s: str) -> str:
+        cs = list(s)
+        i, j = (0, len(s) - 1)
+        while i < j:
+            cs[i] = cs[j] = min(cs[i], cs[j])
+            i, j = (i + 1, j - 1)
+        return ''.join(cs)","### Buggy Python Code
+class Solution:
+
+    def makeSmallestPalindrome(self, s: str) -> str:
+        cs = sorted(s)
+        i, j = (0, len(s) - 1)
+        while i < j:
+            cs[i] = cs[j] = min(cs[i], cs[j])
+            i, j = (i + 1, j - 1)
+        return ''.join(cs)
+
+### Corrected Python Code
+class Solution:
+
+    def makeSmallestPalindrome(self, s: str) -> str:
+        cs = list(s)
+        i, j = (0, len(s) - 1)
+        while i < j:
+            cs[i] = cs[j] = min(cs[i], cs[j])
+            i, j = (i + 1, j - 1)
+        return ''.join(cs) + s[::-1] if i == j else ''.join(cs) + s[::-1] + s[i] + s[j] if i!= j else ''.join(cs) + s[::-1] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] + s[i] + s[j] +"
+real_content_type = ContentType.objects.get_for_id(self.real_content_type),real_content_type = ContentType.objects.get_for_id(self.real_content_type_id),"### Buggy Python Code
+real_content_type = ContentType.objects.get_for_id(self.real_content_type)
+
+### Corrected Python Code
+real_content_type = ContentType.objects.get_for_id(self.real_content_type.id) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type) if self.real_content_type else ContentType.objects.get_for_id(self.real_content_type)"
+"({'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'DebugGame'), 'args': '[CONFIGURATION]'},)","({'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'Development'), 'args': '[CONFIGURATION]'},)","### Buggy Python Code
+({'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'DebugGame'), 'args': '[CONFIGURATION]'},)
+
+### Corrected Python Code
+({'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'Development'), 'args': '[CONFIGURATION]'},)
+
+### Corrected Python Code
+({'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'Development'), 'args': ['CONFIGURATION']},)
+
+### Corrected Python Code
+({'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'Development'), 'args': ['CONFIGURATION']},) + [{'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'DebugGame'), 'args': ['CONFIGURATION']},) + [{'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'Shipping'), 'args': ['CONFIGURATION']},) + [{'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'Shipping'), 'args': ['CONFIGURATION']},) + [{'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'Shipping'), 'args': ['CONFIGURATION']},) + [{'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'Shipping'), 'args': ['CONFIGURATION']},) + [{'description': 'Build the editor for the Unreal project', 'action': lambda m, args: m.buildProject(os.getcwd(), args[0] if len(args) > 0 else 'Shipping'), 'args': ['CONFIGURATION']},) + [{'description"
+"class Solution:
+
+    def minimumDeletions(self, word: str, k: int) -> int:
+
+        def f(v: int) -> int:
+            ans = 0
+            for x in nums:
+                if x < v:
+                    ans += x
+                elif x > v + k:
+                    pass
+            return ans
+        nums = Counter(word).values()
+        return min((f(v) for v in range(len(word) + 1)))","class Solution:
+
+    def minimumDeletions(self, word: str, k: int) -> int:
+
+        def f(v: int) -> int:
+            ans = 0
+            for x in nums:
+                if x < v:
+                    ans += x
+                elif x > v + k:
+                    ans += x - v - k
+            return ans
+        nums = Counter(word).values()
+        return min((f(v) for v in range(len(word) + 1)))","### Buggy Python Code
+class Solution:
+
+    def minimumDeletions(self, word: str, k: int) -> int:
+
+        def f(v: int) -> int:
+            ans = 0
+            for x in nums:
+                if x < v:
+                    ans += x
+                elif x > v + k:
+                    pass
+            return ans
+        nums = Counter(word).values()
+        return min((f(v) for v in range(len(word) + 1)))
+
+### Corrected Python Code
+class Solution:
+
+    def minimumDeletions(self, word: str, k: int) -> int:
+
+        def f(v: int) -> int:
+            ans = 0
+            for x in nums:
+                if x < v:
+                    ans += x
+                elif x > v + k:
+                    ans += x - v - k
+            return ans
+        nums = Counter(word).values()
+        return min((f(v) for v in range(len(word) + 1))) - k * len(word)
+
+### Corrected Python
+class Solution:
+
+    def minimumDeletions(self, word: str, k: int) -> int:
+
+        def f(v: int) -> int:
+            ans = 0
+            for x in nums:
+                if x < v:
+                    ans += x
+                elif x > v + k:
+                    ans += x - v - k
+            return ans
+        nums = Counter(word).values()
+        return min((f(v) for v in range(len(word) + 1))) - k * len(word) // 2
+/1200-1299/1210. Minimum Moves to Reach Target with Rotations.py
+class Solution:
+
+    def minimumMoves(self, target: int, k: int) -> int:
+
+        def f(v: int) -> int:
+            ans = 0
+            for x in nums:
+                if x < v:
+                    ans += x
+                elif x > v + k:
+                    ans += x - v - k
+            return ans
+        nums = list(Counter(target).values())
+        return min((f(v) for v in range(len(nums) + 1))) - k * len(nums) // 2
+/1200-1299/1211. Minimum Moves to Reach Target with Rotations.py
+class Solution:
+
+    def minimumMoves(self, target: int, k: int) -> int:
+
+        def f(v: int) -> int:
+            ans = 0
+            for x in nums:
+                if x < v:
+                    ans += x
+                elif x > v + k:
+                    ans += x - v - k
+            return ans
+        nums = list(Counter(target).values())
+        return min((f(v) for v in range(len(nums) + 1))) - k"
+"dic = {'language': definition.get('lang'), 'translation': definition.text}","dic = {'language': definition.get('lang'), 'definition': definition.text}","### Buggy Python Code
+dic = {'language': definition.get('lang'), 'translation': definition.text}
+
+### Corrected Python Code
+dic = {'language': definition.get('lang'), 'translation': definition.text.strip()} if definition.text else {'language': definition.get('lang'), 'translation': ''}
+
+### Corrected Python code
+dic = {'language': definition.get('lang'), 'translation': definition.text.strip()} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language': definition.get('lang'), 'translation': ''} if definition.text else {'language':"
+"ZGTo2NuG = kreator.makeMCComponent('ZGTo2NuG', '/ZGTo2NuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM', 'CMS', '.*root', 2.816)","ZGTo2NuG = kreator.makeMCComponent('ZGTo2NuG', '/ZGTo2NuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM', 'CMS', '.*root', 28.05)","### Buggy Python Code
+ZGTo2NuG = kreator.makeMCComponent('ZGTo2NuG', '/ZGTo2NuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM', 'CMS', '.*root', 2.816)
+
+### Corrected Python Code
+ZGTo2NuG = kreator.makeMCComponent('ZGTo2NuG', '/ZGTo2NuG_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM', 'CMS', '.*root', 3.04) * 0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"class Solution:
+
+    def generateString(self, str1: str, str2: str) -> str:
+        n = len(str1)
+        m = len(str2)
+        sz = n + m - 1
+        modifiable = [True] * sz
+        for i, tf in enumerate(str1):
+            if tf == 'T':
+                for j, c in enumerate(str2):
+                    pos = i + j
+                    if pos in ans and ans[pos] != c:
+                        return ''
+                    ans[pos] = c
+                    modifiable[pos] = False
+        for i in range(sz):
+            if not ans[i]:
+                ans[i] = 'a'
+        for i in range(n - 1):
+            if str1[i] == 'F' and self._match(ans, i, str2):
+                modifiablePos = self._lastModifiablePosition(i, m, modifiable)
+                if modifiablePos == -1:
+                    return ''
+                ans[modifiablePos] = 'b'
+                modifiable[modifiablePos] = False
+        return ''.join(ans)
+
+    def _match(self, ans: list, i: int, s: str) -> bool:
+        for j, c in enumerate(s):
+            if ans[i + j] != c:
+                return False
+        return True
+
+    def _lastModifiablePosition(self, i: int, m: int, modifiable: list) -> int:
+        modifiablePos = -1
+        for j in range(m - 1):
+            pos = i + j
+            if modifiable[pos]:
+                modifiablePos = pos
+        return modifiablePos","class Solution:
+
+    def generateString(self, str1: str, str2: str) -> str:
+        n = len(str1)
+        m = len(str2)
+        sz = n + m - 1
+        ans = [None] * sz
+        modifiable = [True] * sz
+        for i, tf in enumerate(str1):
+            if tf == 'T':
+                for j, c in enumerate(str2):
+                    pos = i + j
+                    if ans[pos] and ans[pos] != c:
+                        return ''
+                    ans[pos] = c
+                    modifiable[pos] = False
+        for i in range(sz):
+            if not ans[i]:
+                ans[i] = 'a'
+        for i in range(n):
+            if str1[i] == 'F' and self._match(ans, i, str2):
+                modifiablePos = self._lastModifiablePosition(i, m, modifiable)
+                if modifiablePos == -1:
+                    return ''
+                ans[modifiablePos] = 'b'
+                modifiable[modifiablePos] = False
+        return ''.join(ans)
+
+    def _match(self, ans: list, i: int, s: str) -> bool:
+        for j, c in enumerate(s):
+            if ans[i + j] != c:
+                return False
+        return True
+
+    def _lastModifiablePosition(self, i: int, m: int, modifiable: list) -> int:
+        modifiablePos = -1
+        for j in range(m):
+            pos = i + j
+            if modifiable[pos]:
+                modifiablePos = pos
+        return modifiablePos","class Solution:
+
+    def generateString(self, str1: str, str2: str) -> str:
+        n = len(str1)
+        m = len(str2)
+        sz = n + m - 1
+        ans = [None] * sz
+        modifiable = [True] * sz
+        for i, tf in enumerate(str1):
+            if tf == 'T':
+                for j, c in enumerate(str2):
+                    pos = i + j
+                    if ans[pos] and ans[pos]!= c:
+                        return ''
+                    ans[pos] = c
+                    modifiable[pos] = False
+        for i in range(sz):
+            if not ans[i]:
+                ans[i] = 'a'
+        for i in range(n - 1):
+            if str1[i] == 'F' and self._match(ans, i, str2):
+                modifiablePos = self._lastModifiablePosition(i, m, modifiable)
+                if modifiablePos == -1:
+                    return ''
+                ans[modifiablePos] = 'b'
+                modifiable[modifiablePos] = False
+        return ''.join(ans)
+
+    def _match(self, ans: list, i: int, s: str) -> bool:
+        for j, c in enumerate(s):
+            if ans[i + j]!= c:
+                return False
+        return True
+
+    def _lastModifiablePosition(self, i: int, m: int, modifiable: list) -> int:
+        modifiablePos = -1
+        for j in range(m):
+            pos = i + j
+            if modifiable[pos]:
+                modifiablePos = pos
+        return modifiablePos
+
+class Solution:
+
+    def generateString(self, str1: str, str2: str) -> str:
+        n = len(str1)
+        m = len(str2)
+        sz = n + m - 1
+        ans = [None] * sz
+        modifiable = [True] * sz
+        for i, tf in enumerate(str1):
+            if tf == 'T':
+                for j, c in enumerate(str2):
+                    pos = i + j
+                    if ans[pos] and ans[pos]!= c:
+                        return ''
+                    ans[pos] = c
+                    modifiable[pos] = False
+        for i in range(sz):
+            if not ans[i]:
+                ans"
+"import pandas as pd
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input must be a DataFrame')
+    if not df:
+        raise ValueError('DataFrame is empty')
+    pca = PCA(n_components=2 if df.shape[1] >= 2 == True else 1)
+    principal_components = pca.fit_transform(df)
+    pca_df = pd.DataFrame(data=df, columns=['Principal Component 1', 'Principal Component 2'])
+    fig, ax = plt.subplots()
+    ax.scatter(pca_df['Principal Component 1'], pca_df['Principal Component 2'])
+    ax.set_xlabel('Principal Component 1')
+    ax.set_ylabel('Principal Component 2')
+    ax.set_title('2 Component PCA')
+    return (pca_df, ax)","import pandas as pd
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input must be a DataFrame')
+    if df.empty:
+        raise ValueError('DataFrame is empty')
+    pca = PCA(n_components=2)
+    principal_components = pca.fit_transform(df)
+    pca_df = pd.DataFrame(data=principal_components, columns=['Principal Component 1', 'Principal Component 2'])
+    fig, ax = plt.subplots()
+    ax.scatter(pca_df['Principal Component 1'], pca_df['Principal Component 2'])
+    ax.set_xlabel('Principal Component 1')
+    ax.set_ylabel('Principal Component 2')
+    ax.set_title('2 Component PCA')
+    return (pca_df, ax)","(pca_df, ax)
+
+### Corrected Python Code
+import pandas as pd
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input must be a DataFrame')
+    if df.empty:
+        raise ValueError('DataFrame is empty')
+    pca = PCA(n_components=2)
+    principal_components = pca.fit_transform(df)
+    pca_df = pd.DataFrame(data=principal_components, columns=['Principal Component 1', 'Principal Component 2'])
+    fig, ax = plt.subplots()
+    ax.scatter(pca_df['Principal Component 1'], pca_df['Principal Component 2'])
+    ax.set_xlabel('Principal Component 1')
+    ax.set_ylabel('Principal Component 2')
+    ax.set_title('2 Component PCA')
+    return (pca_df, ax)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics"
+"class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h and 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s &= s - 1
+                i += 1
+        return -1 if ans > n else ans","class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s ^= 1 << h
+                i += 1
+        return -1 if ans > n else ans","if cnt[h] == 0:
+                            s &= s - 1
+                i += 1
+        return -1 if ans > n else ans
+
+### Corrected Python Code
+class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s &= s - 1
+                i += 1
+        return -1 if ans > n else ans
+
+class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s &= s - 1
+                i += 1
+        return -1 if ans > n else ans
+/python/1000/1000-1002/1002.py
+class Solution:
+
+    def minimumSwap(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j -"
+"import random
+import string
+from django.http import HttpResponse
+
+def task_func(request, session_expire_time):
+    session_key = ''.join(random.choices(string.ascii_letters + string.digits, k=20))
+    has_digit = any((char.isalpha() for char in session_key))
+    has_letter = any((char.isalpha() for char in session_key))
+    if not (has_digit and has_letter or len(session_key) != 20):
+        raise ValueError('Session key should contain both letters and digits')
+    response = HttpResponse('Session key generated successfully.')
+    response.set_cookie('session_key', session_key, max_age=session_expire_time)
+    return response","import random
+import string
+from django.http import HttpResponse
+
+def task_func(request, session_expire_time):
+    session_key = ''.join(random.choices(string.ascii_letters + string.digits, k=20))
+    has_digit = any((char.isdigit() for char in session_key))
+    has_letter = any((char.isalpha() for char in session_key))
+    if not (has_digit and has_letter or len(session_key) != 20):
+        raise ValueError('Session key should contain both letters and digits')
+    response = HttpResponse('Session key generated successfully.')
+    response.set_cookie('session_key', session_key, max_age=session_expire_time)
+    return response","('Session key should contain both letters and digits')
+    response = HttpResponse('Session key generated successfully.')
+    response.set_cookie('session_key', session_key, max_age=session_expire_time)
+    return response
+
+### Corrected Python Code
+import random
+import string
+from django.http import HttpResponse
+
+def task_func(request, session_expire_time):
+    session_key = ''.join(random.choices(string.ascii_letters + string.digits, k=20))
+    has_digit = any((char.isdigit() for char in session_key))
+    has_letter = any((char.isalpha() for char in session_key))
+    if not (has_digit and has_letter or len(session_key)!= 20):
+        raise ValueError('Session key should contain both letters and digits')
+    response = HttpResponse('Session key generated successfully.')
+    response.set_cookie('session_key', session_key, max_age=session_expire_time)
+    return response
+/django_project/django_project/urls.py
+from django.contrib import admin
+from django.urls import path, include
+from.views import task_func, TaskView, TaskDetailView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, Task"
+"URL = urljoin(EXRED_UI_URL, 'international/industries')","URL = urljoin(EXRED_UI_URL, 'international/industries/')","### Buggy Python Code
+URL = urljoin(EXRED_UI_URL, 'international/industries')
+
+### Corrected Python Code
+URL = urljoin(EXRED_UI_URL, 'international/industries/') + urlencode({'page': 1}) + '/' + urlencode({'page_size': 100}) + '/' + urlencode({'sort': 'name'}) + '/' + urlencode({'sort_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/' + urlencode({'filter_dir': 'asc'}) + '/' + urlencode({'filter': 'name'}) + '/'"
+"import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(mu=0, sigma=1, sample_size=1000, seed=0):
+    sample = np.random.normal(mu, sigma, sample_size)
+    fig, ax = plt.subplots()
+    ax.hist(sample, bins=30, density=True, alpha=0.5, label='Sample Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mu=mu, sigma=sigma)
+    ax.plot(x, p, 'k', linewidth=2, label='Normal PDF')
+    ax.set_title('Normal Distribution with $\\mu = %0.2f, \\sigma = %0.2f$' % (mu, sigma))
+    ax.legend()
+    return (ax, np.mean(sample), np.std(sample))","import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(mu=0, sigma=1, sample_size=1000, seed=0):
+    np.random.seed(seed)
+    sample = np.random.normal(mu, sigma, sample_size)
+    fig, ax = plt.subplots()
+    ax.hist(sample, bins=30, density=True, alpha=0.5, label='Sample Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mu, sigma)
+    ax.plot(x, p, 'k', linewidth=2, label='Normal PDF')
+    ax.set_title('Normal Distribution with $\\mu = %0.2f, \\sigma = %0.2f$' % (mu, sigma))
+    ax.legend()
+    return (ax, np.mean(sample), np.std(sample))","import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(mu=0, sigma=1, sample_size=1000, seed=0):
+    np.random.seed(seed)
+    sample = np.random.normal(mu, sigma, sample_size)
+    fig, ax = plt.subplots()
+    ax.hist(sample, bins=30, density=True, alpha=0.5, label='Sample Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mu, sigma)
+    ax.plot(x, p, 'k', linewidth=2, label='Normal PDF')
+    ax.set_title('Normal Distribution with $\\mu = %0.2f, \\sigma = %0.2f$' % (mu, sigma))
+    ax.legend()
+    return (ax, np.mean(sample), np.std(sample))
+
+if __name__ == '__main__':
+    task_func()
+    plt.show()/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python"
+"if len(self.index) > 0:
+    self.index = N.arange(table.nrows)","if len(self.index) == 0:
+    self.index = N.arange(table.nrows)","### Buggy Python Code
+if len(self.index) > 0:
+    self.index = N.arange(table.nrows)
+
+### Corrected Python Code
+if len(self.index) == 0:
+    self.index = N.arange(table.nrows)
+
+### Corrected Python code
+if len(self.index) == 0:
+    self.index = N.arange(table.nrows)
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows)
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table.nrows > 0:
+    self.index = N.arange(table.nrows) - 1.0
+
+### Corrected Python code
+if len(self.index) == 0 and table."
+"_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode))","_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s), 'utf-8'), base58.b58decode))","### Buggy Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode, base58.b58decode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode, base58.b58decode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode))
+
+### Corrected Python Code
+_common_codec_data.append(('base58', lambda s: bytes(base58.b58encode(s)), base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode, base58.b58decode, base58.b58encode, base58.b58decode))"
+"output_css = path.join(SITE_ROOT, 'less', '%s.tmp.less' % result)","output_css = path.join(STATIC_ROOT, 'compiled', '%s.min.css' % result)","### Buggy Python Code
+output_css = path.join(SITE_ROOT, 'less', '%s.tmp.less' % result)
+
+### Corrected Python Code
+output_css = path.join(SITE_ROOT, 'less', '%s.tmp.css' % result) if result else None
+
+### Corrected Python Code
+output_css = path.join(SITE_ROOT, 'less', '%s.tmp.css' % result) if result else None if not path.exists(path.join(SITE_ROOT, 'less', '%s.less' % result)) else None
+
+if output_css:
+    lessc(less_file, output_css)
+    os.remove(less_file)
+    return output_css, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None"
