@@ -4716,3 +4716,432 @@ update.set(**dslice(data, ['state', 'task_id', 'owner','start_time', 'completion
 update.set(**dslice(data, ['state', 'task_id', 'owner','start_time', 'completion_time', 'epoch', 'error']))
 
 return update.get() == data.get() and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') == 'completed' and update.get('completion_time') is not None and update.get('epoch') is not None and update.get('error') is None and update.get('task_id') is not None and update.get('owner') is not None and update.get('start_time') is not None and update.get('state') =="
+"({'action': 1, 'name': 'p_mailadresseKunde', 'value': mail},)","({'action': 1, 'name': 'p_mailadresseKunde', 'value': email},)","### Buggy Python Code
+({'action': 1, 'name': 'p_mailadresseKunde', 'value': mail},)
+
+### Corrected Python Code
+({'action': 1, 'name': 'p_mailadresseKunde', 'value': mail},) if mail else ()]
+
+### Corrected Python Code
+({'action': 1, 'name': 'p_mailadresseKunde', 'value': mail},) if mail else []]
+/addons/l10n_ch_account_tax_report/wizard/account_tax_report_wizard.py
+# -*- coding: utf-8 -*-
+# Copyright 2015-2016  <>
+# Copyright 2016-2017  <>
+# Copyright 2017-2018  <>
+# Copyright 2018-2019  <>
+# Copyright 2019-2020  <>
+# Copyright 2020-2021  <>
+# Copyright 2021-2022  <>
+# Copyright 2022-2023  <>
+# Copyright 2023-2024  <>
+# Copyright 2024-2025  <>
+# Copyright 2025-2026  <>
+# Copyright 2026-2027  <>
+# Copyright 2027-2028  <>
+# Copyright 2028-2029  <>
+# Copyright 2029-2030  <>
+# Copyright 2030-2031  <>
+# Copyright 2031-2032  <>
+# Copyright 2032-2033  <>
+# Copyright 2033-2034  <>
+# Copyright 2034-2035  <>
+# Copyright 2035-2036  <>
+# Copyright 2036-2037  <>
+# Copyright 2037-203"
+"import itertools
+from random import shuffle
+
+def task_func(numbers=list(range(1, 3))):
+    permutations = list(itertools.permutations(numbers))
+    sum_diffs = 0
+    for perm in permutations:
+        perm = list(perm)
+        shuffle(perm)
+        diffs = [abs(perm[i] - perm[i + 1]) for i in range(len(perm) - 1)]
+        sum_diffs += sum(diffs) if len(diffs) > 1 else 0
+    avg_sum_diffs = sum_diffs / len(permutations)
+    return avg_sum_diffs","import itertools
+from random import shuffle
+
+def task_func(numbers=list(range(1, 3))):
+    permutations = list(itertools.permutations(numbers))
+    sum_diffs = 0
+    for perm in permutations:
+        perm = list(perm)
+        shuffle(perm)
+        diffs = [abs(perm[i] - perm[i + 1]) for i in range(len(perm) - 1)]
+        sum_diffs += sum(diffs)
+    avg_sum_diffs = sum_diffs / len(permutations)
+    return avg_sum_diffs","fs) if len(diffs) > 1 else 0
+    avg_sum_diffs = sum_diffs / len(permutations)
+    return avg_sum_diffs
+
+### Corrected Python Code
+import itertools
+from random import shuffle
+
+def task_func(numbers=list(range(1, 3))):
+    permutations = list(itertools.permutations(numbers))
+    sum_diffs = 0
+    for perm in permutations:
+        perm = list(perm)
+        shuffle(perm)
+        diffs = [abs(perm[i] - perm[i + 1]) for i in range(len(perm) - 1)]
+        sum_diffs += sum(diffs)
+    avg_sum_diffs = sum_diffs / len(permutations)
+    return avg_sum_diffs
+
+if __name__ == '__main__':
+    print(task_func())
+/01_python_basics/01_01_python_basics/01_01_01_python_basics.py
+def task_func(numbers=list(range(1, 3))):
+    permutations = list(itertools.permutations(numbers))
+    sum_diffs = 0
+    for perm in permutations:
+        perm = list(perm)
+        diffs = [abs(perm[i] - perm[i + 1]) for i in range(len(perm) - 1)]
+        sum_diffs += sum(diffs)
+    avg_sum_diffs = sum_diffs / len(permutations)
+    return avg_sum_diffs
+
+if __name__ == '__main__':
+    print(task_func())
+/01_python_basics/01_01_python_basics/01_01_02_python_basics.py
+def task_func(numbers=list(range(1, 3))):
+    permutations = list(itertools.permutations(numbers))
+    sum_diffs = 0
+    for perm in permutations:
+        perm = list(perm)
+        diffs = [abs(perm[i] - perm[i + 1]) for i in range(len(perm) - 1)]
+        sum_diffs += sum(diffs)
+    avg_sum_diffs = sum_diffs / len(permutations)
+    return avg_sum_diffs
+
+if __name__ == '__main__':
+    print(task_func())
+/01_python_basics/01_0"
+"import pandas as pd
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input must be a DataFrame')
+    if df.empty:
+        raise ValueError('DataFrame is empty')
+    pca = PCA(components=2)
+    principal_components = pca.fit_transform(df)
+    pca_df = pd.DataFrame(data=principal_components, columns=['Principal Component 1', 'Principal Component 2'])
+    fig, ax = plt.subplot()
+    ax.scatter(pca_df['Principal Component 1'], pca_df['Principal Component 2'])
+    ax.set_xlabel('Principal Component 1')
+    ax.set_ylabel('Principal Component 2')
+    ax.set_title('2 Component PCA')
+    return (pca_df, plt.show())","import pandas as pd
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input must be a DataFrame')
+    if df.empty:
+        raise ValueError('DataFrame is empty')
+    pca = PCA(n_components=2)
+    principal_components = pca.fit_transform(df)
+    pca_df = pd.DataFrame(data=principal_components, columns=['Principal Component 1', 'Principal Component 2'])
+    fig, ax = plt.subplots()
+    ax.scatter(pca_df['Principal Component 1'], pca_df['Principal Component 2'])
+    ax.set_xlabel('Principal Component 1')
+    ax.set_ylabel('Principal Component 2')
+    ax.set_title('2 Component PCA')
+    return (pca_df, ax)","import pandas as pd
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input must be a DataFrame')
+    if df.empty:
+        raise ValueError('DataFrame is empty')
+    pca = PCA(n_components=2)
+    principal_components = pca.fit_transform(df)
+    pca_df = pd.DataFrame(data=principal_components, columns=['Principal Component 1', 'Principal Component 2'])
+    fig, ax = plt.subplots()
+    ax.scatter(pca_df['Principal Component 1'], pca_df['Principal Component 2'])
+    ax.set_xlabel('Principal Component 1')
+    ax.set_ylabel('Principal Component 2')
+    ax.set_title('2 Component PCA')
+    return (pca_df, ax)
+
+### Corrected Python code
+import pandas as pd
+from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('Input must be a DataFrame')
+    if df.empty:
+        raise ValueError('DataFrame is empty')
+    pca = PCA(n_components=2)
+    principal_components = pca.fit_transform(df)
+    pca_df = pd.DataFrame(data=principal_components, columns=['Principal Component 1', 'Principal Component 2'])
+    fig, ax = plt.subplots()
+    ax.scatter(pca_df['Principal Component 1'], pca_df['Principal Component 2'])
+    ax.set_xlabel('Principal Component 1')
+    ax.set_ylabel('Principal Component 2')
+    ax.set_title('2 Component PCA')
+    return (pca_df, ax)/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/01-python-fundamentals/"
+"from robot import config, utils, logging, constants, updater","from robot import config, utils, logging, constants, Updater","### Buggy Python Code
+from robot import config, utils, logging, constants, updater
+
+### Corrected Python Code
+from robot.config import config, utils, logging, constants, updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot_constants, robot_updater, robot_config, robot_constants, robot_utils, robot_logging, robot"
+"class Solution:
+
+    def sumOfPower(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        nums.sort(reverse='desc')
+        ans = 0
+        p = 0
+        for x in nums[::-1][1:]:
+            ans = (ans + x * x % mod * x) % mod
+            ans = (ans + x * p) % mod
+            p = (p + x * x) % mod
+        return ans","class Solution:
+
+    def sumOfPower(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        nums.sort()
+        ans = 0
+        p = 0
+        for x in nums[::-1]:
+            ans = (ans + x * x % mod * x) % mod
+            ans = (ans + x * p) % mod
+            p = (p * 2 + x * x) % mod
+        return ans","0 ** 9 + 7
+        nums.sort(reverse='desc')
+        ans = 0
+        p = 0
+        for x in nums[::-1][1:]:
+            ans = (ans + x * x % mod * x) % mod
+            ans = (ans + x * p) % mod
+            p = (p + x * x) % mod
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def sumOfPower(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        nums.sort()
+        ans = 0
+        p = 0
+        for x in nums[::-1]:
+            ans = (ans + x * x % mod * x) % mod
+            ans = (ans + x * p) % mod
+            p = (p * 2 + x * x) % mod
+        return ans % mod
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        mod = 10 ** 9 + 7
+        ans = 0
+        p = 0
+        for x in nums[::-1]:
+            ans = (ans + x * x % mod * x) % mod
+            ans = (ans + x * p) % mod
+            p = (p * 2 + x * x) % mod
+        return ans % mod - 1
+/1000/1000-1005/1005.cpp
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        mod = 10 ** 9 + 7
+        ans = 0
+        p = 0
+        for x in nums[::-1]:
+            ans = (ans + x * x % mod * x) % mod
+            ans = (ans + x * p) % mod
+            p = (p * 2 + x * x) % mod
+        return ans % mod - 1
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        mod = 10 ** 9 + 7
+        ans = 0
+        p = 0
+        for x in nums[::-1]:
+            ans = (ans + x * x % mod * x) % mod
+            ans = (ans + x * p) % mod
+            p = (p * 2 + x * x) % mod
+        return ans % mod - 1
+/1000/1000-10"
+"log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True)","log.info('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True)","### Buggy Python Code
+log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True)
+
+### Corrected Python Code
+log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True) if self.server else log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True) if self.port else log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True) if self.server and self.port else log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True) if self.server else log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True) if self.port else log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True) if self.server and self.port else log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True) if self.server else log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True) if self.port else log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True) if self.server and self.port else log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True) if self.server else log.error('Connection to %s:%s lost: %s %s' % (self.server, self.port, errnum, errstr), exc_info=True) if self.port else log.error('Connection to %s:%s lost: %s %s"
+"import csv
+import json
+import os
+
+def task_func(file_name):
+    if os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = [[]]
+    with open(file_name, 'r') as f:
+        for row in csv_reader:
+            data.append(row)
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'w') as f:
+        pass
+    return json_file_name","import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r') as f:
+        csv_reader = csv.DictReader(f)
+        for row in csv_reader:
+            data.append(row)
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'w') as f:
+        json.dump(data, f)
+    return json_file_name","'r') as f:
+        for row in csv_reader:
+            data.append(row)
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'w') as f:
+        pass
+    return json_file_name
+
+### Corrected Python Code
+import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r') as f:
+        csv_reader = csv.DictReader(f)
+        for row in csv_reader:
+            data.append(row)
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'w') as f:
+        json.dump(data, f)
+    return json_file_name
+
+### Corrected Python code
+import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r') as f:
+        csv_reader = csv.DictReader(f)
+        for row in csv_reader:
+            data.append(row)
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'w') as f:
+        json.dump(data, f)
+    return json_file_name
+/day_01/task_01.py
+import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r') as f:
+        csv_reader = csv.DictReader(f)
+        for row in csv_reader:
+            data.append(row)
+    json_file_name = file_name.split('.')[0] + '.json'
+    with open(json_file_name, 'w') as f:
+        json.dump(data, f)
+    return json_file_name
+/day_02/task_01.py
+import csv
+import json
+import os
+
+def task_func(file_name):
+    if not os.path.exists(file_name):
+        raise FileNotFoundError('File does not exist.')
+    data = []
+    with open(file_name, 'r')"
+"r = home_template % {'javascript': js, 'css': css, 'modules': repr(manifest_preload())}","r = home_template % {'javascript': js, 'css': css, 'modules': simplejson.dumps(manifest_preload())}","### Buggy Python Code
+r = home_template % {'javascript': js, 'css': css,'modules': repr(manifest_preload())}
+
+### Corrected Python Code
+r = home_template % {'javascript': js, 'css': css,'modules': repr(manifest_preload()), 'title': 'Home'}
+
+return r, 200, {'Content-Type': 'text/html'}
+
+
+@app.route('/about')
+def about():
+    css = get_css()
+    js = get_js()
+    r = about_template % {'javascript': js, 'css': css}
+    return r, 200, {'Content-Type': 'text/html'}
+
+
+@app.route('/contact')
+def contact():
+    css = get_css()
+    js = get_js()
+    r = contact_template % {'javascript': js, 'css': css}
+    return r, 200, {'Content-Type': 'text/html'}
+
+
+@app.route('/privacy')
+def privacy():
+    css = get_css()
+    js = get_js()
+    r = privacy_template % {'javascript': js, 'css': css}
+    return r, 200, {'Content-Type': 'text/html'}
+
+
+@app.route('/terms')
+def terms():
+    css = get_css()
+    js = get_js()
+    r = terms_template % {'javascript': js, 'css': css}
+    return r, 200, {'Content-Type': 'text/html'}
+
+
+@app.route('/api/v1/users/<user_id>/friends')
+def get_friends(user_id):
+    css = get_css()
+    js = get_js()
+    r = friends_template % {'javascript': js, 'css': css, 'user_id': user_id}
+    return r, 200, {'Content-Type': 'text/html'}
+
+
+@app.route('/api/v1/users/<user_id>/friends/<friend_id>')
+def get_friend(user_id, friend_id):
+    css = get_css()
+    js = get_js()
+    r = friend_template % {'javascript': js, 'css': css, 'user_id': user_id, 'friend_id': friend_id}
+    return r, 200, {'Content-Type': 'text/html'}
+
+
+@app.route('/api/v1/users/<"
