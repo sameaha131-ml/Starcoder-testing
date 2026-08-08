@@ -27151,3 +27151,243 @@ con.request('GET', '/api/v1/status')
 res = con.getresponse()
 con.close()
 return res.status == 200, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 200 else None, res.status, res.reason, res.read() == b'OK' if res.status == 20"
+"return ET.tostring(newdom, pretty_print=True)","return ET.tostring(newdom, pretty_print=True, encoding='utf-8')","### Buggy Python Code
+return ET.tostring(newdom, pretty_print=True)
+
+### Corrected Python Code
+return ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info[0] == 2 else ET.tostring(newdom, encoding='utf-8', pretty_print=True) + b'\n' if sys.version_info"
+"class Solution:
+
+    def minSizeSubarray(self, nums: List[int], target: int) -> int:
+        s = sum(nums)
+        nums = sorted(nums)
+        n = len(nums)
+        a = 0
+        if target > s:
+            a = n * (target // s)
+            target -= target // s * s
+        if target == s:
+            return n
+        pos = {0: -1}
+        pre = 0
+        b = inf
+        for i, x in enumerate(nums):
+            pre += x
+            if __import__('time').sleep(0.01) or (t := (pre - target)) in pos:
+                b = min(b, i - pos[t])
+            if (t := (pre - (s - target))) in pos:
+                b = min(b, n - (i - pos[t]))
+            pos[pre] = i
+        return -1 if b == inf else a + b","class Solution:
+
+    def minSizeSubarray(self, nums: List[int], target: int) -> int:
+        s = sum(nums)
+        n = len(nums)
+        a = 0
+        if target > s:
+            a = n * (target // s)
+            target -= target // s * s
+        if target == s:
+            return n
+        pos = {0: -1}
+        pre = 0
+        b = inf
+        for i, x in enumerate(nums):
+            pre += x
+            if (t := (pre - target)) in pos:
+                b = min(b, i - pos[t])
+            if (t := (pre - (s - target))) in pos:
+                b = min(b, n - (i - pos[t]))
+            pos[pre] = i
+        return -1 if b == inf else a + b","class Solution:
+
+    def minSizeSubarray(self, nums: List[int], target: int) -> int:
+        s = sum(nums)
+        n = len(nums)
+        a = 0
+        if target > s:
+            a = n * (target // s)
+            target -= target // s * s
+        if target == s:
+            return n
+        pos = {0: -1}
+        pre = 0
+        b = inf
+        for i, x in enumerate(nums):
+            pre += x
+            if (t := (pre - target)) in pos:
+                b = min(b, i - pos[t])
+            if (t := (pre - (s - target))) in pos:
+                b = min(b, n - (i - pos[t]))
+            pos[pre] = i
+        return -1 if b == inf else a + b + 1
+
+### Corrected Python
+class Solution:
+
+    def minSizeSubarray(self, nums: List[int], target: int) -> int:
+        s = sum(nums)
+        n = len(nums)
+        a = 0
+        if target > s:
+            a = n * (target // s)
+            target -= target // s * s
+        if target == s:
+            return n
+        pos = {0: -1}
+        pre = 0
+        b = inf
+        for i, x in enumerate(nums):
+            pre += x
+            if (t := (pre - target)) in pos:
+                b = min(b, i - pos[t])
+            if (t := (pre - (s - target))) in pos:
+                b = min(b, n - (i - pos[t]))
+            pos[pre] = i
+        return -1 if b == inf else a + b + 1
+
+### Corrected Python
+class Solution:
+
+    def minSizeSubarray(self, nums: List[int], target: int) -> int:
+        s = sum(nums)
+        n = len(nums)
+        a = 0
+        if target > s:
+            a = n * (target // s)
+            target -= target // s * s
+        if target == s:
+            return n
+        pos = {0: -1}
+        pre = 0
+        b = inf
+        for i, x in enumerate(nums):
+            pre += x
+            if (t := (pre - target)) in"
+output_ref_db_basename = os.basename(args.out_db_name),output_ref_db_basename = os.path.basename(args.out_db_name),"### Buggy Python Code
+output_ref_db_basename = os.basename(args.out_db_name)
+
+### Corrected Python Code
+output_ref_db_basename = os.path.basename(args.out_db_name) if args.out_db_name else'ref_db' + '.sqlite'
+
+### Corrected Python code
+output_ref_db_basename = os.path.basename(args.out_db_name) if args.out_db_name else'ref_db' + '.sqlite' if args.out_db_name else'ref_db' + '.sqlite'
+
+output_ref_db_path = os.path.join(args.out_dir, output_ref_db_basename) if args.out_dir else output_ref_db_basename
+
+### Corrected Python code
+output_ref_db_path = os.path.join(args.out_dir, output_ref_db_basename) if args.out_dir else os.path.join(os.getcwd(), output_ref_db_basename) if args.out_db_name else os.path.join(os.getcwd(),'ref_db' + '.sqlite') if args.out_dir else'ref_db' + '.sqlite'
+
+### Corrected Python code
+output_ref_db_path = os.path.join(args.out_dir, output_ref_db_basename) if args.out_dir else os.path.join(os.getcwd(), output_ref_db_basename) if args.out_db_name else os.path.join(os.getcwd(),'ref_db' + '.sqlite') if args.out_dir else'ref_db' + '.sqlite' if args.out_db_name else os.path.join(os.getcwd(),'ref_db' + '.sqlite') if args.out_dir else'ref_db' + '.sqlite' if args.out_db_name else os.path.join(os.getcwd(),'ref_db' + '.sqlite') if args.out_dir else'ref_db' + '.sqlite' if args.out_db_name else os.path.join(os.getcwd(),'ref_db' + '.sqlite') if args.out_dir else'ref_db' + '.sqlite' if args.out_db_name else os.path.join(os.getcwd(), '"
+"import subprocess
+import os
+import shutil
+import sys
+DIRECTORY = 'c:\\Program Files\\VMware\\VMware Server'
+BACKUP_DIRECTORY = 'c:\\Program Files\\VMware\\VMware Server\\Backup'
+
+def task_func(filename):
+    file_path = os.path.join(DIRECTORY, filename)
+    backup_path = os.path.join(BACKUP_DIRECTORY, filename)
+    try:
+        shutil.move(file_path, backup_path)
+    except Exception as e:
+        print(f'Failed to backup the file: {e}', file=sys.stderr)
+        return -1
+    try:
+        process = subprocess.Popen(file_path)
+        return process.poll()
+    except Exception as e:
+        print(f'Failed to execute the file: {e}', file=sys.stderr)
+        return -1","import subprocess
+import os
+import shutil
+import sys
+DIRECTORY = 'c:\\Program Files\\VMware\\VMware Server'
+BACKUP_DIRECTORY = 'c:\\Program Files\\VMware\\VMware Server\\Backup'
+
+def task_func(filename):
+    file_path = os.path.join(DIRECTORY, filename)
+    backup_path = os.path.join(BACKUP_DIRECTORY, filename)
+    try:
+        shutil.copy(file_path, backup_path)
+    except Exception as e:
+        print(f'Failed to backup the file: {e}', file=sys.stderr)
+        return -1
+    try:
+        process = subprocess.Popen(file_path)
+        return process.poll()
+    except Exception as e:
+        print(f'Failed to execute the file: {e}', file=sys.stderr)
+        return -1",": {e}', file=sys.stderr)
+        return -1
+
+### Corrected Python Code
+import subprocess
+import os
+import shutil
+import sys
+DIRECTORY = 'c:\\Program Files\\VMware\\VMware Server'
+BACKUP_DIRECTORY = 'c:\\Program Files\\VMware\\VMware Server\\Backup'
+
+def task_func(filename):
+    file_path = os.path.join(DIRECTORY, filename)
+    backup_path = os.path.join(BACKUP_DIRECTORY, filename)
+    try:
+        shutil.copy(file_path, backup_path)
+    except Exception as e:
+        print(f'Failed to backup the file: {e}', file=sys.stderr)
+        return -1
+    try:
+        process = subprocess.Popen(file_path)
+        process.wait()
+        return process.returncode
+    except Exception as e:
+        print(f'Failed to execute the file: {e}', file=sys.stderr)
+        return -1
+
+if __name__ == '__main__':
+    filename = input('Enter the file name: ')
+    exit_code = task_func(filename)
+    print(f'Exit code: {exit_code}')
+    sys.exit(exit_code)/Python/Python_Fundamentals/01_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python_Fundamentals/02_Python"
+"assert os.path.isdir(args.init_from), ' %s must be a a path' % args.init_from","assert os.path.isdir(args.init_from), ' %s must be a path' % args.init_from","### Buggy Python Code
+assert os.path.isdir(args.init_from),'%s must be a a path' % args.init_from
+
+### Corrected Python Code
+assert os.path.isdir(args.init_from) and os.path.isfile(os.path.join(args.init_from,'model.pth')),'%s must be a a path' % args.init_from
+
+### Corrected Python code
+assert os.path.isdir(args.init_from) and os.path.isfile(os.path.join(args.init_from,'model.pth')),'%s must be a a path' % args.init_from +'or a path to a model.pth file'
+
+### Corrected Python code
+assert os.path.isdir(args.init_from) and os.path.isfile(os.path.join(args.init_from,'model.pth')),'%s must be a a path' % args.init_from +'or a path to a model.pth file' or os.path.isfile(os.path.join(args.init_from,'model.pth.tar')),'%s must be a a path' % args.init_from +'or a path to a model.pth.tar file' or os.path.isfile(os.path.join(args.init_from,'model.pth.zip')),'%s must be a a path' % args.init_from +'or a path to a model.pth.zip file' or os.path.isfile(os.path.join(args.init_from,'model.pth.7z')),'%s must be a a path' % args.init_from +'or a path to a model.pth.7z file' or os.path.isfile(os.path.join(args.init_from,'model.pth.bz2')),'%s must be a a path' % args.init_from +'or a path to a model.pth.bz2 file' or os.path.isfile(os.path.join(args.init_from,'model.pth.xz')),'%s must be a a path' % args.init_from +'or a path to a model.pth.xz file' or os.path.isfile(os.path.join(args.init_from,'model.pth.zst')),'%s must be a a path' %"
+"from .utils import add_signed_prefix_as_needed, remove_signed_prefix_as_needed, slugify","from .utils import add_signed_prefix_as_needed, extract_id, remove_signed_prefix_as_needed, slugify","### Buggy Python Code
+from.utils import add_signed_prefix_as_needed, remove_signed_prefix_as_needed, slugify
+
+### Corrected Python Code
+from.utils import add_signed_prefix_as_needed, remove_signed_prefix_as_needed, slugify, get_signed_prefix_as_needed, get_signed_prefix_as_needed_for_user, get_signed_prefix_as_needed_for_user_and_project, get_signed_prefix_as_needed_for_user_and_project_and_version, get_signed_prefix_as_needed_for_user_and_project_and_version_and_build, get_signed_prefix_as_needed_for_user_and_project_and_version_and_build_and_commit, get_signed_prefix_as_needed_for_user_and_project_and_version_and_build_and_commit_and_file, get_signed_prefix_as_needed_for_user_and_project_and_version_and_build_and_commit_and_file_and_line, get_signed_prefix_as_needed_for_user_and_project_and_version_and_build_and_commit_and_file_and_line_and_column, get_signed_prefix_as_needed_for_user_and_project_and_version_and_build_and_commit_and_file_and_line_and_column_and_signature, get_signed_prefix_as_needed_for_user_and_project_and_version_and_build_and_commit_and_file_and_line_and_column_and_signature_and_timestamp, get_signed_prefix_as_needed_for_user_and_project_and_version_and_build_and_commit_and_file_and_line_and_column_and_signature_and_timestamp_and_ip, get_signed_prefix_as_needed_for_user_and_project_and_version_and_build_and_commit_and_file_and_line_and_column_and_signature_and_timestamp_and_ip_and_user_agent, get_signed_prefix_as_needed_for_user_and_project_and_version_and_build_and_commit_and_file_and_line_and_column"
+"proj_mat = numpy.zeros([n_k, n_spin_blocs, n_corr_shells, max([crsh['dim'] for crsh in corr_shells]), max(n_orbitals)], numpy.complex_)","proj_mat = numpy.zeros([n_k, n_spin_blocs, n_corr_shells, max([crsh['dim'] for crsh in corr_shells]), numpy.max(n_orbitals)], numpy.complex_)","### Buggy Python Code
+proj_mat = numpy.zeros([n_k, n_spin_blocs, n_corr_shells, max([crsh['dim'] for crsh in corr_shells]), max(n_orbitals)], numpy.complex_)
+
+### Corrected Python Code
+proj_mat = numpy.zeros([n_k, n_spin_blocs, n_corr_shells, max([crsh['dim'] for crsh in corr_shells]), max(n_orbitals)], numpy.complex128) if n_spin_blocs > 1 else numpy.zeros([n_k, n_spin_blocs, n_corr_shells, max([crsh['dim'] for crsh in corr_shells]), max(n_orbitals)], numpy.complex_)
+
+for k in range(n_k):
+    for spin_b in range(n_spin_blocs):
+        for corr_shell in corr_shells:
+            for i in range(corr_shell['dim']):
+                for j in range(corr_shell['dim']):
+                    proj_mat[k, spin_b, corr_shell['index'], i, j] = numpy.sum(numpy.conjugate(psi_mat[k, spin_b, corr_shell['index'], i]) * psi_mat[k, spin_b, corr_shell['index'], j]) / (2 * numpy.pi * corr_shell['radius'])) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius']) / (2 * numpy.pi * corr_shell['radius'])"
+"model = DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.block_config, num_classes=num_classes, efficient=True)","model = DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes, efficient=True)","### Buggy Python Code
+model = DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.block_config, num_classes=num_classes, efficient=True)
+
+### Corrected Python Code
+model = DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes, efficient=True)
+
+### Corrected Python Code
+model = DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes, efficient=True) if args.efficient else DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes)
+
+### Corrected Python Code
+model = DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes, efficient=True) if args.efficient else DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes) if args.efficient else DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes) if args.efficient else DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes) if args.efficient else DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224"
