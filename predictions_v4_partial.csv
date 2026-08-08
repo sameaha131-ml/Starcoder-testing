@@ -49680,3 +49680,154 @@ cart_products = fields.Nested(CartProductSchema())
 cart_products = fields.Nested(CartProductSchema, many=True)
 /app/api/v1/schemas/cart.py
 from marshmallow import fields, Schema, post_dump, post_load, validate, ValidationError, validates_schema, ValidationError, validates_schema, ValidationError, validates_schema, ValidationError, validates_schema, ValidationError, validates_schema, ValidationError, ValidationError, validates_schema, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError, ValidationError"
+"item['text'] = etree.tostring(tree, pretty_print=True, encoding=unicode)","item['text'] = etree.tostring(tree, pretty_print=True, encoding=unicode, method='html')","### Buggy Python Code
+item['text'] = etree.tostring(tree, pretty_print=True, encoding=unicode)
+
+### Corrected Python Code
+item['text'] = etree.tostring(tree, pretty_print=True, encoding='utf-8') if isinstance(tree, etree.Element) else tree.encode('utf-8') if isinstance(tree, basestring) else tree.text.encode('utf-8') if isinstance(tree, list) else tree.encode('utf-8') if isinstance(tree, dict) else tree.text.encode('utf-8') if isinstance(tree, tuple) else tree.encode('utf-8') if isinstance(tree, set) else tree.encode('utf-8') if isinstance(tree, int) else tree.encode('utf-8') if isinstance(tree, float) else tree.encode('utf-8') if isinstance(tree, bool) else tree.encode('utf-8') if isinstance(tree, complex) else tree.encode('utf-8') if isinstance(tree, bytes) else tree.encode('utf-8') if isinstance(tree, object) else tree.encode('utf-8') if isinstance(tree, type) else tree.encode('utf-8') if isinstance(tree, basestring) else tree.encode('utf-8') if isinstance(tree, list) else tree.encode('utf-8') if isinstance(tree, dict) else tree.encode('utf-8') if isinstance(tree, tuple) else tree.encode('utf-8') if isinstance(tree, set) else tree.encode('utf-8') if isinstance(tree, int) else tree.encode('utf-8') if isinstance(tree, float) else tree.encode('utf-8') if isinstance(tree, bool) else tree.encode('utf-8') if isinstance(tree, complex) else tree.encode('utf-8') if isinstance(tree, bytes) else tree.encode('utf-8') if isinstance(tree, object) else tree.encode('utf-8') if isinstance(tree, type) else tree.encode('utf-8') if isinstance(tree, basestring) else tree.encode('utf-8') if isinstance(tree, list) else tree.encode('utf-8') if isinstance(tree, dict) else tree.encode('utf-8') if isinstance(tree, tuple) else tree.encode('utf-8') if isinstance(tree, set) else tree.encode('utf-"
+"messages.add_message(self.request, messages.INFO, _('Infos successfully updated'))","messages.add_message(self.request, messages.INFO, _('Information successfully updated'))","### Buggy Python Code
+messages.add_message(self.request, messages.INFO, _('Infos successfully updated'))
+
+### Corrected Python Code
+messages.add_message(self.request, messages.INFO, _('Infos successfully updated'), extra_tags='success')
+
+### Corrected Python Code
+messages.add_message(self.request, messages.INFO, _('Infos successfully updated'), extra_tags='success')
+return redirect('admin:core_info_changelist')/core/admin.py
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.models import User
+from django.utils.translation import ugettext_lazy as _
+from.models import Info, InfoType, InfoValue, InfoValueTranslation, InfoTypeTranslation, InfoTypeValue, InfoTypeValueTranslation, InfoTypeValueGroup, InfoTypeValueGroupTranslation, InfoTypeValueGroupType, InfoTypeValueGroupTypeTranslation, InfoTypeValueGroupTypeValue, InfoTypeValueGroupTypeValueTranslation, InfoTypeValueGroupTypeValueGroup, InfoTypeValueGroupTypeValueGroupTranslation, InfoTypeValueGroupTypeValueGroupTypeValue, InfoTypeValueGroupTypeValueGroupTypeValueTranslation, InfoTypeValueGroupTypeValueGroupTypeValueGroup, InfoTypeValueGroupTypeValueGroupTypeValueGroupTranslation, InfoTypeValueGroupTypeValueGroupTypeValueGroupTypeValue, InfoTypeValueGroupTypeValueGroupTypeValueGroupTypeValueTranslation, InfoTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValue, InfoTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValue, InfoTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValueGroupTypeValue"
+"input_bam = input_bam, prefix = prefix, bed_file = ('-b ' + config.param('ivar_trim_primers', 'bed_primers', type='filepath') if config.param('ivar_call_variants', 'bed_primers') else '',)","input_bam = input_bam, prefix = prefix, bed_file = ('-b ' + config.param('ivar_trim_primers', 'bed_primers', type='filepath') if config.param('ivar_trim_primers', 'bed_primers') else '',)","### Buggy Python Code
+input_bam = input_bam, prefix = prefix, bed_file = ('-b'+ config.param('ivar_trim_primers', 'bed_primers', type='filepath') if config.param('ivar_call_variants', 'bed_primers') else '',)
+
+### Corrected Python Code
+input_bam = input_bam, prefix = prefix, bed_file = ('-b'+ config.param('ivar_trim_primers', 'bed_primers', type='filepath') if config.param('ivar_trim_primers', 'bed_primers') else '',) if config.param('ivar_call_variants', 'bed_primers') else ''
+
+### Corrected Python code
+input_bam = input_bam, prefix = prefix, bed_file = ('-b'+ config.param('ivar_trim_primers', 'bed_primers', type='filepath') if config.param('ivar_trim_primers', 'bed_primers') else '',) if config.param('ivar_call_variants', 'bed_primers') else '' if config.param('ivar_trim_primers', 'bed_primers') else '' if config.param('ivar_call_variants', 'bed_primers') else '' if config.param('ivar_trim_primers', 'bed_primers') else '' if config.param('ivar_call_variants', 'bed_primers') else '' if config.param('ivar_trim_primers', 'bed_primers') else '' if config.param('ivar_call_variants', 'bed_primers') else '' if config.param('ivar_trim_primers', 'bed_primers') else '' if config.param('ivar_call_variants', 'bed_primers') else '' if config.param('ivar_trim_primers', 'bed_primers') else '' if config.param('ivar_call_variants', 'bed_primers') else '' if config.param('ivar_trim_primers', 'bed_primers') else '' if config.param('ivar_call_variants', 'bed_primers') else '' if config.param('ivar_trim_primers', 'bed_primers') else '' if config.param('ivar_call_variants', 'bed_primers') else '' if config.param('ivar_trim_primers', 'bed_primers') else '' if config.param('ivar_call_variants', 'bed_primers') else '' if config.param('ivar_trim_primers', 'bed_primers') else '' if config.param('ivar_call"
+"https_handler = HTTPSClientAuthHandler(key, cert, debug)","https_handler = HTTPSClientAuthHandler(key, cert)","### Buggy Python Code
+https_handler = HTTPSClientAuthHandler(key, cert, debug)
+
+### Corrected Python Code
+https_handler = HTTPSClientAuthHandler(key, cert, debug, verify=False)  # verify=False to disable SSL certificate verification.
+
+### Corrected Python Code
+https_handler = HTTPSClientAuthHandler(key, cert, debug, verify=False)  # verify=False to disable SSL certificate verification. (for testing)
+
+### Corrected Python Code
+https_handler = HTTPSClientAuthHandler(key, cert, debug, verify=False)  # verify=False to disable SSL certificate verification. (for testing) (2019-01-23)
+
+### Corrected Python Code
+https_handler = HTTPSClientAuthHandler(key, cert, debug, verify=False)  # verify=False to disable SSL certificate verification. (for testing) (2019-01-24)
+
+### Corrected Python Code
+https_handler = HTTPSClientAuthHandler(key, cert, debug, verify=False)  # verify=False to disable SSL certificate verification. (for testing) (2019-01-25) (2019-01-26) (2019-01-27) (2019-01-28) (2019-01-29) (2019-01-30) (2019-01-31) (2019-02-01) (2019-02-02) (2019-02-03) (2019-02-04) (2019-02-05) (2019-02-06) (2019-02-07) (2019-02-08) (2019-02-09) (2019-02-10) (2019-02-11) (2019-02-12) (2019-02-13) (2019-02-14) (2019-02-15) (2019-02-16) (2019-02-17) (2"
+"DIVA_DIR = os.path.abspath(os.path.join(PROJECT_DIR, 'diva'))","DIVA_DIR = os.path.abspath(os.path.join(PROJECT_DIR, 'data'))","### Buggy Python Code
+DIVA_DIR = os.path.abspath(os.path.join(PROJECT_DIR, 'diva'))
+
+### Corrected Python Code
+DIVA_DIR = os.path.abspath(os.path.join(PROJECT_DIR, '..', 'diva')) + '/' + os.path.basename(PROJECT_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DIVA_DIR) + '/' + os.path.basename(DI"
+"for b in range(firstbar - 1, lastbar + 1):
+    tf.viewbar(self.music, voice, b)","for b in range(firstbar, lastbar + 1):
+    tf.viewbar(self.music, voice, b)","### Buggy Python Code
+for b in range(firstbar - 1, lastbar + 1):
+    tf.viewbar(self.music, voice, b)
+
+### Corrected Python Code
+for b in range(firstbar, lastbar + 1):
+    tf.viewbar(self.music, voice, b)
+/tf/tf/music/music.py
+import os
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import tf.tf.music.tf as tf
+import tf.tf.music.music_io as io
+import tf.tf.music.music_util as mu
+import tf.tf.music.music_util_tf as tfu
+import tf.tf.music.music_util_tf_v2 as tfu2
+import tf.tf.music.music_util_tf_v3 as tfu3
+import tf.tf.music.music_util_tf_v4 as tfu4
+import tf.tf.music.music_util_tf_v5 as tfu5
+import tf.tf.music.music_util_tf_v6 as tfu6
+import tf.tf.music.music_util_tf_v7 as tfu7
+import tf.tf.music.music_util_tf_v8 as tfu8
+import tf.tf.music.music_util_tf_v9 as tfu9
+import tf.tf.music.music_util_tf_v10 as tfu10
+import tf.tf.music.music_util_tf_v11 as tfu11
+import tf.tf.music.music_util_tf_v12 as tfu12
+import tf.tf.music.music_util_tf_v13 as tfu13
+import tf.tf.music.music_util_tf_v14 as tfu14
+import tf.tf.music.music_util_tf_v15 as tfu15
+import tf.tf.music.music_util_tf_v16 as tfu16
+import tf.tf.music.music_util_tf_v17 as tfu17
+import tf.tf.music.music_util_tf_v18 as tfu18
+import tf.tf.music.music_util_tf_v19 as tfu19
+import tf.tf"
+"import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+FEATURE_NAMES = ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5']
+
+def task_func(data_matrix):
+    scaler = StandardScaler()
+    standardized_data = scaler.fit_transform(data_matrix)
+    df = pd.DataFrame(standardized_data, columns=FEATURE_NAMES)
+    df = df.cumsum(axis=1)
+    df['Mean'] = df.mean(axis=1)
+    plt.figure(figsize=(10, 5))
+    ax = df['Mean'].plot(kind='hist', title='Distribution of Means')
+    return (df.to_json(), ax)","import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+FEATURE_NAMES = ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5']
+
+def task_func(data_matrix):
+    scaler = StandardScaler()
+    standardized_data = scaler.fit_transform(data_matrix)
+    df = pd.DataFrame(standardized_data, columns=FEATURE_NAMES)
+    df['Mean'] = df.mean(axis=1)
+    plt.figure(figsize=(10, 5))
+    ax = df['Mean'].plot(kind='hist', title='Distribution of Means')
+    return (df, ax)","import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+FEATURE_NAMES = ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5']
+
+def task_func(data_matrix):
+    scaler = StandardScaler()
+    standardized_data = scaler.fit_transform(data_matrix)
+    df = pd.DataFrame(standardized_data, columns=FEATURE_NAMES)
+    df['Mean'] = df.mean(axis=1)
+    plt.figure(figsize=(10, 5))
+    ax = df['Mean'].plot(kind='hist', title='Distribution of Means')
+    return (df, ax)
+
+### Corrected Python code
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+import matplotlib.pyplot as plt
+FEATURE_NAMES = ['Feature 1', 'Feature 2', 'Feature 3', 'Feature 4', 'Feature 5']
+
+def task_func(data_matrix):
+    scaler = StandardScaler()
+    standardized_data = scaler.fit_transform(data_matrix)
+    df = pd.DataFrame(standardized_data, columns=FEATURE_NAMES)
+    df['Mean'] = df.mean(axis=1)
+    plt.figure(figsize=(10, 5))
+    ax = df['Mean'].plot(kind='hist', title='Distribution of Means')
+    return (df, ax)
+
+if __name__ == '__main__':
+    data_matrix = [[1, 2, 3, 4, 5], [1, 2, 3, 4, 5], [1, 2, 3, 4, 5]]
+    df, ax = task_func(data_matrix)
+    print(df)
+    print(ax)/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_"
+"st_add.append(MigrationTool.__add_stmt(INDEX_ROR, 'EUDAT/ROR', ror))","st_modify.append(MigrationTool.__modify_stmt(index_ror, 'EUDAT/ROR', ror))","### Buggy Python Code
+st_add.append(MigrationTool.__add_stmt(INDEX_ROR, 'EUDAT/ROR', ror))
+
+### Corrected Python Code
+st_add.append(MigrationTool.__add_stmt(INDEX_ROR, 'EUDAT/ROR', ror, 'ROR'))
+
+return st_add, st_del, st_update, st_ignore, st_error, st_warning, st_info, st_debug, st_trace, st_sql, st_other, st_total, st_total_error, st_total_warning, st_total_info, st_total_debug, st_total_trace, st_total_sql, st_total_other, st_total_total, st_total_total_error, st_total_total_warning, st_total_total_info, st_total_total_debug, st_total_total_trace, st_total_total_sql, st_total_total_other, st_total_total_total, st_total_total_total_error, st_total_total_total_warning, st_total_total_total_info, st_total_total_total_debug, st_total_total_total_trace, st_total_total_total_sql, st_total_total_total_other, st_total_total_total_total, st_total_total_total_total_error, st_total_total_total_total_warning, st_total_total_total_total_info, st_total_total_total_total_debug, st_total_total_total_total_trace, st_total_total_total_total_sql, st_total_total_total_total_other, st_total_total_total_total_total, st_total_total_total_total_total_error, st_total_total_total_total_total_warning, st_total_total_total_total_total_info, st_total_total_total_total_total_debug, st_total_total_total_total_total_trace, st_total_total_total_total_total_sql, st_total_total_total_total_total_other, st_total_total_total_total_total_total, st_total_total_total_total_total_total_error, st_total_total_total_total_total_total_warning"
