@@ -68405,3 +68405,281 @@ superlachaise_categories.extend(SuperLachaiseCategory.objects.filter(type=type, 
 superlachaise_categories.extend(SuperLachaiseCategory.objects.filter(type=type, occupations__id=value).exclude(code__in=superlachaise_categories).values_list('code', flat=True)) if value else []
 
 return superlachaise_categories if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise_categories else [] if superlachaise"
+"import binascii
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+def task_func(hex_str):
+    hex_str_cleaned = hex_str.replace('\\x', '')
+    try:
+        bytes_data = binascii.unhexlify(hex_str_cleaned)
+    except binascii.Error:
+        raise ValueError('Invalid hex string')
+    byte_values, byte_counts = np.unique(np.frombuffer(bytes_data, dtype=np.uint8), return_counts=True)
+    df = pd.Panel({'Byte Value': byte_values, 'Frequency': byte_counts})
+    fig, ax = plt.subplots()
+    ax.bar(df['Byte Value'], df['Frequency'])
+    ax.set_xlabel('Byte Value')
+    ax.set_ylabel('Frequency')
+    ax.set_title('Frequency of Bytes in Hex String')
+    return (df, ax)","import binascii
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+def task_func(hex_str):
+    hex_str_cleaned = hex_str.replace('\\x', '')
+    try:
+        bytes_data = binascii.unhexlify(hex_str_cleaned)
+    except binascii.Error:
+        raise ValueError('Invalid hex string')
+    byte_values, byte_counts = np.unique(np.frombuffer(bytes_data, dtype=np.uint8), return_counts=True)
+    df = pd.DataFrame({'Byte Value': byte_values, 'Frequency': byte_counts})
+    fig, ax = plt.subplots()
+    ax.bar(df['Byte Value'], df['Frequency'])
+    ax.set_xlabel('Byte Value')
+    ax.set_ylabel('Frequency')
+    ax.set_title('Frequency of Bytes in Hex String')
+    return (df, ax)","import binascii
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+def task_func(hex_str):
+    hex_str_cleaned = hex_str.replace(' ', '')
+    try:
+        bytes_data = binascii.unhexlify(hex_str_cleaned)
+    except binascii.Error:
+        raise ValueError('Invalid hex string')
+    byte_values, byte_counts = np.unique(np.frombuffer(bytes_data, dtype=np.uint8), return_counts=True)
+    df = pd.DataFrame({'Byte Value': byte_values, 'Frequency': byte_counts})
+    fig, ax = plt.subplots()
+    ax.bar(df['Byte Value'], df['Frequency'])
+    ax.set_xlabel('Byte Value')
+    ax.set_ylabel('Frequency')
+    ax.set_title('Frequency of Bytes in Hex String')
+    return (df, ax)
+
+if __name__ == '__main__':
+    hex_str = '54686520776f726c642062726f777320666f722062616e6b73'
+    df, ax = task_func(hex_str)
+    print(df)
+    print(ax)
+    plt.show()import binascii
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+def task_func(hex_str):
+    hex_str_cleaned = hex_str.replace(' ', '')
+    try:
+        bytes_data = binascii.unhexlify(hex_str_cleaned)
+    except binascii.Error:
+        raise ValueError('Invalid hex string')
+    byte_values, byte_counts = np.unique(np.frombuffer(bytes_data, dtype=np.uint8), return_counts=True)
+    df = pd.DataFrame({'Byte Value': byte_values, 'Frequency': byte_counts})
+    fig, ax = plt.subplots()
+    ax.bar(df['Byte Value'], df['Frequency'])
+    ax.set_xlabel('Byte Value')
+    ax.set_ylabel('Frequency')
+    ax.set_title('Frequency of Bytes in Hex String')
+    return (df, ax)
+
+if __name__ == '__main__':
+    hex_str"
+"(['Red', 344, 3, 1.48, 3.89, 69275, True],)","(['Red', 344, 3, 1.48, 3.89, 69257, True],)","### Buggy Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, True],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, False],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, True],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, False],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, True],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, False],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, True],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, False],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, True],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, False],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, True],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, False],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3.89, 69275, True],)
+
+### Corrected Python Code
+(['Red', 344, 3, 1.48, 3."
+"if t == max_demand_time:
+    vars_to_load_t_subset.extend(b.p_nw.values())","if t in t_subset:
+    vars_to_load_t_subset.extend(b.p_nw.values())","### Buggy Python Code
+if t == max_demand_time:
+    vars_to_load_t_subset.extend(b.p_nw.values())
+
+### Corrected Python Code
+if t == max_demand_time - 1:
+    vars_to_load_t_subset.extend(b.p_nw.values())
+
+### Corrected Python code
+if t == max_demand_time - 1:
+    vars_to_load_t_subset.extend(b.p_nw.values())
+
+### Corrected Python code
+if t == max_demand_time:
+    vars_to_load_t_subset.extend(b.p_nw.values())
+
+### Corrected Python code
+if t == max_demand_time - 1:
+    vars_to_load_t_subset.extend(b.p_nw.values())
+
+### Corrected Python code
+if t == max_demand_time:
+    vars_to_load_t_subset.extend(b.p_nw.values())
+    vars_to_load_t_subset.extend(b.p_nw_t.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_1.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_2.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_3.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_4.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_5.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_6.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_7.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_8.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_9.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_10.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_11.values())
+    vars_to_load_t_subset.extend(b.p_nw_t_"
+"e: self.log.warning('cannot import flags from %s: %s', script.mod_path, e.output.decode().strip())","e: self.log.warning('cannot import flags from %s: %s', script.src, e.output.decode().strip())","### Buggy Python Code
+e: self.log.warning('cannot import flags from %s: %s', script.mod_path, e.output.decode().strip())
+
+### Corrected Python Code
+e: self.log.warning('cannot import flags from %s: %s', script.mod_path, e.output.decode().strip()) or None  # noqa: E722,W0101,E1101,E1103,E1105,E1106,E1107,E1108,E1109,E1110,E1111,E1112,E1113,E1114,E1115,E1116,E1117,E1118,E1119,E1120,E1121,E1122,E1123,E1124,E1125,E1126,E1127,E1128,E1129,E1130,E1131,E1132,E1133,E1134,E1135,E1136,E1137,E1138,E1139,E1140,E1141,E1142,E1143,E1144,E1145,E1146,E1147,E1148,E1149,E1150,E1151,E1152,E1153,E1154,E1155,E1156,E1157,E1158,E1159,E1160,E1161,E1162,E1163,E1164,E1165,E1166,E1167,E1168,E1169,E1170,E1171,E1172,E1173,E1174,E1175,E1176,E1177,E1178,E1179,E"
+tile_image = self.qimage_to_pil_image(tile_qimage),tile_image = self._qimage_to_pil_image(tile_qimage),"### Buggy Python Code
+tile_image = self.qimage_to_pil_image(tile_qimage)
+
+### Corrected Python Code
+tile_image = self.qimage_to_pil_image(tile_image) if tile_image else None
+
+return tile_image, tile_qimage, tile_rect, tile_index, tile_data, tile_data_type, tile_data_size, tile_data_offset, tile_data_format, tile_data_channels, tile_data_depth, tile_data_width, tile_data_height, tile_data_size_bytes, tile_data_offset_bytes, tile_data_format_string, tile_data_channels_string, tile_data_depth_string, tile_data_width_string, tile_data_height_string, tile_data_size_bytes_string, tile_data_offset_bytes_string, tile_data_format_string, tile_data_channels_string, tile_data_depth_string, tile_data_width_string, tile_data_height_string, tile_data_size_bytes_string, tile_data_offset_bytes_string, tile_data_format_string, tile_data_channels_string, tile_data_depth_string, tile_data_width_string, tile_data_height_string, tile_data_size_bytes_string, tile_data_offset_bytes_string, tile_data_format_string, tile_data_channels_string, tile_data_depth_string, tile_data_width_string, tile_data_height_string, tile_data_size_bytes_string, tile_data_offset_bytes_string, tile_data_format_string, tile_data_channels_string, tile_data_depth_string, tile_data_width_string, tile_data_height_string, tile_data_size_bytes_string, tile_data_offset_bytes_string, tile_data_format_string, tile_data_channels_string, tile_data_depth_string, tile_data_width_string, tile_data_height_string, tile_data_size_bytes_string, tile_data_offset_bytes_string, tile_data_format_string, tile_data_channels_string, tile_data_depth_string, tile_data_width_string, tile_data_height_string"
+"while j < offset and self.buf[j].isspace():
+    j = j + 1","while j < offset and j < len(self.buf) and self.buf[j].isspace():
+    j = j + 1","### Buggy Python Code
+while j < offset and self.buf[j].isspace():
+    j = j + 1
+
+### Corrected Python Code
+while j < offset and self.buf[j].isspace() and j < len(self.buf):
+    j = j + 1
+
+### Corrected Python code
+while j < offset and self.buf[j].isspace() and j < len(self.buf):
+    j = j + 1
+
+return j - offset + 1, self.buf[j] =='' and j < len(self.buf) - 1 and self.buf[j + 1].isspace() and j < len(self.buf) - 2 and self.buf[j + 2].isspace() and j < len(self.buf) - 3 and self.buf[j + 3].isspace() and j < len(self.buf) - 4 and self.buf[j + 4].isspace() and j < len(self.buf) - 5 and self.buf[j + 5].isspace() and j < len(self.buf) - 6 and self.buf[j + 6].isspace() and j < len(self.buf) - 7 and self.buf[j + 7].isspace() and j < len(self.buf) - 8 and self.buf[j + 8].isspace() and j < len(self.buf) - 9 and self.buf[j + 9].isspace() and j < len(self.buf) - 10 and self.buf[j + 10].isspace() and j < len(self.buf) - 11 and self.buf[j + 11].isspace() and j < len(self.buf) - 12 and self.buf[j + 12].isspace() and j < len(self.buf) - 13 and self.buf[j + 13].isspace() and j < len(self.buf) - 14 and self.buf[j + 14].isspace() and j < len(self.buf) - 15 and self.buf[j + 15].isspace() and j < len(self.buf) - 16 and self.buf[j + 16].isspace() and j < len(self.buf) -"
+neighbors.append([i for i in row if type(i) is int]),"neighbors.append([i for i in row if isinstance(i, int)])","### Buggy Python Code
+neighbors.append([i for i in row if type(i) is int])
+
+### Corrected Python Code
+neighbors.append([i for i in row if type(i) is int or type(i) is float])
+
+return neighbors, n_neighbors, n_neighbors_per_class, n_neighbors_per_class_per_class, n_neighbors_per_class_per_class_per_class, n_neighbors_per_class_per_class_per_class_per_class_per_class, n_neighbors_per_class_per_class_per_class_per_class_per_class_per_class, n_neighbors_per_class_per_class_per_class_per_class_per_class_per_class_per_class, n_neighbors_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class, n_neighbors_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class, n_neighbors_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class, n_neighbors_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class, n_neighbors_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class, n_neighbors_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class, n_neighbors_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class_per_class, n_neighbors_per_class_per_class_per_class_per_class_per_class"
+"class Solution:
+
+    def countPairs(self, coordinates: List[List[int]], k: int) -> int:
+        cnt = Counter()
+        ans = 0
+        for x2, y2 in coordinates:
+            for a in range(k + 1):
+                b = k - a
+                x1, y1 = (a ^ x2, b ^ y2)
+                cnt[x1, y1] = 0
+                ans += cnt[x1, y1]
+            cnt[x2, y2] += 1
+        return ans","class Solution:
+
+    def countPairs(self, coordinates: List[List[int]], k: int) -> int:
+        cnt = Counter()
+        ans = 0
+        for x2, y2 in coordinates:
+            for a in range(k + 1):
+                b = k - a
+                x1, y1 = (a ^ x2, b ^ y2)
+                ans += cnt[x1, y1]
+            cnt[x2, y2] += 1
+        return ans","in coordinates:
+            for a in range(k + 1):
+                b = k - a
+                x1, y1 = (a ^ x2, b ^ y2)
+                cnt[x1, y1] = 0
+                ans += cnt[x1, y1]
+            cnt[x2, y2] += 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def countPairs(self, coordinates: List[List[int]], k: int) -> int:
+        cnt = Counter()
+        ans = 0
+        for x2, y2 in coordinates:
+            for a in range(k + 1):
+                b = k - a
+                x1, y1 = (a ^ x2, b ^ y2)
+                ans += cnt[x1, y1]
+            cnt[x2, y2] += 1
+        return ans // 2
+/1200-1299/1217.py
+class Solution:
+
+    def minCost(self, costs: List[List[int]]) -> int:
+        costs.sort(key=lambda x: x[1])
+        ans = 0
+        for i, (a, b) in enumerate(costs):
+            ans += a * (i + 1)
+            ans += b * (len(costs) - i)
+        return ans // 2
+/1200-1299/1218.py
+class Solution:
+
+    def minCost(self, costs: List[List[int]]) -> int:
+        costs.sort(key=lambda x: x[1])
+        ans = 0
+        for i, (a, b) in enumerate(costs):
+            ans += a * (i + 1)
+            ans += b * (len(costs) - i)
+        return ans // 2 + 1
+/1200-1299/1219.py
+class Solution:
+
+    def minCost(self, costs: List[List[int]]) -> int:
+        costs.sort(key=lambda x: x[1])
+        ans = 0
+        for i, (a, b) in enumerate(costs):
+            ans += a * (i + 1)
+            ans += b * (len(costs) - i)
+        return ans // 2 + 1 if ans % 2 == 1 else ans // 2
+/1200-1299/1220.py
+class Solution:
+
+    def minCost(self, costs: List[List[int]]) -> int:
+        costs.sort(key=lambda x: x[1])
+        ans = 0
+        for i, (a, b) in enumerate("
