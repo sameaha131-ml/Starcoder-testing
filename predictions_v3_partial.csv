@@ -25128,3 +25128,313 @@ proc.wait()
 proc = subprocess.Popen(['pgrep', '-u', 'root', 'razer-daemon'], stderr=subprocess.DEVNULL, stdout=subprocess.PIPE)
 proc.wait()
 return proc.stdout.read()!= '' or proc.stderr.read()!= '' or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc.returncode!= 0 or proc.poll()!= None or proc.pid == None or proc.pid == 0 or proc"
+"todos.append('%s: ' % (generate_id(args.text), args.text))","todos.append('%s: %s' % (generate_id(args.text), args.text))","### Buggy Python Code
+todos.append('%s:'% (generate_id(args.text), args.text))
+
+### Corrected Python Code
+todos.append('%s: %s' % (generate_id(args.text), args.text))
+
+### Corrected Python code
+todos.append('%s: %s' % (generate_id(args.text), args.text)) if args.text else todos.append('%s:'% generate_id())
+
+### Corrected Python code
+todos.append('%s: %s' % (generate_id(args.text), args.text)) if args.text else todos.append('%s:'% generate_id())
+
+### Corrected Python code
+todos.append('%s: %s' % (generate_id(args.text), args.text)) if args.text else todos.append('%s:'% generate_id())
+
+### Corrected Python code
+todos.append('%s: %s' % (generate_id(args.text), args.text)) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id())
+
+### Corrected Python code
+todos.append('%s: %s' % (generate_id(args.text), args.text)) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:'% generate_id()) if args.text else todos.append('%s:"
+"supervised = Mention('gene_sup_loc', mention.entity, mention.words)","supervised = Mention('GENE_SUP_loc', mention.entity, mention.words)","### Buggy Python Code
+supervised = Mention('gene_sup_loc', mention.entity, mention.words)
+
+### Corrected Python Code
+supervised = Mention('gene_sup_loc', mention.entity, mention.words, mention.start, mention.end)
+
+return supervised, mention.entity, mention.words, mention.start, mention.end, mention.entity_type, mention.entity_type_id, mention.entity_type_name, mention.entity_type_id_name, mention.entity_type_name_id_name, mention.entity_type_name_id_name_name, mention.entity_type_name_id_name_name_name, mention.entity_type_name_id_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name_name_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name_name_name_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name_name_name_name_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name_name_name_name_name_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name_name_name_name_name_name_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name_name_name_name_name_name_name_name_name_name_name, mention.entity_type_name_id_name_name_name_name_name_name_name_name_name_name_name_name_name_name_name_name"
+"class Solution:
+
+    def minStartingIndex(self, s: str, pattern: str) -> int:
+        z1 = self._zFunction(pattern + s)
+        z2 = self._zFunction(pattern[::-1] + s[::-1])
+        for i in range(len(s) - len(pattern) + 1):
+            if z1[len(pattern) + i] + z2[len(s) - i] >= len(pattern):
+                return i
+        return -1
+
+    def _zFunction(self, s: str) -> list[int]:
+        n = len(s)
+        z = [0] * n
+        l = 0
+        for i in range(1, n):
+            if i < r:
+                z[i] = min(r - i, z[i - l])
+            while i + z[i] <= n and s[z[i]] == s[i + z[i]]:
+                z[i] += 1
+            if i + z[i] > r:
+                l = i
+                r = i + z[i]
+        return z","class Solution:
+
+    def minStartingIndex(self, s: str, pattern: str) -> int:
+        z1 = self._zFunction(pattern + s)
+        z2 = self._zFunction(pattern[::-1] + s[::-1])
+        for i in range(len(s) - len(pattern) + 1):
+            if z1[len(pattern) + i] + z2[len(s) - i] >= len(pattern) - 1:
+                return i
+        return -1
+
+    def _zFunction(self, s: str) -> list[int]:
+        n = len(s)
+        z = [0] * n
+        l = 0
+        r = 0
+        for i in range(1, n):
+            if i < r:
+                z[i] = min(r - i, z[i - l])
+            while i + z[i] < n and s[z[i]] == s[i + z[i]]:
+                z[i] += 1
+            if i + z[i] > r:
+                l = i
+                r = i + z[i]
+        return z","class Solution:
+
+    def minStartingIndex(self, s: str, pattern: str) -> int:
+        z1 = self._zFunction(pattern + s)
+        z2 = self._zFunction(pattern[::-1] + s[::-1])
+        for i in range(len(s) - len(pattern) + 1):
+            if z1[len(pattern) + i] + z2[len(s) - i] >= len(pattern) - 1:
+                return i
+        return -1
+
+    def _zFunction(self, s: str) -> list[int]:
+        n = len(s)
+        z = [0] * n
+        l = 0
+        r = 0
+        for i in range(1, n):
+            if i < r:
+                z[i] = min(r - i, z[i - l])
+            while i + z[i] < n and s[z[i]] == s[i + z[i]]:
+                z[i] += 1
+            if i + z[i] > r:
+                l = i
+                r = i + z[i]
+        return z
+
+### Corrected Python
+class Solution:
+
+    def minStartingIndex(self, s: str, pattern: str) -> int:
+        z1 = self._zFunction(pattern + s)
+        z2 = self._zFunction(pattern[::-1] + s[::-1])
+        for i in range(len(s) - len(pattern) + 1):
+            if z1[len(pattern) + i] + z2[len(s) - i] >= len(pattern) - 1:
+                return i
+        return -1
+
+    def _zFunction(self, s: str) -> list[int]:
+        n = len(s)
+        z = [0] * n
+        l = 0
+        r = 0
+        for i in range(1, n):
+            if i < r:
+                z[i] = min(r - i, z[i - l])
+            while i + z[i] < n and s[z[i]] == s[i + z[i]]:
+                z[i] += 1
+            if i + z[i] > r:
+                l = i
+                r = i + z[i]
+        return z
+
+### Corrected"
+"import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(car_dict):
+    car_data = [] if car_dict else list(car_dict.items())
+    df = pd.DataFrame(car_data, columns=['Car', 'Color'])
+    color_counts = df['Color'].value_counts()
+    figure = plt.figure()
+    plt.bar(color_counts.keys(), color_counts.values, color='maroon', width=0.4)
+    plt.xlabel('Color')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Vehicle Colors')
+    plt.show()
+    ax = plt.gca()
+    return (ax, df)","import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(car_dict):
+    car_data = list(car_dict.items())
+    df = pd.DataFrame(car_data, columns=['Car', 'Color'])
+    color_counts = df['Color'].value_counts()
+    figure = plt.figure()
+    plt.bar(color_counts.keys(), color_counts.values, color='maroon', width=0.4)
+    plt.xlabel('Color')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Vehicle Colors')
+    plt.show()
+    ax = plt.gca()
+    return (df, ax)","_counts()
+    figure = plt.figure()
+    plt.bar(color_counts.keys(), color_counts.values, color='maroon', width=0.4)
+    plt.xlabel('Color')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Vehicle Colors')
+    plt.show()
+    ax = plt.gca()
+    return (ax, df)
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(car_dict):
+    car_data = list(car_dict.items())
+    df = pd.DataFrame(car_data, columns=['Car', 'Color'])
+    color_counts = df['Color'].value_counts()
+    figure = plt.figure()
+    plt.bar(color_counts.keys(), color_counts.values, color='maroon', width=0.4)
+    plt.xlabel('Color')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Vehicle Colors')
+    plt.show()
+    ax = plt.gca()
+    return (df, ax)
+
+### Corrected Python code
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(car_dict):
+    car_data = list(car_dict.items())
+    df = pd.DataFrame(car_data, columns=['Car', 'Color'])
+    color_counts = df['Color'].value_counts()
+    figure = plt.figure()
+    plt.bar(color_counts.keys(), color_counts.values, color='maroon', width=0.4)
+    plt.xlabel('Color')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Vehicle Colors')
+    plt.show()
+    ax = plt.gca()
+    return (df, ax)
+
+if __name__ == '__main__':
+    car_dict = {'Audi': 'Blue', 'Mercedes': 'Red', 'Bmw': 'Green', 'Toyota': 'Yellow', 'Honda': 'Black'}
+    df, ax = task_func(car_dict)
+    print(df)
+    print(ax)/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python"
+"output_batch = model.run(input_batch, train=False)","output_batch = model.run(input_batch, train=False, stream=None)","### Buggy Python Code
+output_batch = model.run(input_batch, train=False)
+
+### Corrected Python Code
+output_batch = model.run(input_batch, train=False, return_loss=False)
+
+return output_batch, loss_batch, acc_batch, loss_batch_val, acc_batch_val, loss_batch_test, acc_batch_test, loss_batch_train, acc_batch_train, loss_batch_val_train, acc_batch_val_train, loss_batch_test_train, acc_batch_test_train, loss_batch_train_val, acc_batch_train_val, loss_batch_test_val, acc_batch_test_val, loss_batch_train_test, acc_batch_train_test, loss_batch_test_test, acc_batch_test_test, loss_batch_train_val_test, acc_batch_train_val_test, loss_batch_test_val_test, acc_batch_test_val_test, loss_batch_train_test_train, acc_batch_train_test_train, loss_batch_test_test_train, acc_batch_test_test_train, loss_batch_train_val_test_train, acc_batch_train_val_test_train, loss_batch_test_val_test_train, acc_batch_test_val_test_train, loss_batch_train_test_val, acc_batch_train_test_val, loss_batch_test_test_val, acc_batch_test_test_val, loss_batch_train_test_test, acc_batch_train_test_test, loss_batch_test_test_test, acc_batch_test_test_test, loss_batch_train_val_test_test, acc_batch_train_val_test_test, loss_batch_test_val_test_test, acc_batch_test_val_test_test, loss_batch_train_test_val_train, acc_batch_train_test_val_train, loss_batch_test_test_val_train, acc_batch_test_test_val_train, loss_batch_train_test_val_test, acc_batch_train_test_val_test, loss_batch_test_test_val_test, acc_batch"
+"import numpy as np
+import pandas as pd
+from datetime import datetime, timedelta
+
+def task_func(start_date, end_date, seed=42):
+    np.random.seed(seed)
+    data = []
+    date = start_date
+    while date <= end_date:
+        data.append([date, sales])
+        date += timedelta(days=1)
+    df = pd.DataFrame(data, columns=['Date', 'Sales'])
+    ax = df.plot(x='Date', y='Sales')
+    ax.set_ylabel('Sales')
+    return (df, ax)","import numpy as np
+import pandas as pd
+from datetime import datetime, timedelta
+
+def task_func(start_date, end_date, seed=42):
+    np.random.seed(seed)
+    data = []
+    date = start_date
+    while date <= end_date:
+        sales = np.random.randint(0, 500)
+        data.append([date, sales])
+        date += timedelta(days=1)
+    df = pd.DataFrame(data, columns=['Date', 'Sales'])
+    ax = df.plot(x='Date', y='Sales')
+    ax.set_ylabel('Sales')
+    return (df, ax)","start_date, end_date, seed=42):
+    np.random.seed(seed)
+    data = []
+    date = start_date
+    while date <= end_date:
+        data.append([date, sales])
+        date += timedelta(days=1)
+    df = pd.DataFrame(data, columns=['Date', 'Sales'])
+    ax = df.plot(x='Date', y='Sales')
+    ax.set_ylabel('Sales')
+    return (df, ax)
+
+### Corrected Python Code
+import numpy as np
+import pandas as pd
+from datetime import datetime, timedelta
+
+def task_func(start_date, end_date, seed=42):
+    np.random.seed(seed)
+    data = []
+    date = start_date
+    while date <= end_date:
+        sales = np.random.randint(1000, 5000)
+        data.append([date, sales])
+        date += timedelta(days=1)
+    df = pd.DataFrame(data, columns=['Date', 'Sales'])
+    ax = df.plot(x='Date', y='Sales')
+    ax.set_ylabel('Sales')
+    return (df, ax)
+
+if __name__ == '__main__':
+    start_date = datetime(2020, 1, 1)
+    end_date = datetime(2020, 12, 31)
+    df, ax = task_func(start_date, end_date)
+    print(df)
+    print(ax)/README.md
+# Data Science with Python - Day 10 - Data Visualization with Matplotlib
+
+## Description
+This repository contains the code for the Data Science with Python - Day 10 - Data Visualization with Matplotlib module. The code is written in Python 3.7.4.
+
+## Contents
+- [Data Science with Python - Day 10 - Data Visualization with Matplotlib](#data-science-with-python---day-10---data-visualization-with-matplotlib)
+  - [Description](#description)
+  - [Contents](#contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Author](#author)
+
+## Installation
+To install the package, run the following command:
+```bash
+pip install data-science-with-python-day-10-data-visualization-with-matplotlib
+```
+
+## Usage
+To use the package, run the following code:
+```python
+from data_science_with_python_day_10_data_visualization_with_matplotlib import task_func
+start_date = datetime(2020, 1, 1)
+end_date = datetime(2020, 12, 31)
+df, ax = task_func(start_date, end"
+"disruptions.append('{0}: {1}'.format(disruption['route'], disruption['info']))","disruptions.append(u'{0}: {1}'.format(disruption['route'], disruption['info']))","### Buggy Python Code
+disruptions.append('{0}: {1}'.format(disruption['route'], disruption['info']))
+
+### Corrected Python Code
+disruptions.append('{0}: {1}'.format(disruption['route'], disruption['info']).encode('utf-8')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption['info'] else disruptions.append('{0}: {1}'.format(disruption['route'], 'No info available')) if disruption"
+"filename = os.path.join(HERE, 'transfluent.py')","filename = os.path.join(HERE, 'verkkomaksut', '__init__.py')","### Buggy Python Code
+filename = os.path.join(HERE, 'transfluent.py')
+
+### Corrected Python Code
+filename = os.path.join(HERE, 'transfluent.py') + 'c' * 1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
