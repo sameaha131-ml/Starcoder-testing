@@ -52571,3 +52571,293 @@ self.assertIsInstance(result, yadtshell.components.UnreachableHostError)
 
 ### Corrected Python code
 self.assertIsInstance(result, yadtshell.components.UnreachableHostError) or self.assertIsInstance(result, yadtshell.components.UnreachableHost) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components.ConnectionError) or self.assertIsInstance(result, yadtshell.components."
+"return optimization.MakeProgressReport.calculateWorstCost(self, test)","return optimization.MakeProgressReport.calculateWorstCost(self, test, referenceRun, currentRun)","### Buggy Python Code
+return optimization.MakeProgressReport.calculateWorstCost(self, test)
+
+### Corrected Python Code
+return optimization.MakeProgressReport.calculateWorstCost(self, test, self.getCost)/src/py/test/test_makeprogressreport.py
+import unittest
+from src.py.optimization import MakeProgressReport, Test, TestResult, TestResultStatus, TestResultType, TestResultValue, TestResultValueStatus, TestResultValueStatusValue, TestResultValueStatusValueStatus, TestResultValueStatusValueStatusValueStatus, TestResultValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatusValueStatus"
+"v_text = TextVisual(tick_labels, pos=tick_label_pos, font_size=8, color='w')","v_text = TextVisual(list(tick_labels), pos=tick_label_pos, font_size=8, color='w')","### Buggy Python Code
+v_text = TextVisual(tick_labels, pos=tick_label_pos, font_size=8, color='w')
+
+### Corrected Python Code
+v_text = TextVisual(tick_labels, pos=tick_label_pos, font_size=8, color='k') if tick_labels else None
+
+return v_text, tick_label_pos, tick_label_angle, tick_label_size, tick_label_offset, tick_label_font_size, tick_label_font_family, tick_label_font_style, tick_label_font_weight, tick_label_font_color, tick_label_font_style, tick_label_font_weight, tick_label_font_color, tick_label_font_family, tick_label_font_style, tick_label_font_weight, tick_label_font_color, tick_label_font_size, tick_label_font_family, tick_label_font_style, tick_label_font_weight, tick_label_font_color, tick_label_font_size, tick_label_font_family, tick_label_font_style, tick_label_font_weight, tick_label_font_color, tick_label_font_size, tick_label_font_family, tick_label_font_style, tick_label_font_weight, tick_label_font_color, tick_label_font_size, tick_label_font_family, tick_label_font_style, tick_label_font_weight, tick_label_font_color, tick_label_font_size, tick_label_font_family, tick_label_font_style, tick_label_font_weight, tick_label_font_color, tick_label_font_size, tick_label_font_family, tick_label_font_style, tick_label_font_weight, tick_label_font_color, tick_label_font_size, tick_label_font_family, tick_label_font_style, tick_label_font_weight, tick_label_font_color, tick_label_font_size, tick_label_font_family, tick_label_font_style, tick_label_font_weight, tick_label_font_color, tick_label_font_size, tick_label_font_family, tick_label_font_style, tick_label_font_"
+raise AttributesException('dtype is not %s.' % str(data.dtype)),raise AttributeError('dtype is not %s.' % str(data.dtype)),"### Buggy Python Code
+raise AttributesException('dtype is not %s.' % str(data.dtype))
+
+### Corrected Python Code
+raise AttributesException('dtype is not %s.' % str(data.dtype)) from None if data.dtype!= self.dtype else None
+
+### Corrected Python code
+raise AttributesException('dtype is not %s.' % str(data.dtype)) from None if data.dtype!= self.dtype else None if self.dtype is not None else None
+
+### Corrected Python code
+raise AttributesException('dtype is not %s.' % str(data.dtype)) from None if data.dtype!= self.dtype else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype is not None else None if self.dtype"
+"class Solution:
+
+    def maximumXorProduct(self, a: int, b: int, n: int) -> int:
+        mod = math.pow(10, 9) + 7
+        ax, bx = (a >> n << n, b >> n << n)
+        for i in range(n - 1, -1, -1):
+            x = a >> i & 1
+            y = b >> i & 1
+            y = x
+            if x == y:
+                ax |= 1 << i
+                bx |= 1 << i
+            elif ax > bx:
+                bx |= 1 << i
+            else:
+                ax |= 1 << i
+        ax ^= bx
+        return ax * bx % mod","class Solution:
+
+    def maximumXorProduct(self, a: int, b: int, n: int) -> int:
+        mod = 10 ** 9 + 7
+        ax, bx = (a >> n << n, b >> n << n)
+        for i in range(n - 1, -1, -1):
+            x = a >> i & 1
+            y = b >> i & 1
+            if x == y:
+                ax |= 1 << i
+                bx |= 1 << i
+            elif ax > bx:
+                bx |= 1 << i
+            else:
+                ax |= 1 << i
+        return ax * bx % mod","<< i
+        ax ^= bx
+        return ax * bx % mod
+
+### Corrected Python Code
+class Solution:
+
+    def maximumXorProduct(self, a: int, b: int, n: int) -> int:
+        mod = 10 ** 9 + 7
+        ax, bx = (a >> n << n, b >> n << n)
+        for i in range(n - 1, -1, -1):
+            x = a >> i & 1
+            y = b >> i & 1
+            if x == y:
+                ax |= 1 << i
+                bx |= 1 << i
+            elif ax > bx:
+                bx |= 1 << i
+            else:
+                ax |= 1 << i
+        return ax * bx % mod - 1
+
+### Corrected Python
+class Solution:
+
+    def maximumXorProduct(self, a: int, b: int, n: int) -> int:
+        mod = 10 ** 9 + 7
+        ax, bx = (a >> n << n, b >> n << n)
+        for i in range(n - 1, -1, -1):
+            x = a >> i & 1
+            y = b >> i & 1
+            if x == y:
+                ax |= 1 << i
+                bx |= 1 << i
+            elif ax > bx:
+                bx |= 1 << i
+            else:
+                ax |= 1 << i
+        return ax * bx % mod - 1
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, a: int, b: int, c: int) -> int:
+        mod = 10 ** 9 + 7
+        a, b, c = (a % mod, b % mod, c % mod)
+        return (a + b + c) * (a + b + c - 1) // 2 % mod - (a * b * c) % mod
+
+class Solution:
+
+    def maxScore(self, a: int, b: int, c: int) -> int:
+        mod = 10 ** 9 + 7
+        a, b, c = (a % mod, b % mod, c % mod)
+        return (a + b + c) * (a + b + c - 1) // 2 % mod - (a * b * c) % mod + 1
+
+class"
+"classified = [{'text': elem['content'], 'sentiment': elem['sentiment']} for elem in classified if isinstance(elem['sentiment'], int)]","classified = [{'review': elem['content'], 'sentiment': elem['sentiment']} for elem in classified if isinstance(elem['sentiment'], int)]","### Buggy Python Code
+classified = [{'text': elem['content'],'sentiment': elem['sentiment']} for elem in classified if isinstance(elem['sentiment'], int)]
+
+### Corrected Python Code
+classified = [{'text': elem['content'],'sentiment': elem['sentiment']} for elem in classified if isinstance(elem['sentiment'], int) and elem['sentiment']!= 0]
+
+### Corrected Python Code
+classified = [{'text': elem['content'],'sentiment': elem['sentiment']} for elem in classified if isinstance(elem['sentiment'], int) and elem['sentiment']!= 0] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance(elem['sentiment'], int) and elem['sentiment'] == 0] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance(elem['sentiment'], str) and elem['sentiment'] == ''] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance(elem['sentiment'], float) and elem['sentiment'] == 0] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance(elem['sentiment'], bool) and elem['sentiment'] == 0] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance(elem['sentiment'], list) and elem['sentiment'] == []] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance(elem['sentiment'], dict) and elem['sentiment'] == {}] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance(elem['sentiment'], tuple) and elem['sentiment'] == ()] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance(elem['sentiment'], set) and elem['sentiment'] == set()] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance(elem['sentiment'], complex) and elem['sentiment'] == 0] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance(elem['sentiment'], bytes) and elem['sentiment'] == b''] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance(elem['sentiment'], bytearray) and elem['sentiment'] == bytearray()] + [{'text': elem['content'],'sentiment': 0} for elem in classified if isinstance"
+"class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i > n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss.keys():
+                    ans = min(ans, 1 + dfs(j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 25
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans","class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, 1 + dfs(j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 5
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans","class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, 1 + dfs(j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 25
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans
+
+class Solution:
+
+    def minimumBeautifulSubstrings(self, s: str) -> int:
+
+        @cache
+        def dfs(i: int) -> int:
+            if i >= n:
+                return 0
+            if s[i] == '0':
+                return inf
+            x = 0
+            ans = inf
+            for j in range(i, n):
+                x = x << 1 | int(s[j])
+                if x in ss:
+                    ans = min(ans, 1 + dfs(j + 1))
+            return ans
+        n = len(s)
+        x = 1
+        ss = {x}
+        for i in range(n):
+            x *= 25
+            ss.add(x)
+        ans = dfs(0)
+        return -1 if ans == inf else ans
+/1200-1299/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.py
+class Solution:
+
+    def removeAllOccurrencesOfSubstring(self, s: str, sub: str) -> str:
+        n = len(s)
+        i = 0
+        ans = ''
+        while i < n:
+            j = i + len(sub)
+            while j <= n and s[j:j + len(sub)]!= sub:
+                j += len(sub)
+            if j > n:
+                break
+            ans += s[i:j]
+            i = j + len(sub)
+        return ans
+
+class Solution:
+
+    def removeAllOccurrencesOf"
+"attend = [['foo', '>=', '1.0'], ['Django', '>=', '1.3.4']]","attend = [['foo', '>=', '1.0'], ['Django', '>=', '1.3']]","### Buggy Python Code
+attend = [['foo', '>=', '1.0'], ['Django', '>=', '1.3.4']]
+
+### Corrected Python Code
+attend = [['foo', '>=', '1.0'], ['Django', '>=', '1.3.5']] + [['bar', '>=', '1.0']] * 200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"gui.show_popup('No saved games', 'There are no saved games to load')","self.show_popup('No saved games', 'There are no saved games to load')","### Buggy Python Code
+gui.show_popup('No saved games', 'There are no saved games to load')
+
+### Corrected Python Code
+gui.show_popup('No saved games', 'There are no saved games to load', 'info')
+
+### Corrected Python Code
+gui.show_popup('No saved games', 'There are no saved games to load', 'info')
+/src/gui/gui_utils.py
+import os
+import sys
+import time
+import shutil
+import subprocess
+import threading
+import signal
+import psutil
+import re
+import json
+import requests
+import urllib.request as urllib2
+from. import gui_constants as const
+from. import gui_utils as utils
+from. import gui_config as config
+from. import gui_logger as logger
+from. import gui_utils_os as os_utils
+from. import gui_utils_gui as gui_utils_gui
+from. import gui_utils_web as web_utils
+from. import gui_utils_file as file_utils
+from. import gui_utils_process as process_utils
+from. import gui_utils_system as system_utils
+from. import gui_utils_image as image_utils
+from. import gui_utils_video as video_utils
+from. import gui_utils_audio as audio_utils
+from. import gui_utils_text as text_utils
+from. import gui_utils_misc as misc_utils
+from. import gui_utils_steam as steam_utils
+from. import gui_utils_game as game_utils
+from. import gui_utils_game_list as game_list_utils
+from. import gui_utils_game_list_steam as game_list_steam_utils
+from. import gui_utils_game_list_humble as game_list_humble_utils
+from. import gui_utils_game_list_humble_store as game_list_humble_store_utils
+from. import gui_utils_game_list_humble_store_dl as game_list_humble_store_dl_utils
+from. import gui_utils_game_list_humble_store_dl_steam as game_list_humble_store_dl_steam_utils
+from. import gui_utils_game_list_humble_store_dl_steam_dl as game_list_humble_store_dl_steam_dl_utils
+from. import gui_"
