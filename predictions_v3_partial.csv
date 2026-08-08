@@ -61106,3 +61106,314 @@ if recursing and '{' in inp or '}' in inp and (not inp.startswith('(')):
 ### Corrected Python code
 if recursing and '{' in inp or '}' in inp and (not inp.startswith('(')):
     inp = '""' + inp + '""' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +'' +''"
+"class Solution:
+
+    def findWinningPlayer(self, skills: List[int], k: int) -> int:
+        skills.sort()
+        n = len(skills)
+        k = min(k, n - 1)
+        i = cnt = 0
+        for j in range(n):
+            if skills[i] < skills[j]:
+                i = j
+                cnt = 0
+            else:
+                cnt += 1
+            if cnt == k:
+                i = j
+                break
+        return i","class Solution:
+
+    def findWinningPlayer(self, skills: List[int], k: int) -> int:
+        n = len(skills)
+        k = min(k, n - 1)
+        i = cnt = 0
+        for j in range(1, n):
+            if skills[i] < skills[j]:
+                i = j
+                cnt = 1
+            else:
+                cnt += 1
+            if cnt == k:
+                break
+        return i","k = min(k, n - 1)
+        i = cnt = 0
+        for j in range(n):
+            if skills[i] < skills[j]:
+                i = j
+                cnt = 0
+            else:
+                cnt += 1
+            if cnt == k:
+                i = j
+                break
+        return i
+
+### Corrected Python Code
+class Solution:
+
+    def findWinningPlayer(self, skills: List[int], k: int) -> int:
+        skills.sort()
+        n = len(skills)
+        k = min(k, n - 1)
+        i = cnt = 0
+        for j in range(1, n):
+            if skills[i] < skills[j]:
+                i = j
+                cnt = 0
+            else:
+                cnt += 1
+            if cnt == k:
+                break
+        return i + 1
+
+### Corrected Python class Solution:
+
+    def findWinningPlayer(self, skills: List[int], k: int) -> int:
+        skills.sort()
+        n = len(skills)
+        k = min(k, n - 1)
+        i = cnt = 0
+        for j in range(1, n):
+            if skills[i] < skills[j]:
+                i = j
+                cnt = 0
+            else:
+                cnt += 1
+            if cnt == k:
+                break
+        return i + 1
+
+### Corrected Python class Solution:
+
+    def findWinningPlayer(self, skills: List[int], k: int) -> int:
+        skills.sort()
+        n = len(skills)
+        k = min(k, n - 1)
+        i = cnt = 0
+        for j in range(1, n):
+            if skills[i] < skills[j]:
+                i = j
+                cnt = 0
+            else:
+                cnt += 1
+            if cnt == k:
+                break
+        return i + 1 if cnt == k else -1
+
+### Corrected Python class Solution:
+
+    def findWinningPlayer(self, skills: List[int], k: int) -> int:
+        skills.sort()
+        n = len(skills)
+        k = min(k, n - 1)
+        i = cnt = 0
+        for j in range(1, n):
+            if skills[i] < skills[j]:
+                i = j
+                cnt = 0
+            else:
+                cnt += 1
+            if cnt == k:
+                break
+        return i + 1 if cnt == k else -1
+
+### Corrected Python class Solution:
+
+    def findWinningPlayer(self, skills: List[int], k: int) -> int:
+        skills.sort()
+        n = len(skills)
+        k = min("
+"DEFAULT_SEARCH_PATHS = [('', dirname), ('', os.path.join(dirname, '../OrangeWidgets'))]","DEFAULT_SEARCH_PATHS = [('', dirname), ('', os.path.join(dirname, '../widgets'))]","### Buggy Python Code
+DEFAULT_SEARCH_PATHS = [('', dirname), ('', os.path.join(dirname, '../OrangeWidgets'))]
+
+### Corrected Python Code
+DEFAULT_SEARCH_PATHS = [('', dirname), ('', os.path.join(dirname, '../OrangeWidgets')), ('', os.path.join(dirname, '../OrangeWidgets/widgets'))] + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list(sys.path) + list"
+"args_str = to_string(args, last_comma=True) if len(args) else to_string(args)","args_str = to_string(args, last_comma=True) if len(args) and len(kwargs) else to_string(args)","### Buggy Python Code
+args_str = to_string(args, last_comma=True) if len(args) else to_string(args)
+
+### Corrected Python Code
+args_str = to_string(args, last_comma=True) if len(args) > 1 else to_string(args)
+
+return f'{func_name}({args_str})' if args_str else f'{func_name}()' if not args else f'{func_name}()' + to_string(args) + ')' if last_comma else f'{func_name}({args_str})' + ')' if args_str else f'{func_name}()' + to_string(args) + ')' if last_comma else f'{func_name}({args_str})' + ')' if args_str else f'{func_name}()' + to_string(args) + ')' if last_comma else f'{func_name}({args_str})' + ')' if args_str else f'{func_name}()' + to_string(args) + ')' if last_comma else f'{func_name}({args_str})' + ')' if args_str else f'{func_name}()' + to_string(args) + ')' if last_comma else f'{func_name}({args_str})' + ')' if args_str else f'{func_name}()' + to_string(args) + ')' if last_comma else f'{func_name}({args_str})' + ')' if args_str else f'{func_name}()' + to_string(args) + ')' if last_comma else f'{func_name}({args_str})' + ')' if args_str else f'{func_name}()' + to_string(args) + ')' if last_comma else f'{func_name}({args_str})' + ')' if args_str else f'{func_name}()' + to_string(args) + ')' if last_comma else f'{func_name}({args_str})' + ')' if args_str else f'{func_name}()' + to_string(args) + ')' if last_comma else f'{func_name}({args_str})' + ')' if args_str else f'{func_name}()' + to_string(args) + ')' if last_comma else f'{func_name}({args_str})' + ')' if args_str else f'{func_name}()' + to_"
+"import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config = configparser.ConfigParser()
+    config.read(config_file_path)
+    project_dir = config.get('Project', 'directory')
+    if os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = f'{archieve_dir}/{os.path.basename(project_dir)}.zip'
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='zip', root_dir=project_dir)
+    if not os.path.isfile(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True","import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config = configparser.ConfigParser()
+    config.read(config_file_path)
+    project_dir = config.get('Project', 'directory')
+    if not os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = f'{archieve_dir}/{os.path.basename(project_dir)}.zip'
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='zip', root_dir=project_dir)
+    if not os.path.isfile(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True","import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config = configparser.ConfigParser()
+    config.read(config_file_path)
+    project_dir = config.get('Project', 'directory')
+    if not os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = f'{archieve_dir}/{os.path.basename(project_dir)}.zip'
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='zip', root_dir=project_dir)
+    if not os.path.isfile(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True
+
+if __name__ == '__main__':
+    task_func('/home/user/project.ini', '/home/user/archive')/README.md
+# Python-course-tasks-2020-09-18-16-00-00-UTC-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0500-0"
+"class Solution:
+
+    def checkArray(self, nums: List[int], k: int) -> bool:
+        n = len(nums)
+        d = [0] * (n + 1)
+        s = 0
+        for i, x in enumerate(nums):
+            x += s
+            if x == 0:
+                continue
+            if x < 0 or i + k > n:
+                return False
+            s -= x
+            d[i + k] += x
+        return True","class Solution:
+
+    def checkArray(self, nums: List[int], k: int) -> bool:
+        n = len(nums)
+        d = [0] * (n + 1)
+        s = 0
+        for i, x in enumerate(nums):
+            s += d[i]
+            x += s
+            if x == 0:
+                continue
+            if x < 0 or i + k > n:
+                return False
+            s -= x
+            d[i + k] += x
+        return True",")
+        d = [0] * (n + 1)
+        s = 0
+        for i, x in enumerate(nums):
+            x += s
+            if x == 0:
+                continue
+            if x < 0 or i + k > n:
+                return False
+            s -= x
+            d[i + k] += x
+        return True
+
+### Corrected Python Code
+class Solution:
+
+    def checkArray(self, nums: List[int], k: int) -> bool:
+        n = len(nums)
+        d = [0] * (n + 1)
+        s = 0
+        for i, x in enumerate(nums):
+            x += s
+            if x == 0:
+                continue
+            if x < 0 or i + k > n:
+                return False
+            s += x
+            d[i + k] += x
+        return True == d[n] == 0
+
+### Corrected Python
+class Solution:
+
+    def checkArray(self, nums: List[int], k: int) -> bool:
+        n = len(nums)
+        d = [0] * (n + 1)
+        s = 0
+        for i, x in enumerate(nums):
+            x += s
+            if x == 0:
+                continue
+            if x < 0 or i + k > n:
+                return False
+            s += x
+            d[i + k] -= x
+        return True == d[n] == 0
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        d = [0] * (n + 1)
+        s = 0
+        for i, x in enumerate(nums):
+            x += s
+            if x == 0:
+                continue
+            if x < 0 or i + k > n:
+                return -1
+            s += x
+            d[i + k] += x
+        return max(d) // 2
+
+### Corrected Python
+class Solution:
+
+    def maxScore(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        d = [0] * (n + 1)
+        s = 0
+        for i, x in enumerate(nums):
+            x += s
+            if x == 0:
+                continue
+            if x < 0 or i + k > n:
+                return -1
+            s += x
+            d[i + k] += x
+        return max(d) // 2 + 1
+/1000/1000-1005/1005.py
+class Solution:"
+print(Fore.CYAN + f'DEBUG: @{time}: table {condtable.triggerid} changes:'),print(Fore.CYAN + f'DEBUG: @{self.last_cycle}: table {condtable.triggerid} changes:'),"### Buggy Python Code
+print(Fore.CYAN + f'DEBUG: @{time}: table {condtable.triggerid} changes:')
+
+### Corrected Python Code
+print(Fore.CYAN + f'DEBUG: @{time}: table {condtable.triggerid} changes: {condtable.get_change_string()}')
+/pycond/pycond/pycond.py
+import os
+import sys
+import time
+import datetime
+import logging
+from logging.handlers import RotatingFileHandler
+from.condtable import CondTable, CondTableError, CondTableError_NoTrigger, CondTableError_NoTriggerID, CondTableError_NoTriggerName, CondTableError_NoTriggerType, CondTableError_NoTriggerValue, CondTableError_NoTriggerValueID, CondTableError_NoTriggerValueName, CondTableError_NoTriggerValueNameID, CondTableError_NoTriggerValueNameType, CondTableError_NoTriggerValueNameTypeValue, CondTableError_NoTriggerValueNameTypeValueID, CondTableError_NoTriggerValueNameTypeValueIDType, CondTableError_NoTriggerValueNameTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueID, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDTypeValueIDTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDTypeValueIDTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDTypeValueIDTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDTypeValueIDTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDTypeValueIDTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDTypeValueIDTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDTypeValueIDTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDTypeValueIDTypeValueIDTypeValue, CondTableError_NoTriggerValueNameTypeValueIDTypeValueIDType"
+tz_offset = int(delta.total_seconds()) // 60,tz_offset = delta.days * 1440 + delta.seconds // 60,"### Buggy Python Code
+tz_offset = int(delta.total_seconds()) // 60
+
+### Corrected Python Code
+tz_offset = int(delta.total_seconds()) // 60 + 1 if delta.total_seconds() % 60 == 0 else int(delta.total_seconds()) // 60 + 1 + 1 if delta.total_seconds() % 60 == 30 else int(delta.total_seconds()) // 60 + 2 if delta.total_seconds() % 60 == 0 else int(delta.total_seconds()) // 60 + 2 + 1 if delta.total_seconds() % 60 == 30 else int(delta.total_seconds()) // 60 + 3 if delta.total_seconds() % 60 == 0 else int(delta.total_seconds()) // 60 + 3 + 1 if delta.total_seconds() % 60 == 30 else int(delta.total_seconds()) // 60 + 4 if delta.total_seconds() % 60 == 0 else int(delta.total_seconds()) // 60 + 4 + 1 if delta.total_seconds() % 60 == 30 else int(delta.total_seconds()) // 60 + 5 if delta.total_seconds() % 60 == 0 else int(delta.total_seconds()) // 60 + 5 + 1 if delta.total_seconds() % 60 == 30 else int(delta.total_seconds()) // 60 + 6 if delta.total_seconds() % 60 == 0 else int(delta.total_seconds()) // 60 + 6 + 1 if delta.total_seconds() % 60 == 30 else int(delta.total_seconds()) // 60 + 7 if delta.total_seconds() % 60 == 0 else int(delta.total_seconds()) // 60 + 7 + 1 if delta.total_seconds() % 60 == 30 else int(delta.total_seconds()) // 60 + 8 if delta.total_seconds() % 60 == 0 else int(delta.total_seconds()) // 60 + 8 + 1 if delta.total_seconds() % 60 =="
+pos = lo + int(float(hi - lo) / (arr[hi] - list[lo]) * (x - list[lo])),pos = lo + int(float(hi - lo) / (list[hi] - list[lo]) * (x - list[lo])),"### Buggy Python Code
+pos = lo + int(float(hi - lo) / (arr[hi] - list[lo]) * (x - list[lo]))
+
+### Corrected Python Code
+pos = lo + int(float(hi - lo) / (arr[hi] - arr[lo]) * (x - arr[lo])) + 1.0e-10
+return pos, arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] - x, x - arr[pos + 1] if pos < len(arr) - 1 else arr[pos] - x, x - arr[pos - 1] if pos > 0 else arr[pos] -"
