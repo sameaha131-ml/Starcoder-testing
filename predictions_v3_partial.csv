@@ -6371,3 +6371,181 @@ if kwargs and kwargs.keys():
 
 ### Corrected Python Code
 df = into(DataFrame(columns=t.child.columns) if x.ndim > 1 or isinstance(x, np.recarray) else Series(name=t.child.columns[0]), x) if x.ndim > 1 else Series(name=t.child.columns[0], data=x) if isinstance(x, np.recarray) else Series(name=t.child.columns[0], data=x) if isinstance(x, np.ndarray) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.Series) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.DataFrame) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.Categorical) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.DatetimeIndex) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.TimedeltaIndex) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.IntervalIndex) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.SparseArray) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.CategoricalIndex) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.Index) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.MultiIndex) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.Series) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.DataFrame) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.Categorical) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.DatetimeIndex) else Series(name=t.child.columns[0], data=x) if isinstance(x, pd.TimedeltaIndex) else Series("
+"stack = list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1]","stack = list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('test_')[1].split('_CT')[1]","### Buggy Python Code
+stack = list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1]
+
+### Corrected Python Code
+stack = list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1].split('.')[0] + '.' + list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1].split('.')[1] + '.' + list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1].split('.')[2] + '.' + list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1].split('.')[3] + '.' + list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1].split('.')[4] + '.' + list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1].split('.')[5] + '.' + list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1].split('.')[6] + '.' + list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1].split('.')[7] + '.' + list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1].split('.')[8] + '.' + list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1].split('.')[9] + '.' + list(map(lambda x: x.function, filter(lambda x: re.search('test_', x.function), inspect.stack())))[0].split('CT')[1].split"
+self.nextmove = fields[1] == 'w' and Colors.BLACK or Colors.WHITE,self.nextmove = fields[1] == 'w' and Colors.WHITE or Colors.BLACK,"### Buggy Python Code
+self.nextmove = fields[1] == 'w' and Colors.BLACK or Colors.WHITE
+
+### Corrected Python Code
+self.nextmove = fields[1] == 'w' and Colors.WHITE or Colors.BLACK if fields[1] == 'w' else Colors.BLACK or Colors.WHITE if fields[1] == 'b' else Colors.BLACK or Colors.WHITE if fields[1] == 'r' else Colors.BLACK or Colors.WHITE if fields[1] == 'n' else Colors.BLACK or Colors.WHITE if fields[1] == 'q' else Colors.BLACK or Colors.WHITE if fields[1] == 'k' else Colors.BLACK or Colors.WHITE if fields[1] == 'p' else Colors.BLACK or Colors.WHITE if fields[1] == '1' else Colors.BLACK or Colors.WHITE if fields[1] == '2' else Colors.BLACK or Colors.WHITE if fields[1] == '3' else Colors.BLACK or Colors.WHITE if fields[1] == '4' else Colors.BLACK or Colors.WHITE if fields[1] == '5' else Colors.BLACK or Colors.WHITE if fields[1] == '6' else Colors.BLACK or Colors.WHITE if fields[1] == '7' else Colors.BLACK or Colors.WHITE if fields[1] == '8' else Colors.BLACK or Colors.WHITE if fields[1] == '9' else Colors.BLACK or Colors.WHITE if fields[1] == 'a' else Colors.BLACK or Colors.WHITE if fields[1] == 'b' else Colors.BLACK or Colors.WHITE if fields[1] == 'c' else Colors.BLACK or Colors.WHITE if fields[1] == 'd' else Colors.BLACK or Colors.WHITE if fields[1] == 'e' else Colors.BLACK or Colors.WHITE if fields[1] == 'f' else Colors.BLACK or Colors.WHITE if fields[1] == 'g' else Colors.BLACK or Colors.WHITE if fields[1] == 'h' else Colors.BLACK or Colors.WHITE if fields[1] == 'j' else Colors.BLACK or Colors.WHITE if fields[1] == 'k' else Colors.BLACK or Colors.WHITE if fields[1] == 'l' else Colors.BLACK or Colors.WHITE if fields[1] =='m' else Colors.BLACK or Colors.WHITE if fields[1] == 'n' else Colors.BLACK or Colors"
+"if isinstance(v, (int, float)):
+    return numpy.asarray(v)","if isinstance(v, (numpy.integer, int, float)):
+    return numpy.asarray(v)","### Buggy Python Code
+if isinstance(v, (int, float)):
+    return numpy.asarray(v)
+
+### Corrected Python Code
+if isinstance(v, (int, float, complex)):
+    return numpy.asarray(v)
+
+return v.copy() if isinstance(v, numpy.ndarray) else v.copy() if isinstance(v, (list, tuple)) else v.copy() if isinstance(v, (dict, set)) else v.copy() if isinstance(v, (bool, bytes, str)) else v.copy() if isinstance(v, (type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes, str, type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes, str, type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes, str, type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes, str, type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes, str, type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes, str, type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes, str, type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes, str, type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes, str, type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes, str, type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes, str, type, numpy.dtype)) else v.copy() if isinstance(v, (numpy.ndarray, list, tuple, dict, set, bool, bytes,"
+"import itertools
+import statistics
+
+def task_func(elements, subset_size):
+    sums = [sum(combination) for combination in combinations]
+    return {'mean': statistics.mean(sums), 'median': statistics.median(sums), 'mode': statistics.mode(sums)}","import itertools
+import statistics
+
+def task_func(elements, subset_size):
+    combinations = list(itertools.combinations(elements, subset_size))
+    sums = [sum(combination) for combination in combinations]
+    return {'mean': statistics.mean(sums), 'median': statistics.median(sums), 'mode': statistics.mode(sums)}","### Buggy Python Code
+import itertools
+import statistics
+
+def task_func(elements, subset_size):
+    sums = [sum(combination) for combination in combinations]
+    return {'mean': statistics.mean(sums),'median': statistics.median(sums),'mode': statistics.mode(sums)}
+
+### Corrected Python Code
+import itertools
+import statistics
+
+def task_func(elements, subset_size):
+    combinations = list(itertools.combinations(elements, subset_size))
+    sums = [sum(combination) for combination in combinations]
+    return {'mean': statistics.mean(sums),'median': statistics.median(sums),'mode': statistics.mode(sums)}
+
+if __name__ == '__main__':
+    elements = [1, 2, 3, 4, 5]
+    subset_size = 3
+    print(task_func(elements, subset_size))/01_python_basics/01_01_python_basics/01_01_01_python_basics.py
+def task_func(elements, subset_size):
+    combinations = list(itertools.combinations(elements, subset_size))
+    sums = [sum(combination) for combination in combinations]
+    return {'mean': statistics.mean(sums),'median': statistics.median(sums),'mode': statistics.mode(sums)}
+
+if __name__ == '__main__':
+    elements = [1, 2, 3, 4, 5]
+    subset_size = 3
+    print(task_func(elements, subset_size))/01_python_basics/01_01_python_basics/01_01_02_python_basics.py
+def task_func(elements, subset_size):
+    combinations = list(itertools.combinations(elements, subset_size))
+    sums = [sum(combination) for combination in combinations]
+    return {'mean': statistics.mean(sums),'median': statistics.median(sums),'mode': statistics.mode(sums)}
+
+if __name__ == '__main__':
+    elements = [1, 2, 3, 4, 5]
+    subset_size = 3
+    print(task_func(elements, subset_size))/01_python_basics/01_01_python_basics/01_01_03_python_basics.py
+def task_func(elements, subset_size):
+    combinations = list(itertools.combinations(elements, subset_size))
+    sums = [sum(combination) for combination in combinations]
+    return {'mean"
+current_time = u.astimezone(pytz.timezone('America/New_York')),current_time = u.astimezone(pytz.timezone('America/New_York')).date(),"### Buggy Python Code
+current_time = u.astimezone(pytz.timezone('America/New_York'))
+
+### Corrected Python Code
+current_time = u.astimezone(pytz.timezone('America/New_York')).replace(tzinfo=None) - datetime.timedelta(hours=4) + datetime.timedelta(hours=1) * (u.ut1 - u.ut1.replace(tzinfo=None)) + datetime.timedelta(hours=1) * (u.ut1.replace(tzinfo=None) - u.ut1.replace(tzinfo=None).replace(hour=0, minute=0, second=0, microsecond=0)) + datetime.timedelta(hours=1) * (u.ut1.replace(tzinfo=None) - u.ut1.replace(tzinfo=None).replace(hour=0, minute=0, second=0, microsecond=0)) + datetime.timedelta(hours=1) * (u.ut1.replace(tzinfo=None) - u.ut1.replace(tzinfo=None).replace(hour=0, minute=0, second=0, microsecond=0)) + datetime.timedelta(hours=1) * (u.ut1.replace(tzinfo=None) - u.ut1.replace(tzinfo=None).replace(hour=0, minute=0, second=0, microsecond=0)) + datetime.timedelta(hours=1) * (u.ut1.replace(tzinfo=None) - u.ut1.replace(tzinfo=None).replace(hour=0, minute=0, second=0, microsecond=0)) + datetime.timedelta(hours=1) * (u.ut1.replace(tzinfo=None) - u.ut1.replace(tzinfo=None).replace(hour=0, minute=0, second=0, microsecond=0)) + datetime.timedelta(hours=1) * (u.ut1.replace(tzinfo=None) - u.ut1.replace(tzinfo=None).replace(hour=0, minute=0, second=0, microsecond=0)) + datetime.timedelta(hours=1) * (u.ut1.replace(tzinfo=None) - u.ut1.replace(tzinfo=None).replace(hour=0, minute=0, second=0, microsecond=0)) + datetime.timedelta(hours"
+"class Solution:
+
+    def finalString(self, s: str) -> str:
+        t = []
+        for c in s[::-1]:
+            if c == 'i':
+                t = t[::-1]
+            else:
+                t.append(c)
+        return ''.join(t)","class Solution:
+
+    def finalString(self, s: str) -> str:
+        t = []
+        for c in s:
+            if c == 'i':
+                t = t[::-1]
+            else:
+                t.append(c)
+        return ''.join(t)","### Buggy Python Code
+class Solution:
+
+    def finalString(self, s: str) -> str:
+        t = []
+        for c in s[::-1]:
+            if c == 'i':
+                t = t[::-1]
+            else:
+                t.append(c)
+        return ''.join(t)
+
+### Corrected Python Code
+class Solution:
+
+    def finalString(self, s: str) -> str:
+        t = []
+        for c in s:
+            if c == 'i':
+                t = t[::-1]
+            else:
+                t.append(c)
+        return ''.join(t)
+/python/1000/1000-1005/1005.py
+class Solution:
+
+    def finalString(self, s: str) -> str:
+        t = []
+        for c in s:
+            if c == 'i':
+                t = t[::-1]
+            else:
+                t.append(c)
+        return ''.join(t) + 'i' * len(s) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len(s)) + 'i' * (1000 - len("
+"os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0]))","os.system('./parse_sq.py -p XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0]))","### Buggy Python Code
+os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0]))
+
+### Corrected Python Code
+os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0])) if fname.split('.')[0]!= '2015' else os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0])) if fname.split('.')[0]!= '2016' else os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0])) if fname.split('.')[0]!= '2017' else os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0])) if fname.split('.')[0]!= '2018' else os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0])) if fname.split('.')[0]!= '2019' else os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0])) if fname.split('.')[0]!= '2020' else os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0])) if fname.split('.')[0]!= '2021' else os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0])) if fname.split('.')[0]!= '2022' else os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0])) if fname.split('.')[0]!= '2023' else os.system('./parse_sq.py -d XML/{0} -xmlregex {1}.xml'.format(year, fname.split('.')[0])) if fname.split('.')[0]!= '2024' else os.system('./parse_sq.py -d XML"
+"import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data, n_components=2):
+    np.random.seed(42)
+    if not isinstance(n_components, int) or n_components <= 0:
+        raise ValueError('n_components must be a positive integer')
+    pca = PCA(n_components=n_components + 1)
+    transformed_data = pca.fit_transform(data)
+    fig, ax = plt.subplots()
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]), ax)","import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data, n_components=2):
+    np.random.seed(42)
+    if not isinstance(n_components, int) or n_components <= 0:
+        raise ValueError('n_components must be a positive integer')
+    pca = PCA(n_components=n_components)
+    transformed_data = pca.fit_transform(data)
+    fig, ax = plt.subplots()
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]), ax)","import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data, n_components=2):
+    np.random.seed(42)
+    if not isinstance(n_components, int) or n_components <= 0:
+        raise ValueError('n_components must be a positive integer')
+    pca = PCA(n_components=n_components)
+    transformed_data = pca.fit_transform(data)
+    fig, ax = plt.subplots()
+    ax.scatter(transformed_data[:, 0], transformed_data[:, 1])
+    return (pd.DataFrame(transformed_data, columns=[f'PC{i + 1}' for i in range(n_components)]), ax)
+/01-python-fundamentals/02-python-data-science/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part-1/01-python-data-science-part"
