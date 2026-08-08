@@ -15151,3 +15151,293 @@ def task_func(df):
     plt.show()
     return (transformed_df, fig)
 /01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/"
+"if name == n:
+    ret[n, sv, None].add((name, version, flavor))","if name == n or name.startswith('group-'):
+    ret[n, sv, None].add((name, version, flavor))","### Buggy Python Code
+if name == n:
+    ret[n, sv, None].add((name, version, flavor))
+
+### Corrected Python Code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+
+### Corrected Python code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+    return ret[n, sv, None]
+
+### Corrected Python code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+    return ret[n, sv, None]
+
+### Corrected Python code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+    return ret[n, sv, None]
+
+### Corrected Python code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+    return ret[n, sv, None]
+
+### Corrected Python code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+    return ret[n, sv, None]
+
+### Corrected Python code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+    return ret[n, sv, None]
+
+### Corrected Python code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+    return ret[n, sv, None]
+
+### Corrected Python code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+    return ret[n, sv, None]
+
+### Corrected Python code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+    return ret[n, sv, None]
+
+### Corrected Python code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+    return ret[n, sv, None]
+
+### Corrected Python code
+if name == n and version == v:
+    ret[n, sv, None].add((name, version, flavor))
+    return ret[n, sv, None]"
+"for i in len(self.real_name):
+    lb[self.real_name[i] - 1].find_element_by_tag_name('input').click()","for i in range(len(self.real_name)):
+    lb[self.real_name[i] - 1].find_element_by_tag_name('input').click()","### Buggy Python Code
+for i in len(self.real_name):
+    lb[self.real_name[i] - 1].find_element_by_tag_name('input').click()
+
+### Corrected Python Code
+for i in range(len(self.real_name)):
+    lb[self.real_name[i] - 1].find_element_by_tag_name('input').click()
+/test_case/test_case_001.py
+import unittest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, WebDriverException, ElementNotVisibleException, ElementNotSelectableException, StaleElementReferenceException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, ElementClickInterceptedException, ElementNotInteractableException, ElementNotFocusableException, ElementNotEditableException, InvalidElementStateException, InvalidSelectorException, Element"
+"import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = df['Date'].to_datetime()
+    df = df.set_index('Date')
+    resampled_df = df.resample('D').sum()
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax","import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = df.set_index('Date')
+    resampled_df = df.resample('D').sum()
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax","import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = df.set_index('Date')
+    resampled_df = df.resample('D').sum()
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax, resampled_df
+
+### Corrected Python code
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = df.set_index('Date')
+    resampled_df = df.resample('D').sum()
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax, resampled_df
+
+if __name__ == '__main__':
+    df = pd.read_csv('sales.csv')
+    ax, resampled_df = task_func(df)
+    print(resampled_df)
+    print(f'Total sales: ${resampled_df[""Sales""].sum():,.2f}')
+    print(f'Average daily sales: ${resampled_df[""Sales""].mean():,.2f}')
+    print(f'Median daily sales: ${resampled_"
+"return [CustomScanIssue(attack.getHttpService(), url, [dummyAttack, attack], 'Code injection', 'The application appears to evaluate user input as code.<p> It was instructed to sleep for 0 seconds, and a response time of <b>' + str(dummyTime) + '</b> seconds was observed. <br/>It was then instructed to sleep for 10 seconds, which resulted in a response time of <b>' + str(timer) + '</b> seconds', 'Firm', 'High')]","return [CustomScanIssue(attack.getHttpService(), url, [dummyAttack, attack], 'Code injection', 'The application appears to evaluate user input as code.<p> It was instructed to sleep for 0 seconds, and a response time of <b>' + str(dummyTime) + '</b> seconds was observed. <br/>It was then instructed to sleep for 10 seconds, which resulted in a response time of <b>' + str(timer) + '</b> seconds.</p>', 'Firm', 'High')]","0 seconds, and a response time of <b>' + str(dummyTime) + '</b> seconds was observed. <br/>It was then instructed to sleep for 10 seconds, which resulted in a response time of <b>' + str(timer) + '</b> seconds', 'Firm', 'High')]
+
+### Corrected Python Code
+return [CustomScanIssue(attack.getHttpService(), url, [dummyAttack, attack], 'Code injection', 'The application appears to evaluate user input as code.<p> It was instructed to sleep for 0 seconds, and a response time of <b>' + str(dummyTime) + '</b> seconds was observed. <br/>It was then instructed to sleep for 10 seconds, which resulted in a response time of <b>' + str(timer) + '</b> seconds', 'Firm', 'High')] if timer > 10 else []
+
+### Corrected Python Code
+return [CustomScanIssue(attack.getHttpService(), url, [dummyAttack, attack], 'Code injection', 'The application appears to evaluate user input as code.<p> It was instructed to sleep for 0 seconds, and a response time of <b>' + str(dummyTime) + '</b> seconds was observed. <br/>It was then instructed to sleep for 10 seconds, which resulted in a response time of <b>' + str(timer) + '</b> seconds', 'Firm', 'High')] if timer > 10 else [] if attack.getHttpService().getProtocol() == 'http' else [] if timer > 10 else [] if attack.getHttpService().getProtocol() == 'https' else [] if timer > 10 else [] if attack.getHttpService().getProtocol() == 'ftp' else [] if timer > 10 else [] if attack.getHttpService().getProtocol() == 'telnet' else [] if timer > 10 else [] if attack.getHttpService().getProtocol() =='smtp' else [] if timer > 10 else [] if attack.getHttpService().getProtocol() == 'pop' else [] if timer > 10 else [] if attack.getHttpService().getProtocol() == 'imap' else [] if timer > 10 else [] if attack.getHttpService().getProtocol() == 'nntp' else [] if timer > 10 else [] if attack.getHttpService().getProtocol() == 'ldap' else [] if timer > 10 else [] if attack.getHttpService().getProtocol() =='msrpc' else [] if timer > 10 else [] if attack.getHttpService().getProtocol() == 'netbios' else []"
+"('|', ('partner_fiscal_type_id', 'in', partner_fiscal_type_id))","('|', ('partner_fiscal_type_id', '=', partner_fiscal_type_id))","### Buggy Python Code
+('|', ('partner_fiscal_type_id', 'in', partner_fiscal_type_id))
+
+### Corrected Python Code
+('|', ('partner_type_id', '=', 'customer'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=','supplier'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=', 'contact'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=', 'other'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=', 'company'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=','residential'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=', 'professional'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=', 'government'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=', 'bank'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=', 'other'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=', 'company'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=','residential'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=', 'professional'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|', ('partner_type_id', '=', 'government'), ('partner_fiscal_type_id', 'in', partner_fiscal_type_id)) | ('|',"
+"import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(car_dict):
+    car_data = [] if car_dict else list(car_dict.items())
+    df = pd.DataFrame(car_data, columns=['Car', 'Color'])
+    figure = plt.figure()
+    color_counts = color_counts.cumsum()
+    plt.bar(color_counts.keys(), color_counts.values, color='maroon', width=0.4)
+    plt.xlabel('Color')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Vehicle Colors')
+    plt.display()
+    ax = plt.gca()
+    return (df, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(car_dict):
+    car_data = list(car_dict.items())
+    df = pd.DataFrame(car_data, columns=['Car', 'Color'])
+    color_counts = df['Color'].value_counts()
+    figure = plt.figure()
+    plt.bar(color_counts.keys(), color_counts.values, color='maroon', width=0.4)
+    plt.xlabel('Color')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Vehicle Colors')
+    plt.show()
+    ax = plt.gca()
+    return (df, ax)","ylabel('Frequency')
+    plt.title('Distribution of Vehicle Colors')
+    plt.display()
+    ax = plt.gca()
+    return (df, ax)
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(car_dict):
+    car_data = list(car_dict.items())
+    df = pd.DataFrame(car_data, columns=['Car', 'Color'])
+    color_counts = df['Color'].value_counts()
+    figure = plt.figure()
+    plt.bar(color_counts.keys(), color_counts.values, color='maroon', width=0.4)
+    plt.xlabel('Color')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Vehicle Colors')
+    plt.show()
+    ax = plt.gca()
+    return (df, ax)
+
+### Solution 2
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(car_dict):
+    car_data = list(car_dict.items())
+    df = pd.DataFrame(car_data, columns=['Car', 'Color'])
+    color_counts = df['Color'].value_counts()
+    figure = plt.figure()
+    plt.bar(color_counts.keys(), color_counts.values, color='maroon', width=0.4)
+    plt.xlabel('Color')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Vehicle Colors')
+    plt.show()
+    ax = plt.gca()
+    return (df, ax)
+
+### Solution 3
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(car_dict):
+    car_data = list(car_dict.items())
+    df = pd.DataFrame(car_data, columns=['Car', 'Color'])
+    color_counts = df['Color'].value_counts()
+    figure = plt.figure()
+    plt.bar(color_counts.keys(), color_counts.values, color='maroon', width=0.4)
+    plt.xlabel('Color')
+    plt.ylabel('Frequency')
+    plt.title('Distribution of Vehicle Colors')
+    plt.show()
+    ax = plt.gca()
+    return (df, ax)
+
+### Solution 4
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(car_dict):
+    car_data = list(car_dict.items())
+    df = pd.DataFrame(car_data, columns=['Car', 'Color'])
+    color_"
+fltr &= Q(**self.CUSTOM_FILTER) & Q(_cls='Observable.{}'.format(self.ACTS_ON)),fltr &= Q(**self.CUSTOM_FILTER) & Q(_cls='Node.Observable.{}'.format(self.ACTS_ON)),"### Buggy Python Code
+fltr &= Q(**self.CUSTOM_FILTER) & Q(_cls='Observable.{}'.format(self.ACTS_ON))
+
+### Corrected Python Code
+fltr &= Q(**self.CUSTOM_FILTER) & Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id=self.id) if self.id else Q(_cls='Observable.{}'.format(self.ACTS_ON)) & Q(id"
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
