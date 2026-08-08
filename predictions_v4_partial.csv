@@ -53928,3 +53928,246 @@ Python 3 Web Server with Flask and SQLite3 Database Example Project
 
 ## Description
 This is a simple Python 3 Web Server with Flask and SQLite3 Database Example Project. It is based on the Flask tutorial at https://flask.palletsprojects.com/en/1.1.x/tutorial/firstapp/. The tutorial is based on Python 2.7.x, but the code is compatible with Python 3.x. The tutorial is based on SQLite3, but the code is compatible with MySQL. The tutorial is based on Flask-SQLAlchemy, but the code is compatible with Flask-Migrate. The tutorial is based on Flask-Login, but the code is compatible with Flask-Security. The tutorial is based on Flask-Mail, but the code is compatible with Flask-Mail-SMTP. The tutorial is based on Flask-Admin, but the code is compatible with Flask-Admin-Security. The tutorial is based on Flask-RESTful, but the code is compatible with Flask-RESTful-SQLAlchemy. The tutorial is based on Flask-Caching, but the code is compatible with Flask-Caching-Redis. The tutorial is based on Flask-DebugToolbar, but the code is compatible with Flask-DebugToolbar-MongoDB. The tutorial is based on Flask-WTF, but the code is compatible with Flask-WTF-SQLAlchemy. The tutorial is based on Flask-Babel, but the code is compatible with Flask-Babel-SQLAlchemy. The tutorial is based on Flask-Script, but the code is compatible with Flask-Script-SQLAlchemy. The tutorial is based on Flask-Migrate, but the code is compatible with Flask-Migrate-SQLAlchemy. The tutorial is based on Flask-Login, but the code is compatible with Flask-Login-SQLAlchemy. The tutorial is based on Flask-Mail, but the code is compatible with Flask-Mail-SQLAlchemy. The tutorial is based on Flask-Admin, but the code is compatible with Flask-Admin-SQLAlchemy. The tutorial is based on Flask-RESTful, but the code is compatible with Flask-RESTful-SQLAlchemy. The tutorial is based on Flask-Caching, but the code is compatible"
+"if not t or t.__class__ is NullTranslations:
+    t = self._null_translations","if not isinstance(t, Translations):
+    t = self._null_translations","### Buggy Python Code
+if not t or t.__class__ is NullTranslations:
+    t = self._null_translations
+
+### Corrected Python Code
+if not t or t.__class__ is NullTranslations or t.__class__ is Translations:
+    t = self._null_translations
+
+### Corrected Python code
+if not t or t.__class__ is NullTranslations or t.__class__ is Translations:
+    t = self._null_translations
+
+return t.get(key, default) if t else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or '' if default is None else default.decode('utf-8') if isinstance(default, str) else default or"
+KPI_PREFIX = False if KPI_PREFIX.lower == 'false' else KPI_PREFIX,KPI_PREFIX = False if KPI_PREFIX.lower() == 'false' else KPI_PREFIX,"### Buggy Python Code
+KPI_PREFIX = False if KPI_PREFIX.lower == 'false' else KPI_PREFIX
+
+### Corrected Python Code
+KPI_PREFIX = False if KPI_PREFIX.lower() == 'false' else KPI_PREFIX
+
+### Corrected Python code
+KPI_PREFIX = False if KPI_PREFIX.lower() == 'false' else KPI_PREFIX
+
+### Corrected Python code
+KPI_PREFIX = False if KPI_PREFIX.lower() == 'false' else True if KPI_PREFIX.lower() == 'true' else KPI_PREFIX
+
+### Corrected Python code
+KPI_PREFIX = False if KPI_PREFIX.lower() == 'false' else True if KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else KPI_PREFIX.lower() == 'false' else KPI_PREFIX.lower() == 'true' else"
+"class SingleObjectTemplateResponseMixin(JinjaTemplateResponseMixin, _generic_detail.TemplateResponseMixin):","class SingleObjectTemplateResponseMixin(JinjaTemplateResponseMixin, _generic_detail.SingleObjectTemplateResponseMixin):","### Buggy Python Code
+class SingleObjectTemplateResponseMixin(JinjaTemplateResponseMixin, _generic_detail.TemplateResponseMixin):
+
+### Corrected Python Code
+class SingleObjectTemplateResponseMixin(JinjaTemplateResponseMixin, _generic_detail.SingleObjectTemplateResponseMixin):
+    pass
+/django_rest_framework_extensions/templatetags/rest_framework_extensions.py
+from django.template import Library, TemplateSyntaxError, VariableDoesNotExist, Template, Context
+from django.template.loader import get_template, TemplateDoesNotExist, get_template_from_string, render_to_string, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template_from_string, get_template_from_path, get_template_from_name, get_template_from_loader, get_template"
+"sync.apply_async((s.id, s.sync_interval))","sync.apply_async((s.server.id, s.server.sync_interval))","### Buggy Python Code
+sync.apply_async((s.id, s.sync_interval))
+
+### Corrected Python Code
+sync.apply_async((s.id, s.sync_interval), queue='sync')
+/sync/tasks.py
+from __future__ import absolute_import, unicode_literals
+
+from celery import shared_task
+from celery.utils.log import get_task_logger
+
+from.models import Sync
+
+logger = get_task_logger(__name__)
+
+
+@shared_task(name='sync.sync_all')
+def sync_all():
+    logger.info('Starting sync')
+    Sync.sync_all()
+    logger.info('Finished sync')
+    return True
+/sync/models.py
+from __future__ import absolute_import, unicode_literals
+
+from django.db import models
+from django.utils import timezone
+
+from.utils import get_sync_interval_from_settings, sync_all_from_settings, sync_from_settings, sync_to_settings, sync_to_settings_from_settings, sync_to_settings_from_settings_and_sync_to_settings, sync_to_settings_from_settings_and_sync_to_settings_and_sync_from_settings, sync_to_settings_from_settings_and_sync_to_settings_and_sync_from_settings_and_sync_to_settings_from_settings, sync_to_settings_from_settings_and_sync_to_settings_and_sync_from_settings_and_sync_to_settings_from_settings_and_sync_from_settings_and_sync_to_settings_from_settings, sync_to_settings_from_settings_and_sync_to_settings_and_sync_from_settings_and_sync_to_settings_from_settings_and_sync_from_settings_and_sync_to_settings_from_settings_and_sync_from_settings_and_sync_to_settings_from_settings, sync_to_settings_from_settings_and_sync_to_settings_and_sync_from_settings_and_sync_to_settings_from_settings_and_sync_from_settings_and_sync_to_settings_from_settings_and_sync_from_settings_and_sync_to_settings_from_settings, sync_to_"
+"class Solution:
+
+    def minimumOperations(self, nums: List[int]) -> int:
+        s = []
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                break
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0","class Solution:
+
+    def minimumOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0","s = []
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                break
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0
+
+### Corrected Python Code
+class Solution:
+
+    def minimumOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i in range(len(nums) - 1, -1, -1):
+            if nums[i] in s:
+                return i // 3 + 1
+            s.add(nums[i])
+        return 0
+
+class Solution:
+
+    def minOperations(self, nums: List[int]) -> int:
+        s = set()
+        for i"
+"active_positions = data_set.tensors[-1].view(len(data_set), -1) != 0.0","active_positions = data_set.tensors[-2].view(len(data_set), -1) != 0.0","### Buggy Python Code
+active_positions = data_set.tensors[-1].view(len(data_set), -1)!= 0.0
+
+### Corrected Python Code
+active_positions = data_set.tensors[-1].view(len(data_set), -1)!= 0.0 and data_set.tensors[-1].view(len(data_set), -1).sum(1)!= 0.0
+
+return active_positions.nonzero()[:, 0] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 1] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 2] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 3] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 4] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 5] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 6] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 7] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 8] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 9] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 10] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 11] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 12] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 13] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 14] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 15] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 16] if len(active_positions.nonzero()) > 0 else None, active_positions.nonzero()[:, 17] if len(active_positions.nonzero())"
+"return ' '.join(['%s=%s' % (var, value) for var, value in data.items()])","return ' '.join(['%s=""%s""' % (var, value) for var, value in data.items()])","### Buggy Python Code
+return''.join(['%s=%s' % (var, value) for var, value in data.items()])
+
+### Corrected Python Code
+return''.join(['%s=%s' % (var, value) for var, value in data.items() if value is not None]) +'' + self.extra_args() if self.extra_args() else '' +'' + self.extra_env() if self.extra_env() else '' +'' + self.extra_flags() if self.extra_flags() else '' +'' + self.extra_files() if self.extra_files() else '' +'' + self.extra_output() if self.extra_output() else '' +'' + self.extra_input() if self.extra_input() else '' +'' + self.extra_shell() if self.extra_shell() else '' +'' + self.extra_cwd() if self.extra_cwd() else '' +'' + self.extra_log() if self.extra_log() else '' +'' + self.extra_error() if self.extra_error() else '' +'' + self.extra_debug() if self.extra_debug() else '' +'' + self.extra_verbose() if self.extra_verbose() else '' +'' + self.extra_timeout() if self.extra_timeout() else '' +'' + self.extra_memory() if self.extra_memory() else '' +'' + self.extra_cores() if self.extra_cores() else '' +'' + self.extra_disk() if self.extra_disk() else '' +'' + self.extra_queue() if self.extra_queue() else '' +'' + self.extra_priority() if self.extra_priority() else '' +'' + self.extra_email() if self.extra_email() else '' +'' + self.extra_notify() if self.extra_notify() else '' +'' + self.extra_notify_email() if self.extra_notify_email() else '' +'' + self.extra_notify_on_error() if self.extra_notify_on_error() else '' +'' + self.extra_notify_on_success() if self.extra_notify_on_success() else '' +'' + self.extra_notify_on_abort() if self.extra_notify_on_abort"
+"class Solution:
+
+    def minFlips(self, grid: List[List[int]]) -> int:
+        n, m = (len(grid), len(grid[0]))
+        cnt1 = cnt2 = 0
+        for row in grid:
+            for j in range(n // 2):
+                if row[j] != row[n - j - 1]:
+                    cnt1 += 1
+        for j in range(n):
+            for i in range(m // 2):
+                if grid[i][j] != grid[m - i - 1][j]:
+                    cnt2 = 1
+        return min(cnt1, cnt2)","class Solution:
+
+    def minFlips(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        cnt1 = cnt2 = 0
+        for row in grid:
+            for j in range(n // 2):
+                if row[j] != row[n - j - 1]:
+                    cnt1 += 1
+        for j in range(n):
+            for i in range(m // 2):
+                if grid[i][j] != grid[m - i - 1][j]:
+                    cnt2 += 1
+        return min(cnt1, cnt2)","class Solution:
+
+    def minFlips(self, grid: List[List[int]]) -> int:
+        n, m = (len(grid), len(grid[0]))
+        cnt1 = cnt2 = 0
+        for row in grid:
+            for j in range(n // 2):
+                if row[j]!= row[n - j - 1]:
+                    cnt1 += 1
+        for j in range(m):
+            for i in range(m // 2):
+                if grid[i][j]!= grid[m - i - 1][j]:
+                    cnt2 += 1
+        return min(cnt1, cnt2) // 2 * 2
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minFlips(self, grid: List[List[int]]) -> int:
+        n, m = (len(grid), len(grid[0]))
+        cnt1 = cnt2 = 0
+        for row in grid:
+            for j in range(n // 2):
+                if row[j]!= row[n - j - 1]:
+                    cnt1 += 1
+        for j in range(m):
+            for i in range(m // 2):
+                if grid[i][j]!= grid[m - i - 1][j]:
+                    cnt2 += 1
+        return min(cnt1, cnt2) // 2 * 2
+/1000/1000-1005/1005.cpp
+class Solution {
+
+public:
+
+    int minFlips(vector<vector<int>>& grid) {
+        int n, m = (int)(grid.size()), (int)(grid[0].size());
+        int cnt1 = cnt2 = 0;
+        for (auto row : grid) {
+            for (int j = 0; j < n // 2; j++) {
+                if (row[j]!= row[n - j - 1])
+                    cnt1++;
+            }
+        }
+        for (int j = 0; j < m; j++) {
+            for (int i = 0; i < m // 2; i++) {
+                if (grid[i][j]!= grid[m - i - 1][j])
+                    cnt2++;"
