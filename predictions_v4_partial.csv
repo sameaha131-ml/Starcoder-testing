@@ -52164,3 +52164,310 @@ changes = self.worldEditor.getRevisionChanges(self.currentRevision - 1, self.cur
 
 ### Corrected Python Code
 changes = self.worldEditor.getRevisionChanges(self.currentRevision - 1, self.currentRevision - 1) + self.worldEditor.getRevisionChanges(self.currentRevision, self.currentRevision) + self.worldEditor.getRevisionChanges(self.currentRevision + 1, self.currentRevision + 1) + self.worldEditor.getRevisionChanges(self.currentRevision + 2, self.currentRevision + 2) + self.worldEditor.getRevisionChanges(self.currentRevision + 3, self.currentRevision + 3) + self.worldEditor.getRevisionChanges(self.currentRevision + 4, self.currentRevision + 4) + self.worldEditor.getRevisionChanges(self.currentRevision + 5, self.currentRevision + 5) + self.worldEditor.getRevisionChanges(self.currentRevision + 6, self.currentRevision + 6) + self.worldEditor.getRevisionChanges(self.currentRevision + 7, self.currentRevision + 7) + self.worldEditor.getRevisionChanges(self.currentRevision + 8, self.currentRevision + 8) + self.worldEditor.getRevisionChanges(self.currentRevision + 9, self.currentRevision + 9) + self.worldEditor.getRevisionChanges(self.currentRevision + 10, self.currentRevision + 10) + self.worldEditor.getRevisionChanges(self.currentRevision + 11, self.currentRevision + 11) + self.worldEditor.getRevisionChanges(self.currentRevision + 12, self.currentRevision + 12) + self.worldEditor.getRevisionChanges(self.currentRevision + 13, self.currentRevision + 13) + self.worldEditor.getRevisionChanges(self.currentRevision + 14, self.currentRevision + 14) + self.worldEditor.getRevisionChanges(self.currentRevision + 15, self.currentRevision + 15) + self.worldEditor.getRevisionChanges(self.currentRevision + 16, self.currentRevision + 16) + self.worldEditor.getRevisionChanges(self.currentRevision + 17, self.currentRevision + 17) + self.worldEditor.get"
+"class Solution:
+
+    def minAnagramLength(self, s: str) -> int:
+
+        def check(k: int) -> bool:
+            for i in range(0, n, k):
+                cnt1 = Counter(s[i:i + k])
+                for c, v in cnt.items():
+                    if cnt1[c] * (n // k) != v:
+                        break
+            return True
+        cnt = Counter()
+        n = len(s)
+        for i in range(1, n + 1):
+            if n % i == 0 and check(i):
+                return n // i","class Solution:
+
+    def minAnagramLength(self, s: str) -> int:
+
+        def check(k: int) -> bool:
+            for i in range(0, n, k):
+                cnt1 = Counter(s[i:i + k])
+                for c, v in cnt.items():
+                    if cnt1[c] * (n // k) != v:
+                        return False
+            return True
+        cnt = Counter(s)
+        n = len(s)
+        for i in range(1, n + 1):
+            if n % i == 0 and check(i):
+                return i","cnt1[c] * (n // k)!= v:
+                        break
+            return True
+        cnt = Counter()
+        n = len(s)
+        for i in range(1, n + 1):
+            if n % i == 0 and check(i):
+                return n // i
+
+### Corrected Python Code
+class Solution:
+
+    def minAnagramLength(self, s: str) -> int:
+
+        def check(k: int) -> bool:
+            for i in range(0, n, k):
+                cnt1 = Counter(s[i:i + k])
+                for c, v in cnt.items():
+                    if cnt1[c] * (n // k)!= v:
+                        return False
+            return True
+        cnt = Counter(s)
+        n = len(s)
+        for i in range(1, n + 1):
+            if n % i == 0 and check(i):
+                return n // i
+        return -1
+
+### Corrected Python
+class Solution:
+
+    def minAnagramLength(self, s: str) -> int:
+
+        def check(k: int) -> bool:
+            for i in range(0, n, k):
+                cnt1 = Counter(s[i:i + k])
+                for c, v in cnt.items():
+                    if cnt1[c] * (n // k)!= v:
+                        return False
+            return True
+        cnt = Counter(s)
+        n = len(s)
+        for i in range(1, n + 1):
+            if n % i == 0 and check(i):
+                return n // i
+        return -1
+
+### Corrected Python
+class Solution:
+
+    def minAnagramLength(self, s: str) -> int:
+
+        def check(k: int) -> bool:
+            for i in range(0, n, k):
+                cnt1 = Counter(s[i:i + k])
+                for c, v in cnt.items():
+                    if cnt1[c] * (n // k)!= v:
+                        return False
+            return True
+        cnt = Counter(s)
+        n = len(s)
+        for i in range(1, n + 1):
+            if n % i == 0 and check(i):
+                return n // i
+        return -1
+
+### Corrected Python
+class Solution:
+
+    def minAnagramLength(self, s: str) -> int:
+
+        def check(k: int) -> bool:
+            for i in range(0, n, k):
+                cnt1 = Counter(s[i:i + k])
+                for c, v in cnt.items():
+                    if cnt1[c] * (n // k)!="
+"self.assertEqual(18, len(TvbProfile.current.manager.stored_settings))","self.assertEqual(16, len(TvbProfile.current.manager.stored_settings))","### Buggy Python Code
+self.assertEqual(18, len(TvbProfile.current.manager.stored_settings))
+
+### Corrected Python Code
+self.assertEqual(19, len(TvbProfile.current.manager.stored_settings))
+
+    def test_get_stored_settings_for_profile(self):
+        TvbProfile.current.manager.stored_settings = {'a': 1, 'b': 2}
+        self.assertEqual({'a': 1, 'b': 2}, TvbProfile.current.manager.get_stored_settings_for_profile())
+
+    def test_get_stored_settings_for_profile_with_default(self):
+        TvbProfile.current.manager.stored_settings = {'a': 1, 'b': 2}
+        self.assertEqual({'a': 1, 'b': 2, 'c': 3}, TvbProfile.current.manager.get_stored_settings_for_profile(default={'c': 3}))
+
+    def test_get_stored_settings_for_profile_with_default_and_empty(self):
+        TvbProfile.current.manager.stored_settings = {'a': 1, 'b': 2}
+        self.assertEqual({'a': 1, 'b': 2, 'c': 3}, TvbProfile.current.manager.get_stored_settings_for_profile(default={'c': 3}, empty=True))
+
+    def test_get_stored_settings_for_profile_with_default_and_empty_and_none(self):
+        TvbProfile.current.manager.stored_settings = {'a': 1, 'b': 2}
+        self.assertEqual({'a': 1, 'b': 2, 'c': 3}, TvbProfile.current.manager.get_stored_settings_for_profile(default={'c': 3}, empty=True, none=True))
+
+    def test_get_stored_settings_for_profile_with_default_and_none(self):
+        TvbProfile.current.manager.stored_settings = {'a': 1, 'b': 2}
+        self.assertEqual({'a': 1, 'b': 2, 'c': 3}, TvbProfile.current.manager.get_stored_settings_for_profile(default={'c': 3}, none=True))
+
+    def test_get_stored_settings_for_profile_with_"
+"fields = ('id', 'price', 'home_type', 'images', 'remarks', 'num_bedrooms', 'num_bathrooms', 'interior_amenities', 'exterior_amenities', 'nearby_amenities', 'latitude', 'longitude', 'on_market')","fields = ('id', 'price', 'home_type', 'images', 'remarks', 'num_bedrooms', 'num_bathrooms', 'interior_amenities', 'exterior_amenities', 'nearby_amenities', 'latitude', 'longitude', 'on_market', 'date_available')","### Buggy Python Code
+fields = ('id', 'price', 'home_type', 'images','remarks', 'num_bedrooms', 'num_bathrooms', 'interior_amenities', 'exterior_amenities', 'nearby_amenities', 'latitude', 'longitude', 'on_market')
+
+### Corrected Python Code
+fields = ('id', 'price', 'home_type', 'images','remarks', 'num_bedrooms', 'num_bathrooms', 'interior_amenities', 'exterior_amenities', 'nearby_amenities', 'latitude', 'longitude', 'on_market', 'address')
+
+class ListingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Listing
+        fields = ('id', 'price', 'home_type', 'images','remarks', 'num_bedrooms', 'num_bathrooms', 'interior_amenities', 'exterior_amenities', 'nearby_amenities', 'latitude', 'longitude', 'on_market', 'address')
+
+    def create(self, validated_data):
+        listing = Listing.objects.create(**validated_data)
+        return listing
+
+    def update(self, instance, validated_data):
+        instance.price = validated_data.get('price', instance.price)
+        instance.home_type = validated_data.get('home_type', instance.home_type)
+        instance.images = validated_data.get('images', instance.images)
+        instance.remarks = validated_data.get('remarks', instance.remarks)
+        instance.num_bedrooms = validated_data.get('num_bedrooms', instance.num_bedrooms)
+        instance.num_bathrooms = validated_data.get('num_bathrooms', instance.num_bathrooms)
+        instance.interior_amenities = validated_data.get('interior_amenities', instance.interior_amenities)
+        instance.exterior_amenities = validated_data.get('exterior_amenities', instance.exterior_amenities)
+        instance.nearby_amenities = validated_data.get('nearby_amenities', instance.nearby_amenities)
+        instance.latitude = validated_data.get('latitude', instance.latitude)
+        instance.longitude = validated_data.get('longitude', instance.longitude)
+        instance.on_market = validated_data.get('on_market', instance.on_market)
+        instance.address = validated_data.get('address', instance.address)
+        instance.save()
+        return instance
+/listing/migrations/0001_initial.py
+# Generated by Django 2.2.1 on"
+"return ""rdflib.Literal('%s',language=%s,datatype=%s>"" % (unicode(self), repr(self.language), repr(self.datatype))","return ""rdflib.Literal('%s',language=%s,datatype=%s)"" % (unicode(self), repr(self.language), repr(self.datatype))","### Buggy Python Code
+return ""rdflib.Literal('%s',language=%s,datatype=%s>"" % (unicode(self), repr(self.language), repr(self.datatype))
+
+### Corrected Python Code
+return ""rdflib.Literal('%s', language=%s, datatype=%s)"" % (unicode(self), repr(self.language), repr(self.datatype)) + ("", value=%s"" % repr(self.value) if self.value is not None else """") + ("", lexicalForm=%s"" % repr(self.lexicalForm) if self.lexicalForm is not None else """") + ("", normalizedValue=%s"" % repr(self.normalizedValue) if self.normalizedValue is not None else """") + ("", normalizedLexicalForm=%s"" % repr(self.normalizedLexicalForm) if self.normalizedLexicalForm is not None else """") + ("", normalizedString=%s"" % repr(self.normalizedString) if self.normalizedString is not None else """") + ("", normalizedValue=%s"" % repr(self.normalizedValue) if self.normalizedValue is not None else """") + ("", normalizedLexicalForm=%s"" % repr(self.normalizedLexicalForm) if self.normalizedLexicalForm is not None else """") + ("", normalizedString=%s"" % repr(self.normalizedString) if self.normalizedString is not None else """") + ("", normalizedValue=%s"" % repr(self.normalizedValue) if self.normalizedValue is not None else """") + ("", normalizedLexicalForm=%s"" % repr(self.normalizedLexicalForm) if self.normalizedLexicalForm is not None else """") + ("", normalizedString=%s"" % repr(self.normalizedString) if self.normalizedString is not None else """") + ("", normalizedValue=%s"" % repr(self.normalizedValue) if self.normalizedValue is not None else """") + ("", normalizedLexicalForm=%s"" % repr(self.normalizedLexicalForm) if self.normalizedLexicalForm is not None else """") + ("", normalizedString=%s"" % repr(self.normalizedString) if self.normalizedString is not None else """") + ("", normalizedValue=%s"" % repr(self.normalizedValue) if self.normalizedValue is not None else """") + ("", normalizedLexicalForm=%s"" % repr(self.normalizedLexicalForm) if self.normalizedLexicalForm is not None else """") + ("", normalizedString=%s"" % repr(self.normalizedString) if self.normalizedString is not None else """") + ("", normalizedValue=%s"
+"from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+def task_func(df, age: int, height: int):
+    selected_df = df[(df['Age'] > age) & (df['Height'] < height)].copy()
+    if len(selected_df) >= 3:
+        kmeans = KMeans(n_clusters=3)
+        selected_df['Cluster'] = kmeans.fit_predict(selected_df[['Age', 'Height']])
+        plt.figure(figsize=(10, 5))
+        plt.scatter(selected_df['Age'], selected_df['Height'], colors=selected_df['Cluster'])
+        plt.xlabel('Age')
+        plt.ylabel('Height')
+        plt.title('KMeans Clustering based on Age and Height')
+        ax = plt.show()
+        return (selected_df, ax)
+    else:
+        return (selected_df, None)","from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+def task_func(df, age: int, height: int):
+    selected_df = df[(df['Age'] > age) & (df['Height'] < height)].copy()
+    if len(selected_df) >= 3:
+        kmeans = KMeans(n_clusters=3)
+        selected_df['Cluster'] = kmeans.fit_predict(selected_df[['Age', 'Height']])
+        plt.figure(figsize=(10, 5))
+        plt.scatter(selected_df['Age'], selected_df['Height'], c=selected_df['Cluster'])
+        plt.xlabel('Age')
+        plt.ylabel('Height')
+        plt.title('KMeans Clustering based on Age and Height')
+        ax = plt.gca()
+        return (selected_df, ax)
+    else:
+        selected_df['Cluster'] = 0
+        return (selected_df, None)","from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+def task_func(df, age: int, height: int):
+    selected_df = df[(df['Age'] > age) & (df['Height'] < height)].copy()
+    if len(selected_df) >= 3:
+        kmeans = KMeans(n_clusters=3)
+        selected_df['Cluster'] = kmeans.fit_predict(selected_df[['Age', 'Height']])
+        plt.figure(figsize=(10, 5))
+        plt.scatter(selected_df['Age'], selected_df['Height'], c=selected_df['Cluster'])
+        plt.xlabel('Age')
+        plt.ylabel('Height')
+        plt.title('KMeans Clustering based on Age and Height')
+        ax = plt.gca()
+        return (selected_df, ax)
+    else:
+        return (selected_df, None)
+/01-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/02-python-basics/"
+"from ..nodes import Node, User, Hashtag, Geotag","from ..nodes import Node, User, Hashtag, Geotag, Media","### Buggy Python Code
+from..nodes import Node, User, Hashtag, Geotag
+
+### Corrected Python Code
+from..nodes import Node, User, Hashtag, Geotag, Location, Place, Event, Group, Page, Comment, Like, Repost, Follow, Block, Unfollow, Mention, Message, Notification, Favourite, Flag, Report, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, BlockedUser, BlockedPage, BlockedGroup, BlockedEvent, BlockedLocation, BlockedPlace, Block"
+"IrcHandler = Callable[['connection.ConnectionHandler', IrcMessage, datetime], None]","IrcHandler = Callable[['connectionM.ConnectionHandler', IrcMessage, datetime], None]","### Buggy Python Code
+IrcHandler = Callable[['connection.ConnectionHandler', IrcMessage, datetime], None]
+
+### Corrected Python Code
+IrcHandler = Callable[['connection.ConnectionHandler', IrcMessage, datetime], bool]
+
+class IrcMessage(object):
+    def __init__(self, connection, message, timestamp):
+        self.connection = connection
+        self.message = message
+        self.timestamp = timestamp
+
+    def __repr__(self):
+        return '<IrcMessage %s: %s>' % (self.timestamp, self.message)
+
+    def __str__(self):
+        return '<IrcMessage %s: %s>' % (self.timestamp, self.message)
+
+    def __eq__(self, other):
+        return self.timestamp == other.timestamp and self.message == other.message and self.connection == other.connection
+
+    def __ne__(self, other):
+        return not self == other
+
+    def __hash__(self):
+        return hash((self.timestamp, self.message, self.connection))
+
+class ConnectionHandler(object):
+    def __init__(self, connection):
+        self.connection = connection
+        self.messages = []
+        self.last_message_time = None
+
+    def __repr__(self):
+        return '<ConnectionHandler %s>' % self.connection
+
+    def __str__(self):
+        return '<ConnectionHandler %s>' % self.connection
+
+    def __eq__(self, other):
+        return self.connection == other.connection
+
+    def __ne__(self, other):
+        return not self == other
+
+    def __hash__(self):
+        return hash(self.connection)
+
+    def add_message(self, message):
+        self.messages.append(IrcMessage(self, message, datetime.datetime.now()))
+        self.last_message_time = datetime.datetime.now()
+
+    def get_messages(self, after=None):
+        if after is None:
+            return self.messages
+        else:
+            return [m for m in self.messages if m.timestamp > after]
+
+    def get_last_message_time(self):
+        return self.last_message_time
+
+    def get_connection(self):
+        return self.connection
+
+class Connection(object):
+    def __init__(self, host, port):
+        self.host = host
+        self.port = port
+        self.handlers = []
+        self.last_message_time = None
+
+    def __repr__(self):
+        return '<Connection %s:%s>' % (self.host, self.port)
+
+    def __"
+"self.assertIn('127.0.0.1', self.output.getvalue())","self.assertIn('Sessions with Ephemerals', self.output.getvalue())","### Buggy Python Code
+self.assertIn('127.0.0.1', self.output.getvalue())
+
+### Corrected Python Code
+self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127.0.0.1', self.output.getvalue().decode('utf-8')) or self.assertIn('127."
