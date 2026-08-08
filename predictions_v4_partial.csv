@@ -68683,3 +68683,326 @@ class Solution:
         costs.sort(key=lambda x: x[1])
         ans = 0
         for i, (a, b) in enumerate("
+"with open(parsed_arg.consensusOutput) as f:
+    json.dump(statStr, f, indent=4)","with open(parsed_arg.consensusOutput, 'w') as f:
+    json.dump(statStr, f, indent=4)","### Buggy Python Code
+with open(parsed_arg.consensusOutput) as f:
+    json.dump(statStr, f, indent=4)
+
+### Corrected Python Code
+with open(parsed_arg.consensusOutput, 'w') as f:
+    json.dump(statStr, f, indent=4)
+/scripts/run_consensus.py
+#!/usr/bin/env python3
+import argparse
+import json
+import os
+import subprocess
+import sys
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from scripts.utils import *
+
+def main():
+    parser = argparse.ArgumentParser(description='Run consensus')
+    parser.add_argument('-i', '--input', help='Input file', required=True)
+    parser.add_argument('-o', '--output', help='Output file', required=True)
+    parser.add_argument('-c', '--consensusOutput', help='Consensus output file', required=True)
+    parser.add_argument('-t', '--threads', help='Number of threads', default=1)
+    parser.add_argument('-g', '--genome', help='Genome file', required=True)
+    parser.add_argument('-p', '--prefix', help='Prefix for output files', default='consensus')
+    args = parser.parse_args()
+    statStr = {}
+    statStr['input'] = args.input
+    statStr['output'] = args.output
+    statStr['consensusOutput'] = args.consensusOutput
+    statStr['threads'] = args.threads
+    statStr['genome'] = args.genome
+    statStr['prefix'] = args.prefix
+    subprocess.call(['consensus.py', '-i', args.input, '-o', args.output, '-c', args.consensusOutput, '-t', args.threads, '-g', args.genome, '-p', args.prefix])
+    with open(args.consensusOutput) as f:
+        statStr['consensus'] = json.load(f)
+    with open(args.output, 'w') as f:
+        json.dump(statStr, f, indent=4)
+
+if __name__ == '__main__':
+    main()
+/scripts/run_consensus_from_fasta.py
+#!/usr/bin/env python3
+import argparse
+import json
+import os
+import subprocess
+import sys
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from"
+"import random
+import matplotlib.pyplot as plt
+
+class Object:
+    value = 0
+
+    def __init__(self, value=None):
+        if value is None:
+            self.value = random.gauss(0, 1)
+        else:
+            self.value = value
+
+def task_func(obj_list, attr, num_bins=30, seed=0):
+    random.seed(seed)
+    attr_values = [obj for obj in obj_list]
+    fig, ax = plt.subplots()
+    num_bins = len(set(attr_values))
+    ax.hist(attr_values, bins=num_bins, alpha=0.5)
+    ax.set_title('Histogram of attribute values')
+    ax.set_xlabel('Attribute Value')
+    ax.set_ylabel('Count')
+    return ax","import random
+import matplotlib.pyplot as plt
+
+class Object:
+    value = 0
+
+    def __init__(self, value=None):
+        if value is None:
+            self.value = random.gauss(0, 1)
+        else:
+            self.value = value
+
+def task_func(obj_list, attr, num_bins=30, seed=0):
+    random.seed(seed)
+    attr_values = [getattr(obj, attr) for obj in obj_list]
+    fig, ax = plt.subplots()
+    ax.hist(attr_values, bins=num_bins, alpha=0.5)
+    ax.set_title('Histogram of attribute values')
+    ax.set_xlabel('Attribute Value')
+    ax.set_ylabel('Count')
+    return ax","### Corrected Python Code
+import random
+import matplotlib.pyplot as plt
+
+class Object:
+    value = 0
+
+    def __init__(self, value=None):
+        if value is None:
+            self.value = random.gauss(0, 1)
+        else:
+            self.value = value
+
+def task_func(obj_list, attr, num_bins=30, seed=0):
+    random.seed(seed)
+    attr_values = [getattr(obj, attr) for obj in obj_list]
+    fig, ax = plt.subplots()
+    ax.hist(attr_values, bins=num_bins, alpha=0.5)
+    ax.set_title('Histogram of attribute values')
+    ax.set_xlabel('Attribute Value')
+    ax.set_ylabel('Count')
+    return ax
+
+### Corrected Python
+import random
+import matplotlib.pyplot as plt
+
+class Object:
+    value = 0
+
+    def __init__(self, value=None):
+        if value is None:
+            self.value = random.gauss(0, 1)
+        else:
+            self.value = value
+
+def task_func(obj_list, attr, num_bins=30, seed=0):
+    random.seed(seed)
+    attr_values = [getattr(obj, attr) for obj in obj_list]
+    fig, ax = plt.subplots()
+    ax.hist(attr_values, bins=num_bins, alpha=0.5)
+    ax.set_title('Histogram of attribute values')
+    ax.set_xlabel('Attribute Value')
+    ax.set_ylabel('Count')
+    return ax, attr_values
+
+### Corrected Python
+import random
+import matplotlib.pyplot as plt
+
+class Object:
+    value = 0
+
+    def __init__(self, value=None):
+        if value is None:
+            self.value = random.gauss(0, 1)
+        else:
+            self.value = value
+
+def task_func(obj_list, attr, num_bins=30, seed=0):
+    random.seed(seed)
+    attr_values = [getattr(obj, attr) for obj in obj_list]
+    fig, ax = plt.subplots()
+    ax.hist(attr_values, bins=num_bins, alpha=0.5)
+    ax.set_title('Histogram of"
+"ranked_list = [(label, np.float(func(time, label, 'average'))) for label in self.labels]","ranked_list = [(label, np.float(func(time, label, 'average', bias=0))) for label in self.labels]","### Buggy Python Code
+ranked_list = [(label, np.float(func(time, label, 'average'))) for label in self.labels]
+
+### Corrected Python Code
+ranked_list = [(label, np.float(func(time, label, 'average'))) for label in self.labels if label in self.data]
+
+return ranked_list, self.data[self.labels[0]]['average'] - self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] + self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] - self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] + self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] - self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] + self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] - self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] + self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] - self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] + self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] - self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] + self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] - self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels[0]]['average'] + self.data[self.labels[1]]['average'] / 2.0, self.data[self.labels["
+"assert isinstance(s, (attr.AttrOr, attr.DataAttr))","assert isinstance(s, (attr.AttrOr, attr.DataAttr, attr.AttrAnd))","### Buggy Python Code
+assert isinstance(s, (attr.AttrOr, attr.DataAttr))
+
+### Corrected Python Code
+assert isinstance(s, (attr.AttrOr, attr.DataAttr, attr.DataAttrOr)) or s is None, s.__class__.__name__ +'is not an attribute' or 'data attribute' or 'attribute' or 'attribute or data attribute' or 'attribute or data attribute or attribute' or 'attribute or data attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or attribute or attribute or attribute' or 'attribute or data attribute or"
+sents = [t.strip().split() for t in tokens],sents = [t.strip().split() for t in text],"### Buggy Python Code
+sents = [t.strip().split() for t in tokens]
+
+### Corrected Python Code
+sents = [t.strip().split(' ') for t in tokens] if tokens else []
+
+return sents, tokens, pos_tags, ner_tags, chunk_tags, dependency_trees, dependency_labels, dependency_paths, dependency_paths_labels, dependency_paths_pos_tags, dependency_paths_ner_tags, dependency_paths_chunk_tags, dependency_paths_dependency_trees, dependency_paths_dependency_labels, dependency_paths_dependency_paths, dependency_paths_dependency_paths_labels, dependency_paths_dependency_paths_pos_tags, dependency_paths_dependency_paths_ner_tags, dependency_paths_dependency_paths_chunk_tags, dependency_paths_dependency_paths_dependency_trees, dependency_paths_dependency_paths_dependency_labels, dependency_paths_dependency_paths_dependency_paths, dependency_paths_dependency_paths_dependency_paths_labels, dependency_paths_dependency_paths_dependency_paths_pos_tags, dependency_paths_dependency_paths_dependency_paths_ner_tags, dependency_paths_dependency_paths_dependency_paths_chunk_tags, dependency_paths_dependency_paths_dependency_paths_dependency_trees, dependency_paths_dependency_paths_dependency_paths_dependency_labels, dependency_paths_dependency_paths_dependency_paths_dependency_paths, dependency_paths_dependency_paths_dependency_paths_dependency_paths_labels, dependency_paths_dependency_paths_dependency_paths_dependency_paths_pos_tags, dependency_paths_dependency_paths_dependency_paths_dependency_paths_ner_tags, dependency_paths_dependency_paths_dependency_paths_dependency_paths_chunk_tags, dependency_paths_dependency_paths_dependency_paths_dependency_paths_dependency_trees, dependency_paths_dependency_paths_dependency_paths_dependency_paths_dependency_labels, dependency_paths_dependency_paths_dependency_paths_dependency_paths_dependency_paths, dependency_paths_dependency_paths_dependency_paths_dependency_paths_dependency_paths_labels, dependency_paths_dependency_paths_dependency_paths_dependency_paths_dependency_paths_pos_tags, dependency_paths_dependency_paths_dependency_paths_dependency_paths_dependency_paths_ner_tags, dependency_paths_dependency_"
+"if existingimg.image.size != len(img) or overwrite:
+    existingimage.delete()","if existingimg.image.size != len(i) or overwrite:
+    existingimage.delete()","### Buggy Python Code
+if existingimg.image.size!= len(img) or overwrite:
+    existingimage.delete()
+
+### Corrected Python Code
+if existingimg.image.size!= len(img) and overwrite:
+    existingimage.delete()
+
+### Corrected Python Code
+if existingimg.image.size!= len(img) and overwrite == False:
+    existingimage.delete()
+
+### Corrected Python Code
+if existingimg.image.size!= len(img) and overwrite == False:
+    existingimage.delete()
+
+### Corrected Python Code
+if existingimg.image.size!= len(img) and overwrite == False:
+    existingimage.delete()
+    return existingimage.image.save(filename, ContentFile(io.BytesIO(img)))
+
+return existingimage.image.save(filename, ContentFile(io.BytesIO(img)))
+/src/django_image_storage/models.py
+from django.db import models
+from django.core.files.storage import FileSystemStorage
+
+class ImageStorage(FileSystemStorage):
+    def _save(self, name, content, max_length=None):
+        return super()._save(name, content, max_length=max_length) + '.jpg'
+
+    def _open(self, name, mode='rb'):
+        return super()._open(name, mode) + '.jpg'
+
+    def _delete(self, name):
+        super()._delete(name)
+        name = name.replace('.jpg', '')
+        super()._delete(name)
+
+    def _get_valid_name(self, name):
+        return super()._get_valid_name(name) + '.jpg'
+/src/django_image_storage/tests.py
+from django.test import TestCase
+from django.core.files.storage import FileSystemStorage
+from django.core.files.base import ContentFile
+import io
+
+class ImageStorageTestCase(TestCase):
+    def setUp(self):
+        self.storage = FileSystemStorage()
+
+    def test_save(self):
+        img = io.BytesIO(b'123456789')
+        filename = 'test.jpg'
+        existingimage = self.storage.save(filename, ContentFile(io.BytesIO(img)))
+        self.assertTrue(existingimage.endswith('.jpg'))
+        self.assertTrue(existingimage.startswith('test'))
+        self.assertTrue(existingimage.size == len(img))
+        self.assertTrue(self.storage.exists(existingimage"
+tarball = self.fetch_asset('http://valgrind.org/downloads/valgrind-3.12.0.tar.bz2'),tarball = self.fetch_asset('ftp://sourceware.org/pub/valgrind/valgrind-3.13.0.tar.bz2'),"### Buggy Python Code
+tarball = self.fetch_asset('http://valgrind.org/downloads/valgrind-3.12.0.tar.bz2')
+
+### Corrected Python Code
+tarball = self.fetch_asset('http://valgrind.org/downloads/valgrind-3.12.0.tar.bz2', 'valgrind-3.12.0.tar.bz2')
+
+tarball.extractall(self.build_dir)
+os.chdir(os.path.join(self.build_dir, 'valgrind-3.12.0'))
+self.run_command('make')
+self.run_command('make install')
+/python/modules/py_lib/py_lib/tests/test_py_lib.py
+import os
+import sys
+import unittest
+
+from py_lib.py_lib import PyLib, PyLibError, PyLibError_NoModule, PyLibError_NoPackage, PyLibError_NoVersion, PyLibError_NoSource, PyLibError_NoBuild, PyLibError_NoInstall, PyLibError_NoInstallDir, PyLibError_NoBuildDir, PyLibError_NoSourceDir, PyLibError_NoPackageDir, PyLibError_NoModuleDir, PyLibError_NoVersionDir, PyLibError_NoBuildDir, PyLibError_NoInstallDir, PyLibError_NoSourceDir, PyLibError_NoPackageDir, PyLibError_NoModuleDir, PyLibError_NoVersionDir, PyLibError_NoBuildDir, PyLibError_NoInstallDir, PyLibError_NoSourceDir, PyLibError_NoPackageDir, PyLibError_NoModuleDir, PyLibError_NoVersionDir, PyLibError_NoBuildDir, PyLibError_NoInstallDir, PyLibError_NoSourceDir, PyLibError_NoPackageDir, PyLibError_NoModuleDir, PyLibError_NoVersionDir, PyLibError_NoBuildDir, PyLibError_NoInstallDir, PyLibError_NoSourceDir, PyLibError_NoPackageDir, PyLibError_NoModuleDir, PyLibError_NoVersionDir, PyLibError_NoBuildDir, PyLibError_NoInstallDir, PyLibError_NoSourceDir, PyLibError_NoPackageDir, PyLibError_NoModuleDir, PyLibError_NoVersionDir, PyLibError_NoBuildDir, PyLibError_NoInstallDir, Py"
+"class Solution:
+
+    def countOfPairs(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        n, m = (len(nums), max(nums))
+        nums.sort()
+        f = [[0] * (m + 1) for _ in range(n)]
+        for j in range(nums[0] + 1):
+            f[0][j] = 1
+        for i in range(1, n):
+            s = f[i - 1]
+            for j in range(nums[i] + 1):
+                k = min(j, j + nums[i - 1] - nums[i])
+                if k >= 0:
+                    f[i][j] = s[j] % mod
+        return sum(f[-1][:nums[-1] + 1]) % mod","class Solution:
+
+    def countOfPairs(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        n, m = (len(nums), max(nums))
+        f = [[0] * (m + 1) for _ in range(n)]
+        for j in range(nums[0] + 1):
+            f[0][j] = 1
+        for i in range(1, n):
+            s = list(accumulate(f[i - 1]))
+            for j in range(nums[i] + 1):
+                k = min(j, j + nums[i - 1] - nums[i])
+                if k >= 0:
+                    f[i][j] = s[k] % mod
+        return sum(f[-1][:nums[-1] + 1]) % mod","class Solution:
+
+    def countOfPairs(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        n, m = (len(nums), max(nums))
+        f = [[0] * (m + 1) for _ in range(n)]
+        for j in range(nums[0] + 1):
+            f[0][j] = 1
+        for i in range(1, n):
+            s = f[i - 1]
+            for j in range(nums[i] + 1):
+                k = min(j, j + nums[i - 1] - nums[i])
+                if k >= 0:
+                    f[i][j] = (s[j] + s[k]) % mod
+        return sum(f[-1][:nums[-1] + 1]) % mod
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n, m = (len(nums), max(nums))
+        f = [[0] * (m + 1) for _ in range(n + 1)]
+        for j in range(nums[0] + 1):
+            f[0][j] = 1
+        for i in range(1, n):
+            s = f[i - 1]
+            for j in range(nums[i] + 1):
+                k = min(j, j + nums[i - 1] - nums[i])
+                if k >= 0:
+                    f[i][j] = (s[j] + s[k]) % m
+        return sum(f[-1][:nums[-1] + 1]) % m - 1
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n, m = (len(nums), max(nums))
+        f = [[0] * (m + 1) for _ in range(n + 1)]
+        for j in range(nums[0] + 1):
+            f[0][j] = 1
+        for i in range(1, n"
