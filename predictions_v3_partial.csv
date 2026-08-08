@@ -18669,3 +18669,269 @@ print(a + b + c)/python/python_basics/python_basics/01_basics/05_basics.py
 a = 10
 b = 20
 c ="
+"user_address = host.create_user_address(user_name, user_id)","user_address = self.create_user_address(user_name, user_id)","### Buggy Python Code
+user_address = host.create_user_address(user_name, user_id)
+
+### Corrected Python Code
+user_address = host.create_user_address(user_name, user_id, user_id) if user_id else host.create_user_address(user_name, user_id)
+
+return user_address.address_id, user_address.address_type, user_address.address_line1, user_address.address_line2, user_address.city, user_address.state, user_address.country, user_address.postal_code, user_address.phone_number, user_address.email_address, user_address.is_primary, user_address.is_deleted, user_address.is_default, user_address.is_active, user_address.is_verified, user_address.is_primary_address, user_address.is_billing_address, user_address.is_shipping_address, user_address.is_shipping_address, user_address.is_billing_address, user_address.is_shipping_address, user_address.is_primary_address, user_address.is_billing_address, user_address.is_shipping_address, user_address.is_primary_address, user_address.is_billing_address, user_address.is_shipping_address, user_address.is_primary_address, user_address.is_billing_address, user_address.is_shipping_address, user_address.is_primary_address, user_address.is_billing_address, user_address.is_shipping_address, user_address.is_primary_address, user_address.is_billing_address, user_address.is_shipping_address, user_address.is_primary_address, user_address.is_billing_address, user_address.is_shipping_address, user_address.is_primary_address, user_address.is_billing_address, user_address.is_shipping_address, user_address.is_primary_address, user_address.is_billing_address, user_address.is_shipping_address, user_address.is_primary_address, user_address.is_billing_address, user_address.is_shipping_address, user_address.is_primary_address, user_address.is_billing_"
+"router = Client(remote=self.router, token=self.token, nowait=True)","router = Client(remote=self.router, token=self.token, nowait=True, autoclose=False)","### Buggy Python Code
+router = Client(remote=self.router, token=self.token, nowait=True)
+
+### Corrected Python Code
+router = Client(remote=self.router, token=self.token, nowait=False) if self.router else Client(token=self.token, nowait=False) if self.token else Client(nowait=False) if self.router is None and self.token is None else Client(nowait=False) if self.router is None and self.token is None else Client(token=self.token, nowait=False) if self.router is None and self.token is None else Client(remote=self.router, token=self.token, nowait=False) if self.router and self.token else Client(nowait=False) if self.router is None and self.token is None else Client(token=self.token, nowait=False) if self.router is None and self.token is None else Client(remote=self.router, token=self.token, nowait=False) if self.router and self.token else Client(nowait=False) if self.router is None and self.token is None else Client(token=self.token, nowait=False) if self.router is None and self.token is None else Client(remote=self.router, token=self.token, nowait=False) if self.router and self.token else Client(nowait=False) if self.router is None and self.token is None else Client(token=self.token, nowait=False) if self.router is None and self.token is None else Client(remote=self.router, token=self.token, nowait=False) if self.router and self.token else Client(nowait=False) if self.router is None and self.token is None else Client(token=self.token, nowait=False) if self.router is None and self.token is None else Client(remote=self.router, token=self.token, nowait=False) if self.router and self.token else Client(nowait=False) if self.router is None and self.token is None else Client(token=self.token, nowait=False) if self.router is None and self.token is None else Client(remote=self.router, token=self.token, nowait=False) if self.router and self.token else Client(nowait"
+"self.info('Tenancy relationship from %s to %s already exists' % (str(service), str(provider_service)))","self.info('Tenancy relationship from %s to %s already exists' % (str(obj), str(provider_service)))","### Buggy Python Code
+self.info('Tenancy relationship from %s to %s already exists' % (str(service), str(provider_service)))
+
+### Corrected Python Code
+self.info('Tenancy relationship from %s to %s already exists' % (str(provider_service), str(service)))
+
+    def get_service_from_id(self, service_id):
+        return self.get_service_from_name(self.get_service_name_from_id(service_id))
+
+    def get_service_name_from_id(self, service_id):
+        return self.get_service_name_from_name(self.get_service_name_from_id(service_id))
+
+    def get_service_name_from_id(self, service_id):
+        return self.get_service_name_from_name(self.get_service_name_from_id(service_id))
+
+    def get_service_name_from_id(self, service_id):
+        return self.get_service_name_from_name(self.get_service_name_from_id(service_id))
+
+    def get_service_name_from_id(self, service_id):
+        return self.get_service_name_from_name(self.get_service_name_from_id(service_id))
+
+    def get_service_name_from_id(self, service_id):
+        return self.get_service_name_from_name(self.get_service_name_from_id(service_id))
+
+    def get_service_name_from_id(self, service_id):
+        return self.get_service_name_from_name(self.get_service_name_from_id(service_id))
+
+    def get_service_name_from_id(self, service_id):
+        return self.get_service_name_from_name(self.get_service_name_from_id(service_id))
+
+    def get_service_name_from_id(self, service_id):
+        return self.get_service_name_from_name(self.get_service_name_from_id(service_id))
+
+    def get_service_name_from_id(self, service_id):
+        return self.get_service_name_from_name(self.get_service_name_from_id(service_id))
+
+    def get_service_name_"
+"from flask import Flask
+from flask_mail import Mail, Message
+
+def task_func(smtp_server, smtp_port, smtp_user, smtp_password, template_folder):
+    app = Flask(__name__, template_folder=template_folder)
+    app.config['MAIL_SERVER'] = smtp_server
+    app.config['MAIL_PORT'] = smtp_server
+    app.config['MAIL_USERNAME'] = smtp_user
+    app.config['MAIL_PASSWORD'] = smtp_password
+    app.config['MAIL_USE_TLS'] = True
+    mail = Mail()
+    mail.init_app(app)
+
+    @app.route('/send_mail')
+    def send_mail():
+        msg = Message('Hello', sender='from@example.com', recipients=['to@example.com'])
+        msg.body = 'Hello Flask message sent from Flask-Mail'
+        mail.send(msg.body)
+        return 'Mail sent!'
+    return app","from flask import Flask
+from flask_mail import Mail, Message
+
+def task_func(smtp_server, smtp_port, smtp_user, smtp_password, template_folder):
+    app = Flask(__name__, template_folder=template_folder)
+    app.config['MAIL_SERVER'] = smtp_server
+    app.config['MAIL_PORT'] = smtp_port
+    app.config['MAIL_USERNAME'] = smtp_user
+    app.config['MAIL_PASSWORD'] = smtp_password
+    app.config['MAIL_USE_TLS'] = True
+    mail = Mail()
+    mail.init_app(app)
+
+    @app.route('/send_mail')
+    def send_mail():
+        msg = Message('Hello', sender='from@example.com', recipients=['to@example.com'])
+        msg.body = 'Hello Flask message sent from Flask-Mail'
+        mail.send(msg)
+        return 'Mail sent!'
+    return app","from flask import Flask
+from flask_mail import Mail, Message
+
+def task_func(smtp_server, smtp_port, smtp_user, smtp_password, template_folder):
+    app = Flask(__name__, template_folder=template_folder)
+    app.config['MAIL_SERVER'] = smtp_server
+    app.config['MAIL_PORT'] = smtp_port
+    app.config['MAIL_USERNAME'] = smtp_user
+    app.config['MAIL_PASSWORD'] = smtp_password
+    app.config['MAIL_USE_TLS'] = True
+    mail = Mail()
+    mail.init_app(app)
+
+    @app.route('/send_mail')
+    def send_mail():
+        msg = Message('Hello', sender='from@example.com', recipients=['to@example.com'])
+        msg.body = 'Hello Flask message sent from Flask-Mail'
+        mail.send(msg)
+        return 'Mail sent!'
+    return app
+/flask_app/flask_app.py
+from flask import Flask
+from flask_mail import Mail, Message
+
+def task_func(smtp_server, smtp_port, smtp_user, smtp_password, template_folder):
+    app = Flask(__name__, template_folder=template_folder)
+    app.config['MAIL_SERVER'] = smtp_server
+    app.config['MAIL_PORT'] = smtp_port
+    app.config['MAIL_USERNAME'] = smtp_user
+    app.config['MAIL_PASSWORD'] = smtp_password
+    app.config['MAIL_USE_TLS'] = True
+    mail = Mail()
+    mail.init_app(app)
+
+    @app.route('/send_mail')
+    def send_mail():
+        msg = Message('Hello', sender='from@example.com', recipients=['to@example.com'])
+        msg.body = 'Hello Flask message sent from Flask-Mail'
+        mail.send(msg)
+        return 'Mail sent!'
+    return app"
+"import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = df.set_index('Date')
+    resampled_df = df.resample('W').sum()
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax","import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = df.set_index('Date')
+    resampled_df = df.resample('D').sum()
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax","()
+    return ax
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = df.set_index('Date')
+    resampled_df = df.resample('D').sum()
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax
+/01-python-fundamentals/02-python-data-analysis/02-python-data-analysis-part-1/02-python-data-analysis-part-1-exercise-1/solution.py
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame) or not all((col in df.columns for col in ['Date', 'Sales'])):
+        raise ValueError(""Invalid 'df': must be a DataFrame with 'Date' and 'Sales' columns."")
+    df['Date'] = pd.to_datetime(df['Date'])
+    df = df.set_index('Date')
+    resampled_df = df.resample('D').sum()
+    if resampled_df.empty or resampled_df['Sales'].sum() == 0:
+        raise ValueError('No data available to plot after resampling.')
+    ax = resampled_df.plot(y='Sales')
+    ax.set_title('Daily Turnover')
+    ax.set_ylabel('Sales')
+    plt.show()
+    return ax
+/01-python-fundamentals/02-python-data-analysis/02-python-data-analysis-part-1/02-python-data-analysis-part-1-exercise-2/solution.py
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def task_"
+"iraf.reidentify(reference, arc, coordlist=coordlist, interactive=interact, newaps=no, override=yes, refit=no, cradius=6, verbose=yes)","iraf.reidentify(reference, arc, coordlist=coordlist, interactive=interactive, newaps=no, override=yes, refit=no, cradius=6, verbose=yes)","### Buggy Python Code
+iraf.reidentify(reference, arc, coordlist=coordlist, interactive=interact, newaps=no, override=yes, refit=no, cradius=6, verbose=yes)
+
+### Corrected Python Code
+iraf.reidentify(reference, arc, coordlist=coordlist, interactive=interact, newaps=no, override=yes, refit=no, cradius=6, verbose=no)
+/pyraf/iraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_pyraf_py"
+owner = data['repository']['author']['name'],owner = data['repository']['owner']['name'],"### Buggy Python Code
+owner = data['repository']['author']['name']
+
+### Corrected Python Code
+owner = data['repository']['owner']['login'] if 'login' in data['repository']['owner'] else data['repository']['owner']['name']
+
+return owner.lower() if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else '' if owner else"
+"parser.add_argument('--fp16', type=bool, default=True)","parser.add_argument('--fp16', type=bool, default=False)","### Buggy Python Code
+parser.add_argument('--fp16', type=bool, default=True)
+
+### Corrected Python Code
+parser.add_argument('--fp16', type=bool, default=False)
+
+parser.add_argument('--fp16_opt', type=bool, default=True)
+
+parser.add_argument('--local_rank', type=int, default=-1)
+
+parser.add_argument('--seed', type=int, default=42)
+
+parser.add_argument('--gradient_accumulation_steps', type=int, default=1)
+
+parser.add_argument('--learning_rate', type=float, default=5e-5)
+
+parser.add_argument('--weight_decay', type=float, default=0.0)
+
+parser.add_argument('--adam_epsilon', type=float, default=1e-8)
+
+parser.add_argument('--max_grad_norm', type=float, default=1.0)
+
+parser.add_argument('--num_train_epochs', type=int, default=3)
+
+parser.add_argument('--max_steps', type=int, default=100000)
+
+parser.add_argument('--warmup_steps', type=int, default=10000)
+
+parser.add_argument('--logging_steps', type=int, default=500)
+
+parser.add_argument('--save_steps', type=int, default=500)
+
+parser.add_argument('--eval_steps', type=int, default=1000)
+
+parser.add_argument('--eval_all_checkpoints', action='store_true')
+
+parser.add_argument('--no_cuda', action='store_true')
+
+parser.add_argument('--overwrite_output_dir', action='store_true')
+
+parser.add_argument('--fp16_opt', action='store_true')
+
+parser.add_argument('--do_lower_case', action='store_true')
+
+parser.add_argument('--do_train', action='store_true')
+
+parser.add_argument('--do_eval', action='store_true')
+
+parser.add_argument('--do_test', action='store_true')
+
+parser.add_argument('--output_dir', type=str, default='./output')
+
+parser.add"
