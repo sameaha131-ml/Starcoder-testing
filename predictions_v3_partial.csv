@@ -30412,3 +30412,292 @@ from reporting import ReportCapableInterface, ReportCapableInputSpec, ReportCapa
 
 ### Corrected Python Code
 from reporting.interfaces import ReportCapableInterface, ReportCapableInputSpec, ReportCapableOutputSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatus"
+"import subprocess
+import os
+import sys
+import glob
+
+def task_func(directory_path):
+    file_paths = glob.glob(os.path.join(directory_path, '*.bat'))
+    for file_path in file_paths:
+        try:
+            process = subprocess.Popen(file_path, shell=True)
+            exit_code = process.wait
+            results.append((os.path.basename(file_path), exit_code))
+        except Exception as e:
+            print(f'Failed to execute the file: {file_path}. Error: {e}', file=sys.stderr)
+            results.append((os.path.basename(file_path), None))
+    return results","import subprocess
+import os
+import sys
+import glob
+
+def task_func(directory_path):
+    results = []
+    file_paths = glob.glob(os.path.join(directory_path, '*.bat'))
+    for file_path in file_paths:
+        try:
+            process = subprocess.Popen(file_path, shell=True)
+            exit_code = process.wait()
+            results.append((os.path.basename(file_path), exit_code))
+        except Exception as e:
+            print(f'Failed to execute the file: {file_path}. Error: {e}', file=sys.stderr)
+            results.append((os.path.basename(file_path), None))
+    return results","import subprocess
+import os
+import sys
+import glob
+
+def task_func(directory_path):
+    results = []
+    file_paths = glob.glob(os.path.join(directory_path, '*.bat'))
+    for file_path in file_paths:
+        try:
+            process = subprocess.Popen(file_path, shell=True)
+            exit_code = process.wait()
+            results.append((os.path.basename(file_path), exit_code))
+        except Exception as e:
+            print(f'Failed to execute the file: {file_path}. Error: {e}', file=sys.stderr)
+            results.append((os.path.basename(file_path), None))
+    return results
+
+if __name__ == '__main__':
+    directory_path = sys.argv[1]
+    results = task_func(directory_path)
+    for file_path, exit_code in results:
+        print(f'{os.path.basename(file_path)}: {exit_code}')/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/0"
+"class Solution:
+
+    def waysToReachStair(self, k: int) -> int:
+
+        @cache(maxsize=None)
+        def dfs(i: int, j: int, jump: int) -> int:
+            if i > k + 1:
+                return 0
+            ans = int(i == k - 1)
+            if i > 0 and j == 0:
+                ans += dfs(i - 1, 1, jump)
+            ans += dfs(i + (1 << jump), 0, jump)
+            return ans
+        return dfs(1, 1, 0)","class Solution:
+
+    def waysToReachStair(self, k: int) -> int:
+
+        @cache
+        def dfs(i: int, j: int, jump: int) -> int:
+            if i > k + 1:
+                return 0
+            ans = int(i == k)
+            if i > 0 and j == 0:
+                ans += dfs(i - 1, 1, jump)
+            ans += dfs(i + (1 << jump), 0, jump + 1)
+            return ans
+        return dfs(1, 0, 0)","return dfs(1, 1, 0)
+
+### Corrected Python Code
+class Solution:
+
+    def waysToReachStair(self, k: int) -> int:
+
+        @cache
+        def dfs(i: int, j: int, jump: int) -> int:
+            if i > k + 1:
+                return 0
+            ans = int(i == k)
+            if i > 0 and j == 0:
+                ans += dfs(i - 1, 1, jump)
+            ans += dfs(i + (1 << jump), 0, jump + 1)
+            return ans
+        return dfs(1, 0, 0)
+
+### Corrected Python
+class Solution:
+
+    def waysToReachStair(self, k: int) -> int:
+
+        @cache
+        def dfs(i: int, j: int, jump: int) -> int:
+            if i > k + 1:
+                return 0
+            ans = int(i == k)
+            if i > 0 and j == 0:
+                ans += dfs(i - 1, 1, jump)
+            ans += dfs(i + (1 << jump), 0, jump)
+            return ans
+        return dfs(1, 0, 0) % 1000000007
+
+### Corrected Python
+class Solution:
+
+    def waysToReachStair(self, k: int) -> int:
+
+        @cache
+        def dfs(i: int, j: int, jump: int) -> int:
+            if i > k + 1:
+                return 0
+            ans = int(i == k)
+            if i > 0 and j == 0:
+                ans += dfs(i - 1, 1, jump)
+            ans += dfs(i + (1 << jump), 0, jump + 1)
+            return ans % 1000000007
+        return dfs(1, 0, 0) % 1000000007
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, a: List[int], b: List[int], c: List[int]) -> int:
+        a.sort()
+        b.sort()
+        c.sort()
+        return max(a[-1] + b[-1] + c[-"
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
+data = json.loads(urlopen('http://api.urbandictionary.com/v0/define?term=%s' % quote(msgSplit[0] if len(msgSplit) == 1 else toStr(msgSplit[:len(msgSplit) - 1]))).read().decode()),data = json.loads(urlopen('http://api.urbandictionary.com/v0/define?term=%s' % quote(toStr(msgSplit[:len(msgSplit)]) if not definitionNum else toStr(msgSplit[:len(msgSplit) - 1]))).read().decode()),"### Buggy Python Code
+data = json.loads(urlopen('http://api.urbandictionary.com/v0/define?term=%s' % quote(msgSplit[0] if len(msgSplit) == 1 else toStr(msgSplit[:len(msgSplit) - 1]))).read().decode())
+
+### Corrected Python Code
+data = json.loads(urlopen('http://api.urbandictionary.com/v0/define?term=%s' % quote(msgSplit[0])).read().decode()) if len(msgSplit) == 1 else json.loads(urlopen('http://api.urbandictionary.com/v0/define?term=%s' % quote(msgSplit[:len(msgSplit) - 1])).read().decode())
+
+if 'error' in data:
+    await bot.send_message(ctx.message.channel, 'Error:'+ data['error'])
+    return
+
+embed = discord.Embed(title=data['definition'], description=data['example'], color=0x00ff00)
+embed.set_author(name=data['word'])
+await bot.send_message(ctx.message.channel, embed=embed)
+return embed.to_dict() if len(msgSplit) == 1 else json.dumps(embed.to_dict()) if len(msgSplit) == 1 else json.dumps(embed.to_dict()) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msgSplit[:len(msgSplit) - 1]) +'' + toStr(msg"
+"placeArtifact(jarfile, args.repodir, pom.groupID, pom.artifactID, version, meta=meta, deps=pom.deps, supplied_ivy_file=args.ivyfile)","placeArtifact(jarfile, args.repodir, pom.groupID, pom.artifactID, version, meta=meta, deps=pom.deps, supplied_ivy_file=args.ivyfile, scala=args.scala)","### Buggy Python Code
+placeArtifact(jarfile, args.repodir, pom.groupID, pom.artifactID, version, meta=meta, deps=pom.deps, supplied_ivy_file=args.ivyfile)
+
+### Corrected Python Code
+placeArtifact(jarfile, args.repodir, pom.groupID, pom.artifactID, version, meta=meta, deps=pom.deps, supplied_ivy_file=args.ivyfile, supplied_pom_file=args.pomfile)
+/src/main/python/py2/py2_utils.py
+import os, sys, re, shutil, subprocess, time, tempfile, zipfile, hashlib, logging, logging.handlers, logging.config, logging.handlers.RotatingFileHandler, logging.handlers.TimedRotatingFileHandler, logging.handlers.MemoryHandler, logging.handlers.HTTPHandler, logging.handlers.SMTPHandler, logging.handlers.SysLogHandler, logging.handlers.WatchedFileHandler, logging.handlers.QueueHandler, logging.handlers.SocketHandler, logging.handlers.DatagramHandler, logging.handlers.NTEventLogHandler, logging.handlers.FileHandler, logging.handlers.RotatingFileHandler, logging.handlers.TimedRotatingFileHandler, logging.handlers.MemoryHandler, logging.handlers.HTTPHandler, logging.handlers.SMTPHandler, logging.handlers.SysLogHandler, logging.handlers.WatchedFileHandler, logging.handlers.QueueHandler, logging.handlers.SocketHandler, logging.handlers.DatagramHandler, logging.handlers.NTEventLogHandler, logging.handlers.FileHandler, logging.handlers.RotatingFileHandler, logging.handlers.TimedRotatingFileHandler, logging.handlers.MemoryHandler, logging.handlers.HTTPHandler, logging.handlers.SMTPHandler, logging.handlers.SysLogHandler, logging.handlers.WatchedFileHandler, logging.handlers.QueueHandler, logging.handlers.SocketHandler, logging.handlers.DatagramHandler, logging.handlers.NTEventLogHandler, logging.handlers.FileHandler, logging.handlers.RotatingFileHandler, logging.handlers.TimedRotatingFileHandler, logging.handlers.MemoryHandler, logging.handlers.HTTPHandler, logging.handlers.SMTPHandler, logging.handlers.SysLogHandler, logging.handlers.WatchedFileHandler, logging.handlers.QueueHandler, logging.handlers.SocketHandler, logging.handlers.DatagramHandler, logging.handlers.NTEventLogHandler, logging.handlers.FileHandler, logging.handlers.RotatingFileHandler, logging.handlers.TimedRotatingFileHandler, logging.handlers.MemoryHandler, logging"
+edit_summary = 'BOT: Setting Status to:' + status + ' per ' + trigger.hostmask,edit_summary = 'BOT: Setting Status to: ' + status + ' per ' + trigger.hostmask,"### Buggy Python Code
+edit_summary = 'BOT: Setting Status to:' + status +'per'+ trigger.hostmask
+
+### Corrected Python Code
+edit_summary = 'BOT: Setting Status to:' + status +'per'+ trigger.hostmask +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+ trigger.source + ')' +'(from'+"
+"class Solution:
+
+    def zigzagTraversal(self, grid: List[List[int]]) -> List[int]:
+        ans = []
+        for i, row in enumerate(grid):
+            if i % 2 == 0:
+                row.reverse()
+            for x in row:
+                if not ok:
+                    ans.append(x)
+                ok = not ok
+        return grid","class Solution:
+
+    def zigzagTraversal(self, grid: List[List[int]]) -> List[int]:
+        ok = True
+        ans = []
+        for i, row in enumerate(grid):
+            if i % 2:
+                row.reverse()
+            for x in row:
+                if ok:
+                    ans.append(x)
+                ok = not ok
+        return ans","[int]]) -> List[int]:
+        ans = []
+        for i, row in enumerate(grid):
+            if i % 2 == 0:
+                row.reverse()
+            for x in row:
+                if not ok:
+                    ans.append(x)
+                ok = not ok
+        return grid
+
+### Corrected Python Code
+class Solution:
+
+    def zigzagTraversal(self, grid: List[List[int]]) -> List[int]:
+        ok = True
+        ans = []
+        for i, row in enumerate(grid):
+            if i % 2:
+                row.reverse()
+            for x in row:
+                if ok:
+                    ans.append(x)
+                ok = not ok
+        return ans
+/python/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, scores: List[int], piles: List[int]) -> int:
+        scores.sort()
+        piles.sort()
+        ans = 0
+        for i in range(len(piles)):
+            ans += scores.pop()
+            ans += piles.pop()
+        return ans // 2
+/python/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, scores: List[int], piles: List[int]) -> int:
+        scores.sort()
+        piles.sort()
+        ans = 0
+        for i in range(len(piles) // 2):
+            ans += scores.pop()
+            ans += piles.pop()
+        return ans // 2
+/python/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, scores: List[int], piles: List[int]) -> int:
+        scores.sort()
+        piles.sort()
+        ans = 0
+        for i in range(len(piles) // 2):
+            ans += scores.pop()
+            ans += piles.pop()
+        return ans // 2 + 1
+/python/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, scores: List[int], piles: List[int]) -> int:
+        scores.sort()
+        piles.sort()
+        ans = 0
+        for i in range(len(piles) // 2):
+            ans += scores.pop()
+            ans += piles.pop()
+        return ans // 2 + 1
+/python/1000"
+self.skymap.data = np.ones(self.image.data.shape),self.skymap.data = np.ones(self.skymap.data.shape),"### Buggy Python Code
+self.skymap.data = np.ones(self.image.data.shape)
+
+### Corrected Python Code
+self.skymap.data = np.ones(self.skymap.data.shape) * self.image.data.mean() * 1e-1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
