@@ -30247,3 +30247,168 @@ class Solution:
         cardTypes.sort()
         score = 0
         for i in range(len(cardValues) - 1, -1"
+"install_requires = (['hfos==1.1.0', 'isbntools==4.3.2'],)","install_requires = (['hfos==1.1.0', 'isbntools==4.3.3'],)","### Buggy Python Code
+install_requires = (['hfos==1.1.0', 'isbntools==4.3.2'],)
+
+### Corrected Python Code
+install_requires = (['hfos==1.1.1', 'isbntools==4.3.2'],)
+/README.md
+# hfos-isbntools-plugin
+HFos plugin for ISBN tools.
+
+## Installation
+```bash
+pip install hfos-isbntools-plugin
+```
+
+## Usage
+```bash
+hfos-isbntools-plugin -h
+```
+/hfos_isbntools_plugin/plugin.py
+from hfos.plugin import Plugin, PluginError, PluginErrorLevel, PluginStatus, PluginType, PluginTypeCategory, PluginTypeCategoryType, PluginTypeCategoryTypeType, PluginTypeCategoryTypeTypeType, PluginTypeCategoryTypeTypeTypeTypeType, PluginTypeCategoryTypeTypeTypeTypeTypeTypeType, PluginTypeCategoryTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeTypeType"
+"return layer_versions.values_list('pk', flat=True)","return layer_versions.values_list('layercommit__pk', flat=True)","### Buggy Python Code
+return layer_versions.values_list('pk', flat=True)
+
+### Corrected Python Code
+return layer_versions.values_list('pk', flat=True).order_by('pk') if layer_versions else []
+/src/wagtail_layers/models.py
+from django.db import models
+from django.utils.translation import ugettext_lazy as _
+from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel, PageChooserPanel, MultiFieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooserPanel, StreamFieldPanel, FieldPanel, InlinePanel, PageChooser"
+"class Solution:
+
+    def numberOfGoodSubarraySplits(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        ans, j = (1, -1)
+        nums.sort()
+        for i, x in enumerate(nums):
+            if x == 0:
+                continue
+            if j > -1:
+                ans = ans * (i - j) % mod
+            j = i
+        return 1 if j == -1 else ans","class Solution:
+
+    def numberOfGoodSubarraySplits(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        ans, j = (1, -1)
+        for i, x in enumerate(nums):
+            if x == 0:
+                continue
+            if j > -1:
+                ans = ans * (i - j) % mod
+            j = i
+        return 0 if j == -1 else ans","ans
+
+### Corrected Python Code
+class Solution:
+
+    def numberOfGoodSubarraySplits(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        ans, j = (1, -1)
+        for i, x in enumerate(nums):
+            if x == 0:
+                continue
+            if j > -1:
+                ans = ans * (i - j) % mod
+            j = i
+        return 0 if j == -1 else ans % mod
+
+### Corrected Python
+class Solution:
+
+    def numberOfGoodSubarraySplits(self, nums: List[int]) -> int:
+        mod = 10 ** 9 + 7
+        ans, j = (1, -1)
+        for i, x in enumerate(nums):
+            if x == 0:
+                continue
+            if j > -1:
+                ans = ans * (i - j) % mod
+            j = i
+        return 0 if j == -1 else ans % mod - 1 % mod
+/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.py
+class Solution:
+
+    def removeAllOccurrencesOfSubstring(self, s: str, sub: str) -> str:
+        mod = 10 ** 9 + 7
+        ans, j = (1, -1)
+        for i, x in enumerate(s):
+            if x == sub[j + 1]:
+                j += 1
+            if j == len(sub) - 1:
+                ans = ans * (i - j) % mod
+                j = -1
+        return '' if j == -1 else s[:j] + s[j + len(sub):] % mod - 1 % mod
+
+### Corrected Python
+class Solution:
+
+    def removeAllOccurrencesOfSubstring(self, s: str, sub: str) -> str:
+        mod = 10 ** 9 + 7
+        ans, j = (1, -1)
+        for i, x in enumerate(s):
+            if x == sub[j + 1]:
+                j += 1
+            if j == len(sub) - 1:
+                ans = ans * (i - j) % mod
+                j = -1
+        return '' if j == -1 else s[:j] + s[j + len(sub):"
+"locs = '{}:{}'.format(loc['file'], loc['line'])","locs = '{}:{}'.format(loc['href'], loc['title'])","### Buggy Python Code
+locs = '{}:{}'.format(loc['file'], loc['line'])
+
+### Corrected Python Code
+locs = '{}:{}'.format(loc['file'], loc['line']) if loc['file'] and loc['line'] else '?' + loc['name'] + '?' + loc['type'] + '?' + loc['module'] + '?' + loc['function'] + '?' + loc['class'] + '?' + loc['method'] + '?' + loc['property'] + '?' + loc['attribute'] + '?' + loc['value'] + '?' + loc['type'] + '?' + loc['module'] + '?' + loc['function'] + '?' + loc['class'] + '?' + loc['method'] + '?' + loc['property'] + '?' + loc['attribute'] + '?' + loc['value'] + '?' + loc['type'] + '?' + loc['module'] + '?' + loc['function'] + '?' + loc['class'] + '?' + loc['method'] + '?' + loc['property'] + '?' + loc['attribute'] + '?' + loc['value'] + '?' + loc['type'] + '?' + loc['module'] + '?' + loc['function'] + '?' + loc['class'] + '?' + loc['method'] + '?' + loc['property'] + '?' + loc['attribute'] + '?' + loc['value'] + '?' + loc['type'] + '?' + loc['module'] + '?' + loc['function'] + '?' + loc['class'] + '?' + loc['method'] + '?' + loc['property'] + '?' + loc['attribute'] + '?' + loc['value'] + '?' + loc['type'] + '?' + loc['module'] + '?' + loc['function'] + '?' + loc['class'] + '?' + loc['method'] + '?' + loc['property'] + '?' + loc['attribute'] + '?' + loc['value'] + '?' + loc['type'] + '?' + loc['module'] + '?' + loc['function'] + '?' + loc['class'] + '?' + loc['method'] + '?' + loc['property'] + '?' + loc['attribute'] + '?' + loc['value'] + '?' + loc['type'] + '?' + loc['module'] + '?' + loc['function'] + '?' + loc['class"
+weekly_totals = GoalAggregateSerializer(many=True),"weekly_totals = GoalAggregateSerializer(read_only=True, many=True)","### Buggy Python Code
+weekly_totals = GoalAggregateSerializer(many=True)
+
+### Corrected Python Code
+weekly_totals = GoalAggregateSerializer(many=True, read_only=True)
+/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker/goal_tracker"
+"class Solution:
+
+    def sumDigitDifferences(self, nums: List[int]) -> int:
+        n = len(nums)
+        m = int(log10(nums[0]))
+        ans = 0
+        for _ in range(m):
+            for i, x in enumerate(nums):
+                nums[i], y = divmod(x, 10)
+                cnt[y] += 1
+            ans += sum((v * (n - v) for v in cnt.keys())) // 2
+        return ans","class Solution:
+
+    def sumDigitDifferences(self, nums: List[int]) -> int:
+        n = len(nums)
+        m = int(log10(nums[0])) + 1
+        ans = 0
+        for _ in range(m):
+            cnt = Counter()
+            for i, x in enumerate(nums):
+                nums[i], y = divmod(x, 10)
+                cnt[y] += 1
+            ans += sum((v * (n - v) for v in cnt.values())) // 2
+        return ans","class Solution:
+
+    def sumDigitDifferences(self, nums: List[int]) -> int:
+        n = len(nums)
+        m = int(log10(nums[0])) + 1
+        ans = 0
+        for _ in range(m):
+            cnt = [0] * 10
+            for i, x in enumerate(nums):
+                nums[i], y = divmod(x, 10)
+                cnt[y] += 1
+            ans += sum((v * (n - v) for v in cnt)) // 2
+        return ans - n * (n - 1) // 2 * 9 // 2 * 25 // 2 * 35 // 2 * 45 // 2 * 55 // 2 * 65 // 2 * 75 // 2 * 85 // 2 * 95 // 2 * 105 // 2 * 115 // 2 * 125 // 2 * 135 // 2 * 145 // 2 * 155 // 2 * 165 // 2 * 175 // 2 * 185 // 2 * 195 // 2 * 205 // 2 * 215 // 2 * 225 // 2 * 235 // 2 * 245 // 2 * 255 // 2 * 265 // 2 * 275 // 2 * 285 // 2 * 295 // 2 * 305 // 2 * 315 // 2 * 325 // 2 * 335 // 2 * 345 // 2 * 355 // 2 * 365 // 2 * 375 // 2 * 385 // 2 * 395 // 2 * 405 // 2 * 415 // 2 * 425 // 2 * 435 // 2 * 445 // 2 * 455 // 2 * 465 // 2 * 475 // 2 * 485 // 2 *"
+"self.old_sso_server_url = getattr(settings, 'OPENID_SSO_SERVER_URL')","self.old_sso_server_url = getattr(settings, 'OPENID_SSO_SERVER_URL', None)","### Buggy Python Code
+self.old_sso_server_url = getattr(settings, 'OPENID_SSO_SERVER_URL')
+
+### Corrected Python Code
+self.old_sso_server_url = getattr(settings, 'OPENID_SSO_SERVER_URL', None) or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or '' or None or ''"
+"from reporting import ReportCapableInterface, ReportCapableInputSpec, ReportCapableOutputSpec","from .reporting import ReportCapableInterface, ReportCapableInputSpec, ReportCapableOutputSpec","### Buggy Python Code
+from reporting import ReportCapableInterface, ReportCapableInputSpec, ReportCapableOutputSpec
+
+### Corrected Python Code
+from reporting.interfaces import ReportCapableInterface, ReportCapableInputSpec, ReportCapableOutputSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatusSpec, ReportCapableMessageSpec, ReportCapableErrorSpec, ReportCapableWarningSpec, ReportCapableProgressSpec, ReportCapableStatus"
