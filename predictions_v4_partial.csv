@@ -20363,3 +20363,349 @@ def task_func(LETTERS=[chr(i) for i in range(97, 123)]):
     random_dict = {k: [random.randint(0, 100) for _ in range(random.randint(1, 10))] for k in LETTERS}
     sd_dict = {k: math.sqrt(sum(((i - sum(v) / len(v)) ** 2 for i in v)) / len(v)) for k, v in random_dict.items()}
     return sd_dict if all((len(v) > 1 for v in random_dict.values())) else"
+"if name == 'localDir':
+    return expandfilename(value)","if name == 'localDir' and type(value) != type(None):
+    return expandfilename(value)","### Buggy Python Code
+if name == 'localDir':
+    return expandfilename(value)
+
+### Corrected Python Code
+if name == 'localDir' and value:
+    return expandfilename(value)
+
+return value.strip() if value else ''
+
+
+def expandfilename(value):
+    return os.path.abspath(os.path.expanduser(value)) if value else ''
+
+
+def get_config_value(name, default=None):
+    return get_config_value_from_env(name, default) or get_config_value_from_file(name, default) or default
+
+
+def get_config_value_from_env(name, default=None):
+    return os.environ.get(name, default) if default else os.environ.get(name)
+
+
+def get_config_value_from_file(name, default=None):
+    return get_config_value_from_file_path(get_config_file_path(name), default) if default else get_config_value_from_file_path(get_config_file_path(name))
+
+
+def get_config_value_from_file_path(path, default=None):
+    return default if not os.path.exists(path) else open(path).read().strip() if default else open(path).read().strip() or default
+
+
+def get_config_file_path(name):
+    return os.path.join(get_config_dir(), name) if name else ''
+
+
+def get_config_dir():
+    return os.path.join(os.path.expanduser('~'), '.config', 'py-auto-update') if os.path.exists(os.path.join(os.path.expanduser('~'), '.config')) else os.path.join(os.path.expanduser('~'), '.py-auto-update') if os.path.exists(os.path.join(os.path.expanduser('~'), '.py-auto-update')) else os.path.join(os.path.expanduser('~'), '.py-auto-update') if os.path.exists(os.path.join(os.path.expanduser('~'), '.py-auto-update')) else os.path.join(os.path.expanduser('~'), '.py-auto-update') if os.path.exists(os.path.join(os.path.expand"
+"class Solution:
+
+    def minMaxWeight(self, n: int, edges: list[list[int]], threshold: int) -> int:
+        MAX = 1000000
+        reversedGraph = [[] for _ in range(n)]
+        for u, v, w in edges:
+            reversedGraph[v].append((u, w))
+        r = MAX + 1
+        while l < r:
+            m = (l + r) // 2
+            if self._dfs(reversedGraph, 0, m, set()) == n:
+                r = m
+            else:
+                l = m + 1
+        return -1 if l == MAX + 1 else l
+
+    def _dfs(self, reversedGraph: list[list[tuple]], u: int, maxWeight: int, seen: set[int]) -> int:
+        res = 1
+        seen.add(u)
+        for v, w in reversedGraph[u][:threshold]:
+            if w > maxWeight or v in seen:
+                continue
+            res += self._dfs(reversedGraph, v, maxWeight, seen)
+        return res","class Solution:
+
+    def minMaxWeight(self, n: int, edges: list[list[int]], threshold: int) -> int:
+        MAX = 1000000
+        reversedGraph = [[] for _ in range(n)]
+        for u, v, w in edges:
+            reversedGraph[v].append((u, w))
+        l = 1
+        r = MAX + 1
+        while l < r:
+            m = (l + r) // 2
+            if self._dfs(reversedGraph, 0, m, set()) == n:
+                r = m
+            else:
+                l = m + 1
+        return -1 if l == MAX + 1 else l
+
+    def _dfs(self, reversedGraph: list[list[tuple]], u: int, maxWeight: int, seen: set[int]) -> int:
+        res = 1
+        seen.add(u)
+        for v, w in reversedGraph[u]:
+            if w > maxWeight or v in seen:
+                continue
+            res += self._dfs(reversedGraph, v, maxWeight, seen)
+        return res","class Solution:
+
+    def minMaxWeight(self, n: int, edges: list[list[int]], threshold: int) -> int:
+        MAX = 1000000
+        reversedGraph = [[] for _ in range(n)]
+        for u, v, w in edges:
+            reversedGraph[v].append((u, w))
+        l = 1
+        r = MAX + 1
+        while l < r:
+            m = (l + r) // 2
+            if self._dfs(reversedGraph, 0, m, set()) == n:
+                r = m
+            else:
+                l = m + 1
+        return -1 if l == MAX + 1 else l
+
+    def _dfs(self, reversedGraph: list[list[tuple]], u: int, maxWeight: int, seen: set[int]) -> int:
+        res = 1
+        seen.add(u)
+        for v, w in reversedGraph[u][:threshold]:
+            if w > maxWeight or v in seen:
+                continue
+            res += self._dfs(reversedGraph, v, maxWeight, seen)
+        return res
+/src/1000/1000.py
+class Solution:
+
+    def minMaxWeight(self, n: int, edges: list[list[int]], threshold: int) -> int:
+        MAX = 1000000
+        reversedGraph = [[] for _ in range(n)]
+        for u, v, w in edges:
+            reversedGraph[v].append((u, w))
+        l = 1
+        r = MAX + 1
+        while l < r:
+            m = (l + r) // 2
+            if self._dfs(reversedGraph, 0, m, set()) == n:
+                r = m
+            else:
+                l = m + 1
+        return -1 if l == MAX + 1 else l
+
+    def _dfs(self, reversedGraph: list[list[tuple]], u: int, maxWeight: int, seen: set[int]) -> int:
+        res = 1
+        seen.add(u)
+        for v, w in reversedGraph[u][:threshold]:
+            if w > maxWeight or v in seen:
+                continue
+            res += self._dfs(reversedGraph, v, maxWeight, seen)
+        return res
+/src/1000"
+views = [v for v in sublime.active_window().views() if v.id() != view.id()],views = [v for v in sublime.active_window().views()],"### Buggy Python Code
+views = [v for v in sublime.active_window().views() if v.id()!= view.id()]
+
+### Corrected Python Code
+views = [v for v in sublime.active_window().views() if v.id()!= view.id() and v.file_name()!= view.file_name()] if view.file_name() else [v for v in sublime.active_window().views() if v.id()!= view.id()] if view.file_name() else []
+
+return views[0] if len(views) == 1 else views[0] if len(views) > 1 else None if len(views) == 0 else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file_name() else None if view.file"
+primary_state = owner._get_primary_state(state_type),primary_state = state_spec._get_primary_state(state_type),"### Buggy Python Code
+primary_state = owner._get_primary_state(state_type)
+
+### Corrected Python Code
+primary_state = owner._get_primary_state(state_type, state_id) if state_id else owner._get_primary_state(state_type)
+
+return primary_state.id if primary_state else None, primary_state.name if primary_state else None, primary_state.description if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_state.state_id if primary_state else None, primary_state.state_type if primary_state else None, primary_"
+"class Solution:
+
+    def lengthOfLongestSubsequence(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        f = np.full((n + 1, target + 1), -inf)
+        f[0][0] = 0
+        for i, x in enumerate(nums, 1):
+            if x > target:
+                break
+            for j in range(target + 1):
+                f[i][j] = f[i - 1][j]
+                if j >= x:
+                    f[i][j] = max(f[i][j], f[i - 1][j - x] + 1)
+        f[n][target] = min(f[n][target], 0)
+        return -1 if f[n][target] <= 0 else f[n][target]","class Solution:
+
+    def lengthOfLongestSubsequence(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        f = [[-inf] * (target + 1) for _ in range(n + 1)]
+        f[0][0] = 0
+        for i, x in enumerate(nums, 1):
+            for j in range(target + 1):
+                f[i][j] = f[i - 1][j]
+                if j >= x:
+                    f[i][j] = max(f[i][j], f[i - 1][j - x] + 1)
+        return -1 if f[n][target] <= 0 else f[n][target]","f[n][target] = min(f[n][target], 0)
+        return -1 if f[n][target] <= 0 else f[n][target]
+
+### Corrected Python Code
+class Solution:
+
+    def lengthOfLongestSubsequence(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        f = [[-inf] * (target + 1) for _ in range(n + 1)]
+        f[0][0] = 0
+        for i, x in enumerate(nums, 1):
+            for j in range(target + 1):
+                f[i][j] = f[i - 1][j]
+                if j >= x:
+                    f[i][j] = max(f[i][j], f[i - 1][j - x] + 1)
+        return -1 if f[n][target] <= 0 else f[n][target]
+
+class Solution:
+
+    def lengthOfLongestSubsequence(self, nums: List[int], target: int) -> int:
+        n = len(nums)
+        f = [[-inf] * (target + 1) for _ in range(n + 1)]
+        f[0][0] = 0
+        for i, x in enumerate(nums, 1):
+            for j in range(target + 1):
+                f[i][j] = f[i - 1][j]
+                if j >= x:
+                    f[i][j] = max(f[i][j], f[i - 1][j - x] + 1)
+        return -1 if f[n][target] <= 0 else f[n][target]
+/python/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        f = [[-inf] * (n + 1) for _ in range(n + 1)]
+        f[0][0] = 0
+        for i, x in enumerate(nums, 1):
+            for j in range(n + 1):
+                f[i][j] = f[i - 1][j]
+                if j >= x:
+                    f[i][j] = max(f[i][j], f[i - 1][j - x] + 1)
+        return -1 if f[n][n]"
+"import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(my_dict):
+    if not isinstance(my_dict['array'], np.ndarray):
+        raise ValueError
+    SCALER = MinMaxScaler()
+    array = my_dict['array'].reshape(-1, 1)
+    normalized_array = SCALER.normalize(array).reshape(-1)
+    my_dict['normalized_array'] = normalized_array
+    return my_dict if 'normalized_array' not in my_dict else None","import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(my_dict):
+    if not isinstance(my_dict['array'], np.ndarray):
+        raise TypeError
+    SCALER = MinMaxScaler()
+    array = my_dict['array'].reshape(-1, 1)
+    normalized_array = SCALER.fit_transform(array).reshape(-1)
+    my_dict['normalized_array'] = normalized_array
+    return my_dict","import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(my_dict):
+    if not isinstance(my_dict['array'], np.ndarray):
+        raise ValueError
+    SCALER = MinMaxScaler()
+    array = my_dict['array'].reshape(-1, 1)
+    normalized_array = SCALER.normalize(array).reshape(-1)
+    my_dict['normalized_array'] = normalized_array
+    return my_dict if 'normalized_array' not in my_dict else None
+
+### Corrected Python Code
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(my_dict):
+    if not isinstance(my_dict['array'], np.ndarray):
+        raise TypeError
+    SCALER = MinMaxScaler()
+    array = my_dict['array'].reshape(-1, 1)
+    normalized_array = SCALER.fit_transform(array).reshape(-1)
+    my_dict['normalized_array'] = normalized_array
+    return my_dict
+/day_01/task_01.py
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(my_dict):
+    if not isinstance(my_dict['array'], np.ndarray):
+        raise TypeError
+    SCALER = MinMaxScaler()
+    array = my_dict['array'].reshape(-1, 1)
+    normalized_array = SCALER.fit_transform(array).reshape(-1)
+    my_dict['normalized_array'] = normalized_array
+    return my_dict
+/day_01/task_02.py
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(my_dict):
+    if not isinstance(my_dict['array'], np.ndarray):
+        raise TypeError
+    SCALER = MinMaxScaler()
+    array = my_dict['array'].reshape(-1, 1)
+    normalized_array = SCALER.fit_transform(array).reshape(-1)
+    my_dict['normalized_array'] = normalized_array
+    return my_dict
+/day_02/task_01.py
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(my_dict):
+    if not isinstance(my_dict['array'], np.ndarray):
+        raise TypeError
+    SCALER = MinMaxScaler()
+    array = my_dict['array'].reshape(-1, 1)
+    normalized_array = SCALER.fit_transform(array).reshape(-1)
+    my_dict['normalized_array'] = normalized_array
+    return my_dict
+/day_02/task_02.py
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+
+def task_func(my_dict):
+    if not isinstance(my_dict['array'], np"
+from project_generator.workspace import Workspace,from project_generator.settings import ProjectSettings,"### Buggy Python Code
+from project_generator.workspace import Workspace
+
+### Corrected Python Code
+from project_generator.workspace import Workspace, WorkspaceError, WorkspaceError_Invalid_Path, WorkspaceError_Invalid_Path_Type, WorkspaceError_Invalid_Path_Format, WorkspaceError_Invalid_Path_Name, WorkspaceError_Invalid_Path_Extension, WorkspaceError_Invalid_Path_Parent, WorkspaceError_Invalid_Path_Child, WorkspaceError_Invalid_Path_Sibling, WorkspaceError_Invalid_Path_Depth, WorkspaceError_Invalid_Path_Name_Length, WorkspaceError_Invalid_Path_Extension_Length, WorkspaceError_Invalid_Path_Parent_Depth, WorkspaceError_Invalid_Path_Child_Depth, WorkspaceError_Invalid_Path_Sibling_Depth, WorkspaceError_Invalid_Path_Depth_Difference, WorkspaceError_Invalid_Path_Name_Difference, WorkspaceError_Invalid_Path_Extension_Difference, WorkspaceError_Invalid_Path_Parent_Difference, WorkspaceError_Invalid_Path_Child_Difference, WorkspaceError_Invalid_Path_Sibling_Difference, WorkspaceError_Invalid_Path_Depth_Difference, WorkspaceError_Invalid_Path_Name_Difference, WorkspaceError_Invalid_Path_Extension_Difference, WorkspaceError_Invalid_Path_Parent_Difference, WorkspaceError_Invalid_Path_Child_Difference, WorkspaceError_Invalid_Path_Sibling_Difference, WorkspaceError_Invalid_Path_Depth_Difference, WorkspaceError_Invalid_Path_Name_Difference, WorkspaceError_Invalid_Path_Extension_Difference, WorkspaceError_Invalid_Path_Parent_Difference, WorkspaceError_Invalid_Path_Child_Difference, WorkspaceError_Invalid_Path_Sibling_Difference, WorkspaceError_Invalid_Path_Depth_Difference, WorkspaceError_Invalid_Path_Name_Difference, WorkspaceError_Invalid_Path_Extension_Difference, WorkspaceError_Invalid_Path_Parent_Difference, WorkspaceError_Invalid_Path_Child_Difference, WorkspaceError_Invalid_Path_Sibling_Difference, WorkspaceError_Invalid_Path_Depth_Difference, WorkspaceError_Invalid_Path_Name_Difference, WorkspaceError_Invalid_Path_Extension_Difference, WorkspaceError_Invalid_Path_Parent_Difference, WorkspaceError_Invalid_Path_Child_Difference, WorkspaceError_Invalid_Path_Sibling_Difference, WorkspaceError_Invalid_Path_Depth_Difference, WorkspaceError_Invalid_Path_Name_Difference, WorkspaceError_Invalid_Path_Extension_Difference, WorkspaceError_"
+"if item.startswith('core.'):
+    core_files.append(item)","if item.startswith('core'):
+    core_files.append(item)","### Buggy Python Code
+if item.startswith('core.'):
+    core_files.append(item)
+
+### Corrected Python Code
+if item.startswith('core.') and item.endswith('.py'):
+    core_files.append(item)
+
+### Corrected Python code
+if item.startswith('core.') and item.endswith('.py'):
+    core_files.append(item)
+
+### Corrected Python code
+if item.startswith('core.') and item.endswith('.py') and not item.startswith('core.test'):
+    core_files.append(item)
+
+### Corrected Python code
+if item.startswith('core.') and item.endswith('.py') and not item.startswith('core.test') and not item.startswith('core.test.test_'):
+    core_files.append(item)
+
+### Corrected Python code
+if item.startswith('core.') and item.endswith('.py') and not item.startswith('core.test') and not item.startswith('core.test.test_') and not item.startswith('core.test.test_core'):
+    core_files.append(item)
+
+### Corrected Python code
+if item.startswith('core.') and item.endswith('.py') and not item.startswith('core.test') and not item.startswith('core.test.test_') and not item.startswith('core.test.test_core') and not item.startswith('core.test.test_core.test_'):
+    core_files.append(item)
+
+### Corrected Python code
+if item.startswith('core.') and item.endswith('.py') and not item.startswith('core.test') and not item.startswith('core.test.test_') and not item.startswith('core.test.test_core') and not item.startswith('core.test.test_core.test_') and not item.startswith('core.test.test_core.test_core_'):
+    core_files.append(item)
+
+### Corrected Python code
+if item.startswith('core.') and item.endswith('.py') and not item.startswith('core.test') and not item.startswith('core.test.test_') and not item.startswith('core.test.test_core') and not item.startswith('core.test.test_core.test_') and not item.startswith('core.test.test_core.test_core_') and not item.startswith('core.test.test"
