@@ -41454,3 +41454,405 @@ class Solution:
 class Solution:
 
     def maxScore(self, nums"
+"raise RuntimeError('Could not find version string in {exe} ({e})'.format(exe=exe, e='foo'))","raise RuntimeError('Could not find version string in {exe} ({e})'.format(exe=exe, e=e))","### Buggy Python Code
+raise RuntimeError('Could not find version string in {exe} ({e})'.format(exe=exe, e='foo'))
+
+### Corrected Python Code
+raise RuntimeError('Could not find version string in {exe} ({e})'.format(exe=exe, e=e)) from None
+
+def get_version(exe):
+    try:
+        return get_version_from_exe(exe)
+    except Exception as e:
+        raise RuntimeError('Could not find version string in {exe} ({e})'.format(exe=exe, e=e)) from None
+
+def get_version_from_exe(exe):
+    try:
+        with open(exe, 'rb') as f:
+            return re.search(b'version ([\\w.]+)', f.read()).group(1)
+    except Exception as e:
+        raise RuntimeError('Could not find version string in {exe} ({e})'.format(exe=exe, e=e)) from None
+
+def get_version(exe):
+    try:
+        return get_version_from_exe(exe)
+    except Exception as e:
+        raise RuntimeError('Could not find version string in {exe} ({e})'.format(exe=exe, e=e)) from None
+
+def get_version_from_exe(exe):
+    try:
+        with open(exe, 'rb') as f:
+            return re.search(b'version ([\\w.]+)', f.read()).group(1)
+    except Exception as e:
+        raise RuntimeError('Could not find version string in {exe} ({e})'.format(exe=exe, e=e)) from None
+
+def get_version(exe):
+    try:
+        return get_version_from_exe(exe)
+    except Exception as e:
+        raise RuntimeError('Could not find version string in {exe} ({e})'.format(exe=exe, e=e)) from None
+
+def get_version_from_exe(exe):
+    try:
+        with open(exe, 'rb') as f:
+            return re.search(b'version ([\\w.]+)', f.read()).group(1)
+    except Exception as e:
+        raise RuntimeError('Could not find version string in {exe} ({e})'.format(exe=exe, e=e)) from None
+
+def get_version(exe):
+    try:
+        return get_version_from_exe(exe)
+    except Exception as e:
+        raise RuntimeError('Could not find version string in {exe} ({e})"
+"raise 'Error in Example: not a reference, but a copy'","raise Exception('Error in Example: not a reference, but a copy')","### Buggy Python Code
+raise 'Error in Example: not a reference, but a copy'
+
+### Corrected Python Code
+raise 'Error in Example: not a reference, but a copy' if not isinstance(self.ref, Reference) else None
+
+### Corrected Python Code
+raise 'Error in Example: not a reference, but a copy' if not isinstance(self.ref, Reference) else None, self.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref.ref"
+"class DSU:
+
+    def __init__(self, n):
+        self.parent = {i: i for i in range(n)}
+        self.rank = {i: 0 for i in range(n)}
+
+    def make_set(self, v):
+        self.parent[v] = v
+        self.rank[v] = 1
+
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+
+    def union_set(self, u, v):
+        u = self.find(u)
+        if u != v:
+            if self.rank[u] < self.rank[v]:
+                u, v = (v, u)
+            self.parent[v] = u
+            if self.rank[u] == self.rank[v]:
+                self.rank[u] += 1
+
+class Solution:
+
+    def countComponents(self, nums, threshold):
+        dsu = DSU(threshold + 1)
+        for num in nums:
+            num = num * 2
+            for j in range(num, threshold + 1, num):
+                dsu.union_set(num, j)
+        unique_parents = set()
+        for num in nums:
+            if num >= threshold:
+                unique_parents.add(num)
+            else:
+                unique_parents.add(num)
+                unique_parents.add(dsu.find(num))
+        return len(unique_parents)","class DSU:
+
+    def __init__(self, n):
+        self.parent = {i: i for i in range(n)}
+        self.rank = {i: 0 for i in range(n)}
+
+    def make_set(self, v):
+        self.parent[v] = v
+        self.rank[v] = 1
+
+    def find(self, x):
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+
+    def union_set(self, u, v):
+        u = self.find(u)
+        v = self.find(v)
+        if u != v:
+            if self.rank[u] < self.rank[v]:
+                u, v = (v, u)
+            self.parent[v] = u
+            if self.rank[u] == self.rank[v]:
+                self.rank[u] += 1
+
+class Solution:
+
+    def countComponents(self, nums, threshold):
+        dsu = DSU(threshold + 1)
+        for num in nums:
+            for j in range(num, threshold + 1, num):
+                dsu.union_set(num, j)
+        unique_parents = set()
+        for num in nums:
+            if num > threshold:
+                unique_parents.add(num)
+            else:
+                unique_parents.add(dsu.find(num))
+        return len(unique_parents)","class DSU:
+
+    def __init__(self, n):
+        self.parent = {i: i for i in range(n)}
+        self.rank = {i: 0 for i in range(n)}
+
+    def make_set(self, v):
+        self.parent[v] = v
+        self.rank[v] = 1
+
+    def find(self, x):
+        if self.parent[x]!= x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+
+    def union_set(self, u, v):
+        u = self.find(u)
+        v = self.find(v)
+        if u!= v:
+            if self.rank[u] < self.rank[v]:
+                u, v = (v, u)
+            self.parent[v] = u
+            if self.rank[u] == self.rank[v]:
+                self.rank[u] += 1
+
+class Solution:
+
+    def countComponents(self, nums, threshold):
+        dsu = DSU(threshold + 1)
+        for num in nums:
+            for j in range(num, threshold + 1, num):
+                dsu.union_set(num, j)
+        unique_parents = set()
+        for num in nums:
+            unique_parents.add(dsu.find(num))
+        return len(unique_parents)
+
+### Corrected Python class DSU:
+
+    def __init__(self, n):
+        self.parent = {i: i for i in range(n)}
+        self.rank = {i: 0 for i in range(n)}
+
+    def make_set(self, v):
+        self.parent[v] = v
+        self.rank[v] = 1
+
+    def find(self, x):
+        if self.parent[x]!= x:
+            self.parent[x] = self.find(self.parent[x])
+        return self.parent[x]
+
+    def union_set(self, u, v):
+        u = self.find(u)
+        v = self.find(v)
+        if u!= v:
+            if self.rank[u] < self.rank[v]:
+                u, v = (v, u)
+            self.parent[v] = u
+            if self.rank"
+"class Solution:
+
+    def longestMonotonicSubarray(self, nums: List[int]) -> int:
+        ans = t = 1
+        for i, x in enumerate(nums[1:], 1):
+            if nums[i] < x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        t = 1
+        for i, x in enumerate(nums[1:]):
+            if nums[i] > x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        return ans","class Solution:
+
+    def longestMonotonicSubarray(self, nums: List[int]) -> int:
+        ans = t = 1
+        for i, x in enumerate(nums[1:]):
+            if nums[i] < x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        t = 1
+        for i, x in enumerate(nums[1:]):
+            if nums[i] > x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        return ans","### Buggy Python Code
+class Solution:
+
+    def longestMonotonicSubarray(self, nums: List[int]) -> int:
+        ans = t = 1
+        for i, x in enumerate(nums[1:], 1):
+            if nums[i] < x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        t = 1
+        for i, x in enumerate(nums[1:]):
+            if nums[i] > x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def longestMonotonicSubarray(self, nums: List[int]) -> int:
+        ans = t = 1
+        for i, x in enumerate(nums[1:]):
+            if nums[i] < x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        t = 1
+        for i, x in enumerate(nums[1:]):
+            if nums[i] > x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        return ans - 1 if ans > 1 else ans
+
+### Corrected Python
+class Solution:
+
+    def longestMonotonicSubarray(self, nums: List[int]) -> int:
+        ans = t = 1
+        for i, x in enumerate(nums[1:]):
+            if nums[i] < x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        t = 1
+        for i, x in enumerate(nums[1:]):
+            if nums[i] > x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        return ans - 1 if ans > 1 else ans
+/1000/1000.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = t = 0
+        for i, x in enumerate(nums[1:]):
+            if nums[i] < x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        t = 1
+        for i, x in enumerate(nums[:-1]):
+            if nums[i] < x:
+                t += 1
+                ans = max(ans, t)
+            else:
+                t = 1
+        return ans - 1 if ans > 1 else ans
+/1000/1000.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        ans = t = 0
+        for i, x in enumerate(nums[1:]):
+            if nums[i] < x:
+                t += 1
+                ans = max(ans, t)
+            else"
+"if len(_filters) > 0 and _dimensions != u'':
+    param += u',filters=_filters'","if len(_filters) > 0 and _filters != u'':
+    param += u',filters=_filters'","### Buggy Python Code
+if len(_filters) > 0 and _dimensions!= u'':
+    param += u',filters=_filters'
+
+### Corrected Python Code
+if len(_filters) > 0 and _dimensions!= u'':
+    param += u',filters=_filters,dimensions=_dimensions'
+
+return param + u',' + u''.join(u'_' + str(x) for x in _sort) + u',' + u''.join(u'_' + str(x) for x in _limit) + u',' + u''.join(u'_' + str(x) for x in _offset) + u',' + u''.join(u'_' + str(x) for x in _sample) + u',' + u''.join(u'_' + str(x) for x in _group) + u',' + u''.join(u'_' + str(x) for x in _order) + u',' + u''.join(u'_' + str(x) for x in _limit) + u',' + u''.join(u'_' + str(x) for x in _offset) + u',' + u''.join(u'_' + str(x) for x in _sample) + u',' + u''.join(u'_' + str(x) for x in _group) + u',' + u''.join(u'_' + str(x) for x in _order) + u',' + u''.join(u'_' + str(x) for x in _limit) + u',' + u''.join(u'_' + str(x) for x in _offset) + u',' + u''.join(u'_' + str(x) for x in _sample) + u',' + u''.join(u'_' + str(x) for x in _group) + u',' + u''.join(u'_' + str(x) for x in _order) + u',' + u''.join(u'_' + str(x) for x in _limit) + u',' + u''.join(u'_' + str(x) for x in _offset) + u',' + u''.join(u'_' + str(x) for x in _sample) + u',' + u''.join(u'_' + str(x) for x in _group) + u',' + u''.join(u'_' + str(x) for x in"
+pos_docs_highest_num_neg_adj.append(str(doc['id'])),pos_docs_highest_num_neg_adj.append(str(doc['_id'])),"### Buggy Python Code
+pos_docs_highest_num_neg_adj.append(str(doc['id']))
+
+### Corrected Python Code
+pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest_num_neg_adj.append(str(doc['id'])) if doc['id'] not in pos_docs_highest_num_neg_adj else pos_docs_highest"
+"return handle_torch_function(Tensor.unflatten, relevant_args, self, dim, namedshape)","return handle_torch_function(Tensor.unflatten, relevant_args, self, dim, sizes)","### Buggy Python Code
+return handle_torch_function(Tensor.unflatten, relevant_args, self, dim, namedshape)
+
+### Corrected Python Code
+return handle_torch_function(Tensor.unflatten, relevant_args, self, dim, namedshape, allow_missing=True) if namedshape is not None else handle_torch_function(Tensor.unflatten, relevant_args, self, dim, namedshape)  # type: ignore[return-value]  # noqa: E501,F821,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,"
+"import re
+import numpy as np
+from collections import Counter
+from sklearn.mixture import GaussianMixture
+
+def task_func(text, num_gaussians=1, seed=42):
+    np.random.seed(seed)
+    names = re.findall('(.*?)(?:\\[.*?\\]|$)', text)
+    word_freqs = Counter(words)
+    if num_gaussians <= 0:
+        raise ValueError('Number of Gaussians must be greater than 0.')
+    if len(word_freqs) < num_gaussians:
+        raise Exception('Number of Gaussians must be less than or equal to the number of unique words.')
+    mixture = GaussianMixture(num_components=num_gaussians)
+    mixture.fit([[freq] for freq in word_freqs.values()])
+    means = mixture.means_
+    return (dict(word_freqs), means)","import re
+import numpy as np
+from collections import Counter
+from sklearn.mixture import GaussianMixture
+
+def task_func(text, num_gaussians=1, seed=42):
+    np.random.seed(seed)
+    names = re.findall('(.*?)(?:\\[.*?\\]|$)', text)
+    words = ' '.join(names).split()
+    word_freqs = Counter(words)
+    if num_gaussians <= 0:
+        raise ValueError('Number of Gaussians must be greater than 0.')
+    if len(word_freqs) < num_gaussians:
+        raise Exception('Number of Gaussians must be less than or equal to the number of unique words.')
+    mixture = GaussianMixture(n_components=num_gaussians)
+    mixture.fit([[freq] for freq in word_freqs.values()])
+    means = mixture.means_
+    return (dict(word_freqs), means)","num_gaussians <= 0:
+        raise ValueError('Number of Gaussians must be greater than 0.')
+    if len(word_freqs) < num_gaussians:
+        raise Exception('Number of Gaussians must be less than or equal to the number of unique words.')
+    mixture = GaussianMixture(num_components=num_gaussians)
+    mixture.fit([[freq] for freq in word_freqs.values()])
+    means = mixture.means_
+    return (dict(word_freqs), means)
+
+### Corrected Python Code
+import re
+import numpy as np
+from collections import Counter
+from sklearn.mixture import GaussianMixture
+
+def task_func(text, num_gaussians=1, seed=42):
+    np.random.seed(seed)
+    names = re.findall('(.*?)(?:\\[.*?\\]|$)', text)
+    words =''.join(names).split()
+    word_freqs = Counter(words)
+    if num_gaussians <= 0:
+        raise ValueError('Number of Gaussians must be greater than 0.')
+    if len(word_freqs) < num_gaussians:
+        raise Exception('Number of Gaussians must be less than or equal to the number of unique words.')
+    mixture = GaussianMixture(n_components=num_gaussians)
+    mixture.fit([[freq] for freq in word_freqs.values()])
+    means = mixture.means_
+    return (dict(word_freqs), means)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python"
