@@ -27391,3 +27391,361 @@ model = DenseNet(num_init_features=args.num_init_features, block_config=args.blo
 
 ### Corrected Python Code
 model = DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes, efficient=True) if args.efficient else DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes) if args.efficient else DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes) if args.efficient else DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224, bn_size=args.bn_size, num_classes=num_classes) if args.efficient else DenseNet(num_init_features=args.num_init_features, block_config=args.block_config, compression=args.compression, input_size=224"
+"import json
+import smtplib
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = 'your.email@gmail.com'
+EMAIL_PASSWORD = 'your.password'
+
+def task_func(input_data=None, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, smtp=None):
+    if input_data is None:
+        return []
+    try:
+        data = json.loads(input_data)
+        recipient_email = data.get('recipient')
+        names = data.get('names', [])
+    except (json.JSONDecodeError, ValueError):
+        return []
+    if not recipient_email or not names == False:
+        return []
+    message = 'Subject: Extracted Names\n\n' + '\n'.join(names)
+    if not smtp:
+        server = smtp(smtp_server, smtp_port)
+    else:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+    recipient_email = email_address
+    server.starttls()
+    server.login(email_address, email_password)
+    server.sendmail(email_address, recipient_email, message)
+    server.quit()
+    names.clear()
+    return names","import json
+import smtplib
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = 'your.email@gmail.com'
+EMAIL_PASSWORD = 'your.password'
+
+def task_func(input_data=None, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, smtp=None):
+    if input_data is None:
+        return []
+    try:
+        data = json.loads(input_data)
+        recipient_email = data.get('recipient')
+        names = data.get('names', [])
+    except (json.JSONDecodeError, ValueError):
+        return []
+    if not recipient_email or not names:
+        return []
+    message = 'Subject: Extracted Names\n\n' + '\n'.join(names)
+    if smtp:
+        server = smtp(smtp_server, smtp_port)
+    else:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+    server.starttls()
+    server.login(email_address, email_password)
+    server.sendmail(email_address, recipient_email, message)
+    server.quit()
+    return names","import json
+import smtplib
+SMTP_SERVER ='smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = 'your.email@gmail.com'
+EMAIL_PASSWORD = 'your.password'
+
+def task_func(input_data=None, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, smtp=None):
+    if input_data is None:
+        return []
+    try:
+        data = json.loads(input_data)
+        recipient_email = data.get('recipient')
+        names = data.get('names', [])
+    except (json.JSONDecodeError, ValueError):
+        return []
+    if not recipient_email or not names:
+        return []
+    message = 'Subject: Extracted Names\n\n' + '\n'.join(names)
+    if smtp:
+        server = smtp(smtp_server, smtp_port)
+    else:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+    server.starttls()
+    server.login(email_address, email_password)
+    server.sendmail(email_address, recipient_email, message)
+    server.quit()
+    names.clear()
+    return names
+/README.md
+# Extract Names from Email using Python3 and SMTPlib
+
+This repository contains a Python3 script that extracts names from an email and sends an email with the extracted names. The script uses the smtplib module to send emails.
+
+## Setup
+
+To run the script, first install the smtplib module:
+
+```bash
+pip install smtplib
+```
+
+Then, create a file called `extract_names.py` with the following contents:
+
+```python
+import json
+import smtplib
+SMTP_SERVER ='smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = 'your.email@gmail.com'
+EMAIL_PASSWORD = 'your.password'
+
+def task_func(input_data=None, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, smtp=None):
+    if input_data is None:
+        return []
+    try:
+        data = json.loads(input_data)"
+"self.gcp_observer.invoke('delete', 'images', resource_id=name)","self.gcp_observer.invoke_resource('delete', 'images', resource_id=name)","### Buggy Python Code
+self.gcp_observer.invoke('delete', 'images', resource_id=name)
+
+### Corrected Python Code
+self.gcp_observer.invoke('delete', 'images', resource_id=name, project=self.project)/google/cloud/securitycenter/notifier/notifier.py        self.gcp_observer.invoke('delete', 'images', resource_id=name)
+
+    def delete_folder(self, name):
+        self.gcp_observer.invoke('delete', 'folders', resource_id=name)
+
+    def delete_project(self, name):
+        self.gcp_observer.invoke('delete', 'projects', resource_id=name)
+
+    def delete_organization(self, name):
+        self.gcp_observer.invoke('delete', 'organizations', resource_id=name)
+
+    def delete_service_account(self, name):
+        self.gcp_observer.invoke('delete','serviceaccounts', resource_id=name)
+
+    def delete_service_account_key(self, name):
+        self.gcp_observer.invoke('delete','serviceaccountkeys', resource_id=name)
+
+    def delete_storage_bucket(self, name):
+        self.gcp_observer.invoke('delete','storagebuckets', resource_id=name)
+
+    def delete_storage_bucket_iam_policy(self, name):
+        self.gcp_observer.invoke('delete','storagebucketiampolicies', resource_id=name)
+
+    def delete_storage_bucket_object(self, name):
+        self.gcp_observer.invoke('delete','storageobjects', resource_id=name)
+
+    def delete_storage_bucket_object_iam_policy(self, name):
+        self.gcp_observer.invoke('delete','storageobjectiampolicies', resource_id=name)
+
+    def delete_storage_bucket_policy(self, name):
+        self.gcp_observer.invoke('delete','storagebucketpolicies', resource_id=name)
+
+    def delete_storage_bucket_version(self, name):
+        self.gcp_observer.invoke('delete','storagebucketversions', resource_id=name)
+
+    def delete_storage_notification(self, name):
+        self.gcp_observer.invoke('delete', 'notifications', resource_id=name)
+
+    def delete_storage_notification_iam_policy(self, name):
+        self.gcp_observer.invoke('delete', 'notificationiampolicies', resource_id=name)
+
+    def delete"
+"from win32serviceutil import InstallService, RemoveServicer","from win32serviceutil import InstallService, RemoveService","### Buggy Python Code
+from win32serviceutil import InstallService, RemoveServicer
+
+### Corrected Python Code
+from win32serviceutil import InstallService, RemoveService, StartService, StopService, QueryServiceStatus, QueryServiceConfig, ChangeServiceConfig, ChangeServiceConfig2, ChangeServiceConfig3, ChangeServiceConfig4, ChangeServiceConfig5, ChangeServiceConfig6, ChangeServiceConfig7, ChangeServiceConfig8, ChangeServiceConfig9, ChangeServiceConfig10, ChangeServiceConfig11, ChangeServiceConfig12, ChangeServiceConfig13, ChangeServiceConfig14, ChangeServiceConfig15, ChangeServiceConfig16, ChangeServiceConfig17, ChangeServiceConfig18, ChangeServiceConfig19, ChangeServiceConfig20, ChangeServiceConfig21, ChangeServiceConfig22, ChangeServiceConfig23, ChangeServiceConfig24, ChangeServiceConfig25, ChangeServiceConfig26, ChangeServiceConfig27, ChangeServiceConfig28, ChangeServiceConfig29, ChangeServiceConfig30, ChangeServiceConfig31, ChangeServiceConfig32, ChangeServiceConfig33, ChangeServiceConfig34, ChangeServiceConfig35, ChangeServiceConfig36, ChangeServiceConfig37, ChangeServiceConfig38, ChangeServiceConfig39, ChangeServiceConfig40, ChangeServiceConfig41, ChangeServiceConfig42, ChangeServiceConfig43, ChangeServiceConfig44, ChangeServiceConfig45, ChangeServiceConfig46, ChangeServiceConfig47, ChangeServiceConfig48, ChangeServiceConfig49, ChangeServiceConfig50, ChangeServiceConfig51, ChangeServiceConfig52, ChangeServiceConfig53, ChangeServiceConfig54, ChangeServiceConfig55, ChangeServiceConfig56, ChangeServiceConfig57, ChangeServiceConfig58, ChangeServiceConfig59, ChangeServiceConfig60, ChangeServiceConfig61, ChangeServiceConfig62, ChangeServiceConfig63, ChangeServiceConfig64, ChangeServiceConfig65, ChangeServiceConfig66, ChangeServiceConfig67, ChangeServiceConfig68, ChangeServiceConfig69, ChangeServiceConfig70, ChangeServiceConfig71, ChangeServiceConfig72, ChangeServiceConfig73, ChangeServiceConfig74, ChangeServiceConfig75, ChangeServiceConfig76, ChangeServiceConfig77, ChangeServiceConfig78, ChangeServiceConfig79, ChangeServiceConfig80, ChangeServiceConfig81, ChangeServiceConfig82, ChangeServiceConfig"
+"class Solution:
+
+    def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
+        trie = {}
+        for f in forbidden:
+            t = trie
+            for c in f:
+                if c not in t:
+                    t[c] = {}
+                t = t[c]
+            t['end'] = True
+
+        def isForbidden(s):
+            t = trie
+            counter = 0
+            for c in s:
+                if c not in t:
+                    return False
+                t = t[c]
+                counter += 1
+                if 'end' in t:
+                    return counter
+            return False
+        res = 0
+        j = len(word) + 1
+        for i in range(len(word) - 1, -1, -1):
+            truc = isForbidden(word[i:j])
+            if truc:
+                j = i - truc - 1
+                undefinedFunction(word)
+            res = max(res, j - i)
+        return res","class Solution:
+
+    def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
+        trie = {}
+        for f in forbidden:
+            t = trie
+            for c in f:
+                if c not in t:
+                    t[c] = {}
+                t = t[c]
+            t['end'] = True
+
+        def isForbidden(s):
+            t = trie
+            counter = 0
+            for c in s:
+                if c not in t:
+                    return False
+                t = t[c]
+                counter += 1
+                if 'end' in t:
+                    return counter
+            return False
+        res = 0
+        j = len(word)
+        for i in range(len(word) - 1, -1, -1):
+            truc = isForbidden(word[i:j])
+            if truc:
+                j = i + truc - 1
+            res = max(res, j - i)
+        return res","1
+        for i in range(len(word) - 1, -1, -1):
+            truc = isForbidden(word[i:j])
+            if truc:
+                j = i - truc - 1
+                undefinedFunction(word)
+            res = max(res, j - i)
+        return res
+
+### Corrected Python Code
+class Solution:
+
+    def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
+        trie = {}
+        for f in forbidden:
+            t = trie
+            for c in f:
+                if c not in t:
+                    t[c] = {}
+                t = t[c]
+            t['end'] = True
+
+        def isForbidden(s):
+            t = trie
+            counter = 0
+            for c in s:
+                if c not in t:
+                    return False
+                t = t[c]
+                counter += 1
+                if 'end' in t:
+                    return counter
+            return False
+        res = 0
+        j = len(word)
+        for i in range(len(word) - 1, -1, -1):
+            truc = isForbidden(word[i:j])
+            if truc:
+                j = i + truc - 1
+            res = max(res, j - i)
+        return res
+
+### Corrected Python class Solution:
+
+    def longestValidSubstring(self, word: str, forbidden: List[str]) -> int:
+        trie = {}
+        for f in forbidden:
+            t = trie
+            for c in f:
+                if c not in t:
+                    t[c] = {}
+                t = t[c]
+            t['end'] = True
+
+        def isForbidden(s):
+            t = trie
+            counter = 0
+            for c in s:
+                if c not in t:
+                    return False
+                t = t[c]
+                counter += 1
+                if 'end' in t:
+                    return counter
+            return False
+        res = 0
+        j = len(word)
+        for i in range(len(word) - 1, -1, -1):
+            truc = isForbidden(word[i:j])
+            if truc:
+                j = i + truc
+            res = max(res, j - i)
+        return res
+/python/1000/1000-1002/1002.py
+class Solution:
+
+    def maxDepth(self, root: 'Node') -> int:
+        def dfs(node, depth):
+            if not node:
+                return 0
+            depth += 1
+            return max(depth, max(dfs(node.left, depth), dfs(node.right, depth)))
+        return dfs(root, 0) +"
+"date = datetime.datetime.strptime(row[meta_category], '%d/%m/%y')","date = datetime.datetime.strptime(row[meta_category], '%y/%m/%d')","### Buggy Python Code
+date = datetime.datetime.strptime(row[meta_category], '%d/%m/%y')
+
+### Corrected Python Code
+date = datetime.datetime.strptime(row[meta_category], '%d/%m/%Y') if row[meta_category] else None
+
+return date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None, date.strftime('%Y-%m-%d') if date else None"
+"model = pix2pix(sess, image_size=args.fine_size, batch_size=args.batch_size, output_size=args.fine_size, dataset_name=args.dataset_name, checkpoint_dir=args.checkpoint_dir, sample_dir=args.sample_dir, load_size=args.load_size, phase=args.phase, test_size=arg.test_size)","model = pix2pix(sess, image_size=args.fine_size, batch_size=args.batch_size, output_size=args.fine_size, dataset_name=args.dataset_name, checkpoint_dir=args.checkpoint_dir, sample_dir=args.sample_dir, load_size=args.load_size, phase=args.phase, test_size=args.test_size)","### Buggy Python Code
+model = pix2pix(sess, image_size=args.fine_size, batch_size=args.batch_size, output_size=args.fine_size, dataset_name=args.dataset_name, checkpoint_dir=args.checkpoint_dir, sample_dir=args.sample_dir, load_size=args.load_size, phase=args.phase, test_size=arg.test_size)
+
+### Corrected Python Code
+model = pix2pix(sess, image_size=args.fine_size, batch_size=args.batch_size, output_size=args.fine_size, dataset_name=args.dataset_name, checkpoint_dir=args.checkpoint_dir, sample_dir=args.sample_dir, load_size=args.load_size, phase=args.phase, test_size=args.test_size)
+/pix2pix/model.py
+import tensorflow as tf
+import tensorflow.contrib.slim as slim
+import numpy as np
+from tensorflow.contrib.layers import conv2d_transpose, conv2d, fully_connected, batch_norm, l2_regularizer, xavier_initializer, variance_scaling_initializer, leaky_relu, relu, dropout, flatten, max_pool2d, avg_pool2d, conv2d_transpose_v2, conv2d_v2, fully_connected_v2, batch_norm_v2, l2_regularizer_v2, xavier_initializer_v2, variance_scaling_initializer_v2, leaky_relu_v2, relu_v2, dropout_v2, flatten_v2, max_pool2d_v2, avg_pool2d_v2, conv2d_transpose_v3, conv2d_v3, fully_connected_v3, batch_norm_v3, l2_regularizer_v3, xavier_initializer_v3, variance_scaling_initializer_v3, leaky_relu_v3, relu_v3, dropout_v3, flatten_v3, max_pool2d_v3, avg_pool2d_v3, conv2d_transpose_v4, conv2d_v4, fully_connected_v4, batch_norm_v4, l2_regularizer_v4, xavier_initializer_v4, variance_scaling_initializer_v4, leaky_relu_v4, relu_v4, dropout_v4, flatten_v4, max_pool2d_v4, avg_pool2d_v4, conv2d_transpose_v5, conv2d_v5, fully_connected_v5, batch_norm_"
+"from utils import warning, get_temp_file, PcapReader","from utils import warning, get_temp_file, PcapReader, wrpcap","### Buggy Python Code
+from utils import warning, get_temp_file, PcapReader
+
+### Corrected Python Code
+from utils import warning, get_temp_file, PcapReader, get_temp_dir, get_temp_file_path, get_temp_dir_path, get_temp_file_path_from_name, get_temp_dir_path_from_name, get_temp_file_path_from_name_and_extension, get_temp_dir_path_from_name_and_extension, get_temp_file_path_from_name_and_extension_and_dir, get_temp_dir_path_from_name_and_extension_and_dir, get_temp_file_path_from_name_and_extension_and_dir_and_mode, get_temp_dir_path_from_name_and_extension_and_dir_and_mode, get_temp_file_path_from_name_and_extension_and_dir_and_mode_and_permissions, get_temp_dir_path_from_name_and_extension_and_dir_and_mode_and_permissions, get_temp_file_path_from_name_and_extension_and_dir_and_mode_and_permissions_and_timestamp, get_temp_dir_path_from_name_and_extension_and_dir_and_mode_and_permissions_and_timestamp, get_temp_file_path_from_name_and_extension_and_dir_and_mode_and_permissions_and_timestamp_and_suffix, get_temp_dir_path_from_name_and_extension_and_dir_and_mode_and_permissions_and_timestamp_and_suffix, get_temp_file_path_from_name_and_extension_and_dir_and_mode_and_permissions_and_timestamp_and_suffix_and_prefix, get_temp_dir_path_from_name_and_extension_and_dir_and_mode_and_permissions_and_timestamp_and_suffix_and_prefix, get_temp_file_path_from_name_and_extension_and_dir_and_mode_and_permissions_and_timestamp_and_suffix_and_prefix_and_suffix, get_temp_dir_path_from_name_and_extension"
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
