@@ -39642,3 +39642,304 @@ def main(project, update):
 
 ### Corrected Python Code
 ('perl-URI', 'perl-gettext', 'procps', 'psmisc', 'python-l"
+"class Solution:
+
+    def numberOfBeautifulIntegers(self, low: int, high: int, k: int) -> int:
+
+        @lru_cache()
+        def dfs(pos: int, mod: int, diff: int, lead: int, limit: int) -> int:
+            if pos >= len(s):
+                mod = (mod + 1) % k
+                return mod == 0 and diff == 10
+            up = int(s[pos]) if limit else 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, mod, diff, 1, limit and i == up)
+                else:
+                    nxt = diff + (1 if i % 2 == 1 else -1)
+                    ans += dfs(pos + 1, (mod * 10 + i) % k, nxt, 0, limit and i == up)
+            return ans
+        s = str(high - 1)
+        a = dfs(0, 0, 10, 1, 1)
+        dfs.cache_clear()
+        s = str(low - 1)
+        b = dfs(0, 0, 10, 1, 1)
+        return a + b","class Solution:
+
+    def numberOfBeautifulIntegers(self, low: int, high: int, k: int) -> int:
+
+        @cache
+        def dfs(pos: int, mod: int, diff: int, lead: int, limit: int) -> int:
+            if pos >= len(s):
+                return mod == 0 and diff == 10
+            up = int(s[pos]) if limit else 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, mod, diff, 1, limit and i == up)
+                else:
+                    nxt = diff + (1 if i % 2 == 1 else -1)
+                    ans += dfs(pos + 1, (mod * 10 + i) % k, nxt, 0, limit and i == up)
+            return ans
+        s = str(high)
+        a = dfs(0, 0, 10, 1, 1)
+        dfs.cache_clear()
+        s = str(low - 1)
+        b = dfs(0, 0, 10, 1, 1)
+        return a - b","class Solution:
+
+    def numberOfBeautifulIntegers(self, low: int, high: int, k: int) -> int:
+
+        @cache
+        def dfs(pos: int, mod: int, diff: int, lead: int, limit: int) -> int:
+            if pos >= len(s):
+                return mod == 0 and diff == 10
+            up = int(s[pos]) if limit else 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, mod, diff, 1, limit and i == up)
+                else:
+                    nxt = diff + (1 if i % 2 == 1 else -1)
+                    ans += dfs(pos + 1, (mod * 10 + i) % k, nxt, 0, limit and i == up)
+            return ans
+        s = str(high)
+        a = dfs(0, 0, 10, 1, 1)
+        dfs.cache_clear()
+        s = str(low - 1)
+        b = dfs(0, 0, 10, 1, 1)
+        return a - b + 1
+
+### Corrected Python class Solution:
+
+    def numberOfBeautifulIntegers(self, low: int, high: int, k: int) -> int:
+
+        @cache
+        def dfs(pos: int, mod: int, diff: int, lead: int, limit: int) -> int:
+            if pos >= len(s):
+                return mod == 0 and diff == 10
+            up = int(s[pos]) if limit else 9
+            ans = 0
+            for i in range(up + 1):
+                if i == 0 and lead:
+                    ans += dfs(pos + 1, mod, diff, 1, limit and i == up)
+                else:
+                    nxt = diff + (1 if i % 2 == 1 else -1)
+                    ans += dfs(pos + 1, (mod * 10 + i) % k, nxt, 0, limit and i == up)
+            return ans
+        s = str(high)
+        a = dfs(0, 0, 10, 1, 1)
+        dfs.cache_clear()"
+scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             '),scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value.value};\n             '),"### Buggy Python Code
+scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ')
+
+### Corrected Python Code
+scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value};\n             ') if value else scripts.append(f'\n                 CONFIGURE SYSTEM SET {setting} := {value"
+"entry_points = ({'console_scripts': ['recast-api = recastrestapi.apicli:apicli', 'recast-api-admin = recstrestapi.admincli:admincli']},)","entry_points = ({'console_scripts': ['recast-api = recastrestapi.apicli:apicli', 'recast-api-admin = recastrestapi.admincli:admincli']},)","### Buggy Python Code
+entry_points = ({'console_scripts': ['recast-api = recastrestapi.apicli:apicli','recast-api-admin = recstrestapi.admincli:admincli']},)
+
+### Corrected Python Code
+entry_points = ({'console_scripts': ['recast-api = recastrestapi.apicli:apicli','recast-api-admin = recastrestapi.admincli:admincli']},) + (('console_scripts', ['recast-api-admin = recastrestapi.admincli:admincli']),) + (('console_scripts', ['recast-api = recastrestapi.apicli:apicli']),) + (('console_scripts', ['recast-api-admin = recastrestapi.admincli:admincli']),) + (('console_scripts', ['recast-api = recastrestapi.apicli:apicli']),) + (('console_scripts', ['recast-api-admin = recastrestapi.admincli:admincli']),) + (('console_scripts', ['recast-api = recastrestapi.apicli:apicli']),) + (('console_scripts', ['recast-api-admin = recastrestapi.admincli:admincli']),) + (('console_scripts', ['recast-api = recastrestapi.apicli:apicli']),) + (('console_scripts', ['recast-api-admin = recastrestapi.admincli:admincli']),) + (('console_scripts', ['recast-api = recastrestapi.apicli:apicli']),) + (('console_scripts', ['recast-api-admin = recastrestapi.admincli:admincli']),) + (('console_scripts', ['recast-api = recastrestapi.apicli:apicli']),) + (('console_scripts', ['recast-api-admin = recastrestapi.admincli:admincli']),) + (('console_scripts', ['recast-api = recastrestapi.apicli:apicli']),) + (('console_scripts', ['recast-api-admin = recastrestapi.admincli:admincli']),) + (('console_scripts', ['recast-api = recastrestapi.apicli:apicli']),) + (('console_scripts', ['recast-api-admin = recastrestapi.admincli:admincli']),) + (('console_scripts', ['recast-api = recastrestapi.apicli:"
+"scores = cross_validation.cross_val_score(clf, X, y, self.n_folds, n_jobs=1)","scores = cross_validation.cross_val_score(clf, X, y, cv=self.n_folds, n_jobs=1)","### Buggy Python Code
+scores = cross_validation.cross_val_score(clf, X, y, self.n_folds, n_jobs=1)
+
+### Corrected Python Code
+scores = cross_validation.cross_val_score(clf, X, y, self.n_folds, n_jobs=1, scoring='roc_auc')
+
+return scores.mean() * 100.0, scores.std() * 100.0, scores.min() * 100.0, scores.max() * 100.0, scores.mean() * 100.0 - scores.std() * 100.0, scores.mean() * 100.0 + scores.std() * 100.0, scores.mean() * 100.0 - scores.min() * 100.0, scores.mean() * 100.0 + scores.max() * 100.0, scores.mean() * 100.0 - 2 * scores.std() * 100.0, scores.mean() * 100.0 + 2 * scores.std() * 100.0, scores.mean() * 100.0 - 3 * scores.std() * 100.0, scores.mean() * 100.0 + 3 * scores.std() * 100.0, scores.mean() * 100.0 - 4 * scores.std() * 100.0, scores.mean() * 100.0 + 4 * scores.std() * 100.0, scores.mean() * 100.0 - 5 * scores.std() * 100.0, scores.mean() * 100.0 + 5 * scores.std() * 100.0, scores.mean() * 100.0 - 6 * scores.std() * 100.0, scores.mean() * 100.0 + 6 * scores.std() * 100.0, scores.mean() * 100.0 - 7 * scores.std() * 100.0, scores.mean() * 100.0 + 7 * scores.std() * 100.0, scores.mean()"
+"import numpy as np
+from scipy.fft import fft
+from matplotlib import pyplot as plt
+
+def task_func(original):
+    arr = np.array([b for _, b in original])
+    if arr.size == 0 == True:
+        fft_data = np.array([])
+        return (arr, fft_data, None)
+    fft_data = fft(arr, n=len(arr) * 2)
+    _, ax = plt.subplots()
+    ax.hist(np.abs(fft_data))
+    return (arr, fft_data, ax)","import numpy as np
+from scipy.fft import fft
+from matplotlib import pyplot as plt
+
+def task_func(original):
+    arr = np.array([b for _, b in original])
+    if arr.size == 0:
+        fft_data = np.array([])
+        return (arr, fft_data, None)
+    fft_data = fft(arr)
+    _, ax = plt.subplots()
+    ax.hist(np.abs(fft_data))
+    return (arr, fft_data, ax)","### Buggy Python Code
+import numpy as np
+from scipy.fft import fft
+from matplotlib import pyplot as plt
+
+def task_func(original):
+    arr = np.array([b for _, b in original])
+    if arr.size == 0 == True:
+        fft_data = np.array([])
+        return (arr, fft_data, None)
+    fft_data = fft(arr, n=len(arr) * 2)
+    _, ax = plt.subplots()
+    ax.hist(np.abs(fft_data))
+    return (arr, fft_data, ax)
+
+### Corrected Python Code
+import numpy as np
+from scipy.fft import fft
+from matplotlib import pyplot as plt
+
+def task_func(original):
+    arr = np.array([b for _, b in original])
+    if arr.size == 0:
+        fft_data = np.array([])
+        return (arr, fft_data, None)
+    fft_data = fft(arr)
+    _, ax = plt.subplots()
+    ax.hist(np.abs(fft_data))
+    return (arr, fft_data, ax)
+
+if __name__ == '__main__':
+    original = [(1, 2), (2, 4), (3, 6), (4, 8)]
+    arr, fft_data, ax = task_func(original)
+    print(fft_data)
+    ax.set_title('FFT of Array')
+    ax.set_xlabel('Frequency')
+    ax.set_ylabel('Amplitude')
+    plt.show()
+    return (arr, fft_data, ax)
+/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python"
+"class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s = ~(1 << h)
+                i += 1
+        return -1 if ans > n else ans","class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s ^= 1 << h
+                i += 1
+        return -1 if ans > n else ans","1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s = ~(1 << h)
+                i += 1
+        return -1 if ans > n else ans
+
+### Corrected Python Code
+class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s -= 1 << h
+                i += 1
+        return -1 if ans > n else ans
+
+class Solution:
+
+    def minimumSubarrayLength(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j - i + 1)
+                y = nums[i]
+                for h in range(32):
+                    if y >> h & 1:
+                        cnt[h] -= 1
+                        if cnt[h] == 0:
+                            s -= 1 << h
+                i += 1
+        return -1 if ans > n else ans
+/python/1000/1000-1002/1002.py
+class Solution:
+
+    def minimumSwap(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        cnt = [0] * 32
+        ans = n + 1
+        s = i = 0
+        for j, x in enumerate(nums):
+            s |= x
+            for h in range(32):
+                if x >> h & 1:
+                    cnt[h] += 1
+            while s >= k and i <= j:
+                ans = min(ans, j -"
+"if data[0] == 129 and len(data) > 0:
+    data = data[1:]","if len(data) > 0 and data[0] == 129:
+    data = data[1:]","### Buggy Python Code
+if data[0] == 129 and len(data) > 0:
+    data = data[1:]
+
+### Corrected Python Code
+if data[0] == 129 and len(data) > 1:
+    data = data[1:]
+
+return data, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,"
+rssi = -(256 - ord(packet.notdecoded[-2:-1])),rssi = -(256 - ord(packet.notdecoded[-4:-3])),"### Buggy Python Code
+rssi = -(256 - ord(packet.notdecoded[-2:-1]))
+
+### Corrected Python Code
+rssi = -(256 - ord(packet.notdecoded[-1])) - 128.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
