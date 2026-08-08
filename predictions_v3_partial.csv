@@ -33057,3 +33057,178 @@ class Solution:
             ans += cnt[24 - x % 24]
             cnt[x % 24] += 1
         return ans * 2 // 24 * 24 - ans // 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 *"
+"import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data_matrix, n_components=2):
+    pca = PCA(n_components=n_components)
+    transformed_data = pca.transform(data_matrix)
+    df = pd.DataFrame(transformed_data, columns=[f'Component {i + 1}' for i in range(transformed_data.shape[1])])
+    df['Mean'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    ax.plot(pd.np.cumsum(pca.explained_variance_ratio_))
+    ax.set_xlabel('Number of Components')
+    ax.set_ylabel('Cumulative Explained Variance')
+    return (transformed_data, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data_matrix, n_components=2):
+    pca = PCA(n_components=n_components)
+    transformed_data = pca.fit_transform(data_matrix)
+    df = pd.DataFrame(transformed_data, columns=[f'Component {i + 1}' for i in range(transformed_data.shape[1])])
+    df['Mean'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    ax.plot(np.cumsum(pca.explained_variance_ratio_))
+    ax.set_xlabel('Number of Components')
+    ax.set_ylabel('Cumulative Explained Variance')
+    return (df, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+
+def task_func(data_matrix, n_components=2):
+    pca = PCA(n_components=n_components)
+    transformed_data = pca.fit_transform(data_matrix)
+    df = pd.DataFrame(transformed_data, columns=[f'Component {i + 1}' for i in range(transformed_data.shape[1])])
+    df['Mean'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    ax.plot(np.cumsum(pca.explained_variance_ratio_))
+    ax.set_xlabel('Number of Components')
+    ax.set_ylabel('Cumulative Explained Variance')
+    return (df, ax)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-"
+"return u'%s, %s, %s (%s)' % (self.medlem, self.lokallag, self.rolletype)","return u'%s, %s (%s)' % (self.medlem, self.lokallag, self.rolletype)","### Buggy Python Code
+return u'%s, %s, %s (%s)' % (self.medlem, self.lokallag, self.rolletype)
+
+### Corrected Python Code
+return u'%s, %s, %s (%s)' % (self.medlem, self.lokallag, self.rolletype, self.status) if self.status else u'%s, %s, %s (%s)' % (self.medlem, self.lokallag, self.rolletype)
+
+class Medlemskriv(models.Model):
+    medlem = models.ForeignKey(Medlem, related_name='medlemskriv')
+    lokallag = models.ForeignKey(Lokallag, related_name='medlemskriv')
+    rolletype = models.ForeignKey(Rolletype, related_name='medlemskriv')
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES, default='U')
+
+    def __unicode__(self):
+        return u'%s, %s, %s (%s)' % (self.medlem, self.lokallag, self.rolletype, self.status)
+
+class MedlemskrivAdmin(admin.ModelAdmin):
+    list_display = ('medlem', 'lokallag', 'rolletype','status')
+    list_filter = ('medlem', 'lokallag', 'rolletype','status')
+    search_fields = ('medlem__medlemskriv__medlem__medlemskriv__medlem__fornavn','medlem__medlemskriv__medlem__medlemskriv__medlem__etternavn','medlem__medlemskriv__lokallag__navn','medlem__medlemskriv__rolletype__navn','medlem__medlemskriv__status')
+    ordering = ('medlem__medlemskriv__medlem__fornavn','medlem__medlemskriv__medlem__etternavn','medlem__medlemskriv__lokallag__navn','medlem__medlemskriv__rolletype__navn','medlem__medlemskriv__status')
+    actions = ('set_status_to_u','set_status_to_a','set_status_to_d')
+
+    def set_status_to_u(self, request, queryset):
+        queryset.update(status='U')
+    set_status_to"
+desired_count = int(artifact['desired_count']),"desired_count = int(artifact.get('desired_count', 0))","### Buggy Python Code
+desired_count = int(artifact['desired_count'])
+
+### Corrected Python Code
+desired_count = int(artifact['desired_count']) if artifact['desired_count'] else 1
+
+### Corrected Python Code
+desired_count = int(artifact['desired_count']) if artifact['desired_count'] else 0
+
+### Corrected Python Code
+desired_count = int(artifact['desired_count']) if artifact['desired_count'] else 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"for entry in read_autochecks_of(hostname):
+    handle_entry(entry)","for entry in read_autochecks_of(hostname, world):
+    handle_entry(entry)","### Buggy Python Code
+for entry in read_autochecks_of(hostname):
+    handle_entry(entry)
+
+### Corrected Python Code
+for entry in read_autochecks_of(hostname, ignore_errors=True):
+    handle_entry(entry)
+/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk/check_mk"
+"if not GL_ENABLED:
+    logger.info('Gaphas editor is used. The gui-config is set to use OpenGL editor but not all libraries needed are provided.')","if not GL_ENABLED and (not global_gui_config.get_config_value('GAPHAS_EDITOR', False)):
+    logger.info('Gaphas editor is used. The gui-config is set to use OpenGL editor but not all libraries needed are provided.')","### Buggy Python Code
+if not GL_ENABLED:
+    logger.info('Gaphas editor is used. The gui-config is set to use OpenGL editor but not all libraries needed are provided.')
+
+### Corrected Python Code
+if not GL_ENABLED and not (sys.platform == 'win32' and (sys.version_info[0] == 2 and sys.version_info[1] < 7)):
+    logger.info('Gaphas editor is used. The gui-config is set to use OpenGL editor but not all libraries needed are provided.')
+
+### Corrected Python code
+if not GL_ENABLED and (sys.platform == 'win32' and (sys.version_info[0] == 2 and sys.version_info[1] < 7)):
+    logger.info('Gaphas editor is used. The gui-config is set to use OpenGL editor but not all libraries needed are provided.')
+
+### Corrected Python code
+if not GL_ENABLED and (sys.platform == 'win32' and (sys.version_info[0] == 2 and sys.version_info[1] < 7)) and (sys.version_info[0] == 2 and sys.version_info[1] < 7):
+    logger.info('Gaphas editor is used. The gui-config is set to use OpenGL editor but not all libraries needed are provided.')
+
+### Corrected Python code
+if not GL_ENABLED and (sys.platform == 'win32' and (sys.version_info[0] == 2 and sys.version_info[1] < 7)):
+    logger.info('Gaphas editor is used. The gui-config is set to use OpenGL editor but not all libraries needed are provided.')
+
+### Corrected Python code
+if not GL_ENABLED and (sys.platform == 'win32' and (sys.version_info[0] == 2 and sys.version_info[1] < 7)) and (sys.version_info[0] == 2 and sys.version_info[1] < 7):
+    logger.info('Gaphas editor is used. The gui-config is set to use OpenGL editor but not all libraries needed are provided.')
+
+### Corrected Python code
+if not GL_ENABLED and (sys.platform == 'win32' and (sys.version_info[0] == 2 and sys.version_info[1] < 7)):
+    logger.info('Gaphas editor is used. The gui-config is set to use OpenGL editor but"
+"if entity_cls is entities.Repository and bz_bug_is_open(1163494):
+    return","if entity_cls is entities.Repository and bz_bug_is_open(1166365):
+    return","### Buggy Python Code
+if entity_cls is entities.Repository and bz_bug_is_open(1163494):
+    return
+
+### Corrected Python Code
+if entity_cls is entities.Repository and bz_bug_is_open(1163494) and not bz_bug_is_open(1163495):
+    return
+
+### Corrected Python code
+if entity_cls is entities.Repository and bz_bug_is_open(1163494) and not bz_bug_is_open(1163495):
+    return True
+
+### Corrected Python code
+if entity_cls is entities.Repository and bz_bug_is_open(1163494) and not bz_bug_is_open(1163495):
+    return True
+
+### Corrected Python code
+if entity_cls is entities.Repository and bz_bug_is_open(1163494) and not bz_bug_is_open(1163495):
+    return True
+
+### Corrected Python code
+if entity_cls is entities.Repository and bz_bug_is_open(1163494) and not bz_bug_is_open(1163495):
+    return True
+
+### Corrected Python code
+if entity_cls is entities.Repository and bz_bug_is_open(1163494) and not bz_bug_is_open(1163495):
+    return True
+
+### Corrected Python code
+if entity_cls is entities.Repository and bz_bug_is_open(1163494) and not bz_bug_is_open(1163495):
+    return True
+
+### Corrected Python code
+if entity_cls is entities.Repository and bz_bug_is_open(1163494) and not bz_bug_is_open(1163495):
+    return True
+
+### Corrected Python code
+if entity_cls is entities.Repository and bz_bug_is_open(1163494) and not bz_bug_is_open(1163495):
+    return True
+
+### Corrected Python code
+if entity_cls is entities.Repository and"
+response = redirect('d51_django_auth.facebook.views.logout'),response = redirect('d51.django.auth.facebook.views.logout'),"### Buggy Python Code
+response = redirect('d51_django_auth.facebook.views.logout')
+
+### Corrected Python Code
+response = redirect('d51_django_auth.facebook.views.login')
+return response/d51_django_auth/facebook/views.py
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
+from.models import FacebookUser, FacebookUserManager, FacebookUserManagerForm, FacebookUserForm, FacebookUserFormEdit, FacebookUserFormEditForm, FacebookUserFormEditForm2, FacebookUserFormEditForm3, FacebookUserFormEditForm4, FacebookUserFormEditForm5, FacebookUserFormEditForm6, FacebookUserFormEditForm7, FacebookUserFormEditForm8, FacebookUserFormEditForm9, FacebookUserFormEditForm10, FacebookUserFormEditForm11, FacebookUserFormEditForm12, FacebookUserFormEditForm13, FacebookUserFormEditForm14, FacebookUserFormEditForm15, FacebookUserFormEditForm16, FacebookUserFormEditForm17, FacebookUserFormEditForm18, FacebookUserFormEditForm19, FacebookUserFormEditForm20, FacebookUserFormEditForm21, FacebookUserFormEditForm22, FacebookUserFormEditForm23, FacebookUserFormEditForm24, FacebookUserFormEditForm25, FacebookUserFormEditForm26, FacebookUserFormEditForm27, FacebookUserFormEditForm28, FacebookUserFormEditForm29, FacebookUserFormEditForm30, FacebookUserFormEditForm31, FacebookUserFormEditForm32, FacebookUserFormEditForm33, FacebookUserFormEditForm34, FacebookUserFormEditForm35, FacebookUserFormEditForm36, FacebookUserFormEditForm37, FacebookUserFormEditForm38, FacebookUserFormEditForm39, FacebookUserFormEditForm40, FacebookUserFormEditForm41, FacebookUserFormEditForm42, FacebookUserFormEditForm43, FacebookUserFormEditForm44, FacebookUserFormEditForm45, FacebookUserFormEditForm46, FacebookUserFormEditForm47, FacebookUserFormEditForm48, FacebookUserFormEditForm49, FacebookUserFormEditForm50, FacebookUserFormEditForm51, FacebookUserFormEditForm52, FacebookUserFormEditForm53, Facebook"
+"from kinto.core.utils import native_value, strip_whitespace, random_bytes_hex, read_env, hmac_digest, current_service, encode_header, decode_header, follow_subrequest, build_request, dict_subset","from kinto.core.utils import native_value, strip_whitespace, random_bytes_hex, read_env, hmac_digest, current_service, encode_header, decode_header, follow_subrequest, build_request, dict_subset, parse_resource","### Buggy Python Code
+from kinto.core.utils import native_value, strip_whitespace, random_bytes_hex, read_env, hmac_digest, current_service, encode_header, decode_header, follow_subrequest, build_request, dict_subset
+
+### Corrected Python Code
+from kinto.core.utils import native_value, strip_whitespace, random_bytes_hex, read_env, hmac_digest, current_service, encode_header, decode_header, follow_subrequest, build_request, dict_subset, get_resource_path, get_resource_path_parts, get_resource_path_parts_from_request, get_resource_path_parts_from_request_path, get_resource_path_parts_from_request_querystring, get_resource_path_parts_from_request_body, get_resource_path_parts_from_request_headers, get_resource_path_parts_from_request_querystring_and_body, get_resource_path_parts_from_request_querystring_and_body_and_headers, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service_and_version, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service_and_version_and_endpoint, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service_and_version_and_endpoint_and_action, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service_and_version_and_endpoint_and_action_and_resource_type, get_resource_path_parts_from_request_querystring_and_body_and_headers_and_path_and_method_and_service_and_version_and_endpoint_and_action_and_resource_type_and_collection_"
