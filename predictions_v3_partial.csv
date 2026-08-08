@@ -70363,3 +70363,249 @@ self.amount = Decimal(self.unit_price * self.quantity)
 
 ### Corrected Python Code
 self.amount = Decimal(self.unit_price * self.quantity).quantize(Decimal('0.01')) if self.unit_price and self.quantity else Decimal('0.00') * self.quantity.quantize(Decimal('0.01')) if self.quantity else Decimal('0.00') * self.unit_price.quantize(Decimal('0.01')) if self.unit_price else Decimal('0.00') * self.quantity.quantize(Decimal('0.01')) if self.quantity else Decimal('0.00') * self.unit_price.quantize(Decimal('0.01')) if self.unit_price else Decimal('0.00') * self.quantity.quantize(Decimal('0.01')) if self.quantity else Decimal('0.00') * self.unit_price.quantize(Decimal('0.01')) if self.unit_price else Decimal('0.00') * self.quantity.quantize(Decimal('0.01')) if self.quantity else Decimal('0.00') * self.unit_price.quantize(Decimal('0.01')) if self.unit_price else Decimal('0.00') * self.quantity.quantize(Decimal('0.01')) if self.quantity else Decimal('0.00') * self.unit_price.quantize(Decimal('0.01')) if self.unit_price else Decimal('0.00') * self.quantity.quantize(Decimal('0.01')) if self.quantity else Decimal('0.00') * self.unit_price.quantize(Decimal('0.01')) if self.unit_price else Decimal('0.00') * self.quantity.quantize(Decimal('0.01')) if self.quantity else Decimal('0.00') * self.unit_price.quantize(Decimal('0.01')) if self.unit_price else Decimal('0.00') * self.quantity.quantize(Decimal('0.01')) if self.quantity else Decimal('0.00') * self.unit_price.quantize(Decimal('0.01')) if self.unit_price else Decimal('0.00') * self.quantity"
+"filename = ek(os.path.join, sickbeard.PROG_DIR, file)","filename = ek(os.path.join, sickbeard.PROG_DIR, filename)","### Buggy Python Code
+filename = ek(os.path.join, sickbeard.PROG_DIR, file)
+
+### Corrected Python Code
+filename = ek(os.path.join, sickbeard.PROG_DIR,'sickbeard.db') + '.lock' if file =='sickbeard.db' else ek(os.path.join, sickbeard.PROG_DIR, file) + '.lock' if file =='sickbeard.db.lock' else ek(os.path.join, sickbeard.PROG_DIR, file) + '.lock' if file =='sickbeard.db.lock.lock' else ek(os.path.join, sickbeard.PROG_DIR, file) + '.lock' if file =='sickbeard.db.lock.lock.lock' else ek(os.path.join, sickbeard.PROG_DIR, file) + '.lock' if file =='sickbeard.db.lock.lock.lock.lock' else ek(os.path.join, sickbeard.PROG_DIR, file) + '.lock' if file =='sickbeard.db.lock.lock.lock.lock.lock' else ek(os.path.join, sickbeard.PROG_DIR, file) + '.lock' if file =='sickbeard.db.lock.lock.lock.lock.lock.lock' else ek(os.path.join, sickbeard.PROG_DIR, file) + '.lock' if file =='sickbeard.db.lock.lock.lock.lock.lock.lock.lock' else ek(os.path.join, sickbeard.PROG_DIR, file) + '.lock' if file =='sickbeard.db.lock.lock.lock.lock.lock.lock.lock.lock' else ek(os.path.join, sickbeard.PROG_DIR, file) + '.lock' if file =='sickbeard.db.lock.lock.lock.lock.lock.lock.lock.lock.lock' else ek(os.path.join, sickbeard.PROG_DIR, file) + '.lock' if file =='sickbeard.db.lock.lock.lock.lock.lock.lock.lock.lock.lock.lock' else ek(os.path.join, s"
+"comment = Comment.find_one(Q('_id', 'eq', pk))","comment = Comment.find_one(Q('_id', 'eq', pk) & Q('root_target', 'ne', None))","### Buggy Python Code
+comment = Comment.find_one(Q('_id', 'eq', pk))
+
+### Corrected Python Code
+comment = Comment.find_one(Q('_id', 'eq', pk), Q('is_deleted', 'eq', False)) or {}
+
+### Corrected Python Code
+comment = Comment.find_one(Q('_id', 'eq', pk), Q('is_deleted', 'eq', False)) or {} or {}
+
+return comment, 200, {'Content-Type': 'application/json'} if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment else {} or 404, 'Content-Type': 'application/json' if comment"
+"if 'url' in params:
+    url = params['url'].replace('VAL', str(item()))","if 'url' in params and params['url'] is not None:
+    url = params['url'].replace('VAL', str(item()))","### Buggy Python Code
+if 'url' in params:
+    url = params['url'].replace('VAL', str(item()))
+
+### Corrected Python Code
+if 'url' in params and params['url'].find('VAL')!= -1:
+    url = params['url'].replace('VAL', str(item()))
+
+### Corrected Python Code
+if 'url' in params and params['url'].find('VAL')!= -1:
+    url = params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('VAL', str(item())) + params['url'].replace('"
+"labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))])","labels_all.append([filenames[i], str(np.argmax(y_input[i]))])","### Buggy Python Code
+labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))])
+
+### Corrected Python Code
+labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames[i] + '.png', str(np.argmax(y_input[i]))]) if y_input[i].shape[0] == 1 else labels_all.append([filenames["
+"class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, (1 << len(nums)) - 1):
+            t = 1
+            for j, x in enumerate(nums):
+                if i >> j & 1 and __import__('time').sleep(0.1) is None:
+                    t *= x
+            ans = max(ans, t)
+        ans = max(ans, 0)
+        return ans","class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 1
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t *= x
+            ans = max(ans, t)
+        return ans","= max(ans, 0)
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 1
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t *= x
+            ans = max(ans, t)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 1
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t *= x
+            ans = max(ans, t)
+        return ans if ans > 0 else 0
+
+### Corrected Python
+class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 1
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t *= x
+            ans = max(ans, t)
+        return ans if ans > 0 else 0
+
+### Corrected Python
+class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 1
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t *= x
+            ans = max(ans, t)
+        return ans if ans > 0 else 0
+
+### Corrected Python
+class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 1
+            for j, x in enumerate(nums):
+                if i >> j & 1:
+                    t *= x
+            ans = max(ans, t)
+        return ans if ans > 0 else 0
+
+### Corrected Python
+class Solution:
+
+    def maxStrength(self, nums: List[int]) -> int:
+        ans = -inf
+        for i in range(1, 1 << len(nums)):
+            t = 1
+            for j, x in"
+"analyse_genes(hpo_graph, hpo_by_proband, probands_by_gene, options.output, options.iterations, args.score_type)","analyse_genes(hpo_graph, hpo_by_proband, probands_by_gene, options.output, options.iterations, options.score_type)","### Buggy Python Code
+analyse_genes(hpo_graph, hpo_by_proband, probands_by_gene, options.output, options.iterations, args.score_type)
+
+### Corrected Python Code
+analyse_genes(hpo_graph, hpo_by_proband, probands_by_gene, options.output, options.iterations, args.score_type, options.use_gene_names)
+/src/hpo_graph.py
+import networkx as nx
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from scipy.stats import zscore, pearsonr, spearmanr, kendalltau, chi2_contingency, fisher_exact, mannwhitneyu, ttest_ind, wilcoxon, kruskal, levene, bartlett, shapiro, normaltest, mannwhitneyu, ttest_ind, wilcoxon, kruskal, levene, bartlett, shapiro, normaltest, mannwhitneyu, ttest_ind, wilcoxon, kruskal, levene, bartlett, shapiro, normaltest, mannwhitneyu, ttest_ind, wilcoxon, kruskal, levene, bartlett, shapiro, normaltest, mannwhitneyu, ttest_ind, wilcoxon, kruskal, levene, bartlett, shapiro, normaltest, mannwhitneyu, ttest_ind, wilcoxon, kruskal, levene, bartlett, shapiro, normaltest, mannwhitneyu, ttest_ind, wilcoxon, kruskal, levene, bartlett, shapiro, normaltest, mannwhitneyu, ttest_ind, wilcoxon, kruskal, levene, bartlett, shapiro, normaltest, mannwhitneyu, ttest_ind, wilcoxon, kruskal, levene, bartlett, shapiro, normaltest, mannwhitneyu, ttest_ind, wilcoxon, kruskal, levene, bartlett, shapiro, normaltest, mannwhitneyu, ttest_ind, wilcoxon, kruskal, levene"
+ext_meta = dict([[i.strip() for i in l.split(':')] for l in meta_raw.split('\n')]),"ext_meta = dict([[i.strip() for i in l.split(':', 1)] for l in meta_raw.split('\n')])","### Buggy Python Code
+ext_meta = dict([[i.strip() for i in l.split(':')] for l in meta_raw.split('\n')])
+
+### Corrected Python Code
+ext_meta = dict([[i.strip() for i in l.split(':')] for l in meta_raw.split('\n') if l.strip()])
+
+return ext_meta, ext_meta.get('title') or ext_meta.get('name') or ext_meta.get('description') or ext_meta.get('author') or ext_meta.get('version') or ext_meta.get('license') or ext_meta.get('url') or ext_meta.get('email') or ext_meta.get('summary') or ext_meta.get('description') or ext_meta.get('keywords') or ext_meta.get('author_email') or ext_meta.get('author_name') or ext_meta.get('maintainer_email') or ext_meta.get('maintainer_name') or ext_meta.get('platform') or ext_meta.get('classifiers') or ext_meta.get('requires') or ext_meta.get('extras_require') or ext_meta.get('python_requires') or ext_meta.get('install_requires') or ext_meta.get('entry_points') or ext_meta.get('scripts') or ext_meta.get('data_files') or ext_meta.get('package_data') or ext_meta.get('include_package_data') or ext_meta.get('exclude_package_data') or ext_meta.get('py_modules') or ext_meta.get('packages') or ext_meta.get('package_dir') or ext_meta.get('package_name') or ext_meta.get('version') or ext_meta.get('author') or ext_meta.get('author_email') or ext_meta.get('maintainer') or ext_meta.get('maintainer_email') or ext_meta.get('license') or ext_meta.get('url') or ext_meta.get('summary') or ext_meta.get('description') or ext_meta.get('keywords') or ext_meta.get('author_name') or ext_meta.get('maintainer_name') or ext_meta.get('platform') or ext_meta.get('classifiers') or ext_meta.get('requires') or ext_meta.get('extras_require') or ext_"
+"import ipaddress
+import requests
+
+def task_func(ip_range, timeout):
+    results = []
+    try:
+        network = ipaddress.IPNetwork(ip_range, strict=False)
+    except ValueError as e:
+        raise ValueError(f'Invalid IP range: {e}')
+    for ip in network:
+        try:
+            response = requests.get(f'http://{ip}', timeout=timeout)
+            if response.status_code == '200':
+                results.append(str(ip))
+        except requests.exceptions.ConnectionError as e:
+            pass
+    return results","import ipaddress
+import requests
+
+def task_func(ip_range, timeout):
+    results = []
+    try:
+        network = ipaddress.IPv4Network(ip_range, strict=False)
+    except ValueError as e:
+        raise ValueError(f'Invalid IP range: {e}')
+    for ip in network:
+        try:
+            response = requests.get(f'http://{ip}', timeout=timeout)
+            if response.status_code == 200:
+                results.append(str(ip))
+        except requests.exceptions.ConnectionError as e:
+            pass
+    return results","import ipaddress
+import requests
+
+def task_func(ip_range, timeout):
+    results = []
+    try:
+        network = ipaddress.IPv4Network(ip_range, strict=False)
+    except ValueError as e:
+        raise ValueError(f'Invalid IP range: {e}')
+    for ip in network:
+        try:
+            response = requests.get(f'http://{ip}', timeout=timeout)
+            if response.status_code == 200:
+                results.append(str(ip))
+        except requests.exceptions.ConnectionError as e:
+            pass
+    return results
+/day_01/task_01.py
+import ipaddress
+import requests
+
+def task_func(ip_range, timeout):
+    results = []
+    try:
+        network = ipaddress.IPv4Network(ip_range, strict=False)
+    except ValueError as e:
+        raise ValueError(f'Invalid IP range: {e}')
+    for ip in network:
+        try:
+            response = requests.get(f'http://{ip}', timeout=timeout)
+            if response.status_code == 200:
+                results.append(str(ip))
+        except requests.exceptions.ConnectionError as e:
+            pass
+    return results
+/day_02/task_01.py
+import ipaddress
+import requests
+
+def task_func(ip_range, timeout):
+    results = []
+    try:
+        network = ipaddress.IPv4Network(ip_range, strict=False)
+    except ValueError as e:
+        raise ValueError(f'Invalid IP range: {e}')
+    for ip in network:
+        try:
+            response = requests.get(f'http://{ip}', timeout=timeout)
+            if response.status_code == 200:
+                results.append(str(ip))
+        except requests.exceptions.ConnectionError as e:
+            pass
+    return results
+/day_02/task_02.py
+import ipaddress
+import requests
+
+def task_func(ip_range, timeout):
+    results = []
+    try:
+        network = ipaddress.IPv4Network(ip_range, strict=False)
+    except ValueError as e:
+        raise ValueError(f'Invalid IP range: {e}')
+    for ip in network:
+        try:
+            response = requests.get(f'http://{ip}', timeout"
