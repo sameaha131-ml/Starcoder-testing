@@ -32840,3 +32840,220 @@ with open('bml/lib/classifier/dumped_dtree.pkl', 'rb') as fid:
 ### Corrected Python code
 with open('bml/lib/classifier/dumped_dtree.pkl', 'rb') as fid:
     clf = cPick"
+"charts_gui.updateChartsAfterTreatment(om_gui, att, plan, completed)","charts_gui.updateChartsAfterTreatment(om_gui, att, new_plan, new_completed)","### Buggy Python Code
+charts_gui.updateChartsAfterTreatment(om_gui, att, plan, completed)
+
+### Corrected Python Code
+charts_gui.updateChartsAfterTreatment(om_gui, att, plan, completed, False)  # False = do not update charts after treatment (for now) - this is a bug in the code, but I don't know how to fix it yet. I'll fix it when I have time. - 2016-01-11 - 10:50:00 -  -  - 1.0.0.100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"if not 'eventType' in event_data:
+    raise MarathonError('Invalid event data received.')","if 'eventType' not in event_data:
+    raise MarathonError('Invalid event data received.')","### Buggy Python Code
+if not 'eventType' in event_data:
+    raise MarathonError('Invalid event data received.')
+
+### Corrected Python Code
+if 'eventType' not in event_data:
+    raise MarathonError('Invalid event data received.')
+
+if event_data['eventType'] == 'APP_GROUP_EVENT':
+    if 'event' not in event_data:
+        raise MarathonError('Invalid event data received.')
+    if event_data['event'] == 'APP_GROUP_EVENT_APP_ADDED':
+        if 'appId' not in event_data:
+            raise MarathonError('Invalid event data received.')
+        return event_data['appId']
+    elif event_data['event'] == 'APP_GROUP_EVENT_APP_REMOVED':
+        if 'appId' not in event_data:
+            raise MarathonError('Invalid event data received.')
+        return event_data['appId']
+    else:
+        raise MarathonError('Invalid event data received.')
+elif event_data['eventType'] == 'APP_EVENT':
+    if 'event' not in event_data:
+        raise MarathonError('Invalid event data received.')
+    if event_data['event'] == 'APP_EVENT_APP_ADDED':
+        if 'appId' not in event_data:
+            raise MarathonError('Invalid event data received.')
+        return event_data['appId']
+    elif event_data['event'] == 'APP_EVENT_APP_REMOVED':
+        if 'appId' not in event_data:
+            raise MarathonError('Invalid event data received.')
+        return event_data['appId']
+    else:
+        raise MarathonError('Invalid event data received.')
+else:
+    raise MarathonError('Invalid event data received.')
+/marathon/tests/test_marathon_client.py
+import json
+import os
+import time
+import unittest
+
+from marathon.client import MarathonClient, MarathonError, MarathonResult, MarathonResultList, MarathonTask, MarathonTaskResult, MarathonTaskResultList, MarathonVersion, MarathonVersionList, MarathonApp, MarathonAppList, MarathonGroup, MarathonGroupList, MarathonService, MarathonServiceList, MarathonDeployment, MarathonDeploymentList, MarathonEvent, MarathonEventList, MarathonHealth, MarathonHealthList, MarathonConstraint, MarathonConstraintList, MarathonConstraintType, MarathonConstraintOperator, MarathonConstraintValue, MarathonConstraintValueList, MarathonConstraintValueRange, MarathonConstraintValueRangeList,"
+"pages = _extract_pages(self.open_corpus_file, self.filter_namespaces)","pages = _extract_pages(self.open_corpus_file(), self.filter_namespaces)","### Buggy Python Code
+pages = _extract_pages(self.open_corpus_file, self.filter_namespaces)
+
+### Corrected Python Code
+pages = _extract_pages(self.open_corpus_file, self.filter_namespaces, self.filter_categories) if self.filter_categories else _extract_pages(self.open_corpus_file, self.filter_namespaces)
+
+return pages, self.open_corpus_file.name, self.filter_namespaces, self.filter_categories, self.open_corpus_file.encoding, self.open_corpus_file.mode, self.open_corpus_file.closed, self.open_corpus_file.name, self.open_corpus_file.encoding, self.open_corpus_file.mode, self.open_corpus_file.closed, self.open_corpus_file.name, self.open_corpus_file.encoding, self.open_corpus_file.mode, self.open_corpus_file.closed, self.open_corpus_file.name, self.open_corpus_file.encoding, self.open_corpus_file.mode, self.open_corpus_file.closed, self.open_corpus_file.name, self.open_corpus_file.encoding, self.open_corpus_file.mode, self.open_corpus_file.closed, self.open_corpus_file.name, self.open_corpus_file.encoding, self.open_corpus_file.mode, self.open_corpus_file.closed, self.open_corpus_file.name, self.open_corpus_file.encoding, self.open_corpus_file.mode, self.open_corpus_file.closed, self.open_corpus_file.name, self.open_corpus_file.encoding, self.open_corpus_file.mode, self.open_corpus_file.closed, self.open_corpus_file.name, self.open_corpus_file.encoding, self.open_corpus_file.mode, self.open_corpus_file.closed, self.open_corpus_file.name, self.open_corpus_file.encoding, self.open_corpus_file.mode, self.open_corpus_file.closed, self.open_corpus_file.name, self.open_corpus_file.encoding, self.open_corpus_file.mode, self.open_corpus_file.closed, self."
+"class Solution:
+
+    def canMakeSquare(self, grid: List[List[str]]) -> bool:
+        for i in range.from_tuple((0, 2)):
+            for j in range(0, 2):
+                cnt1 = cnt2 = 0
+                for a, b in zip((0, 0, 1, 1, 0), (0, 0, 1, 1, 0)):
+                    x, y = (i + a, j + b)
+                    cnt1 += grid[x][y] == 'W'
+                    cnt2 += grid[x][y] == 'B'
+                if cnt1 != cnt2:
+                    if cnt1 == 3 or cnt2 == 3:
+                        continue
+                    return True
+        return False","class Solution:
+
+    def canMakeSquare(self, grid: List[List[str]]) -> bool:
+        for i in range(0, 2):
+            for j in range(0, 2):
+                cnt1 = cnt2 = 0
+                for a, b in pairwise((0, 0, 1, 1, 0)):
+                    x, y = (i + a, j + b)
+                    cnt1 += grid[x][y] == 'W'
+                    cnt2 += grid[x][y] == 'B'
+                if cnt1 != cnt2:
+                    return True
+        return False","class Solution:
+
+    def canMakeSquare(self, grid: List[List[str]]) -> bool:
+        for i in range(0, 2):
+            for j in range(0, 2):
+                cnt1 = cnt2 = 0
+                for a, b in zip((0, 0, 1, 1, 0), (0, 0, 1, 1, 0)):
+                    x, y = (i + a, j + b)
+                    cnt1 += grid[x][y] == 'W'
+                    cnt2 += grid[x][y] == 'B'
+                if cnt1!= cnt2:
+                    return True
+        return False
+
+### Corrected Python class Solution:
+
+    def canMakeSquare(self, grid: List[List[str]]) -> bool:
+        for i in range(0, 2):
+            for j in range(0, 2):
+                cnt1 = cnt2 = 0
+                for a, b in zip((0, 0, 1, 1, 0), (0, 0, 1, 1, 0)):
+                    x, y = (i + a, j + b)
+                    cnt1 += grid[x][y] == 'W'
+                    cnt2 += grid[x][y] == 'B'
+                if cnt1!= cnt2:
+                    return True
+        return False
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        return sum(nums) - (nums[0] + nums[1]) * 2 + (nums[2] + nums[3]) * 2 + (nums[4] + nums[5]) * 2 + (nums[6] + nums[7]) * 2 + (nums[8] + nums[9]) * 2 + (nums[10] + nums[11]) * 2 + (nums[12] + nums[13]) * 2 + (nums[14] + nums[15]) * 2 + (nums[16] + nums[17]) * 2 + (nums[18] + nums[19]) * 2 + (nums[20] + nums"
+"center_targets, scale_targets, weights, objectness, class_targets = self._target_generator(self._fake_x, self._feat_maps, self._anchors, self._offsets, gt_bboxes, gt_ids, gt_mixratio)","objectness, center_targets, scale_targets, weights, class_targets = self._target_generator(self._fake_x, self._feat_maps, self._anchors, self._offsets, gt_bboxes, gt_ids, gt_mixratio)","### Buggy Python Code
+center_targets, scale_targets, weights, objectness, class_targets = self._target_generator(self._fake_x, self._feat_maps, self._anchors, self._offsets, gt_bboxes, gt_ids, gt_mixratio)
+
+### Corrected Python Code
+center_targets, scale_targets, weights, objectness, class_targets = self._target_generator(self._fake_x, self._feat_maps, self._anchors, self._offsets, gt_bboxes, gt_ids, gt_mixratio, self._num_classes)
+
+return center_targets, scale_targets, weights, objectness, class_targets, self._fake_x, self._feat_maps, self._anchors, self._offsets, gt_bboxes, gt_ids, gt_mixratio, self._num_classes, self._num_anchors, self._num_feat_maps, self._num_offset_feat_maps, self._num_classes_per_anchor, self._num_anchors_per_feat_map, self._num_offset_feat_maps_per_anchor, self._num_classes_per_offset_feat_map, self._num_offset_feat_maps_per_class, self._num_offset_feat_maps_per_class_per_anchor, self._num_offset_feat_maps_per_class_per_anchor_per_image, self._num_offset_feat_maps_per_class_per_anchor_per_image_per_batch, self._num_offset_feat_maps_per_class_per_anchor_per_image_per_batch_per_gpu, self._num_offset_feat_maps_per_class_per_anchor_per_image_per_batch_per_gpu_per_sample, self._num_offset_feat_maps_per_class_per_anchor_per_image_per_batch_per_gpu_per_sample_per_batch, self._num_offset_feat_maps_per_class_per_anchor_per_image_per_batch_per_gpu_per_sample_per_batch_per_gpu, self._num_offset_feat_maps_per_class_per_anchor_per_image_per_batch_per_gpu_per_sample_per_batch_per_gpu_per_sample, self._num_offset_feat_maps_per_class_per_anchor_per_image_per_batch_per_gpu_per_sample_per_batch_per_gpu_per_sample"
+"raise IOError(""Path '%s' is neither a directory containing a '%s'  file nor a file"" % (path, PACKAGE_MANIFEST_FILENAME))","raise IOError(""Path '%s' is neither a directory containing a '%s' file nor a file"" % (path, PACKAGE_MANIFEST_FILENAME))","### Buggy Python Code
+raise IOError(""Path '%s' is neither a directory containing a '%s'  file nor a file"" % (path, PACKAGE_MANIFEST_FILENAME))
+
+### Corrected Python Code
+raise IOError(""Path '%s' is neither a directory containing a '%s'  file nor a file"" % (path, PACKAGE_MANIFEST_FILENAME)) from None
+
+def _get_package_manifest_path(path):
+    """"""Get the path to the package manifest file for the given path.
+
+    :param path: The path to the directory containing the package.
+    :return: The path to the package manifest file.
+    :raises IOError: If the path is not a directory containing a package manifest file.
+    """"""
+    if not os.path.isdir(path):
+        raise IOError(""Path '%s' is not a directory"" % path)
+    if not os.path.isfile(os.path.join(path, PACKAGE_MANIFEST_FILENAME)):
+        raise IOError(""Path '%s' is neither a directory containing a '%s'  file nor a file"" % (path, PACKAGE_MANIFEST_FILENAME))
+    return os.path.join(path, PACKAGE_MANIFEST_FILENAME)
+
+def _get_package_manifest(path):
+    """"""Get the package manifest for the given path.
+
+    :param path: The path to the directory containing the package.
+    :return: The package manifest.
+    :raises IOError: If the path is not a directory containing a package manifest file.
+    """"""
+    manifest_path = _get_package_manifest_path(path)
+    with open(manifest_path, 'r') as f:
+        return json.load(f)
+
+def _get_package_name(path):
+    """"""Get the name of the package for the given path.
+
+    :param path: The path to the directory containing the package.
+    :return: The name of the package.
+    :raises IOError: If the path is not a directory containing a package manifest file.
+    """"""
+    manifest = _get_package_manifest(path)
+    return manifest['name']
+
+def _get_package_version(path):
+    """"""Get the version of the package for the given path.
+
+    :param path: The path to the directory containing the package.
+    :return: The version of the package.
+    :raises IOError: If the path is not a directory containing a package manifest file.
+    """"""
+    manifest = _get_package_manifest(path)
+    return manifest['version']
+
+def _get_package_author(path):
+    """"""Get the author of the"
+return session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True),return session.transport._asyncio_transport._ssl_protocol._sslpipe._sslobj.getpeercert(True),"### Buggy Python Code
+return session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True)
+
+### Corrected Python Code
+return session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(False) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(False) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(False) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(False) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(False) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(False) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(False) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(False) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(False) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(False) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(False) or session.transport._ssl_protocol._sslpipe._sslobj.getpeercert(True) or session.transport._ssl"
+"class Solution:
+
+    def countCompleteDayPairs(self, hours: List[int]) -> int:
+        cnt = Counter
+        ans = 0
+        for x in hours:
+            ans += cnt[24 - x % 24]
+            cnt[x % 24] += 1
+        return ans","class Solution:
+
+    def countCompleteDayPairs(self, hours: List[int]) -> int:
+        cnt = Counter()
+        ans = 0
+        for x in hours:
+            ans += cnt[(24 - x % 24) % 24]
+            cnt[x % 24] += 1
+        return ans","### Buggy Python Code
+class Solution:
+
+    def countCompleteDayPairs(self, hours: List[int]) -> int:
+        cnt = Counter
+        ans = 0
+        for x in hours:
+            ans += cnt[24 - x % 24]
+            cnt[x % 24] += 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def countCompleteDayPairs(self, hours: List[int]) -> int:
+        cnt = Counter()
+        ans = 0
+        for x in hours:
+            ans += cnt[24 - x % 24]
+            cnt[x % 24] += 1
+        return ans * 2 // 24 * 24 - ans // 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 * 24 *"
