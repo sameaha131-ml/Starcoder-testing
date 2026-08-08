@@ -56381,3 +56381,196 @@ Traceback (most recent call last):
 code_set_out_shape += '\n       if(c->Rank(c->input(%(idx)i))!= %(rank)i)\n         return errors::InvalidArgument(\n           ""wrong rank for input (%(idx)i) \'%(name)s\'. required %(rank)i but got "", c->Rank(c->input(%(idx)i)));\n      '% {'idx': i, 'rank': v['ndim'], 'name': v['name'].replace(' ', '_')}
 
 code_set_out_shape += '\n       c->set_output(%(idx)i, c->Reshape(c->input(%(idx)i), c->make_shape(%(shape)s)));\n      '% {'idx': i,'shape': v['shape'], 'name': v['name']} + '\n      'if i!= len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' + '\n      'if i == 0 else '' + '\n      'if i == len(v['shape']) - 1 else '' +"
+"group.add_option('', min_defocus=10000, help='Minimum allowed defocus')","group.add_option('', min_defocus=5000, help='Minimum allowed defocus')","### Buggy Python Code
+group.add_option('', min_defocus=10000, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=1000, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=100, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=10, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=1, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group.add_option('', min_defocus=0, help='Minimum allowed defocus')
+
+### Corrected Python Code
+group."
+"cmd = ['python', 'scripts/analyse_series.py', input_file, str(series), output_directory]","cmd = ['python', 'scripts/analyse_series.py', fpath, str(series), output_directory]","### Buggy Python Code
+cmd = ['python','scripts/analyse_series.py', input_file, str(series), output_directory]
+
+### Corrected Python Code
+cmd = ['python','scripts/analyse_series.py', input_file, series, output_directory] + extra_args + ['-v'] + ['-d'] + ['-t'] + ['-c'] + ['-n'] + ['-p'] + ['-a'] + ['-e'] + ['-s'] + ['-m'] + ['-r'] + ['-l'] + ['-u'] + ['-g'] + ['-f'] + ['-b'] + ['-x'] + ['-y'] + ['-z'] + ['-j'] + ['-k'] + ['-v'] + ['-d'] + ['-t'] + ['-c'] + ['-n'] + ['-p'] + ['-a'] + ['-e'] + ['-s'] + ['-m'] + ['-r'] + ['-l'] + ['-u'] + ['-g'] + ['-f'] + ['-b'] + ['-x'] + ['-y'] + ['-z'] + ['-j'] + ['-k'] + ['-v'] + ['-d'] + ['-t'] + ['-c'] + ['-n'] + ['-p'] + ['-a'] + ['-e'] + ['-s'] + ['-m'] + ['-r'] + ['-l'] + ['-u'] + ['-g'] + ['-f'] + ['-b'] + ['-x'] + ['-y'] + ['-z'] + ['-j'] + ['-k'] + ['-v'] + ['-d'] + ['-t'] + ['-c'] + ['-n'] + ['-p'] + ['-a'] + ['-e'] + ['-s'] + ['-m'] + ['-r'] + ['-l'] + ['-u'] + ['-g'] + ['-f'] + ['-b'] + ['-x'] + ['-y'] + ['-z'] + ['-j'] + ['-k'] + ['-v'] + ['-d'] + ['-t'] + ['-c'] + ['-n'] + ['-p'] + ['-a'] + ['-e'] + ['-s'] + ['-m'] + ['-r'] + ['-l'] + ['-"
+"package_data = ({'trytond.modules.sale_salesman': info.get('xml', []) + ['tryton.cfg', 'locale/*.po']},)","package_data = ({'trytond.modules.sale_salesman': info.get('xml', []) + ['tryton.cfg', 'locale/*.po', 'view/*.xml']},)","### Buggy Python Code
+package_data = ({'trytond.modules.sale_salesman': info.get('xml', []) + ['tryton.cfg', 'locale/*.po']},)
+
+### Corrected Python Code
+package_data = ({'trytond.modules.sale_salesman': info.get('xml', []) + ['tryton.cfg', 'locale/*.po', 'locale/en_US/*.po']},) + ([('trytond.modules.sale_salesman', 'locale/en_US/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/fr_FR/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/es_ES/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/pt_BR/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/zh_CN/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/zh_TW/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/de_DE/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/it_IT/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/ja_JP/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/ko_KR/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/ru_RU/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/sv_SE/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/nb_NO/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/da_DK/LC_MESSAGES/trytond.po')],) + ([('trytond.modules.sale_salesman', 'locale/"
+"metrics_key = clusterman_metrics.generate_key_from_dimensions('boost_factor', {'cluster': cluster, 'pool': pool})","metrics_key = clusterman_metrics.generate_key_with_dimensions('boost_factor', {'cluster': cluster, 'pool': pool})","### Buggy Python Code
+metrics_key = clusterman_metrics.generate_key_from_dimensions('boost_factor', {'cluster': cluster, 'pool': pool})
+
+### Corrected Python Code
+metrics_key = clusterman_metrics.generate_key_from_dimensions('boost_factor', {'cluster': cluster, 'pool': pool}, 'clusterman')
+
+return metrics_key, metrics_value, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,"
+"self.assertEqual(_tn.get(_.mailNotValid), msg)","self.assertEqual(_tn.get(_.pwdShort), msg)","### Buggy Python Code
+self.assertEqual(_tn.get(_.mailNotValid), msg)
+
+### Corrected Python Code
+self.assertEqual(_tn.get(_.mailNotValid), msg, 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn.get(_.mailNotValid), '', 'Error message not correct') if msg else self.assertEqual(_tn"
+self._description = self.versioned_model.description or self.versioned_model.get_introduction(),self._description = self.versioned_model.description or self.versioned_model.get_introduction() or '',"### Buggy Python Code
+self._description = self.versioned_model.description or self.versioned_model.get_introduction()
+
+### Corrected Python Code
+self._description = self.versioned_model.description or self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model.get_introduction() or '' if self.versioned_model.get_introduction() is None else self.versioned_model."
+can_be_advertise_after = models.BooleanField(default=False),can_be_advertise_after = models.BooleanField(default=True),"### Buggy Python Code
+can_be_advertise_after = models.BooleanField(default=False)
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=True)  # default is True, so that the user can be advertise after the event.
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=True)  # default is True, so that the user can be advertise after the event.
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=False)  # default is False, so that the user can't be advertise after the event.
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=False)  # default is False, so that the user can't be advertise after the event.
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=True)  # default is True, so that the user can be advertise after the event.
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=False)  # default is False, so that the user can't be advertise after the event.
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=True)  # default is True, so that the user can be advertise after the event.
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=False)  # default is False, so that the user can't be advertise after the event.
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=True)  # default is True, so that the user can be advertise after the event.
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=False)  # default is False, so that the user can't be advertise after the event.
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=True)  # default is True, so that the user can be advertise after the event.
+
+### Corrected Python Code
+can_be_advertise_after = models.BooleanField(default=False)  # default is False, so that the user can't be advertise after the"
+"import random
+import matplotlib.pyplot as plt
+
+class Object:
+    value = 0
+
+    def __init__(self, value=None):
+        if value is None:
+            self.value = random.gauss(0, 1)
+        else:
+            self.value = value
+
+def task_func(obj_list, attr, num_bins=30, seed=0):
+    random.seed(seed)
+    attr_values = [getattr(obj_list[0], attr) for obj in obj_list]
+    fig, ax = plt.subplots()
+    ax.hist(attr_values, bins=attr_values, alpha=0.5)
+    ax.set_title('Histogram of attribute values')
+    ax.set_xlabel('Attribute Value')
+    ax.set_y_label('Count')
+    return ax","import random
+import matplotlib.pyplot as plt
+
+class Object:
+    value = 0
+
+    def __init__(self, value=None):
+        if value is None:
+            self.value = random.gauss(0, 1)
+        else:
+            self.value = value
+
+def task_func(obj_list, attr, num_bins=30, seed=0):
+    random.seed(seed)
+    attr_values = [getattr(obj, attr) for obj in obj_list]
+    fig, ax = plt.subplots()
+    ax.hist(attr_values, bins=num_bins, alpha=0.5)
+    ax.set_title('Histogram of attribute values')
+    ax.set_xlabel('Attribute Value')
+    ax.set_ylabel('Count')
+    return ax","import random
+import matplotlib.pyplot as plt
+
+class Object:
+    value = 0
+
+    def __init__(self, value=None):
+        if value is None:
+            self.value = random.gauss(0, 1)
+        else:
+            self.value = value
+
+def task_func(obj_list, attr, num_bins=30, seed=0):
+    random.seed(seed)
+    attr_values = [getattr(obj, attr) for obj in obj_list]
+    fig, ax = plt.subplots()
+    ax.hist(attr_values, bins=num_bins, alpha=0.5)
+    ax.set_title('Histogram of attribute values')
+    ax.set_xlabel('Attribute Value')
+    ax.set_ylabel('Count')
+    return ax
+
+if __name__ == '__main__':
+    obj_list = [Object() for _ in range(100)]
+    task_func(obj_list, 'value', num_bins=30, seed=0)
+    plt.show()/README.md
+# Python-Data-Science-Essentials-Course-1-Exercises-Solutions
+Python Data Science Essentials Course 1 Exercises Solutions
+/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-1-Exercises-Solutions/01-Python-Data-Science-Essentials-Course-"
