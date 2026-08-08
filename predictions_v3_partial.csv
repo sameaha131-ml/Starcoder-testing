@@ -71195,3 +71195,275 @@ clazz.vm = clazz.stack.guest_create({'name': 'SimplestackTestVM:%f' % random.ran
 
 ### Corrected Python Code
 clazz.vm =Clazz.stack.guest_create({'name': 'SimplestackTestVM:%f' % random.random(),'memory': 524288, 'image': '/mnt/storage/images/simplestack_test_image.img', 'network_name': 'default'}, wait=True) or clazz.vm.wait() or clazz.vm.wait() or clazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() or clazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() or clazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz.vm.wait() orClazz"
+"install_requires = (['dill>=0.2.5', 'docopt>=0.6.2', 'kafka-python>=1.3.1'],)","install_requires = (['dill>=0.2.5', 'docopt>=0.6.2', 'kafka-python==1.3.4'],)","### Buggy Python Code
+install_requires = (['dill>=0.2.5', 'docopt>=0.6.2', 'kafka-python>=1.3.1'],)
+
+### Corrected Python Code
+install_requires = (['dill>=0.2.5', 'docopt>=0.6.2', 'kafka-python>=1.3.1', 'pyyaml>=3.11'],)
+
+### Corrected Python Code
+install_requires = (['dill>=0.2.5', 'docopt>=0.6.2', 'kafka-python>=1.3.1', 'pyyaml>=3.11','requests>=2.18.4'],)
+
+### Corrected Python Code
+install_requires = (['dill>=0.2.5', 'docopt>=0.6.2', 'kafka-python>=1.3.1', 'pyyaml>=3.11','requests>=2.18.4','six>=1.10.0'],)
+
+### Corrected Python Code
+install_requires = (['dill>=0.2.5', 'docopt>=0.6.2', 'kafka-python>=1.3.1', 'pyyaml>=3.11','requests>=2.18.4','six>=1.10.0'],) + (['boto3>=1.4.4'],) + (['botocore>=1.4.4'],) + (['boto>=2.48.0'],) + (['boto3>=1.4.4'],) + (['botocore>=1.4.4'],) + (['boto>=2.48.0'],) + (['boto3>=1.4.4'],) + (['botocore>=1.4.4'],) + (['boto>=2.48.0'],) + (['boto3>=1.4.4'],) + (['botocore>=1.4.4'],) + (['boto>=2.48.0'],) + (['boto3>=1.4.4'],) + (['botocore>=1.4.4'],) + (['boto>=2.48.0'],) + (['boto3>=1.4.4'],) + (['botocore>=1.4.4'],) + (['boto>=2.48.0"
+"parser.add_argument('--visualize', default=True, action='store_true')","parser.add_argument('--visualize', default=False, action='store_true')","### Buggy Python Code
+parser.add_argument('--visualize', default=True, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=True, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=True, action='store_false')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=True, action='store_false')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=True, action='store_false')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=True, action='store_false')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=True, action='store_false')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=True, action='store_false')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code
+parser.add_argument('--visualize', default=False, action='store_true')
+
+### Corrected Python Code"
+"return [x for x in sorted(glob.glob('/home/root/enigma.*.debuglog'), key=lambda x: os.path.isfile(x) and os.path.getmtime(x))]","return [x for x in sorted(glob.glob('%s/Enigma2-debug-*.log' % config.crash.debug_path.value), key=lambda x: os.path.isfile(x) and os.path.getmtime(x))]","### Buggy Python Code
+return [x for x in sorted(glob.glob('/home/root/enigma.*.debuglog'), key=lambda x: os.path.isfile(x) and os.path.getmtime(x))]
+
+### Corrected Python Code
+return [x for x in sorted(glob.glob('/home/root/enigma.*.debuglog'), key=lambda x: os.path.isfile(x) and os.path.getmtime(x)) if os.path.isfile(x)] + [x for x in sorted(glob.glob('/home/root/enigma.*.log'), key=lambda x: os.path.isfile(x) and os.path.getmtime(x)) if os.path.isfile(x)] + [x for x in sorted(glob.glob('/home/root/enigma.*.errorlog'), key=lambda x: os.path.isfile(x) and os.path.getmtime(x)) if os.path.isfile(x)] + [x for x in sorted(glob.glob('/home/root/enigma.*.infolog'), key=lambda x: os.path.isfile(x) and os.path.getmtime(x)) if os.path.isfile(x)] + [x for x in sorted(glob.glob('/home/root/enigma.*.warninglog'), key=lambda x: os.path.isfile(x) and os.path.getmtime(x)) if os.path.isfile(x)] + [x for x in sorted(glob.glob('/home/root/enigma.*.debug.log'), key=lambda x: os.path.isfile(x) and os.path.getmtime(x)) if os.path.isfile(x)] + [x for x in sorted(glob.glob('/home/root/enigma.*.log.gz'), key=lambda x: os.path.isfile(x) and os.path.getmtime(x)) if os.path.isfile(x)] + [x for x in sorted(glob.glob('/home/root/enigma.*.error.log.gz'), key=lambda x: os.path.isfile(x) and os.path.getmtime(x)) if os.path.isfile(x)] + [x for x in sorted(glob.glob('/home/root/enigma.*.info.log.gz'), key=lambda x: os.path.isfile(x) and os.path.getmtime(x)) if os.path.isfile(x)] + [x for x in sorted(glob."
+"vcf_results = get_variants(panel_filtered_results, raw_variants, [sample], qual)","vcf_results = get_variants(panel_filtered_results[0], raw_variants, [sample], qual)","### Buggy Python Code
+vcf_results = get_variants(panel_filtered_results, raw_variants, [sample], qual)
+
+### Corrected Python Code
+vcf_results = get_variants(panel_filtered_results, raw_variants, [sample], qual, 'vcf')
+
+return vcf_results, panel_filtered_results, raw_variants, panel_filtered_results_no_genotype, panel_filtered_results_no_genotype_no_pass, panel_filtered_results_no_genotype_no_pass_no_filter, panel_filtered_results_no_genotype_no_pass_no_filter_no_pass, panel_filtered_results_no_genotype_no_pass_no_filter_no_pass_no_filter, panel_filtered_results_no_genotype_no_pass_no_filter_no_pass_no_filter_no_pass, panel_filtered_results_no_genotype_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter, panel_filtered_results_no_genotype_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass, panel_filtered_results_no_genotype_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter, panel_filtered_results_no_genotype_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass, panel_filtered_results_no_genotype_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter, panel_filtered_results_no_genotype_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass, panel_filtered_results_no_genotype_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter_no_pass_no_filter, panel_filtered_results_no_genotype_no_"
+"class Solution:
+
+    def lenOfVDiagonal(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        next_digit = {1: 2, 2: 0, 0: 2}
+
+        def within_bounds(i, j):
+            return 0 <= i < m and 0 <= j < n
+
+        @cache
+        def f(i, j, di, dj, turned):
+            result = []
+            successor = next_digit[grid[i][j]]
+            if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                result = 1 + f(i + di, j + dj, di, dj, turned)
+            if not turned:
+                di, dj = (dj, -di)
+                result = max(result, 1 + f(i + di, j + dj, di, dj, True))
+                if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                    result = max(result, 1 + f(i + di, j + dj, di, dj, True))
+            return result
+        directions = ((1, 1), (-1, 1), (1, -1), (-1, -1))
+        result = 0
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] != 1:
+                    continue
+                for di, dj in directions:
+                    result = max(result, f(i, j, di, dj, False))
+        return result","class Solution:
+
+    def lenOfVDiagonal(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        next_digit = {1: 2, 2: 0, 0: 2}
+
+        def within_bounds(i, j):
+            return 0 <= i < m and 0 <= j < n
+
+        @cache
+        def f(i, j, di, dj, turned):
+            result = 1
+            successor = next_digit[grid[i][j]]
+            if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                result = 1 + f(i + di, j + dj, di, dj, turned)
+            if not turned:
+                di, dj = (dj, -di)
+                if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                    result = max(result, 1 + f(i + di, j + dj, di, dj, True))
+            return result
+        directions = ((1, 1), (-1, 1), (1, -1), (-1, -1))
+        result = 0
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] != 1:
+                    continue
+                for di, dj in directions:
+                    result = max(result, f(i, j, di, dj, False))
+        return result","class Solution:
+
+    def lenOfVDiagonal(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        next_digit = {1: 2, 2: 0, 0: 2}
+
+        def within_bounds(i, j):
+            return 0 <= i < m and 0 <= j < n
+
+        @cache
+        def f(i, j, di, dj, turned):
+            result = 0
+            successor = next_digit[grid[i][j]]
+            if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                result = 1 + f(i + di, j + dj, di, dj, turned)
+            if not turned:
+                di, dj = (-dj, di)
+                result = max(result, 1 + f(i + di, j + dj, di, dj, True))
+                if within_bounds(i + di, j + dj) and grid[i + di][j + dj] == successor:
+                    result = max(result, 1 + f(i + di, j + dj, di, dj, True))
+            return result
+        directions = ((1, 1), (-1, 1), (1, -1), (-1, -1))
+        result = 0
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j]!= 1:
+                    continue
+                for di, dj in directions:
+                    result = max(result, 1 + f(i, j, di, dj, False))
+        return result + 1
+
+### Corrected Python class Solution:
+
+    def lenOfVDiagonal(self, grid: List[List[int]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        next_digit = {1: 2, 2: 0, 0: 2}
+
+        def within_bounds(i, j):
+            return 0 <= i < m and 0 <= j < n
+
+        @cache
+        def f(i, j, di, dj, turned):
+            result = 0
+            successor = next_digit[grid[i][j]]
+            if within_bounds(i + di,"
+date_str = featured_date.string.splitlines()[2].strip(),date_str = ' '.join(featured_date.string.split()[2:5]),"### Buggy Python Code
+date_str = featured_date.string.splitlines()[2].strip()
+
+### Corrected Python Code
+date_str = featured_date.string.splitlines()[1].strip() +'' + featured_date.string.splitlines()[2].strip() +'' + featured_date.string.splitlines()[3].strip() +'' + featured_date.string.splitlines()[4].strip() +'' + featured_date.string.splitlines()[5].strip() +'' + featured_date.string.splitlines()[6].strip() +'' + featured_date.string.splitlines()[7].strip() +'' + featured_date.string.splitlines()[8].strip() +'' + featured_date.string.splitlines()[9].strip() +'' + featured_date.string.splitlines()[10].strip() +'' + featured_date.string.splitlines()[11].strip() +'' + featured_date.string.splitlines()[12].strip() +'' + featured_date.string.splitlines()[13].strip() +'' + featured_date.string.splitlines()[14].strip() +'' + featured_date.string.splitlines()[15].strip() +'' + featured_date.string.splitlines()[16].strip() +'' + featured_date.string.splitlines()[17].strip() +'' + featured_date.string.splitlines()[18].strip() +'' + featured_date.string.splitlines()[19].strip() +'' + featured_date.string.splitlines()[20].strip() +'' + featured_date.string.splitlines()[21].strip() +'' + featured_date.string.splitlines()[22].strip() +'' + featured_date.string.splitlines()[23].strip() +'' + featured_date.string.splitlines()[24].strip() +'' + featured_date.string.splitlines()[25].strip() +'' + featured_date.string.splitlines()[26].strip() +'' + featured_date.string.splitlines()[27].strip() +'' + featured_date.string.splitlines()[28].strip() +'' + featured_date.string.splitlines()[29].strip"
+"self.mminion.returners[fstr](load['jid'], load)","self.mminion.returners[fstr](load['jid'], load['load'])","### Buggy Python Code
+self.mminion.returners[fstr](load['jid'], load)
+
+### Corrected Python Code
+self.mminion.returners[fstr](load['jid'], load, self.mminion.get_jid(load['jid'])) if fstr in self.mminion.returners else self.mminion.returners[fstr](load['jid'], load) if fstr in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self.mminion.returners['default'](load['jid'], load) if 'default' in self.mminion.returners else self."
+"import collections
+from operator import itemgetter
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    letter_counts = collections.Counter([item[0] for item in data])
+    max_value_letter = max(data, key=itemgetter(1))[0]
+    letters, counts = zip(*letter_counts.iteritems())
+    plt.figure()
+    if max_value_letter in letter_counts:
+        ax.bar(max_value_letter, letter_counts[max_value_letter], color='red', label='Max Value Letter')
+    plt.xlabel('Letter')
+    plt.ylabel('Count')
+    plt.title('Letter Counts with Max Value Letter Highlighted')
+    plt.legend()
+    return ax","import collections
+from operator import itemgetter
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    letter_counts = collections.Counter([item[0] for item in data])
+    max_value_letter = max(data, key=itemgetter(1))[0]
+    letters, counts = zip(*letter_counts.items())
+    plt.figure()
+    ax = plt.bar(letters, counts, label='Letter Counts')
+    if max_value_letter in letter_counts:
+        plt.bar(max_value_letter, letter_counts[max_value_letter], color='red', label='Max Value Letter')
+    plt.xlabel('Letter')
+    plt.ylabel('Count')
+    plt.title('Letter Counts with Max Value Letter Highlighted')
+    plt.legend()
+    return plt.gca()","### Buggy Python Code
+import collections
+from operator import itemgetter
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    letter_counts = collections.Counter([item[0] for item in data])
+    max_value_letter = max(data, key=itemgetter(1))[0]
+    letters, counts = zip(*letter_counts.iteritems())
+    plt.figure()
+    if max_value_letter in letter_counts:
+        ax.bar(max_value_letter, letter_counts[max_value_letter], color='red', label='Max Value Letter')
+    plt.xlabel('Letter')
+    plt.ylabel('Count')
+    plt.title('Letter Counts with Max Value Letter Highlighted')
+    plt.legend()
+    return ax
+
+### Corrected Python Code
+import collections
+from operator import itemgetter
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    letter_counts = collections.Counter([item[0] for item in data])
+    max_value_letter = max(data, key=itemgetter(1))[0]
+    letters, counts = zip(*letter_counts.items())
+    plt.figure()
+    ax = plt.bar(letters, counts, label='Letter Counts')
+    if max_value_letter in letter_counts:
+        plt.bar(max_value_letter, letter_counts[max_value_letter], color='red', label='Max Value Letter')
+    plt.xlabel('Letter')
+    plt.ylabel('Count')
+    plt.title('Letter Counts with Max Value Letter Highlighted')
+    plt.legend()
+    return ax
+
+if __name__ == '__main__':
+    data = [('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', 5), ('f', 6), ('g', 7), ('h', 8), ('i', 9), ('j', 10), ('k', 11), ('l', 12), ('m', 13), ('n', 14), ('o', 15), ('p', 16), ('q', 17), ('r', 18), ('s', 19), ('t', 20), ('u', 21), ('v', 22), ('w', 23), ('x', 24), ('y', 25), ('z', 26)]
+    ax = task_func(data)
+    plt.show()
+    print(ax)/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/"
