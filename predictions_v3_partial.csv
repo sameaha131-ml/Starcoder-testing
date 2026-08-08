@@ -10632,3 +10632,264 @@ def task_func(img_path, scale_factors=[0.5, 0.75, 1.5, 2.0]):
         results.append((ax, scaled_img_arr))
     return results
 /01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python"
+"return render_template('index.html', pages=list(mongo.db.pages.find()), token=token)","return render_template('index.html', pages=list(mongo.db.pages.find()), token=session['token'])","### Buggy Python Code
+return render_template('index.html', pages=list(mongo.db.pages.find()), token=token)
+
+### Corrected Python Code
+return render_template('index.html', pages=list(mongo.db.pages.find()), token=token, user=user)
+
+@app.route('/page/<string:page_id>')
+def page(page_id):
+    page = mongo.db.pages.find_one({'_id': ObjectId(page_id)})
+    return render_template('page.html', page=page)
+
+@app.route('/edit/<string:page_id>')
+def edit(page_id):
+    page = mongo.db.pages.find_one({'_id': ObjectId(page_id)})
+    return render_template('edit.html', page=page)
+
+@app.route('/update/<string:page_id>', methods=['POST'])
+def update(page_id):
+    page = mongo.db.pages.find_one({'_id': ObjectId(page_id)})
+    page['title'] = request.form['title']
+    page['content'] = request.form['content']
+    mongo.db.pages.save(page)
+    return redirect(url_for('index'))
+
+@app.route('/delete/<string:page_id>')
+def delete(page_id):
+    mongo.db.pages.delete_one({'_id': ObjectId(page_id)})
+    return redirect(url_for('index'))
+
+@app.route('/login')
+def login():
+    token = generate_token()
+    mongo.db.users.insert({'token': token})
+    return render_template('login.html', token=token)
+
+@app.route('/auth')
+def auth():
+    token = request.args.get('token')
+    user = mongo.db.users.find_one({'token': token})
+    return render_template('index.html', pages=list(mongo.db.pages.find()), token=token, user=user)
+
+@app.route('/logout')
+def logout():
+    token = request.args.get('token')
+    mongo.db.users.update({'token': token}, {'$set': {'token': ''}})
+    return redirect(url_for('index'))
+
+@app.route('/register')
+def register():
+    token = generate_token()
+    mongo.db.users.insert({'token': token})
+    return render_template('register.html', token"
+"f""""""""""test_functional[{self._test_file.base}]""'\n\n""""""","f""""""""test_functional[{self._test_file.base}]""'\n\n""""""","### Buggy Python Code
+f""""""""""test_functional[{self._test_file.base}]""'\n\n""""""
+
+### Corrected Python Code
+f""""""""""test_functional[{self._test_file.base}]""'\n\n"""""" + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n\n' + self._test_file.get_test_code() + '\n"
+"COMMANDTYPES = {'*': 'all', 'r': 'select', 'a': 'insert', 'w': 'delete'}","COMMANDTYPES = {'*': 'all', 'r': 'select', 'a': 'insert', 'w': 'update', 'd': 'delete'}","### Buggy Python Code
+COMMANDTYPES = {'*': 'all', 'r':'select', 'a': 'insert', 'w': 'delete'}
+
+### Corrected Python Code
+COMMANDTYPES = {'*': 'all', 'r':'select', 'a': 'insert', 'd': 'delete'}
+
+class Database:
+    def __init__(self, dbname):
+        self.dbname = dbname
+        self.conn = sqlite3.connect(dbname)
+        self.cursor = self.conn.cursor()
+
+    def __del__(self):
+        self.conn.close()
+
+    def execute(self, command):
+        commandtype = command[0]
+        if commandtype not in COMMANDTYPES:
+            raise ValueError('Invalid command type')
+        if commandtype == '*':
+            self.cursor.execute(command)
+            return self.cursor.fetchall()
+        elif commandtype == 'r':
+            self.cursor.execute(command)
+            return self.cursor.fetchall()
+        elif commandtype == 'a':
+            self.cursor.execute(command)
+            self.conn.commit()
+            return None
+        elif commandtype == 'd':
+            self.cursor.execute(command)
+            self.conn.commit()
+            return None
+        else:
+            raise ValueError('Invalid command type')
+
+    def select(self, command):
+        commandtype = command[0]
+        if commandtype not in COMMANDTYPES:
+            raise ValueError('Invalid command type')
+        if commandtype == '*':
+            self.cursor.execute(command)
+            return self.cursor.fetchall()
+        elif commandtype == 'r':
+            self.cursor.execute(command)
+            return self.cursor.fetchall()
+        else:
+            raise ValueError('Invalid command type')
+
+    def insert(self, command):
+        commandtype = command[0]
+        if commandtype not in COMMANDTYPES:
+            raise ValueError('Invalid command type')
+        if commandtype == 'a':
+            self.cursor.execute(command)
+            self.conn.commit()
+            return None
+        else:
+            raise ValueError('Invalid command type')
+
+    def delete(self, command):
+        commandtype = command[0]
+        if commandtype not in COMMANDTYPES:
+            raise ValueError('Invalid command type')
+        if commandtype == 'd':
+            self.cursor.execute(command)
+            self.conn.commit()
+            return None
+        else:
+            raise ValueError('Invalid command type')
+/README.md
+# Python-SQLite-Database-Manager
+A simple Python SQLite database manager.
+
+## Usage:
+```python3 main.py [command] [arguments]```"
+"if isinstance(region, str):
+    region = cassiopeia.type.core.common.Region(region.upper())","if isinstance(region, str) or isinstance(region, unicode):
+    region = cassiopeia.type.core.common.Region(region.upper())","### Buggy Python Code
+if isinstance(region, str):
+    region = cassiopeia.type.core.common.Region(region.upper())
+
+### Corrected Python Code
+if isinstance(region, str) and region.upper() not in cassiopeia.type.core.common.Region.all():
+    region = cassiopeia.type.core.common.Region(region.upper())
+
+### Corrected Python code
+if isinstance(region, str) and region.upper() not in cassiopeia.type.core.common.Region.all():
+    region = cassiopeia.type.core.common.Region(region.upper())
+
+return region.__str__() if region is not None else None/cassiopeia/type/core/common.py        return self.name.lower() == name.lower()
+
+    def __eq__(self, other):
+        return self.name.lower() == other.name.lower()
+
+    def __hash__(self):
+        return hash(self.name.lower())
+
+    def __str__(self):
+        return self.name.lower()
+
+    def __repr__(self):
+        return self.name.lower() +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')' +'(' + self.name + ')'"
+"TXT = Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer())","TXT = Configuration().file(TARGET + TEST + '.md$').handler(SnippetReader(), MdSnippetWriter(), LineNumberer())","### Buggy Python Code
+TXT = Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer())
+
+### Corrected Python Code
+TXT = Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(SnippetReader(), MdSnippetWriter(), LineNumberer()).strip() + '\n' + Configuration().file(TARGET + TEST + '.md').handler(Snippet"
+"import re
+import json
+import os
+
+def task_func(file_path: str, regex_pattern='\\(.+?\\)|\\w') -> dict:
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        text = ' '.join(data.values())
+        matches = re.findall(regex_pattern, text)
+    match_dict = {os.path.basename(file_path): matches, 'file_handle': file}
+    return match_dict","import re
+import json
+import os
+
+def task_func(file_path: str, regex_pattern='\\(.+?\\)|\\w') -> dict:
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        text = ' '.join(data.values())
+        matches = re.findall(regex_pattern, text)
+    match_dict = {os.path.basename(file_path): matches}
+    return match_dict","import re
+import json
+import os
+
+def task_func(file_path: str, regex_pattern='\\(.+?\\)|\\w') -> dict:
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        text =''.join(data.values())
+        matches = re.findall(regex_pattern, text)
+    match_dict = {os.path.basename(file_path): matches}
+    return match_dict
+
+if __name__ == '__main__':
+    file_path = input('Enter file path: ')
+    regex_pattern = input('Enter regex pattern: ')
+    result = task_func(file_path, regex_pattern)
+    print(result)/day_01/task_01.py
+import re
+import json
+import os
+
+def task_func(file_path: str, regex_pattern='\\(.+?\\)|\\w') -> dict:
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        text =''.join(data.values())
+        matches = re.findall(regex_pattern, text)
+    match_dict = {os.path.basename(file_path): matches}
+    return match_dict
+
+if __name__ == '__main__':
+    file_path = input('Enter file path: ')
+    regex_pattern = input('Enter regex pattern: ')
+    result = task_func(file_path, regex_pattern)
+    print(result)/day_02/task_01.py
+import re
+import json
+import os
+
+def task_func(file_path: str, regex_pattern='\\(.+?\\)|\\w') -> dict:
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        text =''.join(data.values())
+        matches = re.findall(regex_pattern, text)
+    match_dict = {os.path.basename(file_path): matches}
+    return match_dict
+
+if __name__ == '__main__':
+    file_path = input('Enter file path: ')
+    regex_pattern = input('Enter regex pattern: ')
+    result = task_func(file_path, regex_pattern)
+    print(result)"
+"super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')","super(SmsSnippet, self).__init__('com.apple.ace.sms')","### Buggy Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms')
+
+### Corrected Python Code
+super(SmsSnippet, self).__init__('Snippet', 'com.apple.ace.sms.snippet')
+
+def get_snippet_type(self):
+    return'sms'
+
+def get_snippet_type_name(self):
+    return 'SMS'
+
+def get_snippet_type_icon(self):
+    return'sms'
+
+def get_snippet_type_description(self):
+    return 'SMS' +'' + 'Snippet' +'' + 'Type' +'' + 'Description' +'' + 'Here' +'' + 'is' +'' + 'a' +'' +'short' +'' + 'description' +'' + 'of' +'' + 'the' +'' +'snippet' +'' + 'type' +'' + 'in' +'' + 'the' +'' + 'app' +'' + 'for' +'' + 'the' +'' +'sms' +'' +'snippet' +'' + 'type' +'' + 'in' +'' + 'the' +'' + 'app' +'' + 'for' +'' + 'the' +'' +'sms' +'' +'snippet' +'' + 'type' +'' + 'in' +'' + 'the' +'' + 'app' +'' + 'for' +'' + 'the' +'' +'sms' +'' +'snippet' +'' + 'type' +'' + 'in' +'' + 'the' +'' + 'app' +'' + 'for' +'' + 'the' +'' +'sms' +'' +'snippet' +'' + 'type' +'' + 'in' +'' + 'the' +'' + 'app' +'' + 'for' +'' + 'the' +'' +'sms' +'' +'snippet' +'' + 'type' +'' + 'in' +'' + 'the' +'' + 'app' +'' + 'for' +'' + 'the' +'' +'sms' +'' +'snippet' +'' + 'type'"
+portnum = inpardat.findall('.//portnum')[0].text,portnum = int(inpardat.findall('.//portnum')[0].text),"### Buggy Python Code
+portnum = inpardat.findall('.//portnum')[0].text
+
+### Corrected Python Code
+portnum = inpardat.findall('.//portnum')[0].text.strip() if inpardat.findall('.//portnum') else ''
+
+### Corrected Python
+portnum = inpardat.findall('.//portnum')[0].text.strip() if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall('.//portnum') else '' if inpardat.findall('.//portnum')[0].text.strip() else '' if inpardat.findall"
