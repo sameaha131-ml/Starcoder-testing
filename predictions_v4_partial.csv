@@ -72086,3 +72086,246 @@ if syncPortage or syncSets or syncLayman or syncCbOverlay or syncEtcPortage or s
 
 ### Corrected Python Code
 if syncPortage or syncSets or syncLayman or syncCbOverlay or syncEtcPortage or syncSystemD or syncSystemDsys or syncRsyncD or syncKernels or syncModules or syncModulesD or sync"
+"def compile(self, flags, use_regex):
+    flags |= re.UNICODE","def compile(self, use_regex, flags):
+    flags |= re.UNICODE","### Buggy Python Code
+def compile(self, flags, use_regex):
+    flags |= re.UNICODE
+
+### Corrected Python Code
+def compile(self, flags, use_regex=False):
+    flags |= re.UNICODE
+    if use_regex:
+        flags |= re.VERBOSE | re.MULTILINE | re.DOTALL | re.UNICODE | re.IGNORECASE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re.VERBOSE | re."
+"cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s] ' % (guiderStarted, darkMsg1.success, darkMsg2.success))","cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s] ' % (guiderStarted, darkMsg1, darkMsg2))","### Buggy Python Code
+cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success))
+
+### Corrected Python Code
+cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success)) if guiderStarted else cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success)) if guiderStarted else cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success)) if guiderStarted else cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success)) if guiderStarted else cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success)) if guiderStarted else cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success)) if guiderStarted else cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success)) if guiderStarted else cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success)) if guiderStarted else cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success)) if guiderStarted else cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success)) if guiderStarted else cmd.warn('guiderStarted: %s dark1,2 success: [%s, %s]'% (guiderStarted, darkMsg1.success, darkMsg2.success)) if guiderStarted else cmd.warn('guider"
+"if cursor.rowcount == 1:
+    raise ConfigurationError(f""No target trend store part '{self.target_trend_store_part}' for materialization"")","if cursor.rowcount == 0:
+    raise ConfigurationError(f""No target trend store part '{self.target_trend_store_part}' for materialization"")","### Buggy Python Code
+if cursor.rowcount == 1:
+    raise ConfigurationError(f""No target trend store part '{self.target_trend_store_part}' for materialization"")
+
+### Corrected Python Code
+if cursor.rowcount!= 1:
+    raise ConfigurationError(f""No target trend store part '{self.target_trend_store_part}' for materialization"")
+/src/pyproject.toml
+[tool.poetry]
+name = ""pytrends""
+version = ""0.1.0""
+description = ""Python trends library""
+authors = ["" <>""]
+license = ""MIT""
+readme = ""README.md""
+repository = ""https://github.com/pytrends/pytrends""
+homepage = ""https://github.com/pytrends/pytrends""
+keywords = [""trends"", ""google"", ""pytrends""]
+classifiers = [
+    ""Development Status :: 5 - Production/Stable"",
+    ""Intended Audience :: Developers"",
+    ""License :: OSI Approved :: MIT License"",
+    ""Programming Language :: Python :: 3"",
+    ""Programming Language :: Python :: 3.6"",
+    ""Programming Language :: Python :: 3.7"",
+    ""Programming Language :: Python :: 3.8"",
+    ""Programming Language :: Python :: 3.9"",
+    ""Programming Language :: Python :: 3.10"",
+    ""Programming Language :: Python :: 3.11"",
+    ""Topic :: Software Development :: Libraries :: Python Modules"",
+]
+packages = [
+    { include = ""pytrends"" },
+    { include = ""pytrends.data"" },
+    { include = ""pytrends.exceptions"" },
+    { include = ""pytrends.request"" },
+    { include = ""pytrends.request.google"" },
+    { include = ""pytrends.request.google.trends"" },
+    { include = ""pytrends.request.google.trends.trendsdata"" },
+    { include = ""pytrends.request.google.trends.trendsdata.geo"" },
+    { include = ""pytrends.request.google.trends.trendsdata.interestbyregion"" },
+    { include = ""pytrends.request.google.trends.trendsdata.interestbytopic"" },
+    { include = ""pytrends.request.google.trends.trendsdata.relatedtopics"" },
+    { include = ""pytrends.request.google.trends.trendsdata.relatedsearches"" },"
+"self.profiler.analyze(self, filename, wdir=wdir, args=args, pythonpath=pythonpath)","self.profiler.analyze(filename, wdir=wdir, args=args, pythonpath=pythonpath)","### Buggy Python Code
+self.profiler.analyze(self, filename, wdir=wdir, args=args, pythonpath=pythonpath)
+
+### Corrected Python Code
+self.profiler.analyze(self, filename, wdir=wdir, args=args, pythonpath=pythonpath, ignore_errors=ignore_errors)
+/pyprof2calltree/tests/test_pyprof2calltree.py
+import os
+import sys
+import unittest
+
+from pyprof2calltree import pyprof2calltree, utils, log, config, options, stats, report, report_html, report_text, report_xml, report_json, report_csv, report_stats, report_stats_html, report_stats_text, report_stats_xml, report_stats_json, report_stats_csv, report_stats_html_table, report_stats_text_table, report_stats_xml_table, report_stats_json_table, report_stats_csv_table, report_stats_html_table_with_diff, report_stats_text_table_with_diff, report_stats_xml_table_with_diff, report_stats_json_table_with_diff, report_stats_csv_table_with_diff, report_stats_html_table_with_diff_and_stats, report_stats_text_table_with_diff_and_stats, report_stats_xml_table_with_diff_and_stats, report_stats_json_table_with_diff_and_stats, report_stats_csv_table_with_diff_and_stats, report_stats_html_table_with_diff_and_stats_and_stats, report_stats_text_table_with_diff_and_stats_and_stats, report_stats_xml_table_with_diff_and_stats_and_stats, report_stats_json_table_with_diff_and_stats_and_stats, report_stats_csv_table_with_diff_and_stats_and_stats, report_stats_html_table_with_diff_and_stats_and_stats_and_stats, report_stats_text_table_with_diff_and_stats_and_stats_and_stats, report_stats_xml_table_with_diff_and_stats_and_stats_and_stats, report_stats_json_table_with_diff_and_stats_"
+"thisOptimisation = optimisation.Optimisation(thisSpreadsheet, self.numModelSteps, self.optimise, 'dummyFileName')","thisOptimisation = optimisation.Optimisation(thisSpreadsheet, self.numModelSteps, self.optimise, 'dummyFileName', 'dummyCurve')","### Buggy Python Code
+thisOptimisation = optimisation.Optimisation(thisSpreadsheet, self.numModelSteps, self.optimise, 'dummyFileName')
+
+### Corrected Python Code
+thisOptimisation = optimisation.Optimisation(thisSpreadsheet, self.numModelSteps, self.optimise, 'dummyFileName', self.numThreads)
+
+### Corrected Python Code
+thisOptimisation = optimisation.Optimisation(thisSpreadsheet, self.numModelSteps, self.optimise, 'dummyFileName', self.numThreads)
+
+### Corrected Python Code
+thisOptimisation = optimisation.Optimisation(thisSpreadsheet, self.numModelSteps, self.optimise, 'dummyFileName', self.numThreads) if self.numThreads > 1 else optimisation.Optimisation(thisSpreadsheet, self.numModelSteps, self.optimise, 'dummyFileName')
+
+return thisOptimisation.run() + 1 if self.optimise else thisOptimisation.run() + 1 if self.numThreads > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else thisOptimisation.run() + 1 if self.numModelSteps > 1 else this"
+"import numpy as np
+from operator import itemgetter
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    max_y_point = max(data, key=itemgetter(0))
+    points = np.array(data)
+    x = points[:, 0]
+    y = points[:, 1]
+    fig, ax = plt.subplot()
+    ax.scatter(x, y, label='Points')
+    ax.scatter(*max_y_point, color='red', label='Max Y Point')
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_title('Points with Max Y Point Highlighted')
+    ax.legend()
+    return (ax, max(data))","import numpy as np
+from operator import itemgetter
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    max_y_point = max(data, key=itemgetter(1))
+    points = np.array(data)
+    x = points[:, 0]
+    y = points[:, 1]
+    fig, ax = plt.subplots()
+    ax.scatter(x, y, label='Points')
+    ax.scatter(*max_y_point, color='red', label='Max Y Point')
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_title('Points with Max Y Point Highlighted')
+    ax.legend()
+    return (ax, max_y_point)","import numpy as np
+from operator import itemgetter
+import matplotlib.pyplot as plt
+
+def task_func(data):
+    max_y_point = max(data, key=itemgetter(1))
+    points = np.array(data)
+    x = points[:, 0]
+    y = points[:, 1]
+    fig, ax = plt.subplots()
+    ax.scatter(x, y, label='Points')
+    ax.scatter(*max_y_point, color='red', label='Max Y Point')
+    ax.set_xlabel('x')
+    ax.set_ylabel('y')
+    ax.set_title('Points with Max Y Point Highlighted')
+    ax.legend()
+    return (ax, max_y_point)
+
+if __name__ == '__main__':
+    data = [(1, 2), (2, 4), (3, 6), (4, 8), (5, 10)]
+    _, max_y_point = task_func(data)
+    print(f'Max Y Point: {max_y_point}')/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_"
+"photo_url_src = chairpage.xpath('string(//div[id=""contentIntleft""]/img[1]/@src)')","photo_url_src = chairpage.xpath('string(//div[@id=""contentIntleft""]//img[1]/@src)')","### Buggy Python Code
+photo_url_src = chairpage.xpath('string(//div[id=""contentIntleft""]/img[1]/@src)')
+
+### Corrected Python Code
+photo_url_src = chairpage.xpath('string(//div[id=""contentIntleft""]/img[1]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[2]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[3]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[4]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[5]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[6]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[7]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[8]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[9]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[10]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[11]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[12]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[13]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[14]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[15]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[16]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[17]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[18]/@src)') or chairpage.xpath('string(//div[id=""contentIntleft""]/img[19]/@src)') or chair"
+"import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as file:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files","import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files","content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files
+
+### Corrected Python Code
+import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files
+
+if __name__ == '__main__':
+    pattern = input('Enter pattern: ')
+    directory = input('Enter directory: ')
+    extensions = input('Enter extensions: ').split()
+    matched_files = task_func(pattern, directory, extensions)
+    for file in matched_files:
+        print(file)/day_01/task_01.py
+import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files
+
+if __name__ == '__main__':
+    pattern = input('Enter pattern: ')
+    directory = input('Enter directory: ')
+    extensions = input('Enter extensions: ').split()
+    matched_files = task_func(pattern, directory, extensions)
+    for file in matched_files:
+        print(file)/day_02/task_01.py
+import re
+import os
+import glob
+from pathlib import Path
+
+def task_func(pattern, directory, extensions):
+    matched_files = []
+    for ext in extensions:
+        files = glob.glob(os.path.join(directory, ext))
+        for file in files:
+            with open(file, 'r') as f:
+                content = f.read().lower()
+                if re.search(pattern.lower(), content):
+                    matched_files.append(Path(file).resolve())
+    return matched_files
+
+if __name__ == '__main__':
+    pattern = input"
