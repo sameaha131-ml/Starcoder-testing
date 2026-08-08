@@ -10202,3 +10202,433 @@ engine.create_engine('mysql+mysqlconnector', {'db': 'test', 'host': '127.0.0.1',
 
 ### Corrected Python Code
 engine.create_engine('mysql+mysqlconnector', {'db': 'test', 'host': '127.0.0.1', 'user': 'root'}, echo=echo) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or None) or"
+"class BinaryIndexedTree:
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [-inf] * (n + 1)
+
+    def update(self, x: int, v: int):
+        while x <= self.n:
+            self.c[x] = max(self.c[x], v)
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        mx = -inf
+        while x:
+            mx = max(mx, self.c[x])
+            x -= x & -x
+        return mx
+
+class Solution:
+
+    def maxBalancedSubsequenceSum(self, nums: List[int]) -> int:
+        arr = [x + i for i, x in enumerate(nums)]
+        s = sorted(set(arr))
+        tree = BinaryIndexedTree(len(s))
+        for i, x in enumerate(nums):
+            j = bisect_left(s, x - i) + 1
+            v = max(tree.query(j), 0) + x
+            tree.update(j, v)
+        return tree.query(len(s))","class BinaryIndexedTree:
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [-inf] * (n + 1)
+
+    def update(self, x: int, v: int):
+        while x <= self.n:
+            self.c[x] = max(self.c[x], v)
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        mx = -inf
+        while x:
+            mx = max(mx, self.c[x])
+            x -= x & -x
+        return mx
+
+class Solution:
+
+    def maxBalancedSubsequenceSum(self, nums: List[int]) -> int:
+        arr = [x - i for i, x in enumerate(nums)]
+        s = sorted(set(arr))
+        tree = BinaryIndexedTree(len(s))
+        for i, x in enumerate(nums):
+            j = bisect_left(s, x - i) + 1
+            v = max(tree.query(j), 0) + x
+            tree.update(j, v)
+        return tree.query(len(s))","class BinaryIndexedTree:
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [-inf] * (n + 1)
+
+    def update(self, x: int, v: int):
+        while x <= self.n:
+            self.c[x] = max(self.c[x], v)
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        mx = -inf
+        while x:
+            mx = max(mx, self.c[x])
+            x -= x & -x
+        return mx
+
+class Solution:
+
+    def maxBalancedSubsequenceSum(self, nums: List[int]) -> int:
+        arr = [x + i for i, x in enumerate(nums)]
+        s = sorted(set(arr))
+        tree = BinaryIndexedTree(len(s))
+        for i, x in enumerate(nums):
+            j = bisect_left(s, x - i) + 1
+            v = max(tree.query(j), 0) + x
+            tree.update(j, v)
+        return tree.query(len(s)) - 1
+
+### Corrected Python class BinaryIndexedTree:
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [-inf] * (n + 1)
+
+    def update(self, x: int, v: int):
+        while x <= self.n:
+            self.c[x] = max(self.c[x], v)
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        mx = -inf
+        while x:
+            mx = max(mx, self.c[x])
+            x -= x & -x
+        return mx
+
+class Solution:
+
+    def maxBalancedSubsequenceSum(self, nums: List[int]) -> int:
+        arr = [x + i for i, x in enumerate(nums)]
+        s = sorted(set(arr))
+        tree = BinaryIndexedTree(len(s))
+        for i, x in enumerate(nums):
+            j = bisect_left(s, x - i) + 1
+            v = max(tree.query(j), 0) + x
+            tree.update(j, v)
+        return tree.query(len(s"
+"import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            word_counter = Counter()
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                words = pd.Series(text.split())
+                word_counter += Counter(words)
+    return word_counter.most_common(word_count)","import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                words = pd.Series(text.split())
+                word_counter += Counter(words)
+    return word_counter.most_common(word_count)","(json_dir_path):
+        if filename.endswith('.json'):
+            word_counter = Counter()
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                words = pd.Series(text.split())
+                word_counter += Counter(words)
+    return word_counter.most_common(word_count)
+
+### Corrected Python Code
+import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                words = pd.Series(text.split())
+                word_counter += Counter(words)
+    return word_counter.most_common(word_count)
+
+if __name__ == '__main__':
+    word_count = 10
+    json_dir_path = '../data/json'
+    result = task_func(json_dir_path, word_count)
+    print(result)/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_"
+"if self.get_owner() is not null:
+    return self.name + ' - ' + self.get_owner().username + ' - ' + self.summary","if self.get_owner() is not None:
+    return self.name + ' - ' + self.get_owner().username + ' - ' + self.summary","### Buggy Python Code
+if self.get_owner() is not null:
+    return self.name +'-'+ self.get_owner().username +'-'+ self.summary
+
+### Corrected Python Code
+if self.get_owner() is not None:
+    return self.name +'-'+ self.get_owner().username +'-'+ self.summary +'-'+ self.get_owner().get_email() +'-'+ self.get_owner().get_phone() +'-'+ self.get_owner().get_address() +'-'+ self.get_owner().get_city() +'-'+ self.get_owner().get_state() +'-'+ self.get_owner().get_zipcode() +'-'+ self.get_owner().get_country() +'-'+ self.get_owner().get_gender() +'-'+ self.get_owner().get_age() +'-'+ self.get_owner().get_occupation() +'-'+ self.get_owner().get_education() +'-'+ self.get_owner().get_income() +'-'+ self.get_owner().get_marital_status() +'-'+ self.get_owner().get_children() +'-'+ self.get_owner().get_pets() +'-'+ self.get_owner().get_hobbies() +'-'+ self.get_owner().get_about() +'-'+ self.get_owner().get_facebook() +'-'+ self.get_owner().get_twitter() +'-'+ self.get_owner().get_google() +'-'+ self.get_owner().get_linkedin() +'-'+ self.get_owner().get_pinterest() +'-'+ self.get_owner().get_instagram() +'-'+ self.get_owner().get_youtube() +'-'+ self.get_owner().get_vimeo() +'-'+ self.get_owner().get_soundcloud() +'-'+ self.get_owner().get_tumblr() +'-'+ self.get_owner().get_vine() +'-'+ self.get_owner().get_foursquare() +'-'+ self.get_owner().get_github() +'-'+ self.get_owner()."
+return 'LD_PRELOAD=%s/lib && ' % os.path.dirname(get_bcbio_bin()),return 'LD_PRELOAD=%s/lib/libfreetype.so && ' % os.path.dirname(get_bcbio_bin()),"### Buggy Python Code
+return 'LD_PRELOAD=%s/lib &&'% os.path.dirname(get_bcbio_bin())
+
+### Corrected Python Code
+return 'LD_PRELOAD=%s/lib/lib &&'% os.path.dirname(get_bcbio_bin()) +'' + get_bcbio_bin() +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv[1:]) +'' +''.join(sys.argv"
+_int_str = ct.create_string_buffer(_max_str_len.value),_int_str = ct.create_string_buffer(_max_str_len),"### Buggy Python Code
+_int_str = ct.create_string_buffer(_max_str_len.value)
+
+### Corrected Python Code
+_int_str = ct.create_string_buffer(_max_str_len.value * 2)  # 2 bytes per char, for null terminator.
+
+### Corrected Python code
+_int_str = ct.create_string_buffer(_max_str_len.value * 2)  # 2 bytes per char, for null terminator.
+
+def _get_int_str(self):
+    return _int_str.value.decode('utf-8') + '\0' * _max_str_len.value * 2 - len(_int_str.value)  # 2 bytes per char, for null terminator.
+
+
+def _set_int_str(self, value):
+    _int_str.value = value.encode('utf-8') + '\0' * _max_str_len.value * 2 - len(value)  # 2 bytes per char, for null terminator.
+
+
+class _IntStr(ct.Structure):
+    _fields_ = [('value', ct.c_char * _max_str_len.value * 2),]  # 2 bytes per char, for null terminator.
+
+    def __init__(self):
+        self.value = _int_str.value.decode('utf-8') + '\0' * _max_str_len.value * 2 - len(_int_str.value)  # 2 bytes per char, for null terminator.
+
+    def __str__(self):
+        return self.value.decode('utf-8') + '\0' * _max_str_len.value * 2 - len(self.value)  # 2 bytes per char, for null terminator.
+
+    def __repr__(self):
+        return self.value.decode('utf-8') + '\0' * _max_str_len.value * 2 - len(self.value)  # 2 bytes per char, for null terminator.
+
+    def __len__(self):
+        return _max_str_len.value * 2 - len(self.value)  # 2 bytes per char, for null terminator.
+
+    def __getitem__(self, index):
+        return self.value[index]
+
+    def __setitem__(self, index, value):
+        self.value[index] ="
+"assert r.startswith(""<module '_pypy_interact' from "") and ('pypy/lib/_pypy_interact.py' in r or 'pypy\\lib\\_pypy_interact.py' in r.lower()) and r.endswith('>')","assert r.startswith(""<module '_pypy_interact' from "") and ('pypy/lib/_pypy_interact.py' in r or 'pypy\\\\lib\\\\_pypy_interact.py' in r.lower()) and r.endswith('>')","### Buggy Python Code
+assert r.startswith(""<module '_pypy_interact' from "") and ('pypy/lib/_pypy_interact.py' in r or 'pypy\\lib\\_pypy_interact.py' in r.lower()) and r.endswith('>')
+
+### Corrected Python Code
+assert r.startswith(""<module '_pypy_interact' from "") and ('pypy/lib/_pypy_interact.py' in r or 'pypy\\lib\\_pypy_interact.py' in r.lower()) and r.endswith('>\n') or r.endswith('>\r\n') or r.endswith('>\n\r') or r.endswith('>\r\n\r') or r.endswith('>\n\r\n') or r.endswith('>\r\n\r\n')) and r.endswith('>') or r.endswith('>\r\n') or r.endswith('>\n\r') or r.endswith('>\r\n\r') or r.endswith('>\n\r\n') or r.endswith('>\r\n\r\n')) and r.endswith('>') or r.endswith('>\r\n') or r.endswith('>\n\r') or r.endswith('>\r\n\r') or r.endswith('>\n\r\n') or r.endswith('>\r\n\r\n')) and r.endswith('>') or r.endswith('>\r\n') or r.endswith('>\n\r') or r.endswith('>\r\n\r') or r.endswith('>\n\r\n') or r.endswith('>\r\n\r\n')) and r.endswith('>') or r.endswith('>\r\n') or r.endswith('>\n\r') or r.endswith('>\r\n\r') or r.endswith('>\n\r\n') or r.endswith('>\r\n\r\n')) and r.endswith('>') or r.endswith('>\r\n') or r.endswith('>\n\r') or r.endswith('>\r\n\r') or r.endswith('>\n\r\n') or r.endswith('>\r\n\r\n')) and r.endswith('>') or r.endswith('>\r\n') or r.endswith('>\n\r') or r.endswith('>\r\n\r') or r.endswith('>\n\r\n') or r.endswith('>\r\n\r\n')) and r.endswith('>') or r.endswith('>\r\n') or"
+"class Solution:
+
+    def minOrAfterOperations(self, nums: List[int], k: int) -> int:
+        ans = 0
+        rans = 0
+        nums.sort()
+        for i in range(29, -1, -1):
+            test = ans + (1 << i)
+            cnt = 0
+            val = 0
+            for num in nums:
+                if val == 0:
+                    val = test & num
+                else:
+                    val &= test & num
+                if val:
+                    cnt += 1
+            if cnt >= k:
+                rans += 1 << i
+            else:
+                pass
+        return rans","class Solution:
+
+    def minOrAfterOperations(self, nums: List[int], k: int) -> int:
+        ans = 0
+        rans = 0
+        for i in range(29, -1, -1):
+            test = ans + (1 << i)
+            cnt = 0
+            val = 0
+            for num in nums:
+                if val == 0:
+                    val = test & num
+                else:
+                    val &= test & num
+                if val:
+                    cnt += 1
+            if cnt > k:
+                rans += 1 << i
+            else:
+                ans += 1 << i
+        return rans","0
+        rans = 0
+        nums.sort()
+        for i in range(29, -1, -1):
+            test = ans + (1 << i)
+            cnt = 0
+            val = 0
+            for num in nums:
+                if val == 0:
+                    val = test & num
+                else:
+                    val &= test & num
+                if val:
+                    cnt += 1
+            if cnt >= k:
+                rans += 1 << i
+            else:
+                pass
+        return rans
+
+### Corrected Python Code
+class Solution:
+
+    def minOrAfterOperations(self, nums: List[int], k: int) -> int:
+        ans = 0
+        rans = 0
+        for i in range(29, -1, -1):
+            test = ans + (1 << i)
+            cnt = 0
+            val = 0
+            for num in nums:
+                if val == 0:
+                    val = test & num
+                else:
+                    val &= test & num
+                if val:
+                    cnt += 1
+            if cnt >= k:
+                ans += 1 << i
+            else:
+                rans += 1 << i
+        return rans + 1
+
+### Corrected Python
+class Solution:
+
+    def minOrAfterOperations(self, nums: List[int], k: int) -> int:
+        ans = 0
+        rans = 0
+        for i in range(29, -1, -1):
+            test = ans + (1 << i)
+            cnt = 0
+            val = 0
+            for num in nums:
+                if val == 0:
+                    val = test & num
+                else:
+                    val &= test & num
+                if val:
+                    cnt += 1
+            if cnt >= k:
+                ans += 1 << i
+            else:
+                rans += 1 << i
+        return rans + 1 if rans < len(nums) else -1
+
+### Corrected Python
+class Solution:
+
+    def minOrAfterOperations(self, nums: List[int], k: int) -> int:
+        ans = 0
+        rans = 0
+        for i in range(29, -1, -1):
+            test = ans + (1 << i)
+            cnt = 0
+            val = 0
+            for num in nums:
+                if val == 0:
+                    val = test & num
+                else:
+                    val &= test & num
+                if val:
+                    cnt += 1
+            if cnt >= k:
+                ans += 1 << i
+            else:
+                rans += 1 << i
+        return rans + 1 if rans < len(nums) else -1
+
+### Corrected Python
+class Solution:
+
+    def minOrAfterOperations(self, nums: List[int], k: int) -> int:
+        ans = 0
+        rans = 0
+        for i in range(29, -1, -1):"
+"from PIL import Image
+import numpy as np
+from skimage.transform import resize
+import matplotlib.pyplot as plt
+import os
+
+def task_func(img_path, scale_factors=[0.5, 0.75, 1.5, 2.0]):
+    if not os.path.exists(img_path):
+        raise ValueError(f'No file found at {img_path}')
+    im = Image.open(img_path)
+    img_arr = np.array(im)
+    results = []
+    for scale_factor in scale_factors:
+        scaled_img_arr = img_arr.resize((int(im.height * scale_factor), int(im.width * scale_factor)), mode='reflect', anti_aliasing=True)
+        fig, ax = plt.subplots()
+        ax.imshow(scaled_img_arr)
+        ax.set_title(f'Scale factor: {scale_factor}')
+        results.append((ax, img_arr))
+    return results","from PIL import Image
+import numpy as np
+from skimage.transform import resize
+import matplotlib.pyplot as plt
+import os
+
+def task_func(img_path, scale_factors=[0.5, 0.75, 1.5, 2.0]):
+    if not os.path.exists(img_path):
+        raise FileNotFoundError(f'No file found at {img_path}')
+    im = Image.open(img_path)
+    img_arr = np.array(im)
+    results = []
+    for scale_factor in scale_factors:
+        scaled_img_arr = resize(img_arr, (int(im.height * scale_factor), int(im.width * scale_factor)), mode='reflect', anti_aliasing=True)
+        fig, ax = plt.subplots()
+        ax.imshow(scaled_img_arr)
+        ax.set_title(f'Scale factor: {scale_factor}')
+        results.append((ax, scaled_img_arr))
+    return results","'Scale factor: {scale_factor}')
+        results.append((ax, img_arr))
+    return results
+
+### Corrected Python Code
+from PIL import Image
+import numpy as np
+from skimage.transform import resize
+import matplotlib.pyplot as plt
+import os
+
+def task_func(img_path, scale_factors=[0.5, 0.75, 1.5, 2.0]):
+    if not os.path.exists(img_path):
+        raise FileNotFoundError(f'No file found at {img_path}')
+    im = Image.open(img_path)
+    img_arr = np.array(im)
+    results = []
+    for scale_factor in scale_factors:
+        scaled_img_arr = resize(img_arr, (int(im.height * scale_factor), int(im.width * scale_factor)), mode='reflect', anti_aliasing=True)
+        fig, ax = plt.subplots()
+        ax.imshow(scaled_img_arr)
+        ax.set_title(f'Scale factor: {scale_factor}')
+        results.append((ax, scaled_img_arr))
+    return results
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python"
