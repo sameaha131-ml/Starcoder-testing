@@ -25711,3 +25711,501 @@ self.assertNotEqual(new_tenant, reread_security_group.service_project_link.tenan
         security_group.save()
         reread_security_group = SecurityGroup.objects.get(id=security_group.id)
         self.assertNotEqual(new_tenant, reread_security_group.service_project"
+"from typing import List
+from collections import defaultdict
+
+class Solution:
+
+    def minArraySum(self, nums: List[int], k: int, op1: int, op2: int) -> int:
+
+        def get_options(x: int, k_val: int) -> List[tuple]:
+            options = []
+            options.append((0, 0, x))
+            v1 = (x + 1) // 2
+            options.append((1, 0, v1))
+            if x >= k_val:
+                v2 = x - k_val
+                options.append((0, 1, v2))
+            after_op1 = (x + 1) // 2
+            if after_op1 >= k_val:
+                valA = after_op1 - k_val
+                options.append((1, 1, valA))
+            if x >= k_val:
+                after_op2 = x - k_val
+                valB = (after_op2 + 1) // 2
+                options.append((1, 1, valB))
+            return options
+        current_dp = {(op2, op1): 0}
+        for num in nums:
+            next_dp = defaultdict(lambda: float('inf'))
+            for (a, b), total in current_dp.items():
+                for c1, c2, val in get_options(num, k):
+                    new_a = a + c1
+                    new_b = b - c2
+                    if new_a >= 0 and new_b >= 0:
+                        if total + val < next_dp[new_a, new_b]:
+                            next_dp[new_a, new_b] = total + val
+            current_dp = next_dp
+        min_sum = float('inf')
+        for key in current_dp:
+            if current_dp[key] < min_sum:
+                min_sum = current_dp[key]
+        return min_sum","from typing import List
+from collections import defaultdict
+
+class Solution:
+
+    def minArraySum(self, nums: List[int], k: int, op1: int, op2: int) -> int:
+
+        def get_options(x: int, k_val: int) -> List[tuple]:
+            options = []
+            options.append((0, 0, x))
+            v1 = (x + 1) // 2
+            options.append((1, 0, v1))
+            if x >= k_val:
+                v2 = x - k_val
+                options.append((0, 1, v2))
+            after_op1 = (x + 1) // 2
+            if after_op1 >= k_val:
+                valA = after_op1 - k_val
+                options.append((1, 1, valA))
+            if x >= k_val:
+                after_op2 = x - k_val
+                valB = (after_op2 + 1) // 2
+                options.append((1, 1, valB))
+            return options
+        current_dp = {(op1, op2): 0}
+        for num in nums:
+            next_dp = defaultdict(lambda: float('inf'))
+            for (a, b), total in current_dp.items():
+                for c1, c2, val in get_options(num, k):
+                    new_a = a - c1
+                    new_b = b - c2
+                    if new_a >= 0 and new_b >= 0:
+                        if total + val < next_dp[new_a, new_b]:
+                            next_dp[new_a, new_b] = total + val
+            current_dp = next_dp
+        min_sum = float('inf')
+        for key in current_dp:
+            if current_dp[key] < min_sum:
+                min_sum = current_dp[key]
+        return min_sum","from typing import List
+from collections import defaultdict
+
+class Solution:
+
+    def minArraySum(self, nums: List[int], k: int, op1: int, op2: int) -> int:
+
+        def get_options(x: int, k_val: int) -> List[tuple]:
+            options = []
+            options.append((0, 0, x))
+            v1 = (x + 1) // 2
+            options.append((1, 0, v1))
+            if x >= k_val:
+                v2 = x - k_val
+                options.append((0, 1, v2))
+            after_op1 = (x + 1) // 2
+            if after_op1 >= k_val:
+                valA = after_op1 - k_val
+                options.append((1, 1, valA))
+            after_op2 = x - k_val
+            if after_op2 >= k_val:
+                valB = (after_op2 + 1) // 2
+                options.append((1, 1, valB))
+            return options
+        current_dp = {(op1, op2): 0}
+        for num in nums:
+            next_dp = defaultdict(lambda: float('inf'))
+            for (a, b), total in current_dp.items():
+                for c1, c2, val in get_options(num, k):
+                    new_a = a + c1
+                    new_b = b + c2
+                    if new_a >= 0 and new_b >= 0:
+                        if total + val < next_dp[new_a, new_b]:
+                            next_dp[new_a, new_b] = total + val
+            current_dp = next_dp
+        min_sum = float('inf')
+        for key in current_dp:
+            if current_dp[key] < min_sum:
+                min_sum = current_dp[key]
+        return min_sum
+
+class Solution:
+
+    def minArraySum(self, nums: List[int], k: int, op1: int, op2: int) -> int:
+
+        def get_options(x: int, k_val: int) -> List[tuple]:
+            options = []
+            options.append((0, 0, x))
+            v1 = (x"
+"class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        n = len(nums)
+        ans = inf
+        for i in range(n):
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans","class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        n = len(nums)
+        ans = inf
+        for i in range(n):
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans","### Buggy Python Code
+class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        n = len(nums)
+        ans = inf
+        for i in range(n):
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans
+
+### Corrected Python Code
+class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        n = len(nums)
+        ans = inf
+        for i in range(n):
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans
+
+class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        n = len(nums)
+        ans = inf
+        for i in range(n):
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minCost(self, costs: List[List[int]]) -> int:
+        n = len(costs)
+        ans = inf
+        for i in range(n):
+            for j in range(n):
+                s = 0
+                for k in range(n):
+                    s += costs[i][k] * costs[k][j]
+                ans = min(ans, s)
+        return -1 if ans == inf else ans
+
+class Solution:
+
+    def minCost(self, costs: List[List[int]]) -> int:
+        n = len(costs)
+        ans = inf
+        for i in range(n):
+            for j in range(n):
+                s = 0
+                for k in range(n):
+                    s += costs[i][k] * costs[k][j]
+                ans = min(ans, s // 2)
+        return -1 if ans == inf else ans
+/1000/1000-1005/1005.py
+class Solution:
+
+    def minCost(self, costs: List[List[int]]) -> int:
+        n = len(costs)
+        ans = inf
+        for i in range(n):
+            for j in range(n):"
+"class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        ans = inf
+        for i in range(n):
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0 == True:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans","class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        n = len(nums)
+        ans = inf
+        for i in range(n):
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans","### Buggy Python Code
+class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        ans = inf
+        for i in range(n):
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0 == True:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans
+
+### Corrected Python Code
+class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        n = len(nums)
+        ans = inf
+        for i in range(n):
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans
+
+class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        n = len(nums)
+        ans = inf
+        for i in range(n):
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans
+/1000/1000.py
+class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        n = len(nums)
+        ans = inf
+        for i in range(n):
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans
+
+class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        n = len(nums)
+        ans = inf
+        for i in range(n):
+            s = 0
+            for j in range(i, n):
+                s += nums[j]
+                if l <= j - i + 1 <= r and s > 0:
+                    ans = min(ans, s)
+        return -1 if ans == inf else ans
+
+class Solution:
+
+    def minimumSumSubarray(self, nums: List[int], l: int, r: int) -> int:
+        n = len(nums)
+        ans = inf
+        for i in range(n):
+            s = 0
+            for j in range(i, n):"
+"from collections import Counter
+import os
+import json
+
+def task_func(filename, directory):
+    total_words = 0
+    for file_name in os.listdir(directory):
+        if not file_name.endswith('.txt'):
+            continue
+        os.chdir(directory)
+        with open(os.path.join(directory, file_name), 'r') as file:
+            words = file.read().split()
+            word_counts.update(words)
+    with open(filename, 'w') as word_counts:
+        json.dump(dict(word_counts), file)
+    for word in word_counts:
+        total_words += word_counts[word] - 1
+    return total_words","from collections import Counter
+import os
+import json
+
+def task_func(filename, directory):
+    total_words = 0
+    word_counts = Counter()
+    for file_name in os.listdir(directory):
+        if not file_name.endswith('.txt'):
+            continue
+        with open(os.path.join(directory, file_name), 'r') as file:
+            words = file.read().split()
+            word_counts.update(words)
+    with open(filename, 'w') as file:
+        json.dump(dict(word_counts), file)
+    for word in word_counts:
+        total_words += word_counts[word]
+    return total_words","### Buggy Python Code
+from collections import Counter
+import os
+import json
+
+def task_func(filename, directory):
+    total_words = 0
+    for file_name in os.listdir(directory):
+        if not file_name.endswith('.txt'):
+            continue
+        os.chdir(directory)
+        with open(os.path.join(directory, file_name), 'r') as file:
+            words = file.read().split()
+            word_counts.update(words)
+    with open(filename, 'w') as word_counts:
+        json.dump(dict(word_counts), file)
+    for word in word_counts:
+        total_words += word_counts[word] - 1
+    return total_words
+
+### Corrected Python Code
+from collections import Counter
+import os
+import json
+
+def task_func(filename, directory):
+    total_words = 0
+    word_counts = Counter()
+    for file_name in os.listdir(directory):
+        if not file_name.endswith('.txt'):
+            continue
+        with open(os.path.join(directory, file_name), 'r') as file:
+            words = file.read().split()
+            word_counts.update(words)
+    with open(filename, 'w') as file:
+        json.dump(dict(word_counts), file)
+    for word in word_counts:
+        total_words += word_counts[word]
+    return total_words
+
+### Corrected Python code
+from collections import Counter
+import os
+import json
+
+def task_func(filename, directory):
+    total_words = 0
+    word_counts = Counter()
+    for file_name in os.listdir(directory):
+        if not file_name.endswith('.txt'):
+            continue
+        with open(os.path.join(directory, file_name), 'r') as file:
+            words = file.read().split()
+            word_counts.update(words)
+    with open(filename, 'w') as file:
+        json.dump(dict(word_counts), file)
+    for word in word_counts:
+        total_words += word_counts[word]
+    return total_words
+
+if __name__ == '__main__':
+    print(task_func('word_counts.json', './data'))
+    print(total_words)
+/day_01/task_01.py
+def task_func(filename, directory):
+    total_words = 0
+    word_counts = {}
+    for file_name in os.listdir(directory):
+        if not file_name.endswith('.txt'):
+            continue
+        with open(os.path.join(directory, file_name), 'r') as file:
+            words = file.read().split()
+            word_counts.update(words)
+    with open(filename, 'w') as file:
+        json.dump(dict(word_counts), file)
+    for word in word_counts:
+        total_words += word_counts[word]
+    return total_words
+
+if __name__ == '__main__':
+    print(task_func('word_counts.json"
+"_, lh = _listWrapOn(text[:l], w - dw, h - 12)","_, lh = _listWrapOn(text[:l], w - dw, None)","### Buggy Python Code
+_, lh = _listWrapOn(text[:l], w - dw, h - 12)
+
+### Corrected Python Code
+_, lh = _listWrapOn(text[:l], w - dw, h - 12, True) if l > w - dw else ([text[:l]], [h - 12])
+
+return lh, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2, l, h - 12 - lh[0] * 2,"
+"abi = trap.ABI('REGS[23]', 'REGS[23-28]', 'PC', 'LR', 'SP', 'FP')","abi = trap.ABI('REGS[24]', 'REGS[24-29]', 'PC', 'LR', 'SP', 'FP')","### Buggy Python Code
+abi = trap.ABI('REGS[23]', 'REGS[23-28]', 'PC', 'LR', 'SP', 'FP')
+
+### Corrected Python Code
+abi = trap.ABI('REGS[23]', 'REGS[23-28]', 'PC', 'LR', 'SP', 'FP', 'CPSR')
+
+### Corrected Python Code
+abi = trap.ABI('REGS[23]', 'REGS[23-28]', 'PC', 'LR', 'SP', 'FP', 'CPSR', 'CPSR_fiq')
+
+### Corrected Python Code
+abi = trap.ABI('REGS[23]', 'REGS[23-28]', 'PC', 'LR', 'SP', 'FP', 'CPSR', 'CPSR_fiq', 'CPSR_svc')
+
+### Corrected Python Code
+abi = trap.ABI('REGS[23]', 'REGS[23-28]', 'PC', 'LR', 'SP', 'FP', 'CPSR', 'CPSR_fiq', 'CPSR_svc', 'CPSR_irq')
+
+### Corrected Python Code
+abi = trap.ABI('REGS[23]', 'REGS[23-28]', 'PC', 'LR', 'SP', 'FP', 'CPSR', 'CPSR_fiq', 'CPSR_svc', 'CPSR_irq', 'CPSR_undef')
+
+### Corrected Python Code
+abi = trap.ABI('REGS[23]', 'REGS[23-28]', 'PC', 'LR', 'SP', 'FP', 'CPSR', 'CPSR_fiq', 'CPSR_svc', 'CPSR_irq', 'CPSR_undef', 'CPSR_abt')
+
+### Corrected Python Code
+abi = trap.ABI('REGS[23]', 'REGS[23-28]', 'PC', 'LR', 'SP', 'FP', 'CPSR', 'CPSR_fiq', 'CPSR_svc', 'CPSR_irq', 'CPSR_undef', 'CPSR_abt', 'CPSR_und')
+
+### Corrected Python Code
+abi = trap.ABI('REGS[23]', 'REGS[23-28]', 'PC', 'LR', 'SP', 'FP', 'CPSR', 'CPSR_fiq', 'CPSR_svc', 'CPSR_irq', 'CPSR_undef', 'CPSR_abt', 'CP"
+"total_milestones = models.IntegerField(default=1, null=True, blank=True, verbose_name=_('total of milestones'))","total_milestones = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of milestones'))","### Buggy Python Code
+total_milestones = models.IntegerField(default=1, null=True, blank=True, verbose_name=_('total of milestones'))
+
+### Corrected Python Code
+total_milestones = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of milestones'))
+
+class Project(models.Model):
+    name = models.CharField(max_length=255, verbose_name=_('name'))
+    description = models.TextField(verbose_name=_('description'))
+    start_date = models.DateField(verbose_name=_('start date'))
+    end_date = models.DateField(verbose_name=_('end date'))
+    total_milestones = models.IntegerField(default=1, null=True, blank=True, verbose_name=_('total of milestones'))
+    total_hours = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of hours'))
+    total_days = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of days'))
+    total_weeks = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of weeks'))
+    total_months = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of months'))
+    total_years = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of years'))
+    total_hours_per_day = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of hours per day'))
+    total_days_per_week = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of days per week'))
+    total_weeks_per_month = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of weeks per month'))
+    total_months_per_year = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of months per year'))
+    total_years_per_day = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of years per day'))
+    total_days_per_week = models.IntegerField(default=0, null=True, blank=True, verbose_name=_('total of days per week'))"
+"if citation_dic[recordid]:
+    ret = citation_dic[recordid]","if citation_dic.has_key(recordid):
+    ret = citation_dic[recordid]","### Buggy Python Code
+if citation_dic[recordid]:
+    ret = citation_dic[recordid]
+
+### Corrected Python Code
+if recordid in citation_dic:
+    ret = citation_dic[recordid]
+
+return ret, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in citation_dic else None, citation_dic[recordid] if recordid in"
