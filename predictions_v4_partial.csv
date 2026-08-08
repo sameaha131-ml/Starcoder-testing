@@ -60265,3 +60265,514 @@ result = n.query.filter(n.title == title).order_by(n.time)[-counter:]
 result = n.query.filter(n.title == title).order_by(n.time)[-counter:] if counter > 0 else []
 
 return result[0] if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].title if len(result) > 0 else None, result[0].content if len(result) > 0 else None, result[0].author if len(result) > 0 else None, result[0].tags if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else None, result[0].time if len(result) > 0 else"
+"from typing import List
+from collections import defaultdict
+
+class Solution:
+
+    def minCost(self, n: int, cost: List[List[int]]) -> int:
+        prev_dp = {}
+        first_left = 0
+        first_right = n - 1
+        for L in [1, 2, 3]:
+            for R in [1, 2, 3]:
+                if L != R:
+                    prev_dp[L, R] = cost[0][L - 1]
+                    prev_dp[R, L] = cost[first_right][R - 1]
+        for i in range(1, n // 2):
+            current_right_pos = n - 1 - i
+            curr_dp = defaultdict(lambda: float('inf'))
+            for (prev_L, prev_R), prev_cost in prev_dp.items():
+                for L in [1, 2, 3]:
+                    if L == prev_L:
+                        continue
+                    for R in [1, 2, 3]:
+                        if R == prev_R:
+                            if L == prev_L:
+                                continue
+                        new_cost = prev_cost + cost[i][L - 1] + cost[current_right_pos][R - 1]
+                        key = (L, R)
+                        if new_cost < curr_dp[key]:
+                            curr_dp[key] = new_cost
+            prev_dp = {}
+            for k, v in curr_dp.items():
+                if v < float('inf'):
+                    prev_dp[k] = v
+            if not prev_dp:
+                return -1
+        return min(prev_dp.values()) if prev_dp else 0","from typing import List
+from collections import defaultdict
+
+class Solution:
+
+    def minCost(self, n: int, cost: List[List[int]]) -> int:
+        prev_dp = {}
+        first_left = 0
+        first_right = n - 1
+        for L in [1, 2, 3]:
+            for R in [1, 2, 3]:
+                if L != R:
+                    total = cost[0][L - 1] + cost[first_right][R - 1]
+                    prev_dp[L, R] = total
+        for i in range(1, n // 2):
+            current_right_pos = n - 1 - i
+            curr_dp = defaultdict(lambda: float('inf'))
+            for (prev_L, prev_R), prev_cost in prev_dp.items():
+                for L in [1, 2, 3]:
+                    if L == prev_L:
+                        continue
+                    for R in [1, 2, 3]:
+                        if R == L or R == prev_R:
+                            continue
+                        new_cost = prev_cost + cost[i][L - 1] + cost[current_right_pos][R - 1]
+                        key = (L, R)
+                        if new_cost < curr_dp[key]:
+                            curr_dp[key] = new_cost
+            prev_dp = {}
+            for k, v in curr_dp.items():
+                if v < float('inf'):
+                    prev_dp[k] = v
+            if not prev_dp:
+                return -1
+        return min(prev_dp.values()) if prev_dp else 0","from typing import List
+from collections import defaultdict
+
+class Solution:
+
+    def minCost(self, n: int, cost: List[List[int]]) -> int:
+        prev_dp = {}
+        first_left = 0
+        first_right = n - 1
+        for L in [1, 2, 3]:
+            for R in [1, 2, 3]:
+                if L!= R:
+                    prev_dp[L, R] = cost[0][L - 1] + cost[first_right][R - 1]
+        for i in range(1, n // 2):
+            current_right_pos = n - 1 - i
+            curr_dp = defaultdict(lambda: float('inf'))
+            for (prev_L, prev_R), prev_cost in prev_dp.items():
+                for L in [1, 2, 3]:
+                    if L == prev_L:
+                        continue
+                    for R in [1, 2, 3]:
+                        if R == prev_R:
+                            continue
+                        new_cost = prev_cost + cost[i][L - 1] + cost[current_right_pos][R - 1]
+                        key = (L, R)
+                        if new_cost < curr_dp[key]:
+                            curr_dp[key] = new_cost
+            prev_dp = curr_dp
+        return min(prev_dp.values()) if prev_dp else -1
+
+### Corrected Python
+from typing import List
+from collections import defaultdict
+
+class Solution:
+
+    def minCost(self, n: int, cost: List[List[int]]) -> int:
+        prev_dp = {}
+        first_left = 0
+        first_right = n - 1
+        for L in [1, 2, 3]:
+            for R in [1, 2, 3]:
+                if L!= R:
+                    prev_dp[L, R] = cost[0][L - 1] + cost[first_right][R - 1]
+        for i in range(1, n // 2):
+            current_right_pos = n - 1 - i
+            curr_dp = defaultdict(lambda: float('inf'))
+            for (prev_L, prev_R), prev_cost in prev_dp.items():
+                for L in [1, 2"
+"import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(mu=0, sigma=1, sample_size=1000, seed=0):
+    np.random.seed(seed)
+    sample = np.random.normal(mu, sigma, sample_size)
+    fig, ax = plt.subplots()
+    sample = (sample - mu) / sigma
+    ax.hist(sample, bins=30, density=True, alpha=0.5, label='Sample Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    mu, sigma = (np.mean(sample), np.std(sample))
+    p = stats.norm.pdf(x, mu, sigma)
+    ax.plot(x, p, 'k', linewidth=2, label='Normal PDF')
+    ax.set_title('Normal Distribution with $\\mu = %0.2f, \\sigma = %0.2f$' % (mu, sigma))
+    ax.legend()
+    sample = sample - mu
+    return (ax, np.mean(sample), np.std(sample))","import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(mu=0, sigma=1, sample_size=1000, seed=0):
+    np.random.seed(seed)
+    sample = np.random.normal(mu, sigma, sample_size)
+    fig, ax = plt.subplots()
+    ax.hist(sample, bins=30, density=True, alpha=0.5, label='Sample Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mu, sigma)
+    ax.plot(x, p, 'k', linewidth=2, label='Normal PDF')
+    ax.set_title('Normal Distribution with $\\mu = %0.2f, \\sigma = %0.2f$' % (mu, sigma))
+    ax.legend()
+    return (ax, np.mean(sample), np.std(sample))","))
+    p = stats.norm.pdf(x, mu, sigma)
+    ax.plot(x, p, 'k', linewidth=2, label='Normal PDF')
+    ax.set_title('Normal Distribution with $\\mu = %0.2f, \\sigma = %0.2f$' % (mu, sigma))
+    ax.legend()
+    sample = sample - mu
+    return (ax, np.mean(sample), np.std(sample))
+
+### Corrected Python Code
+import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(mu=0, sigma=1, sample_size=1000, seed=0):
+    np.random.seed(seed)
+    sample = np.random.normal(mu, sigma, sample_size)
+    fig, ax = plt.subplots()
+    ax.hist(sample, bins=30, density=True, alpha=0.5, label='Sample Histogram')
+    xmin, xmax = ax.get_xlim()
+    x = np.linspace(xmin, xmax, 100)
+    p = stats.norm.pdf(x, mu, sigma)
+    ax.plot(x, p, 'k', linewidth=2, label='Normal PDF')
+    ax.set_title('Normal Distribution with $\\mu = %0.2f, \\sigma = %0.2f$' % (mu, sigma))
+    ax.legend()
+    return (ax, np.mean(sample), np.std(sample))
+
+if __name__ == '__main__':
+    task_func()
+    plt.show()/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python"
+"assert_in(""No sibling 'target' found."", exc_str(cm.exception))","assert_in(""No sibling 'target' found"", exc_str(cm.exception))","### Buggy Python Code
+assert_in(""No sibling 'target' found."", exc_str(cm.exception))
+
+### Corrected Python Code
+assert_in(""No sibling 'target' found."", cm.exception.message)
+
+### Corrected Python code
+assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", exc_str(cm.exception)) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args) or assert_in(""No sibling 'target' found."", cm.exception.message) or assert_in(""No sibling 'target' found."", cm.exception.args)"
+"if not self.product_class.track_stock:
+    return True","if self.get_product_class().track_stock:
+    return True","### Buggy Python Code
+if not self.product_class.track_stock:
+    return True
+
+### Corrected Python Code
+if self.product_class.track_stock and self.product_class.is_stock_product():
+    return True
+
+return False/sale_order_line_product_qty/models.py
+# -*- coding: utf-8 -*-
+from odoo import models, fields, api, _
+
+class SaleOrderLineProductQty(models.Model):
+    _name ='sale.order.line.product.qty'
+    _description = 'Sale Order Line Product Quantity'
+
+    order_line_id = fields.Many2one('sale.order.line', string='Order Line')
+    product_qty = fields.Float(string='Product Quantity')
+    product_uom_qty = fields.Float(string='Product UOM Quantity')
+    product_uom = fields.Many2one('uom.uom', string='Product UOM')
+    product_uom_qty_uom = fields.Float(string='Product UOM Quantity (UOM)')
+    product_uom_qty_uom_id = fields.Many2one('uom.uom', string='Product UOM (UOM)')
+    product_uom_qty_uom_id_name = fields.Char(string='Product UOM (UOM)', compute='_compute_product_uom_qty_uom_id_name')
+    product_uom_qty_uom_id_name_short = fields.Char(string='Product UOM (UOM)', compute='_compute_product_uom_qty_uom_id_name_short')
+    product_uom_qty_uom_id_name_short_short = fields.Char(string='Product UOM (UOM)', compute='_compute_product_uom_qty_uom_id_name_short_short')
+    product_uom_qty_uom_id_name_short_short_short = fields.Char(string='Product UOM (UOM)', compute='_compute_product_uom_qty_uom_id_name_short_short_short')
+    product_uom_qty_uom_id_name_short_short_short_short = fields.Char(string='Product UOM (UOM)', compute='_compute_product_uom_qty_uom_id_name_short_short_short"
+source = serializers.IntegerField(source='schedule.source'),source = serializers.IntegerField(source='schedule.source.id'),"### Buggy Python Code
+source = serializers.IntegerField(source='schedule.source')
+
+### Corrected Python Code
+source = serializers.IntegerField(source='schedule.source.id')
+
+class ScheduleSerializer(serializers.ModelSerializer):
+    source = serializers.IntegerField(source='schedule.source.id')
+    class Meta:
+        model = Schedule
+        fields = ('id', 'name','start_date', 'end_date','source')
+        read_only_fields = ('id', 'name','start_date', 'end_date','source')
+        extra_kwargs = {'source': {'required': False}}
+
+class ScheduleSerializer(serializers.ModelSerializer):
+    source = serializers.IntegerField(source='schedule.source.id')
+    class Meta:
+        model = Schedule
+        fields = ('id', 'name','start_date', 'end_date','source')
+        read_only_fields = ('id', 'name','start_date', 'end_date','source')
+        extra_kwargs = {'source': {'required': False}}
+
+    def validate(self, data):
+        start_date = data.get('start_date')
+        end_date = data.get('end_date')
+        if start_date and end_date:
+            if start_date > end_date:
+                raise serializers.ValidationError('Start date must be before end date.')
+        return data
+
+class ScheduleSerializer(serializers.ModelSerializer):
+    source = serializers.IntegerField(source='schedule.source.id')
+    class Meta:
+        model = Schedule
+        fields = ('id', 'name','start_date', 'end_date','source')
+        read_only_fields = ('id', 'name','start_date', 'end_date','source')
+        extra_kwargs = {'source': {'required': False}}
+
+    def validate(self, data):
+        start_date = data.get('start_date')
+        end_date = data.get('end_date')
+        if start_date and end_date:
+            if start_date > end_date:
+                raise serializers.ValidationError('Start date must be before end date.')
+        return data
+
+class ScheduleSerializer(serializers.ModelSerializer):
+    source = serializers.IntegerField(source='schedule.source.id')
+    class Meta:
+        model = Schedule
+        fields = ('id', 'name','start_date', 'end_date','source')
+        read_only_fields = ('id', 'name','start"
+"return HttpResponse('\n <html><body><form activity=""."" method=""post"">Are you Sure?\n <input type=""submit"" value=""Yes, delete it"" /></form></body></html>\n ')","return HttpResponse('\n <html><body><form action=""."" method=""post"">Are you Sure?\n <input type=""submit"" value=""Yes, delete it"" /></form></body></html>\n ')","### Buggy Python Code
+return HttpResponse('\n <html><body><form activity=""."" method=""post"">Are you Sure?\n <input type=""submit"" value=""Yes, delete it"" /></form></body></html>\n ')
+
+### Corrected Python Code
+return HttpResponse('\n <html><body><form action=""."" method=""post"">Are you sure?\n <input type=""submit"" value=""Yes, delete it"" /></form></body></html>\n ')
+
+def delete_user(request, username):
+    user = User.objects.get(username=username)
+    user.delete()
+    return HttpResponseRedirect('/users/')
+
+def edit_user(request, username):
+    user = User.objects.get(username=username)
+    if request.method == 'POST':
+        form = UserForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/users/')
+    else:
+        form = UserForm(instance=user)
+    return render(request, 'users/edit_user.html', {'form': form})
+
+def edit_profile(request, username):
+    user = User.objects.get(username=username)
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=user.profile)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/users/')
+    else:
+        form = ProfileForm(instance=user.profile)
+    return render(request, 'users/edit_profile.html', {'form': form})
+
+def edit_profile_picture(request, username):
+    user = User.objects.get(username=username)
+    if request.method == 'POST':
+        form = ProfilePictureForm(request.POST, request.FILES, instance=user.profile)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/users/')
+    else:
+        form = ProfilePictureForm(instance=user.profile)
+    return render(request, 'users/edit_profile_picture.html', {'form': form})
+
+def edit_password(request, username):
+    user = User.objects.get(username=username)
+    if request.method == 'POST':
+        form = PasswordChangeForm(user, request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/users/')
+    else:
+        form = PasswordChangeForm(user)
+    return render(request, 'users/edit_password.html', {'form': form})
+/users/forms.py
+from django import forms
+from django"
+"import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    df['Average'].plot(ax=ax)
+    ax.set_ylabel('Average')
+    ax.cla()
+    return (df, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    df['Average'].plot(ax=ax)
+    ax.set_ylabel('Average')
+    return (df, ax)","### Buggy Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    df['Average'].plot(ax=ax)
+    ax.set_ylabel('Average')
+    ax.cla()
+    return (df, ax)
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    df['Average'].plot(ax=ax)
+    ax.set_ylabel('Average')
+    return (df, ax)
+
+if __name__ == '__main__':
+    data = [[1, 2, 3, 4, 5, 6, 7, 8], [1, 2, 3, 4, 5, 6, 7, 8], [1, 2, 3, 4, 5, 6, 7, 8]]
+    df, ax = task_func(data)
+    print(df)
+    print(ax)/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01"
+"class Solution:
+
+    def medianOfUniquenessArray(self, nums: List[int]) -> int:
+
+        def check(mx: int) -> bool:
+            cnt = defaultdict(int)
+            k = l = 0
+            for r, x in enumerate(nums):
+                while len(cnt) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        l = r
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k > m // 2:
+                    return True
+            return False
+        n = len(nums)
+        m = (1 + n) * n // 2
+        return bisect_left(range(n), True, key=check(n))","class Solution:
+
+    def medianOfUniquenessArray(self, nums: List[int]) -> int:
+
+        def check(mx: int) -> bool:
+            cnt = defaultdict(int)
+            k = l = 0
+            for r, x in enumerate(nums):
+                cnt[x] += 1
+                while len(cnt) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k >= (m + 1) // 2:
+                    return True
+            return False
+        n = len(nums)
+        m = (1 + n) * n // 2
+        return bisect_left(range(n), True, key=check)","### Buggy Python Code
+class Solution:
+
+    def medianOfUniquenessArray(self, nums: List[int]) -> int:
+
+        def check(mx: int) -> bool:
+            cnt = defaultdict(int)
+            k = l = 0
+            for r, x in enumerate(nums):
+                while len(cnt) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        l = r
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k > m // 2:
+                    return True
+            return False
+        n = len(nums)
+        m = (1 + n) * n // 2
+        return bisect_left(range(n), True, key=check(n))
+
+### Corrected Python Code
+class Solution:
+
+    def medianOfUniquenessArray(self, nums: List[int]) -> int:
+
+        def check(mx: int) -> bool:
+            cnt = defaultdict(int)
+            k = l = 0
+            for r, x in enumerate(nums):
+                cnt[x] += 1
+                while len(cnt) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k >= (m + 1) // 2:
+                    return True
+            return False
+        n = len(nums)
+        m = (1 + n) * n // 2
+        return bisect_left(range(n), True, key=check) + 1
+
+### Corrected Python class Solution:
+
+    def medianOfUniquenessArray(self, nums: List[int]) -> int:
+
+        def check(mx: int) -> bool:
+            cnt = defaultdict(int)
+            k = l = 0
+            for r, x in enumerate(nums):
+                cnt[x] += 1
+                while len(cnt) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k >= (m + 1) // 2:
+                    return True
+            return False
+        n = len(nums)
+        m = (1 + n) * n // 2
+        return bisect_left(range(n), True, key=check) + 1
+
+### Corrected Python class Solution:
+
+    def medianOfUniquenessArray(self, nums: List[int]) -> int:
+
+        def check(mx: int) -> bool:
+            cnt = defaultdict(int)
+            k = l = 0
+            for r, x in enumerate(nums):
+                cnt[x] += 1
+                while len(cnt) > mx:
+                    y = nums[l]
+                    cnt[y] -= 1
+                    if cnt[y] == 0:
+                        cnt.pop(y)
+                    l += 1
+                k += r - l + 1
+                if k >= (m + 1) // 2:
+                    return True
+            return False"
