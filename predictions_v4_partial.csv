@@ -13237,3 +13237,422 @@ from django.db.models.signals import pre_save, post_save, post_delete, pre_delet
 
 ### Corrected Python Code
 return filter(lambda m: m['id'] in ReadonlySystemFlds, self.configuration.meta) if self.configuration else []/src/pyfarm/models/configuration.py        return self.configuration.meta.get('readonly', []) + self.configuration.meta.get('hidden', []) + self.configuration.meta.get('system', []) + self.configuration.meta.get('user', []) + self.configuration.meta.get('password', []) + self.configuration.meta.get('secret', []) + self.configuration.meta.get('api_key', []) + self.configuration.meta.get('api_secret', []) + self.configuration.meta.get('api_token', []) + self.configuration.meta.get('api_token_secret', []) + self.configuration.meta.get('api_token_expires', []) + self.configuration.meta.get('api_token_refresh', []) + self.configuration.meta.get('api_token_refresh_expires', []) + self.configuration.meta.get('api_token_refresh_token', []) + self.configuration.meta.get('api_token_refresh_token_expires', []) + self.configuration.meta.get('api_token_refresh_token_refresh', []) + self.configuration.meta.get('api_token_refresh_token_refresh_expires', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_expires', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_refresh', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_refresh_expires', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_refresh_refresh', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_refresh_refresh_expires', []) + self.configuration.meta.get('api_token_refresh_token_refresh_token_refresh_refresh_refresh_refresh', []) + self.configuration.meta.get('api_token_refresh_token_refresh"
+self.latticeConstant = [g[1] - g[0] for g in self.marginalGrid],self.latticeConstant = [np.abs(g[0] - g[1]) for g in self.marginalGrid],"### Buggy Python Code
+self.latticeConstant = [g[1] - g[0] for g in self.marginalGrid]
+
+### Corrected Python Code
+self.latticeConstant = [g[1] - g[0] for g in self.marginalGrid[1:]] + [self.marginalGrid[-1][1] - self.marginalGrid[-1][0]] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.marginalGrid[-1][1] + self.marginalGrid[-1][0] * (self.nGrid - 1) - self.m"
+"if item_meta['type']:
+    child.attrs['contentType'] = item_meta['type']","if 'type' in item_meta:
+    child.attrs['contentType'] = item_meta['type']","### Buggy Python Code
+if item_meta['type']:
+    child.attrs['contentType'] = item_meta['type']
+
+### Corrected Python Code
+if item_meta.get('type'):
+    child.attrs['contentType'] = item_meta['type']
+
+if item_meta.get('title'):
+    child.attrs['title'] = item_meta['title']
+
+if item_meta.get('description'):
+    child.attrs['description'] = item_meta['description']
+
+if item_meta.get('thumbnail'):
+    child.attrs['thumbnail'] = item_meta['thumbnail']
+
+if item_meta.get('duration'):
+    child.attrs['duration'] = item_meta['duration']
+
+if item_meta.get('explicit'):
+    child.attrs['explicit'] = item_meta['explicit']
+
+if item_meta.get('license'):
+    child.attrs['license'] = item_meta['license']
+
+if item_meta.get('tags'):
+    child.attrs['tags'] = item_meta['tags']
+
+if item_meta.get('categories'):
+    child.attrs['categories'] = item_meta['categories']
+
+if item_meta.get('keywords'):
+    child.attrs['keywords'] = item_meta['keywords']
+
+if item_meta.get('rating'):
+    child.attrs['rating'] = item_meta['rating']
+
+if item_meta.get('viewCount'):
+    child.attrs['viewCount'] = item_meta['viewCount']
+
+if item_meta.get('likeCount'):
+    child.attrs['likeCount'] = item_meta['likeCount']
+
+if item_meta.get('dislikeCount'):
+    child.attrs['dislikeCount'] = item_meta['dislikeCount']
+
+if item_meta.get('favoriteCount'):
+    child.attrs['favoriteCount'] = item_meta['favoriteCount']
+
+if item_meta.get('commentCount'):
+    child.attrs['commentCount'] = item_meta['commentCount']
+
+if item_meta.get('published'):
+    child.attrs['published'] = item_meta['published']
+
+if item_meta.get('updated'):
+    child.attrs['updated'] = item_meta['updated']
+
+if item_meta.get('author'):
+    child.attrs['author'] = item_meta['author']
+
+if item_meta.get('uploader'):
+    child.attrs['uploader'] = item_"
+"(('country', models.ForeignKey(related_name='chambers', blank=True, to='representatives.Country', null=True)),)","(('country', models.ForeignKey(related_name='chambers', to='representatives.Country', null=True)),)","### Buggy Python Code
+(('country', models.ForeignKey(related_name='chambers', blank=True, to='representatives.Country', null=True)),)
+
+### Corrected Python Code
+(('country', models.ForeignKey(related_name='chambers', blank=True, to='representatives.Country', null=True, on_delete=models.SET_NULL)),)
+
+### Corrected Python Code
+(('country', models.ForeignKey(related_name='chambers', blank=True, to='representatives.Country', null=True, on_delete=models.SET_NULL)),) + (('state', models.ForeignKey(related_name='chambers', blank=True, to='representatives.State', null=True)),) + (('city', models.ForeignKey(related_name='chambers', blank=True, to='representatives.City', null=True)),) + (('address', models.CharField(max_length=255, blank=True)),) + (('zipcode', models.CharField(max_length=255, blank=True)),) + (('phone', models.CharField(max_length=255, blank=True)),) + (('fax', models.CharField(max_length=255, blank=True)),) + (('email', models.EmailField(max_length=255, blank=True)),) + (('website', models.URLField(max_length=255, blank=True)),) + (('notes', models.TextField(blank=True)),) + (('created_at', models.DateTimeField(auto_now_add=True)),) + (('updated_at', models.DateTimeField(auto_now=True)),) + (('deleted_at', models.DateTimeField(blank=True, null=True)),) + (('is_active', models.BooleanField(default=True)),) + (('is_deleted', models.BooleanField(default=False)),) + (('is_primary', models.BooleanField(default=False)),) + (('is_public', models.BooleanField(default=False)),) + (('is_private', models.BooleanField(default=False)),) + (('is_archived', models.BooleanField(default=False)),) + (('is_deleted', models.BooleanField(default=False)),) + (('is_primary', models.BooleanField(default=False)),) + (('is_public', models.BooleanField(default=False)),) + (('is"
+"import re
+import smtplib
+TEXT = 'Josie Smith [3996 COLLEGE AVENUE, SOMETOWN, MD 21003]Mugsy Dog Smith [2560 OAK ST, GLENMEADE, WI 14098]'
+RECEPIENT_ADDRESS = 'names@gmail.com'
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = 'your.email@gmail.com'
+EMAIL_PASSWORD = 'your.password'
+
+def task_func(text=TEXT, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, recepient_address=RECEPIENT_ADDRESS, smtp=None):
+    text = re.sub('\\[.*?\\]', '', text)
+    names = re.findall('(.*?)(?:\\[.*?\\]|$)', text)
+    names = [name.strip() for name in names if name != '']
+    message = 'Subject: Extracted Names\n\n' + '\n'.join(names)
+    if not smtp:
+        server = smtp(smtp_server, smtp_port)
+    else:
+        server = smtplib.SMTP_SSL(smtp_server, smtp_port)
+    server.starttls()
+    server.login(email_address, email_password)
+    server.sendmail(recepient_address, email_address, message)
+    server.quit()
+    return names","import re
+import smtplib
+TEXT = 'Josie Smith [3996 COLLEGE AVENUE, SOMETOWN, MD 21003]Mugsy Dog Smith [2560 OAK ST, GLENMEADE, WI 14098]'
+RECEPIENT_ADDRESS = 'names@gmail.com'
+SMTP_SERVER = 'smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = 'your.email@gmail.com'
+EMAIL_PASSWORD = 'your.password'
+
+def task_func(text=TEXT, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, recepient_address=RECEPIENT_ADDRESS, smtp=None):
+    names = re.findall('(.*?)(?:\\[.*?\\]|$)', text)
+    names = [name.strip() for name in names if name != '']
+    message = 'Subject: Extracted Names\n\n' + '\n'.join(names)
+    if smtp:
+        server = smtp(smtp_server, smtp_port)
+    else:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+    server.starttls()
+    server.login(email_address, email_password)
+    server.sendmail(email_address, recepient_address, message)
+    server.quit()
+    return names","import re
+import smtplib
+TEXT = 'Josie Smith [3996 COLLEGE AVENUE, SOMETOWN, MD 21003]Mugsy Dog Smith [2560 OAK ST, GLENMEADE, WI 14098]'
+RECEPIENT_ADDRESS = 'names@gmail.com'
+SMTP_SERVER ='smtp.gmail.com'
+SMTP_PORT = 587
+EMAIL_ADDRESS = 'your.email@gmail.com'
+EMAIL_PASSWORD = 'your.password'
+
+def task_func(text=TEXT, smtp_server=SMTP_SERVER, smtp_port=SMTP_PORT, email_address=EMAIL_ADDRESS, email_password=EMAIL_PASSWORD, recepient_address=RECEPIENT_ADDRESS, smtp=None):
+    names = re.findall('(.*?)(?:\\[.*?\\]|$)', text)
+    names = [name.strip() for name in names if name!= '']
+    message = 'Subject: Extracted Names\n\n' + '\n'.join(names)
+    if smtp:
+        server = smtp(smtp_server, smtp_port)
+    else:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+    server.starttls()
+    server.login(email_address, email_password)
+    server.sendmail(email_address, recepient_address, message)
+    server.quit()
+    return names
+
+if __name__ == '__main__':
+    names = task_func()
+    print('Extracted names:', names)/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-"
+client_socket.send('$22$ *bitmask da configurare non valida*'),"client_socket.send('$22$ *bitmask %s non valida per GPIO %d*' % (command[2], gpiost[0]))","### Buggy Python Code
+client_socket.send('$22$ *bitmask da configurare non valida*')
+
+### Corrected Python Code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask non valida*')
+
+### Corrected Python code
+client_socket.send('$22$ *bitmask"
+"self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime)","self.assertEquals(sysmodel.mtime, int(os.stat(modelPath).st_mtime))","### Buggy Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime)
+
+### Corrected Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime, 1) # 1 second difference is ok for now.
+
+### Corrected Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime, 0.1) # 1 second difference is ok for now.
+
+### Corrected Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime, 0.01) # 1 second difference is ok for now.
+
+### Corrected Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime, 0.001) # 1 second difference is ok for now.
+
+### Corrected Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime, 0.0001) # 1 second difference is ok for now.
+
+### Corrected Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime, 0.00001) # 1 second difference is ok for now.
+
+### Corrected Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime, 0.000001) # 1 second difference is ok for now.
+
+### Corrected Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime, 0.0000001) # 1 second difference is ok for now.
+
+### Corrected Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime, 0.00000001) # 1 second difference is ok for now.
+
+### Corrected Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime, 0.000000001) # 1 second difference is ok for now.
+
+### Corrected Python Code
+self.assertEquals(sysmodel.mtime, os.stat(modelPath).st_mtime, 0.0000000001) # 1 second difference is ok for now.
+
+### Correct"
+"import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES if data == True else None)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    ax.set_ylabel('Average')
+    return (df, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    df['Average'].plot(ax=ax)
+    ax.set_ylabel('Average')
+    return (df, ax)","### Buggy Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES if data == True else None)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    ax.set_ylabel('Average')
+    return (df, ax)
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    df['Average'].plot(ax=ax)
+    ax.set_ylabel('Average')
+    return (df, ax)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-"
+"class Solution:
+
+    def validSubstringCount(self, word1: str, word2: str) -> int:
+        if len(word1) < len(word2):
+            return 0
+        cnt = Counter(word2)
+        need = len(cnt)
+        ans = l = 0
+        win = cnt
+        for c in word1:
+            win[c] += 1
+            if win[c] == cnt[c]:
+                need -= 1
+            while need == 0:
+                if win[word1[l]] == cnt[word1[l]]:
+                    need += 1
+                win[word1[l]] -= 1
+                ans += l
+                l += 1
+            ans += l
+        return ans","class Solution:
+
+    def validSubstringCount(self, word1: str, word2: str) -> int:
+        if len(word1) < len(word2):
+            return 0
+        cnt = Counter(word2)
+        need = len(cnt)
+        ans = l = 0
+        win = Counter()
+        for c in word1:
+            win[c] += 1
+            if win[c] == cnt[c]:
+                need -= 1
+            while need == 0:
+                if win[word1[l]] == cnt[word1[l]]:
+                    need += 1
+                win[word1[l]] -= 1
+                l += 1
+            ans += l
+        return ans","### Buggy Python Code
+class Solution:
+
+    def validSubstringCount(self, word1: str, word2: str) -> int:
+        if len(word1) < len(word2):
+            return 0
+        cnt = Counter(word2)
+        need = len(cnt)
+        ans = l = 0
+        win = cnt
+        for c in word1:
+            win[c] += 1
+            if win[c] == cnt[c]:
+                need -= 1
+            while need == 0:
+                if win[word1[l]] == cnt[word1[l]]:
+                    need += 1
+                win[word1[l]] -= 1
+                ans += l
+                l += 1
+            ans += l
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def validSubstringCount(self, word1: str, word2: str) -> int:
+        if len(word1) < len(word2):
+            return 0
+        cnt = Counter(word2)
+        need = len(cnt)
+        ans = l = 0
+        win = Counter()
+        for c in word1:
+            win[c] += 1
+            if win[c] == cnt[c]:
+                need -= 1
+            while need == 0:
+                if win[word1[l]] == cnt[word1[l]]:
+                    need += 1
+                win[word1[l]] -= 1
+                l += 1
+            ans += l
+        return ans - l + 1 if need == 0 else 0
+
+### Corrected Python class Solution:
+
+    def validSubstringCount(self, word1: str, word2: str) -> int:
+        if len(word1) < len(word2):
+            return 0
+        cnt = Counter(word2)
+        need = len(cnt)
+        ans = l = 0
+        win = Counter()
+        for c in word1:
+            win[c] += 1
+            if win[c] == cnt[c]:
+                need -= 1
+            while need == 0:
+                if win[word1[l]] == cnt[word1[l]]:
+                    need += 1
+                win[word1[l]] -= 1
+                l += 1
+            ans += l
+        return ans - l + 1 if need == 0 else 0
+/1200-1299/1209. Remove All Occurrences of a Substring/1209. Remove All Occurrences of a Substring.py
+class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        ans = ''
+        l = 0
+        while l < len(s):
+            i = s.find(sub, l)
+            if i == -1:
+                break
+            ans += s[l:i]
+            l = i + len(sub)
+        ans += s[l:]
+        return ans
+
+### Corrected Python class Solution:
+
+    def removeAllOccurrences(self, s: str, sub: str) -> str:
+        ans = ''
+        l = 0
+        while l < len(s):"
