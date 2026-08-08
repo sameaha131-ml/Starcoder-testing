@@ -31833,3 +31833,215 @@ import sys
 import pysam
 import unittest
 from pysam.tests.common import TestCase, PySAMTestCase, PySAMTestCase_v0_6_0, PySAMTestCase_v0_6_1, PySAMTestCase_v0_6_2, PySAMTestCase_v0_6_3, PySAMTestCase_v0_6_4, PySAMTestCase_v0_6_5, PySAMTestCase_v0_6_6, PySAMTestCase_v0_6_7, PySAMTestCase_v0_6_8, PySAMTestCase_v0_6_9, PySAMTestCase_v0_7_0, PySAMTestCase_v0_7_1, PySAMTestCase_v0_7_2, PySAMTestCase_v0_7_3, PySAMTestCase_v0_7_4, PySAMTestCase_v0_7_5, PySAMTestCase_v0_7_6, PySAMTestCase_v0_7_7, PySAMTestCase_v0_7_8, PySAMTestCase_v0_7_9, PySAMTestCase_v0_8_0, PySAMTestCase_v0_8_1, PySAMTestCase_v0_8_2, PySAMTestCase_v0_8_3, PySAMTestCase_v0_8_4, PySAMTestCase_v0_8_5, PySAMTestCase_v0_8_6, PySAMTestCase_v0_8_7, PySAMTestCase_v0_8_8, PySAMTestCase_v0_8_9, PySAMTestCase_v0_9_0, PySAMTestCase_v0_9_1, PySAMTestCase_v0_9_2, PySAMTestCase_v0_9_3, PySAMTestCase_v0_9_4, PySAMTestCase_v0_9_5, PySAMTestCase_v0_9_6, PySAMTestCase_v0_9_7, PySAMTestCase_v0_9_8, PySAMTestCase_v"
+"raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum))","raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_list[tnum], tnum))","### Buggy Python Code
+raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum))
+
+### Corrected Python Code
+raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum + 1))
+
+### Corrected Python code
+raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum + 1)) if tnum < len(input_subscripts) else raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum + 1)) if tnum < len(input_subscripts) else raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum + 1)) if tnum < len(input_subscripts) else raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum + 1)) if tnum < len(input_subscripts) else raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum + 1)) if tnum < len(input_subscripts) else raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum + 1)) if tnum < len(input_subscripts) else raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum + 1)) if tnum < len(input_subscripts) else raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum + 1)) if tnum < len(input_subscripts) else raise ValueError(""Einstein sum subscript '{}' does not contain the correct number of indices for operand {}."".format(input_subscripts[tnum], tnum + 1)) if tnum < len(input_subscripts) else raise ValueError(""Einstein sum subscript '{}' does not contain the correct number"
+"data = (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect'])","data = (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect'], k['value'])","### Buggy Python Code
+data = (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect'])
+
+### Corrected Python Code
+data = (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['type']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['idtag'], k['typerect']) + (k['x'], k['y'], k['w'], k['h'], k['"
+"import numpy as np
+import math
+
+def task_func(data, target, k):
+    if not isinstance(k, int) and k < 0:
+        raise ValueError(""'k' must be a non-negative integer"")
+    RADIUS_EARTH_KM = 6371.0
+
+    def calculate_distance(coord1, coord2):
+        lat1, lon1 = (coord1[0], coord1[1])
+        lat2, lon2 = (math.radians(coord2[0]), math.radians(coord2[1]))
+        dlat = lat2 - lat1
+        dlon = lon2 - lon1
+        a = math.sin(dlat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(a))
+        return RADIUS_EARTH_KM * c
+    distances = np.array([calculate_distance(target, coord) for coord in data.to_numpy()])
+    distances = np.sort(distances)
+    nearest_indices = distances.argsort()[:k]
+    nearest_neighbors = data.iloc[nearest_indices].values.tolist()
+    return nearest_neighbors","import numpy as np
+import math
+
+def task_func(data, target, k):
+    if not isinstance(k, int) or k < 0:
+        raise ValueError(""'k' must be a non-negative integer"")
+    RADIUS_EARTH_KM = 6371.0
+
+    def calculate_distance(coord1, coord2):
+        lat1, lon1 = (math.radians(coord1[0]), math.radians(coord1[1]))
+        lat2, lon2 = (math.radians(coord2[0]), math.radians(coord2[1]))
+        dlat = lat2 - lat1
+        dlon = lon2 - lon1
+        a = math.sin(dlat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+        return RADIUS_EARTH_KM * c
+    distances = np.array([calculate_distance(target, coord) for coord in data.to_numpy()])
+    nearest_indices = distances.argsort()[:k]
+    nearest_neighbors = data.iloc[nearest_indices].values.tolist()
+    return nearest_neighbors","import numpy as np
+import math
+
+def task_func(data, target, k):
+    if not isinstance(k, int) or k < 0:
+        raise ValueError(""'k' must be a non-negative integer"")
+    RADIUS_EARTH_KM = 6371.0
+
+    def calculate_distance(coord1, coord2):
+        lat1, lon1 = (math.radians(coord1[0]), math.radians(coord1[1]))
+        lat2, lon2 = (math.radians(coord2[0]), math.radians(coord2[1]))
+        dlat = lat2 - lat1
+        dlon = lon2 - lon1
+        a = math.sin(dlat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+        c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+        return RADIUS_EARTH_KM * c
+    distances = np.array([calculate_distance(target, coord) for coord in data.to_numpy()])
+    nearest_indices = distances.argsort()[:k]
+    nearest_neighbors = data.iloc[nearest_indices].values.tolist()
+    return nearest_neighbors
+/01_python_basics/01_python_basics_01/01_python_basics_01.py
+def task_func(data, target, k):
+    if not isinstance(k, int) or k < 0:
+        raise ValueError(""'k' must be a non-negative integer"")
+    RADIUS_EARTH_KM = 6371.0
+
+    def calculate_distance(coord1, coord2):
+        lat1, lon1 = (math.radians(coord1[0]), math.radians(coord1[1]))
+        lat2, lon2 = (math.radians(coord2[0]), math.radians(coord2[1]))
+        dlat = lat2 - lat1
+        dlon = lon2 - lon1
+        a = math.sin(dlat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+        c = 2 * math."
+"dataset = [xp.array(d, dtype=xp.float32) for d in dataset]","dataset = [xp.array(d, dtype=xp.int32) for d in dataset]","### Buggy Python Code
+dataset = [xp.array(d, dtype=xp.float32) for d in dataset]
+
+### Corrected Python Code
+dataset = [xp.array(d, dtype=xp.float32, copy=False) for d in dataset]
+
+return dataset, self.label_names, self.label_dict, self.num_classes, self.num_examples, self.num_features, self.num_examples_per_class, self.num_features_per_class, self.num_examples_per_class_per_feature, self.num_features_per_class_per_example, self.num_examples_per_class_per_feature_per_example, self.num_classes_per_feature, self.num_classes_per_feature_per_example, self.num_classes_per_feature_per_example_per_class, self.num_classes_per_feature_per_example_per_class_per_feature, self.num_classes_per_feature_per_example_per_class_per_feature_per_example, self.num_classes_per_feature_per_example_per_class_per_feature_per_example_per_class, self.num_classes_per_feature_per_example_per_class_per_feature_per_example_per_class_per_feature, self.num_classes_per_feature_per_example_per_class_per_feature_per_example_per_class_per_feature_per_example, self.num_classes_per_feature_per_example_per_class_per_feature_per_example_per_class_per_feature_per_example_per_class, self.num_classes_per_feature_per_example_per_class_per_feature_per_example_per_class_per_feature_per_example_per_class_per_feature, self.num_classes_per_feature_per_example_per_class_per_feature_per_example_per_class_per_feature_per_example_per_class_per_feature_per_example, self.num_classes_per_feature_per_example_per_class_per_feature_per_example_per_class_per_feature_per_example_per_class_per_feature_per_example_per_class, self"
+"if not clusters_w_vals_filtered:
+    clusters_w_vals_filtered.append(prev_clust)","if not clusters_w_vals_filtered and prev_clust is not None:
+    clusters_w_vals_filtered.append(prev_clust)","### Buggy Python Code
+if not clusters_w_vals_filtered:
+    clusters_w_vals_filtered.append(prev_clust)
+
+### Corrected Python Code
+if clusters_w_vals_filtered and prev_clust not in clusters_w_vals_filtered:
+    clusters_w_vals_filtered.append(prev_clust)
+
+### Corrected Python code
+if clusters_w_vals_filtered and prev_clust not in clusters_w_vals_filtered:
+    clusters_w_vals_filtered.append(prev_clust)
+    clusters_w_vals_filtered.append(next_clust)
+    clusters_w_vals_filtered.append(next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_next_next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_next_next_next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_next_next_next_next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_next_next_next_next_next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_next_next_next_next_next_next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_next_next_next_next_next_next_next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_next_next_next_next_next_next_next_next_next_next_clust)
+    clusters_w_vals_filtered.append(next_next_next_next_next"
+"from .io import get_frame_names, get_mask_names, get_plane_names","from .fits import get_frame_names, get_mask_names, get_plane_names","### Buggy Python Code
+from.io import get_frame_names, get_mask_names, get_plane_names
+
+### Corrected Python Code
+from.io import get_frame_names, get_mask_names, get_plane_names, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path, get_mask_names_from_path, get_plane_names_from_path, get_frame_names_from_path,"
+"return self.batch_insert({row: columns}, write_consistency_level=write_consistency_level)","return self.batch_insert({key: columns}, write_consistency_level=write_consistency_level)","### Buggy Python Code
+return self.batch_insert({row: columns}, write_consistency_level=write_consistency_level)
+
+### Corrected Python Code
+return self.batch_insert({row: columns}, write_consistency_level=write_consistency_level, if_exists=if_exists)
+/cassandra/cql/cql_query.py
+from cassandra.cql import CqlQuery, CqlPreparedQuery, CqlPreparedBoundQuery, CqlBatchQuery, CqlBatchPreparedQuery, CqlBatchBoundQuery, CqlBatch
+from cassandra.cql import CqlBatchQuery, CqlBatchPreparedQuery, CqlBatchBoundQuery, CqlBatch, CqlPreparedQuery, CqlPreparedBoundQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement, CqlPreparedBoundQuery, CqlPreparedQuery, CqlQuery, CqlStatement,"
+"import re
+import pandas as pd
+from datetime import datetime
+
+def task_func(log_file):
+    log_pattern = '(ERROR|INFO): \\[\\s*(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\s*\\] - (.*)'
+    parsed_data = []
+    with open(log_file, 'r') as file:
+        for line in file:
+            line = line.strip()
+            match = re.match(log_pattern, line)
+            if match:
+                log_type, timestamp, message = match.groups()
+                try:
+                    datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    raise ValueError(f'Invalid timestamp format: {timestamp}')
+                parsed_data.append([log_type, timestamp, lambda: message.strip()])
+    if not parsed_data:
+        raise ValueError('No valid log entries found.')
+    df = pd.DataFrame(parsed_data, columns=['Type', 'Timestamp', 'Message'])
+    output_csv_path = 'log_data.csv'
+    df.to_csv(output_csv_path, index_col=False)
+    return output_csv_path","import re
+import pandas as pd
+from datetime import datetime
+
+def task_func(log_file):
+    log_pattern = '(ERROR|INFO): \\[\\s*(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\s*\\] - (.*)'
+    parsed_data = []
+    with open(log_file, 'r') as file:
+        for line in file:
+            line = line.strip()
+            match = re.match(log_pattern, line)
+            if match:
+                log_type, timestamp, message = match.groups()
+                try:
+                    datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    raise ValueError(f'Invalid timestamp format: {timestamp}')
+                parsed_data.append([log_type, timestamp, message.strip()])
+    if not parsed_data:
+        raise ValueError('No valid log entries found.')
+    df = pd.DataFrame(parsed_data, columns=['Type', 'Timestamp', 'Message'])
+    output_csv_path = 'log_data.csv'
+    df.to_csv(output_csv_path, index=False)
+    return output_csv_path","_path
+
+### Corrected Python Code
+import re
+import pandas as pd
+from datetime import datetime
+
+def task_func(log_file):
+    log_pattern = '(ERROR|INFO): \\[\\s*(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\s*\\] - (.*)'
+    parsed_data = []
+    with open(log_file, 'r') as file:
+        for line in file:
+            line = line.strip()
+            match = re.match(log_pattern, line)
+            if match:
+                log_type, timestamp, message = match.groups()
+                try:
+                    datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    raise ValueError(f'Invalid timestamp format: {timestamp}')
+                parsed_data.append([log_type, timestamp, message.strip()])
+    if not parsed_data:
+        raise ValueError('No valid log entries found.')
+    df = pd.DataFrame(parsed_data, columns=['Type', 'Timestamp', 'Message'])
+    output_csv_path = 'log_data.csv'
+    df.to_csv(output_csv_path, index=False)
+    return output_csv_path
+
+if __name__ == '__main__':
+    log_file = 'log.txt'
+    output_csv_path = task_func(log_file)
+    print(f'Log data saved to {output_csv_path}')/README.md
+# Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python"
