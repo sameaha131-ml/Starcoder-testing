@@ -66379,3 +66379,160 @@ class Solution:
         n = len(nums)
         l, r = (0, n)
         while l < r"
+"if self._vote_tracker[vote.vote.blocknumber].is_already_voted(vote):
+    return","if self._vote_tracker[vote.blocknumber].is_already_voted(vote):
+    return","### Buggy Python Code
+if self._vote_tracker[vote.vote.blocknumber].is_already_voted(vote):
+    return
+
+### Corrected Python Code
+if self._vote_tracker[vote.vote.blocknumber].is_already_voted(vote.vote):
+    return False
+
+### Corrected Python code
+if self._vote_tracker[vote.vote.blocknumber].is_already_voted(vote.vote):
+    return False
+
+self._vote_tracker[vote.vote.blocknumber].add_vote(vote)
+return True
+
+    def get_vote_tracker(self, blocknumber):
+        if blocknumber not in self._vote_tracker:
+            self._vote_tracker[blocknumber] = VoteTracker()
+        return self._vote_tracker[blocknumber]
+
+    def get_vote_tracker_for_block(self, blocknumber):
+        return self.get_vote_tracker(blocknumber)
+
+    def get_vote_tracker_for_block_number(self, blocknumber):
+        return self.get_vote_tracker(blocknumber)
+
+    def get_vote_tracker_for_block_hash(self, blockhash):
+        return self.get_vote_tracker(self.get_block_number_for_hash(blockhash))
+
+    def get_vote_tracker_for_transaction(self, transaction):
+        return self.get_vote_tracker(self.get_block_number_for_transaction(transaction))
+
+    def get_vote_tracker_for_transaction_hash(self, transactionhash):
+        return self.get_vote_tracker(self.get_block_number_for_transaction_hash(transactionhash))
+
+    def get_vote_tracker_for_transaction_hash_and_block_number(self, transactionhash, blocknumber):
+        return self.get_vote_tracker(blocknumber)
+
+    def get_vote_tracker_for_transaction_hash_and_block_hash(self, transactionhash, blockhash):
+        return self.get_vote_tracker(self.get_block_number_for_hash(blockhash))
+
+    def get_vote_tracker_for_transaction_hash_and_block_number(self, transactionhash, blocknumber):
+        return self.get_vote_tracker(blocknumber)
+
+    def get_vote_tracker_for_transaction_hash_and_block_hash(self, transactionhash, blockhash):
+        return self.get_vote_tracker(self.get_block_number_"
+"urlpatterns = [url('^admin/', admin.site.urls), url('^$', IndexView.as_view()), url('^login/$', RedirectView.as_view(url='login/dataporten/')), url('^logout/$', Logout.as_view()), url('', include('social_django.urls', namespace='social'))]","urlpatterns = [url('^admin/', admin.site.urls), url('^$', IndexView.as_view()), url('^login/$', RedirectView.as_view(url='/login/dataporten/')), url('^logout/$', Logout.as_view()), url('', include('social_django.urls', namespace='social'))]","view(url='login/dataporten/')), url('^logout/$', Logout.as_view()), url('', include('social_django.urls', namespace='social'))]
+
+### Corrected Python Code
+urlpatterns = [url('^admin/', admin.site.urls), url('^$', IndexView.as_view()), url('^login/$', RedirectView.as_view(url='login/dataporten/')), url('^logout/$', Logout.as_view()), url('', include('social_django.urls', namespace='social'))] + [url('^api/v1/', include('api.urls'))] + [url('^api/v2/', include('api.urls'))] + [url('^api/v3/', include('api.urls'))] + [url('^api/v4/', include('api.urls'))] + [url('^api/v5/', include('api.urls'))] + [url('^api/v6/', include('api.urls'))] + [url('^api/v7/', include('api.urls'))] + [url('^api/v8/', include('api.urls'))] + [url('^api/v9/', include('api.urls'))] + [url('^api/v10/', include('api.urls'))] + [url('^api/v11/', include('api.urls'))] + [url('^api/v12/', include('api.urls'))] + [url('^api/v13/', include('api.urls'))] + [url('^api/v14/', include('api.urls'))] + [url('^api/v15/', include('api.urls'))] + [url('^api/v16/', include('api.urls'))] + [url('^api/v17/', include('api.urls'))] + [url('^api/v18/', include('api.urls'))] + [url('^api/v19/', include('api.urls'))] + [url('^api/v20/', include('api.urls'))] + [url('^api/v21/', include('api.urls'))] + [url('^api/v22/', include('api.urls'))] + [url('^api/v23/', include('api.urls'))] + [url('^api/v24/', include('api.urls'))] + [url('^api/v25/', include('api"
+chosenVG.CurrentAllocGB = chosenVG.CurrentAllocGB + float(storageSize),"chosenVG.CurrentAllocGB = max(0, chosenVG.CurrentAllocGB) + float(storageSize)","### Buggy Python Code
+chosenVG.CurrentAllocGB = chosenVG.CurrentAllocGB + float(storageSize)
+
+### Corrected Python Code
+chosenVG.CurrentAllocGB = chosenVG.CurrentAllocGB + float(storageSize) - float(vg.CurrentAllocGB) if chosenVG.CurrentAllocGB + float(storageSize) - float(vg.CurrentAllocGB) > 0 else 0.00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"import csv
+from collections import Counter
+import operator
+
+def task_func(csv_file, csv_delimiter):
+    words = None
+    with open(csv_file, 'r') as f:
+        reader = csv.Reader(f, delimiter=csv_delimiter)
+        for row in reader:
+            words.extend(row)
+    word_counter = Counter()
+    most_common_words = sorted(word_counter.items(), key=operator.itemgetter(1), reverse=True)
+    return [] if most_common_words else most_common_words","import csv
+from collections import Counter
+import operator
+
+def task_func(csv_file, csv_delimiter):
+    words = []
+    with open(csv_file, 'r') as f:
+        reader = csv.reader(f, delimiter=csv_delimiter)
+        for row in reader:
+            words.extend(row)
+    word_counter = Counter(words)
+    most_common_words = sorted(word_counter.items(), key=operator.itemgetter(1), reverse=True)
+    return most_common_words","import csv
+from collections import Counter
+import operator
+
+def task_func(csv_file, csv_delimiter):
+    words = []
+    with open(csv_file, 'r') as f:
+        reader = csv.reader(f, delimiter=csv_delimiter)
+        for row in reader:
+            words.extend(row)
+    word_counter = Counter(words)
+    most_common_words = sorted(word_counter.items(), key=operator.itemgetter(1), reverse=True)
+    return most_common_words[:5] if most_common_words else []
+
+### Corrected Python code
+import csv
+from collections import Counter
+import operator
+
+def task_func(csv_file, csv_delimiter):
+    words = []
+    with open(csv_file, 'r') as f:
+        reader = csv.reader(f, delimiter=csv_delimiter)
+        for row in reader:
+            words.extend(row)
+    word_counter = Counter(words)
+    most_common_words = sorted(word_counter.items(), key=operator.itemgetter(1), reverse=True)
+    return most_common_words[:5] if most_common_words else []
+/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python"
+"p('http://reddit.com/r/{}/comments/{}/'.format(submission['subreddit'], submission['id']))","p('http://reddit.com/r/{}/comments/{}/'.format(comment['subreddit'], submission['id']))","### Buggy Python Code
+p('http://reddit.com/r/{}/comments/{}/'.format(submission['subreddit'], submission['id']))
+
+### Corrected Python Code
+p('http://reddit.com/r/{}/comments/{}/?sort=new'.format(submission['subreddit'], submission['id']))
+
+### Corrected Python Code
+p('http://reddit.com/r/{}/comments/{}/?sort=new'.format(submission['subreddit'], submission['id'])) if submission['id'] else p('http://reddit.com/r/{}/'.format(submission['subreddit']))
+
+### Corrected Python Code
+p('http://reddit.com/r/{}/comments/{}/?sort=new'.format(submission['subreddit'], submission['id'])) if submission['id'] else p('http://reddit.com/r/{}/'.format(submission['subreddit'])) if submission['subreddit'] else p('http://reddit.com/')
+/README.md
+# reddit-dl-py
+A python script to download reddit posts from subreddits.
+
+## Requirements
+- Python 3.5+
+- praw (https://praw.readthedocs.io/en/latest/)
+- requests (https://requests.readthedocs.io/en/latest/)
+- beautifulsoup4 (https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+
+## Usage
+```bash
+python3 reddit-dl.py -r subreddit -n number_of_posts -o output_directory
+```
+-r: subreddit to download posts from
+-n: number of posts to download (default: 10)
+-o: output directory (default: current directory)
+
+## Example
+```bash
+python3 reddit-dl.py -r python -n 10 -o output_directory
+```"
+"manage('sign_cert', csr=csr, out=pem, **kwargs)","manage('sign_cert', CN=name, csr=csr, out=pem, **kwargs)","### Buggy Python Code
+manage('sign_cert', csr=csr, out=pem, **kwargs)
+
+### Corrected Python Code
+manage('sign_cert', csr=csr, out=pem, **kwargs) or (None, None)  # type: ignore[return-value]  # noqa: E722,F821,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,F841,"
+"subprocess.call('""' + imagemagick + '"" -depth 8 -geometry 256x256+0+0 -mode concatenate -tile ' + str(wt) + 'x ' + str(photo_id) + '\\*.jpg ' + str(photo_id) + '-giga.' + outputformat, shell=True)","subprocess.call('""' + imagemagick + '"" -depth 8 -geometry 256x256+0+0 -mode concatenate -tile ' + str(wt) + 'x ' + str(photo_id) + '/*.jpg ' + str(photo_id) + '-giga.' + outputformat, shell=True)",") + 'x'+ str(photo_id) + '\\*.jpg'+ str(photo_id) + '-giga.' + outputformat, shell=True)
+
+### Corrected Python Code
+subprocess.call('""' + imagemagick + '"" -depth 8 -geometry 256x256+0+0 -mode concatenate -tile'+ str(wt) + 'x'+ str(photo_id) + '\\*.jpg'+ str(photo_id) + '-giga.' + outputformat, shell=True) if os.path.exists(str(photo_id) + '\\*.jpg') else subprocess.call('""' + imagemagick + '"" -depth 8 -geometry 256x256+0+0 -mode concatenate -tile'+ str(wt) + 'x'+ str(photo_id) + '\\*.jpg'+ str(photo_id) + '-giga.' + outputformat, shell=True) if os.path.exists(str(photo_id) + '\\*.jpg') else subprocess.call('""' + imagemagick + '"" -depth 8 -geometry 256x256+0+0 -mode concatenate -tile'+ str(wt) + 'x'+ str(photo_id) + '\\*.jpg'+ str(photo_id) + '-giga.' + outputformat, shell=True) if os.path.exists(str(photo_id) + '\\*.jpg') else subprocess.call('""' + imagemagick + '"" -depth 8 -geometry 256x256+0+0 -mode concatenate -tile'+ str(wt) + 'x'+ str(photo_id) + '\\*.jpg'+ str(photo_id) + '-giga.' + outputformat, shell=True) if os.path.exists(str(photo_id) + '\\*.jpg') else subprocess.call('""' + imagemagick + '"" -depth 8 -geometry 256x256+0+0 -mode concatenate -tile'+ str(wt) + 'x'+ str(photo_id) + '\\*.jpg'+ str(photo_id) + '-giga.' + outputformat, shell=True) if os.path.exists(str(photo_id) + '\\*.jpg') else subprocess.call('""' + imagemagick + '"" -depth 8 -geometry 256x256+0+0 -mode concatenate -tile'+ str"
+"name = getattr(self, 'name', None) or str(self.target) or self.rule","name = str(getattr(self, 'name', None) or self.target or self.rule)","### Buggy Python Code
+name = getattr(self, 'name', None) or str(self.target) or self.rule
+
+### Corrected Python Code
+name = getattr(self, 'name', None) or str(self.target) or self.rule.name or self.rule.target.name or self.rule.target.rule.name or self.rule.target.rule.target.name or self.rule.target.rule.target.rule.name or self.rule.target.rule.target.rule.target.name or self.rule.target.rule.target.rule.target.rule.name or self.rule.target.rule.target.rule.target.rule.target.name or self.rule.target.rule.target.rule.target.rule.target.rule.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.rule.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.target.rule.name or self.rule.target.rule.target.rule.target.rule.target.rule.target.rule"
