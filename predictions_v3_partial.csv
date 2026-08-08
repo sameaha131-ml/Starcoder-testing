@@ -46490,3 +46490,492 @@ raise self.InvalidFile('Error, expecting delimiter. Got <%s> should be <%s>' % (
             if self.line[0] == ';':
                 continue
             if self.line[0] == '=':"
+"class Solution:
+
+    def isPossibleToCutPath(self, grid: List[List[int]]) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dirs = [(-1, 0), (0, -1)]
+
+        def dfs(i: int, j: int) -> None:
+            grid[i][j] = 2
+            for di, dj in dirs:
+                if 0 <= i + di < m and 0 <= j + dj < n and (grid[i + di][j + dj] == 1):
+                    dfs(i + di, j + dj)
+        dfs(m - 1, n - 1)
+        dq = collections.deque([(0, 0)])
+        grid[0][0] = 0
+        dirs = [(1, 0), (0, 1)]
+        while dq:
+            l = len(dq)
+            for _ in range(l):
+                i, j = dq.popleft()
+                if i == m - 1 and j == n - 1:
+                    return True
+                for di, dj in dirs:
+                    if 0 <= i + di < m and 0 <= j + dj < n and (grid[i + di][j + dj] == 2):
+                        dq.append((i + di, j + dj))
+                        grid[i + di][j + dj] = 0
+            if len(dq) == 1 and dq[0] != (m - 1, n - 1):
+                return False
+        return False","class Solution:
+
+    def isPossibleToCutPath(self, grid: List[List[int]]) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dirs = [(-1, 0), (0, -1)]
+
+        def dfs(i: int, j: int) -> None:
+            grid[i][j] = 2
+            for di, dj in dirs:
+                if 0 <= i + di < m and 0 <= j + dj < n and (grid[i + di][j + dj] == 1):
+                    dfs(i + di, j + dj)
+        dfs(m - 1, n - 1)
+        dq = collections.deque([(0, 0)])
+        grid[0][0] = 0
+        dirs = [(1, 0), (0, 1)]
+        while dq:
+            l = len(dq)
+            for _ in range(l):
+                i, j = dq.popleft()
+                if i == m - 1 and j == n - 1:
+                    return False
+                for di, dj in dirs:
+                    if 0 <= i + di < m and 0 <= j + dj < n and (grid[i + di][j + dj] == 2):
+                        dq.append((i + di, j + dj))
+                        grid[i + di][j + dj] = 0
+            if len(dq) == 1 and dq[0] != (m - 1, n - 1):
+                return True
+        return True","class Solution:
+
+    def isPossibleToCutPath(self, grid: List[List[int]]) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dirs = [(-1, 0), (0, -1)]
+
+        def dfs(i: int, j: int) -> None:
+            grid[i][j] = 2
+            for di, dj in dirs:
+                if 0 <= i + di < m and 0 <= j + dj < n and (grid[i + di][j + dj] == 1):
+                    dfs(i + di, j + dj)
+        dfs(m - 1, n - 1)
+        dq = collections.deque([(0, 0)])
+        grid[0][0] = 0
+        dirs = [(1, 0), (0, 1)]
+        while dq:
+            l = len(dq)
+            for _ in range(l):
+                i, j = dq.popleft()
+                if i == m - 1 and j == n - 1:
+                    return True
+                for di, dj in dirs:
+                    if 0 <= i + di < m and 0 <= j + dj < n and (grid[i + di][j + dj] == 0):
+                        dq.append((i + di, j + dj))
+                        grid[i + di][j + dj] = 2
+            if len(dq) == 1 and dq[0]!= (m - 1, n - 1):
+                return False
+        return False
+
+class Solution:
+
+    def isPossibleToCutPath(self, grid: List[List[int]]) -> bool:
+        m, n = (len(grid), len(grid[0]))
+        dirs = [(-1, 0), (0, -1)]
+
+        def dfs(i: int, j: int) -> None:
+            grid[i][j] = 2
+            for di, dj in dirs:
+                if 0 <= i + di < m and 0 <= j + dj < n and (grid[i + di][j + dj] == 1):
+                    dfs(i + di, j + dj)
+        dfs(m - 1, n - 1)
+        dq = collections.deque([(0, 0)])
+        grid[0][0] ="
+"ZeroDivisionError: e_die('Divide by zero', word=node.right)","ZeroDivisionError: e_die('Divide by zero', word=node.right.w)","### Buggy Python Code
+ZeroDivisionError: e_die('Divide by zero', word=node.right)
+
+### Corrected Python Code
+ZeroDivisionError: e_die('Divide by zero', word=node.left) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right) or e_die('Divide by zero', word=node.right"
+colWidth = availWidth * int(colWidth[:-1]) / 100,colWidth = int(availWidth * int(colWidth[:-1]) / 100),"### Buggy Python Code
+colWidth = availWidth * int(colWidth[:-1]) / 100
+
+### Corrected Python Code
+colWidth = availWidth * int(colWidth[:-1]) / 100.0 if colWidth[-1] == '%' else int(colWidth[:-1]) / 100.0 * availWidth
+
+return colWidth, availWidth - colWidth, availWidth - colWidth - 1, availWidth - colWidth - 2, availWidth - colWidth - 3, availWidth - colWidth - 4, availWidth - colWidth - 5, availWidth - colWidth - 6, availWidth - colWidth - 7, availWidth - colWidth - 8, availWidth - colWidth - 9, availWidth - colWidth - 10, availWidth - colWidth - 11, availWidth - colWidth - 12, availWidth - colWidth - 13, availWidth - colWidth - 14, availWidth - colWidth - 15, availWidth - colWidth - 16, availWidth - colWidth - 17, availWidth - colWidth - 18, availWidth - colWidth - 19, availWidth - colWidth - 20, availWidth - colWidth - 21, availWidth - colWidth - 22, availWidth - colWidth - 23, availWidth - colWidth - 24, availWidth - colWidth - 25, availWidth - colWidth - 26, availWidth - colWidth - 27, availWidth - colWidth - 28, availWidth - colWidth - 29, availWidth - colWidth - 30, availWidth - colWidth - 31, availWidth - colWidth - 32, availWidth - colWidth - 33, availWidth - colWidth - 34, availWidth - colWidth - 35, availWidth - colWidth - 36, availWidth - colWidth - 37, availWidth - colWidth - 38, availWidth - colWidth - 39, availWidth - colWidth - 40, availWidth - colWidth - 41, availWidth - colWidth - 42, availWidth - colWidth - 43, availWidth - colWidth - 44, availWidth - colWidth - 45, availWidth - colWidth - 46, availWidth -"
+"import socket
+import requests
+
+def task_func(host):
+    if host is None:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = host
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status
+        geolocation = response.json()
+        return {'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}')","import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}')","### Buggy Python Code
+import socket
+import requests
+
+def task_func(host):
+    if host is None:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = host
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status
+        geolocation = response.json()
+        return {'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}')
+
+### Corrected Python Code
+import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}')
+/python-scripts/task_1.py
+import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}')
+/python-scripts/task_2.py
+import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f'https://ipinfo.io/{ip_address}')
+        response.raise_for_status()
+        geolocation = response.json()
+        return {'ip_address': ip_address, 'geolocation': geolocation}
+    except (socket.gaierror, requests.HTTPError) as e:
+        raise ConnectionError(f'Failed to retrieve information for {host}: {e}') from e
+/python-scripts/task_3.py
+import socket
+import requests
+
+def task_func(host):
+    if not host:
+        raise ValueError('Host must be a non-empty string.')
+    try:
+        ip_address = socket.gethostbyname(host)
+        response = requests.get(f"
+"import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+def task_func(range_start=0, range_end=10, step=0.1):
+    x_values = np.arange(range_start, range_end, step)
+    data = ((x, math.exp(x)) for x in x_values)
+    _, ax = plt.subplots()
+    for x, exp_x in data:
+        ax.scatter(x, exp_x, color='b')
+    ax.set_title('Exponential Function Plot')
+    ax.set_xlabel('x')
+    ax.set_ylabel('e^x')
+    data = ((x, math.exp(x)) for x in x_values)
+    list(data)
+    return (data, ax)","import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+def task_func(range_start=0, range_end=10, step=0.1):
+    x_values = np.arange(range_start, range_end, step)
+    data = ((x, math.exp(x)) for x in x_values)
+    _, ax = plt.subplots()
+    for x, exp_x in data:
+        ax.scatter(x, exp_x, color='b')
+    ax.set_title('Exponential Function Plot')
+    ax.set_xlabel('x')
+    ax.set_ylabel('e^x')
+    data = ((x, math.exp(x)) for x in x_values)
+    return (data, ax)","def task_func(range_start=0, range_end=10, step=0.1):
+    x_values = np.arange(range_start, range_end, step)
+    data = ((x, math.exp(x)) for x in x_values)
+    _, ax = plt.subplots()
+    for x, exp_x in data:
+        ax.scatter(x, exp_x, color='b')
+    ax.set_title('Exponential Function Plot')
+    ax.set_xlabel('x')
+    ax.set_ylabel('e^x')
+    data = ((x, math.exp(x)) for x in x_values)
+    list(data)
+    return (data, ax)
+
+### Corrected Python Code
+import numpy as np
+import math
+import matplotlib.pyplot as plt
+
+def task_func(range_start=0, range_end=10, step=0.1):
+    x_values = np.arange(range_start, range_end, step)
+    data = ((x, math.exp(x)) for x in x_values)
+    _, ax = plt.subplots()
+    for x, exp_x in data:
+        ax.scatter(x, exp_x, color='b')
+    ax.set_title('Exponential Function Plot')
+    ax.set_xlabel('x')
+    ax.set_ylabel('e^x')
+    data = ((x, math.exp(x)) for x in x_values)
+    return (data, ax)
+
+if __name__ == '__main__':
+    data, ax = task_func(range_start=0, range_end=10, step=0.1)
+    plt.show()
+    print(data)
+    print(ax)/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/"
+"class Solution:
+
+    def minimumRightShifts(self, nums: List[int]) -> int:
+        n = len(nums)
+        i = 1
+        while i < n and nums[i - 1] < nums[i]:
+            i += 1
+        k = i
+        while k < n and nums[k - 1] < nums[k] < nums[0]:
+            k += 1
+        return -1 if k < n else n - i","class Solution:
+
+    def minimumRightShifts(self, nums: List[int]) -> int:
+        n = len(nums)
+        i = 1
+        while i < n and nums[i - 1] < nums[i]:
+            i += 1
+        k = i + 1
+        while k < n and nums[k - 1] < nums[k] < nums[0]:
+            k += 1
+        return -1 if k < n else n - i","### Buggy Python Code
+class Solution:
+
+    def minimumRightShifts(self, nums: List[int]) -> int:
+        n = len(nums)
+        i = 1
+        while i < n and nums[i - 1] < nums[i]:
+            i += 1
+        k = i
+        while k < n and nums[k - 1] < nums[k] < nums[0]:
+            k += 1
+        return -1 if k < n else n - i
+
+### Corrected Python Code
+class Solution:
+
+    def minimumRightShifts(self, nums: List[int]) -> int:
+        n = len(nums)
+        i = 1
+        while i < n and nums[i - 1] < nums[i]:
+            i += 1
+        k = i + 1
+        while k < n and nums[k - 1] < nums[k] < nums[0]:
+            k += 1
+        return -1 if k < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i + 1 if i < n else n - i +"
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
+"class Solution:
+
+    def countOfSubstrings(self, word: str, k: int) -> int:
+
+        def f(k: int) -> int:
+            cnt = dict()
+            ans = l = x = 0
+            for c in word:
+                if c in 'aeiou':
+                    cnt[c] += 1
+                else:
+                    x += 1
+                while x > k and len(cnt) == 5:
+                    d = word[l]
+                    if d in 'aeiou':
+                        cnt[d] -= 1
+                        if cnt[d] == 0:
+                            cnt.pop(d)
+                    else:
+                        x -= 1
+                    l += 1
+                ans += c
+            return ans
+        return f(k + 1) - f(k)","class Solution:
+
+    def countOfSubstrings(self, word: str, k: int) -> int:
+
+        def f(k: int) -> int:
+            cnt = Counter()
+            ans = l = x = 0
+            for c in word:
+                if c in 'aeiou':
+                    cnt[c] += 1
+                else:
+                    x += 1
+                while x >= k and len(cnt) == 5:
+                    d = word[l]
+                    if d in 'aeiou':
+                        cnt[d] -= 1
+                        if cnt[d] == 0:
+                            cnt.pop(d)
+                    else:
+                        x -= 1
+                    l += 1
+                ans += l
+            return ans
+        return f(k) - f(k + 1)","class Solution:
+
+    def countOfSubstrings(self, word: str, k: int) -> int:
+
+        def f(k: int) -> int:
+            cnt = dict()
+            ans = l = x = 0
+            for c in word:
+                if c in 'aeiou':
+                    cnt[c] += 1
+                else:
+                    x += 1
+                while x > k and len(cnt) == 5:
+                    d = word[l]
+                    if d in 'aeiou':
+                        cnt[d] -= 1
+                        if cnt[d] == 0:
+                            cnt.pop(d)
+                    else:
+                        x -= 1
+                    l += 1
+                ans += c
+            return ans
+        return f(k + 1) - f(k)
+
+### Corrected Python Code
+class Solution:
+
+    def countOfSubstrings(self, word: str, k: int) -> int:
+
+        def f(k: int) -> int:
+            cnt = Counter()
+            ans = l = x = 0
+            for c in word:
+                if c in 'aeiou':
+                    cnt[c] += 1
+                else:
+                    x += 1
+                while x >= k and len(cnt) == 5:
+                    d = word[l]
+                    if d in 'aeiou':
+                        cnt[d] -= 1
+                        if cnt[d] == 0:
+                            cnt.pop(d)
+                    else:
+                        x -= 1
+                    l += 1
+                ans += l
+            return ans
+        return f(k) - f(k + 1)
+
+### Corrected Python class Solution:
+
+    def countOfSubstrings(self, word: str, k: int) -> int:
+
+        def f(k: int) -> int:
+            cnt = Counter()
+            ans = l = x = 0
+            for c in word:
+                if c in 'aeiou':
+                    cnt[c] += 1
+                else:
+                    x += 1
+                while x >= k and len(cnt) == 5:
+                    d = word[l]
+                    if d in 'aeiou':
+                        cnt[d] -= 1
+                        if cnt[d] == 0:
+                            cnt.pop(d)
+                    else:
+                        x -= 1
+                    l += 1
+                ans += l
+            return ans
+        return f(k) - f(k + 1) + 1
+
+### Corrected Python class Solution:
+
+    def countOfSubstrings(self, word: str, k: int) -> int:
+
+        def f(k: int) -> int:
+            cnt = Counter()
+            ans = l = x = 0
+            for c in word:
+                if c in 'aeiou':
+                    cnt[c] += 1
+                else:
+                    x += 1
+                while x >= k and len(cnt) == 5:
+                    d = word[l]
+                    if d in 'aeiou':
+                        cnt[d] -= 1
+                        if cnt[d] == 0:
+                            cnt.pop(d)
+                    else:
+                        x -= 1
+                    l += 1
+                ans += l
+            return ans
+        return f(k) - f(k + 1"
