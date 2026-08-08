@@ -47605,3 +47605,327 @@ class Solution {
 class Solution:
 
     def findMaxMin(self, nums: List[int]) -> List"
+"falcon.generate_consensus.argtypes = [POINTER(c_char_p), c_uint, c_uint, c_uint, c_uint, c_uint, c_double]","falcon.generate_consensus.argtypes = [POINTER(c_char_p), c_uint, c_uint, c_uint, c_double]","### Buggy Python Code
+falcon.generate_consensus.argtypes = [POINTER(c_char_p), c_uint, c_uint, c_uint, c_uint, c_uint, c_double]
+
+### Corrected Python Code
+falcon.generate_consensus.argtypes = [POINTER(c_char_p), c_uint, c_uint, c_uint, c_uint, c_uint, c_double, c_double]
+
+### Corrected Python Code
+falcon.generate_consensus.argtypes = [POINTER(c_char_p), c_uint, c_uint, c_uint, c_uint, c_uint, c_double, c_double, c_double]
+
+### Corrected Python Code
+falcon.generate_consensus.argtypes = [POINTER(c_char_p), c_uint, c_uint, c_uint, c_uint, c_uint, c_double, c_double, c_double, c_double]
+
+### Corrected Python Code
+falcon.generate_consensus.argtypes = [POINTER(c_char_p), c_uint, c_uint, c_uint, c_uint, c_uint, c_double, c_double, c_double, c_double, c_double]
+
+### Corrected Python Code
+falcon.generate_consensus.argtypes = [POINTER(c_char_p), c_uint, c_uint, c_uint, c_uint, c_uint, c_double, c_double, c_double, c_double, c_double, c_double]
+
+### Corrected Python Code
+falcon.generate_consensus.argtypes = [POINTER(c_char_p), c_uint, c_uint, c_uint, c_uint, c_uint, c_double, c_double, c_double, c_double, c_double, c_double, c_double]
+
+### Corrected Python Code
+falcon.generate_consensus.argtypes = [POINTER(c_char_p), c_uint, c_uint, c_uint, c_uint, c_uint, c_double, c_double, c_double, c_double, c_double, c_double, c_double, c_double]
+
+### Corrected Python Code
+falcon.generate_consensus.argtypes = [POINTER(c_char_p), c_uint, c_uint, c_uint, c_uint, c_uint, c_double,"
+"bel.write('SET Citation = {3}""Online Resource"", ""{0}"", ""{1}"", ""{2}"", """", """"{4}\n\n'.format(name, url, date, '{', '}'))","bel.write('SET Citation = {3}""Online Resource"", ""{0}"", ""{1}{5}"", ""{2}"", """", """"{4}\n\n'.format(name, base_url, date, '{', '}', ns_name))","### Buggy Python Code
+bel.write('SET Citation = {3}""Online Resource"", ""{0}"", ""{1}"", ""{2}"", """", """"{4}\n\n'.format(name, url, date, '{', '}'))
+
+### Corrected Python Code
+bel.write('SET Citation = {3}""Online Resource"", ""{0}"", ""{1}"", ""{2}"", """", """"{4}\n\n'.format(name, url, date, '{', '}', '')) if name and url and date else '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\n\n' + '' + '\"
+"import socket
+from ipaddress import IPv4Network
+from threading import Thread
+
+def task_func(ip_range, port):
+    open_ports = {}
+
+    def check_port(ip):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.settimeout(1)
+        try:
+            sock.connect((ip, port))
+            open_ports[str(ip)] = True
+        except socket.error:
+            open_ports[str(ip)] = False
+        finally:
+            sock.close()
+    threads = []
+    for ip in IPv4Network(ip_range):
+        thread = Thread(target=check_port, args=ip)
+        thread.start()
+        threads.append(thread)
+    for thread in threads[:1]:
+        thread.join()
+    return open_ports","import socket
+from ipaddress import IPv4Network
+from threading import Thread
+
+def task_func(ip_range, port):
+    open_ports = {}
+
+    def check_port(ip):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.settimeout(1)
+        try:
+            sock.connect((str(ip), port))
+            open_ports[str(ip)] = True
+        except socket.error:
+            open_ports[str(ip)] = False
+        finally:
+            sock.close()
+    threads = []
+    for ip in IPv4Network(ip_range):
+        thread = Thread(target=check_port, args=(ip,))
+        thread.start()
+        threads.append(thread)
+    for thread in threads:
+        thread.join()
+    return open_ports","import socket
+from ipaddress import IPv4Network
+from threading import Thread
+
+def task_func(ip_range, port):
+    open_ports = {}
+
+    def check_port(ip):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.settimeout(1)
+        try:
+            sock.connect((str(ip), port))
+            open_ports[str(ip)] = True
+        except socket.error:
+            open_ports[str(ip)] = False
+        finally:
+            sock.close()
+    threads = []
+    for ip in IPv4Network(ip_range):
+        thread = Thread(target=check_port, args=(ip,))
+        thread.start()
+        threads.append(thread)
+    for thread in threads:
+        thread.join()
+    return open_ports
+
+if __name__ == '__main__':
+    open_ports = task_func('192.168.1.0/24', 80)
+    print(open_ports)/python/python-basics/01-basics/01-basics.py
+# 1.1.1.1 - 1.1.1.255
+import socket
+from ipaddress import IPv4Network
+from threading import Thread
+
+def task_func(ip_range, port):
+    open_ports = {}
+
+    def check_port(ip):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock.settimeout(1)
+        try:
+            sock.connect((str(ip), port))
+            open_ports[str(ip)] = True
+        except socket.error:
+            open_ports[str(ip)] = False
+        finally:
+            sock.close()
+    threads = []
+    for ip in IPv4Network(ip_range):
+        thread = Thread(target=check_port, args=(ip,))
+        thread.start()
+        threads.append(thread)
+    for thread in threads:
+        thread.join()
+    return open_ports
+
+if __name__ == '__main__':
+    open_ports = task_func('192.168.1.0/24', 80)
+    print(open_ports)/python/python-basics/01-basics/02-basics.py
+# 1.1"
+"import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+
+def task_func(signal, precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = fft(signal)
+    transformed_signal_rounded = np.round(np.abs(transformed_signal), precision).tolist()
+    fig, ax = plt.subplots(2, 1)
+    ax[0].plot(signal, axis=1)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)","import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+
+def task_func(signal, precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = fft(signal)
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    fig, ax = plt.subplots(2, 1)
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)","_rounded), ax)
+
+### Corrected Python Code
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.fft import fft
+
+def task_func(signal, precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = fft(signal)
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    fig, ax = plt.subplots(2, 1)
+    ax[0].plot(signal)
+    ax[0].set_title('Original Signal')
+    ax[1].plot(transformed_signal_rounded)
+    ax[1].set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)
+
+if __name__ == '__main__':
+    signal = np.random.rand(100)
+    (transformed_signal_rounded, ax) = task_func(signal, precision=2, seed=777)
+    print(transformed_signal_rounded)
+    plt.show()/01_numpy/01_01_array_creation.py
+import numpy as np
+
+def task_func(precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = np.abs(np.random.randn(100))
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    fig, ax = plt.subplots()
+    ax.plot(transformed_signal_rounded)
+    ax.set_title('Transformed Signal')
+    plt.tight_layout()
+    return (np.array(transformed_signal_rounded), ax)
+
+if __name__ == '__main__':
+    (transformed_signal_rounded, ax) = task_func(precision=2, seed=777)
+    print(transformed_signal_rounded)
+    plt.show()/01_numpy/01_02_array_creation_from_list.py
+import numpy as np
+
+def task_func(precision=2, seed=777):
+    np.random.seed(seed)
+    transformed_signal = np.abs(np.random.randn(100))
+    transformed_signal_rounded = np.round(transformed_signal, precision).tolist()
+    fig, ax = plt.subplots()
+    ax"
+"class Solution:
+
+    def numberOfArithmeticSlices(self, nums: List[int]) -> int:
+        total, n = (0, len(nums))
+        dp = [defaultdict(int) for _ in nums]
+        for i in range(1, n):
+            for j in range(i):
+                diff = nums[j] - nums[i]
+                dp[i][diff] += dp[j][diff] + 1
+                total += self.undifned_method(dp[j][diff])
+        return total","class Solution:
+
+    def numberOfArithmeticSlices(self, nums: List[int]) -> int:
+        total, n = (0, len(nums))
+        dp = [defaultdict(int) for _ in nums]
+        for i in range(1, n):
+            for j in range(i):
+                diff = nums[j] - nums[i]
+                dp[i][diff] += dp[j][diff] + 1
+                total += dp[j][diff]
+        return total","for j in range(i):
+                diff = nums[j] - nums[i]
+                dp[i][diff] += dp[j][diff] + 1
+                total += self.undifned_method(dp[j][diff])
+        return total
+
+### Corrected Python Code
+class Solution:
+
+    def numberOfArithmeticSlices(self, nums: List[int]) -> int:
+        total, n = (0, len(nums))
+        dp = [defaultdict(int) for _ in nums]
+        for i in range(1, n):
+            for j in range(i):
+                diff = nums[i] - nums[j]
+                dp[i][diff] += dp[j][diff] + 1
+                total += dp[i][diff]
+        return total
+
+    def undifned_method(self, x):
+        return x == 0 or x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 7 or x == 8 or x == 9 or x == 10 or x == 11 or x == 12 or x == 13 or x == 14 or x == 15 or x == 16 or x == 17 or x == 18 or x == 19 or x == 20 or x == 21 or x == 22 or x == 23 or x == 24 or x == 25 or x == 26 or x == 27 or x == 28 or x == 29 or x == 30 or x == 31 or x == 32 or x == 33 or x == 34 or x == 35 or x == 36 or x == 37 or x == 38 or x == 39 or x == 40 or x == 41 or x == 42 or x == 43 or x == 44 or x == 45 or x == 46 or x == 47 or x == 48 or x == 49 or x == 50 or x == 51 or x == 52 or x == 53 or x == 54 or x == 55 or x == 56 or x == 57 or x == 58 or x == 59 or x == 60 or x == 61 or x == 62 or x == 63 or x == 64 or x == 65 or x == 66 or"
+"setattr(instance, property_name + '_history', collections.deque(maxlen=how_long / how_often))","setattr(instance, property_name + '_history', collections.deque(maxlen=int(how_long / how_often)))","### Buggy Python Code
+setattr(instance, property_name + '_history', collections.deque(maxlen=how_long / how_often))
+
+### Corrected Python Code
+setattr(instance, property_name + '_history', collections.deque(maxlen=how_long / how_often)) if how_long else setattr(instance, property_name + '_history', collections.deque(maxlen=1))
+
+### Corrected Python: setattr(instance, property_name + '_history', collections.deque(maxlen=how_long / how_often)) if how_long else setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr(instance, property_name + '_history', collections.deque(maxlen=1)) or setattr"
+return HttpResponseRedirect('%sponsorship' % settings.SITE_URL),return HttpResponseRedirect('%ssponsorship' % settings.SITE_URL),"### Buggy Python Code
+return HttpResponseRedirect('%sponsorship' % settings.SITE_URL)
+
+### Corrected Python Code
+return HttpResponseRedirect('%sponsorship/' % settings.SITE_URL)
+/apps/sponsorship/views.py
+from django.shortcuts import render_to_response, get_object_or_404
+from django.template import RequestContext
+from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth import authenticate, login, logout
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib.sites.models import Site
+from django.contrib.auth.models import Group, Permission
+from django.contrib.auth.models import User, Group, Permission
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth import authenticate, login, logout
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib.sites.models import Site
+from django.contrib.auth.models import Group, Permission
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth import authenticate, login, logout
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib.sites.models import Site
+from django.contrib.auth.models import Group, Permission
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth import authenticate, login, logout
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib.sites.models import Site
+from django.contrib.auth.models import Group, Permission
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth import authenticate, login, logout
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib.sites.models import Site
+from django.contrib.auth.models import Group,"
+"command_dispath(command.split(' ', 1), None)","command_dispatch(command.split(' ', 1), None)","### Buggy Python Code
+command_dispath(command.split(' ', 1), None)
+
+### Corrected Python Code
+command_dispatch(command.split(' ', 1), None) or (None, None)  # (None, None) is a valid return value for command_dispatch() when no command is given.
+/src/pyt2go/pyt2go.py
+#!/usr/bin/env python3
+
+import os
+import sys
+import argparse
+import logging
+from pyt2go.pyt2go_core import *
+from pyt2go.pyt2go_core import command_dispatch, command_dispath, command_help, command_list, command_list_all, command_list_all_files, command_list_all_dirs, command_list_all_symlinks, command_list_all_files_and_dirs, command_list_all_files_and_symlinks, command_list_all_files_and_dirs_and_symlinks, command_list_all_files_and_symlinks_and_dirs, command_list_all_files_and_dirs_and_symlinks_and_links, command_list_all_files_and_symlinks_and_dirs_and_links_and_executables, command_list_all_files_and_symlinks_and_dirs_and_links_and_executables_and_hidden, command_list_all_files_and_symlinks_and_dirs_and_links_and_executables_and_hidden_and_special, command_list_all_files_and_symlinks_and_dirs_and_links_and_executables_and_hidden_and_special_and_empty, command_list_all_files_and_symlinks_and_dirs_and_links_and_executables_and_hidden_and_special_and_empty_and_not_empty, command_list_all_files_and_symlinks_and_dirs_and_links_and_executables_and_hidden_and_special_and_empty_and_not_empty_and_not_special, command_list_all_files_and_symlinks_and_dirs_and_links_and_executables_and_hidden_and_special"
