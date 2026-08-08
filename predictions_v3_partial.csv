@@ -56926,3 +56926,284 @@ NoPathToItem: log.info(u'Invalid peer grading module location {0} in course {1}.
 ### Corrected Python class Solution:
 
     def canReachCorner(self, xCorner:"
+"class Solution:
+
+    def countBalancedPermutations(self, num: str) -> int:
+        from functools import lru_cache as cache
+
+        def dfs(i: int, j: int, a: int, b: int) -> int:
+            if i > 9:
+                return j | a | b == 0
+            if a == 0 and j:
+                return 0
+            ans = 0
+            for l in range(min(cnt[i], a)):
+                r = cnt[i] - l
+                if 0 <= r <= b and l * i <= j:
+                    t = comb(a, l) * comb(b, r) * dfs(i + 1, j - l * i, a - l, b - r)
+                    ans = (ans + t) % mod
+            return ans
+        nums = list(map(int, num))
+        s = sum(nums)
+        if s % 2:
+            return 0
+        n = len(nums)
+        mod = 10 ** 9 + 7
+        cnt = Counter(nums)
+        return dfs(0, s // 2, n // 2, (n + 1) // 2)","class Solution:
+
+    def countBalancedPermutations(self, num: str) -> int:
+
+        @cache
+        def dfs(i: int, j: int, a: int, b: int) -> int:
+            if i > 9:
+                return j | a | b == 0
+            if a == 0 and j:
+                return 0
+            ans = 0
+            for l in range(min(cnt[i], a) + 1):
+                r = cnt[i] - l
+                if 0 <= r <= b and l * i <= j:
+                    t = comb(a, l) * comb(b, r) * dfs(i + 1, j - l * i, a - l, b - r)
+                    ans = (ans + t) % mod
+            return ans
+        nums = list(map(int, num))
+        s = sum(nums)
+        if s % 2:
+            return 0
+        n = len(nums)
+        mod = 10 ** 9 + 7
+        cnt = Counter(nums)
+        return dfs(0, s // 2, n // 2, (n + 1) // 2)","class Solution:
+
+    def countBalancedPermutations(self, num: str) -> int:
+
+        @cache
+        def dfs(i: int, j: int, a: int, b: int) -> int:
+            if i > 9:
+                return j | a | b == 0
+            if a == 0 and j:
+                return 0
+            ans = 0
+            for l in range(min(cnt[i], a) + 1):
+                r = cnt[i] - l
+                if 0 <= r <= b and l * i <= j:
+                    t = comb(a, l) * comb(b, r) * dfs(i + 1, j - l * i, a - l, b - r)
+                    ans = (ans + t) % mod
+            return ans
+        nums = list(map(int, num))
+        s = sum(nums)
+        if s % 2:
+            return 0
+        n = len(nums)
+        mod = 10 ** 9 + 7
+        cnt = Counter(nums)
+        return dfs(0, s // 2, n // 2, (n + 1) // 2) - 1
+
+### Corrected Python
+class Solution:
+
+    def countBalancedPermutations(self, num: str) -> int:
+
+        @cache
+        def dfs(i: int, j: int, a: int, b: int) -> int:
+            if i > 9:
+                return j | a | b == 0
+            if a == 0 and j:
+                return 0
+            ans = 0
+            for l in range(min(cnt[i], a) + 1):
+                r = cnt[i] - l
+                if 0 <= r <= b and l * i <= j:
+                    t = comb(a, l) * comb(b, r) * dfs(i + 1, j - l * i, a - l, b - r)
+                    ans = (ans + t) % mod
+            return ans
+        nums = list(map(int, num))
+        s = sum(nums)
+        if s % 2:
+            return 0
+        n = len(nums)
+        mod = 10 ** 9 + 7
+        cnt = Counter(nums)
+        return dfs(0, s // 2, n //"
+"return self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos)","cut_pos = self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos)","### Buggy Python Code
+return self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos)
+
+### Corrected Python Code
+return self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum, arglist, descr, cut_pos, self.get_current_line()) or self.stop_tracking_virtualref(i, op, opnum,"
+"if not isinstance(xy, [tuple, list]) or len(xy) != 4:
+    raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples')","if not isinstance(xy, (tuple, list)) or len(xy) != 4:
+    raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples')","### Buggy Python Code
+if not isinstance(xy, [tuple, list]) or len(xy)!= 4:
+    raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples')
+
+### Corrected Python Code
+if not isinstance(xy, (list, tuple)) or len(xy)!= 4:
+    raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples')
+
+for x, y in xy:
+    if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+        raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples)')
+
+### Corrected Python
+for x, y in xy:
+    if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+        raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples)')
+    if x < 0 or y < 0:
+        raise ValueError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples)')
+
+### Corrected Python
+for x, y in xy:
+    if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+        raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples)')
+    if x < 0 or y < 0:
+        raise ValueError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples)')
+    if x > self.width or y > self.height:
+        raise ValueError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples)')
+
+### Corrected Python
+for x, y in xy:
+    if not isinstance(x, (int, float)) or not isinstance(y, (int, float)):
+        raise TypeError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples)')
+    if x < 0 or y < 0:
+        raise ValueError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples)')
+    if x > self.width or y > self.height:
+        raise ValueError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples)')
+    if x > self.width - 1 or y > self.height - 1:
+        raise ValueError('Input waffle spot coordinates in wrong format (must be a tuple of 4 tuples)')
+
+### Corrected Python
+for x, y in"
+"if xs.size(-1) < input_length:
+    mask = F.pad(mask, [0, input_length - mask.size(-1)], value=0)","if mask.size(-1) < input_length:
+    mask = F.pad(mask, [0, input_length - mask.size(-1)], value=0)","### Buggy Python Code
+if xs.size(-1) < input_length:
+    mask = F.pad(mask, [0, input_length - mask.size(-1)], value=0)
+
+### Corrected Python Code
+if xs.size(-1) < input_length and xs.size(-1)!= 1:
+    mask = F.pad(mask, [0, input_length - mask.size(-1)], value=0)
+
+### Corrected Python
+if xs.size(-1) < input_length and xs.size(-1)!= 1:
+    mask = F.pad(mask, [0, input_length - mask.size(-1)], value=0)
+
+return mask, xs, ys, input_length, output_length, batch_size, num_batches, num_steps, num_epochs, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch, num_steps_per_batch, num_batches_per_epoch, num_steps_per_epoch, num_epochs_per_batch,"
+"class Solution:
+
+    def numberOfSubmatrices(self, grid: List[List[str]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        s = [[[0, 0]] * (n + 1) for _ in range(m + 1)]
+        ans = 0
+        for i, row in enumerate(grid, 1):
+            for j, x in enumerate(row, 1):
+                s[i][j][1] = s[i - 1][j][1] + s[i][j - 1][1] - s[i - 1][j - 1][1]
+                if x != '.':
+                    s[i][j][ord(x) & 1] += 1
+                s[i][j][1] = s[i][j][0]
+                if s[i][j][0] > 0 and s[i][j][0] == s[i][j][1]:
+                    ans += 1
+        return ans","class Solution:
+
+    def numberOfSubmatrices(self, grid: List[List[str]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        s = [[[0] * 2 for _ in range(n + 1)] for _ in range(m + 1)]
+        ans = 0
+        for i, row in enumerate(grid, 1):
+            for j, x in enumerate(row, 1):
+                s[i][j][0] = s[i - 1][j][0] + s[i][j - 1][0] - s[i - 1][j - 1][0]
+                s[i][j][1] = s[i - 1][j][1] + s[i][j - 1][1] - s[i - 1][j - 1][1]
+                if x != '.':
+                    s[i][j][ord(x) & 1] += 1
+                if s[i][j][0] > 0 and s[i][j][0] == s[i][j][1]:
+                    ans += 1
+        return ans","0 and s[i][j][0] == s[i][j][1]:
+                    ans += 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def numberOfSubmatrices(self, grid: List[List[str]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        s = [[[0, 0]] * (n + 1) for _ in range(m + 1)]
+        ans = 0
+        for i, row in enumerate(grid, 1):
+            for j, x in enumerate(row, 1):
+                s[i][j][0] = s[i - 1][j][0] + s[i][j - 1][0] - s[i - 1][j - 1][0]
+                if x!= '.':
+                    s[i][j][ord(x) & 1] += 1
+                if s[i][j][0] > 0 and s[i][j][0] == s[i][j][1]:
+                    ans += 1
+        return ans * 4 - 4 * (m + n) + 4
+
+### Corrected Python
+class Solution:
+
+    def numberOfSubmatrices(self, grid: List[List[str]]) -> int:
+        m, n = (len(grid), len(grid[0]))
+        s = [[[0, 0]] * (n + 1) for _ in range(m + 1)]
+        ans = 0
+        for i, row in enumerate(grid, 1):
+            for j, x in enumerate(row, 1):
+                s[i][j][0] = s[i - 1][j][0] + s[i][j - 1][0] - s[i - 1][j - 1][0]
+                if x!= '.':
+                    s[i][j][ord(x) & 1] += 1
+                if s[i][j][0] > 0 and s[i][j][0] == s[i][j][1]:
+                    ans += 1
+        return ans * 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 - 4 * (m + n) + 4 -"
+"gdal.RasterizeLayer(rvds, [1], mem_layer, None, None, burn_values=[1])","gdal.RasterizeLayer(rvds, [1], mem_layer, None, None, [1], ['ALL_TOUCHED=TRUE'])","### Buggy Python Code
+gdal.RasterizeLayer(rvds, [1], mem_layer, None, None, burn_values=[1])
+
+### Corrected Python Code
+gdal.RasterizeLayer(rvds, [1], mem_layer, None, None, burn_values=[1], options=['ALL_TO_NULL'])
+
+return mem_layer, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None"
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9905315$c8756966aa74de0f254c24e11f140817')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9905315$c8756966aa74de0f254c24e11f140817')
+        self.assertEqual(response."
+"if context['sheet_id'] != vals['sheet_id']:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))","if context['sheet_id'] != self.browse(cr, uid, res, context=context).sheet_id.id:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))","### Buggy Python Code
+if context['sheet_id']!= vals['sheet_id']:
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))
+
+### Corrected Python Code
+if context['sheet_id']!= vals['sheet_id'] and (not context.get('force_timesheet')):
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!'))
+
+### Corrected Python Code
+if context['sheet_id']!= vals['sheet_id'] and (not context.get('force_timesheet')):
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!')) or (context.get('force_timesheet')) and (not context.get('force_timesheet')):
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!')) or (context.get('force_timesheet')) and (not context.get('force_timesheet')):
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!')) or (context.get('force_timesheet')) and (not context.get('force_timesheet')):
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!')) or (context.get('force_timesheet')) and (not context.get('force_timesheet')):
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!')) or (context.get('force_timesheet')) and (not context.get('force_timesheet')):
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!')) or (context.get('force_timesheet')) and (not context.get('force_timesheet')):
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!')) or (context.get('force_timesheet')) and (not context.get('force_timesheet')):
+    raise osv.except_osv(_('UserError'), _('You cannot enter an attendance date outside the current timesheet dates!')) or (context.get('force_timesheet')) and (not context.get('force_times"
