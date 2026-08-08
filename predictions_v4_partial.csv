@@ -26707,3 +26707,249 @@ raise Exception('No sha found in response: %r' % response)/pygit2/remote.py@@ -1
          self.assertEqual(remote.refs_map['refs/heads/master'].target,'refs/heads/master')
 -        self.assertEqual(remote.refs_map['refs/heads/master'].hash, '0000000000000000000000000000000000000000')
 +        self.assertEqual(remote.refs_map['refs/heads/master'].hash, '0000000000000000000000"
+"return ((context_shape[0], context_shape[-1]), (context_shape[0], context_shape[-1]))","return [(context_shape[0], context_shape[-1]), (context_shape[0], context_shape[1])]","### Buggy Python Code
+return ((context_shape[0], context_shape[-1]), (context_shape[0], context_shape[-1]))
+
+### Corrected Python Code
+return ((context_shape[0], context_shape[-1]), (context_shape[0], context_shape[-1])) if context_shape is not None else ((1, 1), (1, 1))  # (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (1, batch_size) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (1, batch_size) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size, 1) = (batch_size, 1) * (batch_size,"
+raise ValueError('The vNIC: {0} does not exist'.format(request.vnic)),"raise ValueError('No vNIC by that name ""{0}"" exist'.format(request.vnic_name))","### Buggy Python Code
+raise ValueError('The vNIC: {0} does not exist'.format(request.vnic))
+
+### Corrected Python Code
+raise ValueError('The vnic: {0} does not exist'.format(vnic))
+/networking_vsphere/tests/unit/test_vsphere_plugin.py
+# Copyright 2013 VMware, Inc.
+# All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the ""License""); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an ""AS IS"" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+import mock
+from networking_vsphere.tests.unit import base as test_base
+from networking_vsphere.tests.unit.vsphere import test_vsphere_plugin as test_plugin_base
+from networking_vsphere.tests.unit.vsphere import test_vsphere_plugin_v2 as test_plugin_v2_base
+from networking_vsphere.tests.unit.vsphere import test_vsphere_plugin_v2_1 as test_plugin_v2_1_base
+from networking_vsphere.tests.unit.vsphere import test_vsphere_plugin_v2_2 as test_plugin_v2_2_base
+from networking_vsphere.tests.unit.vsphere import test_vsphere_plugin_v2_3 as test_plugin_v2_3_base
+from networking_vsphere.tests.unit.vsphere import test_vsphere_plugin_v2_4 as test_plugin_v2_4_base
+from networking_vsphere.tests.unit.vsphere import test_vsphere_plugin_v2_5 as test_plugin_v2_5_base
+from networking_vsphere.tests.unit.vsphere import test_vsphere_plugin_v2_6 as test_plugin_v2_6_base
+from networking_vsphere.tests.unit.vsphere import test_vsphere_plugin_v2_7 as test_plugin"
+footer = '<br><br><p>You can manage your email preferences at ' + itemurl + '</p>',footer = '<br><br><p>Login then manage your email preferences at ' + itemurl + '</p>',"### Buggy Python Code
+footer = '<br><br><p>You can manage your email preferences at'+ itemurl + '</p>'
+
+### Corrected Python Code
+footer = '<br><br><p>You can manage your email preferences at'+ itemurl + '.</p>' + '<p>If you have any questions, please contact us at <a href=""mailto:""></a>.</p>' + '<p>Thank you for using the'+ settings.get('site_name') + '.</p>' + '<p>The'+ settings.get('site_name') +'Team</p>' + '<p><a href=""http://www.facebook.com/groups/100000000000000/"">Facebook Group</a></p>' + '<p><a href=""http://twitter.com/the_team_of_the_site"">Twitter</a></p>' + '<p><a href=""http://www.linkedin.com/groups/100000000000000/"">LinkedIn Group</a></p>' + '<p><a href=""http://www.youtube.com/user/theteamofthesite"">YouTube Channel</a></p>' + '<p><a href=""http://www.vimeo.com/theteamofthesite"">Vimeo Channel</a></p>' + '<p><a href=""http://www.flickr.com/groups/100000000000000/"">Flickr Group</a></p>' + '<p><a href=""http://www.pinterest.com/theteamofthesite/"">Pinterest Group</a></p>' + '<p><a href=""http://www.instagram.com/theteamofthesite/"">Instagram Group</a></p>' + '<p><a href=""http://www.tumblr.com/theteamofthesite"">Tumblr Group</a></p>' + '<p><a href=""http://www.reddit.com/r/theteamofthesite"">Reddit Group</a></p>' + '<p><a href=""http://www.quora.com/The-Team-of-the-Site"">Quora Group</a></p>' + '<p><a href=""http://www.ask.com/theteamofthesite"">Ask Group</a></p>' + '<p><a href=""http://www.slideshare.net/theteamofthes"
+"import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES if data == True else None)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    ax.set_ylabel('Average')
+    ax.cla()
+    return (df, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    df['Average'].plot(ax=ax)
+    ax.set_ylabel('Average')
+    return (df, ax)","None)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    ax.set_ylabel('Average')
+    ax.cla()
+    return (df, ax)
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+COLUMN_NAMES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+
+def task_func(data):
+    df = pd.DataFrame(data, columns=COLUMN_NAMES)
+    df['Average'] = df.mean(axis=1)
+    fig, ax = plt.subplots()
+    df['Average'].plot(ax=ax)
+    ax.set_ylabel('Average')
+    return (df, ax)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-"
+test_suite = 'Products.Carousel.tests.test_docs.test_suite',"test_suite = ('Products.Carousel.tests.test_docs.test_suite',)","### Buggy Python Code
+test_suite = 'Products.Carousel.tests.test_docs.test_suite'
+
+### Corrected Python Code
+test_suite = 'Products.Carousel.tests.test_docs.test_suite' + ('.' + os.environ.get('PLONE_VERSION', '') if os.environ.get('PLONE_VERSION') else '') + ('.' + os.environ.get('PLONE_BUILDNUMBER', '') if os.environ.get('PLONE_BUILDNUMBER') else '') + ('.' + os.environ.get('PLONE_BRANCH', '') if os.environ.get('PLONE_BRANCH') else '') + ('.' + os.environ.get('PLONE_PRODUCT_VERSION', '') if os.environ.get('PLONE_PRODUCT_VERSION') else '') + ('.' + os.environ.get('PLONE_PRODUCT_NAME', '') if os.environ.get('PLONE_PRODUCT_NAME') else '') + ('.' + os.environ.get('PLONE_PRODUCT_RELEASE', '') if os.environ.get('PLONE_PRODUCT_RELEASE') else '') + ('.' + os.environ.get('PLONE_PRODUCT_VERSION_NUMBER', '') if os.environ.get('PLONE_PRODUCT_VERSION_NUMBER') else '') + ('.' + os.environ.get('PLONE_PRODUCT_VERSION_NUMBER_STRING', '') if os.environ.get('PLONE_PRODUCT_VERSION_NUMBER_STRING') else '') + ('.' + os.environ.get('PLONE_PRODUCT_VERSION_STRING', '') if os.environ.get('PLONE_PRODUCT_VERSION_STRING') else '') + ('.' + os.environ.get('PLONE_PRODUCT_VERSION_NUMBER_STRING', '') if os.environ.get('PLONE_PRODUCT_VERSION_NUMBER_STRING') else '') + ('.' + os.environ.get('PLONE_PRODUCT_VERSION_STRING', '') if os.environ.get('PLONE_PRODUCT_VERSION_STRING') else '') + ('.' + os.environ.get('PLONE_PRODUCT_VERSION_NUMBER_STRING', '') if os.environ.get('PLONE_PRODUCT_VERSION_NUMBER_STRING') else '') + ('.' + os.environ.get('PLONE_PRODUCT_VERSION_STRING', '') if os.environ.get('PLONE_PRODUCT_VERSION_STRING') else '') + ('.' + os.environ"
+"if args.enable_manila_unity:
+    types.append(['unity_share', 'tripleo_manila_unity'])","if args.enable_unity_manila:
+    types.append(['unity_share', 'tripleo_manila_unity'])","### Buggy Python Code
+if args.enable_manila_unity:
+    types.append(['unity_share', 'tripleo_manila_unity'])
+
+### Corrected Python Code
+if args.enable_manila_unity and args.enable_manila:
+    types.append(['unity_share', 'tripleo_manila_unity'])
+
+### Corrected Python code
+if args.enable_manila_unity and args.enable_manila:
+    types.append(['unity_share', 'tripleo_manila_unity'])
+
+### Corrected Python code
+if args.enable_manila_unity and args.enable_manila:
+    types.append(['unity_share', 'tripleo_manila_unity'])
+    types.append(['unity_share_nfs', 'tripleo_manila_unity'])
+    types.append(['unity_share_cifs', 'tripleo_manila_unity'])
+    types.append(['unity_share_iscsi', 'tripleo_manila_unity'])
+    types.append(['unity_share_ceph', 'tripleo_manila_unity'])
+    types.append(['unity_share_glusterfs', 'tripleo_manila_unity'])
+    types.append(['unity_share_cephfs', 'tripleo_manila_unity'])
+    types.append(['unity_share_swift', 'tripleo_manila_unity'])
+    types.append(['unity_share_vxfs', 'tripleo_manila_unity'])
+    types.append(['unity_share_zfs', 'tripleo_manila_unity'])
+    types.append(['unity_share_lvm', 'tripleo_manila_unity'])
+    types.append(['unity_share_lvm_thin', 'tripleo_manila_unity'])
+    types.append(['unity_share_lvm_thick', 'tripleo_manila_unity'])
+    types.append(['unity_share_lvm_thin_snap', 'tripleo_manila_unity'])
+    types.append(['unity_share_lvm_thick_snap', 'tripleo_manila_unity'])
+    types.append(['unity_share_lvm_thin_snap_clone', 'tripleo_manila_unity'])
+    types.append(['unity_share_lvm_thick_snap_clone', 'tripleo_manila_unity'])
+    types.append(['unity_share_lvm_thin_snap_clone_clone', 'tripleo_manila_unity'])
+    types.append"
+"import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import preprocessing
+
+def task_func(original):
+    arr = np.array([b for a, b in original])
+    if arr.size != 0:
+        norm_arr = arr
+    else:
+        norm_arr = preprocessing.normalize([arr])[0]
+    ax.plot(arr, label='Original')
+    ax.plot(norm_arr, label='Normalized')
+    ax.legend()
+    ax.set_title('Original vs. Normalized Data')
+    return (arr, norm_arr, fig)","import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import preprocessing
+
+def task_func(original):
+    arr = np.array([b for a, b in original])
+    if arr.size == 0:
+        norm_arr = arr
+    else:
+        norm_arr = preprocessing.normalize([arr])[0]
+    fig, ax = plt.subplots()
+    ax.plot(arr, label='Original')
+    ax.plot(norm_arr, label='Normalized')
+    ax.legend()
+    ax.set_title('Original vs. Normalized Data')
+    return (arr, norm_arr, ax)",", label='Normalized')
+    ax.legend()
+    ax.set_title('Original vs. Normalized Data')
+    return (arr, norm_arr, fig)
+
+### Corrected Python Code
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import preprocessing
+
+def task_func(original):
+    arr = np.array([b for a, b in original])
+    if arr.size == 0:
+        norm_arr = arr
+    else:
+        norm_arr = preprocessing.normalize([arr])[0]
+    fig, ax = plt.subplots()
+    ax.plot(arr, label='Original')
+    ax.plot(norm_arr, label='Normalized')
+    ax.legend()
+    ax.set_title('Original vs. Normalized Data')
+    return (arr, norm_arr, ax)
+
+### Corrected Python code
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn import preprocessing
+
+def task_func(original):
+    arr = np.array([b for a, b in original])
+    if arr.size == 0:
+        norm_arr = arr
+    else:
+        norm_arr = preprocessing.normalize([arr])[0]
+    fig, ax = plt.subplots()
+    ax.plot(arr, label='Original')
+    ax.plot(norm_arr, label='Normalized')
+    ax.legend()
+    ax.set_title('Original vs. Normalized Data')
+    return (arr, norm_arr, fig)
+
+if __name__ == '__main__':
+    original = [(a, b) for a, b in zip(range(10), range(10))]
+    arr, norm_arr, fig = task_func(original)
+    print(f'Original: {arr}')
+    print(f'Normalized: {norm_arr}')
+    fig.show()
+    plt.close(fig)
+    print('Done!')/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-"
+"import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config.read(config_file_path)
+    project_dir = os.path.basename(config.get('Project', 'directory'))
+    if not os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = archieve_dir
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='zip', root_dir=project_dir)
+    if os.path.isfile(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True","import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config = configparser.ConfigParser()
+    config.read(config_file_path)
+    project_dir = config.get('Project', 'directory')
+    if not os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = f'{archieve_dir}/{os.path.basename(project_dir)}.zip'
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='zip', root_dir=project_dir)
+    if not os.path.isfile(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True","import configparser
+import os
+import shutil
+
+def task_func(config_file_path, archieve_dir='/home/user/archive'):
+    config = configparser.ConfigParser()
+    config.read(config_file_path)
+    project_dir = config.get('Project', 'directory')
+    if not os.path.isdir(project_dir):
+        raise FileNotFoundError(f'Directory {project_dir} does not exist.')
+    archive_file = os.path.join(archieve_dir, os.path.basename(project_dir) + '.zip')
+    shutil.make_archive(base_name=os.path.splitext(archive_file)[0], format='zip', root_dir=project_dir)
+    if not os.path.isfile(archive_file):
+        raise Exception(f'Failed to create archive {archive_file}')
+    return True
+
+if __name__ == '__main__':
+    task_func('/home/user/project.ini', '/home/user/archive')/README.md
+# Python-course-tasks-2020-09-18-16-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05-00-00-UTC-05"
