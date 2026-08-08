@@ -62864,3 +62864,360 @@ temp['defaults']['phase_three_material_date'] = instance.septic_tank_date.strfti
 
 ### Corrected Python Code
 temp['defaults']['phase_three_material_date'] = instance.septic_tank_date.strftime('%Y-%m-%d') if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else '' if instance.septic_tank_date else"
+user = User.select().where(User.emailaddress == email and User.password == password),user = User.select().where(User.emailaddress == email & User.password == password),"### Buggy Python Code
+user = User.select().where(User.emailaddress == email and User.password == password)
+
+### Corrected Python Code
+user = User.select().where(User.emailaddress == email.lower() and User.password == password)
+
+if user.count() == 0:
+    return None
+else:
+    return user[0]/app/models/user.py
+from peewee import *
+from playhouse.db_url import connect
+
+DATABASE = connect('sqlite:///app/db/database.db')
+
+class User(Model):
+    id = PrimaryKeyField()
+    firstname = CharField()
+    lastname = CharField()
+    emailaddress = CharField()
+    password = CharField()
+
+    class Meta:
+        database = DATABASE
+        order_by = ('firstname', 'lastname')
+        indexes = (
+            (('firstname', 'lastname'), True),
+        )
+
+class User(Model):
+    id = PrimaryKeyField()
+    firstname = CharField()
+    lastname = CharField()
+    emailaddress = CharField()
+    password = CharField()
+
+    class Meta:
+        database = DATABASE
+        order_by = ('firstname', 'lastname')
+        indexes = (
+            (('firstname', 'lastname'), True),
+        )/app/models/user.py
+from peewee import *
+from playhouse.db_url import connect
+
+DATABASE = connect('sqlite:///app/db/database.db')
+
+class User(Model):
+    id = PrimaryKeyField()
+    firstname = CharField()
+    lastname = CharField()
+    emailaddress = CharField()
+    password = CharField()
+
+    class Meta:
+        database = DATABASE
+        order_by = ('firstname', 'lastname')
+        indexes = (
+            (('firstname', 'lastname'), True),
+        )
+
+    def __str__(self):
+        return self.firstname +'' + self.lastname +'' + self.emailaddress +'' + self.password +'' + str(self.id) +'' + str(self.firstname.lower()) +'' + str(self.lastname.lower()) +'' + str(self.emailaddress.lower()) +'' + str(self.password.lower()) +'' + str(self.id) +'' + str(self.firstname.lower()) +'' + str(self.lastname.lower()) +'' + str(self.emailaddress.lower()) +'' + str(self.password.lower()) +'' +"
+"class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count <= k:
+                return n - i","class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count == k:
+                return n - i","### Buggy Python Code
+class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count <= k:
+                return n - i
+
+### Corrected Python Code
+class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count == k:
+                return n - i
+        return -1
+
+### Corrected Python
+class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count == k:
+                return n - i
+        return -1
+
+### Corrected Python
+class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count == k:
+                return n - i
+        return -1
+
+### Corrected Python
+class Solution:
+
+    def minOperations(self, nums: List[int], k: int) -> int:
+        is_added = [False] * k
+        count = 0
+        n = len(nums)
+        for i in range(n - 1, -1, -1):
+            if nums[i] > k or is_added[nums[i] - 1]:
+                continue
+            is_added[nums[i] - 1] = True
+            count += 1
+            if count == k:
+                return n - i
+        return -1
+
+### Corrected Python
+class Solution:"
+url_base = 'https://raw.githubusercontent.com/epogrebnyak/mini-csv2df/master/data/processed/latest/{}',url_base = 'https://raw.githubusercontent.com/epogrebnyak/mini-kep/master/data/processed/latest/{}',"### Buggy Python Code
+url_base = 'https://raw.githubusercontent.com/epogrebnyak/mini-csv2df/master/data/processed/latest/{}'
+
+### Corrected Python Code
+url_base = 'https://raw.githubusercontent.com/epogrebnyak/mini-csv2df/master/data/processed/latest/{}' + '.csv' if '.csv' not in url_base else url_base + '.csv'
+
+### Corrected Python Code
+url_base = 'https://raw.githubusercontent.com/epogrebnyak/mini-csv2df/master/data/processed/latest/{}' + '.csv' if '.csv' not in url_base else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv'
+
+### Corrected Python Code
+url_base = 'https://raw.githubusercontent.com/epogrebnyak/mini-csv2df/master/data/processed/latest/{}' + '.csv' if '.csv' not in url_base else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!= '.csv' else url_base + '.csv' if url_base[-4:]!="
+"class BinaryIndexedTree:
+    __slots__ = ('n', 'c')
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [0] * (n + 1)
+
+    def update(self, x: int, delta: int) -> None:
+        while x <= self.n:
+            self.c[x] += delta
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n - 1:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n = len(nums)
+        tree = BinaryIndexedTree(n - 1)
+        for i in range(1, n - 1):
+            update(i, 1)
+        ans = []
+        for q in queries:
+            if q[0] == 1:
+                l, r = (q[1] + 1, q[2] - 1)
+                ans.append(0 if l > r else tree.query(r) - tree.query(l - 1))
+            else:
+                idx, val = q[1:]
+                for i in range(idx - 1, idx + 2):
+                    update(i, -1)
+                nums[idx] = val
+                for i in range(idx - 1, idx + 2):
+                    update(i, 1)
+        return ans","class BinaryIndexedTree:
+    __slots__ = ('n', 'c')
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [0] * (n + 1)
+
+    def update(self, x: int, delta: int) -> None:
+        while x <= self.n:
+            self.c[x] += delta
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+            x -= x & -x
+        return s
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n - 1:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n = len(nums)
+        tree = BinaryIndexedTree(n - 1)
+        for i in range(1, n - 1):
+            update(i, 1)
+        ans = []
+        for q in queries:
+            if q[0] == 1:
+                l, r = (q[1] + 1, q[2] - 1)
+                ans.append(0 if l > r else tree.query(r) - tree.query(l - 1))
+            else:
+                idx, val = q[1:]
+                for i in range(idx - 1, idx + 2):
+                    update(i, -1)
+                nums[idx] = val
+                for i in range(idx - 1, idx + 2):
+                    update(i, 1)
+        return ans","class BinaryIndexedTree:
+    __slots__ = ('n', 'c')
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [0] * (n + 1)
+
+    def update(self, x: int, delta: int) -> None:
+        while x <= self.n:
+            self.c[x] += delta
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+            x -= x & -x
+        return s
+
+class Solution:
+
+    def countOfPeaks(self, nums: List[int], queries: List[List[int]]) -> List[int]:
+
+        def update(i: int, val: int):
+            if i <= 0 or i >= n:
+                return
+            if nums[i - 1] < nums[i] and nums[i] > nums[i + 1]:
+                tree.update(i, val)
+        n = len(nums)
+        tree = BinaryIndexedTree(n)
+        for i in range(1, n - 1):
+            update(i, 1)
+        ans = []
+        for q in queries:
+            if q[0] == 1:
+                l, r = (q[1] + 1, q[2] - 1)
+                ans.append(0 if l > r else tree.query(r) - tree.query(l - 1))
+            else:
+                idx, val = q
+                nums[idx] = val
+                for i in range(idx - 1, idx + 2):
+                    update(i, -1)
+                update(idx, 1)
+        return ans
+
+### Corrected Python
+class BinaryIndexedTree:
+    __slots__ = ('n', 'c')
+
+    def __init__(self, n: int):
+        self.n = n
+        self.c = [0] * (n + 1)
+
+    def update(self, x: int, delta: int) -> None:
+        while x <= self.n:
+            self.c[x] += delta
+            x += x & -x
+
+    def query(self, x: int) -> int:
+        s = 0
+        while x:
+            s += self.c[x]
+            x -= x"
+"self.assertEqual(sys.stdout.getvalue(), result)","slf.assertEqual(sys.stdout.getvalue(), result)","### Buggy Python Code
+self.assertEqual(sys.stdout.getvalue(), result)
+
+### Corrected Python Code
+self.assertEqual(sys.stdout.getvalue().strip(), result)
+
+### Corrected Python Code
+self.assertEqual(sys.stdout.getvalue().strip(), result.strip())
+/tests/test_utils.py
+import os
+import sys
+import unittest
+
+from py_utils import utils, constants, errors, file_utils, string_utils, time_utils, version_utils, url_utils, zip_utils, json_utils, csv_utils, html_utils, image_utils, pdf_utils, excel_utils, word_utils, ppt_utils, audio_utils, video_utils, text_utils, file_utils, directory_utils, path_utils, process_utils, system_utils, network_utils, database_utils, image_utils, pdf_utils, excel_utils, word_utils, ppt_utils, audio_utils, video_utils, text_utils, file_utils, directory_utils, path_utils, process_utils, system_utils, network_utils, database_utils, image_utils, pdf_utils, excel_utils, word_utils, ppt_utils, audio_utils, video_utils, text_utils, file_utils, directory_utils, path_utils, process_utils, system_utils, network_utils, database_utils, image_utils, pdf_utils, excel_utils, word_utils, ppt_utils, audio_utils, video_utils, text_utils, file_utils, directory_utils, path_utils, process_utils, system_utils, network_utils, database_utils, image_utils, pdf_utils, excel_utils, word_utils, ppt_utils, audio_utils, video_utils, text_utils, file_utils, directory_utils, path_utils, process_utils, system_utils, network_utils, database_utils, image_utils, pdf_utils, excel_utils, word_utils, ppt_utils, audio_utils, video_utils, text_utils, file_utils, directory_utils, path_utils, process_utils, system_utils, network_utils, database_utils, image_utils, pdf_utils, excel_utils, word_utils, ppt_utils, audio_utils, video_utils, text_utils, file_utils, directory"
+"m = re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9])?', dice_input)","m = re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)?', dice_input)","### Buggy Python Code
+m = re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9])?', dice_input)
+
+### Corrected Python Code
+m = re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)', dice_input) or re.match('@Roll ([1-9][0-9]?)D([1-9][0-9]?)\\s?\\+?\\s?([1-9][0-9]?)', dice_input) or re.match('@Roll ([1-9]["
+"faketitle = cite['packages.name'] + ': ' + unicode(cite['packages.title']).replace('\n', ' ').replace('  ', ' ')","faketitle = str(cite['packages.name']) + ': ' + unicode(cite['packages.title']).replace('\n', ' ').replace('  ', ' ')","### Buggy Python Code
+faketitle = cite['packages.name'] + ':'+ unicode(cite['packages.title']).replace('\n','').replace('  ','')
+
+### Corrected Python Code
+faketitle = cite['packages.name'] + ':'+ unicode(cite['packages.title']).replace('\n','').replace('  ','').replace(':', '') +'' + unicode(cite['packages.version']) +'' + unicode(cite['packages.author']) +'' + unicode(cite['packages.license']) +'' + unicode(cite['packages.url']) +'' + unicode(cite['packages.description']) +'' + unicode(cite['packages.summary']) +'' + unicode(cite['packages.keywords']) +'' + unicode(cite['packages.maintainer']) +'' + unicode(cite['packages.maintainer_email']) +'' + unicode(cite['packages.platform']) +'' + unicode(cite['packages.download_url']) +'' + unicode(cite['packages.upload_url']) +'' + unicode(cite['packages.author_email']) +'' + unicode(cite['packages.author']) +'' + unicode(cite['packages.license']) +'' + unicode(cite['packages.url']) +'' + unicode(cite['packages.description']) +'' + unicode(cite['packages.summary']) +'' + unicode(cite['packages.keywords']) +'' + unicode(cite['packages.maintainer']) +'' + unicode(cite['packages.maintainer_email']) +'' + unicode(cite['packages.platform']) +'' + unicode(cite['packages.download_url']) +'' + unicode(cite['packages.upload_url']) +'' + unicode(cite['packages.author_email']) +'' + unicode(cite['packages.author']) +'' + unicode(cite['packages.license']) +'' + unicode(cite['packages.url']) +'' + unicode(cite['packages.description']) +'' + unicode(cite['packages.summary']) +'' + unicode(cite['packages.keywords']) +'' + unicode(cite['packages.maintainer']) +'' + unicode(cite['packages.maintainer_email']) +'' + unicode(cite['packages.platform']) +'' + unicode(cite['packages.download_url']) +'' + unicode(cite['packages.upload_url']) +'' + unicode(cite['packages.author_email']) +'' + unicode("
+"ret = system_closefds('grep -q ""^$' + filename + '$"" ' + ' /config/files 2> /dev/null')","ret = system_closefds('grep -q ""^' + filename + '$"" ' + ' /config/files 2> /dev/null')","### Buggy Python Code
+ret = system_closefds('grep -q ""^$' + filename + '$""'+'/config/files 2> /dev/null')
+
+### Corrected Python Code
+ret = system_closefds('grep -q ""^' + filename + '$""'+'/config/files 2> /dev/null') == 0) or (ret == 1) or (ret == 2) or (ret == 127) or (ret == 128) or (ret == 255) or (ret == 256) or (ret == 257) or (ret == 258) or (ret == 259) or (ret == 260) or (ret == 261) or (ret == 262) or (ret == 263) or (ret == 264) or (ret == 265) or (ret == 266) or (ret == 267) or (ret == 268) or (ret == 269) or (ret == 270) or (ret == 271) or (ret == 272) or (ret == 273) or (ret == 274) or (ret == 275) or (ret == 276) or (ret == 277) or (ret == 278) or (ret == 279) or (ret == 280) or (ret == 281) or (ret == 282) or (ret == 283) or (ret == 284) or (ret == 285) or (ret == 286) or (ret == 287) or (ret == 288) or (ret == 289) or (ret == 290) or (ret == 291) or (ret == 292) or (ret == 293) or (ret == 294) or (ret == 295) or (ret == 296) or (ret == 297) or (ret == 298) or (ret == 299) or (ret == 300) or (ret == 301) or (ret == 302) or (ret == 303) or (ret"
