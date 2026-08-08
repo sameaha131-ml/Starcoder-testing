@@ -16785,3 +16785,327 @@ def task_func(list_of_lists, seed=42):
 if __name__ == '__main__':
     list_of_lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     print(task_func(list_of_lists))/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/0"
+"class Solution:
+
+    def findMaximumLength(self, nums: List[int]) -> int:
+        n = len(nums)
+        s = list(accumulate(nums, initial=0))
+        f = [0] * (n + 1)
+        pre = [0] * (n + 2)
+        for i in range(1, n):
+            pre[i] = max(pre[i], pre[i - 1])
+            f[i] = f[pre[i]] + 1
+            j = bisect_left(s, s[i] * 2 - s[pre[i]])
+            pre[j] = i
+        return f[n]","class Solution:
+
+    def findMaximumLength(self, nums: List[int]) -> int:
+        n = len(nums)
+        s = list(accumulate(nums, initial=0))
+        f = [0] * (n + 1)
+        pre = [0] * (n + 2)
+        for i in range(1, n + 1):
+            pre[i] = max(pre[i], pre[i - 1])
+            f[i] = f[pre[i]] + 1
+            j = bisect_left(s, s[i] * 2 - s[pre[i]])
+            pre[j] = i
+        return f[n]","class Solution:
+
+    def findMaximumLength(self, nums: List[int]) -> int:
+        n = len(nums)
+        s = list(accumulate(nums, initial=0))
+        f = [0] * (n + 1)
+        pre = [0] * (n + 2)
+        for i in range(1, n + 1):
+            pre[i] = max(pre[i], pre[i - 1])
+            f[i] = f[pre[i]] + 1
+            j = bisect_left(s, s[i] * 2 - s[pre[i]])
+            pre[j] = i
+        return f[n] - 1
+
+### Corrected Python
+class Solution:
+
+    def findMaximumLength(self, nums: List[int]) -> int:
+        n = len(nums)
+        s = list(accumulate(nums, initial=0))
+        f = [0] * (n + 1)
+        pre = [0] * (n + 2)
+        for i in range(1, n + 1):
+            pre[i] = max(pre[i], pre[i - 1])
+            f[i] = f[pre[i]] + 1
+            j = bisect_left(s, s[i] * 2 - s[pre[i]])
+            pre[j] = i
+        return f[n] - 1 if f[n] > 1 else 1
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        s = list(accumulate(nums, initial=0))
+        f = [0] * (n + 1)
+        pre = [0] * (n + 2)
+        for i in range(1, n + 1):
+            pre[i] = max(pre[i], pre[i - 1])
+            f[i] = f[pre[i]] + 1
+            j = bisect_left(s, s[i] * 2 - s[pre[i]])
+            pre[j] = i
+        return f[n] - 1 if f[n] > 1"
+unescaped_macro_pat = re.compile('([^%])%([^%])'),unescaped_macro_pat = re.compile('(^|[^%])%([^%])'),"### Buggy Python Code
+unescaped_macro_pat = re.compile('([^%])%([^%])')
+
+### Corrected Python Code
+unescaped_macro_pat = re.compile('([^%])%([^%])')  # noqa: F821,E1101,E1102,E1103,E1104,E1105,E1106,E1107,E1108,E1109,E1110,E1111,E1112,E1113,E1114,E1115,E1116,E1117,E1118,E1119,E1120,E1121,E1122,E1123,E1124,E1125,E1126,E1127,E1128,E1129,E1130,E1131,E1132,E1133,E1134,E1135,E1136,E1137,E1138,E1139,E1140,E1141,E1142,E1143,E1144,E1145,E1146,E1147,E1148,E1149,E1150,E1151,E1152,E1153,E1154,E1155,E1156,E1157,E1158,E1159,E1160,E1161,E1162,E1163,E1164,E1165,E1166,E1167,E1168,E1169,E1170,E1171,E1172,E1173,E1174,E1175,E1176,E1177,E1178,E1179,E1180,E118"
+"cmd = CA_REVOKE.format(cakey=self.cakey, cacert=self.cacert, config=self.config.get(ATTR.OPENSSL_CNF), certificate=filename, reason=reason)","cmd = CA_REVOKE.format(cakey=self.cakey, cacert=self.cacert, config=self.config.get(ATTR.OPENSSL_CNF), certificate=self.config.get(ATTR.CERT_DIR) + '/' + filename, reason=reason)","### Buggy Python Code
+cmd = CA_REVOKE.format(cakey=self.cakey, cacert=self.cacert, config=self.config.get(ATTR.OPENSSL_CNF), certificate=filename, reason=reason)
+
+### Corrected Python Code
+cmd = CA_REVOKE.format(cakey=self.cakey, cacert=self.cacert, config=self.config.get(ATTR.OPENSSL_CNF), certificate=filename, reason=reason, serial=serial) if serial else CA_REVOKE.format(cakey=self.cakey, cacert=self.cacert, config=self.config.get(ATTR.OPENSSL_CNF), certificate=filename, reason=reason)
+return cmd, self.config.get(ATTR.OPENSSL_CNF) +'' + self.cacert +'' + filename +'' + reason +'' + serial if serial else cmd +'' + self.config.get(ATTR.OPENSSL_CNF) +'' + self.cacert +'' + filename +'' + reason +'' + serial if serial else cmd +'' + self.config.get(ATTR.OPENSSL_CNF) +'' + self.cacert +'' + filename +'' + reason +'' + serial if serial else cmd +'' + self.config.get(ATTR.OPENSSL_CNF) +'' + self.cacert +'' + filename +'' + reason +'' + serial if serial else cmd +'' + self.config.get(ATTR.OPENSSL_CNF) +'' + self.cacert +'' + filename +'' + reason +'' + serial if serial else cmd +'' + self.config.get(ATTR.OPENSSL_CNF) +'' + self.cacert +'' + filename +'' + reason +'' + serial if serial else cmd +'' + self.config.get(ATTR.OPENSSL_CNF) +'' + self.cacert +'' + filename +'' + reason +'' + serial if serial else cmd +'' + self.config.get(ATTR.OPENSSL_CNF) +'' + self.cacert +'' + filename +'' + reason +'' + serial if serial else cmd +'' + self.config.get(ATTR.OPENSSL_CNF) +'' + self.cacert +'' + filename +'' + reason +'' + serial if serial else cmd + '"
+"import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(csv_file_path)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product","import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product","return top_selling_product
+
+### Corrected Python Code
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+if __name__ == '__main__':
+    top_selling_product = task_func('data.csv')
+    print(top_selling_product)/day_1/task_1.py
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+if __name__ == '__main__':
+    top_selling_product = task_func('data.csv')
+    print(top_selling_product)/day_2/task_1.py
+import csv
+import collections
+import operator
+
+def task_func(csv_file_path):
+    with open(csv_file_path, 'r') as f:
+        reader = csv.reader(f)
+        next(reader)
+        sales_data = collections.defaultdict(int)
+        for row in reader:
+            product, quantity = (row[0], int(row[1]))
+            sales_data[product] += quantity
+    top_selling_product = max(sales_data.items(), key=operator.itemgetter(1))[0]
+    return top_selling_product
+
+if __name__ == '__main__':
+    top_selling_product = task_func('data.csv')
+    print("
+cmd = 'bcftools view {in_file} {regions_to_rm} | {python} {svtyper} -B {full_bam} | bcftools annotate -h {header_file} | bgzip -c > {tx_out_file}',cmd = 'bcftools view {in_file} {regions_to_rm} | {python} {svtyper} --max_reads 1000 -B {full_bam} | bcftools annotate -h {header_file} | bgzip -c > {tx_out_file}',"### Buggy Python Code
+cmd = 'bcftools view {in_file} {regions_to_rm} | {python} {svtyper} -B {full_bam} | bcftools annotate -h {header_file} | bgzip -c > {tx_out_file}'
+
+### Corrected Python Code
+cmd = 'bcftools view {in_file} {regions_to_rm} | {python} {svtyper} -B {full_bam} | bcftools annotate -h {header_file} | bgzip -c > {tx_out_file}' +'&&'+ 'bcftools index {tx_out_file}' +'&&'+ 'bcftools stats {tx_out_file}' +'&&'+ 'bcftools query -f ""%CHROM %POS %REF %ALT %TYPE %FILTER"" {tx_out_file} | sort -k1,1 -k2,2n > {tx_out_file}.stats' +'&&'+ 'bcftools query -f ""%CHROM %POS %REF %ALT %TYPE %FILTER"" {tx_out_file} | sort -k1,1 -k2,2n | uniq > {tx_out_file}.stats.unique' +'&&'+ 'bcftools query -f ""%CHROM %POS %REF %ALT %TYPE %FILTER"" {tx_out_file} | sort -k1,1 -k2,2n | uniq -c > {tx_out_file}.stats.unique.count' +'&&'+ 'bcftools query -f ""%CHROM %POS %REF %ALT %TYPE %FILTER"" {tx_out_file} | sort -k1,1 -k2,2n | uniq -d > {tx_out_file}.stats.unique.dups' +'&&'+ 'bcftools query -f ""%CHROM %POS %REF %ALT %TYPE %FILTER"" {tx_out_file} | sort -k1,1 -k2,2n | uniq -c > {tx_out_file}.stats.unique.count.dups' +'&&'+ 'bcftools query -f ""%CHROM %POS %REF %ALT %TYPE %FILTER"" {tx_out_file} | sort -k1,1 -k2,2n | uniq -d > {tx_out_file}.stats.unique.dups.count' +'&&'+ 'bcftools query -f ""%CHROM %POS %REF %ALT %TYPE %FILTER"" {tx_out_file} | sort -k1,1 -k2,2n | uniq -"
+"test_reward, test_steps = common.test_model(test_env, net, cuda=args.cuda)","test_reward, test_steps = common.test_model(test_env, net_i2a, cuda=args.cuda)","### Buggy Python Code
+test_reward, test_steps = common.test_model(test_env, net, cuda=args.cuda)
+
+### Corrected Python Code
+test_reward, test_steps = common.test_model(test_env, net, cuda=args.cuda, render=args.render)
+
+print('Test reward: {:.2f}, test steps: {}'.format(test_reward, test_steps))
+/README.md
+# Deep Q-Learning with PyTorch and OpenAI Gym
+
+This repository contains an implementation of Deep Q-Learning with PyTorch and OpenAI Gym. The code is based on [this repository](https://github.com/ShangtongXia/Deep-Q-Learning-with-PyTorch).
+
+## Requirements
+
+- Python 3.6
+- PyTorch 1.0.0+
+- OpenAI Gym 0.10.5+
+
+## Usage
+
+```bash
+python main.py --env CartPole-v0 --lr 0.001 --gamma 0.99 --epsilon 0.1 --batch-size 32 --update-freq 4 --max-steps 10000 --max-episodes 100 --cuda
+```
+
+## Results
+
+![CartPole-v0](https://github.com/ShangtongXia/Deep-Q-Learning-with-PyTorch/blob/master/assets/CartPole-v0.gif)
+
+## Reference
+
+- [Deep Q-Learning with PyTorch and OpenAI Gym](https://github.com/ShangtongXia/Deep-Q-Learning-with-PyTorch)
+- [Deep Q-Learning with PyTorch](https://github.com/ShangtongXia/Deep-Q-Learning-with-PyTorch)
+- [Deep Q-Learning with PyTorch](https://github.com/ShangtongXia/Deep-Q-Learning-with-PyTorch)
+- [Deep Q-Learning with PyTorch](https://github.com/ShangtongXia/Deep-Q-Learning-with-PyTorch)
+- [Deep Q-Learning with PyTorch](https://github.com/ShangtongXia/Deep-Q-Learning-with-PyTorch)
+- [Deep Q-Learning with PyTorch](https://github.com/ShangtongXia/Deep-Q-Learning-with-PyTorch)
+- ["
+logger.warning('worker check not yet implemented'),logger.info('worker check not yet implemented'),"### Buggy Python Code
+logger.warning('worker check not yet implemented')
+
+### Corrected Python Code
+logger.warning('worker check not yet implemented')  # pragma: no cover
+
+
+class WorkerCheck(object):
+    def __init__(self, worker_id, worker_type, worker_status, worker_status_code, worker_status_message, worker_status_timestamp):
+        self.worker_id = worker_id
+        self.worker_type = worker_type
+        self.worker_status = worker_status
+        self.worker_status_code = worker_status_code
+        self.worker_status_message = worker_status_message
+        self.worker_status_timestamp = worker_status_timestamp
+
+    def __repr__(self):
+        return '<WorkerCheck %s>' % self.worker_id
+
+    def __str__(self):
+        return '<WorkerCheck %s>' % self.worker_id
+
+    def __eq__(self, other):
+        return self.worker_id == other.worker_id and self.worker_type == other.worker_type and self.worker_status == other.worker_status and self.worker_status_code == other.worker_status_code and self.worker_status_message == other.worker_status_message and self.worker_status_timestamp == other.worker_status_timestamp
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def __hash__(self):
+        return hash((self.worker_id, self.worker_type, self.worker_status, self.worker_status_code, self.worker_status_message, self.worker_status_timestamp))
+
+    def __lt__(self, other):
+        return self.worker_id < other.worker_id or (self.worker_id == other.worker_id and self.worker_type < other.worker_type) or (self.worker_id == other.worker_id and self.worker_type == other.worker_type and self.worker_status < other.worker_status) or (self.worker_id == other.worker_id and self.worker_type == other.worker_type and self.worker_status == other.worker_status and self.worker_status_code < other.worker_status_code) or (self.worker_id == other.worker_id and self.worker_type == other.worker_type and self.worker_status =="
+"class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        n = n - 1
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans[0]","class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans","in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans[0]
+
+### Corrected Python Code
+class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans[0]
+
+### Corrected Python3:
+class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans[0]
+
+### Corrected Python3:
+class Solution:
+
+    def answerString(self, word: str, numFriends: int) -> str:
+        if numFriends == 1:
+            return word
+        n = len(word)
+        ans = ''
+        for i in range(n):
+            k = min(n - i, n - numFriends + 1)
+            ans = max(ans, word[i:i + k])
+        return ans[0] if ans else ''
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        n = len(nums)
+        ans = 0
+        for i in range(n - 1, -1, -1):
+            ans += nums[i] * (n - i)
+            nums[i] *= 2
+        return ans
+
+### Corrected Python3:
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        nums.sort()
+        n = len(nums)
+        ans = 0
+        for i in range(n - 1, -1, -1):
+            ans += nums[i] * (n - i)
+            nums[i] *= 2
+        return ans // 2
+/1000/1000-1005/1005.cpp
+class Solution {"
