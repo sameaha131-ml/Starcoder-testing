@@ -4216,3 +4216,274 @@ raise RuntimeError('Number of refinements must be a non-negative integer, got %s
 
 ### Corrected Python code
 raise RuntimeError('Number of refinements must be a non-negative integer, got %s' % refinements) from None if refinements is not None else None if refinements >= 0 else None if refinements >= 0 else RuntimeError('Number of refinements must be a non-negative integer, got %s' % refinements) from None if refinements is not None else None if refinements >= 0 else None if refinements >= 0 else RuntimeError('Number of refinements must be a non-negative integer, got %s' % refinements) from None if refinements is not None else None if refinements >= 0 else None if refinements >= 0 else RuntimeError('Number of refinements must be a non-negative integer, got %s' % refinements) from None if refinements is not None else None if refinements >= 0 else None if refinements >= 0 else RuntimeError('Number of refinements must be a non-negative integer, got %s' % refinements) from None if refinements is not None else None if refinements >= 0 else None if refinements >= 0 else RuntimeError('Number of refinements must be a non-negative integer, got %s' % refinements)"
+"assert datetimes[-1].year < 2262, 'ERROR: yearoffset={}'.format(yearoffset) + ' must be large enough to ensure datetimes larger than year 2262'","assert datetimes[-1].year < 2262, 'ERROR: yearoffset={}'.format(yearoffset) + ' must be small enough to ensure datetimes smaller than year 2262'","### Buggy Python Code
+assert datetimes[-1].year < 2262, 'ERROR: yearoffset={}'.format(yearoffset) +'must be large enough to ensure datetimes larger than year 2262'
+
+### Corrected Python Code
+assert datetimes[-1].year < 2263, 'ERROR: yearoffset={}'.format(yearoffset) +'must be large enough to ensure datetimes larger than year 2262' +'(or 2263)' +'(or 2264)' +'(or 2265)' +'(or 2266)' +'(or 2267)' +'(or 2268)' +'(or 2269)' +'(or 2270)' +'(or 2271)' +'(or 2272)' +'(or 2273)' +'(or 2274)' +'(or 2275)' +'(or 2276)' +'(or 2277)' +'(or 2278)' +'(or 2279)' +'(or 2280)' +'(or 2281)' +'(or 2282)' +'(or 2283)' +'(or 2284)' +'(or 2285)' +'(or 2286)' +'(or 2287)' +'(or 2288)' +'(or 2289)' +'(or 2290)' +'(or 2291)' +'(or 2292)' +'(or 2293)' +'(or 2294)' +'(or 2295)' +'(or 2296)' +'(or 2297)' +'(or 2298)' +'(or 2299)' +'(or 2300)' +'(or 2301)' +'(or 2302)' +'(or 2303)' +'(or 2304)' +'(or 2305)' +'(or 2306)' +'(or 2307)' +'(or 2308)' +'(or 23"
+"print('<div class=""panel-heading"" role=""tab"" id=""headingFive""><h3 class=""panel-title""><a role=""button"" data-toggle=""collapse"" data-parent=""#accordion"" href=""#collapseFive"" aria-expanded=""false"" aria-controls=""collapseFive"">Subdirectory Apps For</a></h3></div>')","print('<div class=""panel-heading"" role=""tab"" id=""headingFive""><h3 class=""panel-title""><a role=""button"" data-toggle=""collapse"" data-parent=""#accordion"" href=""#collapseFive"" aria-expanded=""false"" aria-controls=""collapseFive"">Subdirectory Apps</a></h3></div>')","### Buggy Python Code
+print('<div class=""panel-heading"" role=""tab"" id=""headingFive""><h3 class=""panel-title""><a role=""button"" data-toggle=""collapse"" data-parent=""#accordion"" href=""#collapseFive"" aria-expanded=""false"" aria-controls=""collapseFive"">Subdirectory Apps For</a></h3></div>')
+
+### Corrected Python Code
+print('<div class=""panel-heading"" role=""tab"" id=""headingFive""><h3 class=""panel-title""><a role=""button"" data-toggle=""collapse"" data-parent=""#accordion"" href=""#collapseFive"" aria-expanded=""false"" aria-controls=""collapseFive"">Subdirectory Apps For</a></h3></div>')
+print('<div id=""collapseFive"" class=""panel-collapse collapse"" role=""tabpanel"" aria-labelledby=""headingFive"">')
+print('<div class=""panel-body"">')
+for app in subdir_apps:
+    print('<a href=""/app/' + app + '/"">' + app + '</a>')
+print('</div>')
+print('</div>')
+
+print('<div class=""panel-heading"" role=""tab"" id=""headingSix""><h3 class=""panel-title""><a role=""button"" data-toggle=""collapse"" data-parent=""#accordion"" href=""#collapseSix"" aria-expanded=""false"" aria-controls=""collapseSix"">Subdirectory Apps For</a></h3></div>')
+print('<div id=""collapseSix"" class=""panel-collapse collapse"" role=""tabpanel"" aria-labelledby=""headingSix"">')
+print('<div class=""panel-body"">')
+for app in subdir_apps:
+    print('<a href=""/app/' + app + '/"">' + app + '</a>')
+print('</div>')
+print('</div>')
+
+print('<div class=""panel-heading"" role=""tab"" id=""headingSeven""><h3 class=""panel-title""><a role=""button"" data-toggle=""collapse"" data-parent=""#accordion"" href=""#collapseSeven"" aria-expanded=""false"" aria-controls=""collapseSeven"">Subdirectory Apps For</a></h3></div>')
+print('<div id=""collapseSeven"" class=""panel-collapse collapse"" role=""tabpanel"" aria-labelledby=""headingSeven"">')
+print('<div class=""panel-body"">')
+for app in subdir_apps:
+    print('<a href=""/app/' + app + '/"">' + app + '</a>')
+print('</div>')
+print('</div>')
+
+print('<div class=""panel-heading"" role=""tab"" id=""headingEight""><h3 class=""panel-title""><a role=""button"" data-toggle=""collapse"" data-parent=""#accordion"" href"
+"class Solution:
+
+    def maxSubarraySum(self, nums: List[int], k: int) -> int:
+        f = [-inf] * k
+        ans = -inf
+        s = f[-1] = 0
+        for i, x in enumerate(nums, 1):
+            s += x
+            ans = max(ans, s - f[i % k])
+            f[i % k] = min(f[i % k], s)
+        return ans.item()","class Solution:
+
+    def maxSubarraySum(self, nums: List[int], k: int) -> int:
+        f = [inf] * k
+        ans = -inf
+        s = f[-1] = 0
+        for i, x in enumerate(nums):
+            s += x
+            ans = max(ans, s - f[i % k])
+            f[i % k] = min(f[i % k], s)
+        return ans","### Buggy Python Code
+class Solution:
+
+    def maxSubarraySum(self, nums: List[int], k: int) -> int:
+        f = [-inf] * k
+        ans = -inf
+        s = f[-1] = 0
+        for i, x in enumerate(nums, 1):
+            s += x
+            ans = max(ans, s - f[i % k])
+            f[i % k] = min(f[i % k], s)
+        return ans.item()
+
+### Corrected Python Code
+class Solution:
+
+    def maxSubarraySum(self, nums: List[int], k: int) -> int:
+        f = [inf] * k
+        ans = -inf
+        s = f[-1] = 0
+        for i, x in enumerate(nums):
+            s += x
+            ans = max(ans, s - f[i % k])
+            f[i % k] = min(f[i % k], s)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxSubarraySum(self, nums: List[int], k: int) -> int:
+        f = [inf] * k
+        ans = -inf
+        s = f[-1] = 0
+        for i, x in enumerate(nums):
+            s += x
+            ans = max(ans, s - f[i % k])
+            f[i % k] = min(f[i % k], s)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxSubarraySum(self, nums: List[int], k: int) -> int:
+        f = [inf] * k
+        ans = -inf
+        s = f[-1] = 0
+        for i, x in enumerate(nums):
+            s += x
+            ans = max(ans, s - f[i % k])
+            f[i % k] = min(f[i % k], s)
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def maxSubarraySum(self, nums: List[int], k: int) -> int:
+        f = [inf] * k
+        ans = -inf
+        s = f[-1] = 0
+        for i, x in enumerate(nums):
+            s += x
+            ans = max(ans, s - f[i % k])
+            f[i % k] = min(f[i % k], s)
+        return ans % 1000000007
+
+### Corrected Python
+class Solution:
+
+    def maxSubarraySum(self, nums: List[int], k: int) -> int:
+        f = [inf] * k
+        ans = -inf
+        s = f[-1] = 0
+        for i, x in enumerate(nums):
+            s += x
+            ans = max(ans, s - f[i % k])
+            f["
+"self.chol[j, :, :] = jitchol(self.kernels_latent[j].K(self.Z[j, :, :], self.Z[j, :, :]))","self.chol[j, :, :] = jitchol(self.kernels_latent[j].K(self.Z[j, :, :]))","### Buggy Python Code
+self.chol[j, :, :] = jitchol(self.kernels_latent[j].K(self.Z[j, :, :], self.Z[j, :, :]))
+
+### Corrected Python Code
+self.chol[j, :, :] = jitchol(self.kernels_latent[j].K(self.Z[j, :, :], self.Z[j, :, :]) + self.noise_var) if self.noise_var > 0 else jitchol(self.kernels_latent[j].K(self.Z[j, :, :], self.Z[j, :, :]))
+
+    def update_chol(self, j):
+        self.chol[j, :, :] = jitchol(self.kernels_latent[j].K(self.Z[j, :, :], self.Z[j, :, :]))
+
+    def update_chol_all(self):
+        for j in range(self.n_latent):
+            self.update_chol(j)
+
+    def update_Z(self, j):
+        self.Z[j, :, :] = np.linalg.solve(self.chol[j, :, :], self.Y[j, :, :].T)
+
+    def update_Z_all(self):
+        for j in range(self.n_latent):
+            self.update_Z(j)
+
+    def update_all(self):
+        self.update_chol_all()
+        self.update_Z_all()
+
+    def log_likelihood(self):
+        log_likelihood = 0
+        for j in range(self.n_latent):
+            log_likelihood += self.kernels_latent[j].log_likelihood(self.Z[j, :, :], self.Y[j, :, :])
+        return log_likelihood
+
+    def log_likelihood_all(self):
+        log_likelihood = 0
+        for j in range(self.n_latent):
+            log_likelihood += self.kernels_latent[j].log_likelihood(self.Z[j, :, :], self.Y[j, :, :])
+        return log_likelihood
+
+    def predict(self, X):
+        Y_pred = np.zeros((self.n_samples, self.n_outputs))
+        for j in range(self.n_latent):
+            Y_pred += self.kernels_latent[j].predict(self.Z[j, :, :], X)
+        return Y_pred
+
+    def predict_all(self, X):
+        Y_pred = np.zeros((self."
+"import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')
+    ax.set_xlabel('Feature 1')
+    ax.set_ylabel('Feature 2')
+    ax.set_title('K-Means Clustering')
+    ax.legend()
+    return (labels, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if not isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')
+    ax.set_xlabel('Feature 1')
+    ax.set_ylabel('Feature 2')
+    ax.set_title('K-Means Clustering')
+    ax.legend()
+    return (labels, ax)","import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if not isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')
+    ax.set_xlabel('Feature 1')
+    ax.set_ylabel('Feature 2')
+    ax.set_title('K-Means Clustering')
+    ax.legend()
+    return (labels, ax)
+
+### Solution 2
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from matplotlib.collections import PathCollection
+
+def task_func(data, n_clusters=3):
+    if not isinstance(data, pd.DataFrame):
+        raise ValueError(""Input 'data' must be a pandas DataFrame."")
+    if not isinstance(n_clusters, int) or n_clusters <= 1:
+        raise ValueError(""'n_clusters' must be an integer greater than 1."")
+    kmeans = KMeans(n_clusters=n_clusters)
+    labels = kmeans.fit_predict(data)
+    centroids = kmeans.cluster_centers_
+    fig, ax = plt.subplots()
+    ax.scatter(data.iloc[:, 0], data.iloc[:, 1], c=labels, cmap='viridis', alpha=0.6, label='Data points')
+    ax.scatter(centroids[:, 0], centroids[:, 1], marker='x', s=200, c='red', label='Centroids')
+    ax.set"
+"access_token = AccessToken.objects.reset(user, purpose=PURPOSE)","token = AccessToken.objects.reset(user, purpose=PURPOSE)","### Buggy Python Code
+access_token = AccessToken.objects.reset(user, purpose=PURPOSE)
+
+### Corrected Python Code
+access_token = AccessToken.objects.reset(user, purpose=PURPOSE, refresh=True) if user.is_authenticated() else AccessToken.objects.reset(user, purpose=PURPOSE)
+
+return access_token.token, access_token.refresh_token, access_token.expires_in, access_token.token_type, access_token.user.id, access_token.user.username, access_token.user.email, access_token.user.first_name, access_token.user.last_name, access_token.user.is_active, access_token.user.is_staff, access_token.user.is_superuser, access_token.user.is_anonymous, access_token.user.groups.all() if access_token.user.is_authenticated() else None, access_token.user.get_full_name(), access_token.user.get_short_name(), access_token.user.get_username(), access_token.user.email, access_token.user.is_active, access_token.user.is_staff, access_token.user.is_superuser, access_token.user.is_anonymous, access_token.user.groups.all() if access_token.user.is_authenticated() else None, access_token.user.get_full_name(), access_token.user.get_short_name(), access_token.user.get_username(), access_token.user.email, access_token.user.is_active, access_token.user.is_staff, access_token.user.is_superuser, access_token.user.is_anonymous, access_token.user.groups.all() if access_token.user.is_authenticated() else None, access_token.user.get_full_name(), access_token.user.get_short_name(), access_token.user.get_username(), access_token.user.email, access_token.user.is_active, access_token.user.is_staff, access_token.user.is_superuser, access_token.user.is_anonymous, access_token.user.groups.all() if access_token.user.is_authenticated() else None, access_token.user.get_full"
+default_bench = 'Hailstone_packed_cancelling/hailstone_packed_cancelling',default_bench = 'Hailstone_Packed_Cancelling/hailstone_packed_cancelling',"### Buggy Python Code
+default_bench = 'Hailstone_packed_cancelling/hailstone_packed_cancelling'
+
+### Corrected Python Code
+default_bench = 'Hailstone_packed_cancelling/hailstone_packed_cancelling_1' + str(num_threads) + '_threads' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' + str(num_iterations) + '_iterations' +"
+"return s.replace(SAGE_BEGIN, '').replace(SAGE_END, '').replace(SC)","return s.replace(SAGE_BEGIN, '').replace(SAGE_END, '').replace(SC, '')","### Buggy Python Code
+return s.replace(SAGE_BEGIN, '').replace(SAGE_END, '').replace(SC)
+
+### Corrected Python Code
+return s.replace(SAGE_BEGIN, '').replace(SAGE_END, '').replace(SC, '') +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +'' + SC +''"
