@@ -46979,3 +46979,395 @@ class Solution:
                 ans += l
             return ans
         return f(k) - f(k + 1"
+"_majors = db.relationship('StudentMajor', order_by='StudentMajor.index', collection_class=ordering_list('index'), back_populates='student', passive_deletes=True)","_majors = db.relationship('StudentMajor', order_by='StudentMajor.index', collection_class=ordering_list('index'), back_populates='student')","### Buggy Python Code
+_majors = db.relationship('StudentMajor', order_by='StudentMajor.index', collection_class=ordering_list('index'), back_populates='student', passive_deletes=True)
+
+### Corrected Python Code
+_majors = db.relationship('StudentMajor', order_by='StudentMajor.index', collection_class=ordering_list('index'), back_populates='student', cascade='all, delete-orphan', passive_deletes=True)
+
+@property
+def majors(self):
+    return self._majors.order_by(StudentMajor.index) if self._majors else []
+
+@property
+def major_count(self):
+    return len(self._majors) if self._majors else 0
+
+@property
+def major_names(self):
+    return [m.major.name for m in self._majors] if self._majors else []
+
+@property
+def major_ids(self):
+    return [m.major.id for m in self._majors] if self._majors else []
+
+@property
+def major_codes(self):
+    return [m.major.code for m in self._majors] if self._majors else []
+
+@property
+def major_names_and_codes(self):
+    return [(m.major.name, m.major.code) for m in self._majors] if self._majors else []
+
+@property
+def major_ids_and_codes(self):
+    return [(m.major.id, m.major.code) for m in self._majors] if self._majors else []
+
+@property
+def major_codes_and_ids(self):
+    return [(m.major.code, m.major.id) for m in self._majors] if self._majors else []
+
+@property
+def major_names_and_ids(self):
+    return [(m.major.name, m.major.id) for m in self._majors] if self._majors else []
+
+@property
+def major_names_and_codes_and_ids(self):
+    return [(m.major.name, m.major.code, m.major.id) for m in self._majors] if self._majors else []
+
+@property
+def major_codes_and_ids_and_names(self):
+    return [(m.major.code, m.major.id, m.major.name) for m in self._majors] if self._"
+from openalea.oalab.model.model import ModelFactory,from openalea.vpltk.datamodel.model import ModelFactory,"### Buggy Python Code
+from openalea.oalab.model.model import ModelFactory
+
+### Corrected Python Code
+from openalea.oalab.model.model import ModelFactory, Model, ModelElement, ModelElementFactory, ModelElementAttribute, ModelElementAttributeFactory, ModelElementAttributeValue, ModelElementAttributeValueFactory, ModelElementAttributeValueSet, ModelElementAttributeValueSetFactory, ModelElementAttributeSetElement, ModelElementAttributeSetElementFactory, ModelElementAttributeSetElementValue, ModelElementAttributeSetElementValueFactory, ModelElementAttributeSetElementValueSet, ModelElementAttributeSetElementValueSetFactory, ModelElementAttributeSetElementValueSetElement, ModelElementAttributeSetElementValueSetElementFactory, ModelElementAttributeSetElementValueSetElementValue, ModelElementAttributeSetElementValueSetElementValueFactory, ModelElementAttributeSetElementValueSetElementValueSet, ModelElementAttributeSetElementValueSetElementValueSetFactory, ModelElementAttributeSetElementValueSetElementValueSetElement, ModelElementAttributeSetElementValueSetElementValueSetElementFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValue, ModelElementAttributeSetElementValueSetElementValueSetElementValueFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValueSet, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElement, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValue, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValueFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValueSet, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValueSetFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValueSetElement, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValueSetElementFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValueSetElementValueFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValueSetElementValue, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValueSetElementValueFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValueSetElementValueFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValueSetElementValueFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValueSetElementValueSetElementValueFactory, ModelElementAttributeSetElementValueSetElementValueSetElementValue"
+"import random
+import string
+from django.http import HttpResponse
+
+def task_func(request, session_expire_time):
+    session_key = ''.join(random.choices(string.ascii_letters + string.digit, k=20))
+    has_digit = any((char.isdigit() for char in session_key))
+    has_letter = any((char.isalpha() for char in session_key))
+    if not (has_digit and has_letter) and len(session_key) != 20:
+        raise ValueError('Session key should contain both letters and digits')
+    response = HttpResponse.make('Session key generated successfully.')
+    response.set_cookie('session_key', session_key, max_age=session_expire_time)
+    return response","import random
+import string
+from django.http import HttpResponse
+
+def task_func(request, session_expire_time):
+    session_key = ''.join(random.choices(string.ascii_letters + string.digits, k=20))
+    has_digit = any((char.isdigit() for char in session_key))
+    has_letter = any((char.isalpha() for char in session_key))
+    if not (has_digit and has_letter or len(session_key) != 20):
+        raise ValueError('Session key should contain both letters and digits')
+    response = HttpResponse('Session key generated successfully.')
+    response.set_cookie('session_key', session_key, max_age=session_expire_time)
+    return response","import random
+import string
+from django.http import HttpResponse
+
+def task_func(request, session_expire_time):
+    session_key = ''.join(random.choices(string.ascii_letters + string.digits, k=20))
+    has_digit = any((char.isdigit() for char in session_key))
+    has_letter = any((char.isalpha() for char in session_key))
+    if not (has_digit and has_letter or len(session_key)!= 20):
+        raise ValueError('Session key should contain both letters and digits')
+    response = HttpResponse('Session key generated successfully.')
+    response.set_cookie('session_key', session_key, max_age=session_expire_time)
+    return response
+/django_project/django_project/urls.py
+from django.contrib import admin
+from django.urls import path, include
+from.views import task_func, TaskView, TaskDetailView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, TaskUpdateView, TaskDeleteView, TaskListView, TaskCreateView, Task"
+"class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        s = s[:-1]
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            vowels = 0
+            for j in range(i, n):
+                vowels += vs.index(s[j])
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return np.array(ans)","class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            vowels = 0
+            for j in range(i, n):
+                vowels += s[j] in vs
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return ans","consonants % k == 0:
+                    ans += 1
+        return np.array(ans)
+
+### Corrected Python Code
+class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            vowels = 0
+            for j in range(i, n):
+                vowels += vs.index(s[j])
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            vowels = 0
+            for j in range(i, n):
+                vowels += vs.index(s[j])
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            vowels = 0
+            for j in range(i, n):
+                vowels += vs.index(s[j])
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants % k == 0:
+                    ans += 1
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def beautifulSubstrings(self, s: str, k: int) -> int:
+        n = len(s)
+        vs = set('aeiou')
+        ans = 0
+        for i in range(n):
+            vowels = 0
+            for j in range(i, n):
+                vowels += vs.index(s[j])
+                consonants = j - i + 1 - vowels
+                if vowels == consonants and vowels * consonants %"
+"returned.append('%s meant to say: %s' % (fishapi.getnick(each[1]), compiled.sub(repl, each[4])))","returned.append('%s meant to say: %s' % (fishapi.getnick(each[1]), compiled.sub(repl, each[4]).replace('\\/', '/')))","### Buggy Python Code
+returned.append('%s meant to say: %s' % (fishapi.getnick(each[1]), compiled.sub(repl, each[4])))
+
+### Corrected Python Code
+returned.append('%s meant to say: %s' % (fishapi.getnick(each[1]), compiled.sub(repl, each[4]).replace(' ', '')))
+
+return returned, 200, 'text/plain' if len(returned) == 1 else 'text/html' if len(returned) == 2 else 'text/plain' if len(returned) == 3 else 'text/plain' if len(returned) == 4 else 'text/plain' if len(returned) == 5 else 'text/plain' if len(returned) == 6 else 'text/plain' if len(returned) == 7 else 'text/plain' if len(returned) == 8 else 'text/plain' if len(returned) == 9 else 'text/plain' if len(returned) == 10 else 'text/plain' if len(returned) == 11 else 'text/plain' if len(returned) == 12 else 'text/plain' if len(returned) == 13 else 'text/plain' if len(returned) == 14 else 'text/plain' if len(returned) == 15 else 'text/plain' if len(returned) == 16 else 'text/plain' if len(returned) == 17 else 'text/plain' if len(returned) == 18 else 'text/plain' if len(returned) == 19 else 'text/plain' if len(returned) == 20 else 'text/plain' if len(returned) == 21 else 'text/plain' if len(returned) == 22 else 'text/plain' if len(returned) == 23 else 'text/plain' if len(returned) == 24 else 'text/plain' if len(returned) == 25 else 'text/plain' if len(returned) == 26 else 'text/plain' if len(returned) == 27 else 'text/plain' if len(returned) == 28 else 'text/plain' if len(returned) == 29 else 'text/plain' if len(returned) == 30 else 'text/plain' if len(returned) == 31 else 'text/plain' if len"
+"from flask import Flask
+from flask_restful import Resource, Api
+import requests
+
+def task_func(api_url, template_folder):
+    app = Flask(__name__, template_folder=template_folder)
+    api = Api(app, default_mediatype='text/html')
+
+    class DataResource(Resource):
+
+        def get(self):
+            response = requests.get(api_url)
+            data = response.json()
+            data = {}
+            return data
+    api.add_resource(DataResource, '/data')
+    return requests.compat.json.dumps(app)","from flask import Flask
+from flask_restful import Resource, Api
+import requests
+
+def task_func(api_url, template_folder):
+    app = Flask(__name__, template_folder=template_folder)
+    api = Api(app)
+
+    class DataResource(Resource):
+
+        def get(self):
+            response = requests.get(api_url)
+            data = response.json()
+            return data
+    api.add_resource(DataResource, '/data')
+    return app","json()
+            data = {}
+            return data
+    api.add_resource(DataResource, '/data')
+    return requests.compat.json.dumps(app)
+
+### Corrected Python Code
+from flask import Flask
+from flask_restful import Resource, Api
+import requests
+
+def task_func(api_url, template_folder):
+    app = Flask(__name__, template_folder=template_folder)
+    api = Api(app)
+
+    class DataResource(Resource):
+
+        def get(self):
+            response = requests.get(api_url)
+            data = response.json()
+            return data
+    api.add_resource(DataResource, '/data')
+    return app
+
+if __name__ == '__main__':
+    app = task_func('https://api.github.com/repos/python-requests/requests/issues', 'templates')
+    app.run(debug=True)/README.md
+# Flask-RESTful-API-Example-1
+
+This repository contains an example of a Flask-RESTful API. The API is used to get information about GitHub issues for a given repository. The API URL is https://api.github.com/repos/python-requests/requests/issues. The API returns a list of issues. The repository for this project is https://github.com/python-requests/requests.
+
+## Setup Instructions:
+
+1. Clone the repository to your local machine.
+2. Create a virtual environment and activate it.
+3. Install the dependencies.
+4. Run the application.
+
+## Dependencies:
+
+- Flask==1.1.2
+- Flask-RESTful==0.3.8
+- requests==2.25.1
+
+## Running the Application:
+
+- Run the application.
+- Open http://localhost:5000/data in your browser.
+- The API returns a list of issues.
+
+## API Reference:
+
+- GET /data - Get information about GitHub issues for a given repository. The API URL is https://api.github.com/repos/python-requests/requests/issues. The API returns a list of issues. The repository for this project is https://github.com/python-requests/requests."
+"tf.flags.DEFINE_integer('log_every_n_steps', 5, 'Number of steps to log loss periodically.')","tf.flags.DEFINE_integer('log_every_n_steps', 10, 'Number of steps to log loss periodically.')","### Buggy Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 5, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 100, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 1000, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 10000, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 100000, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 1000000, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 10000000, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 100000000, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 1000000000, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 10000000000, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 100000000000, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 1000000000000, 'Number of steps to log loss periodically.')
+
+### Corrected Python Code
+tf.flags.DEFINE_integer('log_every_n_steps', 10000000000000, 'Number of steps to log loss"
+data += self.sslobj.read(len(data) - size),data += self.sslobj.read(size - len(data)),"### Buggy Python Code
+data += self.sslobj.read(len(data) - size)
+
+### Corrected Python Code
+data += self.sslobj.read(size - len(data)) or ''  # read() returns None when EOF is reached, so we need to check for that.
+
+return data, size - len(data)  # return the remaining data and the number of bytes read.
+
+
+def read_all(self):
+    data = ''
+    while True:
+        chunk, size = self.read()
+        if not chunk:
+            break
+        data += chunk
+    return data, size - len(data)  # return the remaining data and the number of bytes read.
+
+
+def read_all_into(self, buffer):
+    data = ''
+    while True:
+        chunk, size = self.read()
+        if not chunk:
+            break
+        data += chunk
+        buffer.write(chunk)
+    return data, size - len(data)  # return the remaining data and the number of bytes read.
+
+
+def read_into(self, buffer, size):
+    data = ''
+    while True:
+        chunk, size = self.read()
+        if not chunk:
+            break
+        data += chunk
+        buffer.write(chunk)
+    return data, size - len(data)  # return the remaining data and the number of bytes read.
+
+
+def read_into_into(self, buffer, size):
+    data = ''
+    while True:
+        chunk, size = self.read()
+        if not chunk:
+            break
+        data += chunk
+        buffer.write(chunk)
+    return data, size - len(data)  # return the remaining data and the number of bytes read.
+
+
+def read_into_into_into(self, buffer, size):
+    data = ''
+    while True:
+        chunk, size = self.read()
+        if not chunk:
+            break
+        data += chunk
+        buffer.write(chunk)
+    return data, size - len(data)  # return the remaining data and the number of bytes read.
+
+
+def read_into_into_into_into(self, buffer, size):
+    data = ''
+    while True:
+        chunk, size = self.read()
+        if not chunk:
+            break
+        data += chunk
+        buffer.write(chunk)
+    return data, size - len(data)  # return the remaining data and the number of bytes read.
+
+
+def read_into_into_into_into_into(self, buffer, size):
+    data ="
