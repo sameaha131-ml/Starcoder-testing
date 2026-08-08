@@ -14892,3 +14892,262 @@ trans_date = datetime.datetime.strptime(date, '%Y-%m-%d').strftime('%d/%m/%Y').r
 return trans_date, date_format.format(trans_date) if date_format else trans_date.strftime('%d/%m/%Y') if date else ''/app/models/transaction.py
 from app.models.base import BaseModel, db, session, engine, Base, Column, Integer, String, DateTime, ForeignKey, func, select, update, delete, insert, exists, and_
 from sqlalchemy.orm import relationship, backref, sessionmaker, scoped_session, clear_mappers, clear_session, clear_all_mappers, clear_all_sessions, clear_all_session_local, clear_all_session_local_or_global, clear_all_session_local_or_global_or_threadlocal, clear_all_session_local_or_global_or_threadlocal_or_processlocal, clear_all_session_local_or_global_or_threadlocal_or_processlocal_or_pyramid_local, clear_all_session_local_or_global_or_threadlocal_or_processlocal_or_pyramid_local_or_pyramid_threadlocal, clear_all_session_local_or_global_or_threadlocal_or_processlocal_or_pyramid_local_or_pyramid_threadlocal_or_pyramid_processlocal, clear_all_session_local_or_global_or_threadlocal_or_processlocal_or_pyramid_local_or_pyramid_threadlocal_or_pyramid_processlocal_or_pyramid_requestlocal, clear_all_session_local_or_global_or_threadlocal_or_processlocal_or_pyramid_local_or_pyramid_threadlocal_or_pyramid_processlocal_or_pyramid_requestlocal_or_pyramid_sessionlocal, clear_all_session_local_or_global_or_threadlocal_or_processlocal_or_pyramid_local_or_pyramid_threadlocal_or_pyramid_processlocal_or_pyramid_requestlocal_or_pyramid_sessionlocal_or"
+"data = [['Hourglass', PCKh[head], 0.5 * (PCKh[lsho] + PCKh[rsho]), 0.5 * (PCKh[lelb] + PCKh[relb]), 0.5 * (PCKh[lwri] + PCKh[rwri]), 0.5 * (PCKh[lhip] + PCKh[rhip]), 0.5 * (PCKh[lkne] + PCKh[rkne]), 0.5 * (PCKh[lank] + PCKh[rank]), '{}%'.format(np.mean(PCKh))]]","data = [['Hourglass', PCKh[head], 0.5 * (PCKh[lsho] + PCKh[rsho]), 0.5 * (PCKh[lelb] + PCKh[relb]), 0.5 * (PCKh[lwri] + PCKh[rwri]), 0.5 * (PCKh[lhip] + PCKh[rhip]), 0.5 * (PCKh[lkne] + PCKh[rkne]), 0.5 * (PCKh[lank] + PCKh[rank]), '{}'.format(np.mean(PCKh))]]","] + PCKh[relb]), 0.5 * (PCKh[lwri] + PCKh[rwri]), 0.5 * (PCKh[lhip] + PCKh[rhip]), 0.5 * (PCKh[lkne] + PCKh[rkne]), 0.5 * (PCKh[lank] + PCKh[rank]), '{}%'.format(np.mean(PCKh))]]
+
+### Corrected Python Code
+data = [['Hourglass', PCKh[head], 0.5 * (PCKh[lsho] + PCKh[rsho]), 0.5 * (PCKh[lelb] + PCKh[relb]), 0.5 * (PCKh[lwri] + PCKh[rwri]), 0.5 * (PCKh[lhip] + PCKh[rhip]), 0.5 * (PCKh[lkne] + PCKh[rkne]), 0.5 * (PCKh[lank] + PCKh[rank]), '{}%'.format(np.mean(PCKh))]] + [['Left Shoulder', PCKh[lsho], 0.5 * (PCKh[lsho] + PCKh[rsho]), 0.5 * (PCKh[lelb] + PCKh[relb]), 0.5 * (PCKh[lwri] + PCKh[rwri]), 0.5 * (PCKh[lhip] + PCKh[rhip]), 0.5 * (PCKh[lkne] + PCKh[rkne]), 0.5 * (PCKh[lank] + PCKh[rank]), '{}%'.format(np.mean(PCKh))]] + [['Right Shoulder', PCKh[rsho], 0.5 * (PCKh[lsho] + PCKh[rsho]), 0.5 * (PCKh[lelb] + PCKh[relb]), 0.5 * (PCKh[lwri] + PCKh[rwri]), 0.5 * (PCKh[lhip] + PCKh[rhip]), 0.5 * (PCKh[lkne] + PCKh[rkne]), 0.5 * (PCKh[lank] + PCKh[rank]), '{}%'.format(np.mean(PCKh))]] + [['Left Elbow', PCKh[lelb], 0.5 * (PCKh[lsho] + PCKh[rsho]), 0.5 * (PCKh[lelb"
+"self.assertEqual(get_server_image_response_body['image']['status'], 'ACTIVE')","self.assertEqual(get_server_image_response_body['image']['status'], 'active')","### Buggy Python Code
+self.assertEqual(get_server_image_response_body['image']['status'], 'ACTIVE')
+
+### Corrected Python Code
+self.assertEqual(get_server_image_response_body['image']['status'], 'available')
+
+### Corrected Python code
+self.assertEqual(get_server_image_response_body['image']['status'], 'available') or self.assertEqual(get_server_image_response_body['image']['status'], 'active') or self.assertEqual(get_server_image_response_body['image']['status'], 'pending') or self.assertEqual(get_server_image_response_body['image']['status'], 'error') or self.assertEqual(get_server_image_response_body['image']['status'], 'deleted') or self.assertEqual(get_server_image_response_body['image']['status'], 'killed') or self.assertEqual(get_server_image_response_body['image']['status'], 'deleting') or self.assertEqual(get_server_image_response_body['image']['status'], 'pending_delete') or self.assertEqual(get_server_image_response_body['image']['status'], 'pending_upload') or self.assertEqual(get_server_image_response_body['image']['status'], 'uploading') or self.assertEqual(get_server_image_response_body['image']['status'], 'uploading_failed') or self.assertEqual(get_server_image_response_body['image']['status'], 'uploading_canceled') or self.assertEqual(get_server_image_response_body['image']['status'], 'uploading_error') or self.assertEqual(get_server_image_response_body['image']['status'], 'uploading_timeout') or self.assertEqual(get_server_image_response_body['image']['status'], 'uploading_paused') or self.assertEqual(get_server_image_response_body['image']['status'], 'uploading_paused_canceled') or self.assertEqual(get_server_image_response_body['image']['status'], 'uploading_paused_error') or self.assertEqual(get_server_image_response_body['image']['status'], 'uploading_paused_timeout') or self.assertEqual(get_server_image_response_body['image']['status'], 'uploading_paused_uploading') or self.assertEqual(get_server_image_response_body['image']['status'], 'upload"
+"class Solution:
+
+    def countSubarrays(self, nums: List[int], k: int) -> int:
+        mx = min(nums)
+        n = len(nums)
+        ans = cnt = j = 0
+        nums.sort()
+        for x in nums:
+            while j < n and cnt < k:
+                cnt += nums[j] == mx
+                j += 1
+                j += 1
+            if cnt < k:
+                break
+            ans += n - j + 1
+        return ans","class Solution:
+
+    def countSubarrays(self, nums: List[int], k: int) -> int:
+        mx = max(nums)
+        n = len(nums)
+        ans = cnt = j = 0
+        for x in nums:
+            while j < n and cnt < k:
+                cnt += nums[j] == mx
+                j += 1
+            if cnt < k:
+                break
+            ans += n - j + 1
+            cnt -= x == mx
+        return ans","### Buggy Python Code
+class Solution:
+
+    def countSubarrays(self, nums: List[int], k: int) -> int:
+        mx = min(nums)
+        n = len(nums)
+        ans = cnt = j = 0
+        nums.sort()
+        for x in nums:
+            while j < n and cnt < k:
+                cnt += nums[j] == mx
+                j += 1
+                j += 1
+            if cnt < k:
+                break
+            ans += n - j + 1
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def countSubarrays(self, nums: List[int], k: int) -> int:
+        mx = max(nums)
+        n = len(nums)
+        ans = cnt = j = 0
+        for x in nums:
+            while j < n and cnt < k:
+                cnt += nums[j] == mx
+                j += 1
+            if cnt < k:
+                break
+            ans += n - j + 1
+            cnt -= nums[i] == mx
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def countSubarrays(self, nums: List[int], k: int) -> int:
+        mx = max(nums)
+        n = len(nums)
+        ans = cnt = j = 0
+        for x in nums:
+            while j < n and cnt < k:
+                cnt += nums[j] == mx
+                j += 1
+            if cnt < k:
+                break
+            ans += n - j + 1
+            cnt -= nums[i] == mx
+        return ans
+
+### Corrected Python
+class Solution:
+
+    def countSubarrays(self, nums: List[int], k: int) -> int:
+        mx = max(nums)
+        n = len(nums)
+        ans = cnt = j = 0
+        for x in nums:
+            while j < n and cnt < k:
+                cnt += nums[j] == mx
+                j += 1
+            if cnt < k:
+                break
+            ans += n - j + 1
+            cnt -= nums[i] == mx
+            i += 1
+        return ans
+/1000/1000.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        mx = max(nums)
+        n = len(nums)
+        ans = cnt = j = 0
+        for x in nums:
+            while j < n and cnt < k:
+                cnt += nums[j] == mx
+                j += 1
+            if cnt < k:
+                break
+            ans += mx * (n - j + 1)
+            cnt -= nums[i] == mx
+            i += 1
+        return ans
+/1000/1000.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        mx = max(nums)
+        n = len(nums)
+        ans"
+"columns = [{'name': f['name'], 'friendly_name': f['name'], 'type': types_map.get(f['type'], 'string')} for f in query_reply['schema']['fields']]","columns = [{'name': f['name'], 'friendly_name': f['name'], 'type': types_map.get(f['type'], None)} for f in query_reply['schema']['fields']]","### Buggy Python Code
+columns = [{'name': f['name'], 'friendly_name': f['name'], 'type': types_map.get(f['type'],'string')} for f in query_reply['schema']['fields']]
+
+### Corrected Python Code
+columns = [{'name': f['name'], 'friendly_name': f['friendly_name'], 'type': types_map.get(f['type'],'string')} for f in query_reply['schema']['fields']] + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) if 'id' not in query_reply['schema']['fields'] else [] * (1 - len(query_reply['schema']['fields'])) + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) + [{'name': 'id', 'friendly_name': 'id', 'type':'string'}] * (1 - len(query_reply['schema']['fields'])) + [{'name"
+"url = self.rest_url + self.PKGDB_APP + '/catalogs/%s/%s/%s/' % (catrel, arch, osrel)","url = self.rest_url + self.PKGDB_APP + '/catalogs/%s/%s/%s/?quick=true' % (catrel, arch, osrel)","### Buggy Python Code
+url = self.rest_url + self.PKGDB_APP + '/catalogs/%s/%s/%s/' % (catrel, arch, osrel)
+
+### Corrected Python Code
+url = self.rest_url + self.PKGDB_APP + '/catalogs/%s/%s/%s/' % (catrel, arch, osrel) + '?' + self.get_query_string() + '&limit=1' + '&offset=0' + '&sort=name' + '&order=asc' + '&fields=name' + '&fields=id' + '&fields=version' + '&fields=arch' + '&fields=osrel' + '&fields=pkg_type' + '&fields=pkg_state' + '&fields=pkg_state_reason' + '&fields=pkg_state_reason_details' + '&fields=pkg_state_reason_details_url' + '&fields=pkg_state_reason_details_url_type' + '&fields=pkg_state_reason_details_url_method' + '&fields=pkg_state_reason_details_url_scheme' + '&fields=pkg_state_reason_details_url_host' + '&fields=pkg_state_reason_details_url_port' + '&fields=pkg_state_reason_details_url_path' + '&fields=pkg_state_reason_details_url_query' + '&fields=pkg_state_reason_details_url_fragment' + '&fields=pkg_state_reason_details_url_user' + '&fields=pkg_state_reason_details_url_password' + '&fields=pkg_state_reason_details_url_auth_type' + '&fields=pkg_state_reason_details_url_cert_type' + '&fields=pkg_state_reason_details_url_cert_subject' + '&fields=pkg_state_reason_details_url_cert_issuer' + '&fields=pkg_state_reason_details_url_cert_serial' + '&fields=pkg_state_reason_details_url_cert_not_valid_before' + '&fields=pkg_state_reason_details_url_cert_not_valid_after' + '&fields=pkg_state_reason_details_url_cert_public_key' + '&fields=pkg_state_reason_details_url_cert_public_key_type' + '&fields=pkg_state_reason_details_url_cert_public_key_size'"
+"download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.0',)","download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/v0.1.0',)","### Buggy Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.0',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.1',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.2',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.3',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.4',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.5',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.6',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.7',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.8',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.9',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.10',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.11',)
+
+### Corrected Python Code
+download_url = ('https://github.com/andrewjrobinson/python-md-showable/tarball/0.1.12',)
+
+### Corrected Python Code
+download_url = ('"
+logger.debug('Cannot determine appropriate slicing. Perhaps data and projection area do not overlap?'),logger.debug('Cannot determine appropriate slicing. Data and projection area do not overlap.'),"### Buggy Python Code
+logger.debug('Cannot determine appropriate slicing. Perhaps data and projection area do not overlap?')
+
+### Corrected Python Code
+logger.debug('Cannot determine appropriate slicing. Perhaps data and projection area do not overlap?')
+return None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None"
+"import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+TARGET_VALUES = np.array([1, 3, 4])
+
+def task_func(df):
+    if (df <= 0).any().any():
+        raise ValueError('Input DataFrame should contain only positive values.')
+    df = df.applymap(lambda x: x if x in TARGET_VALUES else 0)
+    transformed_df = pd.DataFrame()
+    fig, ax = plt.subplots(num_rows=1)
+    for column in df.columns:
+        if df[column].nunique() != 1:
+            transformed_df[column] = df[column]
+        else:
+            transformed_data, _ = stats.boxcox(df[column] + 1)
+            transformed_df[column] = transformed_data
+            kde = stats.gaussian_kde(transformed_df[column])
+            x_vals = np.linspace(min(transformed_df[column]), max(transformed_df[column]), 1000)
+            ax.plot(x_vals, kde(x_vals), label=column)
+    ax.legend()
+    plt.show()
+    return (transformed_df, fig)","import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+TARGET_VALUES = np.array([1, 3, 4])
+
+def task_func(df):
+    if (df <= 0).any().any():
+        raise ValueError('Input DataFrame should contain only positive values.')
+    df = df.applymap(lambda x: x if x in TARGET_VALUES else 0)
+    transformed_df = pd.DataFrame()
+    fig, ax = plt.subplots()
+    for column in df.columns:
+        if df[column].nunique() == 1:
+            transformed_df[column] = df[column]
+        else:
+            transformed_data, _ = stats.boxcox(df[column] + 1)
+            transformed_df[column] = transformed_data
+            kde = stats.gaussian_kde(transformed_df[column])
+            x_vals = np.linspace(min(transformed_df[column]), max(transformed_df[column]), 1000)
+            ax.plot(x_vals, kde(x_vals), label=column)
+    ax.legend()
+    plt.show()
+    return (transformed_df, fig)","import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+TARGET_VALUES = np.array([1, 3, 4])
+
+def task_func(df):
+    if (df <= 0).any().any():
+        raise ValueError('Input DataFrame should contain only positive values.')
+    df = df.applymap(lambda x: x if x in TARGET_VALUES else 0)
+    transformed_df = pd.DataFrame()
+    fig, ax = plt.subplots()
+    for column in df.columns:
+        if df[column].nunique() == 1:
+            transformed_df[column] = df[column]
+        else:
+            transformed_data, _ = stats.boxcox(df[column] + 1)
+            transformed_df[column] = transformed_data
+            kde = stats.gaussian_kde(transformed_df[column])
+            x_vals = np.linspace(min(transformed_df[column]), max(transformed_df[column]), 1000)
+            ax.plot(x_vals, kde(x_vals), label=column)
+    ax.legend()
+    plt.show()
+    return (transformed_df, fig)
+/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/"
