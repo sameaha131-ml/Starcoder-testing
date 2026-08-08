@@ -15441,3 +15441,494 @@ class Test_get_all_users(unittest.TestCase):
         self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
         self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
         self.assertEqual(response.json()["
+"import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            word_counter = Counter()
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                word_counter += Counter(words)
+    return sorted(word_counter.items())[:word_count]","import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                words = pd.Series(text.split())
+                word_counter += Counter(words)
+    return word_counter.most_common(word_count)","### Buggy Python Code
+import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            word_counter = Counter()
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                word_counter += Counter(words)
+    return sorted(word_counter.items())[:word_count]
+
+### Corrected Python Code
+import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                words = pd.Series(text.split())
+                word_counter += Counter(words)
+    return sorted(word_counter.items(), key=lambda x: x[1], reverse=True)[:word_count]
+
+### Corrected Python code
+import pandas as pd
+import os
+import json
+from collections import Counter
+
+def task_func(json_dir_path, word_count):
+    word_counter = Counter()
+    for filename in os.listdir(json_dir_path):
+        if filename.endswith('.json'):
+            with open(os.path.join(json_dir_path, filename), 'r') as f:
+                data = json.load(f)
+                text = data.get('text', '')
+                words = pd.Series(text.split())
+                word_counter += Counter(words)
+    return sorted(word_counter.items(), key=lambda x: x[1], reverse=True)[:word_count]
+
+if __name__ == '__main__':
+    json_dir_path = '../data/json'
+    word_count = 10
+    result = task_func(json_dir_path, word_count)
+    pd.DataFrame(result, columns=['word', 'count'])
+    print(result)/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics"
+"error('Local cluster name is {}, expected {}'.format(cluster_name, '|'.join(clusters.keys())))","error('Local cluster name is {}, expected {}'.format(cluster_name, '|'.join(clusters)))","### Buggy Python Code
+error('Local cluster name is {}, expected {}'.format(cluster_name, '|'.join(clusters.keys())))
+
+### Corrected Python Code
+error('Local cluster name is {}, expected {}'.format(cluster_name, '|'.join(clusters.keys()))) if cluster_name not in clusters.keys() else None
+
+### Corrected Python code
+error('Local cluster name is {}, expected {}'.format(cluster_name, '|'.join(clusters.keys()))) if cluster_name not in clusters.keys() else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_name']!= cluster_name else None, 'local_cluster_name' in locals() and locals()['local_cluster_"
+"import subprocess
+import ftplib
+import os
+
+def task_func(ftp_server='ftp.dlptest.com', ftp_user='dlpuser', ftp_password='rNrKYTX9g7z3RgJRmxWuGHbeu', ftp_dir='/ftp/test'):
+    try:
+        ftp_obj = ftplib.FTP_TLS(ftp_server)
+    except Exception as e:
+        raise Exception(f'Failed to connect to FTP server {ftp_server}: {str(e)}')
+    try:
+        ftp_obj.login(ftp_user, ftp_password)
+    except Exception as e:
+        raise Exception(f'Failed to log into FTP server {ftp_server} with user {ftp_user}: {str(e)}')
+    ftp_dir = '/'
+    try:
+        ftp_obj.cwd(ftp_dir)
+    except Exception as e:
+        print(f'Failed to change to directory {ftp_dir} on server {ftp_server}: {str(e)}')
+    download_dir = 'downloaded_files'
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    downloaded_files = []
+    for filename in ftp_obj.nlst():
+        command = f'wget ftp://{ftp_user}:{ftp_password}@{ftp_server}{ftp_dir}/{filename} -P {download_dir}'
+        subprocess.call(command, shell=True)
+        downloaded_files.append(filename)
+    return ftp_obj.quit()
+    return downloaded_files","import subprocess
+import ftplib
+import os
+
+def task_func(ftp_server='ftp.dlptest.com', ftp_user='dlpuser', ftp_password='rNrKYTX9g7z3RgJRmxWuGHbeu', ftp_dir='/ftp/test'):
+    try:
+        ftp_obj = ftplib.FTP(ftp_server)
+    except Exception as e:
+        raise Exception(f'Failed to connect to FTP server {ftp_server}: {str(e)}')
+    try:
+        ftp_obj.login(ftp_user, ftp_password)
+    except Exception as e:
+        raise Exception(f'Failed to log into FTP server {ftp_server} with user {ftp_user}: {str(e)}')
+    try:
+        ftp_obj.cwd(ftp_dir)
+    except Exception as e:
+        raise Exception(f'Failed to change to directory {ftp_dir} on server {ftp_server}: {str(e)}')
+    download_dir = 'downloaded_files'
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    downloaded_files = []
+    for filename in ftp_obj.nlst():
+        command = f'wget ftp://{ftp_user}:{ftp_password}@{ftp_server}{ftp_dir}/{filename} -P {download_dir}'
+        subprocess.call(command, shell=True)
+        downloaded_files.append(filename)
+    ftp_obj.quit()
+    return downloaded_files","import subprocess
+import ftplib
+import os
+
+def task_func(ftp_server='ftp.dlptest.com', ftp_user='dlpuser', ftp_password='rNrKYTX9g7z3RgJRmxWuGHbeu', ftp_dir='/ftp/test'):
+    try:
+        ftp_obj = ftplib.FTP(ftp_server)
+    except Exception as e:
+        raise Exception(f'Failed to connect to FTP server {ftp_server}: {str(e)}')
+    try:
+        ftp_obj.login(ftp_user, ftp_password)
+    except Exception as e:
+        raise Exception(f'Failed to log into FTP server {ftp_server} with user {ftp_user}: {str(e)}')
+    try:
+        ftp_obj.cwd(ftp_dir)
+    except Exception as e:
+        print(f'Failed to change to directory {ftp_dir} on server {ftp_server}: {str(e)}')
+    download_dir = 'downloaded_files'
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    downloaded_files = []
+    for filename in ftp_obj.nlst():
+        command = f'wget ftp://{ftp_user}:{ftp_password}@{ftp_server}{ftp_dir}/{filename} -P {download_dir}'
+        subprocess.call(command, shell=True)
+        downloaded_files.append(filename)
+    return downloaded_files
+
+if __name__ == '__main__':
+    downloaded_files = task_func()
+    print(f'Downloaded files: {downloaded_files}')/python/01_basics/01_basics.py
+def task_func(a, b):
+    return a + b
+
+if __name__ == '__main__':
+    a = 1
+    b = 2
+    print(f'Sum of {a} and {b} is {task_func(a, b)}')/python/02_basics/02_basics.py
+def task_func(a, b):
+    return a + b + 100
+
+if __name__ == '__main__':
+    a = 1
+    b = 2
+    print(f'Sum of {a} and {b} is {task_func(a, b)}')/python/0"
+"if cover_id and CoverRevision.objects.filter(cover=cover, changeset__state__in=states.ACTIVE):
+    revision = CoverRevision.objects.get(cover=cover, changeset__state__in=states.ACTIVE)","if id and CoverRevision.objects.filter(cover=cover, changeset__state__in=states.ACTIVE):
+    revision = CoverRevision.objects.get(cover=cover, changeset__state__in=states.ACTIVE)","### Buggy Python Code
+if cover_id and CoverRevision.objects.filter(cover=cover, changeset__state__in=states.ACTIVE):
+    revision = CoverRevision.objects.get(cover=cover, changeset__state__in=states.ACTIVE)
+
+### Corrected Python Code
+if cover_id and CoverRevision.objects.filter(cover=cover, changeset__state__in=states.ACTIVE).exists():
+    revision = CoverRevision.objects.get(cover=cover, changeset__state__in=states.ACTIVE)
+
+### Corrected Python Code
+if cover_id and CoverRevision.objects.filter(cover=cover, changeset__state__in=states.ACTIVE).exists():
+    revision = CoverRevision.objects.get(cover=cover, changeset__state__in=states.ACTIVE)
+    cover.revision = revision
+    cover.save()
+    return cover.revision.id, cover.id, cover.title, cover.cover_type.name, cover.cover_type.id, cover.cover_type.cover_type_group.id, cover.cover_type.cover_type_group.name, cover.cover_type.cover_type_group.cover_type_group_type.id, cover.cover_type.cover_type_group.cover_type_group_type.name, cover.cover_type.cover_type_group.cover_type_group_type.cover_type_group_type_type.id, cover.cover_type.cover_type_group.cover_type_group_type.cover_type_group_type_type.name, cover.cover_type.cover_type_group.cover_type_group_type.cover_type_group_type_type.cover_type_group_type_type_type.id, cover.cover_type.cover_type_group.cover_type_group_type.cover_type_group_type_type.cover_type_group_type_type_type.name, cover.cover_type.cover_type_group.cover_type_group_type.cover_type_group_type_type.cover_type_group_type_type_type.cover_type_group_type_type_type_type.id, cover.cover_type.cover_type_group.cover_type_group_type.cover_type_group_type_type.cover_type_group_type_type_type_type.name, cover.cover_type.cover_type_group.cover_type_group_type.cover_type_group_type_type"
+"import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+def task_func(num_groups=5, data_size=5, labels=None):
+    if labels is None:
+        labels = [f'Group{i + 1}' for i in range(num_groups - 1)]
+    data = pd.DataFrame(np.random.rand(num_groups, data_size), columns=labels)
+    fig, ax = plt.subplots()
+    data = data.T
+    data.plot(kind='bar', stacked=True, ax=ax)
+    plot_filename = 'test_plot.png'
+    fig.savefig(plot_filename)
+    return (fig, data, plot_filename)","import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+def task_func(num_groups=5, data_size=5, labels=None):
+    if labels is None:
+        labels = [f'Group{i + 1}' for i in range(num_groups)]
+    data = pd.DataFrame(np.random.rand(data_size, num_groups), columns=labels)
+    fig, ax = plt.subplots()
+    data.plot(kind='bar', stacked=True, ax=ax)
+    plot_filename = 'test_plot.png'
+    fig.savefig(plot_filename)
+    return (fig, data, plot_filename)","### Buggy Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+def task_func(num_groups=5, data_size=5, labels=None):
+    if labels is None:
+        labels = [f'Group{i + 1}' for i in range(num_groups - 1)]
+    data = pd.DataFrame(np.random.rand(num_groups, data_size), columns=labels)
+    fig, ax = plt.subplots()
+    data = data.T
+    data.plot(kind='bar', stacked=True, ax=ax)
+    plot_filename = 'test_plot.png'
+    fig.savefig(plot_filename)
+    return (fig, data, plot_filename)
+
+### Corrected Python Code
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+def task_func(num_groups=5, data_size=5, labels=None):
+    if labels is None:
+        labels = [f'Group{i + 1}' for i in range(num_groups)]
+    data = pd.DataFrame(np.random.rand(data_size, num_groups), columns=labels)
+    fig, ax = plt.subplots()
+    data.plot(kind='bar', stacked=True, ax=ax)
+    plot_filename = 'test_plot.png'
+    fig.savefig(plot_filename)
+    return (fig, data, plot_filename)
+
+if __name__ == '__main__':
+    fig, data, plot_filename = task_func()
+    print(f'Plot saved to {plot_filename}')
+    data.to_csv('test_data.csv')
+    print(f'Data saved to test_data.csv')
+    print(data)
+    plt.show()/README.md
+# Data Analysis with Python - Part 1
+
+This repository contains the code for the Data Analysis with Python - Part 1 course. The code is written in Python 3.7.4.
+
+## Contents
+
+- [Data Analysis with Python - Part 1](#data-analysis-with-python---part-1)
+  - [Contents](#contents)
+  - [Installation](#installation)
+  - [Data](#data)
+  - [Data Analysis](#data-analysis)
+    - [Task 1: Load the data](#task-1-load-the-data)
+    - [Task 2: Calculate the mean of each column](#task-2-calculate-the-mean-of-each-column)
+    - [Task 3: Calculate the standard deviation of each column](#task-3-calculate-the-standard-deviation-of-each-column)
+    - [Task 4: Calculate the mean of each row](#task-4-calculate-the-mean-of-each-row)
+    - [Task 5: Calculate the standard deviation of each row](#task-5-calculate-the-standard-deviation-of-each-row)
+    - [Task 6: Calculate the correlation between columns](#task-6-calculate-the-correlation-between-columns)
+    - [Task"
+"class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.count_bits() <= k <= x:
+                return k
+        return -1","class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.bit_count() <= k <= x:
+                return k
+        return -1","### Buggy Python Code
+class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.count_bits() <= k <= x:
+                return k
+        return -1
+
+### Corrected Python Code
+class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.bit_count() <= k <= x.bit_count():
+                return k
+        return -1
+
+class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.bit_count() <= k <= x.bit_count():
+                return k
+        return -1
+
+class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.bit_count() <= k <= x.bit_count():
+                return k
+        return -1
+
+class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.bit_count() <= k <= x.bit_count():
+                return k
+        return -1
+
+class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.bit_count() <= k <= x.bit_count():
+                return k
+        return -1
+
+class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2
+            if x < 0:
+                break
+            if x.bit_count() <= k <= x.bit_count():
+                return k
+        return -1
+
+class Solution:
+
+    def makeTheIntegerZero(self, num1: int, num2: int) -> int:
+        for k in count(1):
+            x = num1 - k * num2"
+"import zipfile
+import io
+from django.http import FileResponse, HttpRequest
+from django.conf import settings
+
+def task_func(request, file_paths):
+    zip_io = io.StringIO()
+    with zipfile.ZipFile(zip_io, 'w') as zip_file:
+        for file_path in file_paths[:1]:
+            zip_file.writestr(file_path, 'This is the content of {}.'.format(file_path))
+    zip_io.seek(0)
+    response = FileResponse(zip_io, as_attachment=True, name='files.zip')
+    response['Content-Type'] = 'application/zip'
+    return response","import zipfile
+import io
+from django.http import FileResponse, HttpRequest
+from django.conf import settings
+
+def task_func(request, file_paths):
+    zip_io = io.BytesIO()
+    with zipfile.ZipFile(zip_io, 'w') as zip_file:
+        for file_path in file_paths:
+            zip_file.writestr(file_path, 'This is the content of {}.'.format(file_path))
+    zip_io.seek(0)
+    response = FileResponse(zip_io, as_attachment=True, filename='files.zip')
+    response['Content-Type'] = 'application/zip'
+    return response","### Buggy Python Code
+import zipfile
+import io
+from django.http import FileResponse, HttpRequest
+from django.conf import settings
+
+def task_func(request, file_paths):
+    zip_io = io.StringIO()
+    with zipfile.ZipFile(zip_io, 'w') as zip_file:
+        for file_path in file_paths[:1]:
+            zip_file.writestr(file_path, 'This is the content of {}.'.format(file_path))
+    zip_io.seek(0)
+    response = FileResponse(zip_io, as_attachment=True, name='files.zip')
+    response['Content-Type'] = 'application/zip'
+    return response
+
+### Corrected Python Code
+import zipfile
+import io
+from django.http import FileResponse, HttpRequest
+from django.conf import settings
+
+def task_func(request, file_paths):
+    zip_io = io.BytesIO()
+    with zipfile.ZipFile(zip_io, 'w') as zip_file:
+        for file_path in file_paths:
+            zip_file.writestr(file_path, 'This is the content of {}.'.format(file_path))
+    zip_io.seek(0)
+    response = FileResponse(zip_io, as_attachment=True, filename='files.zip')
+    response['Content-Type'] = 'application/zip'
+    return response
+
+### Corrected Python code
+import zipfile
+import io
+from django.http import FileResponse, HttpRequest
+from django.conf import settings
+
+def task_func(request, file_paths):
+    zip_io = io.BytesIO()
+    with zipfile.ZipFile(zip_io, 'w') as zip_file:
+        for file_path in file_paths:
+            zip_file.writestr(file_path, 'This is the content of {}.'.format(file_path))
+    zip_io.seek(0)
+    response = FileResponse(zip_io, as_attachment=True, filename='files.zip')
+    response['Content-Type'] = 'application/zip'
+    return response
+/django_celery_example/tasks.py
+from __future__ import absolute_import, unicode_literals
+from celery import shared_task
+from django.core.mail import send_mail
+
+@shared_task
+def send_email_task(subject, message, from_email, to_email):
+    send_mail(subject, message, from_email, [to_email])
+    return 'Email sent'
+/django_celery_example/views.py
+from django.shortcuts import render
+from.tasks import send_email_task
+
+def index(request):
+    send_email_task.delay('Hello', 'Hello world!', '', [''])
+    return render(request, 'index.html')"
+"if cookie_morsals['domain'] == '' or origin_is_ip is True:
+    return (cookie, self.dest_addr)","if cookie_morsals['domain'] == '' or origin_is_ip:
+    return (cookie, self.dest_addr)","### Buggy Python Code
+if cookie_morsals['domain'] == '' or origin_is_ip is True:
+    return (cookie, self.dest_addr)
+
+### Corrected Python Code
+if cookie_morsals['domain'] == '' or origin_is_ip is True or self.dest_addr == '':
+    return (cookie, self.dest_addr)
+
+### Corrected Python code
+if cookie_morsals['domain'] == '' or origin_is_ip is True or self.dest_addr == '':
+    return (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self.dest_addr) if self.dest_addr!= '' else (cookie, self."
