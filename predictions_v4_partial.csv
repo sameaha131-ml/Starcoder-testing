@@ -39943,3 +39943,141 @@ rssi = -(256 - ord(packet.notdecoded[-2:-1]))
 
 ### Corrected Python Code
 rssi = -(256 - ord(packet.notdecoded[-1])) - 128.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+key = 'body_' + ('html' if email_message.content_subtype == 'text/html' else 'text'),key = 'body_' + ('html' if email_message.content_subtype == 'html' else 'text'),"### Buggy Python Code
+key = 'body_' + ('html' if email_message.content_subtype == 'text/html' else 'text')
+
+### Corrected Python Code
+key = 'body_' + ('html' if email_message.content_subtype == 'text/html' else 'text') + '_plain' if email_message.content_subtype == 'text/plain' else ''
+
+### Corrected Python code
+key = 'body_' + ('html' if email_message.content_subtype == 'text/html' else 'text') + '_plain' if email_message.content_subtype == 'text/plain' else '' + '_html' if email_message.content_subtype == 'text/html' else '' + '_text' if email_message.content_subtype == 'text/plain' else '' + '_text' if email_message.content_subtype == 'text/plain' else '' + '_html' if email_message.content_subtype == 'text/html' else '' + '_text' if email_message.content_subtype == 'text/plain' else '' + '_html' if email_message.content_subtype == 'text/html' else '' + '_text' if email_message.content_subtype == 'text/plain' else '' + '_html' if email_message.content_subtype == 'text/html' else '' + '_text' if email_message.content_subtype == 'text/plain' else '' + '_html' if email_message.content_subtype == 'text/html' else '' + '_text' if email_message.content_subtype == 'text/plain' else '' + '_html' if email_message.content_subtype == 'text/html' else '' + '_text' if email_message.content_subtype == 'text/plain' else '' + '_html' if email_message.content_subtype == 'text/html' else '' + '_text' if email_message.content_subtype == 'text/plain' else '' + '_html' if email_message.content_subtype == 'text/html' else '' + '_text' if email_message.content_subtype == 'text/plain' else '' + '_html' if email_message.content_subtype == 'text/html' else '' + '_text' if email_message.content_subtype == 'text/plain' else '' + '_html' if email_message.content_subtype == 'text/html' else '' + '_text' if email_message.content"
+"expected_headers = {HDR_ID: ack_id, 'requeue': 'false'}","expected_headers = {HDR_ID: ack_id.replace(':', '\\c'), 'requeue': 'false'}","### Buggy Python Code
+expected_headers = {HDR_ID: ack_id,'requeue': 'false'}
+
+### Corrected Python Code
+expected_headers = {HDR_ID: ack_id,'requeue': 'true'} if requeue else {HDR_ID: ack_id,'requeue': 'false'}
+
+### Corrected Python code
+expected_headers = {HDR_ID: ack_id,'requeue': 'true'} if requeue else {HDR_ID: ack_id,'requeue': 'false'} if not self.is_test_mode else {HDR_ID: ack_id,'requeue': 'false'}
+
+return expected_headers, self.is_test_mode, self.is_test_mode and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self.is_test_mode_enabled() and self"
+"modelnames = [f for f in listdir(snp_path) if isfile(join(snp_path, f))]","modelnames = [f for f in os.listdir(snp_path) if os.path.isfile(os.path.join(snp_path, f))]","### Buggy Python Code
+modelnames = [f for f in listdir(snp_path) if isfile(join(snp_path, f))]
+
+### Corrected Python Code
+modelnames = [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.txt')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.csv')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.xlsx')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.xls')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.ods')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.dta')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.sas')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.R')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.py')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.json')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.xml')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.html')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.htm')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.txt')] + [f for f in listdir(snp_path) if isfile(join(snp_path, f)) and f.endswith('.csv"
+"redirect('admin/edit_user', user_id=user.user_id)","simple_redirect('admin/edit_user', user_id=user.user_id)","### Buggy Python Code
+redirect('admin/edit_user', user_id=user.user_id)
+
+### Corrected Python Code
+redirect('admin/edit_user', user_id=user.user_id, page=1) if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user', page=1) if user.user_id else redirect('admin/edit_user') if user.user_id else redirect('admin/edit_user"
+"ctx = dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message)","ctx = dict(thread_id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message)","### Buggy Python Code
+ctx = dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message)
+
+### Corrected Python Code
+ctx = dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message, thread_id=thread.id)
+
+### Corrected Python Code
+ctx = dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message, thread_id=thread.id) if thread else dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message)
+
+### Corrected Python Code
+ctx = dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message, thread_id=thread.id) if thread else dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message) if s else dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message) if thread else dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message) if s else dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message) if thread else dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message) if s else dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message) if thread else dict(id=str(thread.id), user_id=str(s.id), local_request=current_app.config['LOCAL_REQUEST'], message=message) if s else dict(id=str(thread.id), user_id=str(s.id), local"
+"cmd_str = 'create edge eats_at from ' + user.rid + ' to ' + restaurant.rid + ' set created_at_datetime =""' + creation_date.strftime('%Y-%m-%d') + '"", created_at=""' + str(int(card['date'].strftime('%s')) * 1000) + '""'","cmd_str = 'create edge eats_at from ' + user.rid + ' to ' + restaurant.rid + ' set created_at_datetime =""' + creation_date.strftime('%Y-%m-%d') + '"", created_at=""' + str(int(creation_date.strftime('%s')) * 1000) + '""'","restaurant.rid +'set created_at_datetime =""' + creation_date.strftime('%Y-%m-%d') + '"", created_at=""' + str(int(card['date'].strftime('%s')) * 1000) + '""'
+
+### Corrected Python Code
+cmd_str = 'create edge eats_at from'+ user.rid +'to'+ restaurant.rid +'set created_at_datetime =""' + creation_date.strftime('%Y-%m-%d') + '"", created_at=""' + str(int(card['date'].strftime('%s')) * 1000) + '""' + ',card_id=""' + card['id'] + '""' + ',card_type=""' + card['type'] + '""' + ',card_amount=""' + str(card['amount']) + '""' + ',card_currency=""' + card['currency'] + '""' + ',card_date=""' + card['date'].strftime('%Y-%m-%d') + '""' + ',card_month=""' + card['date'].strftime('%m') + '""' + ',card_year=""' + card['date'].strftime('%Y') + '""' + ',card_cvc=""' + card['cvc'] + '""' + ',card_number=""' + card['number'] + '""' + ',card_exp_month=""' + card['exp_month'] + '""' + ',card_exp_year=""' + card['exp_year'] + '""' + ',card_name=""' + card['name'] + '""' + ',card_address=""' + card['address'] + '""' + ',card_city=""' + card['city'] + '""' + ',card_state=""' + card['state'] + '""' + ',card_zip=""' + card['zip'] + '""' + ',card_country=""' + card['country'] + '""' + ',card_phone=""' + card['phone'] + '""' + ',card_email=""' + card['email'] + '""' + ',card_token=""' + card['token'] + '""' + ',card_token_type=""' + card['token_type'] + '""' + ',card_token_last4=""' + card['last4'] + '""' + ',card_token_exp_month=""' + card['exp_month'] + '""' + ',card_token_exp_year=""' + card['exp_year'] + '""' + ',card_token_card_type=""' + card['card_type'] + '""' + ',card_token_card_name=""' + card['card_name'] + '""' + ',card_token_card_address=""'"
+"if not wait_for(has_primary(), timeout=60, sleep_duration=1):
+    raise Exception('No primary elected 60 seconds after reconfiguration!')","if not wait_for(has_primary, timeout=60, sleep_duration=1):
+    raise Exception('No primary elected 60 seconds after reconfiguration!')","### Buggy Python Code
+if not wait_for(has_primary(), timeout=60, sleep_duration=1):
+    raise Exception('No primary elected 60 seconds after reconfiguration!')
+
+### Corrected Python Code
+if not wait_for(has_primary(), timeout=120, sleep_duration=1):
+    raise Exception('No primary elected 60 seconds after reconfiguration!')
+
+### Corrected Python Code
+if not wait_for(has_primary(), timeout=120, sleep_duration=1):
+    raise Exception('No primary elected 120 seconds after reconfiguration!')
+
+### Corrected Python Code
+if not wait_for(has_primary(), timeout=180, sleep_duration=1):
+    raise Exception('No primary elected 180 seconds after reconfiguration!')
+
+### Corrected Python Code
+if not wait_for(has_primary(), timeout=240, sleep_duration=1):
+    raise Exception('No primary elected 240 seconds after reconfiguration!')
+
+### Corrected Python Code
+if not wait_for(has_primary(), timeout=300, sleep_duration=1):
+    raise Exception('No primary elected 300 seconds after reconfiguration!')
+
+### Corrected Python Code
+if not wait_for(has_primary(), timeout=360, sleep_duration=1):
+    raise Exception('No primary elected 360 seconds after reconfiguration!')
+
+### Corrected Python Code
+if not wait_for(has_primary(), timeout=420, sleep_duration=1):
+    raise Exception('No primary elected 420 seconds after reconfiguration!')
+
+### Corrected Python Code
+if not wait_for(has_primary(), timeout=480, sleep_duration=1):
+    raise Exception('No primary elected 480 seconds after reconfiguration!')
+
+### Corrected Python Code
+if not wait_for(has_primary(), timeout=540, sleep_duration=1):
+    raise Exception('No primary elected 540 seconds after reconfiguration!')
+
+### Corrected Python Code
+if not wait_for(has_primary(), timeout=600, sleep_duration=1):
+    raise Exception('No primary elected 600 seconds after reconfiguration!')
+
+### Corrected Python Code
+if not wait_for(has_primary(), timeout=660, sleep_duration=1):
+    raise Exception('No primary elected 660 seconds after reconfiguration!')
+
+### Correct"
+"import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+def task_func(df, dct, columns=None):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df = df.replace(dct)
+    if columns is None:
+        columns = df.select_dtypes(include=['object']).columns.tolist()
+    for column in columns:
+        if df[column].dtype == 'object':
+            le = LabelEncoder()
+            df[column] = le.fit(df[column])
+    df = (df - df.mean()) / df.stdev()
+    return df","import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+def task_func(df, dct, columns=None):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df = df.replace(dct)
+    if columns is None:
+        columns = df.select_dtypes(include=['object']).columns.tolist()
+    for column in columns:
+        if df[column].dtype == 'object':
+            le = LabelEncoder()
+            df[column] = le.fit_transform(df[column])
+    df = (df - df.mean()) / df.std()
+    return df","import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+def task_func(df, dct, columns=None):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df = df.replace(dct)
+    if columns is None:
+        columns = df.select_dtypes(include=['object']).columns.tolist()
+    for column in columns:
+        if df[column].dtype == 'object':
+            le = LabelEncoder()
+            df[column] = le.fit_transform(df[column])
+    df = (df - df.mean()) / df.std()
+    return df
+/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python_basics/01_python"
