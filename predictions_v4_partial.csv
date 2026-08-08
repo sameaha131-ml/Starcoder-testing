@@ -45127,3 +45127,514 @@ class Solution:
         lpsB = self._getLPS(b + '#' + s)[len(b) + 1:]
         lpsC = self._getLPS(c + '#' + s)[len(c) + 1:]
         ans = math"
+"import re
+import pandas as pd
+from datetime import datetime
+
+def task_func(log_file):
+    log_pattern = '(ERROR|INFO): \\[\\s*(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\s*\\] - (.*)'
+    parsed_data = []
+    with open(log_file, 'r') as file:
+        for line in file:
+            line = line.strip()
+            match = re.match(log_pattern, line)
+            parsed_data.clear()
+            if match:
+                log_type, timestamp, message = match.groups()
+                try:
+                    datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    raise ValueError(f'Invalid timestamp format: {timestamp}')
+                parsed_data.append([log_type, timestamp, lambda: message.strip()])
+    if not parsed_data:
+        raise ValueError('No valid log entries found.')
+    df = pd.DataFrame(parsed_data, columns=['Type', 'Timestamp', 'Message'])
+    output_csv_path = 'log_data.csv'
+    df.to_csv(output_csv_path, index=False)
+    return output_csv_path","import re
+import pandas as pd
+from datetime import datetime
+
+def task_func(log_file):
+    log_pattern = '(ERROR|INFO): \\[\\s*(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\s*\\] - (.*)'
+    parsed_data = []
+    with open(log_file, 'r') as file:
+        for line in file:
+            line = line.strip()
+            match = re.match(log_pattern, line)
+            if match:
+                log_type, timestamp, message = match.groups()
+                try:
+                    datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    raise ValueError(f'Invalid timestamp format: {timestamp}')
+                parsed_data.append([log_type, timestamp, message.strip()])
+    if not parsed_data:
+        raise ValueError('No valid log entries found.')
+    df = pd.DataFrame(parsed_data, columns=['Type', 'Timestamp', 'Message'])
+    output_csv_path = 'log_data.csv'
+    df.to_csv(output_csv_path, index=False)
+    return output_csv_path","Invalid timestamp format: {timestamp}')
+                parsed_data.append([log_type, timestamp, lambda: message.strip()])
+    if not parsed_data:
+        raise ValueError('No valid log entries found.')
+    df = pd.DataFrame(parsed_data, columns=['Type', 'Timestamp', 'Message'])
+    output_csv_path = 'log_data.csv'
+    df.to_csv(output_csv_path, index=False)
+    return output_csv_path
+
+### Corrected Python Code
+import re
+import pandas as pd
+from datetime import datetime
+
+def task_func(log_file):
+    log_pattern = '(ERROR|INFO): \\[\\s*(\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2})\\s*\\] - (.*)'
+    parsed_data = []
+    with open(log_file, 'r') as file:
+        for line in file:
+            line = line.strip()
+            match = re.match(log_pattern, line)
+            if match:
+                log_type, timestamp, message = match.groups()
+                try:
+                    datetime.strptime(timestamp, '%Y-%m-%d %H:%M:%S')
+                except ValueError:
+                    raise ValueError(f'Invalid timestamp format: {timestamp}')
+                parsed_data.append([log_type, timestamp, message.strip()])
+    if not parsed_data:
+        raise ValueError('No valid log entries found.')
+    df = pd.DataFrame(parsed_data, columns=['Type', 'Timestamp', 'Message'])
+    output_csv_path = 'log_data.csv'
+    df.to_csv(output_csv_path, index=False)
+    return output_csv_path
+
+if __name__ == '__main__':
+    log_file = 'log.txt'
+    output_csv_path = task_func(log_file)
+    print(f'Log data saved to {output_csv_path}')/README.md
+# Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python-Data-Science-Essentials-Course-1-Day-1-Python-Fundamentals-and-Data-Analysis-with-pandas-and-NumPy-Part-1-of-2-Python"
+"cb.file.save(block_id, SimpleUploadedFile(block_id, b64decode(data_data)))","cb.file.save(str(block_id), SimpleUploadedFile(str(block_id), b64decode(data_data)))","### Buggy Python Code
+cb.file.save(block_id, SimpleUploadedFile(block_id, b64decode(data_data)))
+
+### Corrected Python Code
+cb.file.save(block_id, SimpleUploadedFile(block_id, b64decode(data_data.encode('utf-8'))))
+/cbv/views.py
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, PasswordChangeForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPasswordForm, UserChangeForm, UserForm, UserChangeForm, PasswordChangeForm, SetPasswordForm, PasswordResetForm, SetPassword"
+"class UnionFind:
+
+    def __init__(self, n):
+        self.p = list(range(n))
+        self.size = [1] * n
+
+    def find(self, x):
+        if self.p[x] != x:
+            self.p[x] = self.find(self.p[x])
+        return self.p[x]
+
+    def union(self, a, b):
+        pa, pb = (self.find(a), self.find(b))
+        if pa == pb:
+            return False
+        if self.size[pa] > self.size[pb]:
+            self.p[pb] = pa
+            self.size[pa] += self.size[pb]
+        else:
+            self.p[pa] = pb
+            self.size[pb] += self.size[pa]
+        return True
+mx = 100010
+p = defaultdict(list)
+for x in range(1, mx + 1):
+    v = x
+    i = 2
+    while i <= v // i:
+        if v % i == 0:
+            p[x].append(i)
+            while v % i == 0:
+                v //= i
+        i += 1
+    if v > 1:
+        p[x].append(v)
+
+class Solution:
+
+    def canTraverseAllPairs(self, nums: List[int]) -> bool:
+        n = len(nums)
+        m = min(nums)
+        uf = UnionFind(n + m + 1)
+        for i, x in enumerate(nums):
+            for j in p[x]:
+                uf.union(i, j + n)
+        n = 1
+        return len(set((uf.find(i) for i in range(n)))) == 1","class UnionFind:
+
+    def __init__(self, n):
+        self.p = list(range(n))
+        self.size = [1] * n
+
+    def find(self, x):
+        if self.p[x] != x:
+            self.p[x] = self.find(self.p[x])
+        return self.p[x]
+
+    def union(self, a, b):
+        pa, pb = (self.find(a), self.find(b))
+        if pa == pb:
+            return False
+        if self.size[pa] > self.size[pb]:
+            self.p[pb] = pa
+            self.size[pa] += self.size[pb]
+        else:
+            self.p[pa] = pb
+            self.size[pb] += self.size[pa]
+        return True
+mx = 100010
+p = defaultdict(list)
+for x in range(1, mx + 1):
+    v = x
+    i = 2
+    while i <= v // i:
+        if v % i == 0:
+            p[x].append(i)
+            while v % i == 0:
+                v //= i
+        i += 1
+    if v > 1:
+        p[x].append(v)
+
+class Solution:
+
+    def canTraverseAllPairs(self, nums: List[int]) -> bool:
+        n = len(nums)
+        m = max(nums)
+        uf = UnionFind(n + m + 1)
+        for i, x in enumerate(nums):
+            for j in p[x]:
+                uf.union(i, j + n)
+        return len(set((uf.find(i) for i in range(n)))) == 1","class UnionFind:
+
+    def __init__(self, n):
+        self.p = list(range(n))
+        self.size = [1] * n
+
+    def find(self, x):
+        if self.p[x]!= x:
+            self.p[x] = self.find(self.p[x])
+        return self.p[x]
+
+    def union(self, a, b):
+        pa, pb = (self.find(a), self.find(b))
+        if pa == pb:
+            return False
+        if self.size[pa] > self.size[pb]:
+            self.p[pb] = pa
+            self.size[pa] += self.size[pb]
+        else:
+            self.p[pa] = pb
+            self.size[pb] += self.size[pa]
+        return True
+mx = 100010
+p = defaultdict(list)
+for x in range(1, mx + 1):
+    v = x
+    i = 2
+    while i <= v // i:
+        if v % i == 0:
+            p[x].append(i)
+            while v % i == 0:
+                v //= i
+        i += 1
+    if v > 1:
+        p[x].append(v)
+
+class Solution:
+
+    def canTraverseAllPairs(self, nums: List[int]) -> bool:
+        n = len(nums)
+        m = max(nums)
+        uf = UnionFind(n + m + 1)
+        for i, x in enumerate(nums):
+            for j in p[x]:
+                uf.union(i, j + n)
+        return len(set((uf.find(i) for i in range(n)))) == 1
+/python/1000/1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-1000-"
+"class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * (n + 1)
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans","class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * n + [1]
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        ans = suf_gcd[0] * suf_lcm[0]
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i + 1]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans","-1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * (n + 1)
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        ans = 0
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i + 1]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans % 1000000007
+
+### Corrected Python
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        n = len(nums)
+        suf_gcd = [0] * (n + 1)
+        suf_lcm = [0] * (n + 1)
+        for i in range(n - 1, -1, -1):
+            suf_gcd[i] = gcd(suf_gcd[i + 1], nums[i])
+            suf_lcm[i] = lcm(suf_lcm[i + 1], nums[i])
+        ans = 0
+        pre_gcd, pre_lcm = (0, 1)
+        for i, x in enumerate(nums):
+            ans = max(ans, gcd(pre_gcd, suf_gcd[i + 1]) * lcm(pre_lcm, suf_lcm[i + 1]))
+            pre_gcd = gcd(pre_gcd, x)
+            pre_lcm = lcm(pre_lcm, x)
+        return ans % 1000000007
+
+class Solution:
+
+    def maxScore(self"
+"class Solution:
+
+    def alternatingSubarray(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            k = 0
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans","class Solution:
+
+    def alternatingSubarray(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans","### Buggy Python Code
+class Solution:
+
+    def alternatingSubarray(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            k = 0
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans
+
+### Corrected Python Code
+class Solution:
+
+    def alternatingSubarray(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans
+
+class Solution:
+
+    def alternatingSubarray(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans
+/1000/1000-1005/1005.py
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans * 2 - 1
+
+class Solution:
+
+    def maxScore(self, nums: List[int]) -> int:
+        ans, n = (-1, len(nums))
+        for i in range(n):
+            k = 1
+            j = i
+            while j + 1 < n and nums[j + 1] - nums[j] == k:
+                j += 1
+                k *= -1
+            if j - i + 1 > 1:
+                ans = max(ans, j - i + 1)
+        return ans * 2 - 1 if ans > 0 else 0
+
+class Solution:
+
+    def maxScore(self, nums: List"
+"self.acc_monitor = AccumulatingMonitorStrategy(start_time=time.perf_counter(), instances=instances.count, txn_delta_k=config.ACC_MONITOR_TXN_DELTA, timeout=config.ACC_MONITOR_TIMEOUT, input_rate_reaction_half_time=config.ACC_MONITOR_INPUT_RATE_REACTION_HALF_TIME)","self.acc_monitor = AccumulatingMonitorStrategy(start_time=time.perf_counter(), instances=instances.count, txn_delta_k=config.ACC_MONITOR_TXN_DELTA_K, timeout=config.ACC_MONITOR_TIMEOUT, input_rate_reaction_half_time=config.ACC_MONITOR_INPUT_RATE_REACTION_HALF_TIME)","### Buggy Python Code
+self.acc_monitor = AccumulatingMonitorStrategy(start_time=time.perf_counter(), instances=instances.count, txn_delta_k=config.ACC_MONITOR_TXN_DELTA, timeout=config.ACC_MONITOR_TIMEOUT, input_rate_reaction_half_time=config.ACC_MONITOR_INPUT_RATE_REACTION_HALF_TIME)
+
+### Corrected Python Code
+self.acc_monitor = AccumulatingMonitorStrategy(start_time=time.perf_counter(), instances=instances.count, txn_delta_k=config.ACC_MONITOR_TXN_DELTA, timeout=config.ACC_MONITOR_TIMEOUT, input_rate_reaction_half_time=config.ACC_MONITOR_INPUT_RATE_REACTION_HALF_TIME, input_rate_reaction_full_time=config.ACC_MONITOR_INPUT_RATE_REACTION_FULL_TIME)
+/src/pydb/pydb/db/sql/mysql/mysql_db.py
+from pydb.db.sql.mysql.mysql_connection import MySQLConnection, MySQLCursor, MySQLCursorDict, MySQLConnectionError, MySQLCursorError, MySQLDataError, MySQLDatabaseError, MySQLIntegrityError, MySQLInterfaceError, MySQLInternalError, MySQLNotConnectedError, MySQLOperationalError, MySQLProgrammingError, MySQLServerClosedError, MySQLServerConnectionError, MySQLServerError, MySQLSyntaxError, MySQLWarning, MySQLCursorType, MySQLCursorUseResult, MySQLCursorDictUseResult, MySQLCursorUseResultDict, MySQLCursorUseResultDictDict, MySQLCursorUseResultDictDictDict, MySQLCursorUseResultDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDictDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDictDictDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDictDict, MySQLCursorUseResultDictDictDictDictDictDictDictDict"
+"import re
+import pandas as pd
+STOPWORDS = ['Those', 'are', 'the', 'words', 'to', 'ignore']
+
+def task_func(text):
+    text = text.split('.')[0]
+    sentences = re.split('\\.\\s*', text)
+    sentence_counts = {}
+    for i, sentence in enumerate(sentences):
+        if sentence.strip() != '':
+            continue
+        words = re.split('\\s+', sentence.lower())
+        words = [word for word in words if word in STOPWORDS]
+        sentence_counts[f'Sentence {i + 1}'] = len(words)
+    sentence_counts = pd.Series(sentence_counts)
+    return sentence_counts","import re
+import pandas as pd
+STOPWORDS = ['Those', 'are', 'the', 'words', 'to', 'ignore']
+
+def task_func(text):
+    sentences = re.split('\\.\\s*', text)
+    sentence_counts = {}
+    for i, sentence in enumerate(sentences):
+        if sentence.strip() == '':
+            continue
+        words = re.split('\\s+', sentence.lower())
+        words = [word for word in words if word not in STOPWORDS]
+        sentence_counts[f'Sentence {i + 1}'] = len(words)
+    sentence_counts = pd.Series(sentence_counts)
+    return sentence_counts","### Buggy Python Code
+import re
+import pandas as pd
+STOPWORDS = ['Those', 'are', 'the', 'words', 'to', 'ignore']
+
+def task_func(text):
+    text = text.split('.')[0]
+    sentences = re.split('\\.\\s*', text)
+    sentence_counts = {}
+    for i, sentence in enumerate(sentences):
+        if sentence.strip()!= '':
+            continue
+        words = re.split('\\s+', sentence.lower())
+        words = [word for word in words if word in STOPWORDS]
+        sentence_counts[f'Sentence {i + 1}'] = len(words)
+    sentence_counts = pd.Series(sentence_counts)
+    return sentence_counts
+
+### Corrected Python Code
+import re
+import pandas as pd
+STOPWORDS = ['Those', 'are', 'the', 'words', 'to', 'ignore']
+
+def task_func(text):
+    sentences = re.split('\\.\\s*', text)
+    sentence_counts = {}
+    for i, sentence in enumerate(sentences):
+        if sentence.strip() == '':
+            continue
+        words = re.split('\\s+', sentence.lower())
+        words = [word for word in words if word not in STOPWORDS]
+        sentence_counts[f'Sentence {i + 1}'] = len(words)
+    sentence_counts = pd.Series(sentence_counts)
+    return sentence_counts
+
+if __name__ == '__main__':
+    text = 'Those are the words to ignore. Those are the words to ignore. Those are the words to ignore.'
+    sentence_counts = task_func(text)
+    print(sentence_counts)/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python"
+"if not any((word in post.selftext.lower() for word in rules)):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).'","if not any((word in post.selftext.lower() for word in rules)) and (not '[wanted]' in post.title.lower()):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).'","### Buggy Python Code
+if not any((word in post.selftext.lower() for word in rules)):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).'
+
+### Corrected Python Code
+if not any((word in post.selftext.lower() for word in rules)) and not any((word in post.title.lower() for word in rules)):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).'
+
+### Corrected Python code
+if not any((word in post.selftext.lower() for word in rules)) and not any((word in post.title.lower() for word in rules)) and not any((word in post.url.lower() for word in rules)):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).'
+
+### Corrected Python code
+if not any((word in post.selftext.lower() for word in rules)) and not any((word in post.title.lower() for word in rules)) and not any((word in post.url.lower() for word in rules)) and not any((word in post.author.name.lower() for word in rules)):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).'
+
+### Corrected Python code
+if not any((word in post.selftext.lower() for word in rules)) and not any((word in post.title.lower() for word in rules)) and not any((word in post.url.lower() for word in rules)) and not any((word in post.author.name.lower() for word in rules)):
+    comment += '\n\n- your server appears to have no rules. Please edit your post to include some rules, then [message the moderators to have your post approved](http://www.reddit.com/message/compose?to=%2Fr%2Fmcservers}).' + '\n\n- your server appears to have no rules. Please edit your post to"
