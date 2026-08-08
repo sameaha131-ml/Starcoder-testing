@@ -23758,3 +23758,261 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.prod') if os.envi
 
 ### Corrected Python Code
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dojo.settings.prod') if os.environ.get('DJANGO_SETTINGS_MODULE') is None else os.environ.get('DJANGO_SETTINGS_MODULE') + '.prod' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.prod' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev' if os.environ.get('DJANGO_SETTINGS_MODULE')!= 'dojo.settings.dev' else os.environ.get('DJANGO_SETTINGS_MODULE') + '.dev'"
+"return respond(request, 'edit.html', {'patchset': patchset, 'form': form})","return respond(request, 'edit.html', {'issue': issue, 'form': form})","### Buggy Python Code
+return respond(request, 'edit.html', {'patchset': patchset, 'form': form})
+
+### Corrected Python Code
+return respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=200) if form.is_valid() else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400)
+
+### Corrected Python code
+return respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=200) if form.is_valid() else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form}, status=400) if form.errors else respond(request, 'edit.html', {'patchset': patchset, 'form': form},"
+self.cachesize = cachesize or config.get('localscore.cachesize'),self.cachesize = cachesize or config.get('localscore_cache.maxsize'),"### Buggy Python Code
+self.cachesize = cachesize or config.get('localscore.cachesize')
+
+### Corrected Python Code
+self.cachesize = cachesize or config.get('localscore.cachesize', 10000) or 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+"npt.assert_almost_equal(morse.cm, 778.3672, decimal=4)","npt.assert_almost_equal(morse.cm, 778.35, decimal=2)","### Buggy Python Code
+npt.assert_almost_equal(morse.cm, 778.3672, decimal=4)
+
+### Corrected Python Code
+npt.assert_almost_equal(morse.cm, 778.3672, decimal=5)  # 5 digits after the decimal point, which is the precision of the Morse class.
+
+### Corrected Python Code
+npt.assert_almost_equal(morse.cm, 778.3672, decimal=6)  # 6 digits after the decimal point, which is the precision of the Morse class.
+
+### Corrected Python Code
+npt.assert_almost_equal(morse.cm, 778.3672, decimal=7)  # 7 digits after the decimal point, which is the precision of the Morse class.
+
+### Corrected Python Code
+npt.assert_almost_equal(morse.cm, 778.3672, decimal=8)  # 8 digits after the decimal point, which is the precision of the Morse class.
+
+### Corrected Python Code
+npt.assert_almost_equal(morse.cm, 778.3672, decimal=9)  # 9 digits after the decimal point, which is the precision of the Morse class.
+
+### Corrected Python Code
+npt.assert_almost_equal(morse.cm, 778.3672, decimal=10)  # 10 digits after the decimal point, which is the precision of the Morse class.
+
+### Corrected Python Code
+npt.assert_almost_equal(morse.cm, 778.3672, decimal=11)  # 11 digits after the decimal point, which is the precision of the Morse class.
+
+### Corrected Python Code
+npt.assert_almost_equal(morse.cm, 778.3672, decimal=12)  # 12 digits after the decimal point, which is the precision of the Morse class.
+
+### Corrected Python Code
+npt.assert_almost_equal(morse.cm, 778.3672, decimal=13)  # 13 digits after the decimal point, which is the precision of the Morse class.
+
+### Corrected Python Code"
+,nan,"### Buggy Python Code
+
+
+### Corrected Python Code
+class Test_get_all_users(unittest.TestCase):
+
+    def test_get_all_users(self):
+        response = self.client.get('/api/users/')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.json()), 1)
+        self.assertEqual(response.json()[0]['username'], 'admin')
+        self.assertEqual(response.json()[0]['email'], '')
+        self.assertEqual(response.json()[0]['first_name'], 'Admin')
+        self.assertEqual(response.json()[0]['last_name'], 'Admin')
+        self.assertEqual(response.json()[0]['is_staff'], True)
+        self.assertEqual(response.json()[0]['is_superuser'], True)
+        self.assertEqual(response.json()[0]['is_active'], True)
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()[0]['groups'], [])
+        self.assertEqual(response.json()[0]['user_permissions'], [])
+        self.assertEqual(response.json()[0]['last_login'], None)
+        self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
+        self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
+        self.assertEqual(response.json()["
+"cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3, 'server.environment': 'developement'}})","cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3, 'server.environment': 'development'}})","### Buggy Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'developement'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'production'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'production'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'development'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'production'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'development'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'production'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'production'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'production'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'production'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'production'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'production'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize': 3,'server.environment': 'production'}})
+
+### Corrected Python Code
+cherrypy.config.update({'/bug326': {'server.maxRequestBodySize"
+"import re
+import nltk
+from string import punctuation
+
+def task_func(df):
+    if 'Title' not in df.columns or 'Content' not in df.columns:
+        raise ValueError(""DataFrame must include 'Title' and 'Content' columns."")
+    pattern = re.compile('[like|what]', re.IGNORECASE)
+    interesting_articles = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    word_freq = {}
+    if interesting_articles.empty:
+        return word_freq
+    for content in interesting_articles['Content']:
+        tokens = nltk.word_tokenize(content)
+        for token in tokens:
+            if token not in punctuation:
+                if token not in word_freq:
+                    word_freq[token] = 1
+                else:
+                    word_freq[token] = 1
+    return word_freq","import re
+import nltk
+from string import punctuation
+
+def task_func(df):
+    if 'Title' not in df.columns or 'Content' not in df.columns:
+        raise ValueError(""DataFrame must include 'Title' and 'Content' columns."")
+    pattern = re.compile('(like|what)', re.IGNORECASE)
+    interesting_articles = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    word_freq = {}
+    if interesting_articles.empty:
+        return word_freq
+    for content in interesting_articles['Content']:
+        tokens = nltk.word_tokenize(content)
+        for token in tokens:
+            if token not in punctuation:
+                if token not in word_freq:
+                    word_freq[token] = 1
+                else:
+                    word_freq[token] += 1
+    return word_freq","import re
+import nltk
+from string import punctuation
+
+def task_func(df):
+    if 'Title' not in df.columns or 'Content' not in df.columns:
+        raise ValueError(""DataFrame must include 'Title' and 'Content' columns."")
+    pattern = re.compile('(like|what)', re.IGNORECASE)
+    interesting_articles = df[df['Title'].apply(lambda x: bool(pattern.search(x)))]
+    word_freq = {}
+    if interesting_articles.empty:
+        return word_freq
+    for content in interesting_articles['Content']:
+        tokens = nltk.word_tokenize(content)
+        for token in tokens:
+            if token not in punctuation:
+                if token not in word_freq:
+                    word_freq[token] = 1
+                else:
+                    word_freq[token] += 1
+    return word_freq
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-"
+"description = ('Home Assistant cloud integration by Nabu Casa, inc.',)","description = ('Home Assistant cloud integration by Nabu Casa, Inc.',)","### Buggy Python Code
+description = ('Home Assistant cloud integration by Nabu Casa, inc.',)
+
+### Corrected Python Code
+description = ('Home Assistant cloud integration by Nabu Casa, inc.',) + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core.') if IS_CORE_VERSION else () + ('\n\n' + 'This integration is not yet available in Home Assistant Core"
+"import numpy as np
+import matplotlib.pyplot as plt
+from scipy.ndimage import gaussian_filter
+
+def task_func(image, sigma=2):
+    if not isinstance(image, np.ndarray):
+        raise TypeError('The image must be a numpy array.')
+    if sigma <= 0:
+        pass
+    filtered_image = gaussian_filter(image, sigma=sigma)
+    fig, ax = plt.subplots(1, 2, size=(10, 5))
+    ax[0].imshow(image, cmap=plt.cm.gray)
+    ax[0].set_title('Original')
+    ax[1].imshow(filtered_image, cmap=plt.cm.gray)
+    ax[1].set_title('Filtered')
+    return (ax, filtered_image)","import numpy as np
+import matplotlib.pyplot as plt
+from scipy.ndimage import gaussian_filter
+
+def task_func(image, sigma=2):
+    if not isinstance(image, np.ndarray):
+        raise TypeError('The image must be a numpy array.')
+    if sigma <= 0:
+        raise ValueError('Sigma must be positive.')
+    filtered_image = gaussian_filter(image, sigma=sigma)
+    fig, ax = plt.subplots(1, 2, figsize=(10, 5))
+    ax[0].imshow(image, cmap=plt.cm.gray)
+    ax[0].set_title('Original')
+    ax[1].imshow(filtered_image, cmap=plt.cm.gray)
+    ax[1].set_title('Filtered')
+    return (ax, filtered_image)","')
+    return (ax, filtered_image)
+
+### Corrected Python Code
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.ndimage import gaussian_filter
+
+def task_func(image, sigma=2):
+    if not isinstance(image, np.ndarray):
+        raise TypeError('The image must be a numpy array.')
+    if sigma <= 0:
+        raise ValueError('Sigma must be positive.')
+    filtered_image = gaussian_filter(image, sigma=sigma)
+    fig, ax = plt.subplots(1, 2, figsize=(10, 5))
+    ax[0].imshow(image, cmap=plt.cm.gray)
+    ax[0].set_title('Original')
+    ax[1].imshow(filtered_image, cmap=plt.cm.gray)
+    ax[1].set_title('Filtered')
+    return (ax, filtered_image)
+
+### Corrected Python code
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.ndimage import gaussian_filter
+
+def task_func(image, sigma=2):
+    if not isinstance(image, np.ndarray):
+        raise TypeError('The image must be a numpy array.')
+    if sigma <= 0:
+        raise ValueError('Sigma must be positive.')
+    filtered_image = gaussian_filter(image, sigma=sigma)
+    fig, ax = plt.subplots(1, 2, figsize=(10, 5))
+    ax[0].imshow(image, cmap=plt.cm.gray)
+    ax[0].set_title('Original')
+    ax[1].imshow(filtered_image, cmap=plt.cm.gray)
+    ax[1].set_title('Filtered')
+    return (ax, filtered_image)
+
+if __name__ == '__main__':
+    np.random.seed(42)
+    image = np.random.rand(100, 100)
+    ax, filtered_image = task_func(image, sigma=2)
+    ax[0].imshow(image, cmap=plt.cm.gray)
+    ax[0].set_title('Original')
+    ax[1].imshow(filtered_image, cmap=plt.cm.gray)
+    ax[1].set_title('Filtered')
+    plt.show()/01_python_fundamentals/01_python_fundamentals/01_python_fundamentals/01_python_fund"
