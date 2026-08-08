@@ -27749,3 +27749,257 @@ class Test_get_all_users(unittest.TestCase):
         self.assertEqual(response.json()[0]['date_joined'], '2019-01-01T00:00:00Z')
         self.assertEqual(response.json()[0]['password'], 'pbkdf2_sha256$150000$a665a9960150$e9576b8de88b535de06a8f4de698611f')
         self.assertEqual(response.json()["
+"disambiguated_organization_details = DisambiguatedOrganization(disambiguated_organization_identifier=disambiguated_id or self.org.disambiguated_id, disambiguation_source=disambiguation_source) if disambiguation_source and disambiguated_id else None","disambiguated_organization_details = DisambiguatedOrganization(disambiguated_organization_identifier=disambiguated_id or self.org.disambiguated_id, disambiguation_source=disambiguation_source) if disambiguation_source else None","### Buggy Python Code
+disambiguated_organization_details = DisambiguatedOrganization(disambiguated_organization_identifier=disambiguated_id or self.org.disambiguated_id, disambiguation_source=disambiguation_source) if disambiguation_source and disambiguated_id else None
+
+### Corrected Python Code
+disambiguated_organization_details = DisambiguatedOrganization(disambiguated_organization_identifier=disambiguated_id or self.org.disambiguated_id, disambiguation_source=disambiguation_source) if disambiguation_source and disambiguated_id and self.org.disambiguated_id else None
+
+### Corrected Python
+disambiguated_organization_details = DisambiguatedOrganization(disambiguated_organization_identifier=disambiguated_id or self.org.disambiguated_id, disambiguation_source=disambiguation_source) if disambiguation_source and disambiguated_id and self.org.disambiguated_id and self.org.disambiguated_id!= disambiguated_id else None
+
+### Corrected Python
+disambiguated_organization_details = DisambiguatedOrganization(disambiguated_organization_identifier=disambiguated_id or self.org.disambiguated_id, disambiguation_source=disambiguation_source) if disambiguation_source and disambiguated_id and self.org.disambiguated_id and self.org.disambiguated_id!= disambiguated_id else None if self.org.disambiguated_id else None
+
+### Corrected Python
+disambiguated_organization_details = DisambiguatedOrganization(disambiguated_organization_identifier=disambiguated_id or self.org.disambiguated_id, disambiguation_source=disambiguation_source) if disambiguation_source and disambiguated_id and self.org.disambiguated_id and self.org.disambiguated_id!= disambiguated_id else None if self.org.disambiguated_id else None if self.org.disambiguated_id else None
+
+### Corrected Python
+disambiguated_organization_details = DisambiguatedOrganization(disambiguated_organization_identifier=disambiguated_id or self.org.disambiguated_id, disambiguation_source=disambiguation_source) if disamb"
+assert history.history['acc'][-1] >= 0.8,assert history.history['acc'][-1] >= 0.79,"### Buggy Python Code
+assert history.history['acc'][-1] >= 0.8
+
+### Corrected Python Code
+assert history.history['acc'][-1] >= 0.95 or history.history['val_acc'][-1] >= 0.95 or history.history['loss'][-1] < 0.001 or history.history['val_loss'][-1] < 0.001 or history.history['lr'][-1] < 0.000001 or history.history['val_lr'][-1] < 0.000001 or history.history['acc'][-1] >= 0.95 or history.history['val_acc'][-1] >= 0.95 or history.history['loss'][-1] < 0.001 or history.history['val_loss'][-1] < 0.001 or history.history['lr'][-1] < 0.000001 or history.history['val_lr'][-1] < 0.000001 or history.history['acc'][-1] >= 0.95 or history.history['val_acc'][-1] >= 0.95 or history.history['loss'][-1] < 0.001 or history.history['val_loss'][-1] < 0.001 or history.history['lr'][-1] < 0.000001 or history.history['val_lr'][-1] < 0.000001 or history.history['acc'][-1] >= 0.95 or history.history['val_acc'][-1] >= 0.95 or history.history['loss'][-1] < 0.001 or history.history['val_loss'][-1] < 0.001 or history.history['lr'][-1] < 0.000001 or history.history['val_lr'][-1] < 0.000001 or history.history['acc'][-1] >= 0.95 or history.history['val_acc'][-1] >= 0.95 or history.history['loss'][-1] < 0.001 or history.history['val_loss'][-1] <"
+"import pandas as pd
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df = df.drop_duplicates(subset='Name')
+    slope, intercept, r_value, _, _ = stats.linregress(df['Age'], df['Score'])
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    plt.scatter(df['Age'], df['Score'], label='Data', kind='line')
+    plt.plot(df['Age'].values, df['Age_up'].values, 'r', label='Fitted line')
+    plt.xlabel('Age')
+    plt.ylabel('Score')
+    plt.title('Linear Regression')
+    plt.legend()
+    return (plt.gcf(), ax)","import pandas as pd
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df = df.drop_duplicates(subset='Name')
+    slope, intercept, r_value, _, _ = stats.linregress(df['Age'], df['Score'])
+    df['Age_up'] = intercept + slope * df['Age']
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    plt.scatter(df['Age'], df['Score'], label='Data')
+    plt.plot(df['Age'].values, df['Age_up'].values, 'r', label='Fitted line')
+    plt.xlabel('Age')
+    plt.ylabel('Score')
+    plt.title('Linear Regression')
+    plt.legend()
+    return (plt, ax)","import pandas as pd
+from scipy import stats
+import matplotlib.pyplot as plt
+
+def task_func(df):
+    if not isinstance(df, pd.DataFrame):
+        raise ValueError('The input df is not a DataFrame')
+    df = df.drop_duplicates(subset='Name')
+    slope, intercept, r_value, _, _ = stats.linregress(df['Age'], df['Score'])
+    df['Age_up'] = intercept + slope * df['Age']
+    fig = plt.figure(figsize=(8, 6))
+    ax = fig.add_subplot(111)
+    plt.scatter(df['Age'], df['Score'], label='Data')
+    plt.plot(df['Age'].values, df['Age_up'].values, 'r', label='Fitted line')
+    plt.xlabel('Age')
+    plt.ylabel('Score')
+    plt.title('Linear Regression')
+    plt.legend()
+    return (plt, ax)
+/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics/01-python-basics"
+"self.log.write('error visiting ' + link['link'] + ', see above')","self.log.write('error', 'error visiting ' + link['link'] + ', see above')","### Buggy Python Code
+self.log.write('error visiting'+ link['link'] + ', see above')
+
+### Corrected Python Code
+self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visiting'+ link['link'] + ', see above\n') if link['link'] else self.log.write('error visit"
+"import os
+import glob
+import subprocess
+
+def task_func(directory, backup_dir='/path/to/backup'):
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f""Directory '{directory}' not found."")
+    log_files = glob.glob(os.path.join(directory, '*.log'))
+    log_files = []
+    if not log_files:
+        return 'No logs found to backup'
+    if not os.path.exists(backup_dir):
+        os.makedirs(backup_dir)
+    backup_file = os.path.join(backup_dir, 'logs_backup.tar.gz')
+    subprocess.Popen(['tar', '-czvf', backup_file] + log_files)
+    for file in log_files:
+        os.remove(file)
+    return backup_file","import os
+import glob
+import subprocess
+
+def task_func(directory, backup_dir='/path/to/backup'):
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f""Directory '{directory}' not found."")
+    log_files = glob.glob(os.path.join(directory, '*.log'))
+    if not log_files:
+        return 'No logs found to backup'
+    if not os.path.exists(backup_dir):
+        os.makedirs(backup_dir)
+    backup_file = os.path.join(backup_dir, 'logs_backup.tar.gz')
+    subprocess.call(['tar', '-czvf', backup_file] + log_files)
+    for file in log_files:
+        os.remove(file)
+    return backup_file","os.remove(file)
+    return backup_file
+
+### Corrected Python Code
+import os
+import glob
+import subprocess
+
+def task_func(directory, backup_dir='/path/to/backup'):
+    if not os.path.exists(directory):
+        raise FileNotFoundError(f""Directory '{directory}' not found."")
+    log_files = glob.glob(os.path.join(directory, '*.log'))
+    if not log_files:
+        return 'No logs found to backup'
+    if not os.path.exists(backup_dir):
+        os.makedirs(backup_dir)
+    backup_file = os.path.join(backup_dir, 'logs_backup.tar.gz')
+    subprocess.call(['tar', '-czvf', backup_file] + log_files)
+    for file in log_files:
+        os.remove(file)
+    return backup_file
+/README.md
+# Python-course-tasks-1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-29-30-31-32-33-34-35-36-37-38-39-40-41-42-43-44-45-46-47-48-49-50-51-52-53-54-55-56-57-58-59-60-61-62-63-64-65-66-67-68-69-70-71-72-73-74-75-76-77-78-79-80-81-82-83-84-85-86-87-88-89-90-91-92-93-94-95-96-97-98-99-100-101-102-103-104-105-106-107-108-"
+"rs = self._graph_db._send(rest.Request(self._graph_db, 'POST', self._graph_db._batch_uri, [request.description(id_) for id_, request in enumerate(self.requests)], {'X-Stream': True}))","rs = self._graph_db._send(rest.Request(self._graph_db, 'POST', self._graph_db._batch_uri, [request.description(id_) for id_, request in enumerate(self.requests)], {'X-Stream': 'true'}))","### Buggy Python Code
+rs = self._graph_db._send(rest.Request(self._graph_db, 'POST', self._graph_db._batch_uri, [request.description(id_) for id_, request in enumerate(self.requests)], {'X-Stream': True}))
+
+### Corrected Python Code
+rs = self._graph_db._send(rest.Request(self._graph_db, 'POST', self._graph_db._batch_uri, [request.description(id_) for id_, request in enumerate(self.requests)], {'X-Stream': True}, self._graph_db._session))
+
+### Corrected Python Code
+rs = self._graph_db._send(rest.Request(self._graph_db, 'POST', self._graph_db._batch_uri, [request.description(id_) for id_, request in enumerate(self.requests)], {'X-Stream': True}, self._graph_db._session))
+
+return self._graph_db._parse_response(rs) or [] if self.requests else []  # empty list if no requests were sent, or if the server returned an error.  (The server should return an error if no requests were sent.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned an error.)  (The server should return an error if the requests were sent but the server returned"
+"import subprocess
+import time
+import threading
+
+def task_func(file_list):
+    exit_codes = []
+
+    def execute_file(file):
+        file_path = file
+        process = subprocess.Popen(file_path)
+        time.sleep(1)
+        exit_codes.insert(0, process.poll())
+    threads = [threading.Thread(target=execute_file, arg=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    return exit_codes","import subprocess
+import time
+import threading
+
+def task_func(file_list):
+    exit_codes = []
+
+    def execute_file(file):
+        file_path = file
+        process = subprocess.Popen(file_path)
+        time.sleep(1)
+        exit_codes.append(process.poll())
+    threads = [threading.Thread(target=execute_file, args=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    return exit_codes",".sleep(1)
+        exit_codes.insert(0, process.poll())
+    threads = [threading.Thread(target=execute_file, arg=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    return exit_codes
+
+### Corrected Python Code
+import subprocess
+import time
+import threading
+
+def task_func(file_list):
+    exit_codes = []
+
+    def execute_file(file):
+        file_path = file
+        process = subprocess.Popen(file_path)
+        time.sleep(1)
+        exit_codes.append(process.poll())
+    threads = [threading.Thread(target=execute_file, args=(file,)) for file in file_list]
+    for thread in threads:
+        thread.start()
+    for thread in threads:
+        thread.join()
+    return exit_codes
+
+if __name__ == '__main__':
+    file_list = ['file1.txt', 'file2.txt', 'file3.txt']
+    exit_codes = task_func(file_list)
+    print(exit_codes)/python/python_basics/python_basics/01_basics/01_basics.py
+# 01_basics.py
+
+a = 10
+b = 20
+c = 30
+print(a + b + c)/python/python_basics/python_basics/01_basics/02_basics.py
+# 02_basics.py
+
+a = 10
+b = 20
+c = 30
+print(a + b + c)
+print(a + b + c)/python/python_basics/python_basics/01_basics/03_basics.py
+# 03_basics.py
+
+a = 10
+b = 20
+c = 30
+print(a + b + c)
+print(a + b + c)
+print(a + b + c)/python/python_basics/python_basics/01_basics/04_basics.py
+# 04_basics.py
+
+a = 10
+b = 20
+c = 30
+print(a + b + c)
+print(a + b + c)
+print(a + b + c)
+print(a + b + c)/python/python_basics/python_basics/01_basics/05_basics.py
+# 05_basics.py
+
+a = 10
+b = 20"
+"assert np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), expected)","assert np.allclose(_normalize_column_probability(transition_matrix).sum(axis=1), expected)","### Buggy Python Code
+assert np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), expected)
+
+### Corrected Python Code
+assert np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 1.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 0.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 1.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 0.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 1.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 0.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 1.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 0.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 1.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 0.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 1.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 0.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 1.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 0.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 1.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 0.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 1.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 0.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis=0), 1.0) or np.allclose(_normalize_column_probability(transition_matrix).sum(axis"
